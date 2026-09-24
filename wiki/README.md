@@ -1,5 +1,3 @@
-# Wiki Pokémon Tactica — source de travail
+# Wiki Pokémon Tactica
 
-Branche `feature/wiki` : import éditorial en cours. Les règles canoniques résident dans `docs/spec/` et `data/spec/`. Les tableaux des pages importées doivent encore être régénérés et vérifiés avec la ROM ; ne pas déployer cette branche telle quelle.
-
-Navigation cible FR/EN : accueil, guide de jeu, changements, Pokédex, localisations, boss et conseils, crédits/versions.
+Branche `feature/wiki`. Sources normatives : `docs/spec/` et `data/spec/`. Pokédex et Localisations sont séparés. Rencontres, 26 modifications d'espèces, 15 learnsets et rosters de boss sont synchronisés avec les JSON canoniques.

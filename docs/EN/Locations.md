@@ -1,592 +1,470 @@
----
-layout: default
-title: "Pokédex & Locations"
----
-
-[Home](Home.md) · [Game Guide](Game-Guide.md) · [Changes](Changes.md) · [Bosses & Tips](Bosses-and-Tips.md) · [Pokédex](Pokedex.md) · [Locations](Locations.md) · [Credits & Versions](Credits-and-Versions.md) · **[FR](../FR/Pokedex-et-Localisation.md)**
+[Home](Home.md) · [Game Guide](Game-Guide.md) · [Changes](Changes.md) · [Pokédex](Pokedex.md) · [Locations](Locations.md) · [Bosses & Tips](Bosses-and-Tips.md) · [Credits & Versions](Credits-and-Versions.md) · **[FR](../FR/Accueil.md)**
 
 # Locations
 
-This page publishes the validated V1 reference locations. A later V1.1 may rebalance encounters, but these placements are the current reference.
+**405 standard tables + 4 Headbutt + 53 Safari pools.** Four real slots per table at 30/30/30/10. Fishing has one pool per table; rods gate access.
 
-## Standard encounters
-
-497 reference placements outside Safari.
-
-| Pokémon | Area | Method | Lv. | Time | Progression |
-|---|---|---|---:|---|---|
-| Ekans | Route31 | Land | 2-6 | Any | Early Johto |
-| Abra | Route24 | Land | 2-6 | Day | Early Johto |
-| Absol | Route38 | Land | 8-18 | Night | Badges 2-4 |
-| Skarmory | Union Cave B1f | Land | 8-18 | Any | Badges 2-4 |
-| Amaura | Ice Path B1f | Land | 2-6 | Any | Early Johto |
-| Naclstack | Burned Tower 1f | Rock Smash | 27-38 | Any | Badges 5-7 |
-| Omanyte | Whirl Islands 1f | Old Rod | 2-6 | Any | Early Johto |
-| Bellibolt | Route10 | Land | 27-38 | Any | Badges 5-7 |
-| Tynamo | Slowpoke Well B1f | Old Rod | 2-6 | Any | Early Johto |
-| Grimmsnarl | Route44 | Land | 36-50 | Night | Badges 7-8 |
-| Anorith | National Park Normal | Land | 2-6 | Any | Early Johto |
-| Surskit | Route32 | Surf | 2-6 | Any | Early Johto |
-| Dewpider | Route32 | Surf | 2-6 | Any | Early Johto |
-| Treecko | Route30 | Land | 2-6 | Any | Early Johto |
-| Archen | Union Cave 1f | Rock Smash | 2-6 | Any | Early Johto |
-| Silcoon | National Park Normal | Land | 27-38 | Any | Badges 5-7 |
-| Weedle | Ilex Forest | Land | 2-6 | Any | Early Johto |
-| Wooper | Slowpoke Well B1f | Old Rod | 2-6 | Any | Early Johto |
-| Azumarill | Route41 | Surf | 36-50 | Day | Badges 7-8 |
-| Azurill | Route31 | Land | 2-6 | Day | Early Johto |
-| Mantyke | Slowpoke Well B1f | Surf | 2-6 | Any | Early Johto |
-| Sandygast | Burned Tower 1f | Land | 2-6 | Night | Early Johto |
-| Scrafty | Route42 | Land | 27-38 | Night | Badges 5-7 |
-| Scraggy | Mt Mortar B1f | Land | 2-6 | Night | Early Johto |
-| Baltoy | Union Cave B1f | Rock Smash | 2-6 | Day | Early Johto |
-| Shroomish | Route33 | Land | 2-6 | Any | Early Johto |
-| Gourgeist | Lavender Town | Land | 27-38 | Night | Badges 5-7 |
-| Whiscash | Route41 | Super Rod | 27-38 | Any | Badges 5-7 |
-| Basculin (Red-Striped Form) | Route41 | Good Rod | 8-18 | Any | Badges 2-4 |
-| Barboach | Route40 | Old Rod | 2-6 | Any | Early Johto |
-| Feebas | Route32 | Old Rod | 2-6 | Any | Early Johto |
-| Palpitoad | Slowpoke Well B1f | Surf | 27-38 | Any | Badges 5-7 |
-| Toucannon | Route42 | Land | 36-50 | Any | Badges 7-8 |
-| Jangmo-o | Mt Mortar 2f | Land | 2-6 | Any | Early Johto |
-| Eiscue (Ice Face) | Mt Silver Snow | Land | 8-18 | Any | Badges 2-4 |
-| Pelipper | Route40 | Surf | 27-38 | Any | Badges 5-7 |
-| Frosmoth | Ice Path B2f | Land | 27-38 | Any | Badges 5-7 |
-| Rabsca | Viridian Forest | Land | 27-38 | Day | Badges 5-7 |
-| Conkeldurr | Mt Mortar 1f North | Land | 36-50 | Any | Badges 7-8 |
-| Hatenna | Cerulean Cave 1f | Land | 2-6 | Day | Early Johto |
-| Cascoon | Ilex Forest | Land | 27-38 | Any | Badges 5-7 |
-| Abomasnow | Ice Path B3f | Land | 27-38 | Any | Badges 5-7 |
-| Snover | Ice Path B2f | Land | 2-6 | Any | Early Johto |
-| Cutiefly | Ilex Forest | Land | 2-6 | Day | Early Johto |
-| Tangrowth | Route44 | Land | 41-52 | Any | Pre-League |
-| Turtonator | Mt Silver 2f | Land | 8-18 | Any | Badges 2-4 |
-| Mudsdale | Burned Tower B1f | Rock Smash | 27-38 | Any | Badges 5-7 |
-| Banette | Burned Tower B1f | Land | 27-38 | Night | Badges 5-7 |
-| Rowlet | Route30 | Land | 2-6 | Any | Early Johto |
-| Phantump | Tin Tower 3f | Land | 2-6 | Night | Early Johto |
-| Hawlucha | Mt Mortar 1f South | Land | 18-28 | Any | Badges 4-6 |
-| Noivern | Victory Road Kanto B1f | Land | 41-52 | Any | Pre-League |
-| Bulbasaur | Route29 | Land | 2-6 | Any | Early Johto |
-| Camerupt | Cinnabar Island | Land | 27-38 | Any | Badges 5-7 |
-| Steenee | Route27 | Land | 27-38 | Any | Badges 5-7 |
-| Growlithe | Route34 | Land | 8-18 | Day | Badges 2-4 |
-| Tirtouga | Whirl Islands 1f | Old Rod | 2-6 | Any | Early Johto |
-| Squirtle | Route32 | Surf | 2-6 | Any | Early Johto |
-| Shuckle | Viridian Forest | Land | 18-28 | Any | Badges 4-6 |
-| Garchomp | Mt Silver 2f | Land | 54-73 | Any | Endgame |
-| Carvanha | Whirl Islands 1f | Old Rod | 2-6 | Night | Early Johto |
-| Wyrdeer | Route24 | Land | 41-52 | Day | Pre-League |
-| Numel | Burned Tower B1f | Land | 2-6 | Any | Early Johto |
-| Breloom | Mt Mortar 1f North | Land | 27-38 | Any | Badges 5-7 |
-| Charcadet | Cinnabar Island | Land | 2-6 | Any | Early Johto |
-| Rolycoly | Dark Cave South Side | Rock Smash | 2-6 | Any | Early Johto |
-| Cufant | Union Cave 1f | Land | 2-6 | Any | Early Johto |
-| Timburr | Route42 | Land | 2-6 | Any | Early Johto |
-| Torkoal | Newsinjoh Hotsprings | Land | 8-18 | Any | Badges 2-4 |
-| Bewear | Route42 | Land | 27-38 | Any | Badges 5-7 |
-| Caterpie | Ilex Forest | Land | 2-6 | Any | Early Johto |
-| Wurmple | Ilex Forest | Land | 2-6 | Any | Early Johto |
-| Bellsprout | Route32 | Land | 2-6 | Any | Early Johto |
-| Petilil | Route31 | Land | 2-6 | Any | Early Johto |
-| Fuecoco | Burned Tower 1f | Land | 2-6 | Any | Early Johto |
-| Charjabug | National Park Normal | Land | 27-38 | Any | Badges 5-7 |
-| Klang | Mt Mortar B1f | Land | 27-38 | Any | Badges 5-7 |
-| Klinklang | Mt Mortar 2f | Land | 36-50 | Any | Badges 7-8 |
-| Toxicroak | Mt Mortar 1f North | Land | 27-38 | Any | Badges 5-7 |
-| Piloswine | Mt Silver Snow | Land | 27-38 | Any | Badges 5-7 |
-| Quaxly | Whirl Islands 1f | Surf | 2-6 | Any | Early Johto |
-| Crawdaunt | Whirl Islands 1f | Super Rod | 27-38 | Night | Badges 5-7 |
-| Tandemaus | Route32 | Land | 2-6 | Any | Early Johto |
-| Corsola | Whirl Islands 1f | Old Rod | 2-6 | Any | Early Johto |
-| Honchkrow | Route45 | Land | 27-38 | Night | Badges 5-7 |
-| Murkrow | Route31 | Land | 2-6 | Night | Early Johto |
-| Corviknight | Dragons Den Cavern | Land | 36-50 | Any | Badges 7-8 |
-| Axew | Mt Mortar 2f | Land | 2-6 | Any | Early Johto |
-| Crabrawler | Mt Mortar B1f | Land | 2-6 | Any | Early Johto |
-| Crustle | Viridian Forest | Land | 27-38 | Any | Badges 5-7 |
-| Dwebble | National Park Normal | Land | 2-6 | Any | Early Johto |
-| Crabominable | Slowpoke Well B1f | Super Rod | 27-38 | Any | Badges 5-7 |
-| Croagunk | Mt Mortar 1f South | Land | 2-6 | Any | Early Johto |
-| Seismitoad | Route40 | Surf | 36-50 | Any | Badges 7-8 |
-| Krookodile | Mt Mortar 2f | Rock Smash | 36-50 | Night | Badges 7-8 |
-| Bounsweet | Route29 | Land | 2-6 | Any | Early Johto |
-| Darmanitan (Standard Mode) | Cinnabar Island | Land | 27-38 | Any | Badges 5-7 |
-| Darumaka | Burned Tower B1f | Land | 2-6 | Any | Early Johto |
-| Tyrogue | Route42 | Land | 2-6 | Any | Early Johto |
-| Unfezant | Route26 | Land | 36-50 | Any | Badges 7-8 |
-| Houndoom | Burned Tower 1f | Land | 27-38 | Night | Badges 5-7 |
-| Bruxish | Lake Of Rage | Good Rod | 8-18 | Day | Badges 2-4 |
-| Trevenant | Burned Tower 1f | Land | 27-38 | Night | Badges 5-7 |
-| Weavile | Mt Silver Snow | Land | 27-38 | Night | Badges 5-7 |
-| Shieldon | Union Cave 1f | Rock Smash | 2-6 | Any | Early Johto |
-| Finizen | Route40 | Old Rod | 2-6 | Any | Early Johto |
-| Stonjourner | Union Cave 1f | Rock Smash | 8-18 | Any | Badges 2-4 |
-| Donphan | Mt Mortar B1f | Rock Smash | 27-38 | Any | Badges 5-7 |
-| Cottonee | Route29 | Land | 2-6 | Day | Early Johto |
-| Bagon | Victory Road Kanto B1f | Land | 2-6 | Any | Early Johto |
-| Dragonair | Dragons Den Cavern | Surf | 33-46 | Any | Badges 7-8 |
-| Dragonite | Mt Silver 3f | Land | 54-73 | Any | Endgame |
-| Drampa | Mt Silver 2f | Land | 8-18 | Any | Badges 2-4 |
-| Drapion | Route43 | Land | 27-38 | Night | Badges 5-7 |
-| Salamence | Dragons Den Cavern | Land | 54-73 | Any | Endgame |
-| Sandaconda | Mt Mortar B1f | Rock Smash | 27-38 | Any | Badges 5-7 |
-| Silicobra | Union Cave B1f | Rock Smash | 2-6 | Any | Early Johto |
-| Duraludon | Mt Silver 2f | Land | 18-28 | Any | Badges 4-6 |
-| Electrike | Route34 | Land | 2-6 | Any | Early Johto |
-| Finneon | Whirl Islands 1f | Old Rod | 2-6 | Any | Early Johto |
-| Corphish | Lake Of Rage | Old Rod | 2-6 | Any | Early Johto |
-| Kommo-o | Mt Silver 2f | Land | 54-73 | Any | Endgame |
-| Manectric | Route35 | Land | 27-38 | Any | Badges 5-7 |
-| Electivire | Route35 | Land | 36-50 | Any | Badges 7-8 |
-| Elekid | Route10 | Land | 2-6 | Any | Early Johto |
-| Electabuzz | Route5 | Land | 27-38 | Any | Badges 5-7 |
-| Arrokuda | Whirl Islands 1f | Old Rod | 2-6 | Any | Early Johto |
-| Larvitar | Mt Silver Outside | Land | 48-65 | Any | Endgame |
-| Krokorok | Mt Mortar B1f | Rock Smash | 27-38 | Night | Badges 5-7 |
-| Staraptor | Route43 | Land | 36-50 | Any | Badges 7-8 |
-| Starly | Route29 | Land | 2-6 | Any | Early Johto |
-| Eevee | Route31 | Land | 2-6 | Any | Early Johto |
-| Aegislash (Shield Forme) | Burned Tower 1f | Land | 36-50 | Night | Badges 7-8 |
-| Maushold (Family of Three) | Route42 | Land | 27-38 | Any | Badges 5-7 |
-| Gastly | Tin Tower 3f | Land | 2-6 | Night | Early Johto |
-| Dreepy | Route34 | Land | 8-18 | Night | Badges 2-4 |
-| Sneasel | Ice Path B1f | Land | 30-42 | Night | Badges 7-8 |
-| Sneasler | Mt Mortar B1f | Land | 27-38 | Any | Badges 5-7 |
-| Mankey | Route42 | Land | 2-6 | Any | Early Johto |
-| Misdreavus | Tin Tower 3f | Land | 8-18 | Night | Badges 2-4 |
-| Ninetales | Route18 | Land | 27-38 | Any | Badges 5-7 |
-| Fennekin | Burned Tower 1f | Land | 2-6 | Any | Early Johto |
-| Spidops | Viridian Forest | Land | 27-38 | Any | Badges 5-7 |
-| Flabébé (Red Flower) | Route32 | Land | 2-6 | Day | Early Johto |
-| Scorbunny | Burned Tower 1f | Land | 2-6 | Any | Early Johto |
-| Talonflame | Cinnabar Island | Land | 36-50 | Any | Badges 7-8 |
-| Flamigo | Mt Mortar 1f South | Land | 18-28 | Any | Badges 4-6 |
-| Litten | Burned Tower 1f | Land | 2-6 | Any | Early Johto |
-| Clauncher | Slowpoke Well B1f | Old Rod | 2-6 | Any | Early Johto |
-| Floette (Red Flower) | Route45 | Land | 27-38 | Day | Badges 5-7 |
-| Lurantis | Route45 | Land | 27-38 | Any | Badges 5-7 |
-| Glimmora | Ice Path 1f | Rock Smash | 41-52 | Any | Pre-League |
-| Florges (Red Flower) | Mt Silver 3f | Land | 54-73 | Day | Endgame |
-| Forretress | Ilex Forest | Land | 27-38 | Any | Badges 5-7 |
-| Tinkaton | Dragons Den Cavern | Land | 36-50 | Day | Badges 7-8 |
-| Tinkatuff | Burned Tower B1f | Land | 27-38 | Day | Badges 5-7 |
-| Tinkatink | Dark Cave South Side | Land | 2-6 | Day | Early Johto |
-| Sentret | Route29 | Land | 2-6 | Any | Early Johto |
-| Bouffalant | Route35 | Land | 8-18 | Any | Badges 2-4 |
-| Snom | Ice Path B1f | Land | 2-6 | Any | Early Johto |
-| Wishiwashi (Solo Form) | Slowpoke Well B1f | Old Rod | 2-6 | Any | Early Johto |
-| Boltund | Saffron City | Land | 27-38 | Any | Badges 5-7 |
-| Kilowattrel | Route34 | Land | 27-38 | Any | Badges 5-7 |
-| Litwick | Lavender Town | Land | 2-6 | Night | Early Johto |
-| Rufflet | Route30 | Land | 2-6 | Any | Early Johto |
-| Lairon | Burned Tower 1f | Rock Smash | 27-38 | Any | Badges 5-7 |
-| Aron | Slowpoke Well B1f | Rock Smash | 2-6 | Any | Early Johto |
-| Aggron | Ice Path 1f | Rock Smash | 36-50 | Any | Badges 7-8 |
-| Gallade | Mt Mortar B1f | Land | 36-50 | Day | Badges 7-8 |
-| Arctozolt | Mt Silver Snow | Land | 18-28 | Any | Badges 4-6 |
-| Dracozolt | Mt Silver 2f | Land | 18-28 | Any | Badges 4-6 |
-| Helioptile | Route35 | Land | 2-6 | Any | Early Johto |
-| Lokix | National Park Normal | Land | 27-38 | Night | Badges 5-7 |
-| Clawitzer | Route40 | Super Rod | 27-38 | Any | Badges 5-7 |
-| Amoonguss | Route44 | Land | 27-38 | Any | Badges 5-7 |
-| Boldore | Burned Tower 1f | Rock Smash | 27-38 | Any | Badges 5-7 |
-| Glimmet | Dark Cave South Side | Rock Smash | 2-6 | Any | Early Johto |
-| Gigalith | Ice Path 1f | Rock Smash | 36-50 | Any | Badges 7-8 |
-| Garganacl | Ice Path 1f | Rock Smash | 36-50 | Any | Badges 7-8 |
-| Mudkip | Whirl Islands 1f | Old Rod | 2-6 | Any | Early Johto |
-| Wingull | Slowpoke Well B1f | Surf | 2-6 | Any | Early Johto |
-| Munchlax | Route29 | Land | 2-6 | Any | Early Johto |
-| Golurk | Lavender Town | Land | 27-38 | Night | Badges 5-7 |
-| Barbaracle | Lake Of Rage | Super Rod | 27-38 | Any | Badges 5-7 |
-| Vulpix | Route34 | Land | 8-18 | Day | Badges 2-4 |
-| Oranguru | Ruins Of Alph Outside | Land | 8-18 | Day | Badges 2-4 |
-| Granbull | Route27 | Land | 27-38 | Day | Badges 5-7 |
-| Graveler | Mt Mortar B1f | Rock Smash | 27-38 | Any | Badges 5-7 |
-| Bergmite | Ice Path B3f | Land | 2-6 | Any | Early Johto |
-| Froakie | Slowpoke Well B1f | Surf | 2-6 | Any | Early Johto |
-| Gible | Union Cave B2f | Land | 8-18 | Any | Badges 2-4 |
-| Sizzlipede | Ilex Forest | Land | 2-6 | Any | Early Johto |
-| Impidimp | Route32 | Land | 2-6 | Night | Early Johto |
-| Ferroseed | Dark Cave South Side | Land | 2-6 | Any | Early Johto |
-| Golett | Burned Tower B1f | Land | 2-6 | Night | Early Johto |
-| Golem | Mt Silver 1f Item Room | Rock Smash | 54-73 | Any | Endgame |
-| Tepig | Burned Tower B1f | Land | 2-6 | Any | Early Johto |
-| Braviary | Route45 | Land | 27-38 | Any | Badges 5-7 |
-| Comfey | Route35 | Land | 8-18 | Day | Badges 2-4 |
-| Kleavor | Viridian Forest | Land | 27-38 | Any | Badges 5-7 |
-| Barraskewda | Route32 | Super Rod | 27-38 | Any | Badges 5-7 |
-| Swellow | Route42 | Land | 27-38 | Any | Badges 5-7 |
-| Litleo | Cinnabar Island | Land | 2-6 | Any | Early Johto |
-| Cyndaquil | Cinnabar Island | Land | 2-6 | Any | Early Johto |
-| Cryogonal | Ice Path B2f | Land | 8-18 | Any | Badges 2-4 |
-| Hippowdon | Ice Path 1f | Rock Smash | 41-52 | Any | Pre-League |
-| Hippopotas | Dark Cave South Side | Rock Smash | 2-6 | Any | Early Johto |
-| Arctovish | Route32 | Surf | 18-28 | Any | Badges 4-6 |
-| Dracovish | Whirl Islands 1f | Surf | 18-28 | Any | Badges 4-6 |
-| Seadra | Route21 | Surf | 27-38 | Any | Badges 5-7 |
-| Horsea | Slowpoke Well B1f | Surf | 2-6 | Any | Early Johto |
-| Heliolisk | Route10 | Land | 27-38 | Any | Badges 5-7 |
-| Scyther | Viridian Forest | Land | 18-28 | Any | Badges 4-6 |
-| Throh | Mt Mortar 1f North | Land | 8-18 | Any | Badges 2-4 |
-| Kabuto | Slowpoke Well B1f | Old Rod | 2-6 | Any | Early Johto |
-| Totodile | Slowpoke Well B1f | Surf | 2-6 | Any | Early Johto |
-| Walrein | Lake Of Rage | Surf | 36-50 | Any | Badges 7-8 |
-| Kangaskhan | Route34 | Land | 8-18 | Any | Badges 2-4 |
-| Sawk | Mt Mortar B1f | Land | 8-18 | Any | Badges 2-4 |
-| Chewtle | Lake Of Rage | Surf | 2-6 | Any | Early Johto |
-| Kirlia | Route26 | Land | 27-38 | Day | Badges 5-7 |
-| Shellder | Whirl Islands 1f | Old Rod | 2-6 | Any | Early Johto |
-| Krabby | Slowpoke Well B1f | Old Rod | 2-6 | Any | Early Johto |
-| Trapinch | Slowpoke Well B1f | Rock Smash | 2-6 | Any | Early Johto |
-| Grapploct | Mt Mortar 1f South | Land | 27-38 | Any | Badges 5-7 |
-| Cranidos | Slowpoke Well B1f | Rock Smash | 2-6 | Any | Early Johto |
-| Dragalge | Victory Road Kanto B1f | Land | 27-38 | Any | Badges 5-7 |
-| Mienfoo | Mt Mortar B1f | Land | 2-6 | Any | Early Johto |
-| Eelektrik | Route40 | Super Rod | 27-38 | Any | Badges 5-7 |
-| Shiinotic | Route27 | Land | 27-38 | Day | Badges 5-7 |
-| Dragapult | Victory Road Kanto B1f | Land | 54-73 | Night | Endgame |
-| Lanturn | Route40 | Super Rod | 27-38 | Any | Badges 5-7 |
-| Sobble | Whirl Islands 1f | Surf | 2-6 | Any | Early Johto |
-| Blipbug | National Park Normal | Land | 2-6 | Any | Early Johto |
-| Sewaddle | Viridian Forest | Land | 2-6 | Any | Early Johto |
-| Grubbin | Ilex Forest | Land | 2-6 | Any | Early Johto |
-| Rellor | National Park Normal | Land | 2-6 | Any | Early Johto |
-| Scatterbug | Ilex Forest | Land | 2-6 | Any | Early Johto |
-| Bombirdier | Route35 | Land | 8-18 | Night | Badges 2-4 |
-| Blissey | Route43 | Land | 36-50 | Any | Badges 7-8 |
-| Chansey | Route13 | Land | 27-38 | Any | Badges 5-7 |
-| Gyarados | Vermilion City Port Outside | Super Rod | 41-52 | Any | Pre-League |
-| Lileep | Route40 | Old Rod | 2-6 | Any | Early Johto |
-| Nymble | Ilex Forest | Land | 2-6 | Any | Early Johto |
-| Slugma | Burned Tower B1f | Land | 2-6 | Any | Early Johto |
-| Jynx | Ice Path B3f | Land | 27-38 | Day | Badges 5-7 |
-| Shinx | Route10 | Land | 2-6 | Any | Early Johto |
-| Lapras | Lake Of Rage | Surf | 18-28 | Any | Badges 4-6 |
-| Lycanroc (Midday Form) | Burned Tower 1f | Rock Smash | 27-38 | Any | Badges 5-7 |
-| Chinchou | Slowpoke Well B1f | Old Rod | 2-6 | Any | Early Johto |
-| Luvdisc | Route41 | Old Rod | 2-6 | Any | Early Johto |
-| Vikavolt | Viridian Forest | Land | 36-50 | Any | Badges 7-8 |
-| Lucario | Route42 | Land | 41-52 | Any | Pre-League |
-| Chandelure | Burned Tower 1f | Land | 36-50 | Night | Badges 7-8 |
-| Lumineon | Route32 | Super Rod | 27-38 | Any | Badges 5-7 |
-| Luxray | Route34 | Land | 36-50 | Any | Badges 7-8 |
-| Mr. Mime | Route2 | Land | 27-38 | Day | Badges 5-7 |
-| Machop | Mt Mortar 1f North | Land | 2-6 | Any | Early Johto |
-| Magmortar | Cinnabar Island | Land | 36-50 | Any | Badges 7-8 |
-| Magby | Newsinjoh Hotsprings | Land | 2-6 | Any | Early Johto |
-| Magikarp | Route40 | Old Rod | 2-6 | Any | Early Johto |
-| Mismagius | Burned Tower 1f | Land | 27-38 | Night | Badges 5-7 |
-| Magmar | Route6 | Land | 27-38 | Any | Badges 5-7 |
-| Magnemite | Route34 | Land | 2-6 | Any | Early Johto |
-| Magneton | Route2 | Land | 27-38 | Any | Badges 5-7 |
-| Magnezone | Route35 | Land | 36-50 | Any | Badges 7-8 |
-| Salazzle | Burned Tower B1f | Land | 27-38 | Any | Badges 5-7 |
-| Houndour | Newsinjoh Hotsprings | Land | 2-6 | Night | Early Johto |
-| Mamoswine | Mt Silver Snow | Land | 36-50 | Any | Badges 7-8 |
-| Swinub | Ice Path 1f | Land | 30-42 | Any | Badges 7-8 |
-| Marill | Route40 | Surf | 27-38 | Day | Badges 5-7 |
-| Chespin | Route33 | Land | 2-6 | Any | Early Johto |
-| Sandile | Union Cave B1f | Rock Smash | 2-6 | Night | Early Johto |
-| Masquerain | National Park Normal | Land | 27-38 | Any | Badges 5-7 |
-| Meditite | Mt Mortar B1f | Land | 2-6 | Day | Early Johto |
-| Lampent | Tin Tower 3f | Land | 27-38 | Night | Badges 5-7 |
-| Clefairy | Route15 | Land | 27-38 | Day | Badges 5-7 |
-| Metagross | Mt Silver 2f | Land | 54-73 | Day | Endgame |
-| Ditto | Route30 | Land | 2-6 | Any | Early Johto |
-| Minior (Meteor Form) | Union Cave 1f | Rock Smash | 8-18 | Any | Badges 2-4 |
-| Meowth | Route30 | Land | 2-6 | Any | Early Johto |
-| Milotic | Slowpoke Well B1f | Surf | 41-52 | Any | Pre-League |
-| Fomantis | Route31 | Land | 2-6 | Any | Early Johto |
-| Spinarak | National Park Normal | Land | 2-6 | Night | Early Johto |
-| Mimikyu (Disguised Form) | Burned Tower B1f | Land | 8-18 | Night | Badges 2-4 |
-| Venonat | Viridian Forest | Land | 2-6 | Any | Early Johto |
-| Dratini | Dragons Den Cavern | Surf | 30-42 | Any | Badges 7-8 |
-| Rookidee | Route29 | Land | 2-6 | Any | Early Johto |
-| Excadrill | Burned Tower B1f | Rock Smash | 27-38 | Any | Badges 5-7 |
-| Froslass | Ice Path B3f | Land | 27-38 | Night | Badges 5-7 |
-| Honedge | Lavender Town | Land | 2-6 | Night | Early Johto |
-| Coalossal | Cinnabar Island | Land | 36-50 | Any | Badges 7-8 |
-| Morpeko (Full Belly Mode) | Route34 | Land | 8-18 | Night | Badges 2-4 |
-| Rotom (Rotom) | Lavender Town | Land | 8-18 | Night | Badges 2-4 |
-| Cyclizar | Victory Road Kanto B1f | Land | 18-28 | Any | Badges 4-6 |
-| Oshawott | Route40 | Surf | 2-6 | Any | Early Johto |
-| Goomy | Mt Silver 2f | Land | 2-6 | Any | Early Johto |
-| Goodra | Mt Mortar 2f | Land | 54-73 | Any | Endgame |
-| Buizel | Route41 | Surf | 2-6 | Any | Early Johto |
-| Floatzel | Lake Of Rage | Surf | 27-38 | Any | Badges 5-7 |
-| Galvantula | National Park Normal | Land | 27-38 | Any | Badges 5-7 |
-| Mawile | Union Cave B1f | Land | 2-6 | Day | Early Johto |
-| Oddish | Route31 | Land | 2-6 | Any | Early Johto |
-| Audino | Route36 | Land | 8-18 | Any | Badges 2-4 |
-| Pyroar | Newsinjoh Hotsprings | Land | 27-38 | Any | Badges 5-7 |
-| Lotad | Whirl Islands 1f | Surf | 2-6 | Any | Early Johto |
-| Nidoking | Rock Tunnel 1f | Rock Smash | 36-50 | Any | Badges 7-8 |
-| Nidoqueen | Rock Tunnel B1f | Rock Smash | 36-50 | Any | Badges 7-8 |
-| Nidoran♀ | Route32 | Land | 2-6 | Any | Early Johto |
-| Nidoran♂ | Route30 | Land | 2-6 | Any | Early Johto |
-| Cramorant | Lake Of Rage | Surf | 8-18 | Any | Badges 2-4 |
-| Nincada | National Park Normal | Land | 2-6 | Any | Early Johto |
-| Taillow | Route29 | Land | 2-6 | Any | Early Johto |
-| Ferrothorn | Burned Tower B1f | Land | 27-38 | Any | Badges 5-7 |
-| Dusknoir | Burned Tower 1f | Land | 36-50 | Night | Badges 7-8 |
-| Roggenrola | Slowpoke Well B1f | Rock Smash | 2-6 | Any | Early Johto |
-| Exeggcute | Route30 | Land | 2-6 | Day | Early Johto |
-| Zubat | Route29 | Land | 2-6 | Any | Early Johto |
-| Stufful | Mt Mortar B1f | Land | 2-6 | Any | Early Johto |
-| Solosis | Ruins Of Alph Outside | Land | 2-6 | Day | Early Johto |
-| Spheal | Route40 | Surf | 2-6 | Any | Early Johto |
-| Octillery | Slowpoke Well B1f | Super Rod | 27-38 | Any | Badges 5-7 |
-| Eelektross | Route41 | Super Rod | 36-50 | Any | Badges 7-8 |
-| Smoliv | Route31 | Land | 2-6 | Any | Early Johto |
-| Glalie | Ice Path B1f | Land | 27-38 | Any | Badges 5-7 |
-| Onix | Union Cave B1f | Rock Smash | 2-6 | Any | Early Johto |
-| Binacle | Route41 | Old Rod | 2-6 | Any | Early Johto |
-| Gloom | Route4 | Land | 27-38 | Any | Badges 5-7 |
-| Cubone | Slowpoke Well B1f | Rock Smash | 2-6 | Any | Early Johto |
-| Popplio | Slowpoke Well B1f | Surf | 2-6 | Any | Early Johto |
-| Seel | Slowpoke Well B1f | Surf | 2-6 | Any | Early Johto |
-| Grookey | Route33 | Land | 2-6 | Any | Early Johto |
-| Chimchar | Burned Tower B1f | Land | 2-6 | Any | Early Johto |
-| Gurdurr | Mt Mortar 1f South | Land | 27-38 | Any | Badges 5-7 |
-| Copperajah | Mt Mortar 1f South | Land | 27-38 | Any | Badges 5-7 |
-| Pangoro | Mt Mortar B1f | Land | 27-38 | Night | Badges 5-7 |
-| Pancham | Mt Mortar 1f North | Land | 2-6 | Any | Early Johto |
-| Basculegion (Male) | Slowpoke Well B1f | Super Rod | 41-52 | Night | Pre-League |
-| Paras | Ilex Forest | Land | 2-6 | Any | Early Johto |
-| Slakoth | Route30 | Land | 2-6 | Any | Early Johto |
-| Fletchling | Route29 | Land | 2-6 | Any | Early Johto |
-| Spewpa | National Park Normal | Land | 27-38 | Any | Badges 5-7 |
-| Phanpy | Union Cave B1f | Rock Smash | 2-6 | Any | Early Johto |
-| Sealeo | Route41 | Surf | 27-38 | Any | Badges 5-7 |
-| Spearow | Route29 | Land | 2-6 | Any | Early Johto |
-| Pikipek | Route29 | Land | 2-6 | Any | Early Johto |
-| Pikachu | Route5 | Land | 27-38 | Any | Badges 5-7 |
-| Capsakid | Route29 | Land | 2-6 | Any | Early Johto |
-| Pumpkaboo | Burned Tower B1f | Land | 2-6 | Night | Early Johto |
-| Oricorio (Baile Style) | Burned Tower 1f | Land | 8-18 | Any | Badges 2-4 |
-| Pawmi | Route34 | Land | 2-6 | Any | Early Johto |
-| Pidove | Route32 | Land | 2-6 | Any | Early Johto |
-| Goldeen | Route41 | Old Rod | 2-6 | Any | Early Johto |
-| Beartic | Ice Path B1f | Land | 27-38 | Any | Badges 5-7 |
-| Cubchoo | Ice Path 1f | Land | 2-6 | Any | Early Johto |
-| Shuppet | Burned Tower 1f | Land | 2-6 | Night | Early Johto |
-| Polteageist | Lavender Town | Land | 27-38 | Night | Badges 5-7 |
-| Pineco | Viridian Forest | Headbutt | 2-6 | Any | Early Johto |
-| Ponyta | Route38 | Land | 18-28 | Day | Badges 4-6 |
-| Porygon | Route30 | Land | 2-6 | Any | Early Johto |
-| Porygon-Z | Route27 | Land | 36-50 | Any | Badges 7-8 |
-| Porygon2 | Route26 | Land | 27-38 | Any | Badges 5-7 |
-| Clobbopus | Route42 | Land | 2-6 | Any | Early Johto |
-| Sprigatito | Route29 | Land | 2-6 | Any | Early Johto |
-| Torchic | Cinnabar Island | Land | 2-6 | Any | Early Johto |
-| Toxapex | Route41 | Surf | 27-38 | Any | Badges 5-7 |
-| Vivillon (Meadow Pattern) | Viridian Forest | Land | 36-50 | Any | Badges 7-8 |
-| Psyduck | Whirl Islands 1f | Surf | 2-6 | Any | Early Johto |
-| Aerodactyl | Burned Tower B1f | Rock Smash | 18-28 | Any | Badges 4-6 |
-| Poliwag | Whirl Islands 1f | Surf | 2-6 | Any | Early Johto |
-| Tyrunt | Mt Silver 2f | Land | 2-6 | Any | Early Johto |
-| Volcarona | Ilex Forest | Land | 41-52 | Any | Pre-League |
-| Larvesta | Viridian Forest | Land | 2-6 | Any | Early Johto |
-| Passimian | Mt Mortar 1f North | Land | 8-18 | Any | Badges 2-4 |
-| Overqwil | Route45 | Land | 27-38 | Night | Badges 5-7 |
-| Geodude | Dark Cave South Side | Rock Smash | 2-6 | Any | Early Johto |
-| Vileplume | Route5 | Land | 36-50 | Any | Badges 7-8 |
-| Slowpoke | Route32 | Surf | 2-6 | Day | Early Johto |
-| Skorupi | Ilex Forest | Land | 2-6 | Any | Early Johto |
-| Rattata | Route32 | Land | 2-6 | Any | Early Johto |
-| Relicanth | Route40 | Good Rod | 8-18 | Any | Badges 2-4 |
-| Remoraid | Route32 | Old Rod | 2-6 | Any | Early Johto |
-| Rhyperior | Tohjo Falls Cavern | Rock Smash | 36-50 | Any | Badges 7-8 |
-| Rhyhorn | Union Cave B1f | Rock Smash | 2-6 | Any | Early Johto |
-| Riolu | Mt Mortar B1f | Land | 24-34 | Any | Badges 5-7 |
-| Rockruff | Slowpoke Well B1f | Rock Smash | 2-6 | Any | Early Johto |
-| Jigglypuff | Route24 | Land | 27-38 | Day | Badges 5-7 |
-| Snorlax | Route3 | Land | 41-52 | Any | Pre-League |
-| Roselia | Route44 | Land | 27-38 | Any | Badges 5-7 |
-| Roserade | Route26 | Land | 36-50 | Any | Badges 7-8 |
-| Drilbur | Dark Cave South Side | Rock Smash | 2-6 | Any | Early Johto |
-| Pidgeot | Route18 | Land | 36-50 | Any | Badges 7-8 |
-| Pidgey | Route29 | Land | 2-6 | Any | Early Johto |
-| Budew | Route29 | Land | 2-6 | Any | Early Johto |
-| Ribombee | National Park Normal | Land | 27-38 | Day | Badges 5-7 |
-| Sandshrew | Union Cave B1f | Rock Smash | 2-6 | Any | Early Johto |
-| Charmander | Newsinjoh Hotsprings | Land | 2-6 | Any | Early Johto |
-| Toxtricity (Amped Form) | Route34 | Land | 27-38 | Any | Badges 5-7 |
-| Shellos (West Sea) | Slowpoke Well B1f | Surf | 2-6 | Any | Early Johto |
-| Tangela | Route39 | Land | 8-18 | Any | Badges 2-4 |
-| Golisopod | Whirl Islands 1f | Super Rod | 41-52 | Any | Pre-League |
-| Pawniard | Slowpoke Well B1f | Land | 2-6 | Night | Early Johto |
-| Bisharp | Burned Tower 1f | Land | 27-38 | Night | Badges 5-7 |
-| Pinsir | Ilex Forest | Land | 18-28 | Any | Badges 4-6 |
-| Heracross | Ilex Forest | Headbutt | 18-28 | Any | Badges 4-6 |
-| Centiskorch | National Park Normal | Land | 41-52 | Any | Pre-League |
-| Gligar | Union Cave B1f | Rock Smash | 8-18 | Any | Badges 2-4 |
-| Gliscor | Mt Mortar B1f | Rock Smash | 27-38 | Any | Badges 5-7 |
-| Scovillain | Newsinjoh Hotsprings | Land | 27-38 | Any | Badges 5-7 |
-| Gothita | Route35 | Land | 2-6 | Day | Early Johto |
-| Nacli | Slowpoke Well B1f | Rock Smash | 2-6 | Any | Early Johto |
-| Avalugg | Mt Silver Snow | Land | 27-38 | Any | Badges 5-7 |
-| Mienshao | Route42 | Land | 27-38 | Any | Badges 5-7 |
-| Sharpedo | Route32 | Super Rod | 27-38 | Night | Badges 5-7 |
-| Gothitelle | Cerulean Cave 1f | Land | 36-50 | Day | Badges 7-8 |
-| Dhelmise | Route32 | Surf | 18-28 | Night | Badges 4-6 |
-| Duskull | Lavender Town | Land | 2-6 | Night | Early Johto |
-| Koffing | Route32 | Land | 2-6 | Any | Early Johto |
-| Deino | Dragons Den Cavern | Land | 2-6 | Night | Early Johto |
-| Noibat | Mt Mortar 2f | Land | 2-6 | Any | Early Johto |
-| Vanillite | Seafoam Islands 1f | Land | 2-6 | Any | Early Johto |
-| Vanilluxe | Ice Path B1f | Land | 36-50 | Any | Badges 7-8 |
-| Vanillish | Ice Path 1f | Land | 27-38 | Any | Badges 5-7 |
-| Hatterene | Route27 | Land | 36-50 | Day | Badges 7-8 |
-| Wimpod | Lake Of Rage | Old Rod | 2-6 | Any | Early Johto |
-| Haunter | Mt Moon Cave | Land | 27-38 | Night | Badges 5-7 |
-| Morelull | Route33 | Land | 2-6 | Day | Early Johto |
-| Snorunt | Ice Path 1f | Land | 2-6 | Any | Early Johto |
-| Staryu | Whirl Islands 1f | Old Rod | 2-6 | Any | Early Johto |
-| Joltik | Ilex Forest | Land | 2-6 | Any | Early Johto |
-| Tsareena | Route42 | Land | 36-50 | Any | Badges 7-8 |
-| Palafin (Zero Form) | Route41 | Super Rod | 27-38 | Any | Badges 5-7 |
-| Reuniclus | Route24 | Land | 36-50 | Day | Badges 7-8 |
-| Grimer | Route31 | Land | 2-6 | Any | Early Johto |
-| Squawkabilly (Green Plumage) | Route29 | Land | 2-6 | Any | Early Johto |
-| Araquanid | Slowpoke Well B1f | Surf | 27-38 | Any | Badges 5-7 |
-| Ralts | Route33 | Land | 2-6 | Day | Early Johto |
-| Wiglett | Whirl Islands 1f | Old Rod | 2-6 | Any | Early Johto |
-| Diglett | Union Cave 1f | Rock Smash | 2-6 | Any | Early Johto |
-| Tauros | Route38 | Land | 18-28 | Day | Badges 4-6 |
-| Teddiursa | Route29 | Land | 2-6 | Any | Early Johto |
-| Sableye | Burned Tower B1f | Land | 2-6 | Night | Early Johto |
-| Tentacool | Whirl Islands 1f | Old Rod | 2-6 | Any | Early Johto |
-| Tentacruel | Route19 | Super Rod | 27-38 | Any | Badges 5-7 |
-| Dusclops | Tin Tower 3f | Land | 27-38 | Night | Badges 5-7 |
-| Beldum | Union Cave 1f | Land | 2-6 | Day | Early Johto |
-| Toedscool | Slowpoke Well B1f | Rock Smash | 2-6 | Any | Early Johto |
-| Toedscruel | Burned Tower 1f | Rock Smash | 27-38 | Any | Badges 5-7 |
-| Tadbulb | Slowpoke Well B1f | Surf | 2-6 | Any | Early Johto |
-| Poliwhirl | Route19 | Surf | 27-38 | Any | Badges 5-7 |
-| Sinistea | Burned Tower B1f | Land | 2-6 | Night | Early Johto |
-| Mudbray | Dark Cave South Side | Rock Smash | 2-6 | Any | Early Johto |
-| Klink | Union Cave B1f | Land | 2-6 | Any | Early Johto |
-| Piplup | Route40 | Surf | 2-6 | Any | Early Johto |
-| Tarountula | National Park Normal | Land | 2-6 | Any | Early Johto |
-| Togedemaru | Route34 | Land | 8-18 | Any | Badges 2-4 |
-| Drednaw | Whirl Islands 1f | Surf | 27-38 | Any | Badges 5-7 |
-| Turtwig | Route30 | Land | 2-6 | Any | Early Johto |
-| Toxel | Saffron City | Land | 2-6 | Any | Early Johto |
-| Haxorus | Mt Silver 2f | Land | 36-50 | Any | Badges 7-8 |
-| Palossand | Burned Tower B1f | Land | 27-38 | Night | Badges 5-7 |
-| Wugtrio | Route32 | Super Rod | 27-38 | Any | Badges 5-7 |
-| Dugtrio | Rock Tunnel B1f | Rock Smash | 27-38 | Any | Badges 5-7 |
-| Hydreigon | Victory Road Kanto B1f | Land | 54-73 | Night | Endgame |
-| Tympole | Route32 | Surf | 2-6 | Any | Early Johto |
-| Gastrodon (West Sea) | Route40 | Surf | 27-38 | Any | Badges 5-7 |
-| Salandit | Burned Tower 1f | Land | 2-6 | Any | Early Johto |
-| Foongus | Route33 | Land | 2-6 | Any | Early Johto |
-| Swablu | Route31 | Land | 2-6 | Any | Early Johto |
-| Tyranitar | Mt Silver 3f | Land | 54-73 | Any | Endgame |
-| Ursaluna | Mt Silver 2f | Rock Smash | 54-73 | Any | Endgame |
-| Ursaring | Route42 | Land | 27-38 | Any | Badges 5-7 |
-| Mandibuzz | Route27 | Land | 27-38 | Night | Badges 5-7 |
-| Skrelp | Whirl Islands 1f | Surf | 2-6 | Any | Early Johto |
-| Venipede | Viridian Forest | Land | 2-6 | Any | Early Johto |
-| Applin | Mt Silver 2f | Land | 2-6 | Any | Early Johto |
-| Vibrava | Dragons Den Cavern | Land | 27-38 | Any | Badges 5-7 |
-| Vigoroth | Route27 | Land | 27-38 | Any | Badges 5-7 |
-| Snivy | Route33 | Land | 2-6 | Any | Early Johto |
-| Magcargo | Cinnabar Island | Land | 27-38 | Any | Badges 5-7 |
-| Voltorb | Saffron City | Land | 2-6 | Any | Early Johto |
-| Yamper | Route10 | Land | 2-6 | Any | Early Johto |
-| Mareanie | Route40 | Surf | 2-6 | Any | Early Johto |
-| Vullaby | Route32 | Land | 2-6 | Night | Early Johto |
-| Varoom | Dark Cave South Side | Land | 2-6 | Any | Early Johto |
-| Revavroom | Burned Tower B1f | Land | 27-38 | Any | Badges 5-7 |
-| Carkol | Burned Tower B1f | Land | 27-38 | Any | Badges 5-7 |
-| Wailmer | Slowpoke Well B1f | Old Rod | 2-6 | Any | Early Johto |
-| Wailord | Route40 | Super Rod | 27-38 | Any | Badges 5-7 |
-| Mareep | Route34 | Land | 8-18 | Day | Badges 2-4 |
-| Indeedee (Male) | Cerulean Cave 1f | Land | 8-18 | Day | Badges 2-4 |
-| Wattrel | Saffron City | Land | 2-6 | Any | Early Johto |
-| Unown | Ruins Of Alph Outside | Land | 2-6 | Day | Early Johto |
-| Blitzle | Route35 | Land | 2-6 | Any | Early Johto |
-| Zebstrika | Route10 | Land | 27-38 | Any | Badges 5-7 |
-| Zoroark | Route42 | Land | 27-38 | Night | Badges 5-7 |
-| Zorua | Route33 | Land | 2-6 | Night | Early Johto |
-
-## Headbutt
-
-All four tables use **30 / 30 / 30 / 10**.
-
-| Area | Lv. | Pokémon (30 / 30 / 30 / 10) |
-|---|---:|---|
-| Ilex Forest | 24-27 | Pineco · Nincada · Paras · Heracross |
-| National Park Bug Contest | 26-29 | Helioptile · Toedscool · Rufflet · Pumpkaboo |
-| National Park Normal | 26-29 | Snom · Swablu · Foongus · Capsakid |
-| Viridian Forest | 70-84 | Scyther · Centiskorch · Kleavor · Vikavolt |
-
-## Safari
-
-Each sector keeps separate four-species pools. An admission starts at pool A and advances after each encounter. Johto rotates **A → B → C → D → E → A**; Kanto rotates **A → B → C → D → E → F → A**. Every pool uses **30 / 30 / 30 / 10**.
-
-### Johto
-
-| Sector | Pool | Lv. | Pokémon (30 / 30 / 30 / 10) |
-|---|---|---:|---|
-| Safari Zone Top Left | A | 37-40 | Beedrill · Deerling (Spring Form) · Dustox · Wigglytuff |
-| Safari Zone Top Left | B | 37-40 | Beautifly · Butterfree · Ledyba · Yanma |
-| Safari Zone Top Left | C | 37-40 | Combee · Hoppip · Igglybuff · Tropius |
-| Safari Zone Top Left | D | 37-40 | Illumise · Karrablast · Mime Jr. · Volbeat |
-| Safari Zone Top Left | E | 37-40 | Burmy (Plant Cloak) · Kricketot · Shelmet · Maractus |
-| Safari Zone Top Mid | A | 38-41 | Dedenne · Natu · Woobat · Girafarig |
-| Safari Zone Top Mid | B | 38-41 | Fidough · Snubbull · Spritzee · Swirlix |
-| Safari Zone Top Mid | C | 38-41 | Cleffa · Milcery · Togepi · Espurr |
-| Safari Zone Top Mid | D | 38-41 | Drowzee · Munna · Spoink · Elgyem |
-| Safari Zone Top Mid | E | 38-41 | Lillipup · Wooloo · Wynaut · Chingling |
-| Safari Zone Low Mid | A | 39-42 | Chatot · Doduo · Farfetch'd · Stunfisk |
-| Safari Zone Low Mid | B | 39-42 | Emolga · Furfrou (Natural Form) · Hoothoot · Komala |
-| Safari Zone Low Mid | C | 39-42 | Castform · Kecleon · Zangoose · Stantler |
-| Safari Zone Low Mid | D | 39-42 | Aipom · Lickitung · Spinda · Dunsparce |
-| Safari Zone Low Mid | E | 39-42 | Glameow · Minccino · Skwovet · Buneary |
-| Safari Zone Top Right | A | 39-42 | Clamperl · Pyukumuku · Qwilfish · Alomomola |
-| Safari Zone Top Right | B | 39-42 | Ducklett · Panpour · Skiddo · Carnivine |
-| Safari Zone Top Right | C | 39-42 | Chikorita · Pansage · Shroodle · Cacnea |
-| Safari Zone Top Right | D | 39-42 | Gossifleur · Seedot · Sunkern · Cherubi |
-| Safari Zone Top Right | E | 39-42 | Minun · Pachirisu · Plusle · Pincurchin |
-| Safari Zone Low Left | A | 40-43 | Lunatone · Nosepass · Solrock · Klawf |
-| Safari Zone Low Left | B | 40-43 | Bonsly · Klefki · Pansear · Orthworm |
-| Safari Zone Low Left | C | 40-43 | Flittle · Patrat · Skitty · Bronzor |
-| Safari Zone Low Left | D | 40-43 | Bidoof · Smeargle · Yungoos · Lechonk |
-| Safari Zone Low Left | E | 40-43 | Bunnelby · Happiny · Whismur · Zigzagoon |
-| Safari Zone Low Right | A | 41-44 | Delibird · Frillish · Smoochum · Maschiff |
-| Safari Zone Low Right | B | 41-44 | Bramblin · Nickit · Purrloin · Inkay |
-| Safari Zone Low Right | C | 41-44 | Greavard · Poochyena · Yamask · Drifloon |
-| Safari Zone Low Right | D | 41-44 | Pichu · Poipole · Stunky · Seviper |
-| Safari Zone Low Right | E | 41-44 | Gulpin · Makuhita · Trubbish · Falinks |
-
-### Kanto
-
-| Sector | Pool | Lv. | Pokémon (30 / 30 / 30 / 10) |
-|---|---|---:|---|
-| Fuchsia City Safari Zone Beach | A | 68-72 | Poliwrath · Primarina · Quaquaval · Swampert |
-| Fuchsia City Safari Zone Beach | B | 68-72 | Greninja · Inteleon · Kingdra · Walking Wake |
-| Fuchsia City Safari Zone Beach | C | 68-72 | Blastoise · Empoleon · Samurott · Feraligatr |
-| Fuchsia City Safari Zone Beach | D | 68-72 | Charizard · Ludicolo · Politoed · Slither Wing |
-| Fuchsia City Safari Zone Beach | E | 68-72 | Buzzwole · Iron Bundle · Pheromosa · Iron Valiant |
-| Fuchsia City Safari Zone Beach | F | 68-72 | Clefable · Miltank · Stoutland · Slaking |
-| Fuchsia City Safari Zone Cave | A | 71-75 | Iron Crown · Roaring Moon · Spiritomb · Iron Boulder |
-| Fuchsia City Safari Zone Cave | B | 71-75 | Gengar · Nihilego · Obstagoon · Guzzlord |
-| Fuchsia City Safari Zone Cave | C | 71-75 | Bellossom · Meganium · Shiftry · Iron Jugulis |
-| Fuchsia City Safari Zone Cave | D | 71-75 | Alakazam · Celesteela · Sigilyph · Flutter Mane |
-| Fuchsia City Safari Zone Cave | E | 71-75 | Exploud · Machamp · Mr. Rime · Crobat |
-| Fuchsia City Safari Zone Cave | F | 71-75 | Ampharos · Durant · Raichu · Xurkitree |
-| Fuchsia City Safari Zone Mountain | A | 72-76 | Flygon · Iron Treads · Stakataka · Gouging Fire |
-| Fuchsia City Safari Zone Mountain | B | 72-76 | Great Tusk · Infernape · Sandy Shocks · Iron Thorns |
-| Fuchsia City Safari Zone Mountain | C | 72-76 | Blaziken · Carbink · Emboar · Raging Bolt |
-| Fuchsia City Safari Zone Mountain | D | 72-76 | Blacephalon · Durant · Typhlosion · Iron Moth |
-| Fuchsia City Safari Zone Mountain | E | 72-76 | Cinderace · Incineroar · Skeledirge · Delphox |
-| Fuchsia City Safari Zone Mountain | F | 72-76 | Druddigon · Heatmor · Pawmot · Iron Hands |
-| Fuchsia City Safari Zone Brush | A | 69-73 | Arboliva · Leavanny · Victreebel · Venusaur |
-| Fuchsia City Safari Zone Brush | B | 69-73 | Jumpluff · Orbeetle · Scolipede · Iron Leaves |
-| Fuchsia City Safari Zone Brush | C | 69-73 | Gardevoir · Kartana · Togekiss · Scream Tail |
-| Fuchsia City Safari Zone Brush | D | 69-73 | Meowscarada · Rillaboom · Sceptile · Brute Bonnet |
-| Fuchsia City Safari Zone Brush | E | 69-73 | Chesnaught · Serperior · Torterra · Decidueye |
+| Area | Method | Time | Lv. | Slots / rates |
+|---|---|---|---:|---|
+| Blackthorn City | Fishing | Any | 59–62 | Seadra 30% · Whiscash 30% · Crawdaunt 30% · Dratini 10% |
+| Blackthorn City | Land | Any | 59–62 | Vileplume 30% · Snorlax 30% · Electivire 30% · Kingambit 10% |
+| Blackthorn City | Surf | Any | 59–62 | Seadra 30% · Dragonair 30% · Gyarados 30% · Milotic 10% |
+| Burned Tower 1F | Land | Day | 33–36 | Cetoddle 30% · Torkoal 30% · Oricorio (Baile Style) 30% · Cyndaquil 10% |
+| Burned Tower 1F | Land | Night | 33–36 | Bombirdier 30% · Salandit 30% · Phantump 30% · Torchic 10% |
+| Burned Tower B1F | Land | Day | 34–37 | Indeedee (Male) 30% · Oranguru 30% · Rattata 30% · Chimchar 10% |
+| Burned Tower B1F | Land | Night | 34–37 | Mimikyu (Disguised Form) 30% · Skorupi 30% · Honedge 30% · Litten 10% |
+| Celadon City | Fishing | Any | 70–84 | Tentacruel 30% · Golisopod 30% · Basculegion (Male) 30% · Walrein 10% |
+| Celadon City | Land | Any | 70–84 | Reuniclus 30% · Blissey 30% · Florges (Red Flower) 30% · Ursaluna 10% |
+| Celadon City | Surf | Any | 70–84 | Wailord 30% · Golisopod 30% · Basculegion (Male) 30% · Walrein 10% |
+| Cerulean Cave 1F | Fishing | Day | 85–95 | Tympole 30% · Binacle 30% · Drednaw 30% · Lapras 10% |
+| Cerulean Cave 1F | Land | Day | 85–95 | Salamence 30% · Hydreigon 30% · Dragapult 30% · Goodra 10% |
+| Cerulean Cave 1F | Rock Smash | Day | 85–95 | Donphan 30% · Gigalith 30% · Conkeldurr 30% · Aggron 10% |
+| Cerulean Cave 1F | Surf | Day | 85–95 | Skrelp 30% · Mareanie 30% · Clauncher 30% · Tentacruel 10% |
+| Cerulean Cave B1F | Fishing | Day | 85–95 | Chewtle 30% · Finizen 30% · Tympole 30% · Lapras 10% |
+| Cerulean Cave B1F | Land | Day | 85–95 | Dusknoir 30% · Haxorus 30% · Ursaluna 30% · Baxcalibur 10% |
+| Cerulean Cave B1F | Rock Smash | Day | 85–95 | Copperajah 30% · Bewear 30% · Mudsdale 30% · Vikavolt 10% |
+| Cerulean Cave B1F | Surf | Day | 85–95 | Lumineon 30% · Sharpedo 30% · Relicanth 30% · Tentacruel 10% |
+| Cerulean Cave B2F | Fishing | Day | 85–95 | Pelipper 30% · Palafin (Zero Form) 30% · Drednaw 30% · Lapras 10% |
+| Cerulean Cave B2F | Land | Day | 85–95 | Chandelure 30% · Metagross 30% · Salamence 30% · Dragonite 10% |
+| Cerulean Cave B2F | Rock Smash | Day | 85–95 | Hippowdon 30% · Kleavor 30% · Garganacl 30% · Klinklang 10% |
+| Cerulean Cave B2F | Surf | Day | 85–95 | Corsola 30% · Araquanid 30% · Wugtrio 30% · Tatsugiri Curly 10% |
+| Cerulean City | Fishing | Any | 70–84 | Floatzel 30% · Clawitzer 30% · Barbaracle 30% · Seismitoad 10% |
+| Cerulean City | Surf | Any | 70–84 | Toxapex 30% · Barraskewda 30% · Tentacruel 30% · Walrein 10% |
+| Cherrygrove City | Fishing | Any | 3–6 | Magikarp 30% · Goldeen 30% · Barboach 30% · Feebas 10% |
+| Cherrygrove City | Land | Any | 3–6 | Tadbulb 30% · Voltorb 30% · Ditto 30% · Zubat 10% |
+| Cherrygrove City | Surf | Any | 3–6 | Magikarp 30% · Goldeen 30% · Wooper 30% · Poliwag 10% |
+| Cianwood City | Fishing | Any | 41–44 | Clauncher 30% · Relicanth 30% · Skrelp 30% · Froakie 10% |
+| Cianwood City | Land | Any | 41–44 | Gothita 30% · Litleo 30% · Gloom 30% · Eelektrik 10% |
+| Cianwood City | Surf | Any | 41–44 | Tentacool 30% · Wingull 30% · Clauncher 30% · Popplio 10% |
+| Cinnabar Island | Fishing | Any | 70–84 | Wailord 30% · Barbaracle 30% · Basculegion (Male) 30% · Golisopod 10% |
+| Cinnabar Island | Land | Any | 70–84 | Hippowdon 30% · Noivern 30% · Aggron 30% · Rhyperior 10% |
+| Cinnabar Island | Surf | Any | 70–84 | Floatzel 30% · Toxapex 30% · Clawitzer 30% · Seismitoad 10% |
+| Cliff Edge Cave | Land | Day | 46–49 | Gimmighoul Chest 30% · Axew 30% · Misdreavus 30% · Golett 10% |
+| Cliff Edge Cave | Rock Smash | Day | 46–49 | Sawk 30% · Silcoon 30% · Timburr 30% · Sandygast 10% |
+| Cliff Edge Gate | Fishing | Day | 45–47 | Corsola 30% · Sealeo 30% · Lumineon 30% · Cramorant 10% |
+| Cliff Edge Gate | Surf | Day | 45–47 | Palpitoad 30% · Araquanid 30% · Wugtrio 30% · Palafin (Zero Form) 10% |
+| Dark Cave North Side | Fishing | Any | 64–66 | Azumarill 30% · Tatsugiri Curly 30% · Milotic 30% · Gyarados 10% |
+| Dark Cave North Side | Land | Any | 64–66 | Lucario 30% · Gholdengo 30% · Mamoswine 30% · Kingambit 10% |
+| Dark Cave North Side | Rock Smash | Any | 64–66 | Vivillon (Meadow Pattern) 30% · Lucario 30% · Volcarona 30% · Kingambit 10% |
+| Dark Cave North Side | Surf | Any | 64–66 | Azumarill 30% · Lapras 30% · Milotic 30% · Gyarados 10% |
+| Dark Cave South Side | Fishing | Day | 7–11 | Magikarp 30% · Barboach 30% · Corphish 30% · Chinchou 10% |
+| Dark Cave South Side | Land | Day | 7–11 | Zubat 30% · Geodude 30% · Roggenrola 30% · Noibat 10% |
+| Dark Cave South Side | Rock Smash | Day | 7–11 | Caterpie 30% · Scatterbug 30% · Paras 30% · Machop 10% |
+| Dark Cave South Side | Surf | Day | 7–11 | Wooper 30% · Barboach 30% · Poliwag 30% · Chinchou 10% |
+| Digletts Cave Tunnel | Fishing | Any | 70–84 | Barraskewda 30% · Tentacruel 30% · Golisopod 30% · Walrein 10% |
+| Digletts Cave Tunnel | Land | Any | 70–84 | Mismagius 30% · Chandelure 30% · Magnezone 30% · Hydrapple 10% |
+| Digletts Cave Tunnel | Rock Smash | Any | 70–84 | Centiskorch 30% · Gliscor 30% · Garganacl 30% · Annihilape 10% |
+| Digletts Cave Tunnel | Surf | Any | 70–84 | Wailord 30% · Clawitzer 30% · Barbaracle 30% · Basculegion (Male) 10% |
+| Dragons Den Cavern | Fishing | Any | 60–63 | Dratini 30% · Azumarill 30% · Milotic 30% · Gyarados 10% |
+| Dragons Den Cavern | Surf | Any | 60–63 | Dracovish 30% · Dondozo 30% · Milotic 30% · Gyarados 10% |
+| Ecruteak City | Fishing | Any | 34–37 | Feebas 30% · Relicanth 30% · Staryu 30% · Sobble 10% |
+| Ecruteak City | Land | Any | 34–37 | Comfey 30% · Solosis 30% · Porygon 30% · Jynx 10% |
+| Ecruteak City | Surf | Any | 34–37 | Feebas 30% · Staryu 30% · Finneon 30% · Quaxly 10% |
+| Fuchsia City | Fishing | Any | 70–84 | Floatzel 30% · Toxapex 30% · Barraskewda 30% · Seismitoad 10% |
+| Fuchsia City | Land | Any | 70–84 | Wyrdeer 30% · Glimmora 30% · Porygon-Z 30% · Florges (Red Flower) 10% |
+| Fuchsia City | Surf | Any | 70–84 | Tentacruel 30% · Golisopod 30% · Basculegion (Male) 30% · Walrein 10% |
+| Ice Path 1F | Land | Any | 58–60 | Piloswine 30% · Froslass 30% · Beartic 30% · Frigibax 10% |
+| Ice Path B1F | Land | Any | 58–61 | Snover 30% · Glalie 30% · Sneasel 30% · Weavile 10% |
+| Ice Path B2F | Land | Any | 59–61 | Piloswine 30% · Cetitan 30% · Cryogonal 30% · Mamoswine 10% |
+| Ice Path B3F | Land | Any | 59–62 | Frigibax 30% · Vanillish 30% · Frosmoth 30% · Baxcalibur 10% |
+| Ice Path B4F | Land | Any | 60–62 | Froslass 30% · Mamoswine 30% · Glalie 30% · Baxcalibur 10% |
+| Ilex Forest | Fishing | Any | 24–27 | Skrelp 30% · Finneon 30% · Omanyte 30% · Mantyke 10% |
+| Ilex Forest | Land | Day | 24–27 | Larvesta 30% · Weedle 30% · Sewaddle 30% · Bulbasaur 10% |
+| Ilex Forest | Land | Night | 24–27 | Spinarak 30% · Venonat 30% · Joltik 30% · Pinsir 10% |
+| Ilex Forest | Surf | Any | 24–27 | Mareanie 30% · Tympole 30% · Corphish 30% · Squirtle 10% |
+| Lake Of Rage | Fishing | Day | 53–55 | Gastrodon (West Sea) 30% · Octillery 30% · Drednaw 30% · Dracovish 10% |
+| Lake Of Rage | Surf | Day | 53–55 | Tatsugiri Curly 30% · Gastrodon (West Sea) 30% · Octillery 30% · Drednaw 10% |
+| Mt Moon Cave | Fishing | Any | 70–84 | Wailord 30% · Clawitzer 30% · Barbaracle 30% · Seismitoad 10% |
+| Mt Moon Cave | Land | Any | 70–84 | Zoroark 30% · Dipplin 30% · Dusknoir 30% · Ursaluna 10% |
+| Mt Moon Cave | Rock Smash | Any | 70–84 | Ferrothorn 30% · Coalossal 30% · Aegislash (Shield Forme) 30% · Klinklang 10% |
+| Mt Moon Cave | Surf | Any | 70–84 | Floatzel 30% · Toxapex 30% · Barraskewda 30% · Tentacruel 10% |
+| Mt Mortar 1F North | Fishing | Any | 52–55 | Gastrodon (West Sea) 30% · Octillery 30% · Drednaw 30% · Dondozo 10% |
+| Mt Mortar 1F North | Land | Any | 52–55 | Cyclizar 30% · Turtonator 30% · Aerodactyl 30% · Sprigatito 10% |
+| Mt Mortar 1F North | Rock Smash | Any | 52–55 | Galvantula 30% · Golurk 30% · Crustle 30% · Frosmoth 10% |
+| Mt Mortar 1F North | Surf | Any | 52–55 | Gastrodon (West Sea) 30% · Octillery 30% · Drednaw 30% · Dracovish 10% |
+| Mt Mortar 1F South | Fishing | Any | 52–54 | Tatsugiri Curly 30% · Octillery 30% · Drednaw 30% · Dracovish 10% |
+| Mt Mortar 1F South | Land | Any | 52–54 | Flamigo 30% · Gastrodon (West Sea) 30% · Palossand 30% · Fuecoco 10% |
+| Mt Mortar 1F South | Rock Smash | Any | 52–54 | Pinsir 30% · Crabominable 30% · Palossand 30% · Grapploct 10% |
+| Mt Mortar 1F South | Surf | Any | 52–54 | Spheal 30% · Shellos (West Sea) 30% · Drednaw 30% · Dondozo 10% |
+| Mt Mortar 2F | Fishing | Any | 53–55 | Tympole 30% · Drednaw 30% · Octillery 30% · Tatsugiri Curly 10% |
+| Mt Mortar 2F | Land | Any | 53–55 | Shuckle 30% · Hawlucha 30% · Golurk 30% · Crustle 10% |
+| Mt Mortar 2F | Rock Smash | Any | 53–55 | Masquerain 30% · Lairon 30% · Frosmoth 30% · Rabsca 10% |
+| Mt Mortar 2F | Surf | Any | 53–55 | Skrelp 30% · Mareanie 30% · Binacle 30% · Dracovish 10% |
+| Mt Mortar B1F | Fishing | Any | 53–55 | Chewtle 30% · Tympole 30% · Drednaw 30% · Octillery 10% |
+| Mt Mortar B1F | Land | Any | 53–55 | Riolu 30% · Heracross 30% · Drampa 30% · Crabominable 10% |
+| Mt Mortar B1F | Rock Smash | Any | 53–55 | Vibrava 30% · Camerupt 30% · Galvantula 30% · Rabsca 10% |
+| Mt Mortar B1F | Surf | Any | 53–55 | Finizen 30% · Gastrodon (West Sea) 30% · Drednaw 30% · Dracovish 10% |
+| Mt Silver 1F Item Room | Fishing | Any | 73–77 | Tympole 30% · Shellos (West Sea) 30% · Barboach 30% · Chewtle 10% |
+| Mt Silver 1F Item Room | Land | Any | 73–77 | Tyranitar 30% · Metagross 30% · Goodra 30% · Baxcalibur 10% |
+| Mt Silver 1F Item Room | Rock Smash | Any | 73–77 | Tyranitar 30% · Archaludon 30% · Metagross 30% · Kommo-o 10% |
+| Mt Silver 1F Item Room | Surf | Any | 73–77 | Skrelp 30% · Mareanie 30% · Binacle 30% · Cramorant 10% |
+| Mt Silver 1F Moltres Room | Fishing | Any | 74–78 | Chewtle 30% · Finizen 30% · Tympole 30% · Bruxish 10% |
+| Mt Silver 1F Moltres Room | Land | Any | 74–78 | Tyranitar 30% · Archaludon 30% · Goodra 30% · Baxcalibur 10% |
+| Mt Silver 1F Moltres Room | Rock Smash | Any | 74–78 | Volcarona 30% · Tyranitar 30% · Archaludon 30% · Metagross 10% |
+| Mt Silver 1F Moltres Room | Surf | Any | 74–78 | Crawdaunt 30% · Seadra 30% · Wugtrio 30% · Whiscash 10% |
+| Mt Silver 1F Waterfall Room | Fishing | Any | 74–78 | Wailmer 30% · Sealeo 30% · Lumineon 30% · Sharpedo 10% |
+| Mt Silver 1F Waterfall Room | Land | Any | 74–78 | Hydreigon 30% · Goodra 30% · Dragapult 30% · Baxcalibur 10% |
+| Mt Silver 1F Waterfall Room | Rock Smash | Any | 74–78 | Tyranitar 30% · Metagross 30% · Garchomp 30% · Kommo-o 10% |
+| Mt Silver 1F Waterfall Room | Surf | Any | 74–78 | Palpitoad 30% · Araquanid 30% · Gastrodon (West Sea) 30% · Palafin (Zero Form) 10% |
+| Mt Silver 2F | Fishing | Day | 77–81 | Marill 30% · Corsola 30% · Poliwhirl 30% · Azumarill 10% |
+| Mt Silver 2F | Land | Day | 77–81 | Dragonite 30% · Salamence 30% · Hydreigon 30% · Garchomp 10% |
+| Mt Silver 2F | Rock Smash | Day | 77–81 | Volcarona 30% · Tyranitar 30% · Archaludon 30% · Metagross 10% |
+| Mt Silver 2F | Surf | Day | 77–81 | Carvanha 30% · Chewtle 30% · Veluza 30% · Lanturn 10% |
+| Mt Silver 3F | Fishing | Day | 80–84 | Spheal 30% · Barboach 30% · Corphish 30% · Luvdisc 10% |
+| Mt Silver 3F | Land | Day | 80–84 | Haxorus 30% · Goodra 30% · Dragapult 30% · Baxcalibur 10% |
+| Mt Silver 3F | Rock Smash | Day | 80–84 | Tyranitar 30% · Archaludon 30% · Garchomp 30% · Kommo-o 10% |
+| Mt Silver 3F | Surf | Day | 80–84 | Shellos (West Sea) 30% · Buizel 30% · Finneon 30% · Cramorant 10% |
+| Mt Silver Mountain Side | Fishing | Any | 76–80 | Tympole 30% · Barboach 30% · Tirtouga 30% · Mantyke 10% |
+| Mt Silver Mountain Side | Land | Any | 76–80 | Dragonite 30% · Salamence 30% · Hydreigon 30% · Goodra 10% |
+| Mt Silver Mountain Side | Rock Smash | Any | 76–80 | Scyther 30% · Pinsir 30% · Volcarona 30% · Metagross 10% |
+| Mt Silver Mountain Side | Surf | Any | 76–80 | Skrelp 30% · Clauncher 30% · Binacle 30% · Cramorant 10% |
+| Mt Silver Outside | Fishing | Any | 72–76 | Mareanie 30% · Tympole 30% · Barboach 30% · Bruxish 10% |
+| Mt Silver Outside | Land | Any | 72–76 | Larvitar 30% · Tyranitar 30% · Dragapult 30% · Baxcalibur 10% |
+| Mt Silver Outside | Rock Smash | Any | 72–76 | Ribombee 30% · Archaludon 30% · Garchomp 30% · Kommo-o 10% |
+| Mt Silver Outside | Surf | Any | 72–76 | Chewtle 30% · Finizen 30% · Gastrodon (West Sea) 30% · Cramorant 10% |
+| Mt Silver Snow | Fishing | Any | 78–82 | Crawdaunt 30% · Seadra 30% · Pelipper 30% · Whiscash 10% |
+| Mt Silver Snow | Land | Any | 78–82 | Glalie 30% · Crabominable 30% · Mamoswine 30% · Baxcalibur 10% |
+| Mt Silver Snow | Surf | Any | 78–82 | Omanyte 30% · Kabuto 30% · Wugtrio 30% · Sharpedo 10% |
+| National Park Bug Contest | Land | Day | 26–29 | Pancham 30% · Pawniard 30% · Lileep 30% · Turtwig 10% |
+| National Park Bug Contest | Land | Night | 26–29 | Ferroseed 30% · Dwebble 30% · Glimmet 30% · Anorith 10% |
+| National Park Normal | Land | Day | 26–29 | Nymble 30% · Cutiefly 30% · Grubbin 30% · Treecko 10% |
+| National Park Normal | Land | Night | 26–29 | Venonat 30% · Joltik 30% · Sizzlipede 30% · Pinsir 10% |
+| New Bark Town | Fishing | Any | 2–5 | Magikarp 30% · Goldeen 30% · Barboach 30% · Corphish 10% |
+| New Bark Town | Land | Any | 2–5 | Pidove 30% · Smoliv 30% · Hatenna 30% · Tynamo 10% |
+| New Bark Town | Surf | Any | 2–5 | Magikarp 30% · Wooper 30% · Poliwag 30% · Surskit 10% |
+| Olivine City | Fishing | Any | 40–43 | Tentacool 30% · Relicanth 30% · Shellder 30% · Wattrel 10% |
+| Olivine City | Land | Any | 40–43 | Blitzle 30% · Munchlax 30% · Vigoroth 30% · Magnemite 10% |
+| Olivine City | Surf | Any | 40–43 | Wingull 30% · Tentacool 30% · Chinchou 30% · Horsea 10% |
+| Olivine City Port Outside | Fishing | Any | 40–44 | Basculin (Red-Striped Form) 30% · Poliwhirl 30% · Seadra 30% · Palafin (Zero Form) 10% |
+| Olivine City Port Outside | Land | Any | 40–44 | Bergmite 30% · Ponyta 30% · Magcargo 30% · Scorbunny 10% |
+| Olivine City Port Outside | Surf | Any | 40–44 | Omanyte 30% · Kabuto 30% · Corsola 30% · Lanturn 10% |
+| Pallet Town | Fishing | Day | 70–84 | Wailord 30% · Golisopod 30% · Basculegion (Male) 30% · Walrein 10% |
+| Pallet Town | Surf | Day | 70–84 | Floatzel 30% · Clawitzer 30% · Barbaracle 30% · Seismitoad 10% |
+| Rock Tunnel 1F | Fishing | Any | 70–84 | Toxapex 30% · Barraskewda 30% · Tentacruel 30% · Walrein 10% |
+| Rock Tunnel 1F | Land | Any | 70–84 | Houndoom 30% · Gallade 30% · Chandelure 30% · Dusknoir 10% |
+| Rock Tunnel 1F | Rock Smash | Any | 70–84 | Toedscruel 30% · Gliscor 30% · Conkeldurr 30% · Aggron 10% |
+| Rock Tunnel 1F | Surf | Any | 70–84 | Barraskewda 30% · Wailord 30% · Basculegion (Male) 30% · Golisopod 10% |
+| Rock Tunnel B1F | Fishing | Any | 70–84 | Toxapex 30% · Clawitzer 30% · Barbaracle 30% · Seismitoad 10% |
+| Rock Tunnel B1F | Land | Any | 70–84 | Polteageist 30% · Weavile 30% · Noivern 30% · Hydrapple 10% |
+| Rock Tunnel B1F | Rock Smash | Any | 70–84 | Mienshao 30% · Gigalith 30% · Coalossal 30% · Rhyperior 10% |
+| Rock Tunnel B1F | Surf | Any | 70–84 | Floatzel 30% · Toxapex 30% · Barraskewda 30% · Tentacruel 10% |
+| Rocket Hideout B1F | Land | Day | 54–55 | Boldore 30% · Dusclops 30% · Banette 30% · Trevenant 10% |
+| Route 1 | Fishing | Any | 70–84 | Sharpedo 30% · Barraskewda 30% · Basculegion (Male) 30% · Palafin (Zero Form) 10% |
+| Route 1 | Land | Day | 70–84 | Tyranitar 30% · Garchomp 30% · Salamence 30% · Metagross 10% |
+| Route 1 | Land | Night | 70–84 | Hydreigon 30% · Dragapult 30% · Kingambit 30% · Gholdengo 10% |
+| Route 1 | Surf | Any | 70–84 | Gyarados 30% · Milotic 30% · Dondozo 30% · Tentacruel 10% |
+| Route 10 | Fishing | Any | 70–84 | Floatzel 30% · Golisopod 30% · Basculegion (Male) 30% · Walrein 10% |
+| Route 10 | Land | Day | 70–84 | Pyroar 30% · Braviary 30% · Tangrowth 30% · Tsareena 10% |
+| Route 10 | Land | Night | 70–84 | Mandibuzz 30% · Overqwil 30% · Sneasler 30% · Krookodile 10% |
+| Route 10 | Surf | Any | 70–84 | Wailord 30% · Clawitzer 30% · Barbaracle 30% · Seismitoad 10% |
+| Route 11 | Fishing | Any | 70–84 | Floatzel 30% · Toxapex 30% · Barraskewda 30% · Tentacruel 10% |
+| Route 11 | Land | Day | 70–84 | Ninetales 30% · Tangrowth 30% · Hatterene 30% · Noivern 10% |
+| Route 11 | Land | Night | 70–84 | Sinistcha 30% · Overqwil 30% · Krookodile 30% · Annihilape 10% |
+| Route 11 | Surf | Any | 70–84 | Wailord 30% · Golisopod 30% · Basculegion (Male) 30% · Walrein 10% |
+| Route 12 | Fishing | Any | 70–84 | Floatzel 30% · Clawitzer 30% · Barbaracle 30% · Seismitoad 10% |
+| Route 12 | Land | Day | 70–84 | Ursaring 30% · Roserade 30% · Talonflame 30% · Tinkaton 10% |
+| Route 12 | Land | Night | 70–84 | Drapion 30% · Sinistcha 30% · Toxtricity (Amped Form) 30% · Honchkrow 10% |
+| Route 12 | Rock Smash | Any | 70–84 | Sandaconda 30% · Donphan 30% · Hippowdon 30% · Magnezone 10% |
+| Route 12 | Surf | Any | 70–84 | Toxapex 30% · Barraskewda 30% · Tentacruel 30% · Walrein 10% |
+| Route 13 | Fishing | Any | 70–84 | Wailord 30% · Barbaracle 30% · Basculegion (Male) 30% · Golisopod 10% |
+| Route 13 | Land | Day | 70–84 | Abomasnow 30% · Wyrdeer 30% · Talonflame 30% · Florges (Red Flower) 10% |
+| Route 13 | Land | Night | 70–84 | Revavroom 30% · Roserade 30% · Nidoqueen 30% · Glimmora 10% |
+| Route 13 | Surf | Any | 70–84 | Floatzel 30% · Toxapex 30% · Clawitzer 30% · Seismitoad 10% |
+| Route 14 | Fishing | Any | 70–84 | Barraskewda 30% · Tentacruel 30% · Golisopod 30% · Walrein 10% |
+| Route 14 | Land | Day | 70–84 | Ferrothorn 30% · Kilowattrel 30% · Zebstrika 30% · Gallade 10% |
+| Route 14 | Land | Night | 70–84 | Pangoro 30% · Honchkrow 30% · Dragalge 30% · Nidoking 10% |
+| Route 14 | Surf | Any | 70–84 | Wailord 30% · Clawitzer 30% · Barbaracle 30% · Basculegion (Male) 10% |
+| Route 15 | Fishing | Any | 70–84 | Floatzel 30% · Toxapex 30% · Barraskewda 30% · Seismitoad 10% |
+| Route 15 | Land | Day | 70–84 | Scovillain 30% · Toedscruel 30% · Magmar 30% · Luxray 10% |
+| Route 15 | Land | Night | 70–84 | Toxicroak 30% · Gourgeist 30% · Toxtricity (Amped Form) 30% · Grimmsnarl 10% |
+| Route 15 | Rock Smash | Any | 70–84 | Mudsdale 30% · Excadrill 30% · Klinklang 30% · Rhyperior 10% |
+| Route 15 | Surf | Any | 70–84 | Tentacruel 30% · Golisopod 30% · Basculegion (Male) 30% · Walrein 10% |
+| Route 16 | Fishing | Any | 70–84 | Wailord 30% · Clawitzer 30% · Barbaracle 30% · Seismitoad 10% |
+| Route 16 | Land | Day | 70–84 | Bellibolt 30% · Dipplin 30% · Toucannon 30% · Hydrapple 10% |
+| Route 16 | Land | Night | 70–84 | Scrafty 30% · Drapion 30% · Mandibuzz 30% · Sneasler 10% |
+| Route 16 | Surf | Any | 70–84 | Floatzel 30% · Toxapex 30% · Dracovish 30% · Dondozo 10% |
+| Route 17 | Fishing | Any | 70–84 | Relicanth 30% · Drednaw 30% · Barraskewda 30% · Tentacruel 10% |
+| Route 17 | Land | Day | 70–84 | Electabuzz 30% · Braviary 30% · Gliscor 30% · Tsareena 10% |
+| Route 17 | Land | Night | 70–84 | Revavroom 30% · Overqwil 30% · Krookodile 30% · Annihilape 10% |
+| Route 17 | Surf | Any | 70–84 | Basculin (Red-Striped Form) 30% · Tatsugiri Curly 30% · Arctovish 30% · Lapras 10% |
+| Route 18 | Fishing | Any | 70–84 | Octillery 30% · Golisopod 30% · Basculegion (Male) 30% · Walrein 10% |
+| Route 18 | Land | Day | 70–84 | Boltund 30% · Tangrowth 30% · Hatterene 30% · Noivern 10% |
+| Route 18 | Land | Night | 70–84 | Sinistcha 30% · Honchkrow 30% · Roserade 30% · Nidoqueen 10% |
+| Route 18 | Rock Smash | Any | 70–84 | Bewear 30% · Gigalith 30% · Conkeldurr 30% · Aegislash (Shield Forme) 10% |
+| Route 18 | Surf | Any | 70–84 | Wailord 30% · Clawitzer 30% · Barbaracle 30% · Seismitoad 10% |
+| Route 19 | Fishing | Any | 70–84 | Veluza 30% · Floatzel 30% · Milotic 30% · Gyarados 10% |
+| Route 19 | Surf | Any | 70–84 | Bruxish 30% · Cramorant 30% · Toxapex 30% · Dracovish 10% |
+| Route 2 | Fishing | Any | 70–84 | Basculin (Red-Striped Form) 30% · Octillery 30% · Arctovish 30% · Walrein 10% |
+| Route 2 | Land | Day | 70–84 | Zebstrika 30% · Toedscruel 30% · Luxray 30% · Ursaluna 10% |
+| Route 2 | Land | Night | 70–84 | Gourgeist 30% · Sinistcha 30% · Roserade 30% · Annihilape 10% |
+| Route 2 | Surf | Any | 70–84 | Wailord 30% · Barbaracle 30% · Basculegion (Male) 30% · Golisopod 10% |
+| Route 20 | Fishing | Any | 70–84 | Basculin (Red-Striped Form) 30% · Araquanid 30% · Tatsugiri Curly 30% · Lapras 10% |
+| Route 20 | Surf | Any | 70–84 | Octillery 30% · Arctovish 30% · Golisopod 30% · Walrein 10% |
+| Route 21 | Fishing | Any | 70–84 | Wailord 30% · Clawitzer 30% · Barbaracle 30% · Basculegion (Male) 10% |
+| Route 21 | Land | Day | 70–84 | Pyroar 30% · Talonflame 30% · Porygon-Z 30% · Blissey 10% |
+| Route 21 | Land | Night | 70–84 | Scrafty 30% · Nidoqueen 30% · Nidoking 30% · Glimmora 10% |
+| Route 21 | Rock Smash | Any | 70–84 | Lycanroc (Midday Form) 30% · Sandaconda 30% · Donphan 30% · Aggron 10% |
+| Route 21 | Surf | Any | 70–84 | Wailmer 30% · Milotic 30% · Gyarados 30% · Seismitoad 10% |
+| Route 22 | Fishing | Any | 70–84 | Crawdaunt 30% · Veluza 30% · Whiscash 30% · Floatzel 10% |
+| Route 22 | Land | Day | 70–84 | Abomasnow 30% · Ursaring 30% · Wyrdeer 30% · Florges (Red Flower) 10% |
+| Route 22 | Land | Night | 70–84 | Pangoro 30% · Gourgeist 30% · Dragalge 30% · Grimmsnarl 10% |
+| Route 22 | Surf | Any | 70–84 | Bruxish 30% · Cramorant 30% · Toxapex 30% · Dracovish 10% |
+| Route 24 | Fishing | Any | 70–84 | Sealeo 30% · Gastrodon (West Sea) 30% · Barraskewda 30% · Dondozo 10% |
+| Route 24 | Land | Day | 70–84 | Kilowattrel 30% · Mudsdale 30% · Vikavolt 30% · Gallade 10% |
+| Route 24 | Land | Night | 70–84 | Scrafty 30% · Toxicroak 30% · Mandibuzz 30% · Nidoking 10% |
+| Route 24 | Rock Smash | Any | 70–84 | Copperajah 30% · Bewear 30% · Kleavor 30% · Gallade 10% |
+| Route 24 | Surf | Any | 70–84 | Lumineon 30% · Sharpedo 30% · Relicanth 30% · Tentacruel 10% |
+| Route 25 | Fishing | Any | 70–84 | Pelipper 30% · Palafin (Zero Form) 30% · Drednaw 30% · Lapras 10% |
+| Route 25 | Land | Day | 70–84 | Ferrothorn 30% · Kilowattrel 30% · Scovillain 30% · Hippowdon 10% |
+| Route 25 | Land | Night | 70–84 | Pangoro 30% · Overqwil 30% · Sneasler 30% · Krookodile 10% |
+| Route 25 | Surf | Any | 70–84 | Araquanid 30% · Wugtrio 30% · Lanturn 30% · Tatsugiri Curly 10% |
+| Route 26 | Fishing | Any | 63–66 | Crawdaunt 30% · Drednaw 30% · Arctovish 30% · Milotic 10% |
+| Route 26 | Land | Day | 63–66 | Electivire 30% · Magmortar 30% · Corviknight 30% · Salamence 10% |
+| Route 26 | Land | Night | 63–66 | Kingambit 30% · Gholdengo 30% · Goodra 30% · Metagross 10% |
+| Route 26 | Surf | Any | 63–66 | Basculin (Red-Striped Form) 30% · Lumineon 30% · Gastrodon (West Sea) 30% · Gyarados 10% |
+| Route 27 | Fishing | Any | 63–65 | Araquanid 30% · Tatsugiri Curly 30% · Octillery 30% · Palafin (Zero Form) 10% |
+| Route 27 | Land | Day | 63–65 | Lucario 30% · Garchomp 30% · Corviknight 30% · Noivern 10% |
+| Route 27 | Land | Night | 63–65 | Tyranitar 30% · Hydreigon 30% · Dragapult 30% · Dragonite 10% |
+| Route 27 | Surf | Any | 63–65 | Azumarill 30% · Relicanth 30% · Lapras 30% · Dracovish 10% |
+| Route 28 | Land | Day | 72–84 | Pidgeot 30% · Staraptor 30% · Unfezant 30% · Dragonite 10% |
+| Route 28 | Land | Night | 72–84 | Amoonguss 30% · Golurk 30% · Salazzle 30% · Vileplume 10% |
+| Route 29 | Land | Day | 2–6 | Sentret 30% · Pidgey 30% · Starly 30% · Fletchling 10% |
+| Route 29 | Land | Night | 2–6 | Sentret 30% · Rattata 30% · Spinarak 30% · Zubat 10% |
+| Route 3 | Fishing | Any | 70–84 | Wailmer 30% · Clawitzer 30% · Gyarados 30% · Seismitoad 10% |
+| Route 3 | Land | Day | 70–84 | Scovillain 30% · Bellibolt 30% · Toucannon 30% · Hydrapple 10% |
+| Route 3 | Land | Night | 70–84 | Toxicroak 30% · Drapion 30% · Toxtricity (Amped Form) 30% · Honchkrow 10% |
+| Route 3 | Rock Smash | Any | 70–84 | Copperajah 30% · Bisharp 30% · Mienshao 30% · Garganacl 10% |
+| Route 3 | Surf | Any | 70–84 | Crawdaunt 30% · Veluza 30% · Whiscash 30% · Milotic 10% |
+| Route 30 | Fishing | Any | 4–6 | Magikarp 30% · Goldeen 30% · Barboach 30% · Feebas 10% |
+| Route 30 | Land | Day | 4–6 | Caterpie 30% · Weedle 30% · Pidgey 30% · Wurmple 10% |
+| Route 30 | Land | Night | 4–6 | Spinarak 30% · Venonat 30% · Rattata 30% · Scatterbug 10% |
+| Route 30 | Rock Smash | Any | 4–6 | Nymble 30% · Geodude 30% · Mankey 30% · Machop 10% |
+| Route 30 | Surf | Any | 4–6 | Poliwag 30% · Wooper 30% · Lotad 30% · Surskit 10% |
+| Route 31 | Fishing | Any | 7–11 | Magikarp 30% · Goldeen 30% · Corphish 30% · Feebas 10% |
+| Route 31 | Land | Day | 7–11 | Bellsprout 30% · Taillow 30% · Spearow 30% · Ralts 10% |
+| Route 31 | Land | Night | 7–11 | Rattata 30% · Zubat 30% · Morelull 30% · Duskull 10% |
+| Route 31 | Surf | Any | 7–11 | Wooper 30% · Poliwag 30% · Tympole 30% · Lotad 10% |
+| Route 32 | Fishing | Any | 16–19 | Magikarp 30% · Goldeen 30% · Barboach 30% · Feebas 10% |
+| Route 32 | Land | Day | 16–19 | Mareep 30% · Nidoran♀ 30% · Nidoran♀ 30% · Shinx 10% |
+| Route 32 | Land | Night | 16–19 | Wooper 30% · Rattata 30% · Spinarak 30% · Murkrow 10% |
+| Route 32 | Surf | Any | 16–19 | Wooper 30% · Poliwag 30% · Tympole 30% · Lotad 10% |
+| Route 33 | Land | Day | 18–21 | Bounsweet 30% · Budew 30% · Cottonee 30% · Petilil 10% |
+| Route 33 | Land | Night | 18–21 | Ekans 30% · Oddish 30% · Grimer 30% · Koffing 10% |
+| Route 33 | Rock Smash | Any | 18–21 | Tarountula 30% · Cubone 30% · Phanpy 30% · Rhyhorn 10% |
+| Route 34 | Fishing | Any | 25–28 | Luvdisc 30% · Clauncher 30% · Skrelp 30% · Totodile 10% |
+| Route 34 | Land | Day | 25–28 | Mareep 30% · Growlithe 30% · Spinarak 30% · Pawmi 10% |
+| Route 34 | Land | Night | 25–28 | Electrike 30% · Blitzle 30% · Yamper 30% · Dreepy 10% |
+| Route 34 | Surf | Any | 25–28 | Tympole 30% · Binacle 30% · Corphish 30% · Mudkip 10% |
+| Route 35 | Fishing | Any | 27–30 | Finizen 30% · Shellos (West Sea) 30% · Buizel 30% · Piplup 10% |
+| Route 35 | Land | Day | 27–30 | Meowth 30% · Teddiursa 30% · Tandemaus 30% · Eevee 10% |
+| Route 35 | Land | Night | 27–30 | Murkrow 30% · Houndour 30% · Zorua 30% · Absol 10% |
+| Route 35 | Surf | Any | 27–30 | Spheal 30% · Carvanha 30% · Corphish 30% · Oshawott 10% |
+| Route 36 | Land | Day | 27–30 | Scraggy 30% · Spinarak 30% · Stufful 30% · Charmander 10% |
+| Route 36 | Land | Night | 27–30 | Crabrawler 30% · Spinarak 30% · Sinistea 30% · Elekid 10% |
+| Route 36 | Rock Smash | Any | 27–30 | Mienfoo 30% · Cranidos 30% · Shieldon 30% · Drilbur 10% |
+| Route 37 | Land | Day | 32–35 | Growlithe 30% · Spinarak 30% · Teddiursa 30% · Vulpix 10% |
+| Route 37 | Land | Night | 32–35 | Misdreavus 30% · Houndour 30% · Murkrow 30% · Tepig 10% |
+| Route 38 | Land | Day | 38–41 | Kirlia 30% · Floette (Red Flower) 30% · Tangela 30% · Snivy 10% |
+| Route 38 | Land | Night | 38–41 | Kangaskhan 30% · Rotom (Rotom) 30% · Rattata 30% · Fennekin 10% |
+| Route 39 | Land | Day | 39–42 | Tauros 30% · Jigglypuff 30% · Swellow 30% · Chespin 10% |
+| Route 39 | Land | Night | 39–42 | Morpeko (Full Belly Mode) 30% · Rattata 30% · Duskull 30% · Bouffalant 10% |
+| Route 39 | Rock Smash | Any | 39–42 | Hippopotas 30% · Tyrunt 30% · Spidops 30% · Darumaka 10% |
+| Route 4 | Fishing | Any | 70–84 | Seadra 30% · Floatzel 30% · Toxapex 30% · Basculegion (Male) 10% |
+| Route 4 | Land | Day | 70–84 | Braviary 30% · Gliscor 30% · Dipplin 30% · Blissey 10% |
+| Route 4 | Land | Night | 70–84 | Revavroom 30% · Nidoqueen 30% · Glimmora 30% · Porygon-Z 10% |
+| Route 4 | Surf | Any | 70–84 | Bruxish 30% · Azumarill 30% · Cramorant 30% · Dracovish 10% |
+| Route 40 | Fishing | Day | 40–43 | Marill 30% · Wugtrio 30% · Pelipper 30% · Lapras 10% |
+| Route 40 | Surf | Day | 40–43 | Wailmer 30% · Whiscash 30% · Sharpedo 30% · Lapras 10% |
+| Route 41 | Fishing | Day | 41–44 | Sealeo 30% · Crawdaunt 30% · Relicanth 30% · Arctovish 10% |
+| Route 41 | Surf | Day | 41–44 | Basculin (Red-Striped Form) 30% · Palpitoad 30% · Sealeo 30% · Lumineon 10% |
+| Route 42 | Fishing | Any | 52–54 | Luvdisc 30% · Buizel 30% · Tatsugiri Curly 30% · Dondozo 10% |
+| Route 42 | Land | Day | 52–54 | Granbull 30% · Maushold Three 30% · Lurantis 30% · Heliolisk 10% |
+| Route 42 | Land | Night | 52–54 | Krokorok 30% · Roselia 30% · Salazzle 30% · Dhelmise 10% |
+| Route 42 | Rock Smash | Any | 52–54 | Charjabug 30% · Gurdurr 30% · Klang 30% · Scyther 10% |
+| Route 42 | Surf | Any | 52–54 | Clauncher 30% · Finneon 30% · Tirtouga 30% · Mantyke 10% |
+| Route 43 | Fishing | Any | 53–55 | Omanyte 30% · Kabuto 30% · Lanturn 30% · Octillery 10% |
+| Route 43 | Land | Day | 53–55 | Clefairy 30% · Glalie 30% · Lurantis 30% · Manectric 10% |
+| Route 43 | Land | Night | 53–55 | Amoonguss 30% · Trevenant 30% · Darmanitan (Standard Mode) 30% · Salazzle 10% |
+| Route 43 | Surf | Any | 53–55 | Marill 30% · Pelipper 30% · Sharpedo 30% · Lapras 10% |
+| Route 44 | Fishing | Any | 57–59 | Tatsugiri Curly 30% · Arctovish 30% · Milotic 30% · Gyarados 10% |
+| Route 44 | Land | Day | 57–59 | Magneton 30% · Piloswine 30% · Skarmory 30% · Lairon 10% |
+| Route 44 | Land | Night | 57–59 | Dusclops 30% · Sneasel 30% · Froslass 30% · Haunter 10% |
+| Route 44 | Surf | Any | 57–59 | Azumarill 30% · Lapras 30% · Dracovish 30% · Gyarados 10% |
+| Route 45 | Fishing | Any | 64–66 | Veluza 30% · Relicanth 30% · Milotic 30% · Gyarados 10% |
+| Route 45 | Land | Day | 64–66 | Graveler 30% · Skarmory 30% · Dragonair 30% · Lairon 10% |
+| Route 45 | Land | Night | 64–66 | Trevenant 30% · Palossand 30% · Dhelmise 30% · Vileplume 10% |
+| Route 45 | Rock Smash | Any | 64–66 | Lucario 30% · Corviknight 30% · Gholdengo 30% · Volcarona 10% |
+| Route 45 | Surf | Any | 64–66 | Bruxish 30% · Cramorant 30% · Whiscash 30% · Dondozo 10% |
+| Route 46 | Land | Day | 6–9 | Spearow 30% · Geodude 30% · Phanpy 30% · Mankey 10% |
+| Route 46 | Land | Night | 6–9 | Rattata 30% · Zubat 30% · Geodude 30% · Rookidee 10% |
+| Route 47 | Fishing | Any | 45–48 | Marill 30% · Bruxish 30% · Araquanid 30% · Whiscash 10% |
+| Route 47 | Land | Day | 45–48 | Flabébé (Red Flower) 30% · Pikachu 30% · Squawkabilly (Green Plumage) 30% · Rowlet 10% |
+| Route 47 | Land | Night | 45–48 | Chansey 30% · Vullaby 30% · Varoom 30% · Charcadet 10% |
+| Route 47 | Surf | Any | 45–48 | Wugtrio 30% · Cramorant 30% · Palafin (Zero Form) 30% · Arctovish 10% |
+| Route 48 | Land | Day | 46–49 | Mr. Mime 30% · Steenee 30% · Shiinotic 30% · Grookey 10% |
+| Route 48 | Land | Night | 46–49 | Audino 30% · Shroomish 30% · Poltchageist 30% · Sandile 10% |
+| Route 48 | Rock Smash | Any | 46–49 | Numel 30% · Spewpa 30% · Clobbopus 30% · Throh 10% |
+| Route 5 | Fishing | Any | 70–84 | Palpitoad 30% · Sealeo 30% · Tentacruel 30% · Dondozo 10% |
+| Route 5 | Land | Day | 70–84 | Electabuzz 30% · Wyrdeer 30% · Hatterene 30% · Tsareena 10% |
+| Route 5 | Land | Night | 70–84 | Pangoro 30% · Dragalge 30% · Nidoking 30% · Annihilape 10% |
+| Route 5 | Surf | Any | 70–84 | Sharpedo 30% · Gastrodon (West Sea) 30% · Barraskewda 30% · Tentacruel 10% |
+| Route 6 | Fishing | Any | 70–84 | Pelipper 30% · Lumineon 30% · Relicanth 30% · Wailord 10% |
+| Route 6 | Land | Day | 70–84 | Boltund 30% · Tangrowth 30% · Luxray 30% · Noivern 10% |
+| Route 6 | Land | Night | 70–84 | Gourgeist 30% · Zoroark 30% · Porygon2 30% · Grimmsnarl 10% |
+| Route 6 | Rock Smash | Any | 70–84 | Excadrill 30% · Centiskorch 30% · Golem 30% · Ursaluna 10% |
+| Route 6 | Surf | Any | 70–84 | Araquanid 30% · Palafin (Zero Form) 30% · Drednaw 30% · Lapras 10% |
+| Route 7 | Fishing | Any | 70–84 | Corsola 30% · Wugtrio 30% · Tatsugiri Curly 30% · Barbaracle 10% |
+| Route 7 | Land | Day | 70–84 | Porygon2 30% · Tinkaton 30% · Eelektross 30% · Blissey 10% |
+| Route 7 | Land | Night | 70–84 | Scrafty 30% · Toxicroak 30% · Mandibuzz 30% · Polteageist 10% |
+| Route 7 | Surf | Any | 70–84 | Basculin (Red-Striped Form) 30% · Lanturn 30% · Octillery 30% · Arctovish 10% |
+| Route 8 | Fishing | Any | 70–84 | Clawitzer 30% · Golisopod 30% · Basculegion (Male) 30% · Walrein 10% |
+| Route 8 | Land | Day | 70–84 | Braviary 30% · Mienshao 30% · Golem 30% · Eelektross 10% |
+| Route 8 | Land | Night | 70–84 | Mandibuzz 30% · Overqwil 30% · Sneasler 30% · Grimmsnarl 10% |
+| Route 8 | Surf | Any | 70–84 | Wailmer 30% · Wailord 30% · Clawitzer 30% · Barbaracle 10% |
+| Route 9 | Fishing | Any | 70–84 | Veluza 30% · Milotic 30% · Gyarados 30% · Seismitoad 10% |
+| Route 9 | Land | Day | 70–84 | Sandaconda 30% · Hatterene 30% · Rhyperior 30% · Magnezone 10% |
+| Route 9 | Land | Night | 70–84 | Houndoom 30% · Sneasler 30% · Krookodile 30% · Annihilape 10% |
+| Route 9 | Rock Smash | Any | 70–84 | Tinkaton 30% · Aegislash (Shield Forme) 30% · Klinklang 30% · Magnezone 10% |
+| Route 9 | Surf | Any | 70–84 | Crawdaunt 30% · Whiscash 30% · Floatzel 30% · Seismitoad 10% |
+| Ruins Of Alph B1F | Land | Day | 9–12 | Unown 30% · Exeggcute 30% · Wooper 30% · Zubat 10% |
+| Ruins Of Alph B1F | Rock Smash | Day | 9–12 | Caterpie 30% · Wurmple 30% · Rellor 30% · Tyrogue 10% |
+| Ruins Of Alph Outside | Fishing | Any | 8–12 | Wooper 30% · Surskit 30% · Seel 30% · Magikarp 10% |
+| Ruins Of Alph Outside | Land | Any | 8–12 | Azurill 30% · Nacli 30% · Fomantis 30% · Toxel 10% |
+| Ruins Of Alph Outside | Rock Smash | Any | 8–12 | Wurmple 30% · Nincada 30% · Roggenrola 30% · Meditite 10% |
+| Ruins Of Alph Outside | Surf | Any | 8–12 | Lotad 30% · Wingull 30% · Remoraid 30% · Chinchou 10% |
+| Seafoam Islands 1F | Land | Day | 70–84 | Beartic 30% · Weavile 30% · Cetitan 30% · Walrein 10% |
+| Seafoam Islands B1F | Land | Day | 70–84 | Abomasnow 30% · Avalugg 30% · Cetitan 30% · Vanilluxe 10% |
+| Slowpoke Well B1F | Fishing | Day | 19–22 | Magikarp 30% · Slowpoke 30% · Barboach 30% · Corphish 10% |
+| Slowpoke Well B1F | Land | Day | 19–22 | Zubat 30% · Wooper 30% · Croagunk 30% · Duskull 10% |
+| Slowpoke Well B1F | Surf | Day | 19–22 | Slowpoke 30% · Wooper 30% · Poliwag 30% · Corphish 10% |
+| Slowpoke Well B2F | Fishing | Day | 20–23 | Magikarp 30% · Wiglett 30% · Wooper 30% · Corphish 10% |
+| Slowpoke Well B2F | Land | Day | 20–23 | Impidimp 30% · Slugma 30% · Rockruff 30% · Zubat 10% |
+| Slowpoke Well B2F | Surf | Day | 20–23 | Poliwag 30% · Slowpoke 30% · Psyduck 30% · Tentacool 10% |
+| Sprout Tower 2F | Land | Day | 8–11 | Rattata 30% · Bellsprout 30% · Pidgey 30% · Baltoy 10% |
+| Sprout Tower 2F | Land | Night | 8–11 | Gastly 30% · Zubat 30% · Duskull 30% · Litwick 10% |
+| Sprout Tower 3F | Land | Day | 9–12 | Rattata 30% · Bellsprout 30% · Ralts 30% · Baltoy 10% |
+| Sprout Tower 3F | Land | Night | 9–12 | Gastly 30% · Shuppet 30% · Duskull 30% · Misdreavus 10% |
+| Tin Tower 3F | Land | Day | 64–66 | Aerodactyl 30% · Corviknight 30% · Gholdengo 30% · Kingambit 10% |
+| Tin Tower 4F | Land | Day | 64–66 | Shuckle 30% · Lucario 30% · Gholdengo 30% · Kingambit 10% |
+| Tin Tower 5F | Land | Day | 65–67 | Heracross 30% · Grapploct 30% · Corviknight 30% · Gholdengo 10% |
+| Tin Tower 6F | Land | Day | 65–67 | Forretress 30% · Magneton 30% · Crustle 30% · Duraludon 10% |
+| Tin Tower 7F | Land | Day | 65–67 | Lokix 30% · Aerodactyl 30% · Dracozolt 30% · Lucario 10% |
+| Tin Tower 8F | Land | Day | 66–68 | Cyclizar 30% · Hawlucha 30% · Flamigo 30% · Froslass 10% |
+| Tin Tower 9F | Land | Day | 66–68 | Shuckle 30% · Heracross 30% · Gholdengo 30% · Kingambit 10% |
+| Tohjo Falls Cavern | Fishing | Any | 62–65 | Carvanha 30% · Milotic 30% · Veluza 30% · Lanturn 10% |
+| Tohjo Falls Cavern | Land | Any | 62–65 | Haxorus 30% · Aggron 30% · Excadrill 30% · Noivern 10% |
+| Tohjo Falls Cavern | Rock Smash | Any | 62–65 | Archaludon 30% · Metagross 30% · Garchomp 30% · Kommo-o 10% |
+| Tohjo Falls Cavern | Surf | Any | 62–65 | Spheal 30% · Barboach 30% · Corphish 30% · Gyarados 10% |
+| Union Cave 1F | Fishing | Day | 17–20 | Arrokuda 30% · Shellder 30% · Psyduck 30% · Seel 10% |
+| Union Cave 1F | Land | Day | 17–20 | Geodude 30% · Zubat 30% · Sandshrew 30% · Aron 10% |
+| Union Cave 1F | Rock Smash | Day | 17–20 | Blipbug 30% · Tarountula 30% · Venipede 30% · Diglett 10% |
+| Union Cave 1F | Surf | Day | 17–20 | Goldeen 30% · Tympole 30% · Krabby 30% · Staryu 10% |
+| Union Cave B1F | Fishing | Day | 18–21 | Magikarp 30% · Wimpod 30% · Goldeen 30% · Wooper 10% |
+| Union Cave B1F | Land | Day | 18–21 | Roggenrola 30% · Onix 30% · Mawile 30% · Sableye 10% |
+| Union Cave B1F | Rock Smash | Day | 18–21 | Blipbug 30% · Rolycoly 30% · Nymble 30% · Rellor 10% |
+| Union Cave B1F | Surf | Day | 18–21 | Wooper 30% · Lotad 30% · Remoraid 30% · Chinchou 10% |
+| Union Cave B2F | Fishing | Day | 19–22 | Lotad 30% · Surskit 30% · Wingull 30% · Slowpoke 10% |
+| Union Cave B2F | Land | Day | 19–22 | Aron 30% · Wooper 30% · Baltoy 30% · Gible 10% |
+| Union Cave B2F | Rock Smash | Day | 19–22 | Caterpie 30% · Tyrogue 30% · Paras 30% · Phanpy 10% |
+| Union Cave B2F | Surf | Day | 19–22 | Feebas 30% · Wishiwashi (Solo Form) 30% · Dewpider 30% · Wimpod 10% |
+| Vermilion City | Fishing | Any | 70–84 | Tirtouga 30% · Poliwhirl 30% · Seadra 30% · Toxapex 10% |
+| Vermilion City | Land | Any | 70–84 | Bisharp 30% · Weavile 30% · Reuniclus 30% · Gothitelle 10% |
+| Vermilion City | Surf | Any | 70–84 | Bruxish 30% · Azumarill 30% · Cramorant 30% · Dracovish 10% |
+| Vermilion City Port Outside | Fishing | Any | 70–84 | Palpitoad 30% · Sealeo 30% · Barraskewda 30% · Dondozo 10% |
+| Vermilion City Port Outside | Land | Any | 70–84 | Lycanroc (Midday Form) 30% · Excadrill 30% · Coalossal 30% · Vanilluxe 10% |
+| Vermilion City Port Outside | Surf | Any | 70–84 | Carvanha 30% · Barboach 30% · Basculegion (Male) 30% · Gastrodon (West Sea) 10% |
+| Victory Road Kanto 1F | Fishing | Day | 64–67 | Arctovish 30% · Dracovish 30% · Dondozo 30% · Milotic 10% |
+| Victory Road Kanto 1F | Surf | Day | 64–67 | Relicanth 30% · Drednaw 30% · Lapras 30% · Dondozo 10% |
+| Victory Road Kanto B1F | Fishing | Day | 64–67 | Bruxish 30% · Arctovish 30% · Milotic 30% · Gyarados 10% |
+| Victory Road Kanto B1F | Surf | Day | 64–67 | Cramorant 30% · Relicanth 30% · Dracovish 30% · Dondozo 10% |
+| Victory Road Kanto B2F | Fishing | Day | 63–66 | Basculin (Red-Striped Form) 30% · Tatsugiri Curly 30% · Drednaw 30% · Lapras 10% |
+| Victory Road Kanto B2F | Surf | Day | 63–66 | Octillery 30% · Arctovish 30% · Milotic 30% · Gyarados 10% |
+| Violet City | Fishing | Any | 8–12 | Goldeen 30% · Barboach 30% · Corphish 30% · Feebas 10% |
+| Violet City | Land | Any | 8–12 | Pikipek 30% · Slakoth 30% · Wooper 30% · Abra 10% |
+| Violet City | Surf | Any | 8–12 | Poliwag 30% · Wooper 30% · Lotad 30% · Surskit 10% |
+| Viridian City | Fishing | Any | 70–84 | Spheal 30% · Corphish 30% · Luvdisc 30% · Basculegion (Male) 10% |
+| Viridian City | Land | Any | 70–84 | Pyroar 30% · Zoroark 30% · Gothitelle 30% · Porygon-Z 10% |
+| Viridian City | Surf | Any | 70–84 | Shellos (West Sea) 30% · Buizel 30% · Finneon 30% · Mantyke 10% |
+| Viridian Forest | Land | Day | 70–84 | Toedscruel 30% · Tangrowth 30% · Florges (Red Flower) 30% · Hydrapple 10% |
+| Viridian Forest | Land | Night | 70–84 | Centiskorch 30% · Golisopod 30% · Glimmora 30% · Tsareena 10% |
+| Whirl Islands 1F | Fishing | Any | 40–43 | Wailmer 30% · Poliwhirl 30% · Veluza 30% · Relicanth 10% |
+| Whirl Islands 1F | Land | Any | 40–43 | Trapinch 30% · Rattata 30% · Jangmo-o 30% · Eiscue (Ice Face) 10% |
+| Whirl Islands 1F | Rock Smash | Any | 40–43 | Naclstack 30% · Togedemaru 30% · Archen 30% · Passimian 10% |
+| Whirl Islands 1F | Surf | Any | 40–43 | Luvdisc 30% · Corsola 30% · Seadra 30% · Lanturn 10% |
+| Whirl Islands B1F | Fishing | Any | 41–44 | Buizel 30% · Finneon 30% · Poliwhirl 30% · Veluza 10% |
+| Whirl Islands B1F | Land | Any | 41–44 | Lampent 30% · Applin 30% · Cubchoo 30% · Snorunt 10% |
+| Whirl Islands B1F | Rock Smash | Any | 41–44 | Stonjourner 30% · Amaura 30% · Silicobra 30% · Gligar 10% |
+| Whirl Islands B1F | Surf | Any | 41–44 | Clauncher 30% · Omanyte 30% · Tirtouga 30% · Mantyke 10% |
+| Whirl Islands B1F Inner | Fishing | Day | 42–45 | Marill 30% · Kabuto 30% · Araquanid 30% · Lapras 10% |
+| Whirl Islands B1F Inner | Land | Day | 42–45 | Tinkatink 30% · Bagon 30% · Sneasel 30% · Dragonair 10% |
+| Whirl Islands B1F Inner | Rock Smash | Day | 42–45 | Cascoon 30% · Cufant 30% · Mudbray 30% · Carkol 10% |
+| Whirl Islands B1F Inner | Surf | Day | 42–45 | Wailmer 30% · Pelipper 30% · Whiscash 30% · Sharpedo 10% |
+| Whirl Islands B2F | Fishing | Any | 42–45 | Palpitoad 30% · Sealeo 30% · Crawdaunt 30% · Bruxish 10% |
+| Whirl Islands B2F | Land | Any | 42–45 | Noibat 30% · Magby 30% · Dusclops 30% · Vanillite 10% |
+| Whirl Islands B2F | Rock Smash | Any | 42–45 | Beldum 30% · Arctozolt 30% · Lairon 30% · Magneton 10% |
+| Whirl Islands B2F | Surf | Any | 42–45 | Basculin (Red-Striped Form) 30% · Palpitoad 30% · Lumineon 30% · Relicanth 10% |
+| Whirl Islands B3F | Fishing | Day | 43–46 | Seadra 30% · Bruxish 30% · Araquanid 30% · Cramorant 10% |
+| Whirl Islands B3F | Land | Day | 43–46 | Shuppet 30% · Deino 30% · Piloswine 30% · Swinub 10% |
+| Whirl Islands B3F | Rock Smash | Day | 43–46 | Minior (Meteor Form) 30% · Mawile 30% · Dugtrio 30% · Lokix 10% |
+| Whirl Islands B3F | Surf | Day | 43–46 | Veluza 30% · Wugtrio 30% · Palafin (Zero Form) 30% · Arctovish 10% |
+| Whirl Islands Descent | Fishing | Day | 43–46 | Corsola 30% · Poliwhirl 30% · Seadra 30% · Pelipper 10% |
+| Whirl Islands Descent | Land | Day | 43–46 | Duskull 30% · Goomy 30% · Vanillish 30% · Breloom 10% |
+| Whirl Islands Descent | Rock Smash | Day | 43–46 | Klink 30% · Tinkatuff 30% · Gurdurr 30% · Klang 10% |
+| Whirl Islands Descent | Surf | Day | 43–46 | Carvanha 30% · Barboach 30% · Corphish 30% · Lapras 10% |
+| Ilex Forest | Headbutt | — | 24–27 | Pineco 30% · Nincada 30% · Paras 30% · Heracross 10% |
+| National Park Bug Contest | Headbutt | — | 26–29 | Helioptile 30% · Toedscool 30% · Rufflet 30% · Pumpkaboo 10% |
+| National Park Normal | Headbutt | — | 26–29 | Snom 30% · Swablu 30% · Foongus 30% · Capsakid 10% |
+| Viridian Forest | Headbutt | — | 70–84 | Scyther 30% · Centiskorch 30% · Kleavor 30% · Vikavolt 10% |
+| Safari Zone Top Left | Safari — Pool A | — | 37–40 | Beedrill 30% · Deerling (Spring Form) 30% · Dustox 30% · Wigglytuff 10% |
+| Safari Zone Top Left | Safari — Pool B | — | 37–40 | Beautifly 30% · Butterfree 30% · Ledyba 30% · Yanma 10% |
+| Safari Zone Top Left | Safari — Pool C | — | 37–40 | Combee 30% · Hoppip 30% · Igglybuff 30% · Tropius 10% |
+| Safari Zone Top Left | Safari — Pool D | — | 37–40 | Illumise 30% · Karrablast 30% · Mime Jr. 30% · Volbeat 10% |
+| Safari Zone Top Left | Safari — Pool E | — | 37–40 | Burmy (Plant Cloak) 30% · Kricketot 30% · Shelmet 30% · Maractus 10% |
+| Safari Zone Top Mid | Safari — Pool A | — | 38–41 | Dedenne 30% · Natu 30% · Woobat 30% · Girafarig 10% |
+| Safari Zone Top Mid | Safari — Pool B | — | 38–41 | Fidough 30% · Snubbull 30% · Spritzee 30% · Swirlix 10% |
+| Safari Zone Top Mid | Safari — Pool C | — | 38–41 | Cleffa 30% · Milcery 30% · Togepi 30% · Espurr 10% |
+| Safari Zone Top Mid | Safari — Pool D | — | 38–41 | Drowzee 30% · Munna 30% · Spoink 30% · Elgyem 10% |
+| Safari Zone Top Mid | Safari — Pool E | — | 38–41 | Lillipup 30% · Wooloo 30% · Wynaut 30% · Chingling 10% |
+| Safari Zone Low Mid | Safari — Pool A | — | 39–42 | Chatot 30% · Doduo 30% · Farfetch'd 30% · Stunfisk 10% |
+| Safari Zone Low Mid | Safari — Pool B | — | 39–42 | Emolga 30% · Furfrou (Natural Form) 30% · Hoothoot 30% · Komala 10% |
+| Safari Zone Low Mid | Safari — Pool C | — | 39–42 | Castform 30% · Kecleon 30% · Zangoose 30% · Stantler 10% |
+| Safari Zone Low Mid | Safari — Pool D | — | 39–42 | Aipom 30% · Lickitung 30% · Spinda 30% · Dunsparce 10% |
+| Safari Zone Low Mid | Safari — Pool E | — | 39–42 | Glameow 30% · Minccino 30% · Skwovet 30% · Buneary 10% |
+| Safari Zone Top Right | Safari — Pool A | — | 39–42 | Clamperl 30% · Pyukumuku 30% · Qwilfish 30% · Alomomola 10% |
+| Safari Zone Top Right | Safari — Pool B | — | 39–42 | Ducklett 30% · Panpour 30% · Skiddo 30% · Carnivine 10% |
+| Safari Zone Top Right | Safari — Pool C | — | 39–42 | Chikorita 30% · Pansage 30% · Shroodle 30% · Cacnea 10% |
+| Safari Zone Top Right | Safari — Pool D | — | 39–42 | Gossifleur 30% · Seedot 30% · Sunkern 30% · Cherubi 10% |
+| Safari Zone Top Right | Safari — Pool E | — | 39–42 | Minun 30% · Pachirisu 30% · Plusle 30% · Pincurchin 10% |
+| Safari Zone Low Left | Safari — Pool A | — | 40–43 | Lunatone 30% · Nosepass 30% · Solrock 30% · Klawf 10% |
+| Safari Zone Low Left | Safari — Pool B | — | 40–43 | Bonsly 30% · Klefki 30% · Pansear 30% · Orthworm 10% |
+| Safari Zone Low Left | Safari — Pool C | — | 40–43 | Flittle 30% · Patrat 30% · Skitty 30% · Bronzor 10% |
+| Safari Zone Low Left | Safari — Pool D | — | 40–43 | Bidoof 30% · Smeargle 30% · Yungoos 30% · Lechonk 10% |
+| Safari Zone Low Left | Safari — Pool E | — | 40–43 | Bunnelby 30% · Happiny 30% · Whismur 30% · Zigzagoon 10% |
+| Safari Zone Low Right | Safari — Pool A | — | 41–44 | Delibird 30% · Frillish 30% · Smoochum 30% · Maschiff 10% |
+| Safari Zone Low Right | Safari — Pool B | — | 41–44 | Bramblin 30% · Nickit 30% · Purrloin 30% · Inkay 10% |
+| Safari Zone Low Right | Safari — Pool C | — | 41–44 | Greavard 30% · Poochyena 30% · Yamask 30% · Drifloon 10% |
+| Safari Zone Low Right | Safari — Pool D | — | 41–44 | Pichu 30% · Poipole 30% · Stunky 30% · Seviper 10% |
+| Safari Zone Low Right | Safari — Pool E | — | 41–44 | Gulpin 30% · Makuhita 30% · Trubbish 30% · Falinks 10% |
+| Fuchsia City Safari Zone Beach | Safari — Pool A | — | 68–72 | Poliwrath 30% · Primarina 30% · Quaquaval 30% · Swampert 10% |
+| Fuchsia City Safari Zone Beach | Safari — Pool B | — | 68–72 | Greninja 30% · Inteleon 30% · Kingdra 30% · Walking Wake 10% |
+| Fuchsia City Safari Zone Beach | Safari — Pool C | — | 68–72 | Blastoise 30% · Empoleon 30% · Samurott 30% · Feraligatr 10% |
+| Fuchsia City Safari Zone Beach | Safari — Pool D | — | 68–72 | Charizard 30% · Ludicolo 30% · Politoed 30% · Slither Wing 10% |
+| Fuchsia City Safari Zone Beach | Safari — Pool E | — | 68–72 | Buzzwole 30% · Iron Bundle 30% · Pheromosa 30% · Iron Valiant 10% |
+| Fuchsia City Safari Zone Beach | Safari — Pool F | — | 68–72 | Clefable 30% · Miltank 30% · Stoutland 30% · Slaking 10% |
+| Fuchsia City Safari Zone Cave | Safari — Pool A | — | 71–75 | Iron Crown 30% · Roaring Moon 30% · Spiritomb 30% · Iron Boulder 10% |
+| Fuchsia City Safari Zone Cave | Safari — Pool B | — | 71–75 | Gengar 30% · Nihilego 30% · Obstagoon 30% · Guzzlord 10% |
+| Fuchsia City Safari Zone Cave | Safari — Pool C | — | 71–75 | Bellossom 30% · Meganium 30% · Shiftry 30% · Iron Jugulis 10% |
+| Fuchsia City Safari Zone Cave | Safari — Pool D | — | 71–75 | Alakazam 30% · Celesteela 30% · Sigilyph 30% · Flutter Mane 10% |
+| Fuchsia City Safari Zone Cave | Safari — Pool E | — | 71–75 | Exploud 30% · Machamp 30% · Mr. Rime 30% · Crobat 10% |
+| Fuchsia City Safari Zone Cave | Safari — Pool F | — | 71–75 | Ampharos 30% · Durant 30% · Raichu 30% · Xurkitree 10% |
+| Fuchsia City Safari Zone Mountain | Safari — Pool A | — | 72–76 | Flygon 30% · Iron Treads 30% · Stakataka 30% · Gouging Fire 10% |
+| Fuchsia City Safari Zone Mountain | Safari — Pool B | — | 72–76 | Great Tusk 30% · Infernape 30% · Sandy Shocks 30% · Iron Thorns 10% |
+| Fuchsia City Safari Zone Mountain | Safari — Pool C | — | 72–76 | Blaziken 30% · Carbink 30% · Emboar 30% · Raging Bolt 10% |
+| Fuchsia City Safari Zone Mountain | Safari — Pool D | — | 72–76 | Blacephalon 30% · Durant 30% · Typhlosion 30% · Iron Moth 10% |
+| Fuchsia City Safari Zone Mountain | Safari — Pool E | — | 72–76 | Cinderace 30% · Incineroar 30% · Skeledirge 30% · Delphox 10% |
+| Fuchsia City Safari Zone Mountain | Safari — Pool F | — | 72–76 | Druddigon 30% · Heatmor 30% · Pawmot 30% · Iron Hands 10% |
+| Fuchsia City Safari Zone Brush | Safari — Pool A | — | 69–73 | Arboliva 30% · Leavanny 30% · Victreebel 30% · Venusaur 10% |
+| Fuchsia City Safari Zone Brush | Safari — Pool B | — | 69–73 | Jumpluff 30% · Orbeetle 30% · Scolipede 30% · Iron Leaves 10% |
+| Fuchsia City Safari Zone Brush | Safari — Pool C | — | 69–73 | Gardevoir 30% · Kartana 30% · Togekiss 30% · Scream Tail 10% |
+| Fuchsia City Safari Zone Brush | Safari — Pool D | — | 69–73 | Meowscarada 30% · Rillaboom 30% · Sceptile 30% · Brute Bonnet 10% |
+| Fuchsia City Safari Zone Brush | Safari — Pool E | — | 69–73 | Chesnaught 30% · Serperior 30% · Torterra 30% · Decidueye 10% |

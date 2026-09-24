@@ -1,594 +1,470 @@
-[Accueil](Accueil.md) · [Guide de jeu](Guide-de-jeu.md) · [Changements](Changements.md) · [Boss & Conseils](Boss-et-Conseils.md) · [Pokédex](Pokedex.md) · [Localisations](Localisations.md) · [Crédits & Versions](Credits-et-Versions.md) · **[EN](../EN/Locations.md)**
+[Accueil](Accueil.md) · [Guide de jeu](Guide-de-jeu.md) · [Changements](Changements.md) · [Pokédex](Pokedex.md) · [Localisations](Localisations.md) · [Boss & Conseils](Boss-et-Conseils.md) · [Crédits & Versions](Credits-et-Versions.md) · **[EN](../EN/Home.md)**
 
 # Localisations
 
-Cette page publie les localisations de référence validées pour la V1. Une V1.1 pourra rééquilibrer certaines rencontres, mais ces placements constituent la référence actuelle.
+**405 tables standard + 4 Coup d'Boule + 53 pools Safari.** Quatre slots réels par table en 30/30/30/10. La pêche possède un pool par table ; les cannes en contrôlent l'accès.
 
-## Règles de lecture
-
-- Légendaires et fabuleux exclus des rencontres sauvages ordinaires et du Safari.
-- Formes de base favorisées tôt ; formes finales fortes surtout tardives.
-- Surf et les différentes cannes sont utilisés pour répartir les espèces aquatiques.
-- Headbutt et Safari suivent des tables dédiées et sont listés séparément.
-
-## Rencontres standard
-
-497 placements de référence hors Safari.
-
-| Pokémon | Zone | Méthode | Niv. | Moment | Progression |
-|---|---|---|---:|---|---|
-| Abo | Route31 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Abra | Route24 | Herbe / sol | 2-6 | Jour | Early Johto |
-| Absol | Route38 | Herbe / sol | 8-18 | Nuit | Badges 2-4 |
-| Airmure | Union Cave B1f | Herbe / sol | 8-18 | Tous | Badges 2-4 |
-| Amagara | Ice Path B1f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Amassel | Burned Tower 1f | Éclate-Roc | 27-38 | Tous | Badges 5-7 |
-| Amonita | Whirl Islands 1f | Vieille Canne | 2-6 | Tous | Early Johto |
-| Ampibidou | Route10 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Anchwatt | Slowpoke Well B1f | Vieille Canne | 2-6 | Tous | Early Johto |
-| Angoliath | Route44 | Herbe / sol | 36-50 | Nuit | Badges 7-8 |
-| Anorith | National Park Normal | Herbe / sol | 2-6 | Tous | Early Johto |
-| Arakdo | Route32 | Surf | 2-6 | Tous | Early Johto |
-| Araqua | Route32 | Surf | 2-6 | Tous | Early Johto |
-| Arcko | Route30 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Arkéapti | Union Cave 1f | Éclate-Roc | 2-6 | Tous | Early Johto |
-| Armulys | National Park Normal | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Aspicot | Ilex Forest | Herbe / sol | 2-6 | Tous | Early Johto |
-| Axoloto | Slowpoke Well B1f | Vieille Canne | 2-6 | Tous | Early Johto |
-| Azumarill | Route41 | Surf | 36-50 | Jour | Badges 7-8 |
-| Azurill | Route31 | Herbe / sol | 2-6 | Jour | Early Johto |
-| Babimanta | Slowpoke Well B1f | Surf | 2-6 | Tous | Early Johto |
-| Bacabouh | Burned Tower 1f | Herbe / sol | 2-6 | Nuit | Early Johto |
-| Baggaïd | Route42 | Herbe / sol | 27-38 | Nuit | Badges 5-7 |
-| Baggiguane | Mt Mortar B1f | Herbe / sol | 2-6 | Nuit | Early Johto |
-| Balbuto | Union Cave B1f | Éclate-Roc | 2-6 | Jour | Early Johto |
-| Balignon | Route33 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Banshitrouye | Lavender Town | Herbe / sol | 27-38 | Nuit | Badges 5-7 |
-| Barbicha | Route41 | Super Canne | 27-38 | Tous | Badges 5-7 |
-| Bargantua | Route41 | Bonne Canne | 8-18 | Tous | Badges 2-4 |
-| Barloche | Route40 | Vieille Canne | 2-6 | Tous | Early Johto |
-| Barpau | Route32 | Vieille Canne | 2-6 | Tous | Early Johto |
-| Batracné | Slowpoke Well B1f | Surf | 27-38 | Tous | Badges 5-7 |
-| Bazoucan | Route42 | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| Bébécaille | Mt Mortar 2f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Bekaglaçon | Mt Silver Snow | Herbe / sol | 8-18 | Tous | Badges 2-4 |
-| Bekipan | Route40 | Surf | 27-38 | Tous | Badges 5-7 |
-| Beldeneige | Ice Path B2f | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Bérasca | Viridian Forest | Herbe / sol | 27-38 | Jour | Badges 5-7 |
-| Bétochef | Mt Mortar 1f North | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| Bibichut | Cerulean Cave 1f | Herbe / sol | 2-6 | Jour | Early Johto |
-| Blindalys | Ilex Forest | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Blizzaroi | Ice Path B3f | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Blizzi | Ice Path B2f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Bombydou | Ilex Forest | Herbe / sol | 2-6 | Jour | Early Johto |
-| Bouldeneu | Route44 | Herbe / sol | 41-52 | Tous | Pre-League |
-| Boumata | Mt Silver 2f | Herbe / sol | 8-18 | Tous | Badges 2-4 |
-| Bourrinos | Burned Tower B1f | Éclate-Roc | 27-38 | Tous | Badges 5-7 |
-| Branette | Burned Tower B1f | Herbe / sol | 27-38 | Nuit | Badges 5-7 |
-| Brindibou | Route30 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Brocélôme | Tin Tower 3f | Herbe / sol | 2-6 | Nuit | Early Johto |
-| Brutalibré | Mt Mortar 1f South | Herbe / sol | 18-28 | Tous | Badges 4-6 |
-| Bruyverne | Victory Road Kanto B1f | Herbe / sol | 41-52 | Tous | Pre-League |
-| Bulbizarre | Route29 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Camérupt | Cinnabar Island | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Candine | Route27 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Caninos | Route34 | Herbe / sol | 8-18 | Jour | Badges 2-4 |
-| Carapagos | Whirl Islands 1f | Vieille Canne | 2-6 | Tous | Early Johto |
-| Carapuce | Route32 | Surf | 2-6 | Tous | Early Johto |
-| Caratroc | Viridian Forest | Herbe / sol | 18-28 | Tous | Badges 4-6 |
-| Carchacrok | Mt Silver 2f | Herbe / sol | 54-73 | Tous | Endgame |
-| Carvanha | Whirl Islands 1f | Vieille Canne | 2-6 | Nuit | Early Johto |
-| Cerbyllin | Route24 | Herbe / sol | 41-52 | Jour | Pre-League |
-| Chamallot | Burned Tower B1f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Chapignon | Mt Mortar 1f North | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Charbambin | Cinnabar Island | Herbe / sol | 2-6 | Tous | Early Johto |
-| Charbi | Dark Cave South Side | Éclate-Roc | 2-6 | Tous | Early Johto |
-| Charibari | Union Cave 1f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Charpenti | Route42 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Chartor | Newsinjoh Hotsprings | Herbe / sol | 8-18 | Tous | Badges 2-4 |
-| Chelours | Route42 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Chenipan | Ilex Forest | Herbe / sol | 2-6 | Tous | Early Johto |
-| Chenipotte | Ilex Forest | Herbe / sol | 2-6 | Tous | Early Johto |
-| Chétiflor | Route32 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Chlorobule | Route31 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Chochodile | Burned Tower 1f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Chrysapile | National Park Normal | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Clic | Mt Mortar B1f | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Cliticlic | Mt Mortar 2f | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| Coatox | Mt Mortar 1f North | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Cochignon | Mt Silver Snow | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Coiffeton | Whirl Islands 1f | Surf | 2-6 | Tous | Early Johto |
-| Colhomard | Whirl Islands 1f | Super Canne | 27-38 | Nuit | Badges 5-7 |
-| Compagnol | Route32 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Corayon | Whirl Islands 1f | Vieille Canne | 2-6 | Tous | Early Johto |
-| Corboss | Route45 | Herbe / sol | 27-38 | Nuit | Badges 5-7 |
-| Cornèbre | Route31 | Herbe / sol | 2-6 | Nuit | Early Johto |
-| Corvaillus | Dragons Den Cavern | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| Coupenotte | Mt Mortar 2f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Crabagarre | Mt Mortar B1f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Crabaraque | Viridian Forest | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Crabicoque | National Park Normal | Herbe / sol | 2-6 | Tous | Early Johto |
-| Crabominable | Slowpoke Well B1f | Super Canne | 27-38 | Tous | Badges 5-7 |
-| Cradopaud | Mt Mortar 1f South | Herbe / sol | 2-6 | Tous | Early Johto |
-| Crapustule | Route40 | Surf | 36-50 | Tous | Badges 7-8 |
-| Crocorible | Mt Mortar 2f | Éclate-Roc | 36-50 | Nuit | Badges 7-8 |
-| Croquine | Route29 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Darumacho | Cinnabar Island | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Darumarond | Burned Tower B1f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Debugant | Route42 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Déflaisan | Route26 | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| Démolosse | Burned Tower 1f | Herbe / sol | 27-38 | Nuit | Badges 5-7 |
-| Denticrisse | Lake Of Rage | Bonne Canne | 8-18 | Jour | Badges 2-4 |
-| Desséliande | Burned Tower 1f | Herbe / sol | 27-38 | Nuit | Badges 5-7 |
-| Dimoret | Mt Silver Snow | Herbe / sol | 27-38 | Nuit | Badges 5-7 |
-| Dinoclier | Union Cave 1f | Éclate-Roc | 2-6 | Tous | Early Johto |
-| Dofin | Route40 | Vieille Canne | 2-6 | Tous | Early Johto |
-| Dolman | Union Cave 1f | Éclate-Roc | 8-18 | Tous | Badges 2-4 |
-| Donphan | Mt Mortar B1f | Éclate-Roc | 27-38 | Tous | Badges 5-7 |
-| Doudouvet | Route29 | Herbe / sol | 2-6 | Jour | Early Johto |
-| Draby | Victory Road Kanto B1f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Draco | Dragons Den Cavern | Surf | 33-46 | Tous | Badges 7-8 |
-| Dracolosse | Mt Silver 3f | Herbe / sol | 54-73 | Tous | Endgame |
-| Draïeul | Mt Silver 2f | Herbe / sol | 8-18 | Tous | Badges 2-4 |
-| Drascore | Route43 | Herbe / sol | 27-38 | Nuit | Badges 5-7 |
-| Drattak | Dragons Den Cavern | Herbe / sol | 54-73 | Tous | Endgame |
-| Dunaconda | Mt Mortar B1f | Éclate-Roc | 27-38 | Tous | Badges 5-7 |
-| Dunaja | Union Cave B1f | Éclate-Roc | 2-6 | Tous | Early Johto |
-| Duralugon | Mt Silver 2f | Herbe / sol | 18-28 | Tous | Badges 4-6 |
-| Dynavolt | Route34 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Écayon | Whirl Islands 1f | Vieille Canne | 2-6 | Tous | Early Johto |
-| Écrapince | Lake Of Rage | Vieille Canne | 2-6 | Tous | Early Johto |
-| Ékaïser | Mt Silver 2f | Herbe / sol | 54-73 | Tous | Endgame |
-| Élecsprint | Route35 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Élekable | Route35 | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| Élekid | Route10 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Élektek | Route5 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Embrochet | Whirl Islands 1f | Vieille Canne | 2-6 | Tous | Early Johto |
-| Embrylex | Mt Silver Outside | Herbe / sol | 48-65 | Tous | Endgame |
-| Escroco | Mt Mortar B1f | Éclate-Roc | 27-38 | Nuit | Badges 5-7 |
-| Étouraptor | Route43 | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| Étourmi | Route29 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Évoli | Route31 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Exagide | Burned Tower 1f | Herbe / sol | 36-50 | Nuit | Badges 7-8 |
-| Famignol | Route42 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Fantominus | Tin Tower 3f | Herbe / sol | 2-6 | Nuit | Early Johto |
-| Fantyrm | Route34 | Herbe / sol | 8-18 | Nuit | Badges 2-4 |
-| Farfuret | Ice Path B1f | Herbe / sol | 30-42 | Nuit | Badges 7-8 |
-| Farfurex | Mt Mortar B1f | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Férosinge | Route42 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Feuforêve | Tin Tower 3f | Herbe / sol | 8-18 | Nuit | Badges 2-4 |
-| Feunard | Route18 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Feunnec | Burned Tower 1f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Filentrappe | Viridian Forest | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Flabébé | Route32 | Herbe / sol | 2-6 | Jour | Early Johto |
-| Flambino | Burned Tower 1f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Flambusard | Cinnabar Island | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| Flamenroule | Mt Mortar 1f South | Herbe / sol | 18-28 | Tous | Badges 4-6 |
-| Flamiaou‎‎ | Burned Tower 1f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Flingouste | Slowpoke Well B1f | Vieille Canne | 2-6 | Tous | Early Johto |
-| Floette | Route45 | Herbe / sol | 27-38 | Jour | Badges 5-7 |
-| Floramantis | Route45 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Floréclat | Ice Path 1f | Éclate-Roc | 41-52 | Tous | Pre-League |
-| Florges | Mt Silver 3f | Herbe / sol | 54-73 | Jour | Endgame |
-| Foretress | Ilex Forest | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Forgelina | Dragons Den Cavern | Herbe / sol | 36-50 | Jour | Badges 7-8 |
-| Forgella | Burned Tower B1f | Herbe / sol | 27-38 | Jour | Badges 5-7 |
-| Forgerette | Dark Cave South Side | Herbe / sol | 2-6 | Jour | Early Johto |
-| Fouinette | Route29 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Frison | Route35 | Herbe / sol | 8-18 | Tous | Badges 2-4 |
-| Frissonille | Ice Path B1f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Froussardine | Slowpoke Well B1f | Vieille Canne | 2-6 | Tous | Early Johto |
-| Fulgudog | Saffron City | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Fulgulairo | Route34 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Funécire | Lavender Town | Herbe / sol | 2-6 | Nuit | Early Johto |
-| Furaiglon | Route30 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Galegon | Burned Tower 1f | Éclate-Roc | 27-38 | Tous | Badges 5-7 |
-| Galekid | Slowpoke Well B1f | Éclate-Roc | 2-6 | Tous | Early Johto |
-| Galeking | Ice Path 1f | Éclate-Roc | 36-50 | Tous | Badges 7-8 |
-| Gallame | Mt Mortar B1f | Herbe / sol | 36-50 | Jour | Badges 7-8 |
-| Galvagla | Mt Silver Snow | Herbe / sol | 18-28 | Tous | Badges 4-6 |
-| Galvagon | Mt Silver 2f | Herbe / sol | 18-28 | Tous | Badges 4-6 |
-| Galvaran | Route35 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Gambex | National Park Normal | Herbe / sol | 27-38 | Nuit | Badges 5-7 |
-| Gamblast | Route40 | Super Canne | 27-38 | Tous | Badges 5-7 |
-| Gaulet | Route44 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Géolithe | Burned Tower 1f | Éclate-Roc | 27-38 | Tous | Badges 5-7 |
-| Germéclat | Dark Cave South Side | Éclate-Roc | 2-6 | Tous | Early Johto |
-| Gigalithe | Ice Path 1f | Éclate-Roc | 36-50 | Tous | Badges 7-8 |
-| Gigansel | Ice Path 1f | Éclate-Roc | 36-50 | Tous | Badges 7-8 |
-| Gobou | Whirl Islands 1f | Vieille Canne | 2-6 | Tous | Early Johto |
-| Goélise | Slowpoke Well B1f | Surf | 2-6 | Tous | Early Johto |
-| Goinfrex | Route29 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Golemastoc | Lavender Town | Herbe / sol | 27-38 | Nuit | Badges 5-7 |
-| Golgopathe | Lake Of Rage | Super Canne | 27-38 | Tous | Badges 5-7 |
-| Goupix | Route34 | Herbe / sol | 8-18 | Jour | Badges 2-4 |
-| Gouroutan | Ruins Of Alph Outside | Herbe / sol | 8-18 | Jour | Badges 2-4 |
-| Granbull | Route27 | Herbe / sol | 27-38 | Jour | Badges 5-7 |
-| Gravalanch | Mt Mortar B1f | Éclate-Roc | 27-38 | Tous | Badges 5-7 |
-| Grelaçon | Ice Path B3f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Grenousse | Slowpoke Well B1f | Surf | 2-6 | Tous | Early Johto |
-| Griknot | Union Cave B2f | Herbe / sol | 8-18 | Tous | Badges 2-4 |
-| Grillepattes | Ilex Forest | Herbe / sol | 2-6 | Tous | Early Johto |
-| Grimalin | Route32 | Herbe / sol | 2-6 | Nuit | Early Johto |
-| Grindur | Dark Cave South Side | Herbe / sol | 2-6 | Tous | Early Johto |
-| Gringolem | Burned Tower B1f | Herbe / sol | 2-6 | Nuit | Early Johto |
-| Grolem | Mt Silver 1f Item Room | Éclate-Roc | 54-73 | Tous | Endgame |
-| Gruikui | Burned Tower B1f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Gueriaigle | Route45 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Guérilande | Route35 | Herbe / sol | 8-18 | Jour | Badges 2-4 |
-| Hachécateur | Viridian Forest | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Hastacuda | Route32 | Super Canne | 27-38 | Tous | Badges 5-7 |
-| Hélédelle | Route42 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Hélionceau | Cinnabar Island | Herbe / sol | 2-6 | Tous | Early Johto |
-| Héricendre | Cinnabar Island | Herbe / sol | 2-6 | Tous | Early Johto |
-| Hexagel | Ice Path B2f | Herbe / sol | 8-18 | Tous | Badges 2-4 |
-| Hippodocus | Ice Path 1f | Éclate-Roc | 41-52 | Tous | Pre-League |
-| Hippopotas | Dark Cave South Side | Éclate-Roc | 2-6 | Tous | Early Johto |
-| Hydragla | Route32 | Surf | 18-28 | Tous | Badges 4-6 |
-| Hydragon | Whirl Islands 1f | Surf | 18-28 | Tous | Badges 4-6 |
-| Hypocéan | Route21 | Surf | 27-38 | Tous | Badges 5-7 |
-| Hypotrempe | Slowpoke Well B1f | Surf | 2-6 | Tous | Early Johto |
-| Iguolta | Route10 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Insécateur | Viridian Forest | Herbe / sol | 18-28 | Tous | Badges 4-6 |
-| Judokrak | Mt Mortar 1f North | Herbe / sol | 8-18 | Tous | Badges 2-4 |
-| Kabuto | Slowpoke Well B1f | Vieille Canne | 2-6 | Tous | Early Johto |
-| Kaiminus | Slowpoke Well B1f | Surf | 2-6 | Tous | Early Johto |
-| Kaimorse | Lake Of Rage | Surf | 36-50 | Tous | Badges 7-8 |
-| Kangourex | Route34 | Herbe / sol | 8-18 | Tous | Badges 2-4 |
-| Karaclée | Mt Mortar B1f | Herbe / sol | 8-18 | Tous | Badges 2-4 |
-| Khélocrok | Lake Of Rage | Surf | 2-6 | Tous | Early Johto |
-| Kirlia | Route26 | Herbe / sol | 27-38 | Jour | Badges 5-7 |
-| Kokiyas | Whirl Islands 1f | Vieille Canne | 2-6 | Tous | Early Johto |
-| Krabby | Slowpoke Well B1f | Vieille Canne | 2-6 | Tous | Early Johto |
-| Kraknoix | Slowpoke Well B1f | Éclate-Roc | 2-6 | Tous | Early Johto |
-| Krakos | Mt Mortar 1f South | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Kranidos | Slowpoke Well B1f | Éclate-Roc | 2-6 | Tous | Early Johto |
-| Kravarech | Victory Road Kanto B1f | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Kungfouine | Mt Mortar B1f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Lampéroie | Route40 | Super Canne | 27-38 | Tous | Badges 5-7 |
-| Lampignon | Route27 | Herbe / sol | 27-38 | Jour | Badges 5-7 |
-| Lanssorien | Victory Road Kanto B1f | Herbe / sol | 54-73 | Nuit | Endgame |
-| Lanturn | Route40 | Super Canne | 27-38 | Tous | Badges 5-7 |
-| Larméléon | Whirl Islands 1f | Surf | 2-6 | Tous | Early Johto |
-| Larvadar | National Park Normal | Herbe / sol | 2-6 | Tous | Early Johto |
-| Larveyette | Viridian Forest | Herbe / sol | 2-6 | Tous | Early Johto |
-| Larvibule | Ilex Forest | Herbe / sol | 2-6 | Tous | Early Johto |
-| Léboulérou | National Park Normal | Herbe / sol | 2-6 | Tous | Early Johto |
-| Lépidonille | Ilex Forest | Herbe / sol | 2-6 | Tous | Early Johto |
-| Lestombaile | Route35 | Herbe / sol | 8-18 | Nuit | Badges 2-4 |
-| Leuphorie | Route43 | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| Leveinard | Route13 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Léviator | Vermilion City Port Outside | Super Canne | 41-52 | Tous | Pre-League |
-| Lilia | Route40 | Vieille Canne | 2-6 | Tous | Early Johto |
-| Lilliterelle | Ilex Forest | Herbe / sol | 2-6 | Tous | Early Johto |
-| Limagma | Burned Tower B1f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Lippoutou | Ice Path B3f | Herbe / sol | 27-38 | Jour | Badges 5-7 |
-| Lixy | Route10 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Lokhlass | Lake Of Rage | Surf | 18-28 | Tous | Badges 4-6 |
-| Lougaroc | Burned Tower 1f | Éclate-Roc | 27-38 | Tous | Badges 5-7 |
-| Loupio | Slowpoke Well B1f | Vieille Canne | 2-6 | Tous | Early Johto |
-| Lovdisc | Route41 | Vieille Canne | 2-6 | Tous | Early Johto |
-| Lucanon | Viridian Forest | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| Lucario | Route42 | Herbe / sol | 41-52 | Tous | Pre-League |
-| Lugulabre | Burned Tower 1f | Herbe / sol | 36-50 | Nuit | Badges 7-8 |
-| Luminéon | Route32 | Super Canne | 27-38 | Tous | Badges 5-7 |
-| Luxray | Route34 | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| M. Mime | Route2 | Herbe / sol | 27-38 | Jour | Badges 5-7 |
-| Machoc | Mt Mortar 1f North | Herbe / sol | 2-6 | Tous | Early Johto |
-| Maganon | Cinnabar Island | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| Magby | Newsinjoh Hotsprings | Herbe / sol | 2-6 | Tous | Early Johto |
-| Magicarpe | Route40 | Vieille Canne | 2-6 | Tous | Early Johto |
-| Magirêve | Burned Tower 1f | Herbe / sol | 27-38 | Nuit | Badges 5-7 |
-| Magmar | Route6 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Magnéti | Route34 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Magnéton | Route2 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Magnézone | Route35 | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| Malamandre | Burned Tower B1f | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Malosse | Newsinjoh Hotsprings | Herbe / sol | 2-6 | Nuit | Early Johto |
-| Mammochon | Mt Silver Snow | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| Marcacrin | Ice Path 1f | Herbe / sol | 30-42 | Tous | Badges 7-8 |
-| Marill | Route40 | Surf | 27-38 | Jour | Badges 5-7 |
-| Marisson | Route33 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Mascaïman | Union Cave B1f | Éclate-Roc | 2-6 | Nuit | Early Johto |
-| Maskadra | National Park Normal | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Méditikka | Mt Mortar B1f | Herbe / sol | 2-6 | Jour | Early Johto |
-| Mélancolux | Tin Tower 3f | Herbe / sol | 27-38 | Nuit | Badges 5-7 |
-| Mélofée | Route15 | Herbe / sol | 27-38 | Jour | Badges 5-7 |
-| Métalosse | Mt Silver 2f | Herbe / sol | 54-73 | Jour | Endgame |
-| Métamorph | Route30 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Météno | Union Cave 1f | Éclate-Roc | 8-18 | Tous | Badges 2-4 |
-| Miaouss | Route30 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Milobellus | Slowpoke Well B1f | Surf | 41-52 | Tous | Pre-League |
-| Mimantis | Route31 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Mimigal | National Park Normal | Herbe / sol | 2-6 | Nuit | Early Johto |
-| Mimiqui | Burned Tower B1f | Herbe / sol | 8-18 | Nuit | Badges 2-4 |
-| Mimitoss | Viridian Forest | Herbe / sol | 2-6 | Tous | Early Johto |
-| Minidraco | Dragons Den Cavern | Surf | 30-42 | Tous | Badges 7-8 |
-| Minisange | Route29 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Minotaupe | Burned Tower B1f | Éclate-Roc | 27-38 | Tous | Badges 5-7 |
-| Momartik | Ice Path B3f | Herbe / sol | 27-38 | Nuit | Badges 5-7 |
-| Monorpale | Lavender Town | Herbe / sol | 2-6 | Nuit | Early Johto |
-| Monthracite | Cinnabar Island | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| Morpeko | Route34 | Herbe / sol | 8-18 | Nuit | Badges 2-4 |
-| Motisma | Lavender Town | Herbe / sol | 8-18 | Nuit | Badges 2-4 |
-| Motorizard | Victory Road Kanto B1f | Herbe / sol | 18-28 | Tous | Badges 4-6 |
-| Moustillon | Route40 | Surf | 2-6 | Tous | Early Johto |
-| Mucuscule | Mt Silver 2f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Muplodocus | Mt Mortar 2f | Herbe / sol | 54-73 | Tous | Endgame |
-| Mustébouée | Route41 | Surf | 2-6 | Tous | Early Johto |
-| Mustéflott | Lake Of Rage | Surf | 27-38 | Tous | Badges 5-7 |
-| Mygavolt | National Park Normal | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Mysdibule | Union Cave B1f | Herbe / sol | 2-6 | Jour | Early Johto |
-| Mystherbe | Route31 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Nanméouïe | Route36 | Herbe / sol | 8-18 | Tous | Badges 2-4 |
-| Némélios | Newsinjoh Hotsprings | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Nénupiot | Whirl Islands 1f | Surf | 2-6 | Tous | Early Johto |
-| Nidoking | Rock Tunnel 1f | Éclate-Roc | 36-50 | Tous | Badges 7-8 |
-| Nidoqueen | Rock Tunnel B1f | Éclate-Roc | 36-50 | Tous | Badges 7-8 |
-| Nidoran♀ | Route32 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Nidoran♂ | Route30 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Nigosier | Lake Of Rage | Surf | 8-18 | Tous | Badges 2-4 |
-| Ningale | National Park Normal | Herbe / sol | 2-6 | Tous | Early Johto |
-| Nirondelle | Route29 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Noacier | Burned Tower B1f | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Noctunoir | Burned Tower 1f | Herbe / sol | 36-50 | Nuit | Badges 7-8 |
-| Nodulithe | Slowpoke Well B1f | Éclate-Roc | 2-6 | Tous | Early Johto |
-| Noeunoeuf | Route30 | Herbe / sol | 2-6 | Jour | Early Johto |
-| Nosferapti | Route29 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Nounourson | Mt Mortar B1f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Nucléos | Ruins Of Alph Outside | Herbe / sol | 2-6 | Jour | Early Johto |
-| Obalie | Route40 | Surf | 2-6 | Tous | Early Johto |
-| Octillery | Slowpoke Well B1f | Super Canne | 27-38 | Tous | Badges 5-7 |
-| Ohmassacre | Route41 | Super Canne | 36-50 | Tous | Badges 7-8 |
-| Olivini | Route31 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Oniglali | Ice Path B1f | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Onix | Union Cave B1f | Éclate-Roc | 2-6 | Tous | Early Johto |
-| Opermine | Route41 | Vieille Canne | 2-6 | Tous | Early Johto |
-| Ortide | Route4 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Osselait | Slowpoke Well B1f | Éclate-Roc | 2-6 | Tous | Early Johto |
-| Otaquin | Slowpoke Well B1f | Surf | 2-6 | Tous | Early Johto |
-| Otaria | Slowpoke Well B1f | Surf | 2-6 | Tous | Early Johto |
-| Ouistempo | Route33 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Ouisticram | Burned Tower B1f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Ouvrifier | Mt Mortar 1f South | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Pachyradjah | Mt Mortar 1f South | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Pandarbare | Mt Mortar B1f | Herbe / sol | 27-38 | Nuit | Badges 5-7 |
-| Pandespiègle | Mt Mortar 1f North | Herbe / sol | 2-6 | Tous | Early Johto |
-| Paragruel | Slowpoke Well B1f | Super Canne | 41-52 | Nuit | Pre-League |
-| Paras | Ilex Forest | Herbe / sol | 2-6 | Tous | Early Johto |
-| Parecool | Route30 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Passerouge | Route29 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Pérégrain | National Park Normal | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Phanpy | Union Cave B1f | Éclate-Roc | 2-6 | Tous | Early Johto |
-| Phogleur | Route41 | Surf | 27-38 | Tous | Badges 5-7 |
-| Piafabec | Route29 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Picassaut | Route29 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Pikachu | Route5 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Pimito | Route29 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Pitrouille | Burned Tower B1f | Herbe / sol | 2-6 | Nuit | Early Johto |
-| Plumeline | Burned Tower 1f | Herbe / sol | 8-18 | Tous | Badges 2-4 |
-| Pohm | Route34 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Poichigeon | Route32 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Poissirène | Route41 | Vieille Canne | 2-6 | Tous | Early Johto |
-| Polagriffe | Ice Path B1f | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Polarhume | Ice Path 1f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Polichombr | Burned Tower 1f | Herbe / sol | 2-6 | Nuit | Early Johto |
-| Polthégeist | Lavender Town | Herbe / sol | 27-38 | Nuit | Badges 5-7 |
-| Pomdepik | Viridian Forest | Headbutt | 2-6 | Tous | Early Johto |
-| Ponyta | Route38 | Herbe / sol | 18-28 | Jour | Badges 4-6 |
-| Porygon | Route30 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Porygon-Z | Route27 | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| Porygon2 | Route26 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Poulpaf | Route42 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Poussacha | Route29 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Poussifeu | Cinnabar Island | Herbe / sol | 2-6 | Tous | Early Johto |
-| Prédastérie | Route41 | Surf | 27-38 | Tous | Badges 5-7 |
-| Prismillon | Viridian Forest | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| Psykokwak | Whirl Islands 1f | Surf | 2-6 | Tous | Early Johto |
-| Ptéra | Burned Tower B1f | Éclate-Roc | 18-28 | Tous | Badges 4-6 |
-| Ptitard | Whirl Islands 1f | Surf | 2-6 | Tous | Early Johto |
-| Ptyranidur | Mt Silver 2f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Pyrax | Ilex Forest | Herbe / sol | 41-52 | Tous | Pre-League |
-| Pyronille | Viridian Forest | Herbe / sol | 2-6 | Tous | Early Johto |
-| Quartermac | Mt Mortar 1f North | Herbe / sol | 8-18 | Tous | Badges 2-4 |
-| Qwilpik | Route45 | Herbe / sol | 27-38 | Nuit | Badges 5-7 |
-| Racaillou | Dark Cave South Side | Éclate-Roc | 2-6 | Tous | Early Johto |
-| Rafflesia | Route5 | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| Ramoloss | Route32 | Surf | 2-6 | Jour | Early Johto |
-| Rapion | Ilex Forest | Herbe / sol | 2-6 | Tous | Early Johto |
-| Rattata | Route32 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Relicanth | Route40 | Bonne Canne | 8-18 | Tous | Badges 2-4 |
-| Rémoraid | Route32 | Vieille Canne | 2-6 | Tous | Early Johto |
-| Rhinastoc | Tohjo Falls Cavern | Éclate-Roc | 36-50 | Tous | Badges 7-8 |
-| Rhinocorne | Union Cave B1f | Éclate-Roc | 2-6 | Tous | Early Johto |
-| Riolu | Mt Mortar B1f | Herbe / sol | 24-34 | Tous | Badges 5-7 |
-| Rocabot | Slowpoke Well B1f | Éclate-Roc | 2-6 | Tous | Early Johto |
-| Rondoudou | Route24 | Herbe / sol | 27-38 | Jour | Badges 5-7 |
-| Ronflex | Route3 | Herbe / sol | 41-52 | Tous | Pre-League |
-| Rosélia | Route44 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Roserade | Route26 | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| Rototaupe | Dark Cave South Side | Éclate-Roc | 2-6 | Tous | Early Johto |
-| Roucarnage | Route18 | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| Roucool | Route29 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Rozbouton | Route29 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Rubombelle | National Park Normal | Herbe / sol | 27-38 | Jour | Badges 5-7 |
-| Sabelette | Union Cave B1f | Éclate-Roc | 2-6 | Tous | Early Johto |
-| Salamèche | Newsinjoh Hotsprings | Herbe / sol | 2-6 | Tous | Early Johto |
-| Salarsen | Route34 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Sancoki (Mer Occident) | Slowpoke Well B1f | Surf | 2-6 | Tous | Early Johto |
-| Saquedeneu | Route39 | Herbe / sol | 8-18 | Tous | Badges 2-4 |
-| Sarmuraï | Whirl Islands 1f | Super Canne | 41-52 | Tous | Pre-League |
-| Scalpion | Slowpoke Well B1f | Herbe / sol | 2-6 | Nuit | Early Johto |
-| Scalproie | Burned Tower 1f | Herbe / sol | 27-38 | Nuit | Badges 5-7 |
-| Scarabrute | Ilex Forest | Herbe / sol | 18-28 | Tous | Badges 4-6 |
-| Scarhino | Ilex Forest | Headbutt | 18-28 | Tous | Badges 4-6 |
-| Scolocendre | National Park Normal | Herbe / sol | 41-52 | Tous | Pre-League |
-| Scorplane | Union Cave B1f | Éclate-Roc | 8-18 | Tous | Badges 2-4 |
-| Scorvol | Mt Mortar B1f | Éclate-Roc | 27-38 | Tous | Badges 5-7 |
-| Scovilain | Newsinjoh Hotsprings | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Scrutella | Route35 | Herbe / sol | 2-6 | Jour | Early Johto |
-| Selutin | Slowpoke Well B1f | Éclate-Roc | 2-6 | Tous | Early Johto |
-| Séracrawl | Mt Silver Snow | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Shaofouine | Route42 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Sharpedo | Route32 | Super Canne | 27-38 | Nuit | Badges 5-7 |
-| Sidérella | Cerulean Cave 1f | Herbe / sol | 36-50 | Jour | Badges 7-8 |
-| Sinistrail | Route32 | Surf | 18-28 | Nuit | Badges 4-6 |
-| Skelénox | Lavender Town | Herbe / sol | 2-6 | Nuit | Early Johto |
-| Smogo | Route32 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Solochi | Dragons Den Cavern | Herbe / sol | 2-6 | Nuit | Early Johto |
-| Sonistrelle | Mt Mortar 2f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Sorbébé | Seafoam Islands 1f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Sorbouboul | Ice Path B1f | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| Sorboul | Ice Path 1f | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Sorcilence | Route27 | Herbe / sol | 36-50 | Jour | Badges 7-8 |
-| Sovkipou | Lake Of Rage | Vieille Canne | 2-6 | Tous | Early Johto |
-| Spectrum | Mt Moon Cave | Herbe / sol | 27-38 | Nuit | Badges 5-7 |
-| Spododo | Route33 | Herbe / sol | 2-6 | Jour | Early Johto |
-| Stalgamin | Ice Path 1f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Stari | Whirl Islands 1f | Vieille Canne | 2-6 | Tous | Early Johto |
-| Statitik | Ilex Forest | Herbe / sol | 2-6 | Tous | Early Johto |
-| Sucreine | Route42 | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| Superdofin | Route41 | Super Canne | 27-38 | Tous | Badges 5-7 |
-| Symbios | Route24 | Herbe / sol | 36-50 | Jour | Badges 7-8 |
-| Tadmorv | Route31 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Tapatoès | Route29 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Tarenbulle | Slowpoke Well B1f | Surf | 27-38 | Tous | Badges 5-7 |
-| Tarsal | Route33 | Herbe / sol | 2-6 | Jour | Early Johto |
-| Taupikeau | Whirl Islands 1f | Vieille Canne | 2-6 | Tous | Early Johto |
-| Taupiqueur | Union Cave 1f | Éclate-Roc | 2-6 | Tous | Early Johto |
-| Tauros | Route38 | Herbe / sol | 18-28 | Jour | Badges 4-6 |
-| Teddiursa | Route29 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Ténéfix | Burned Tower B1f | Herbe / sol | 2-6 | Nuit | Early Johto |
-| Tentacool | Whirl Islands 1f | Vieille Canne | 2-6 | Tous | Early Johto |
-| Tentacruel | Route19 | Super Canne | 27-38 | Tous | Badges 5-7 |
-| Téraclope | Tin Tower 3f | Herbe / sol | 27-38 | Nuit | Badges 5-7 |
-| Terhal | Union Cave 1f | Herbe / sol | 2-6 | Jour | Early Johto |
-| Terracool | Slowpoke Well B1f | Éclate-Roc | 2-6 | Tous | Early Johto |
-| Terracruel | Burned Tower 1f | Éclate-Roc | 27-38 | Tous | Badges 5-7 |
-| Têtampoule | Slowpoke Well B1f | Surf | 2-6 | Tous | Early Johto |
-| Têtarte | Route19 | Surf | 27-38 | Tous | Badges 5-7 |
-| Théffroi | Burned Tower B1f | Herbe / sol | 2-6 | Nuit | Early Johto |
-| Tiboudet | Dark Cave South Side | Éclate-Roc | 2-6 | Tous | Early Johto |
-| Tic | Union Cave B1f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Tiplouf | Route40 | Surf | 2-6 | Tous | Early Johto |
-| Tissenboule | National Park Normal | Herbe / sol | 2-6 | Tous | Early Johto |
-| Togedemaru | Route34 | Herbe / sol | 8-18 | Tous | Badges 2-4 |
-| Torgamord | Whirl Islands 1f | Surf | 27-38 | Tous | Badges 5-7 |
-| Tortipouss | Route30 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Toxizap | Saffron City | Herbe / sol | 2-6 | Tous | Early Johto |
-| Tranchodon | Mt Silver 2f | Herbe / sol | 36-50 | Tous | Badges 7-8 |
-| Trépassable | Burned Tower B1f | Herbe / sol | 27-38 | Nuit | Badges 5-7 |
-| Triopikeau | Route32 | Super Canne | 27-38 | Tous | Badges 5-7 |
-| Triopikeur | Rock Tunnel B1f | Éclate-Roc | 27-38 | Tous | Badges 5-7 |
-| Trioxhydre | Victory Road Kanto B1f | Herbe / sol | 54-73 | Nuit | Endgame |
-| Tritonde | Route32 | Surf | 2-6 | Tous | Early Johto |
-| Tritosor (Mer Occident) | Route40 | Surf | 27-38 | Tous | Badges 5-7 |
-| Tritox | Burned Tower 1f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Trompignon | Route33 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Tylton | Route31 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Tyranocif | Mt Silver 3f | Herbe / sol | 54-73 | Tous | Endgame |
-| Ursaking | Mt Silver 2f | Éclate-Roc | 54-73 | Tous | Endgame |
-| Ursaring | Route42 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Vaututrice | Route27 | Herbe / sol | 27-38 | Nuit | Badges 5-7 |
-| Venalgue | Whirl Islands 1f | Surf | 2-6 | Tous | Early Johto |
-| Venipatte | Viridian Forest | Herbe / sol | 2-6 | Tous | Early Johto |
-| Verpom | Mt Silver 2f | Herbe / sol | 2-6 | Tous | Early Johto |
-| Vibraninf | Dragons Den Cavern | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Vigoroth | Route27 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Vipélierre | Route33 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Volcaropod | Cinnabar Island | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Voltorbe | Saffron City | Herbe / sol | 2-6 | Tous | Early Johto |
-| Voltoutou | Route10 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Vorastérie | Route40 | Surf | 2-6 | Tous | Early Johto |
-| Vostourno | Route32 | Herbe / sol | 2-6 | Nuit | Early Johto |
-| Vrombi | Dark Cave South Side | Herbe / sol | 2-6 | Tous | Early Johto |
-| Vrombotor | Burned Tower B1f | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Wagomine | Burned Tower B1f | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Wailmer | Slowpoke Well B1f | Vieille Canne | 2-6 | Tous | Early Johto |
-| Wailord | Route40 | Super Canne | 27-38 | Tous | Badges 5-7 |
-| Wattouat | Route34 | Herbe / sol | 8-18 | Jour | Badges 2-4 |
-| Wimessir | Cerulean Cave 1f | Herbe / sol | 8-18 | Jour | Badges 2-4 |
-| Zapétrel | Saffron City | Herbe / sol | 2-6 | Tous | Early Johto |
-| Zarbi | Ruins Of Alph Outside | Herbe / sol | 2-6 | Jour | Early Johto |
-| Zébibron | Route35 | Herbe / sol | 2-6 | Tous | Early Johto |
-| Zéblitz | Route10 | Herbe / sol | 27-38 | Tous | Badges 5-7 |
-| Zoroark | Route42 | Herbe / sol | 27-38 | Nuit | Badges 5-7 |
-| Zorua | Route33 | Herbe / sol | 2-6 | Nuit | Early Johto |
-
-## Headbutt
-
-Les quatre tables utilisent **30 / 30 / 30 / 10**.
-
-| Zone | Niv. | Pokémon (30 / 30 / 30 / 10) |
-|---|---:|---|
-| Ilex Forest | 24-27 | Pineco · Nincada · Paras · Heracross |
-| National Park Bug Contest | 26-29 | Helioptile · Toedscool · Rufflet · Pumpkaboo |
-| National Park Normal | 26-29 | Snom · Swablu · Foongus · Capsakid |
-| Viridian Forest | 70-84 | Scyther · Centiskorch · Kleavor · Vikavolt |
-
-## Safari
-
-Chaque secteur conserve des pools séparés de quatre espèces. Une admission commence au pool A puis avance d'un pool après chaque rencontre. Johto tourne sur **A → B → C → D → E → A** ; Kanto sur **A → B → C → D → E → F → A**. Chaque pool utilise **30 / 30 / 30 / 10**.
-
-### Johto
-
-| Secteur | Pool | Niv. | Pokémon (30 / 30 / 30 / 10) |
-|---|---|---:|---|
-| Safari Zone Top Left | A | 37-40 | Beedrill · Deerling (Spring Form) · Dustox · Wigglytuff |
-| Safari Zone Top Left | B | 37-40 | Beautifly · Butterfree · Ledyba · Yanma |
-| Safari Zone Top Left | C | 37-40 | Combee · Hoppip · Igglybuff · Tropius |
-| Safari Zone Top Left | D | 37-40 | Illumise · Karrablast · Mime Jr. · Volbeat |
-| Safari Zone Top Left | E | 37-40 | Burmy (Plant Cloak) · Kricketot · Shelmet · Maractus |
-| Safari Zone Top Mid | A | 38-41 | Dedenne · Natu · Woobat · Girafarig |
-| Safari Zone Top Mid | B | 38-41 | Fidough · Snubbull · Spritzee · Swirlix |
-| Safari Zone Top Mid | C | 38-41 | Cleffa · Milcery · Togepi · Espurr |
-| Safari Zone Top Mid | D | 38-41 | Drowzee · Munna · Spoink · Elgyem |
-| Safari Zone Top Mid | E | 38-41 | Lillipup · Wooloo · Wynaut · Chingling |
-| Safari Zone Low Mid | A | 39-42 | Chatot · Doduo · Farfetch'd · Stunfisk |
-| Safari Zone Low Mid | B | 39-42 | Emolga · Furfrou (Natural Form) · Hoothoot · Komala |
-| Safari Zone Low Mid | C | 39-42 | Castform · Kecleon · Zangoose · Stantler |
-| Safari Zone Low Mid | D | 39-42 | Aipom · Lickitung · Spinda · Dunsparce |
-| Safari Zone Low Mid | E | 39-42 | Glameow · Minccino · Skwovet · Buneary |
-| Safari Zone Top Right | A | 39-42 | Clamperl · Pyukumuku · Qwilfish · Alomomola |
-| Safari Zone Top Right | B | 39-42 | Ducklett · Panpour · Skiddo · Carnivine |
-| Safari Zone Top Right | C | 39-42 | Chikorita · Pansage · Shroodle · Cacnea |
-| Safari Zone Top Right | D | 39-42 | Gossifleur · Seedot · Sunkern · Cherubi |
-| Safari Zone Top Right | E | 39-42 | Minun · Pachirisu · Plusle · Pincurchin |
-| Safari Zone Low Left | A | 40-43 | Lunatone · Nosepass · Solrock · Klawf |
-| Safari Zone Low Left | B | 40-43 | Bonsly · Klefki · Pansear · Orthworm |
-| Safari Zone Low Left | C | 40-43 | Flittle · Patrat · Skitty · Bronzor |
-| Safari Zone Low Left | D | 40-43 | Bidoof · Smeargle · Yungoos · Lechonk |
-| Safari Zone Low Left | E | 40-43 | Bunnelby · Happiny · Whismur · Zigzagoon |
-| Safari Zone Low Right | A | 41-44 | Delibird · Frillish · Smoochum · Maschiff |
-| Safari Zone Low Right | B | 41-44 | Bramblin · Nickit · Purrloin · Inkay |
-| Safari Zone Low Right | C | 41-44 | Greavard · Poochyena · Yamask · Drifloon |
-| Safari Zone Low Right | D | 41-44 | Pichu · Poipole · Stunky · Seviper |
-| Safari Zone Low Right | E | 41-44 | Gulpin · Makuhita · Trubbish · Falinks |
-
-### Kanto
-
-| Secteur | Pool | Niv. | Pokémon (30 / 30 / 30 / 10) |
-|---|---|---:|---|
-| Fuchsia City Safari Zone Beach | A | 68-72 | Poliwrath · Primarina · Quaquaval · Swampert |
-| Fuchsia City Safari Zone Beach | B | 68-72 | Greninja · Inteleon · Kingdra · Walking Wake |
-| Fuchsia City Safari Zone Beach | C | 68-72 | Blastoise · Empoleon · Samurott · Feraligatr |
-| Fuchsia City Safari Zone Beach | D | 68-72 | Charizard · Ludicolo · Politoed · Slither Wing |
-| Fuchsia City Safari Zone Beach | E | 68-72 | Buzzwole · Iron Bundle · Pheromosa · Iron Valiant |
-| Fuchsia City Safari Zone Beach | F | 68-72 | Clefable · Miltank · Stoutland · Slaking |
-| Fuchsia City Safari Zone Cave | A | 71-75 | Iron Crown · Roaring Moon · Spiritomb · Iron Boulder |
-| Fuchsia City Safari Zone Cave | B | 71-75 | Gengar · Nihilego · Obstagoon · Guzzlord |
-| Fuchsia City Safari Zone Cave | C | 71-75 | Bellossom · Meganium · Shiftry · Iron Jugulis |
-| Fuchsia City Safari Zone Cave | D | 71-75 | Alakazam · Celesteela · Sigilyph · Flutter Mane |
-| Fuchsia City Safari Zone Cave | E | 71-75 | Exploud · Machamp · Mr. Rime · Crobat |
-| Fuchsia City Safari Zone Cave | F | 71-75 | Ampharos · Durant · Raichu · Xurkitree |
-| Fuchsia City Safari Zone Mountain | A | 72-76 | Flygon · Iron Treads · Stakataka · Gouging Fire |
-| Fuchsia City Safari Zone Mountain | B | 72-76 | Great Tusk · Infernape · Sandy Shocks · Iron Thorns |
-| Fuchsia City Safari Zone Mountain | C | 72-76 | Blaziken · Carbink · Emboar · Raging Bolt |
-| Fuchsia City Safari Zone Mountain | D | 72-76 | Blacephalon · Durant · Typhlosion · Iron Moth |
-| Fuchsia City Safari Zone Mountain | E | 72-76 | Cinderace · Incineroar · Skeledirge · Delphox |
-| Fuchsia City Safari Zone Mountain | F | 72-76 | Druddigon · Heatmor · Pawmot · Iron Hands |
-| Fuchsia City Safari Zone Brush | A | 69-73 | Arboliva · Leavanny · Victreebel · Venusaur |
-| Fuchsia City Safari Zone Brush | B | 69-73 | Jumpluff · Orbeetle · Scolipede · Iron Leaves |
-| Fuchsia City Safari Zone Brush | C | 69-73 | Gardevoir · Kartana · Togekiss · Scream Tail |
-| Fuchsia City Safari Zone Brush | D | 69-73 | Meowscarada · Rillaboom · Sceptile · Brute Bonnet |
-| Fuchsia City Safari Zone Brush | E | 69-73 | Chesnaught · Serperior · Torterra · Decidueye |
+| Zone | Méthode | Moment | Niv. | Slots / taux |
+|---|---|---|---:|---|
+| Blackthorn City | Pêche | Tous | 59–62 | Hypocéan 30% · Barbicha 30% · Colhomard 30% · Minidraco 10% |
+| Blackthorn City | Herbe / sol | Tous | 59–62 | Rafflesia 30% · Ronflex 30% · Élekable 30% · Scalpereur 10% |
+| Blackthorn City | Surf | Tous | 59–62 | Hypocéan 30% · Draco 30% · Léviator 30% · Milobellus 10% |
+| Burned Tower 1F | Herbe / sol | Jour | 33–36 | Piétacé 30% · Chartor 30% · Plumeline (Style Flamenco) 30% · Héricendre 10% |
+| Burned Tower 1F | Herbe / sol | Nuit | 33–36 | Lestombaile 30% · Tritox 30% · Brocélôme 30% · Poussifeu 10% |
+| Burned Tower B1F | Herbe / sol | Jour | 34–37 | Wimessir (Mâle) 30% · Gouroutan 30% · Rattata 30% · Ouisticram 10% |
+| Burned Tower B1F | Herbe / sol | Nuit | 34–37 | Mimiqui 30% · Rapion 30% · Monorpale 30% · Flamiaou 10% |
+| Celadon City | Pêche | Tous | 70–84 | Tentacruel 30% · Sarmuraï 30% · Paragruel (Mâle) 30% · Kaimorse 10% |
+| Celadon City | Herbe / sol | Tous | 70–84 | Symbios 30% · Leuphorie 30% · Florges (Fleur Rouge) 30% · Ursaking 10% |
+| Celadon City | Surf | Tous | 70–84 | Wailord 30% · Sarmuraï 30% · Paragruel (Mâle) 30% · Kaimorse 10% |
+| Cerulean Cave 1F | Pêche | Jour | 85–95 | Tritonde 30% · Opermine 30% · Torgamord 30% · Lokhlass 10% |
+| Cerulean Cave 1F | Herbe / sol | Jour | 85–95 | Drattak 30% · Trioxhydre 30% · Lanssorien 30% · Muplodocus 10% |
+| Cerulean Cave 1F | Éclate-Roc | Jour | 85–95 | Donphan 30% · Gigalithe 30% · Bétochef 30% · Galeking 10% |
+| Cerulean Cave 1F | Surf | Jour | 85–95 | Venalgue 30% · Vorastérie 30% · Flingouste 30% · Tentacruel 10% |
+| Cerulean Cave B1F | Pêche | Jour | 85–95 | Khélocrok 30% · Dofin 30% · Tritonde 30% · Lokhlass 10% |
+| Cerulean Cave B1F | Herbe / sol | Jour | 85–95 | Noctunoir 30% · Tranchodon 30% · Ursaking 30% · Glaivodo 10% |
+| Cerulean Cave B1F | Éclate-Roc | Jour | 85–95 | Pachyradjah 30% · Chelours 30% · Bourrinos 30% · Lucanon 10% |
+| Cerulean Cave B1F | Surf | Jour | 85–95 | Luminéon 30% · Sharpedo 30% · Relicanth 30% · Tentacruel 10% |
+| Cerulean Cave B2F | Pêche | Jour | 85–95 | Bekipan 30% · Superdofin 30% · Torgamord 30% · Lokhlass 10% |
+| Cerulean Cave B2F | Herbe / sol | Jour | 85–95 | Lugulabre 30% · Métalosse 30% · Drattak 30% · Dracolosse 10% |
+| Cerulean Cave B2F | Éclate-Roc | Jour | 85–95 | Hippodocus 30% · Hachécateur 30% · Gigansel 30% · Cliticlic 10% |
+| Cerulean Cave B2F | Surf | Jour | 85–95 | Corayon 30% · Tarenbulle 30% · Triopikeau 30% · Nigirigon (Forme Courbée) 10% |
+| Cerulean City | Pêche | Tous | 70–84 | Mustéflott 30% · Gamblast 30% · Golgopathe 30% · Crapustule 10% |
+| Cerulean City | Surf | Tous | 70–84 | Prédastérie 30% · Hastacuda 30% · Tentacruel 30% · Kaimorse 10% |
+| Cherrygrove City | Pêche | Tous | 3–6 | Magicarpe 30% · Poissirène 30% · Barloche 30% · Barpau 10% |
+| Cherrygrove City | Herbe / sol | Tous | 3–6 | Têtampoule 30% · Voltorbe 30% · Métamorph 30% · Nosferapti 10% |
+| Cherrygrove City | Surf | Tous | 3–6 | Magicarpe 30% · Poissirène 30% · Axoloto 30% · Ptitard 10% |
+| Cianwood City | Pêche | Tous | 41–44 | Flingouste 30% · Relicanth 30% · Venalgue 30% · Grenousse 10% |
+| Cianwood City | Herbe / sol | Tous | 41–44 | Scrutella 30% · Hélionceau 30% · Ortide 30% · Lampéroie 10% |
+| Cianwood City | Surf | Tous | 41–44 | Tentacool 30% · Goélise 30% · Flingouste 30% · Otaquin 10% |
+| Cinnabar Island | Pêche | Tous | 70–84 | Wailord 30% · Golgopathe 30% · Paragruel (Mâle) 30% · Sarmuraï 10% |
+| Cinnabar Island | Herbe / sol | Tous | 70–84 | Hippodocus 30% · Bruyverne 30% · Galeking 30% · Rhinastoc 10% |
+| Cinnabar Island | Surf | Tous | 70–84 | Mustéflott 30% · Prédastérie 30% · Gamblast 30% · Crapustule 10% |
+| Cliff Edge Cave | Herbe / sol | Jour | 46–49 | Mordudor (Forme Coffre) 30% · Coupenotte 30% · Feuforêve 30% · Gringolem 10% |
+| Cliff Edge Cave | Éclate-Roc | Jour | 46–49 | Karaclée 30% · Armulys 30% · Charpenti 30% · Bacabouh 10% |
+| Cliff Edge Gate | Pêche | Jour | 45–47 | Corayon 30% · Phogleur 30% · Luminéon 30% · Nigosier 10% |
+| Cliff Edge Gate | Surf | Jour | 45–47 | Batracné 30% · Tarenbulle 30% · Triopikeau 30% · Superdofin 10% |
+| Dark Cave North Side | Pêche | Tous | 64–66 | Azumarill 30% · Nigirigon (Forme Courbée) 30% · Milobellus 30% · Léviator 10% |
+| Dark Cave North Side | Herbe / sol | Tous | 64–66 | Lucario 30% · Gromago 30% · Mammochon 30% · Scalpereur 10% |
+| Dark Cave North Side | Éclate-Roc | Tous | 64–66 | Prismillon (Motif Floraison) 30% · Lucario 30% · Pyrax 30% · Scalpereur 10% |
+| Dark Cave North Side | Surf | Tous | 64–66 | Azumarill 30% · Lokhlass 30% · Milobellus 30% · Léviator 10% |
+| Dark Cave South Side | Pêche | Jour | 7–11 | Magicarpe 30% · Barloche 30% · Écrapince 30% · Loupio 10% |
+| Dark Cave South Side | Herbe / sol | Jour | 7–11 | Nosferapti 30% · Racaillou 30% · Nodulithe 30% · Sonistrelle 10% |
+| Dark Cave South Side | Éclate-Roc | Jour | 7–11 | Chenipan 30% · Lépidonille 30% · Paras 30% · Machoc 10% |
+| Dark Cave South Side | Surf | Jour | 7–11 | Axoloto 30% · Barloche 30% · Ptitard 30% · Loupio 10% |
+| Digletts Cave Tunnel | Pêche | Tous | 70–84 | Hastacuda 30% · Tentacruel 30% · Sarmuraï 30% · Kaimorse 10% |
+| Digletts Cave Tunnel | Herbe / sol | Tous | 70–84 | Magirêve 30% · Lugulabre 30% · Magnézone 30% · Pomdorochi 10% |
+| Digletts Cave Tunnel | Éclate-Roc | Tous | 70–84 | Scolocendre 30% · Scorvol 30% · Gigansel 30% · Courrousinge 10% |
+| Digletts Cave Tunnel | Surf | Tous | 70–84 | Wailord 30% · Gamblast 30% · Golgopathe 30% · Paragruel (Mâle) 10% |
+| Dragons Den Cavern | Pêche | Tous | 60–63 | Minidraco 30% · Azumarill 30% · Milobellus 30% · Léviator 10% |
+| Dragons Den Cavern | Surf | Tous | 60–63 | Hydragon 30% · Oyacata 30% · Milobellus 30% · Léviator 10% |
+| Ecruteak City | Pêche | Tous | 34–37 | Barpau 30% · Relicanth 30% · Stari 30% · Larméléon 10% |
+| Ecruteak City | Herbe / sol | Tous | 34–37 | Guérilande 30% · Nucléos 30% · Porygon 30% · Lippoutou 10% |
+| Ecruteak City | Surf | Tous | 34–37 | Barpau 30% · Stari 30% · Écayon 30% · Coiffeton 10% |
+| Fuchsia City | Pêche | Tous | 70–84 | Mustéflott 30% · Prédastérie 30% · Hastacuda 30% · Crapustule 10% |
+| Fuchsia City | Herbe / sol | Tous | 70–84 | Cerbyllin 30% · Floréclat 30% · Porygon-Z 30% · Florges (Fleur Rouge) 10% |
+| Fuchsia City | Surf | Tous | 70–84 | Tentacruel 30% · Sarmuraï 30% · Paragruel (Mâle) 30% · Kaimorse 10% |
+| Ice Path 1F | Herbe / sol | Tous | 58–60 | Cochignon 30% · Momartik 30% · Polagriffe 30% · Frigodo 10% |
+| Ice Path B1F | Herbe / sol | Tous | 58–61 | Blizzi 30% · Oniglali 30% · Farfuret 30% · Dimoret 10% |
+| Ice Path B2F | Herbe / sol | Tous | 59–61 | Cochignon 30% · Balbalèze 30% · Hexagel 30% · Mammochon 10% |
+| Ice Path B3F | Herbe / sol | Tous | 59–62 | Frigodo 30% · Sorboul 30% · Beldeneige 30% · Glaivodo 10% |
+| Ice Path B4F | Herbe / sol | Tous | 60–62 | Momartik 30% · Mammochon 30% · Oniglali 30% · Glaivodo 10% |
+| Ilex Forest | Pêche | Tous | 24–27 | Venalgue 30% · Écayon 30% · Amonita 30% · Babimanta 10% |
+| Ilex Forest | Herbe / sol | Jour | 24–27 | Pyronille 30% · Aspicot 30% · Larveyette 30% · Bulbizarre 10% |
+| Ilex Forest | Herbe / sol | Nuit | 24–27 | Mimigal 30% · Mimitoss 30% · Statitik 30% · Scarabrute 10% |
+| Ilex Forest | Surf | Tous | 24–27 | Vorastérie 30% · Tritonde 30% · Écrapince 30% · Carapuce 10% |
+| Lake Of Rage | Pêche | Jour | 53–55 | Tritosor (Mer Occident) 30% · Octillery 30% · Torgamord 30% · Hydragon 10% |
+| Lake Of Rage | Surf | Jour | 53–55 | Nigirigon (Forme Courbée) 30% · Tritosor (Mer Occident) 30% · Octillery 30% · Torgamord 10% |
+| Mt Moon Cave | Pêche | Tous | 70–84 | Wailord 30% · Gamblast 30% · Golgopathe 30% · Crapustule 10% |
+| Mt Moon Cave | Herbe / sol | Tous | 70–84 | Zoroark 30% · Pomdramour 30% · Noctunoir 30% · Ursaking 10% |
+| Mt Moon Cave | Éclate-Roc | Tous | 70–84 | Noacier 30% · Monthracite 30% · Exagide 30% · Cliticlic 10% |
+| Mt Moon Cave | Surf | Tous | 70–84 | Mustéflott 30% · Prédastérie 30% · Hastacuda 30% · Tentacruel 10% |
+| Mt Mortar 1F North | Pêche | Tous | 52–55 | Tritosor (Mer Occident) 30% · Octillery 30% · Torgamord 30% · Oyacata 10% |
+| Mt Mortar 1F North | Herbe / sol | Tous | 52–55 | Motorizard 30% · Boumata 30% · Ptéra 30% · Poussacha 10% |
+| Mt Mortar 1F North | Éclate-Roc | Tous | 52–55 | Mygavolt 30% · Golemastoc 30% · Crabaraque 30% · Beldeneige 10% |
+| Mt Mortar 1F North | Surf | Tous | 52–55 | Tritosor (Mer Occident) 30% · Octillery 30% · Torgamord 30% · Hydragon 10% |
+| Mt Mortar 1F South | Pêche | Tous | 52–54 | Nigirigon (Forme Courbée) 30% · Octillery 30% · Torgamord 30% · Hydragon 10% |
+| Mt Mortar 1F South | Herbe / sol | Tous | 52–54 | Flamenroule 30% · Tritosor (Mer Occident) 30% · Trépassable 30% · Chochodile 10% |
+| Mt Mortar 1F South | Éclate-Roc | Tous | 52–54 | Scarabrute 30% · Crabominable 30% · Trépassable 30% · Krakos 10% |
+| Mt Mortar 1F South | Surf | Tous | 52–54 | Obalie 30% · Sancoki (Mer Occident) 30% · Torgamord 30% · Oyacata 10% |
+| Mt Mortar 2F | Pêche | Tous | 53–55 | Tritonde 30% · Torgamord 30% · Octillery 30% · Nigirigon (Forme Courbée) 10% |
+| Mt Mortar 2F | Herbe / sol | Tous | 53–55 | Caratroc 30% · Brutalibré 30% · Golemastoc 30% · Crabaraque 10% |
+| Mt Mortar 2F | Éclate-Roc | Tous | 53–55 | Maskadra 30% · Galegon 30% · Beldeneige 30% · Bérasca 10% |
+| Mt Mortar 2F | Surf | Tous | 53–55 | Venalgue 30% · Vorastérie 30% · Opermine 30% · Hydragon 10% |
+| Mt Mortar B1F | Pêche | Tous | 53–55 | Khélocrok 30% · Tritonde 30% · Torgamord 30% · Octillery 10% |
+| Mt Mortar B1F | Herbe / sol | Tous | 53–55 | Riolu 30% · Scarhino 30% · Draïeul 30% · Crabominable 10% |
+| Mt Mortar B1F | Éclate-Roc | Tous | 53–55 | Vibraninf 30% · Camérupt 30% · Mygavolt 30% · Bérasca 10% |
+| Mt Mortar B1F | Surf | Tous | 53–55 | Dofin 30% · Tritosor (Mer Occident) 30% · Torgamord 30% · Hydragon 10% |
+| Mt Silver 1F Item Room | Pêche | Tous | 73–77 | Tritonde 30% · Sancoki (Mer Occident) 30% · Barloche 30% · Khélocrok 10% |
+| Mt Silver 1F Item Room | Herbe / sol | Tous | 73–77 | Tyranocif 30% · Métalosse 30% · Muplodocus 30% · Glaivodo 10% |
+| Mt Silver 1F Item Room | Éclate-Roc | Tous | 73–77 | Tyranocif 30% · Pondralugon 30% · Métalosse 30% · Ékaïser 10% |
+| Mt Silver 1F Item Room | Surf | Tous | 73–77 | Venalgue 30% · Vorastérie 30% · Opermine 30% · Nigosier 10% |
+| Mt Silver 1F Moltres Room | Pêche | Tous | 74–78 | Khélocrok 30% · Dofin 30% · Tritonde 30% · Denticrisse 10% |
+| Mt Silver 1F Moltres Room | Herbe / sol | Tous | 74–78 | Tyranocif 30% · Pondralugon 30% · Muplodocus 30% · Glaivodo 10% |
+| Mt Silver 1F Moltres Room | Éclate-Roc | Tous | 74–78 | Pyrax 30% · Tyranocif 30% · Pondralugon 30% · Métalosse 10% |
+| Mt Silver 1F Moltres Room | Surf | Tous | 74–78 | Colhomard 30% · Hypocéan 30% · Triopikeau 30% · Barbicha 10% |
+| Mt Silver 1F Waterfall Room | Pêche | Tous | 74–78 | Wailmer 30% · Phogleur 30% · Luminéon 30% · Sharpedo 10% |
+| Mt Silver 1F Waterfall Room | Herbe / sol | Tous | 74–78 | Trioxhydre 30% · Muplodocus 30% · Lanssorien 30% · Glaivodo 10% |
+| Mt Silver 1F Waterfall Room | Éclate-Roc | Tous | 74–78 | Tyranocif 30% · Métalosse 30% · Carchacrok 30% · Ékaïser 10% |
+| Mt Silver 1F Waterfall Room | Surf | Tous | 74–78 | Batracné 30% · Tarenbulle 30% · Tritosor (Mer Occident) 30% · Superdofin 10% |
+| Mt Silver 2F | Pêche | Jour | 77–81 | Marill 30% · Corayon 30% · Têtarte 30% · Azumarill 10% |
+| Mt Silver 2F | Herbe / sol | Jour | 77–81 | Dracolosse 30% · Drattak 30% · Trioxhydre 30% · Carchacrok 10% |
+| Mt Silver 2F | Éclate-Roc | Jour | 77–81 | Pyrax 30% · Tyranocif 30% · Pondralugon 30% · Métalosse 10% |
+| Mt Silver 2F | Surf | Jour | 77–81 | Carvanha 30% · Khélocrok 30% · Délestin 30% · Lanturn 10% |
+| Mt Silver 3F | Pêche | Jour | 80–84 | Obalie 30% · Barloche 30% · Écrapince 30% · Lovdisc 10% |
+| Mt Silver 3F | Herbe / sol | Jour | 80–84 | Tranchodon 30% · Muplodocus 30% · Lanssorien 30% · Glaivodo 10% |
+| Mt Silver 3F | Éclate-Roc | Jour | 80–84 | Tyranocif 30% · Pondralugon 30% · Carchacrok 30% · Ékaïser 10% |
+| Mt Silver 3F | Surf | Jour | 80–84 | Sancoki (Mer Occident) 30% · Mustébouée 30% · Écayon 30% · Nigosier 10% |
+| Mt Silver Mountain Side | Pêche | Tous | 76–80 | Tritonde 30% · Barloche 30% · Carapagos 30% · Babimanta 10% |
+| Mt Silver Mountain Side | Herbe / sol | Tous | 76–80 | Dracolosse 30% · Drattak 30% · Trioxhydre 30% · Muplodocus 10% |
+| Mt Silver Mountain Side | Éclate-Roc | Tous | 76–80 | Insécateur 30% · Scarabrute 30% · Pyrax 30% · Métalosse 10% |
+| Mt Silver Mountain Side | Surf | Tous | 76–80 | Venalgue 30% · Flingouste 30% · Opermine 30% · Nigosier 10% |
+| Mt Silver Outside | Pêche | Tous | 72–76 | Vorastérie 30% · Tritonde 30% · Barloche 30% · Denticrisse 10% |
+| Mt Silver Outside | Herbe / sol | Tous | 72–76 | Embrylex 30% · Tyranocif 30% · Lanssorien 30% · Glaivodo 10% |
+| Mt Silver Outside | Éclate-Roc | Tous | 72–76 | Rubombelle 30% · Pondralugon 30% · Carchacrok 30% · Ékaïser 10% |
+| Mt Silver Outside | Surf | Tous | 72–76 | Khélocrok 30% · Dofin 30% · Tritosor (Mer Occident) 30% · Nigosier 10% |
+| Mt Silver Snow | Pêche | Tous | 78–82 | Colhomard 30% · Hypocéan 30% · Bekipan 30% · Barbicha 10% |
+| Mt Silver Snow | Herbe / sol | Tous | 78–82 | Oniglali 30% · Crabominable 30% · Mammochon 30% · Glaivodo 10% |
+| Mt Silver Snow | Surf | Tous | 78–82 | Amonita 30% · Kabuto 30% · Triopikeau 30% · Sharpedo 10% |
+| National Park Bug Contest | Herbe / sol | Jour | 26–29 | Pandespiègle 30% · Scalpion 30% · Lilia 30% · Tortipouss 10% |
+| National Park Bug Contest | Herbe / sol | Nuit | 26–29 | Grindur 30% · Crabicoque 30% · Germéclat 30% · Anorith 10% |
+| National Park Normal | Herbe / sol | Jour | 26–29 | Lilliterelle 30% · Bombydou 30% · Larvibule 30% · Arcko 10% |
+| National Park Normal | Herbe / sol | Nuit | 26–29 | Mimitoss 30% · Statitik 30% · Grillepattes 30% · Scarabrute 10% |
+| New Bark Town | Pêche | Tous | 2–5 | Magicarpe 30% · Poissirène 30% · Barloche 30% · Écrapince 10% |
+| New Bark Town | Herbe / sol | Tous | 2–5 | Poichigeon 30% · Olivini 30% · Bibichut 30% · Anchwatt 10% |
+| New Bark Town | Surf | Tous | 2–5 | Magicarpe 30% · Axoloto 30% · Ptitard 30% · Arakdo 10% |
+| Olivine City | Pêche | Tous | 40–43 | Tentacool 30% · Relicanth 30% · Kokiyas 30% · Zapétrel 10% |
+| Olivine City | Herbe / sol | Tous | 40–43 | Zébibron 30% · Goinfrex 30% · Vigoroth 30% · Magnéti 10% |
+| Olivine City | Surf | Tous | 40–43 | Goélise 30% · Tentacool 30% · Loupio 30% · Hypotrempe 10% |
+| Olivine City Port Outside | Pêche | Tous | 40–44 | Bargantua 30% · Têtarte 30% · Hypocéan 30% · Superdofin 10% |
+| Olivine City Port Outside | Herbe / sol | Tous | 40–44 | Grelaçon 30% · Ponyta 30% · Volcaropod 30% · Flambino 10% |
+| Olivine City Port Outside | Surf | Tous | 40–44 | Amonita 30% · Kabuto 30% · Corayon 30% · Lanturn 10% |
+| Pallet Town | Pêche | Jour | 70–84 | Wailord 30% · Sarmuraï 30% · Paragruel (Mâle) 30% · Kaimorse 10% |
+| Pallet Town | Surf | Jour | 70–84 | Mustéflott 30% · Gamblast 30% · Golgopathe 30% · Crapustule 10% |
+| Rock Tunnel 1F | Pêche | Tous | 70–84 | Prédastérie 30% · Hastacuda 30% · Tentacruel 30% · Kaimorse 10% |
+| Rock Tunnel 1F | Herbe / sol | Tous | 70–84 | Démolosse 30% · Gallame 30% · Lugulabre 30% · Noctunoir 10% |
+| Rock Tunnel 1F | Éclate-Roc | Tous | 70–84 | Terracruel 30% · Scorvol 30% · Bétochef 30% · Galeking 10% |
+| Rock Tunnel 1F | Surf | Tous | 70–84 | Hastacuda 30% · Wailord 30% · Paragruel (Mâle) 30% · Sarmuraï 10% |
+| Rock Tunnel B1F | Pêche | Tous | 70–84 | Prédastérie 30% · Gamblast 30% · Golgopathe 30% · Crapustule 10% |
+| Rock Tunnel B1F | Herbe / sol | Tous | 70–84 | Polthégeist 30% · Dimoret 30% · Bruyverne 30% · Pomdorochi 10% |
+| Rock Tunnel B1F | Éclate-Roc | Tous | 70–84 | Shaofouine 30% · Gigalithe 30% · Monthracite 30% · Rhinastoc 10% |
+| Rock Tunnel B1F | Surf | Tous | 70–84 | Mustéflott 30% · Prédastérie 30% · Hastacuda 30% · Tentacruel 10% |
+| Rocket Hideout B1F | Herbe / sol | Jour | 54–55 | Géolithe 30% · Téraclope 30% · Branette 30% · Desséliande 10% |
+| Route 1 | Pêche | Tous | 70–84 | Sharpedo 30% · Hastacuda 30% · Paragruel (Mâle) 30% · Superdofin 10% |
+| Route 1 | Herbe / sol | Jour | 70–84 | Tyranocif 30% · Carchacrok 30% · Drattak 30% · Métalosse 10% |
+| Route 1 | Herbe / sol | Nuit | 70–84 | Trioxhydre 30% · Lanssorien 30% · Scalpereur 30% · Gromago 10% |
+| Route 1 | Surf | Tous | 70–84 | Léviator 30% · Milobellus 30% · Oyacata 30% · Tentacruel 10% |
+| Route 10 | Pêche | Tous | 70–84 | Mustéflott 30% · Sarmuraï 30% · Paragruel (Mâle) 30% · Kaimorse 10% |
+| Route 10 | Herbe / sol | Jour | 70–84 | Némélios 30% · Gueriaigle 30% · Bouldeneu 30% · Sucreine 10% |
+| Route 10 | Herbe / sol | Nuit | 70–84 | Vaututrice 30% · Qwilpik 30% · Farfurex 30% · Crocorible 10% |
+| Route 10 | Surf | Tous | 70–84 | Wailord 30% · Gamblast 30% · Golgopathe 30% · Crapustule 10% |
+| Route 11 | Pêche | Tous | 70–84 | Mustéflott 30% · Prédastérie 30% · Hastacuda 30% · Tentacruel 10% |
+| Route 11 | Herbe / sol | Jour | 70–84 | Feunard 30% · Bouldeneu 30% · Sorcilence 30% · Bruyverne 10% |
+| Route 11 | Herbe / sol | Nuit | 70–84 | Théffroyable 30% · Qwilpik 30% · Crocorible 30% · Courrousinge 10% |
+| Route 11 | Surf | Tous | 70–84 | Wailord 30% · Sarmuraï 30% · Paragruel (Mâle) 30% · Kaimorse 10% |
+| Route 12 | Pêche | Tous | 70–84 | Mustéflott 30% · Gamblast 30% · Golgopathe 30% · Crapustule 10% |
+| Route 12 | Herbe / sol | Jour | 70–84 | Ursaring 30% · Roserade 30% · Flambusard 30% · Forgelina 10% |
+| Route 12 | Herbe / sol | Nuit | 70–84 | Drascore 30% · Théffroyable 30% · Salarsen 30% · Corboss 10% |
+| Route 12 | Éclate-Roc | Tous | 70–84 | Dunaconda 30% · Donphan 30% · Hippodocus 30% · Magnézone 10% |
+| Route 12 | Surf | Tous | 70–84 | Prédastérie 30% · Hastacuda 30% · Tentacruel 30% · Kaimorse 10% |
+| Route 13 | Pêche | Tous | 70–84 | Wailord 30% · Golgopathe 30% · Paragruel (Mâle) 30% · Sarmuraï 10% |
+| Route 13 | Herbe / sol | Jour | 70–84 | Blizzaroi 30% · Cerbyllin 30% · Flambusard 30% · Florges (Fleur Rouge) 10% |
+| Route 13 | Herbe / sol | Nuit | 70–84 | Vrombotor 30% · Roserade 30% · Nidoqueen 30% · Floréclat 10% |
+| Route 13 | Surf | Tous | 70–84 | Mustéflott 30% · Prédastérie 30% · Gamblast 30% · Crapustule 10% |
+| Route 14 | Pêche | Tous | 70–84 | Hastacuda 30% · Tentacruel 30% · Sarmuraï 30% · Kaimorse 10% |
+| Route 14 | Herbe / sol | Jour | 70–84 | Noacier 30% · Fulgulairo 30% · Zéblitz 30% · Gallame 10% |
+| Route 14 | Herbe / sol | Nuit | 70–84 | Pandarbare 30% · Corboss 30% · Kravarech 30% · Nidoking 10% |
+| Route 14 | Surf | Tous | 70–84 | Wailord 30% · Gamblast 30% · Golgopathe 30% · Paragruel (Mâle) 10% |
+| Route 15 | Pêche | Tous | 70–84 | Mustéflott 30% · Prédastérie 30% · Hastacuda 30% · Crapustule 10% |
+| Route 15 | Herbe / sol | Jour | 70–84 | Scovilain 30% · Terracruel 30% · Magmar 30% · Luxray 10% |
+| Route 15 | Herbe / sol | Nuit | 70–84 | Coatox 30% · Banshitrouye 30% · Salarsen 30% · Angoliath 10% |
+| Route 15 | Éclate-Roc | Tous | 70–84 | Bourrinos 30% · Minotaupe 30% · Cliticlic 30% · Rhinastoc 10% |
+| Route 15 | Surf | Tous | 70–84 | Tentacruel 30% · Sarmuraï 30% · Paragruel (Mâle) 30% · Kaimorse 10% |
+| Route 16 | Pêche | Tous | 70–84 | Wailord 30% · Gamblast 30% · Golgopathe 30% · Crapustule 10% |
+| Route 16 | Herbe / sol | Jour | 70–84 | Ampibidou 30% · Pomdramour 30% · Bazoucan 30% · Pomdorochi 10% |
+| Route 16 | Herbe / sol | Nuit | 70–84 | Baggaïd 30% · Drascore 30% · Vaututrice 30% · Farfurex 10% |
+| Route 16 | Surf | Tous | 70–84 | Mustéflott 30% · Prédastérie 30% · Hydragon 30% · Oyacata 10% |
+| Route 17 | Pêche | Tous | 70–84 | Relicanth 30% · Torgamord 30% · Hastacuda 30% · Tentacruel 10% |
+| Route 17 | Herbe / sol | Jour | 70–84 | Élektek 30% · Gueriaigle 30% · Scorvol 30% · Sucreine 10% |
+| Route 17 | Herbe / sol | Nuit | 70–84 | Vrombotor 30% · Qwilpik 30% · Crocorible 30% · Courrousinge 10% |
+| Route 17 | Surf | Tous | 70–84 | Bargantua 30% · Nigirigon (Forme Courbée) 30% · Hydragla 30% · Lokhlass 10% |
+| Route 18 | Pêche | Tous | 70–84 | Octillery 30% · Sarmuraï 30% · Paragruel (Mâle) 30% · Kaimorse 10% |
+| Route 18 | Herbe / sol | Jour | 70–84 | Fulgudog 30% · Bouldeneu 30% · Sorcilence 30% · Bruyverne 10% |
+| Route 18 | Herbe / sol | Nuit | 70–84 | Théffroyable 30% · Corboss 30% · Roserade 30% · Nidoqueen 10% |
+| Route 18 | Éclate-Roc | Tous | 70–84 | Chelours 30% · Gigalithe 30% · Bétochef 30% · Exagide 10% |
+| Route 18 | Surf | Tous | 70–84 | Wailord 30% · Gamblast 30% · Golgopathe 30% · Crapustule 10% |
+| Route 19 | Pêche | Tous | 70–84 | Délestin 30% · Mustéflott 30% · Milobellus 30% · Léviator 10% |
+| Route 19 | Surf | Tous | 70–84 | Denticrisse 30% · Nigosier 30% · Prédastérie 30% · Hydragon 10% |
+| Route 2 | Pêche | Tous | 70–84 | Bargantua 30% · Octillery 30% · Hydragla 30% · Kaimorse 10% |
+| Route 2 | Herbe / sol | Jour | 70–84 | Zéblitz 30% · Terracruel 30% · Luxray 30% · Ursaking 10% |
+| Route 2 | Herbe / sol | Nuit | 70–84 | Banshitrouye 30% · Théffroyable 30% · Roserade 30% · Courrousinge 10% |
+| Route 2 | Surf | Tous | 70–84 | Wailord 30% · Golgopathe 30% · Paragruel (Mâle) 30% · Sarmuraï 10% |
+| Route 20 | Pêche | Tous | 70–84 | Bargantua 30% · Tarenbulle 30% · Nigirigon (Forme Courbée) 30% · Lokhlass 10% |
+| Route 20 | Surf | Tous | 70–84 | Octillery 30% · Hydragla 30% · Sarmuraï 30% · Kaimorse 10% |
+| Route 21 | Pêche | Tous | 70–84 | Wailord 30% · Gamblast 30% · Golgopathe 30% · Paragruel (Mâle) 10% |
+| Route 21 | Herbe / sol | Jour | 70–84 | Némélios 30% · Flambusard 30% · Porygon-Z 30% · Leuphorie 10% |
+| Route 21 | Herbe / sol | Nuit | 70–84 | Baggaïd 30% · Nidoqueen 30% · Nidoking 30% · Floréclat 10% |
+| Route 21 | Éclate-Roc | Tous | 70–84 | Lougaroc 30% · Dunaconda 30% · Donphan 30% · Galeking 10% |
+| Route 21 | Surf | Tous | 70–84 | Wailmer 30% · Milobellus 30% · Léviator 30% · Crapustule 10% |
+| Route 22 | Pêche | Tous | 70–84 | Colhomard 30% · Délestin 30% · Barbicha 30% · Mustéflott 10% |
+| Route 22 | Herbe / sol | Jour | 70–84 | Blizzaroi 30% · Ursaring 30% · Cerbyllin 30% · Florges (Fleur Rouge) 10% |
+| Route 22 | Herbe / sol | Nuit | 70–84 | Pandarbare 30% · Banshitrouye 30% · Kravarech 30% · Angoliath 10% |
+| Route 22 | Surf | Tous | 70–84 | Denticrisse 30% · Nigosier 30% · Prédastérie 30% · Hydragon 10% |
+| Route 24 | Pêche | Tous | 70–84 | Phogleur 30% · Tritosor (Mer Occident) 30% · Hastacuda 30% · Oyacata 10% |
+| Route 24 | Herbe / sol | Jour | 70–84 | Fulgulairo 30% · Bourrinos 30% · Lucanon 30% · Gallame 10% |
+| Route 24 | Herbe / sol | Nuit | 70–84 | Baggaïd 30% · Coatox 30% · Vaututrice 30% · Nidoking 10% |
+| Route 24 | Éclate-Roc | Tous | 70–84 | Pachyradjah 30% · Chelours 30% · Hachécateur 30% · Gallame 10% |
+| Route 24 | Surf | Tous | 70–84 | Luminéon 30% · Sharpedo 30% · Relicanth 30% · Tentacruel 10% |
+| Route 25 | Pêche | Tous | 70–84 | Bekipan 30% · Superdofin 30% · Torgamord 30% · Lokhlass 10% |
+| Route 25 | Herbe / sol | Jour | 70–84 | Noacier 30% · Fulgulairo 30% · Scovilain 30% · Hippodocus 10% |
+| Route 25 | Herbe / sol | Nuit | 70–84 | Pandarbare 30% · Qwilpik 30% · Farfurex 30% · Crocorible 10% |
+| Route 25 | Surf | Tous | 70–84 | Tarenbulle 30% · Triopikeau 30% · Lanturn 30% · Nigirigon (Forme Courbée) 10% |
+| Route 26 | Pêche | Tous | 63–66 | Colhomard 30% · Torgamord 30% · Hydragla 30% · Milobellus 10% |
+| Route 26 | Herbe / sol | Jour | 63–66 | Élekable 30% · Maganon 30% · Corvaillus 30% · Drattak 10% |
+| Route 26 | Herbe / sol | Nuit | 63–66 | Scalpereur 30% · Gromago 30% · Muplodocus 30% · Métalosse 10% |
+| Route 26 | Surf | Tous | 63–66 | Bargantua 30% · Luminéon 30% · Tritosor (Mer Occident) 30% · Léviator 10% |
+| Route 27 | Pêche | Tous | 63–65 | Tarenbulle 30% · Nigirigon (Forme Courbée) 30% · Octillery 30% · Superdofin 10% |
+| Route 27 | Herbe / sol | Jour | 63–65 | Lucario 30% · Carchacrok 30% · Corvaillus 30% · Bruyverne 10% |
+| Route 27 | Herbe / sol | Nuit | 63–65 | Tyranocif 30% · Trioxhydre 30% · Lanssorien 30% · Dracolosse 10% |
+| Route 27 | Surf | Tous | 63–65 | Azumarill 30% · Relicanth 30% · Lokhlass 30% · Hydragon 10% |
+| Route 28 | Herbe / sol | Jour | 72–84 | Roucarnage 30% · Étouraptor 30% · Déflaisan 30% · Dracolosse 10% |
+| Route 28 | Herbe / sol | Nuit | 72–84 | Gaulet 30% · Golemastoc 30% · Malamandre 30% · Rafflesia 10% |
+| Route 29 | Herbe / sol | Jour | 2–6 | Fouinette 30% · Roucool 30% · Étourmi 30% · Passerouge 10% |
+| Route 29 | Herbe / sol | Nuit | 2–6 | Fouinette 30% · Rattata 30% · Mimigal 30% · Nosferapti 10% |
+| Route 3 | Pêche | Tous | 70–84 | Wailmer 30% · Gamblast 30% · Léviator 30% · Crapustule 10% |
+| Route 3 | Herbe / sol | Jour | 70–84 | Scovilain 30% · Ampibidou 30% · Bazoucan 30% · Pomdorochi 10% |
+| Route 3 | Herbe / sol | Nuit | 70–84 | Coatox 30% · Drascore 30% · Salarsen 30% · Corboss 10% |
+| Route 3 | Éclate-Roc | Tous | 70–84 | Pachyradjah 30% · Scalproie 30% · Shaofouine 30% · Gigansel 10% |
+| Route 3 | Surf | Tous | 70–84 | Colhomard 30% · Délestin 30% · Barbicha 30% · Milobellus 10% |
+| Route 30 | Pêche | Tous | 4–6 | Magicarpe 30% · Poissirène 30% · Barloche 30% · Barpau 10% |
+| Route 30 | Herbe / sol | Jour | 4–6 | Chenipan 30% · Aspicot 30% · Roucool 30% · Chenipotte 10% |
+| Route 30 | Herbe / sol | Nuit | 4–6 | Mimigal 30% · Mimitoss 30% · Rattata 30% · Lépidonille 10% |
+| Route 30 | Éclate-Roc | Tous | 4–6 | Lilliterelle 30% · Racaillou 30% · Férosinge 30% · Machoc 10% |
+| Route 30 | Surf | Tous | 4–6 | Ptitard 30% · Axoloto 30% · Nénupiot 30% · Arakdo 10% |
+| Route 31 | Pêche | Tous | 7–11 | Magicarpe 30% · Poissirène 30% · Écrapince 30% · Barpau 10% |
+| Route 31 | Herbe / sol | Jour | 7–11 | Chétiflor 30% · Nirondelle 30% · Piafabec 30% · Tarsal 10% |
+| Route 31 | Herbe / sol | Nuit | 7–11 | Rattata 30% · Nosferapti 30% · Spododo 30% · Skelénox 10% |
+| Route 31 | Surf | Tous | 7–11 | Axoloto 30% · Ptitard 30% · Tritonde 30% · Nénupiot 10% |
+| Route 32 | Pêche | Tous | 16–19 | Magicarpe 30% · Poissirène 30% · Barloche 30% · Barpau 10% |
+| Route 32 | Herbe / sol | Jour | 16–19 | Wattouat 30% · Nidoran♂ 30% · Nidoran♂ 30% · Lixy 10% |
+| Route 32 | Herbe / sol | Nuit | 16–19 | Axoloto 30% · Rattata 30% · Mimigal 30% · Cornèbre 10% |
+| Route 32 | Surf | Tous | 16–19 | Axoloto 30% · Ptitard 30% · Tritonde 30% · Nénupiot 10% |
+| Route 33 | Herbe / sol | Jour | 18–21 | Croquine 30% · Rozbouton 30% · Doudouvet 30% · Chlorobule 10% |
+| Route 33 | Herbe / sol | Nuit | 18–21 | Abo 30% · Mystherbe 30% · Tadmorv 30% · Smogo 10% |
+| Route 33 | Éclate-Roc | Tous | 18–21 | Tissenboule 30% · Osselait 30% · Phanpy 30% · Rhinocorne 10% |
+| Route 34 | Pêche | Tous | 25–28 | Lovdisc 30% · Flingouste 30% · Venalgue 30% · Kaiminus 10% |
+| Route 34 | Herbe / sol | Jour | 25–28 | Wattouat 30% · Caninos 30% · Mimigal 30% · Pohm 10% |
+| Route 34 | Herbe / sol | Nuit | 25–28 | Dynavolt 30% · Zébibron 30% · Voltoutou 30% · Fantyrm 10% |
+| Route 34 | Surf | Tous | 25–28 | Tritonde 30% · Opermine 30% · Écrapince 30% · Gobou 10% |
+| Route 35 | Pêche | Tous | 27–30 | Dofin 30% · Sancoki (Mer Occident) 30% · Mustébouée 30% · Tiplouf 10% |
+| Route 35 | Herbe / sol | Jour | 27–30 | Miaouss 30% · Teddiursa 30% · Compagnol 30% · Évoli 10% |
+| Route 35 | Herbe / sol | Nuit | 27–30 | Cornèbre 30% · Malosse 30% · Zorua 30% · Absol 10% |
+| Route 35 | Surf | Tous | 27–30 | Obalie 30% · Carvanha 30% · Écrapince 30% · Moustillon 10% |
+| Route 36 | Herbe / sol | Jour | 27–30 | Baggiguane 30% · Mimigal 30% · Nounourson 30% · Salamèche 10% |
+| Route 36 | Herbe / sol | Nuit | 27–30 | Crabagarre 30% · Mimigal 30% · Théffroi 30% · Élekid 10% |
+| Route 36 | Éclate-Roc | Tous | 27–30 | Kungfouine 30% · Kranidos 30% · Dinoclier 30% · Rototaupe 10% |
+| Route 37 | Herbe / sol | Jour | 32–35 | Caninos 30% · Mimigal 30% · Teddiursa 30% · Goupix 10% |
+| Route 37 | Herbe / sol | Nuit | 32–35 | Feuforêve 30% · Malosse 30% · Cornèbre 30% · Gruikui 10% |
+| Route 38 | Herbe / sol | Jour | 38–41 | Kirlia 30% · Floette (Fleur Rouge) 30% · Saquedeneu 30% · Vipélierre 10% |
+| Route 38 | Herbe / sol | Nuit | 38–41 | Kangourex 30% · Motisma 30% · Rattata 30% · Feunnec 10% |
+| Route 39 | Herbe / sol | Jour | 39–42 | Tauros 30% · Rondoudou 30% · Hélédelle 30% · Marisson 10% |
+| Route 39 | Herbe / sol | Nuit | 39–42 | Morpeko 30% · Rattata 30% · Skelénox 30% · Frison 10% |
+| Route 39 | Éclate-Roc | Tous | 39–42 | Hippopotas 30% · Ptyranidur 30% · Filentrappe 30% · Darumarond 10% |
+| Route 4 | Pêche | Tous | 70–84 | Hypocéan 30% · Mustéflott 30% · Prédastérie 30% · Paragruel (Mâle) 10% |
+| Route 4 | Herbe / sol | Jour | 70–84 | Gueriaigle 30% · Scorvol 30% · Pomdramour 30% · Leuphorie 10% |
+| Route 4 | Herbe / sol | Nuit | 70–84 | Vrombotor 30% · Nidoqueen 30% · Floréclat 30% · Porygon-Z 10% |
+| Route 4 | Surf | Tous | 70–84 | Denticrisse 30% · Azumarill 30% · Nigosier 30% · Hydragon 10% |
+| Route 40 | Pêche | Jour | 40–43 | Marill 30% · Triopikeau 30% · Bekipan 30% · Lokhlass 10% |
+| Route 40 | Surf | Jour | 40–43 | Wailmer 30% · Barbicha 30% · Sharpedo 30% · Lokhlass 10% |
+| Route 41 | Pêche | Jour | 41–44 | Phogleur 30% · Colhomard 30% · Relicanth 30% · Hydragla 10% |
+| Route 41 | Surf | Jour | 41–44 | Bargantua 30% · Batracné 30% · Phogleur 30% · Luminéon 10% |
+| Route 42 | Pêche | Tous | 52–54 | Lovdisc 30% · Mustébouée 30% · Nigirigon (Forme Courbée) 30% · Oyacata 10% |
+| Route 42 | Herbe / sol | Jour | 52–54 | Granbull 30% · Famignol (Famille de Trois) 30% · Floramantis 30% · Iguolta 10% |
+| Route 42 | Herbe / sol | Nuit | 52–54 | Escroco 30% · Rosélia 30% · Malamandre 30% · Sinistrail 10% |
+| Route 42 | Éclate-Roc | Tous | 52–54 | Chrysapile 30% · Ouvrifier 30% · Clic 30% · Insécateur 10% |
+| Route 42 | Surf | Tous | 52–54 | Flingouste 30% · Écayon 30% · Carapagos 30% · Babimanta 10% |
+| Route 43 | Pêche | Tous | 53–55 | Amonita 30% · Kabuto 30% · Lanturn 30% · Octillery 10% |
+| Route 43 | Herbe / sol | Jour | 53–55 | Mélofée 30% · Oniglali 30% · Floramantis 30% · Élecsprint 10% |
+| Route 43 | Herbe / sol | Nuit | 53–55 | Gaulet 30% · Desséliande 30% · Darumacho 30% · Malamandre 10% |
+| Route 43 | Surf | Tous | 53–55 | Marill 30% · Bekipan 30% · Sharpedo 30% · Lokhlass 10% |
+| Route 44 | Pêche | Tous | 57–59 | Nigirigon (Forme Courbée) 30% · Hydragla 30% · Milobellus 30% · Léviator 10% |
+| Route 44 | Herbe / sol | Jour | 57–59 | Magnéton 30% · Cochignon 30% · Airmure 30% · Galegon 10% |
+| Route 44 | Herbe / sol | Nuit | 57–59 | Téraclope 30% · Farfuret 30% · Momartik 30% · Spectrum 10% |
+| Route 44 | Surf | Tous | 57–59 | Azumarill 30% · Lokhlass 30% · Hydragon 30% · Léviator 10% |
+| Route 45 | Pêche | Tous | 64–66 | Délestin 30% · Relicanth 30% · Milobellus 30% · Léviator 10% |
+| Route 45 | Herbe / sol | Jour | 64–66 | Gravalanch 30% · Airmure 30% · Draco 30% · Galegon 10% |
+| Route 45 | Herbe / sol | Nuit | 64–66 | Desséliande 30% · Trépassable 30% · Sinistrail 30% · Rafflesia 10% |
+| Route 45 | Éclate-Roc | Tous | 64–66 | Lucario 30% · Corvaillus 30% · Gromago 30% · Pyrax 10% |
+| Route 45 | Surf | Tous | 64–66 | Denticrisse 30% · Nigosier 30% · Barbicha 30% · Oyacata 10% |
+| Route 46 | Herbe / sol | Jour | 6–9 | Piafabec 30% · Racaillou 30% · Phanpy 30% · Férosinge 10% |
+| Route 46 | Herbe / sol | Nuit | 6–9 | Rattata 30% · Nosferapti 30% · Racaillou 30% · Minisange 10% |
+| Route 47 | Pêche | Tous | 45–48 | Marill 30% · Denticrisse 30% · Tarenbulle 30% · Barbicha 10% |
+| Route 47 | Herbe / sol | Jour | 45–48 | Flabébé (Fleur Rouge) 30% · Pikachu 30% · Tapatoès (Plumage Vert) 30% · Brindibou 10% |
+| Route 47 | Herbe / sol | Nuit | 45–48 | Leveinard 30% · Vostourno 30% · Vrombi 30% · Charbambin 10% |
+| Route 47 | Surf | Tous | 45–48 | Triopikeau 30% · Nigosier 30% · Superdofin 30% · Hydragla 10% |
+| Route 48 | Herbe / sol | Jour | 46–49 | M. Mime 30% · Candine 30% · Lampignon 30% · Ouistempo 10% |
+| Route 48 | Herbe / sol | Nuit | 46–49 | Nanméouïe 30% · Balignon 30% · Poltchageist 30% · Mascaïman 10% |
+| Route 48 | Éclate-Roc | Tous | 46–49 | Chamallot 30% · Pérégrain 30% · Poulpaf 30% · Judokrak 10% |
+| Route 5 | Pêche | Tous | 70–84 | Batracné 30% · Phogleur 30% · Tentacruel 30% · Oyacata 10% |
+| Route 5 | Herbe / sol | Jour | 70–84 | Élektek 30% · Cerbyllin 30% · Sorcilence 30% · Sucreine 10% |
+| Route 5 | Herbe / sol | Nuit | 70–84 | Pandarbare 30% · Kravarech 30% · Nidoking 30% · Courrousinge 10% |
+| Route 5 | Surf | Tous | 70–84 | Sharpedo 30% · Tritosor (Mer Occident) 30% · Hastacuda 30% · Tentacruel 10% |
+| Route 6 | Pêche | Tous | 70–84 | Bekipan 30% · Luminéon 30% · Relicanth 30% · Wailord 10% |
+| Route 6 | Herbe / sol | Jour | 70–84 | Fulgudog 30% · Bouldeneu 30% · Luxray 30% · Bruyverne 10% |
+| Route 6 | Herbe / sol | Nuit | 70–84 | Banshitrouye 30% · Zoroark 30% · Porygon2 30% · Angoliath 10% |
+| Route 6 | Éclate-Roc | Tous | 70–84 | Minotaupe 30% · Scolocendre 30% · Grolem 30% · Ursaking 10% |
+| Route 6 | Surf | Tous | 70–84 | Tarenbulle 30% · Superdofin 30% · Torgamord 30% · Lokhlass 10% |
+| Route 7 | Pêche | Tous | 70–84 | Corayon 30% · Triopikeau 30% · Nigirigon (Forme Courbée) 30% · Golgopathe 10% |
+| Route 7 | Herbe / sol | Jour | 70–84 | Porygon2 30% · Forgelina 30% · Ohmassacre 30% · Leuphorie 10% |
+| Route 7 | Herbe / sol | Nuit | 70–84 | Baggaïd 30% · Coatox 30% · Vaututrice 30% · Polthégeist 10% |
+| Route 7 | Surf | Tous | 70–84 | Bargantua 30% · Lanturn 30% · Octillery 30% · Hydragla 10% |
+| Route 8 | Pêche | Tous | 70–84 | Gamblast 30% · Sarmuraï 30% · Paragruel (Mâle) 30% · Kaimorse 10% |
+| Route 8 | Herbe / sol | Jour | 70–84 | Gueriaigle 30% · Shaofouine 30% · Grolem 30% · Ohmassacre 10% |
+| Route 8 | Herbe / sol | Nuit | 70–84 | Vaututrice 30% · Qwilpik 30% · Farfurex 30% · Angoliath 10% |
+| Route 8 | Surf | Tous | 70–84 | Wailmer 30% · Wailord 30% · Gamblast 30% · Golgopathe 10% |
+| Route 9 | Pêche | Tous | 70–84 | Délestin 30% · Milobellus 30% · Léviator 30% · Crapustule 10% |
+| Route 9 | Herbe / sol | Jour | 70–84 | Dunaconda 30% · Sorcilence 30% · Rhinastoc 30% · Magnézone 10% |
+| Route 9 | Herbe / sol | Nuit | 70–84 | Démolosse 30% · Farfurex 30% · Crocorible 30% · Courrousinge 10% |
+| Route 9 | Éclate-Roc | Tous | 70–84 | Forgelina 30% · Exagide 30% · Cliticlic 30% · Magnézone 10% |
+| Route 9 | Surf | Tous | 70–84 | Colhomard 30% · Barbicha 30% · Mustéflott 30% · Crapustule 10% |
+| Ruins Of Alph B1F | Herbe / sol | Jour | 9–12 | Zarbi 30% · Noeunoeuf 30% · Axoloto 30% · Nosferapti 10% |
+| Ruins Of Alph B1F | Éclate-Roc | Jour | 9–12 | Chenipan 30% · Chenipotte 30% · Léboulérou 30% · Debugant 10% |
+| Ruins Of Alph Outside | Pêche | Tous | 8–12 | Axoloto 30% · Arakdo 30% · Otaria 30% · Magicarpe 10% |
+| Ruins Of Alph Outside | Herbe / sol | Tous | 8–12 | Azurill 30% · Selutin 30% · Mimantis 30% · Toxizap 10% |
+| Ruins Of Alph Outside | Éclate-Roc | Tous | 8–12 | Chenipotte 30% · Ningale 30% · Nodulithe 30% · Méditikka 10% |
+| Ruins Of Alph Outside | Surf | Tous | 8–12 | Nénupiot 30% · Goélise 30% · Rémoraid 30% · Loupio 10% |
+| Seafoam Islands 1F | Herbe / sol | Jour | 70–84 | Polagriffe 30% · Dimoret 30% · Balbalèze 30% · Kaimorse 10% |
+| Seafoam Islands B1F | Herbe / sol | Jour | 70–84 | Blizzaroi 30% · Séracrawl 30% · Balbalèze 30% · Sorbouboul 10% |
+| Slowpoke Well B1F | Pêche | Jour | 19–22 | Magicarpe 30% · Ramoloss 30% · Barloche 30% · Écrapince 10% |
+| Slowpoke Well B1F | Herbe / sol | Jour | 19–22 | Nosferapti 30% · Axoloto 30% · Cradopaud 30% · Skelénox 10% |
+| Slowpoke Well B1F | Surf | Jour | 19–22 | Ramoloss 30% · Axoloto 30% · Ptitard 30% · Écrapince 10% |
+| Slowpoke Well B2F | Pêche | Jour | 20–23 | Magicarpe 30% · Taupikeau 30% · Axoloto 30% · Écrapince 10% |
+| Slowpoke Well B2F | Herbe / sol | Jour | 20–23 | Grimalin 30% · Limagma 30% · Rocabot 30% · Nosferapti 10% |
+| Slowpoke Well B2F | Surf | Jour | 20–23 | Ptitard 30% · Ramoloss 30% · Psykokwak 30% · Tentacool 10% |
+| Sprout Tower 2F | Herbe / sol | Jour | 8–11 | Rattata 30% · Chétiflor 30% · Roucool 30% · Balbuto 10% |
+| Sprout Tower 2F | Herbe / sol | Nuit | 8–11 | Fantominus 30% · Nosferapti 30% · Skelénox 30% · Funécire 10% |
+| Sprout Tower 3F | Herbe / sol | Jour | 9–12 | Rattata 30% · Chétiflor 30% · Tarsal 30% · Balbuto 10% |
+| Sprout Tower 3F | Herbe / sol | Nuit | 9–12 | Fantominus 30% · Polichombr 30% · Skelénox 30% · Feuforêve 10% |
+| Tin Tower 3F | Herbe / sol | Jour | 64–66 | Ptéra 30% · Corvaillus 30% · Gromago 30% · Scalpereur 10% |
+| Tin Tower 4F | Herbe / sol | Jour | 64–66 | Caratroc 30% · Lucario 30% · Gromago 30% · Scalpereur 10% |
+| Tin Tower 5F | Herbe / sol | Jour | 65–67 | Scarhino 30% · Krakos 30% · Corvaillus 30% · Gromago 10% |
+| Tin Tower 6F | Herbe / sol | Jour | 65–67 | Foretress 30% · Magnéton 30% · Crabaraque 30% · Duralugon 10% |
+| Tin Tower 7F | Herbe / sol | Jour | 65–67 | Gambex 30% · Ptéra 30% · Galvagon 30% · Lucario 10% |
+| Tin Tower 8F | Herbe / sol | Jour | 66–68 | Motorizard 30% · Brutalibré 30% · Flamenroule 30% · Momartik 10% |
+| Tin Tower 9F | Herbe / sol | Jour | 66–68 | Caratroc 30% · Scarhino 30% · Gromago 30% · Scalpereur 10% |
+| Tohjo Falls Cavern | Pêche | Tous | 62–65 | Carvanha 30% · Milobellus 30% · Délestin 30% · Lanturn 10% |
+| Tohjo Falls Cavern | Herbe / sol | Tous | 62–65 | Tranchodon 30% · Galeking 30% · Minotaupe 30% · Bruyverne 10% |
+| Tohjo Falls Cavern | Éclate-Roc | Tous | 62–65 | Pondralugon 30% · Métalosse 30% · Carchacrok 30% · Ékaïser 10% |
+| Tohjo Falls Cavern | Surf | Tous | 62–65 | Obalie 30% · Barloche 30% · Écrapince 30% · Léviator 10% |
+| Union Cave 1F | Pêche | Jour | 17–20 | Embrochet 30% · Kokiyas 30% · Psykokwak 30% · Otaria 10% |
+| Union Cave 1F | Herbe / sol | Jour | 17–20 | Racaillou 30% · Nosferapti 30% · Sabelette 30% · Galekid 10% |
+| Union Cave 1F | Éclate-Roc | Jour | 17–20 | Larvadar 30% · Tissenboule 30% · Venipatte 30% · Taupiqueur 10% |
+| Union Cave 1F | Surf | Jour | 17–20 | Poissirène 30% · Tritonde 30% · Krabby 30% · Stari 10% |
+| Union Cave B1F | Pêche | Jour | 18–21 | Magicarpe 30% · Sovkipou 30% · Poissirène 30% · Axoloto 10% |
+| Union Cave B1F | Herbe / sol | Jour | 18–21 | Nodulithe 30% · Onix 30% · Mysdibule 30% · Ténéfix 10% |
+| Union Cave B1F | Éclate-Roc | Jour | 18–21 | Larvadar 30% · Charbi 30% · Lilliterelle 30% · Léboulérou 10% |
+| Union Cave B1F | Surf | Jour | 18–21 | Axoloto 30% · Nénupiot 30% · Rémoraid 30% · Loupio 10% |
+| Union Cave B2F | Pêche | Jour | 19–22 | Nénupiot 30% · Arakdo 30% · Goélise 30% · Ramoloss 10% |
+| Union Cave B2F | Herbe / sol | Jour | 19–22 | Galekid 30% · Axoloto 30% · Balbuto 30% · Griknot 10% |
+| Union Cave B2F | Éclate-Roc | Jour | 19–22 | Chenipan 30% · Debugant 30% · Paras 30% · Phanpy 10% |
+| Union Cave B2F | Surf | Jour | 19–22 | Barpau 30% · Froussardine 30% · Araqua 30% · Sovkipou 10% |
+| Vermilion City | Pêche | Tous | 70–84 | Carapagos 30% · Têtarte 30% · Hypocéan 30% · Prédastérie 10% |
+| Vermilion City | Herbe / sol | Tous | 70–84 | Scalproie 30% · Dimoret 30% · Symbios 30% · Sidérella 10% |
+| Vermilion City | Surf | Tous | 70–84 | Denticrisse 30% · Azumarill 30% · Nigosier 30% · Hydragon 10% |
+| Vermilion City Port Outside | Pêche | Tous | 70–84 | Batracné 30% · Phogleur 30% · Hastacuda 30% · Oyacata 10% |
+| Vermilion City Port Outside | Herbe / sol | Tous | 70–84 | Lougaroc 30% · Minotaupe 30% · Monthracite 30% · Sorbouboul 10% |
+| Vermilion City Port Outside | Surf | Tous | 70–84 | Carvanha 30% · Barloche 30% · Paragruel (Mâle) 30% · Tritosor (Mer Occident) 10% |
+| Victory Road Kanto 1F | Pêche | Jour | 64–67 | Hydragla 30% · Hydragon 30% · Oyacata 30% · Milobellus 10% |
+| Victory Road Kanto 1F | Surf | Jour | 64–67 | Relicanth 30% · Torgamord 30% · Lokhlass 30% · Oyacata 10% |
+| Victory Road Kanto B1F | Pêche | Jour | 64–67 | Denticrisse 30% · Hydragla 30% · Milobellus 30% · Léviator 10% |
+| Victory Road Kanto B1F | Surf | Jour | 64–67 | Nigosier 30% · Relicanth 30% · Hydragon 30% · Oyacata 10% |
+| Victory Road Kanto B2F | Pêche | Jour | 63–66 | Bargantua 30% · Nigirigon (Forme Courbée) 30% · Torgamord 30% · Lokhlass 10% |
+| Victory Road Kanto B2F | Surf | Jour | 63–66 | Octillery 30% · Hydragla 30% · Milobellus 30% · Léviator 10% |
+| Violet City | Pêche | Tous | 8–12 | Poissirène 30% · Barloche 30% · Écrapince 30% · Barpau 10% |
+| Violet City | Herbe / sol | Tous | 8–12 | Picassaut 30% · Parecool 30% · Axoloto 30% · Abra 10% |
+| Violet City | Surf | Tous | 8–12 | Ptitard 30% · Axoloto 30% · Nénupiot 30% · Arakdo 10% |
+| Viridian City | Pêche | Tous | 70–84 | Obalie 30% · Écrapince 30% · Lovdisc 30% · Paragruel (Mâle) 10% |
+| Viridian City | Herbe / sol | Tous | 70–84 | Némélios 30% · Zoroark 30% · Sidérella 30% · Porygon-Z 10% |
+| Viridian City | Surf | Tous | 70–84 | Sancoki (Mer Occident) 30% · Mustébouée 30% · Écayon 30% · Babimanta 10% |
+| Viridian Forest | Herbe / sol | Jour | 70–84 | Terracruel 30% · Bouldeneu 30% · Florges (Fleur Rouge) 30% · Pomdorochi 10% |
+| Viridian Forest | Herbe / sol | Nuit | 70–84 | Scolocendre 30% · Sarmuraï 30% · Floréclat 30% · Sucreine 10% |
+| Whirl Islands 1F | Pêche | Tous | 40–43 | Wailmer 30% · Têtarte 30% · Délestin 30% · Relicanth 10% |
+| Whirl Islands 1F | Herbe / sol | Tous | 40–43 | Kraknoix 30% · Rattata 30% · Bébécaille 30% · Bekaglaçon 10% |
+| Whirl Islands 1F | Éclate-Roc | Tous | 40–43 | Amassel 30% · Togedemaru 30% · Arkéapti 30% · Quartermac 10% |
+| Whirl Islands 1F | Surf | Tous | 40–43 | Lovdisc 30% · Corayon 30% · Hypocéan 30% · Lanturn 10% |
+| Whirl Islands B1F | Pêche | Tous | 41–44 | Mustébouée 30% · Écayon 30% · Têtarte 30% · Délestin 10% |
+| Whirl Islands B1F | Herbe / sol | Tous | 41–44 | Mélancolux 30% · Verpom 30% · Polarhume 30% · Stalgamin 10% |
+| Whirl Islands B1F | Éclate-Roc | Tous | 41–44 | Dolman 30% · Amagara 30% · Dunaja 30% · Scorplane 10% |
+| Whirl Islands B1F | Surf | Tous | 41–44 | Flingouste 30% · Amonita 30% · Carapagos 30% · Babimanta 10% |
+| Whirl Islands B1F Inner | Pêche | Jour | 42–45 | Marill 30% · Kabuto 30% · Tarenbulle 30% · Lokhlass 10% |
+| Whirl Islands B1F Inner | Herbe / sol | Jour | 42–45 | Forgerette 30% · Draby 30% · Farfuret 30% · Draco 10% |
+| Whirl Islands B1F Inner | Éclate-Roc | Jour | 42–45 | Blindalys 30% · Charibari 30% · Tiboudet 30% · Wagomine 10% |
+| Whirl Islands B1F Inner | Surf | Jour | 42–45 | Wailmer 30% · Bekipan 30% · Barbicha 30% · Sharpedo 10% |
+| Whirl Islands B2F | Pêche | Tous | 42–45 | Batracné 30% · Phogleur 30% · Colhomard 30% · Denticrisse 10% |
+| Whirl Islands B2F | Herbe / sol | Tous | 42–45 | Sonistrelle 30% · Magby 30% · Téraclope 30% · Sorbébé 10% |
+| Whirl Islands B2F | Éclate-Roc | Tous | 42–45 | Terhal 30% · Galvagla 30% · Galegon 30% · Magnéton 10% |
+| Whirl Islands B2F | Surf | Tous | 42–45 | Bargantua 30% · Batracné 30% · Luminéon 30% · Relicanth 10% |
+| Whirl Islands B3F | Pêche | Jour | 43–46 | Hypocéan 30% · Denticrisse 30% · Tarenbulle 30% · Nigosier 10% |
+| Whirl Islands B3F | Herbe / sol | Jour | 43–46 | Polichombr 30% · Solochi 30% · Cochignon 30% · Marcacrin 10% |
+| Whirl Islands B3F | Éclate-Roc | Jour | 43–46 | Météno 30% · Mysdibule 30% · Triopikeur 30% · Gambex 10% |
+| Whirl Islands B3F | Surf | Jour | 43–46 | Délestin 30% · Triopikeau 30% · Superdofin 30% · Hydragla 10% |
+| Whirl Islands Descent | Pêche | Jour | 43–46 | Corayon 30% · Têtarte 30% · Hypocéan 30% · Bekipan 10% |
+| Whirl Islands Descent | Herbe / sol | Jour | 43–46 | Skelénox 30% · Mucuscule 30% · Sorboul 30% · Chapignon 10% |
+| Whirl Islands Descent | Éclate-Roc | Jour | 43–46 | Tic 30% · Forgella 30% · Ouvrifier 30% · Clic 10% |
+| Whirl Islands Descent | Surf | Jour | 43–46 | Carvanha 30% · Barloche 30% · Écrapince 30% · Lokhlass 10% |
+| Ilex Forest | Coup d'Boule | — | 24–27 | Pomdepik 30% · Ningale 30% · Paras 30% · Scarhino 10% |
+| National Park Bug Contest | Coup d'Boule | — | 26–29 | Galvaran 30% · Terracool 30% · Furaiglon 30% · Pitrouille 10% |
+| National Park Normal | Coup d'Boule | — | 26–29 | Frissonille 30% · Tylton 30% · Trompignon 30% · Pimito 10% |
+| Viridian Forest | Coup d'Boule | — | 70–84 | Insécateur 30% · Scolocendre 30% · Hachécateur 30% · Lucanon 10% |
+| Safari Zone Top Left | Safari — Pool A | — | 37–40 | Dardargnan 30% · Vivaldaim 30% · Papinox 30% · Grodoudou 10% |
+| Safari Zone Top Left | Safari — Pool B | — | 37–40 | Charmillon 30% · Papilusion 30% · Coxy 30% · Yanma 10% |
+| Safari Zone Top Left | Safari — Pool C | — | 37–40 | Apitrini 30% · Granivol 30% · Toudoudou 30% · Tropius 10% |
+| Safari Zone Top Left | Safari — Pool D | — | 37–40 | Lumivole 30% · Carabing 30% · Mime Jr. 30% · Muciole 10% |
+| Safari Zone Top Left | Safari — Pool E | — | 37–40 | Cheniti 30% · Crikzik 30% · Escargaume 30% · Maracachi 10% |
+| Safari Zone Top Mid | Safari — Pool A | — | 38–41 | Dedenne 30% · Natu 30% · Chovsourir 30% · Girafarig 10% |
+| Safari Zone Top Mid | Safari — Pool B | — | 38–41 | Pâtachiot 30% · Snubbull 30% · Fluvetin 30% · Sucroquin 10% |
+| Safari Zone Top Mid | Safari — Pool C | — | 38–41 | Mélo 30% · Crèmy 30% · Togepi 30% · Psystigri 10% |
+| Safari Zone Top Mid | Safari — Pool D | — | 38–41 | Soporifik 30% · Munna 30% · Spoink 30% · Lewsor 10% |
+| Safari Zone Top Mid | Safari — Pool E | — | 38–41 | Ponchiot 30% · Moumouton 30% · Okéoké 30% · Korillon 10% |
+| Safari Zone Low Mid | Safari — Pool A | — | 39–42 | Pijako 30% · Doduo 30% · Canarticho 30% · Limonde 10% |
+| Safari Zone Low Mid | Safari — Pool B | — | 39–42 | Emolga 30% · Couafarel 30% · Hoothoot 30% · Dodoala 10% |
+| Safari Zone Low Mid | Safari — Pool C | — | 39–42 | Morphéo 30% · Kecleon 30% · Mangriff 30% · Cerfrousse 10% |
+| Safari Zone Low Mid | Safari — Pool D | — | 39–42 | Capumain 30% · Excelangue 30% · Spinda 30% · Insolourdo 10% |
+| Safari Zone Low Mid | Safari — Pool E | — | 39–42 | Chaglam 30% · Chinchidou 30% · Rongourmand 30% · Laporeille 10% |
+| Safari Zone Top Right | Safari — Pool A | — | 39–42 | Coquiperl 30% · Concombaffe 30% · Qwilfish 30% · Mamanbo 10% |
+| Safari Zone Top Right | Safari — Pool B | — | 39–42 | Couaneton 30% · Flotajou 30% · Cabriolaine 30% · Vortente 10% |
+| Safari Zone Top Right | Safari — Pool C | — | 39–42 | Germignon 30% · Feuillajou 30% · Gribouraigne 30% · Cacnea 10% |
+| Safari Zone Top Right | Safari — Pool D | — | 39–42 | Tournicoton 30% · Grainipiot 30% · Tournegrin 30% · Ceribou 10% |
+| Safari Zone Top Right | Safari — Pool E | — | 39–42 | Négapi 30% · Pachirisu 30% · Posipi 30% · Wattapik 10% |
+| Safari Zone Low Left | Safari — Pool A | — | 40–43 | Séléroc 30% · Tarinor 30% · Solaroc 30% · Craparoi 10% |
+| Safari Zone Low Left | Safari — Pool B | — | 40–43 | Manzaï 30% · Trousselin 30% · Flamajou 30% · Ferdeter 10% |
+| Safari Zone Low Left | Safari — Pool C | — | 40–43 | Flotillon 30% · Ratentif 30% · Skitty 30% · Archéomire 10% |
+| Safari Zone Low Left | Safari — Pool D | — | 40–43 | Keunotor 30% · Queulorior 30% · Manglouton 30% · Gourmelet 10% |
+| Safari Zone Low Left | Safari — Pool E | — | 40–43 | Sapereau 30% · Ptiravi 30% · Chuchmur 30% · Zigzaton 10% |
+| Safari Zone Low Right | Safari — Pool A | — | 41–44 | Cadoizo 30% · Viskuse 30% · Lippouti 30% · Grondogue 10% |
+| Safari Zone Low Right | Safari — Pool B | — | 41–44 | Virovent 30% · Goupilou 30% · Chacripan 30% · Sepiatop 10% |
+| Safari Zone Low Right | Safari — Pool C | — | 41–44 | Toutombe 30% · Medhyèna 30% · Tutafeh 30% · Baudrive 10% |
+| Safari Zone Low Right | Safari — Pool D | — | 41–44 | Pichu 30% · Vémini 30% · Moufouette 30% · Séviper 10% |
+| Safari Zone Low Right | Safari — Pool E | — | 41–44 | Gloupti 30% · Makuhita 30% · Miamiasme 30% · Hexadron 10% |
+| Fuchsia City Safari Zone Beach | Safari — Pool A | — | 68–72 | Tartard 30% · Oratoria 30% · Palmaval 30% · Laggron 10% |
+| Fuchsia City Safari Zone Beach | Safari — Pool B | — | 68–72 | Amphinobi 30% · Lézargus 30% · Hyporoi 30% · Serpente-Eau 10% |
+| Fuchsia City Safari Zone Beach | Safari — Pool C | — | 68–72 | Tortank 30% · Pingoléon 30% · Clamiral 30% · Aligatueur 10% |
+| Fuchsia City Safari Zone Beach | Safari — Pool D | — | 68–72 | Dracaufeu 30% · Ludicolo 30% · Tarpaud 30% · Rampe-Ailes 10% |
+| Fuchsia City Safari Zone Beach | Safari — Pool E | — | 68–72 | Mouscoto 30% · Hotte-de-Fer 30% · Cancrelove 30% · Garde-de-Fer 10% |
+| Fuchsia City Safari Zone Beach | Safari — Pool F | — | 68–72 | Mélodelfe 30% · Écrémeuh 30% · Mastouffe 30% · Monaflèmit 10% |
+| Fuchsia City Safari Zone Cave | Safari — Pool A | — | 71–75 | Chef-de-Fer 30% · Rugit-Lune 30% · Spiritomb 30% · Roc-de-Fer 10% |
+| Fuchsia City Safari Zone Cave | Safari — Pool B | — | 71–75 | Ectoplasma 30% · Zéroïd 30% · Ixon 30% · Engloutyran 10% |
+| Fuchsia City Safari Zone Cave | Safari — Pool C | — | 71–75 | Joliflor 30% · Méganium 30% · Tengalice 30% · Têtes-de-Fer 10% |
+| Fuchsia City Safari Zone Cave | Safari — Pool D | — | 71–75 | Alakazam 30% · Bamboiselle 30% · Cryptéro 30% · Flotte-Mèche 10% |
+| Fuchsia City Safari Zone Cave | Safari — Pool E | — | 71–75 | Brouhabam 30% · Mackogneur 30% · M. Glaquette 30% · Nostenfer 10% |
+| Fuchsia City Safari Zone Cave | Safari — Pool F | — | 71–75 | Pharamp 30% · Fermite 30% · Raichu 30% · Câblifère 10% |
+| Fuchsia City Safari Zone Mountain | Safari — Pool A | — | 72–76 | Libégon 30% · Roue-de-Fer 30% · Ama-Ama 30% · Feu-Perçant 10% |
+| Fuchsia City Safari Zone Mountain | Safari — Pool B | — | 72–76 | Fort-Ivoire 30% · Simiabraz 30% · Pelage-Sablé 30% · Épine-de-Fer 10% |
+| Fuchsia City Safari Zone Mountain | Safari — Pool C | — | 72–76 | Braségali 30% · Strassie 30% · Roitiflam 30% · Ire-Foudre 10% |
+| Fuchsia City Safari Zone Mountain | Safari — Pool D | — | 72–76 | Pierroteknik 30% · Fermite 30% · Typhlosion 30% · Mite-de-Fer 10% |
+| Fuchsia City Safari Zone Mountain | Safari — Pool E | — | 72–76 | Pyrobut 30% · Félinferno 30% · Flâmigator 30% · Goupelin 10% |
+| Fuchsia City Safari Zone Mountain | Safari — Pool F | — | 72–76 | Drakkarmin 30% · Aflamanoir 30% · Pohmarmotte 30% · Paume-de-Fer 10% |
+| Fuchsia City Safari Zone Brush | Safari — Pool A | — | 69–73 | Arboliva 30% · Manternel 30% · Empiflor 30% · Florizarre 10% |
+| Fuchsia City Safari Zone Brush | Safari — Pool B | — | 69–73 | Cotovol 30% · Astronelle 30% · Brutapode 30% · Vert-de-Fer 10% |
+| Fuchsia City Safari Zone Brush | Safari — Pool C | — | 69–73 | Gardevoir 30% · Katagami 30% · Togekiss 30% · Hurle-Queue 10% |
+| Fuchsia City Safari Zone Brush | Safari — Pool D | — | 69–73 | Miascarade 30% · Gorythmic 30% · Jungko 30% · Fongus-Furie 10% |
+| Fuchsia City Safari Zone Brush | Safari — Pool E | — | 69–73 | Blindépique 30% · Majaspic 30% · Torterra 30% · Archéduc 10% |

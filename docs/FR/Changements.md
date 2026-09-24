@@ -1,100 +1,62 @@
----
-layout: default
-title: "Changements"
----
-
-[Accueil](Accueil.md) · [Guide de jeu](Guide-de-jeu.md) · [Changements](Changements.md) · [Boss & Conseils](Boss-et-Conseils.md) · [Pokédex](Pokedex.md) · [Localisations](Localisations.md) · [Crédits & Versions](Credits-et-Versions.md) · **[EN](../EN/Changes.md)**
+[Accueil](Accueil.md) · [Guide de jeu](Guide-de-jeu.md) · [Changements](Changements.md) · [Pokédex](Pokedex.md) · [Localisations](Localisations.md) · [Boss & Conseils](Boss-et-Conseils.md) · [Crédits & Versions](Credits-et-Versions.md) · **[EN](../EN/Home.md)**
 
 # Changements
 
-Cette page regroupe les différences principales entre Pokémon Heart & Soul et Pokémon Tactica sans multiplier les micro-pages.
+## Pokémon modifiés — 26 entrées
 
-## Systèmes
+| Pokémon | Type(s) | Changements |
+|---|---|---|
+| Ossatueur d'Alola | Feu / Spectre | PV: 60 → 90; Attaque: 80 → 110 |
+| Élekid | Électrik | Talent caché: Sans Limite |
+| Élektek | Électrik / Combat | Type : Électrik / Combat; Talent caché: Sans Limite |
+| Élekable | Électrik / Combat | Type : Électrik / Combat; Vitesse: 95 → 110; Talent caché: Sans Limite |
+| Tranchodon | Dragon / Acier | Type : Dragon / Acier; Vitesse: 97 → 110 |
+| Salamèche | Feu / Dragon | Type : Feu / Dragon |
+| Reptincel | Feu / Dragon | Type : Feu / Dragon |
+| Dracaufeu | Feu / Dragon | Type : Feu / Dragon; Attaque: 84 → 110; Vitesse: 100 → 110 |
+| Méga-Dracaufeu X | Feu / Dragon | Attaque: 130 → 156; Vitesse: 100 → 110 |
+| Méga-Dracaufeu Y | Feu / Dragon | Type : Feu / Dragon; Attaque: 104 → 120; Vitesse: 100 → 110 |
+| Majaspic | Plante / Dragon | Type : Plante / Dragon; Att. Spé.: 75 → 110 |
+| Jungko | Plante / Dragon | Type : Plante / Dragon; Attaque: 85 → 105; Att. Spé.: 105 → 85; Talent caché: Chlorophylle |
+| Méga-Jungko | Plante / Dragon | Attaque: 110 → 145; Att. Spé.: 145 → 110; Talent: Chlorophylle |
+| Héricendre | Feu / Sol | Type : Feu / Sol; Talent caché: Force Soleil |
+| Feurisson | Feu / Sol | Type : Feu / Sol; Talent caché: Force Soleil |
+| Typhlosion | Feu / Sol | Type : Feu / Sol; Vitesse: 100 → 115; Talent caché: Force Soleil |
+| Hyporoi | Eau / Dragon | Attaque: 95 → 115; Vitesse: 85 → 105 |
+| Libégon | Sol / Dragon | Attaque: 100 → 115; Att. Spé.: 80 → 95; Vitesse: 100 → 115 |
+| Luxray | Électrik / Ténèbres | Type : Électrik / Ténèbres |
+| Carchacrok |  | Vitesse: 102 → 112 |
+| Méga-Carchacrok |  | Vitesse: 92 → 102 |
+| Moustillon | Eau / Combat | Type : Eau / Combat |
+| Mateloutre | Eau / Combat | Type : Eau / Combat |
+| Clamiral | Eau / Combat | Type : Eau / Combat; Attaque: 100 → 108; Att. Spé.: 108 → 100; Vitesse: 70 → 105 |
+| Minotaupe |  | Vitesse: 88 → 100 |
+| Hydragon | Eau / Dragon | Attaque: 90 → 100; Vitesse: 75 → 95 |
 
-Tactica ajoute ou modifie notamment :
-- HARD par défaut, NORMAL disponible ;
-- nouvelles équipes Tactica dans **les deux difficultés** ;
-- Level Cap dynamique ;
-- Training NPC ;
-- vitesse native x1/x2/x3/x4 ;
-- réglages audio indépendants ;
-- nouvelle configuration de partie ;
-- sauvegarde des paramètres avec B = Save & Exit ;
-- sélection de langue EN / FR prévue pour la V1.
+## Learnsets — 15 changements
 
-## Starters et œuf d'Orme
-
-Le choix initial comprend 30 starters répartis entre Feu, Eau, Plante, Électrik, Sol et Glace, plus Évoli.
-
-L'œuf d'Orme devient une seconde sélection : l'espèce choisie est réellement contenue dans l'œuf. Les boosters de type et objets d'évolution nécessaires sont remis avec les starters. Évoli reçoit Mouchoir Soie, booster de son évolition et pierre correspondante.
-
-## Pokémon
-
-**26 modifications Pokémon** sont prévues dans la V1. Elles peuvent toucher type, statistiques, talents ou rôle.
-
-Exemples verrouillés :
-| Pokémon | Changement principal |
+| Pokémon | Changement |
 |---|---|
-| Dracaufeu | Feu / Dragon |
-| Typhlosion | Feu / Sol |
-| Jungko | Plante / Dragon, orientation plus physique |
-| Luxray | Électrik / Ténèbres |
-| Moustillon / Mateloutre / Clamiral | Eau / Combat |
-| Élekable | profil offensif et vitesse retravaillés |
-| Hyporoi | profil physique renforcé |
+| Élektek | Casse-Brique (évolution) |
+| Tranchodon | Tête de Fer (évolution) |
+| Dracaufeu | Draco-Choc (évolution) |
+| Jungko | Draco-Griffe (évolution) |
+| Jungko | Danse Draco (niv. 48) |
+| Typhlosion | Telluriforce (évolution) |
+| Hyporoi | Aqua-Brèche (évolution) |
+| Hyporoi | Draco-Charge (niv. 52) |
+| Amphinobi | Extrasenseur → Vibrobscur (niv. 49) |
+| Tranchodon | Coupe Psycho (évolution) |
+| Jungko | Martobois (niv. 52) |
+| Hyporoi | Aquatacle (niv. 45) |
+| Hyporoi | Draco-Griffe (évolution) |
+| Hyporoi | Danse Draco (niv. 52) |
+| Hyporoi | Eau Revoir (niv. 56) |
 
-La table exhaustive sera synchronisée avec les données compilées afin de ne pas publier de valeurs intermédiaires.
+## Rencontres
 
-## Évolutions et learnsets
+405 tables standard + 4 Coup d'Boule + 53 Safari. Quatre slots 30/30/30/10. La pêche a un pool par table.
 
-Evolution gate :
-- base → stade 1 : niveau 16 ;
-- base → final sans stade intermédiaire : niveau 30 ;
-- stade 1 → final : niveau 36.
+## Évolutions
 
-La V1 comprend **15 learnsets custom** et utilise le comportement GEN_7 prévu par le projet.
-
-Correspondances importantes :
-- **Aquatacle** = `MOVE_WAVE_CRASH`
-- **Eau Revoir** = `MOVE_FLIP_TURN`
-
-## Rencontres sauvages
-
-La distribution suit la progression de l'histoire et exploite herbe, Surf, pêche, Rock Smash, horaires et autres méthodes disponibles.
-
-Principes :
-- tables principales basées sur quatre espèces et un poids cible 30 / 30 / 30 / 10 ;
-- starters sauvages rares et progressifs ;
-- formes finales surtout tardives ;
-- aucun légendaire/fabuleux ajouté comme rencontre aléatoire ordinaire ;
-- Safari conservé comme système dédié.
-
-État intégré avant la passe finale : **405 tables standard + 4 Headbutt**. Le Safari comporte **53 pools** distincts, chacun à quatre espèces en 30/30/30/10, avec rotation des pools pendant une admission.
-
-## Combats de boss
-
-Les nouvelles compositions Tactica sont communes à NORMAL et HARD.
-
-**NORMAL** : mêmes équipes/sets, scaling IV/EV NORMAL et IA NORMAL.
-
-**HARD** : IV31, EV optimisés par rôle et IA HARD en plus des synergies prévues.
-
-À partir de la troisième arène, les Champions utilisent des équipes complètes de six Pokémon. Les Méga apparaissent à partir de la quatrième arène.
-
-Les dirigeants Rocket suivent une progression dynamique : **dernier cap canonique Champion/rival jalon +2 sur toute l'équipe** ; les boss Rocket ne se chaînent pas.
-
-Voir [Boss & Conseils](Boss-et-Conseils.md).
-
-## Boutiques
-
-TM Shop : **Catégorie → Type → CT** avec Support, Weak, Powerful et Ultimate.
-
-Item Shop : **Evolution → Strategic → Other**.
-
-Les boutiques spéciales ne remplacent pas la progression normale des Poké Marts.
-
-## Interface et confort
-
-La V1 conserve la base graphique HnS avec une passe d'harmonisation : battle UI, Settings, Summary, Pokédex, Shops, fenêtres, menus, textes, alignements, palettes et glitches visibles.
-
-Une refonte graphique plus profonde reste réservée à une future V2.
+Les évolutions d'échange sont adaptées au solo. L'ancien tableau générique 16/30/36 n'est plus publié comme règle universelle.
