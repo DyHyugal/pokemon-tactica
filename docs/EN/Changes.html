@@ -1,0 +1,153 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Changes — Pokémon Tactica</title><meta name="description" content="Pokémon Tactica wiki"><link rel="stylesheet" href="../assets/site.css"></head><body><header class="top"><nav class="nav"><a class="brand" href="../index.html">Pokémon Tactica</a><a href="Home.html">Home</a><a href="Game-Guide.html">Game Guide</a><a class="active" href="Changes.html">Changes</a><a href="Bosses-and-Tips.html">Bosses & Tips</a><a href="Pokedex.html">Pokédex</a><a href="Locations.html">Locations</a><a href="Glossary.html">Glossary</a><a href="Credits-and-Versions.html">Credits</a><span class="langs"><a class="lang" href="../FR/Changements.html">FR</a><a class="lang current" href="Changes.html">ENG</a></span></nav></header><main><h1>Changes</h1>
+
+<p>This page groups the main differences between Pokémon Heart & Soul and Pokémon Tactica. The goal is to avoid a wiki full of tiny nested pages.</p>
+
+<h2>Contents</h2>
+
+<ul>
+<li><a href="#systems">Systems</a></li>
+<li><a href="#starters-and-elms-egg">Starters and Elm's Egg</a></li>
+<li><a href="#pokémon">Pokémon</a></li>
+<li><a href="#evolutions-and-learnsets">Evolutions and learnsets</a></li>
+<li><a href="#wild-encounters">Wild encounters</a></li>
+<li><a href="#boss-battles">Boss battles</a></li>
+<li><a href="#shops">Shops</a></li>
+<li><a href="#interface-and-qol">Interface and QoL</a></li>
+</ul>
+
+<h2>Systems</h2>
+
+<p>Tactica adds or changes:</p>
+
+<ul>
+<li>HARD by default, NORMAL still available;\n- the same new Tactica boss rosters in both difficulties;</li>
+<li>Level Cap;</li>
+<li>Training NPC;</li>
+<li>native x1/x2/x3/x4 game speed;</li>
+<li>independent audio settings;</li>
+<li>redesigned game setup;</li>
+<li>simplified settings save/exit;</li>
+<li>clearer separation between difficulty, challenges and randomizer.</li>
+</ul>
+
+<h2>Starters and Elm's Egg</h2>
+
+<p>Starter choice is no longer limited to the classic trio. Pokémon are grouped by type, with Eevee available as a separate path.</p>
+
+<p>Elm's Egg becomes a second Tactica selection: the confirmed species is the actual Pokémon inside the Egg and keeps its identity through hatching.</p>
+
+<p>Type boosters and relevant evolution items are granted automatically so starter choices remain practical without artificial detours.</p>
+
+<h2>Pokémon</h2>
+
+<p>Several Pokémon receive targeted changes to typing, stats, abilities or role.</p>
+
+<p>Examples already locked for V1 include:</p>
+
+<div class="table-wrap"><table>
+<tr><td>Pokémon</td><td>Main change</td></tr>
+<tr><td>Charizard</td><td>Fire / Dragon</td></tr>
+<tr><td>Typhlosion</td><td>Fire / Ground</td></tr>
+<tr><td>Sceptile</td><td>Grass / Dragon, stronger physical identity</td></tr>
+<tr><td>Luxray</td><td>Electric / Dark</td></tr>
+<tr><td>Oshawott / Dewott / Samurott</td><td>Water / Fighting</td></tr>
+<tr><td>Haxorus</td><td>revised secondary typing and offensive profile</td></tr>
+<tr><td>Electivire</td><td>revised offensive profile and Speed</td></tr>
+<tr><td>Kingdra</td><td>stronger physical profile</td></tr>
+</table></div>
+
+<p>The exhaustive table will be synchronized with compiled data before RC so the wiki does not preserve values that changed during integration.</p>
+
+<h2>Evolutions and learnsets</h2>
+
+<p>Some item-based evolutions require a minimum level:</p>
+
+<ul>
+<li>base → stage 1: level 16;</li>
+<li>base → final with no middle stage: level 30;</li>
+<li>stage 1 → final: level 36.</li>
+</ul>
+
+<p>Learnsets were expanded to support new roles. Two important move mappings used by the project are:</p>
+
+<ul>
+<li><strong>Wave Crash</strong> = <code>MOVE_WAVE_CRASH</code></li>
+<li><strong>Flip Turn</strong> = <code>MOVE_FLIP_TURN</code></li>
+</ul>
+
+<h2>Wild encounters</h2>
+
+<p>Wild distribution is rebuilt around story progression.</p>
+
+<p>Principles:</p>
+
+<ul>
+<li>4 main species per table;</li>
+<li>target distribution 30 / 30 / 30 / 10;</li>
+<li>use grass, Surf, fishing, Rock Smash, time of day and other available methods;</li>
+<li>wild starters are rare and progressively placed;</li>
+<li>final evolutions generally appear late;</li>
+<li>no Legendary/Mythical Pokémon injected into ordinary random encounters;</li>
+<li>Safari-only species remain tied to Safari content.</li>
+</ul>
+
+<p>Current integrated state before the final pass: <strong>405 standard tables + 4 Headbutt tables</strong>. Safari adds <strong>53 separate pools</strong>, each using four species at 30/30/30/10 with pool rotation during a Safari admission.</p>
+
+<h2>Boss battles</h2>
+
+<p>Tactica boss rosters are shared by NORMAL and HARD. NORMAL uses NORMAL IV/EV scaling and AI; HARD adds the following optimization:</p>
+
+<ul>
+<li>held items;</li>
+<li>31 IVs;</li>
+<li>role-based EVs;</li>
+<li>weather/terrain;</li>
+<li>hazards;</li>
+<li>screens;</li>
+<li>Trick Room;</li>
+<li>setup;</li>
+<li>pivots;</li>
+<li>win conditions.</li>
+</ul>
+
+<p>From the third Gym onward, Gym Leaders use full teams of six. Mega Evolution starts from the fourth Gym.</p>
+
+<p>Boss mechanics and practical advice are covered in <a href="Bosses-and-Tips.html">Bosses & Tips</a>.</p>
+
+<h2>Shops</h2>
+
+<p>The TM Shop follows:</p>
+
+<p><strong>Category → Type → TM</strong></p>
+
+<p>Categories:</p>
+
+<ul>
+<li>Support</li>
+<li>Weak</li>
+<li>Powerful</li>
+<li>Ultimate</li>
+</ul>
+
+<p>The item shop follows:</p>
+
+<p><strong>Evolution → Strategic → Other</strong></p>
+
+<p>Direct healing, Poké Balls, Repels, Key Items and story items must not bypass normal shop progression.</p>
+
+<h2>Interface and QoL</h2>
+
+<p>Tactica keeps the HnS visual base and finishes a lighter V1 refresh across:</p>
+
+<ul>
+<li>windows;</li>
+<li>menus;</li>
+<li>battle UI;</li>
+<li>summary;</li>
+<li>Pokédex;</li>
+<li>shops;</li>
+<li>palettes.</li>
+</ul>
+
+<p>A deeper visual overhaul is reserved for a future V2.</p>
+</main></body></html>
