@@ -25,12 +25,12 @@
 | Hyporoi | Eau / Dragon | Attaque: 95 → 115; Vitesse: 85 → 105 |
 | Libégon | Sol / Dragon | Attaque: 100 → 115; Att. Spé.: 80 → 95; Vitesse: 100 → 115 |
 | Luxray | Électrik / Ténèbres | Type : Électrik / Ténèbres |
-| Carchacrok |  | Vitesse: 102 → 112 |
-| Méga-Carchacrok |  | Vitesse: 92 → 102 |
+| Carchacrok | Sol / Dragon | Vitesse: 102 → 112 |
+| Méga-Carchacrok | Sol / Dragon | Vitesse: 92 → 102 |
 | Moustillon | Eau / Combat | Type : Eau / Combat |
 | Mateloutre | Eau / Combat | Type : Eau / Combat |
 | Clamiral | Eau / Combat | Type : Eau / Combat; Attaque: 100 → 108; Att. Spé.: 108 → 100; Vitesse: 70 → 105 |
-| Minotaupe |  | Vitesse: 88 → 100 |
+| Minotaupe | Sol / Acier | Vitesse: 88 → 100 |
 | Hydragon | Eau / Dragon | Attaque: 90 → 100; Vitesse: 75 → 95 |
 
 ## Learnsets — 15 changements

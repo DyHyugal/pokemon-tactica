@@ -25,12 +25,12 @@
 | Kingdra | Water / Dragon | Attack: 95 → 115; Speed: 85 → 105 |
 | Flygon | Ground / Dragon | Attack: 100 → 115; Sp. Atk: 80 → 95; Speed: 100 → 115 |
 | Luxray | Electric / Dark | Type: Electric / Dark |
-| Garchomp |  | Speed: 102 → 112 |
+| Garchomp | Ground / Dragon | Speed: 102 → 112 |
 | Garchomp |  | Speed: 92 → 102 |
 | Oshawott | Water / Fighting | Type: Water / Fighting |
 | Dewott | Water / Fighting | Type: Water / Fighting |
 | Samurott | Water / Fighting | Type: Water / Fighting; Attack: 100 → 108; Sp. Atk: 108 → 100; Speed: 70 → 105 |
-| Excadrill |  | Speed: 88 → 100 |
+| Excadrill | Ground / Steel | Speed: 88 → 100 |
 | Dracovish | Water / Dragon | Attack: 90 → 100; Speed: 75 → 95 |
 
 ## Learnsets — 15 changes
