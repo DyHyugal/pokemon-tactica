@@ -1,4 +1,4 @@
----
+[Accueil](Accueil.md) · [Guide de jeu](Guide-de-jeu.md) · [Changements](Changements.md) · [Pokédex](Pokedex.md) · [Localisations](Localisations.md) · [Boss & Conseils](Boss-et-Conseils.md) · [Crédits & Versions](Credits-et-Versions.md) · **[EN](../EN/Credits-and-Versions.md)**
 layout: default
 title: "Crédits & Versions"
 ---
@@ -48,7 +48,7 @@ La V1 se concentre sur :
 - Pokémon custom ;
 - learnsets ;
 - encounters ;
-- boss teams HARD ;
+- équipes de boss NORMAL/HARD ;
 - IA adaptée ;
 - shops stratégiques ;
 - EN/FR ;
