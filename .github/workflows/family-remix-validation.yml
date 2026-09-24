@@ -1,0 +1,36 @@
+name: Family Remix validation
+on:
+  push:
+    branches: [work/native-speed-starter-egg]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  hns:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends binutils-arm-none-eabi gcc-arm-none-eabi libnewlib-arm-none-eabi libpng-dev python3
+      - name: Validate Family Remix data
+        run: python3 tools/validate_family_remix.py
+      - name: Build HnS
+        run: make hns -j2
+      - name: Level Cap tests
+        run: make check BUILD=hns TESTS='*Level cap:' -j2
+      - name: Evolution requirement tests
+        run: make check BUILD=hns TESTS='*Evolution requirements:' -j2
+      - name: Training NPC tests
+        run: make check BUILD=hns TESTS='*Training NPC:' -j2
+      - name: Family Safari tests
+        run: make check BUILD=hns TESTS='*Family Safari:' -j2
+      - name: Existing audio regression tests
+        run: make check BUILD=hns TESTS=Audio -j2
+      - name: Existing Settings regression tests
+        run: make check BUILD=hns TESTS=Settings -j2
+      - name: Native speed tests
+        run: make check BUILD=hns TESTS=Native -j2
+      - name: Starter and mystery egg tests
+        run: make check BUILD=hns TESTS=Family -j2
