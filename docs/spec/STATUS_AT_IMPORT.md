@@ -12,4 +12,4 @@
 | Shops | PNJ CT et objets existent dans les scripts Goldenrod, catalogues incomplets présumés ; PNJ gemmes non établi | Inventaire exhaustif, puis implémentation |
 | Wiki | Branche importée ; structure et CSS demandent corrections | Localisations/Pokédex séparés, palette ROM, exhaustivité, FR/EN/mobile |
 
-Ce tableau est un **point de départ**, pas le résultat final de l'audit. Codex doit actualiser chaque ligne avec chemins, commits et preuves actuelles avant d'écrire le premier bloc de gameplay.
+Ce tableau est une **photographie de l'import**, pas le résultat final de l'audit. Le suivi vivant avec un tag par feature est dans [FEATURE_STATUS.md](FEATURE_STATUS.md) ; Codex actualise ce registre avec chemins, commits et preuves actuelles avant d'écrire le premier bloc de gameplay. La procédure de diagnostic des fonctions auparavant validées est dans [MIGRATION.md](MIGRATION.md).
