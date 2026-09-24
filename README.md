@@ -6,6 +6,7 @@ Pokémon Tactica reprend la base jouable **Pokémon Heart & Soul (HnS)** pour un
 
 - [Source de vérité](docs/spec/SOURCE_OF_TRUTH.md) : choix produit validés et liens vers les données.
 - [Prompt de reprise Codex](docs/spec/CODEX_START.md) : audit avant production et travail par blocs.
+- [État des features](docs/spec/FEATURE_STATUS.md) : un tag et les preuves de suivi pour chaque fonction.
 - [Migration](docs/spec/MIGRATION.md) : provenance, contrôles et branches.
 - `data/spec/` : tables de rencontres, boss, starters, rival et Pokémon modifiés.
 

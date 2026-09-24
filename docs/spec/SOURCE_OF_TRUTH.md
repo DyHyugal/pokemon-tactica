@@ -21,6 +21,6 @@ Pokémon Tactica est un fork jouable de HnS tourné vers les combats stratégiqu
 
 ## Livraison
 
-Le premier travail de Codex est un audit **code contre spec** `DONE / PARTIEL / À CORRIGER / À FAIRE` par fichier, avec état de tests et différences de données. Il poursuit ensuite par blocs via branches fonctionnelles et PR vers `integration/v1`. Aucun système protégé n'est repris sans écart démontré. Une CI verte sur l'ancien mapping des encounters ne prouve pas le contrat à quatre slots.
+Le premier travail de Codex est un audit **code contre spec** `DONE / PARTIEL / À CORRIGER / À FAIRE` par fichier, avec état de tests et différences de données. Il maintient [FEATURE_STATUS.md](FEATURE_STATUS.md), un tag et des preuves par feature, selon la provenance et le diagnostic de [MIGRATION.md](MIGRATION.md). Il poursuit ensuite par blocs via branches fonctionnelles et PR vers `integration/v1`. Aucun système protégé n'est repris sans écart démontré. Une CI verte sur l'ancien mapping des encounters ne prouve pas le contrat à quatre slots.
 
 Validation avant release : validator corrigé, `make hns -j4`, groupes Settings/Audio/Native/Family/Evolution/Level Caps, boss NORMAL/HARD et Rocket, encounters standard/Safari/Headbutt, tests shops/rival, playthrough mGBA représentatif, revue UI et wiki FR/EN sur mobile. Une vérification manuelle n'est déclarée faite que si elle a réellement eu lieu.
