@@ -1,0 +1,1390 @@
+{
+  "dataset": "Pokemon Family Remix special encounter pools",
+  "version": 3,
+  "status": "INTEGRATED",
+  "engine_status": {
+    "headbutt": "INTEGRATED",
+    "safari": "INTEGRATED_SESSION_ROTATION"
+  },
+  "rules": {
+    "source_of_truth": "PFR_V1_Encounters_FINAL.json V3",
+    "rates": [
+      30,
+      30,
+      30,
+      10
+    ],
+    "headbutt_tables": 4,
+    "safari_pools": 53
+  },
+  "tables": [
+    {
+      "map": "MAP_ILEX_FOREST_HNS",
+      "region": "Johto",
+      "progression": "Badges 2-4",
+      "habitat": "Forest/Bug",
+      "method": "headbutt_mons",
+      "time": "any",
+      "min_level": 24,
+      "max_level": 27,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Pineco",
+        "Nincada",
+        "Paras",
+        "Heracross"
+      ],
+      "curated": true,
+      "notes": null
+    },
+    {
+      "map": "MAP_NATIONAL_PARK_BUG_CONTEST_HNS",
+      "region": "Johto",
+      "progression": "Badges 2-4",
+      "habitat": "Forest/Bug",
+      "method": "headbutt_mons",
+      "time": "any",
+      "min_level": 26,
+      "max_level": 29,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Helioptile",
+        "Toedscool",
+        "Rufflet",
+        "Pumpkaboo"
+      ],
+      "curated": false,
+      "notes": null
+    },
+    {
+      "map": "MAP_NATIONAL_PARK_NORMAL_HNS",
+      "region": "Johto",
+      "progression": "Badges 2-4",
+      "habitat": "Forest/Bug",
+      "method": "headbutt_mons",
+      "time": "any",
+      "min_level": 26,
+      "max_level": 29,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Snom",
+        "Swablu",
+        "Foongus",
+        "Capsakid"
+      ],
+      "curated": false,
+      "notes": null
+    },
+    {
+      "map": "MAP_VIRIDIAN_FOREST_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Forest/Bug",
+      "method": "headbutt_mons",
+      "time": "any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Scyther",
+        "Centiskorch",
+        "Kleavor",
+        "Vikavolt"
+      ],
+      "curated": false,
+      "notes": null
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_LEFT_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Forest",
+      "method": "safari_pool_a",
+      "time": "any",
+      "min_level": 37,
+      "max_level": 40,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Beedrill",
+        "Deerling (Spring Form)",
+        "Dustox",
+        "Wigglytuff"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool A; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_LEFT_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Forest",
+      "method": "safari_pool_b",
+      "time": "any",
+      "min_level": 37,
+      "max_level": 40,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Beautifly",
+        "Butterfree",
+        "Ledyba",
+        "Yanma"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool B; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_LEFT_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Forest",
+      "method": "safari_pool_c",
+      "time": "any",
+      "min_level": 37,
+      "max_level": 40,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Combee",
+        "Hoppip",
+        "Igglybuff",
+        "Tropius"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool C; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_LEFT_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Forest",
+      "method": "safari_pool_d",
+      "time": "any",
+      "min_level": 37,
+      "max_level": 40,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Illumise",
+        "Karrablast",
+        "Mime Jr.",
+        "Volbeat"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool D; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_LEFT_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Forest",
+      "method": "safari_pool_e",
+      "time": "any",
+      "min_level": 37,
+      "max_level": 40,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Burmy (Plant Cloak)",
+        "Kricketot",
+        "Shelmet",
+        "Maractus"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool E; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_MID_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Meadow",
+      "method": "safari_pool_a",
+      "time": "any",
+      "min_level": 38,
+      "max_level": 41,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Dedenne",
+        "Natu",
+        "Woobat",
+        "Girafarig"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool A; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_MID_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Meadow",
+      "method": "safari_pool_b",
+      "time": "any",
+      "min_level": 38,
+      "max_level": 41,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Fidough",
+        "Snubbull",
+        "Spritzee",
+        "Swirlix"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool B; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_MID_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Meadow",
+      "method": "safari_pool_c",
+      "time": "any",
+      "min_level": 38,
+      "max_level": 41,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Cleffa",
+        "Milcery",
+        "Togepi",
+        "Espurr"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool C; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_MID_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Meadow",
+      "method": "safari_pool_d",
+      "time": "any",
+      "min_level": 38,
+      "max_level": 41,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Drowzee",
+        "Munna",
+        "Spoink",
+        "Elgyem"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool D; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_MID_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Meadow",
+      "method": "safari_pool_e",
+      "time": "any",
+      "min_level": 38,
+      "max_level": 41,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Lillipup",
+        "Wooloo",
+        "Wynaut",
+        "Chingling"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool E; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_MID_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Plains",
+      "method": "safari_pool_a",
+      "time": "any",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Chatot",
+        "Doduo",
+        "Farfetch'd",
+        "Stunfisk"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool A; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_MID_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Plains",
+      "method": "safari_pool_b",
+      "time": "any",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Emolga",
+        "Furfrou (Natural Form)",
+        "Hoothoot",
+        "Komala"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool B; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_MID_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Plains",
+      "method": "safari_pool_c",
+      "time": "any",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Castform",
+        "Kecleon",
+        "Zangoose",
+        "Stantler"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool C; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_MID_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Plains",
+      "method": "safari_pool_d",
+      "time": "any",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Aipom",
+        "Lickitung",
+        "Spinda",
+        "Dunsparce"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool D; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_MID_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Plains",
+      "method": "safari_pool_e",
+      "time": "any",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Glameow",
+        "Minccino",
+        "Skwovet",
+        "Buneary"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool E; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_RIGHT_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Wetland",
+      "method": "safari_pool_a",
+      "time": "any",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Clamperl",
+        "Pyukumuku",
+        "Qwilfish",
+        "Alomomola"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool A; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_RIGHT_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Wetland",
+      "method": "safari_pool_b",
+      "time": "any",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Ducklett",
+        "Panpour",
+        "Skiddo",
+        "Carnivine"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool B; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_RIGHT_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Wetland",
+      "method": "safari_pool_c",
+      "time": "any",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Chikorita",
+        "Pansage",
+        "Shroodle",
+        "Cacnea"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool C; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_RIGHT_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Wetland",
+      "method": "safari_pool_d",
+      "time": "any",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Gossifleur",
+        "Seedot",
+        "Sunkern",
+        "Cherubi"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool D; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_RIGHT_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Wetland",
+      "method": "safari_pool_e",
+      "time": "any",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Minun",
+        "Pachirisu",
+        "Plusle",
+        "Pincurchin"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool E; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_LEFT_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Drylands",
+      "method": "safari_pool_a",
+      "time": "any",
+      "min_level": 40,
+      "max_level": 43,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Lunatone",
+        "Nosepass",
+        "Solrock",
+        "Klawf"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool A; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_LEFT_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Drylands",
+      "method": "safari_pool_b",
+      "time": "any",
+      "min_level": 40,
+      "max_level": 43,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Bonsly",
+        "Klefki",
+        "Pansear",
+        "Orthworm"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool B; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_LEFT_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Drylands",
+      "method": "safari_pool_c",
+      "time": "any",
+      "min_level": 40,
+      "max_level": 43,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Flittle",
+        "Patrat",
+        "Skitty",
+        "Bronzor"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool C; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_LEFT_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Drylands",
+      "method": "safari_pool_d",
+      "time": "any",
+      "min_level": 40,
+      "max_level": 43,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Bidoof",
+        "Smeargle",
+        "Yungoos",
+        "Lechonk"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool D; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_LEFT_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Drylands",
+      "method": "safari_pool_e",
+      "time": "any",
+      "min_level": 40,
+      "max_level": 43,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Bunnelby",
+        "Happiny",
+        "Whismur",
+        "Zigzagoon"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool E; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_RIGHT_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Roughlands",
+      "method": "safari_pool_a",
+      "time": "any",
+      "min_level": 41,
+      "max_level": 44,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Delibird",
+        "Frillish",
+        "Smoochum",
+        "Maschiff"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool A; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_RIGHT_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Roughlands",
+      "method": "safari_pool_b",
+      "time": "any",
+      "min_level": 41,
+      "max_level": 44,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Bramblin",
+        "Nickit",
+        "Purrloin",
+        "Inkay"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool B; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_RIGHT_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Roughlands",
+      "method": "safari_pool_c",
+      "time": "any",
+      "min_level": 41,
+      "max_level": 44,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Greavard",
+        "Poochyena",
+        "Yamask",
+        "Drifloon"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool C; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_RIGHT_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Roughlands",
+      "method": "safari_pool_d",
+      "time": "any",
+      "min_level": 41,
+      "max_level": 44,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Pichu",
+        "Poipole",
+        "Stunky",
+        "Seviper"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool D; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_RIGHT_HNS",
+      "region": "Johto",
+      "progression": "Badges 4-6",
+      "habitat": "Safari Roughlands",
+      "method": "safari_pool_e",
+      "time": "any",
+      "min_level": 41,
+      "max_level": 44,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Gulpin",
+        "Makuhita",
+        "Trubbish",
+        "Falinks"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool E; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_BEACH_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Coast",
+      "method": "safari_pool_a",
+      "time": "any",
+      "min_level": 68,
+      "max_level": 72,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Poliwrath",
+        "Primarina",
+        "Quaquaval",
+        "Swampert"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool A; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_BEACH_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Coast",
+      "method": "safari_pool_b",
+      "time": "any",
+      "min_level": 68,
+      "max_level": 72,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Greninja",
+        "Inteleon",
+        "Kingdra",
+        "Walking Wake"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool B; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_BEACH_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Coast",
+      "method": "safari_pool_c",
+      "time": "any",
+      "min_level": 68,
+      "max_level": 72,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Blastoise",
+        "Empoleon",
+        "Samurott",
+        "Feraligatr"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool C; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_BEACH_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Coast",
+      "method": "safari_pool_d",
+      "time": "any",
+      "min_level": 68,
+      "max_level": 72,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Charizard",
+        "Ludicolo",
+        "Politoed",
+        "Slither Wing"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool D; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_BEACH_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Coast",
+      "method": "safari_pool_e",
+      "time": "any",
+      "min_level": 68,
+      "max_level": 72,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Buzzwole",
+        "Iron Bundle",
+        "Pheromosa",
+        "Iron Valiant"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool E; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_BEACH_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Coast",
+      "method": "safari_pool_f",
+      "time": "any",
+      "min_level": 68,
+      "max_level": 72,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Clefable",
+        "Miltank",
+        "Stoutland",
+        "Slaking"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool F; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_CAVE_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Cave",
+      "method": "safari_pool_a",
+      "time": "any",
+      "min_level": 71,
+      "max_level": 75,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Iron Crown",
+        "Roaring Moon",
+        "Spiritomb",
+        "Iron Boulder"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool A; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_CAVE_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Cave",
+      "method": "safari_pool_b",
+      "time": "any",
+      "min_level": 71,
+      "max_level": 75,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Gengar",
+        "Nihilego",
+        "Obstagoon",
+        "Guzzlord"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool B; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_CAVE_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Cave",
+      "method": "safari_pool_c",
+      "time": "any",
+      "min_level": 71,
+      "max_level": 75,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Bellossom",
+        "Meganium",
+        "Shiftry",
+        "Iron Jugulis"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool C; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_CAVE_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Cave",
+      "method": "safari_pool_d",
+      "time": "any",
+      "min_level": 71,
+      "max_level": 75,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Alakazam",
+        "Celesteela",
+        "Sigilyph",
+        "Flutter Mane"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool D; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_CAVE_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Cave",
+      "method": "safari_pool_e",
+      "time": "any",
+      "min_level": 71,
+      "max_level": 75,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Exploud",
+        "Machamp",
+        "Mr. Rime",
+        "Crobat"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool E; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_CAVE_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Cave",
+      "method": "safari_pool_f",
+      "time": "any",
+      "min_level": 71,
+      "max_level": 75,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Ampharos",
+        "Durant",
+        "Raichu",
+        "Xurkitree"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool F; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_MOUNTAIN_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Mountain",
+      "method": "safari_pool_a",
+      "time": "any",
+      "min_level": 72,
+      "max_level": 76,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Flygon",
+        "Iron Treads",
+        "Stakataka",
+        "Gouging Fire"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool A; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_MOUNTAIN_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Mountain",
+      "method": "safari_pool_b",
+      "time": "any",
+      "min_level": 72,
+      "max_level": 76,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Great Tusk",
+        "Infernape",
+        "Sandy Shocks",
+        "Iron Thorns"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool B; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_MOUNTAIN_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Mountain",
+      "method": "safari_pool_c",
+      "time": "any",
+      "min_level": 72,
+      "max_level": 76,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Blaziken",
+        "Carbink",
+        "Emboar",
+        "Raging Bolt"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool C; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_MOUNTAIN_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Mountain",
+      "method": "safari_pool_d",
+      "time": "any",
+      "min_level": 72,
+      "max_level": 76,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Blacephalon",
+        "Durant",
+        "Typhlosion",
+        "Iron Moth"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool D; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_MOUNTAIN_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Mountain",
+      "method": "safari_pool_e",
+      "time": "any",
+      "min_level": 72,
+      "max_level": 76,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Cinderace",
+        "Incineroar",
+        "Skeledirge",
+        "Delphox"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool E; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_MOUNTAIN_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Mountain",
+      "method": "safari_pool_f",
+      "time": "any",
+      "min_level": 72,
+      "max_level": 76,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Druddigon",
+        "Heatmor",
+        "Pawmot",
+        "Iron Hands"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool F; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_BRUSH_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Brush",
+      "method": "safari_pool_a",
+      "time": "any",
+      "min_level": 69,
+      "max_level": 73,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Arboliva",
+        "Leavanny",
+        "Victreebel",
+        "Venusaur"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool A; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_BRUSH_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Brush",
+      "method": "safari_pool_b",
+      "time": "any",
+      "min_level": 69,
+      "max_level": 73,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Jumpluff",
+        "Orbeetle",
+        "Scolipede",
+        "Iron Leaves"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool B; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_BRUSH_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Brush",
+      "method": "safari_pool_c",
+      "time": "any",
+      "min_level": 69,
+      "max_level": 73,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Gardevoir",
+        "Kartana",
+        "Togekiss",
+        "Scream Tail"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool C; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_BRUSH_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Brush",
+      "method": "safari_pool_d",
+      "time": "any",
+      "min_level": 69,
+      "max_level": 73,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Meowscarada",
+        "Rillaboom",
+        "Sceptile",
+        "Brute Bonnet"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool D; dedicated Safari rotation/set. 30/30/30/10."
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_BRUSH_HNS",
+      "region": "Kanto",
+      "progression": "Kanto Post-League",
+      "habitat": "Safari Brush",
+      "method": "safari_pool_e",
+      "time": "any",
+      "min_level": 69,
+      "max_level": 73,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Chesnaught",
+        "Serperior",
+        "Torterra",
+        "Decidueye"
+      ],
+      "curated": true,
+      "notes": "Safari sector pool E; dedicated Safari rotation/set. 30/30/30/10."
+    }
+  ]
+}

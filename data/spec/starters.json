@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "project": "Pokémon Tactica",
+  "source": "src/family_starter.c @ e5c7191, approved behavior; regression contract",
+  "categories": {
+    "fire": {
+      "species": [
+        "SPECIES_CHARMANDER",
+        "SPECIES_TORCHIC",
+        "SPECIES_CHIMCHAR",
+        "SPECIES_CYNDAQUIL",
+        "SPECIES_CHARCADET"
+      ],
+      "type_booster": "ITEM_CHARCOAL"
+    },
+    "water": {
+      "species": [
+        "SPECIES_MUDKIP",
+        "SPECIES_PIPLUP",
+        "SPECIES_FROAKIE",
+        "SPECIES_OSHAWOTT",
+        "SPECIES_HORSEA"
+      ],
+      "type_booster": "ITEM_MYSTIC_WATER"
+    },
+    "grass": {
+      "species": [
+        "SPECIES_BULBASAUR",
+        "SPECIES_TREECKO",
+        "SPECIES_SNIVY",
+        "SPECIES_SPRIGATITO",
+        "SPECIES_GROOKEY"
+      ],
+      "type_booster": "ITEM_MIRACLE_SEED"
+    },
+    "electric": {
+      "species": [
+        "SPECIES_ELEKID",
+        "SPECIES_MAGNEMITE",
+        "SPECIES_PAWMI",
+        "SPECIES_WATTREL",
+        "SPECIES_PICHU"
+      ],
+      "type_booster": "ITEM_MAGNET"
+    },
+    "ground": {
+      "species": [
+        "SPECIES_GLIGAR",
+        "SPECIES_DRILBUR",
+        "SPECIES_SANDILE",
+        "SPECIES_GOLETT",
+        "SPECIES_SANDYGAST"
+      ],
+      "type_booster": "ITEM_SOFT_SAND"
+    },
+    "ice": {
+      "species": [
+        "SPECIES_VULPIX_ALOLA",
+        "SPECIES_SNORUNT",
+        "SPECIES_SWINUB",
+        "SPECIES_DARUMAKA_GALAR",
+        "SPECIES_VANILLITE"
+      ],
+      "type_booster": "ITEM_NEVER_MELT_ICE"
+    }
+  },
+  "eevee": {
+    "species": "SPECIES_EEVEE",
+    "preferences": {
+      "VAPOREON": [
+        "ITEM_WATER_STONE",
+        "ITEM_MYSTIC_WATER"
+      ],
+      "JOLTEON": [
+        "ITEM_THUNDER_STONE",
+        "ITEM_MAGNET"
+      ],
+      "FLAREON": [
+        "ITEM_FIRE_STONE",
+        "ITEM_CHARCOAL"
+      ],
+      "ESPEON": [
+        "ITEM_DAWN_STONE",
+        "ITEM_TWISTED_SPOON"
+      ],
+      "UMBREON": [
+        "ITEM_DUSK_STONE",
+        "ITEM_BLACK_GLASSES"
+      ],
+      "LEAFEON": [
+        "ITEM_LEAF_STONE",
+        "ITEM_MIRACLE_SEED"
+      ],
+      "GLACEON": [
+        "ITEM_ICE_STONE",
+        "ITEM_NEVER_MELT_ICE"
+      ],
+      "SYLVEON": [
+        "ITEM_SHINY_STONE",
+        "ITEM_FAIRY_FEATHER"
+      ]
+    }
+  },
+  "automatic_extra_items": {
+    "SPECIES_HORSEA": "ITEM_DRAGON_SCALE",
+    "SPECIES_ELEKID": "ITEM_ELECTIRIZER",
+    "SPECIES_MAGNEMITE": "ITEM_THUNDER_STONE",
+    "SPECIES_PICHU": "ITEM_THUNDER_STONE",
+    "SPECIES_GLIGAR": "ITEM_RAZOR_FANG",
+    "SPECIES_VULPIX_ALOLA": "ITEM_ICE_STONE",
+    "SPECIES_DARUMAKA_GALAR": "ITEM_ICE_STONE"
+  },
+  "conditional_extras": {
+    "SPECIES_CHARCADET": {
+      "SPECIES_ARMAROUGE": "ITEM_AUSPICIOUS_ARMOR",
+      "SPECIES_CERULEDGE": "ITEM_MALICIOUS_ARMOR"
+    },
+    "SPECIES_SNORUNT": {
+      "SPECIES_GLALIE": null,
+      "SPECIES_FROSLASS": "ITEM_DAWN_STONE"
+    }
+  },
+  "elm_egg": "second choice from same selector; no duplicate initial starter; preserve overflow and all rewards"
+}

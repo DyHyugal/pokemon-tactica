@@ -1,0 +1,1148 @@
+{
+  "schema_version": 1,
+  "table_count": 57,
+  "tables": [
+    {
+      "map": "MAP_ILEX_FOREST_HNS",
+      "method": "headbutt_mons",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 24,
+      "max_level": 27,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Pineco",
+        "Nincada",
+        "Paras",
+        "Heracross"
+      ]
+    },
+    {
+      "map": "MAP_NATIONAL_PARK_BUG_CONTEST_HNS",
+      "method": "headbutt_mons",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 26,
+      "max_level": 29,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Helioptile",
+        "Toedscool",
+        "Rufflet",
+        "Pumpkaboo"
+      ]
+    },
+    {
+      "map": "MAP_NATIONAL_PARK_NORMAL_HNS",
+      "method": "headbutt_mons",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 26,
+      "max_level": 29,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Snom",
+        "Swablu",
+        "Foongus",
+        "Capsakid"
+      ]
+    },
+    {
+      "map": "MAP_VIRIDIAN_FOREST_HNS",
+      "method": "headbutt_mons",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Scyther",
+        "Centiskorch",
+        "Kleavor",
+        "Vikavolt"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_LEFT_HNS",
+      "method": "safari_pool_a",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 37,
+      "max_level": 40,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Beedrill",
+        "Deerling (Spring Form)",
+        "Dustox",
+        "Wigglytuff"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_LEFT_HNS",
+      "method": "safari_pool_b",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 37,
+      "max_level": 40,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Beautifly",
+        "Butterfree",
+        "Ledyba",
+        "Yanma"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_LEFT_HNS",
+      "method": "safari_pool_c",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 37,
+      "max_level": 40,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Combee",
+        "Hoppip",
+        "Igglybuff",
+        "Tropius"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_LEFT_HNS",
+      "method": "safari_pool_d",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 37,
+      "max_level": 40,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Illumise",
+        "Karrablast",
+        "Mime Jr.",
+        "Volbeat"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_LEFT_HNS",
+      "method": "safari_pool_e",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 37,
+      "max_level": 40,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Burmy (Plant Cloak)",
+        "Kricketot",
+        "Shelmet",
+        "Maractus"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_MID_HNS",
+      "method": "safari_pool_a",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 38,
+      "max_level": 41,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Dedenne",
+        "Natu",
+        "Woobat",
+        "Girafarig"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_MID_HNS",
+      "method": "safari_pool_b",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 38,
+      "max_level": 41,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Fidough",
+        "Snubbull",
+        "Spritzee",
+        "Swirlix"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_MID_HNS",
+      "method": "safari_pool_c",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 38,
+      "max_level": 41,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Cleffa",
+        "Milcery",
+        "Togepi",
+        "Espurr"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_MID_HNS",
+      "method": "safari_pool_d",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 38,
+      "max_level": 41,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Drowzee",
+        "Munna",
+        "Spoink",
+        "Elgyem"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_MID_HNS",
+      "method": "safari_pool_e",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 38,
+      "max_level": 41,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Lillipup",
+        "Wooloo",
+        "Wynaut",
+        "Chingling"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_MID_HNS",
+      "method": "safari_pool_a",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Chatot",
+        "Doduo",
+        "Farfetch'd",
+        "Stunfisk"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_MID_HNS",
+      "method": "safari_pool_b",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Emolga",
+        "Furfrou (Natural Form)",
+        "Hoothoot",
+        "Komala"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_MID_HNS",
+      "method": "safari_pool_c",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Castform",
+        "Kecleon",
+        "Zangoose",
+        "Stantler"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_MID_HNS",
+      "method": "safari_pool_d",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Aipom",
+        "Lickitung",
+        "Spinda",
+        "Dunsparce"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_MID_HNS",
+      "method": "safari_pool_e",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Glameow",
+        "Minccino",
+        "Skwovet",
+        "Buneary"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_RIGHT_HNS",
+      "method": "safari_pool_a",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Clamperl",
+        "Pyukumuku",
+        "Qwilfish",
+        "Alomomola"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_RIGHT_HNS",
+      "method": "safari_pool_b",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Ducklett",
+        "Panpour",
+        "Skiddo",
+        "Carnivine"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_RIGHT_HNS",
+      "method": "safari_pool_c",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Chikorita",
+        "Pansage",
+        "Shroodle",
+        "Cacnea"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_RIGHT_HNS",
+      "method": "safari_pool_d",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Gossifleur",
+        "Seedot",
+        "Sunkern",
+        "Cherubi"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_TOP_RIGHT_HNS",
+      "method": "safari_pool_e",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Minun",
+        "Pachirisu",
+        "Plusle",
+        "Pincurchin"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_LEFT_HNS",
+      "method": "safari_pool_a",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 40,
+      "max_level": 43,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Lunatone",
+        "Nosepass",
+        "Solrock",
+        "Klawf"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_LEFT_HNS",
+      "method": "safari_pool_b",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 40,
+      "max_level": 43,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Bonsly",
+        "Klefki",
+        "Pansear",
+        "Orthworm"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_LEFT_HNS",
+      "method": "safari_pool_c",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 40,
+      "max_level": 43,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Flittle",
+        "Patrat",
+        "Skitty",
+        "Bronzor"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_LEFT_HNS",
+      "method": "safari_pool_d",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 40,
+      "max_level": 43,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Bidoof",
+        "Smeargle",
+        "Yungoos",
+        "Lechonk"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_LEFT_HNS",
+      "method": "safari_pool_e",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 40,
+      "max_level": 43,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Bunnelby",
+        "Happiny",
+        "Whismur",
+        "Zigzagoon"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_RIGHT_HNS",
+      "method": "safari_pool_a",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 41,
+      "max_level": 44,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Delibird",
+        "Frillish",
+        "Smoochum",
+        "Maschiff"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_RIGHT_HNS",
+      "method": "safari_pool_b",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 41,
+      "max_level": 44,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Bramblin",
+        "Nickit",
+        "Purrloin",
+        "Inkay"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_RIGHT_HNS",
+      "method": "safari_pool_c",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 41,
+      "max_level": 44,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Greavard",
+        "Poochyena",
+        "Yamask",
+        "Drifloon"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_RIGHT_HNS",
+      "method": "safari_pool_d",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 41,
+      "max_level": 44,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Pichu",
+        "Poipole",
+        "Stunky",
+        "Seviper"
+      ]
+    },
+    {
+      "map": "MAP_SAFARI_ZONE_LOW_RIGHT_HNS",
+      "method": "safari_pool_e",
+      "pool": null,
+      "region": "Johto",
+      "min_level": 41,
+      "max_level": 44,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Gulpin",
+        "Makuhita",
+        "Trubbish",
+        "Falinks"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_BEACH_HNS",
+      "method": "safari_pool_a",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 68,
+      "max_level": 72,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Poliwrath",
+        "Primarina",
+        "Quaquaval",
+        "Swampert"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_BEACH_HNS",
+      "method": "safari_pool_b",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 68,
+      "max_level": 72,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Greninja",
+        "Inteleon",
+        "Kingdra",
+        "Walking Wake"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_BEACH_HNS",
+      "method": "safari_pool_c",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 68,
+      "max_level": 72,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Blastoise",
+        "Empoleon",
+        "Samurott",
+        "Feraligatr"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_BEACH_HNS",
+      "method": "safari_pool_d",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 68,
+      "max_level": 72,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Charizard",
+        "Ludicolo",
+        "Politoed",
+        "Slither Wing"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_BEACH_HNS",
+      "method": "safari_pool_e",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 68,
+      "max_level": 72,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Buzzwole",
+        "Iron Bundle",
+        "Pheromosa",
+        "Iron Valiant"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_BEACH_HNS",
+      "method": "safari_pool_f",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 68,
+      "max_level": 72,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Clefable",
+        "Miltank",
+        "Stoutland",
+        "Slaking"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_CAVE_HNS",
+      "method": "safari_pool_a",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 71,
+      "max_level": 75,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Iron Crown",
+        "Roaring Moon",
+        "Spiritomb",
+        "Iron Boulder"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_CAVE_HNS",
+      "method": "safari_pool_b",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 71,
+      "max_level": 75,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Gengar",
+        "Nihilego",
+        "Obstagoon",
+        "Guzzlord"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_CAVE_HNS",
+      "method": "safari_pool_c",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 71,
+      "max_level": 75,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Bellossom",
+        "Meganium",
+        "Shiftry",
+        "Iron Jugulis"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_CAVE_HNS",
+      "method": "safari_pool_d",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 71,
+      "max_level": 75,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Alakazam",
+        "Celesteela",
+        "Sigilyph",
+        "Flutter Mane"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_CAVE_HNS",
+      "method": "safari_pool_e",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 71,
+      "max_level": 75,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Exploud",
+        "Machamp",
+        "Mr. Rime",
+        "Crobat"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_CAVE_HNS",
+      "method": "safari_pool_f",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 71,
+      "max_level": 75,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Ampharos",
+        "Durant",
+        "Raichu",
+        "Xurkitree"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_MOUNTAIN_HNS",
+      "method": "safari_pool_a",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 72,
+      "max_level": 76,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Flygon",
+        "Iron Treads",
+        "Stakataka",
+        "Gouging Fire"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_MOUNTAIN_HNS",
+      "method": "safari_pool_b",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 72,
+      "max_level": 76,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Great Tusk",
+        "Infernape",
+        "Sandy Shocks",
+        "Iron Thorns"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_MOUNTAIN_HNS",
+      "method": "safari_pool_c",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 72,
+      "max_level": 76,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Blaziken",
+        "Carbink",
+        "Emboar",
+        "Raging Bolt"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_MOUNTAIN_HNS",
+      "method": "safari_pool_d",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 72,
+      "max_level": 76,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Blacephalon",
+        "Durant",
+        "Typhlosion",
+        "Iron Moth"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_MOUNTAIN_HNS",
+      "method": "safari_pool_e",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 72,
+      "max_level": 76,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Cinderace",
+        "Incineroar",
+        "Skeledirge",
+        "Delphox"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_MOUNTAIN_HNS",
+      "method": "safari_pool_f",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 72,
+      "max_level": 76,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Druddigon",
+        "Heatmor",
+        "Pawmot",
+        "Iron Hands"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_BRUSH_HNS",
+      "method": "safari_pool_a",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 69,
+      "max_level": 73,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Arboliva",
+        "Leavanny",
+        "Victreebel",
+        "Venusaur"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_BRUSH_HNS",
+      "method": "safari_pool_b",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 69,
+      "max_level": 73,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Jumpluff",
+        "Orbeetle",
+        "Scolipede",
+        "Iron Leaves"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_BRUSH_HNS",
+      "method": "safari_pool_c",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 69,
+      "max_level": 73,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Gardevoir",
+        "Kartana",
+        "Togekiss",
+        "Scream Tail"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_BRUSH_HNS",
+      "method": "safari_pool_d",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 69,
+      "max_level": 73,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Meowscarada",
+        "Rillaboom",
+        "Sceptile",
+        "Brute Bonnet"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_SAFARI_ZONE_BRUSH_HNS",
+      "method": "safari_pool_e",
+      "pool": null,
+      "region": "Kanto",
+      "min_level": 69,
+      "max_level": 73,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "Chesnaught",
+        "Serperior",
+        "Torterra",
+        "Decidueye"
+      ]
+    }
+  ],
+  "project": "Pokémon Tactica",
+  "contract": "Four real slots per table, weighted 30/30/30/10; rods gate access to the authored fishing pool."
+}

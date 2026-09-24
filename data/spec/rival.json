@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "project": "Pokémon Tactica",
+  "selection": {
+    "exclude": [
+      "SPECIES_EEVEE"
+    ],
+    "counter_categories": {
+      "fire": [
+        "water",
+        "ground"
+      ],
+      "water": [
+        "grass",
+        "electric"
+      ],
+      "grass": [
+        "fire",
+        "ice"
+      ],
+      "electric": [
+        "ground"
+      ],
+      "ground": [
+        "water",
+        "grass",
+        "ice"
+      ],
+      "ice": [
+        "fire"
+      ]
+    },
+    "category_draw": "uniform among candidate categories",
+    "species_draw": "uniform among five starters in the drawn category",
+    "persist_once": true
+  },
+  "archetypes": {
+    "fire": "sun",
+    "water": "rain",
+    "grass": "grassy_terrain",
+    "electric": "electric_terrain",
+    "ground": "sandstorm",
+    "ice": "snow"
+  },
+  "fight_rosters": "TO_AUTHOR_AFTER_AUDIT; do not invent canonical roster before approval"
+}

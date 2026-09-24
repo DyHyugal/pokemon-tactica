@@ -1,0 +1,7720 @@
+{
+  "schema_version": 1,
+  "engine_contract": {
+    "slots_per_table": 4,
+    "rates": [
+      30,
+      30,
+      30,
+      10
+    ],
+    "methods": [
+      "land_mons",
+      "water_mons",
+      "rock_smash_mons",
+      "fishing_mons"
+    ],
+    "fishing": "One authored four-species pool. Rods gate access. No rod-specific species table is authored.",
+    "time": "Day/Night only where authored; otherwise Any."
+  },
+  "standard_table_count": 405,
+  "tables": [
+    {
+      "map": "MAP_BLACKTHORN_CITY_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 59,
+      "max_level": 62,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SEADRA",
+        "SPECIES_WHISCASH",
+        "SPECIES_CRAWDAUNT",
+        "SPECIES_DRATINI"
+      ]
+    },
+    {
+      "map": "MAP_BLACKTHORN_CITY_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 59,
+      "max_level": 62,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_VILEPLUME",
+        "SPECIES_SNORLAX",
+        "SPECIES_ELECTIVIRE",
+        "SPECIES_KINGAMBIT"
+      ]
+    },
+    {
+      "map": "MAP_BLACKTHORN_CITY_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 59,
+      "max_level": 62,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SEADRA",
+        "SPECIES_DRAGONAIR",
+        "SPECIES_GYARADOS",
+        "SPECIES_MILOTIC"
+      ]
+    },
+    {
+      "map": "MAP_BURNED_TOWER_1F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 33,
+      "max_level": 36,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CETODDLE",
+        "SPECIES_TORKOAL",
+        "SPECIES_ORICORIO_BAILE",
+        "SPECIES_CYNDAQUIL"
+      ]
+    },
+    {
+      "map": "MAP_BURNED_TOWER_1F_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 33,
+      "max_level": 36,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BOMBIRDIER",
+        "SPECIES_SALANDIT",
+        "SPECIES_PHANTUMP",
+        "SPECIES_TORCHIC"
+      ]
+    },
+    {
+      "map": "MAP_BURNED_TOWER_B1F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 34,
+      "max_level": 37,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_INDEEDEE_M",
+        "SPECIES_ORANGURU",
+        "SPECIES_RATTATA",
+        "SPECIES_CHIMCHAR"
+      ]
+    },
+    {
+      "map": "MAP_BURNED_TOWER_B1F_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 34,
+      "max_level": 37,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MIMIKYU_DISGUISED",
+        "SPECIES_SKORUPI",
+        "SPECIES_HONEDGE",
+        "SPECIES_LITTEN"
+      ]
+    },
+    {
+      "map": "MAP_CELADON_CITY_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TENTACRUEL",
+        "SPECIES_GOLISOPOD",
+        "SPECIES_BASCULEGION_M",
+        "SPECIES_WALREIN"
+      ]
+    },
+    {
+      "map": "MAP_CELADON_CITY_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_REUNICLUS",
+        "SPECIES_BLISSEY",
+        "SPECIES_FLORGES_RED",
+        "SPECIES_URSALUNA"
+      ]
+    },
+    {
+      "map": "MAP_CELADON_CITY_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WAILORD",
+        "SPECIES_GOLISOPOD",
+        "SPECIES_BASCULEGION_M",
+        "SPECIES_WALREIN"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_1F_HNS",
+      "method": "fishing_mons",
+      "time": "Day",
+      "min_level": 85,
+      "max_level": 95,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TYMPOLE",
+        "SPECIES_BINACLE",
+        "SPECIES_DREDNAW",
+        "SPECIES_LAPRAS"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_1F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 85,
+      "max_level": 95,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SALAMENCE",
+        "SPECIES_HYDREIGON",
+        "SPECIES_DRAGAPULT",
+        "SPECIES_GOODRA"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_1F_HNS",
+      "method": "rock_smash_mons",
+      "time": "Day",
+      "min_level": 85,
+      "max_level": 95,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_DONPHAN",
+        "SPECIES_GIGALITH",
+        "SPECIES_CONKELDURR",
+        "SPECIES_AGGRON"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_1F_HNS",
+      "method": "water_mons",
+      "time": "Day",
+      "min_level": 85,
+      "max_level": 95,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SKRELP",
+        "SPECIES_MAREANIE",
+        "SPECIES_CLAUNCHER",
+        "SPECIES_TENTACRUEL"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_B1F_HNS",
+      "method": "fishing_mons",
+      "time": "Day",
+      "min_level": 85,
+      "max_level": 95,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CHEWTLE",
+        "SPECIES_FINIZEN",
+        "SPECIES_TYMPOLE",
+        "SPECIES_LAPRAS"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_B1F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 85,
+      "max_level": 95,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_DUSKNOIR",
+        "SPECIES_HAXORUS",
+        "SPECIES_URSALUNA",
+        "SPECIES_BAXCALIBUR"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_B1F_HNS",
+      "method": "rock_smash_mons",
+      "time": "Day",
+      "min_level": 85,
+      "max_level": 95,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_COPPERAJAH",
+        "SPECIES_BEWEAR",
+        "SPECIES_MUDSDALE",
+        "SPECIES_VIKAVOLT"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_B1F_HNS",
+      "method": "water_mons",
+      "time": "Day",
+      "min_level": 85,
+      "max_level": 95,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_LUMINEON",
+        "SPECIES_SHARPEDO",
+        "SPECIES_RELICANTH",
+        "SPECIES_TENTACRUEL"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_B2F_HNS",
+      "method": "fishing_mons",
+      "time": "Day",
+      "min_level": 85,
+      "max_level": 95,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PELIPPER",
+        "SPECIES_PALAFIN_ZERO",
+        "SPECIES_DREDNAW",
+        "SPECIES_LAPRAS"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_B2F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 85,
+      "max_level": 95,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CHANDELURE",
+        "SPECIES_METAGROSS",
+        "SPECIES_SALAMENCE",
+        "SPECIES_DRAGONITE"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_B2F_HNS",
+      "method": "rock_smash_mons",
+      "time": "Day",
+      "min_level": 85,
+      "max_level": 95,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_HIPPOWDON",
+        "SPECIES_KLEAVOR",
+        "SPECIES_GARGANACL",
+        "SPECIES_KLINKLANG"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_B2F_HNS",
+      "method": "water_mons",
+      "time": "Day",
+      "min_level": 85,
+      "max_level": 95,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CORSOLA",
+        "SPECIES_ARAQUANID",
+        "SPECIES_WUGTRIO",
+        "SPECIES_TATSUGIRI_CURLY"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CITY_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FLOATZEL",
+        "SPECIES_CLAWITZER",
+        "SPECIES_BARBARACLE",
+        "SPECIES_SEISMITOAD"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CITY_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TOXAPEX",
+        "SPECIES_BARRASKEWDA",
+        "SPECIES_TENTACRUEL",
+        "SPECIES_WALREIN"
+      ]
+    },
+    {
+      "map": "MAP_CHERRYGROVE_CITY_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 3,
+      "max_level": 6,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MAGIKARP",
+        "SPECIES_GOLDEEN",
+        "SPECIES_BARBOACH",
+        "SPECIES_FEEBAS"
+      ]
+    },
+    {
+      "map": "MAP_CHERRYGROVE_CITY_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 3,
+      "max_level": 6,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TADBULB",
+        "SPECIES_VOLTORB",
+        "SPECIES_DITTO",
+        "SPECIES_ZUBAT"
+      ]
+    },
+    {
+      "map": "MAP_CHERRYGROVE_CITY_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 3,
+      "max_level": 6,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MAGIKARP",
+        "SPECIES_GOLDEEN",
+        "SPECIES_WOOPER",
+        "SPECIES_POLIWAG"
+      ]
+    },
+    {
+      "map": "MAP_CIANWOOD_CITY_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 41,
+      "max_level": 44,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CLAUNCHER",
+        "SPECIES_RELICANTH",
+        "SPECIES_SKRELP",
+        "SPECIES_FROAKIE"
+      ]
+    },
+    {
+      "map": "MAP_CIANWOOD_CITY_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 41,
+      "max_level": 44,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_GOTHITA",
+        "SPECIES_LITLEO",
+        "SPECIES_GLOOM",
+        "SPECIES_EELEKTRIK"
+      ]
+    },
+    {
+      "map": "MAP_CIANWOOD_CITY_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 41,
+      "max_level": 44,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TENTACOOL",
+        "SPECIES_WINGULL",
+        "SPECIES_CLAUNCHER",
+        "SPECIES_POPPLIO"
+      ]
+    },
+    {
+      "map": "MAP_CINNABAR_ISLAND_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WAILORD",
+        "SPECIES_BARBARACLE",
+        "SPECIES_BASCULEGION_M",
+        "SPECIES_GOLISOPOD"
+      ]
+    },
+    {
+      "map": "MAP_CINNABAR_ISLAND_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_HIPPOWDON",
+        "SPECIES_NOIVERN",
+        "SPECIES_AGGRON",
+        "SPECIES_RHYPERIOR"
+      ]
+    },
+    {
+      "map": "MAP_CINNABAR_ISLAND_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FLOATZEL",
+        "SPECIES_TOXAPEX",
+        "SPECIES_CLAWITZER",
+        "SPECIES_SEISMITOAD"
+      ]
+    },
+    {
+      "map": "MAP_CLIFF_EDGE_CAVE_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 46,
+      "max_level": 49,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_GIMMIGHOUL_CHEST",
+        "SPECIES_AXEW",
+        "SPECIES_MISDREAVUS",
+        "SPECIES_GOLETT"
+      ]
+    },
+    {
+      "map": "MAP_CLIFF_EDGE_CAVE_HNS",
+      "method": "rock_smash_mons",
+      "time": "Day",
+      "min_level": 46,
+      "max_level": 49,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SAWK",
+        "SPECIES_SILCOON",
+        "SPECIES_TIMBURR",
+        "SPECIES_SANDYGAST"
+      ]
+    },
+    {
+      "map": "MAP_CLIFF_EDGE_GATE_HNS",
+      "method": "fishing_mons",
+      "time": "Day",
+      "min_level": 45,
+      "max_level": 47,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CORSOLA",
+        "SPECIES_SEALEO",
+        "SPECIES_LUMINEON",
+        "SPECIES_CRAMORANT"
+      ]
+    },
+    {
+      "map": "MAP_CLIFF_EDGE_GATE_HNS",
+      "method": "water_mons",
+      "time": "Day",
+      "min_level": 45,
+      "max_level": 47,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PALPITOAD",
+        "SPECIES_ARAQUANID",
+        "SPECIES_WUGTRIO",
+        "SPECIES_PALAFIN_ZERO"
+      ]
+    },
+    {
+      "map": "MAP_DARK_CAVE_NORTH_SIDE_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 64,
+      "max_level": 66,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_AZUMARILL",
+        "SPECIES_TATSUGIRI_CURLY",
+        "SPECIES_MILOTIC",
+        "SPECIES_GYARADOS"
+      ]
+    },
+    {
+      "map": "MAP_DARK_CAVE_NORTH_SIDE_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 64,
+      "max_level": 66,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_LUCARIO",
+        "SPECIES_GHOLDENGO",
+        "SPECIES_MAMOSWINE",
+        "SPECIES_KINGAMBIT"
+      ]
+    },
+    {
+      "map": "MAP_DARK_CAVE_NORTH_SIDE_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 64,
+      "max_level": 66,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_VIVILLON_MEADOW",
+        "SPECIES_LUCARIO",
+        "SPECIES_VOLCARONA",
+        "SPECIES_KINGAMBIT"
+      ]
+    },
+    {
+      "map": "MAP_DARK_CAVE_NORTH_SIDE_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 64,
+      "max_level": 66,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_AZUMARILL",
+        "SPECIES_LAPRAS",
+        "SPECIES_MILOTIC",
+        "SPECIES_GYARADOS"
+      ]
+    },
+    {
+      "map": "MAP_DARK_CAVE_SOUTH_SIDE_HNS",
+      "method": "fishing_mons",
+      "time": "Day",
+      "min_level": 7,
+      "max_level": 11,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MAGIKARP",
+        "SPECIES_BARBOACH",
+        "SPECIES_CORPHISH",
+        "SPECIES_CHINCHOU"
+      ]
+    },
+    {
+      "map": "MAP_DARK_CAVE_SOUTH_SIDE_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 7,
+      "max_level": 11,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_ZUBAT",
+        "SPECIES_GEODUDE",
+        "SPECIES_ROGGENROLA",
+        "SPECIES_NOIBAT"
+      ]
+    },
+    {
+      "map": "MAP_DARK_CAVE_SOUTH_SIDE_HNS",
+      "method": "rock_smash_mons",
+      "time": "Day",
+      "min_level": 7,
+      "max_level": 11,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CATERPIE",
+        "SPECIES_SCATTERBUG",
+        "SPECIES_PARAS",
+        "SPECIES_MACHOP"
+      ]
+    },
+    {
+      "map": "MAP_DARK_CAVE_SOUTH_SIDE_HNS",
+      "method": "water_mons",
+      "time": "Day",
+      "min_level": 7,
+      "max_level": 11,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WOOPER",
+        "SPECIES_BARBOACH",
+        "SPECIES_POLIWAG",
+        "SPECIES_CHINCHOU"
+      ]
+    },
+    {
+      "map": "MAP_DIGLETTS_CAVE_TUNNEL_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BARRASKEWDA",
+        "SPECIES_TENTACRUEL",
+        "SPECIES_GOLISOPOD",
+        "SPECIES_WALREIN"
+      ]
+    },
+    {
+      "map": "MAP_DIGLETTS_CAVE_TUNNEL_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MISMAGIUS",
+        "SPECIES_CHANDELURE",
+        "SPECIES_MAGNEZONE",
+        "SPECIES_HYDRAPPLE"
+      ]
+    },
+    {
+      "map": "MAP_DIGLETTS_CAVE_TUNNEL_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CENTISKORCH",
+        "SPECIES_GLISCOR",
+        "SPECIES_GARGANACL",
+        "SPECIES_ANNIHILAPE"
+      ]
+    },
+    {
+      "map": "MAP_DIGLETTS_CAVE_TUNNEL_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WAILORD",
+        "SPECIES_CLAWITZER",
+        "SPECIES_BARBARACLE",
+        "SPECIES_BASCULEGION_M"
+      ]
+    },
+    {
+      "map": "MAP_DRAGONS_DEN_CAVERN_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 60,
+      "max_level": 63,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_DRATINI",
+        "SPECIES_AZUMARILL",
+        "SPECIES_MILOTIC",
+        "SPECIES_GYARADOS"
+      ]
+    },
+    {
+      "map": "MAP_DRAGONS_DEN_CAVERN_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 60,
+      "max_level": 63,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_DRACOVISH",
+        "SPECIES_DONDOZO",
+        "SPECIES_MILOTIC",
+        "SPECIES_GYARADOS"
+      ]
+    },
+    {
+      "map": "MAP_ECRUTEAK_CITY_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 34,
+      "max_level": 37,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FEEBAS",
+        "SPECIES_RELICANTH",
+        "SPECIES_STARYU",
+        "SPECIES_SOBBLE"
+      ]
+    },
+    {
+      "map": "MAP_ECRUTEAK_CITY_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 34,
+      "max_level": 37,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_COMFEY",
+        "SPECIES_SOLOSIS",
+        "SPECIES_PORYGON",
+        "SPECIES_JYNX"
+      ]
+    },
+    {
+      "map": "MAP_ECRUTEAK_CITY_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 34,
+      "max_level": 37,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FEEBAS",
+        "SPECIES_STARYU",
+        "SPECIES_FINNEON",
+        "SPECIES_QUAXLY"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FLOATZEL",
+        "SPECIES_TOXAPEX",
+        "SPECIES_BARRASKEWDA",
+        "SPECIES_SEISMITOAD"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WYRDEER",
+        "SPECIES_GLIMMORA",
+        "SPECIES_PORYGON_Z",
+        "SPECIES_FLORGES_RED"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TENTACRUEL",
+        "SPECIES_GOLISOPOD",
+        "SPECIES_BASCULEGION_M",
+        "SPECIES_WALREIN"
+      ]
+    },
+    {
+      "map": "MAP_ICE_PATH_1F_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 58,
+      "max_level": 60,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PILOSWINE",
+        "SPECIES_FROSLASS",
+        "SPECIES_BEARTIC",
+        "SPECIES_FRIGIBAX"
+      ]
+    },
+    {
+      "map": "MAP_ICE_PATH_B1F_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 58,
+      "max_level": 61,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SNOVER",
+        "SPECIES_GLALIE",
+        "SPECIES_SNEASEL",
+        "SPECIES_WEAVILE"
+      ]
+    },
+    {
+      "map": "MAP_ICE_PATH_B2F_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 59,
+      "max_level": 61,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PILOSWINE",
+        "SPECIES_CETITAN",
+        "SPECIES_CRYOGONAL",
+        "SPECIES_MAMOSWINE"
+      ]
+    },
+    {
+      "map": "MAP_ICE_PATH_B3F_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 59,
+      "max_level": 62,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FRIGIBAX",
+        "SPECIES_VANILLISH",
+        "SPECIES_FROSMOTH",
+        "SPECIES_BAXCALIBUR"
+      ]
+    },
+    {
+      "map": "MAP_ICE_PATH_B4F_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 60,
+      "max_level": 62,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FROSLASS",
+        "SPECIES_MAMOSWINE",
+        "SPECIES_GLALIE",
+        "SPECIES_BAXCALIBUR"
+      ]
+    },
+    {
+      "map": "MAP_ILEX_FOREST_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 24,
+      "max_level": 27,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SKRELP",
+        "SPECIES_FINNEON",
+        "SPECIES_OMANYTE",
+        "SPECIES_MANTYKE"
+      ]
+    },
+    {
+      "map": "MAP_ILEX_FOREST_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 24,
+      "max_level": 27,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_LARVESTA",
+        "SPECIES_WEEDLE",
+        "SPECIES_SEWADDLE",
+        "SPECIES_BULBASAUR"
+      ]
+    },
+    {
+      "map": "MAP_ILEX_FOREST_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 24,
+      "max_level": 27,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SPINARAK",
+        "SPECIES_VENONAT",
+        "SPECIES_JOLTIK",
+        "SPECIES_PINSIR"
+      ]
+    },
+    {
+      "map": "MAP_ILEX_FOREST_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 24,
+      "max_level": 27,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MAREANIE",
+        "SPECIES_TYMPOLE",
+        "SPECIES_CORPHISH",
+        "SPECIES_SQUIRTLE"
+      ]
+    },
+    {
+      "map": "MAP_LAKE_OF_RAGE_HNS",
+      "method": "fishing_mons",
+      "time": "Day",
+      "min_level": 53,
+      "max_level": 55,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_GASTRODON_WEST",
+        "SPECIES_OCTILLERY",
+        "SPECIES_DREDNAW",
+        "SPECIES_DRACOVISH"
+      ]
+    },
+    {
+      "map": "MAP_LAKE_OF_RAGE_HNS",
+      "method": "water_mons",
+      "time": "Day",
+      "min_level": 53,
+      "max_level": 55,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TATSUGIRI_CURLY",
+        "SPECIES_GASTRODON_WEST",
+        "SPECIES_OCTILLERY",
+        "SPECIES_DREDNAW"
+      ]
+    },
+    {
+      "map": "MAP_MT_MOON_CAVE_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WAILORD",
+        "SPECIES_CLAWITZER",
+        "SPECIES_BARBARACLE",
+        "SPECIES_SEISMITOAD"
+      ]
+    },
+    {
+      "map": "MAP_MT_MOON_CAVE_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_ZOROARK",
+        "SPECIES_DIPPLIN",
+        "SPECIES_DUSKNOIR",
+        "SPECIES_URSALUNA"
+      ]
+    },
+    {
+      "map": "MAP_MT_MOON_CAVE_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FERROTHORN",
+        "SPECIES_COALOSSAL",
+        "SPECIES_AEGISLASH_SHIELD",
+        "SPECIES_KLINKLANG"
+      ]
+    },
+    {
+      "map": "MAP_MT_MOON_CAVE_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FLOATZEL",
+        "SPECIES_TOXAPEX",
+        "SPECIES_BARRASKEWDA",
+        "SPECIES_TENTACRUEL"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_1F_NORTH_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 52,
+      "max_level": 55,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_GASTRODON_WEST",
+        "SPECIES_OCTILLERY",
+        "SPECIES_DREDNAW",
+        "SPECIES_DONDOZO"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_1F_NORTH_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 52,
+      "max_level": 55,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CYCLIZAR",
+        "SPECIES_TURTONATOR",
+        "SPECIES_AERODACTYL",
+        "SPECIES_SPRIGATITO"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_1F_NORTH_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 52,
+      "max_level": 55,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_GALVANTULA",
+        "SPECIES_GOLURK",
+        "SPECIES_CRUSTLE",
+        "SPECIES_FROSMOTH"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_1F_NORTH_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 52,
+      "max_level": 55,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_GASTRODON_WEST",
+        "SPECIES_OCTILLERY",
+        "SPECIES_DREDNAW",
+        "SPECIES_DRACOVISH"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_1F_SOUTH_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 52,
+      "max_level": 54,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TATSUGIRI_CURLY",
+        "SPECIES_OCTILLERY",
+        "SPECIES_DREDNAW",
+        "SPECIES_DRACOVISH"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_1F_SOUTH_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 52,
+      "max_level": 54,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FLAMIGO",
+        "SPECIES_GASTRODON_WEST",
+        "SPECIES_PALOSSAND",
+        "SPECIES_FUECOCO"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_1F_SOUTH_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 52,
+      "max_level": 54,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PINSIR",
+        "SPECIES_CRABOMINABLE",
+        "SPECIES_PALOSSAND",
+        "SPECIES_GRAPPLOCT"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_1F_SOUTH_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 52,
+      "max_level": 54,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SPHEAL",
+        "SPECIES_SHELLOS_WEST",
+        "SPECIES_DREDNAW",
+        "SPECIES_DONDOZO"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_2F_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 53,
+      "max_level": 55,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TYMPOLE",
+        "SPECIES_DREDNAW",
+        "SPECIES_OCTILLERY",
+        "SPECIES_TATSUGIRI_CURLY"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_2F_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 53,
+      "max_level": 55,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SHUCKLE",
+        "SPECIES_HAWLUCHA",
+        "SPECIES_GOLURK",
+        "SPECIES_CRUSTLE"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_2F_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 53,
+      "max_level": 55,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MASQUERAIN",
+        "SPECIES_LAIRON",
+        "SPECIES_FROSMOTH",
+        "SPECIES_RABSCA"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_2F_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 53,
+      "max_level": 55,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SKRELP",
+        "SPECIES_MAREANIE",
+        "SPECIES_BINACLE",
+        "SPECIES_DRACOVISH"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_B1F_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 53,
+      "max_level": 55,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CHEWTLE",
+        "SPECIES_TYMPOLE",
+        "SPECIES_DREDNAW",
+        "SPECIES_OCTILLERY"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_B1F_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 53,
+      "max_level": 55,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_RIOLU",
+        "SPECIES_HERACROSS",
+        "SPECIES_DRAMPA",
+        "SPECIES_CRABOMINABLE"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_B1F_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 53,
+      "max_level": 55,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_VIBRAVA",
+        "SPECIES_CAMERUPT",
+        "SPECIES_GALVANTULA",
+        "SPECIES_RABSCA"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_B1F_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 53,
+      "max_level": 55,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FINIZEN",
+        "SPECIES_GASTRODON_WEST",
+        "SPECIES_DREDNAW",
+        "SPECIES_DRACOVISH"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_ITEM_ROOM_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 73,
+      "max_level": 77,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TYMPOLE",
+        "SPECIES_SHELLOS_WEST",
+        "SPECIES_BARBOACH",
+        "SPECIES_CHEWTLE"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_ITEM_ROOM_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 73,
+      "max_level": 77,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TYRANITAR",
+        "SPECIES_METAGROSS",
+        "SPECIES_GOODRA",
+        "SPECIES_BAXCALIBUR"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_ITEM_ROOM_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 73,
+      "max_level": 77,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TYRANITAR",
+        "SPECIES_ARCHALUDON",
+        "SPECIES_METAGROSS",
+        "SPECIES_KOMMO_O"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_ITEM_ROOM_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 73,
+      "max_level": 77,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SKRELP",
+        "SPECIES_MAREANIE",
+        "SPECIES_BINACLE",
+        "SPECIES_CRAMORANT"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_MOLTRES_ROOM_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 74,
+      "max_level": 78,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CHEWTLE",
+        "SPECIES_FINIZEN",
+        "SPECIES_TYMPOLE",
+        "SPECIES_BRUXISH"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_MOLTRES_ROOM_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 74,
+      "max_level": 78,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TYRANITAR",
+        "SPECIES_ARCHALUDON",
+        "SPECIES_GOODRA",
+        "SPECIES_BAXCALIBUR"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_MOLTRES_ROOM_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 74,
+      "max_level": 78,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_VOLCARONA",
+        "SPECIES_TYRANITAR",
+        "SPECIES_ARCHALUDON",
+        "SPECIES_METAGROSS"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_MOLTRES_ROOM_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 74,
+      "max_level": 78,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CRAWDAUNT",
+        "SPECIES_SEADRA",
+        "SPECIES_WUGTRIO",
+        "SPECIES_WHISCASH"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_WATERFALL_ROOM_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 74,
+      "max_level": 78,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WAILMER",
+        "SPECIES_SEALEO",
+        "SPECIES_LUMINEON",
+        "SPECIES_SHARPEDO"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_WATERFALL_ROOM_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 74,
+      "max_level": 78,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_HYDREIGON",
+        "SPECIES_GOODRA",
+        "SPECIES_DRAGAPULT",
+        "SPECIES_BAXCALIBUR"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_WATERFALL_ROOM_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 74,
+      "max_level": 78,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TYRANITAR",
+        "SPECIES_METAGROSS",
+        "SPECIES_GARCHOMP",
+        "SPECIES_KOMMO_O"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_WATERFALL_ROOM_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 74,
+      "max_level": 78,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PALPITOAD",
+        "SPECIES_ARAQUANID",
+        "SPECIES_GASTRODON_WEST",
+        "SPECIES_PALAFIN_ZERO"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_2F_HNS",
+      "method": "fishing_mons",
+      "time": "Day",
+      "min_level": 77,
+      "max_level": 81,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MARILL",
+        "SPECIES_CORSOLA",
+        "SPECIES_POLIWHIRL",
+        "SPECIES_AZUMARILL"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_2F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 77,
+      "max_level": 81,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_DRAGONITE",
+        "SPECIES_SALAMENCE",
+        "SPECIES_HYDREIGON",
+        "SPECIES_GARCHOMP"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_2F_HNS",
+      "method": "rock_smash_mons",
+      "time": "Day",
+      "min_level": 77,
+      "max_level": 81,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_VOLCARONA",
+        "SPECIES_TYRANITAR",
+        "SPECIES_ARCHALUDON",
+        "SPECIES_METAGROSS"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_2F_HNS",
+      "method": "water_mons",
+      "time": "Day",
+      "min_level": 77,
+      "max_level": 81,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CARVANHA",
+        "SPECIES_CHEWTLE",
+        "SPECIES_VELUZA",
+        "SPECIES_LANTURN"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_3F_HNS",
+      "method": "fishing_mons",
+      "time": "Day",
+      "min_level": 80,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SPHEAL",
+        "SPECIES_BARBOACH",
+        "SPECIES_CORPHISH",
+        "SPECIES_LUVDISC"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_3F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 80,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_HAXORUS",
+        "SPECIES_GOODRA",
+        "SPECIES_DRAGAPULT",
+        "SPECIES_BAXCALIBUR"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_3F_HNS",
+      "method": "rock_smash_mons",
+      "time": "Day",
+      "min_level": 80,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TYRANITAR",
+        "SPECIES_ARCHALUDON",
+        "SPECIES_GARCHOMP",
+        "SPECIES_KOMMO_O"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_3F_HNS",
+      "method": "water_mons",
+      "time": "Day",
+      "min_level": 80,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SHELLOS_WEST",
+        "SPECIES_BUIZEL",
+        "SPECIES_FINNEON",
+        "SPECIES_CRAMORANT"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_MOUNTAIN_SIDE_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 76,
+      "max_level": 80,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TYMPOLE",
+        "SPECIES_BARBOACH",
+        "SPECIES_TIRTOUGA",
+        "SPECIES_MANTYKE"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_MOUNTAIN_SIDE_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 76,
+      "max_level": 80,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_DRAGONITE",
+        "SPECIES_SALAMENCE",
+        "SPECIES_HYDREIGON",
+        "SPECIES_GOODRA"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_MOUNTAIN_SIDE_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 76,
+      "max_level": 80,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SCYTHER",
+        "SPECIES_PINSIR",
+        "SPECIES_VOLCARONA",
+        "SPECIES_METAGROSS"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_MOUNTAIN_SIDE_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 76,
+      "max_level": 80,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SKRELP",
+        "SPECIES_CLAUNCHER",
+        "SPECIES_BINACLE",
+        "SPECIES_CRAMORANT"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_OUTSIDE_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 72,
+      "max_level": 76,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MAREANIE",
+        "SPECIES_TYMPOLE",
+        "SPECIES_BARBOACH",
+        "SPECIES_BRUXISH"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_OUTSIDE_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 72,
+      "max_level": 76,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_LARVITAR",
+        "SPECIES_TYRANITAR",
+        "SPECIES_DRAGAPULT",
+        "SPECIES_BAXCALIBUR"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_OUTSIDE_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 72,
+      "max_level": 76,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_RIBOMBEE",
+        "SPECIES_ARCHALUDON",
+        "SPECIES_GARCHOMP",
+        "SPECIES_KOMMO_O"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_OUTSIDE_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 72,
+      "max_level": 76,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CHEWTLE",
+        "SPECIES_FINIZEN",
+        "SPECIES_GASTRODON_WEST",
+        "SPECIES_CRAMORANT"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_SNOW_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 78,
+      "max_level": 82,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CRAWDAUNT",
+        "SPECIES_SEADRA",
+        "SPECIES_PELIPPER",
+        "SPECIES_WHISCASH"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_SNOW_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 78,
+      "max_level": 82,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_GLALIE",
+        "SPECIES_CRABOMINABLE",
+        "SPECIES_MAMOSWINE",
+        "SPECIES_BAXCALIBUR"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_SNOW_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 78,
+      "max_level": 82,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_OMANYTE",
+        "SPECIES_KABUTO",
+        "SPECIES_WUGTRIO",
+        "SPECIES_SHARPEDO"
+      ]
+    },
+    {
+      "map": "MAP_NATIONAL_PARK_BUG_CONTEST_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 26,
+      "max_level": 29,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PANCHAM",
+        "SPECIES_PAWNIARD",
+        "SPECIES_LILEEP",
+        "SPECIES_TURTWIG"
+      ]
+    },
+    {
+      "map": "MAP_NATIONAL_PARK_BUG_CONTEST_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 26,
+      "max_level": 29,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FERROSEED",
+        "SPECIES_DWEBBLE",
+        "SPECIES_GLIMMET",
+        "SPECIES_ANORITH"
+      ]
+    },
+    {
+      "map": "MAP_NATIONAL_PARK_NORMAL_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 26,
+      "max_level": 29,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_NYMBLE",
+        "SPECIES_CUTIEFLY",
+        "SPECIES_GRUBBIN",
+        "SPECIES_TREECKO"
+      ]
+    },
+    {
+      "map": "MAP_NATIONAL_PARK_NORMAL_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 26,
+      "max_level": 29,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_VENONAT",
+        "SPECIES_JOLTIK",
+        "SPECIES_SIZZLIPEDE",
+        "SPECIES_PINSIR"
+      ]
+    },
+    {
+      "map": "MAP_NEW_BARK_TOWN_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 2,
+      "max_level": 5,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MAGIKARP",
+        "SPECIES_GOLDEEN",
+        "SPECIES_BARBOACH",
+        "SPECIES_CORPHISH"
+      ]
+    },
+    {
+      "map": "MAP_NEW_BARK_TOWN_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 2,
+      "max_level": 5,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PIDOVE",
+        "SPECIES_SMOLIV",
+        "SPECIES_HATENNA",
+        "SPECIES_TYNAMO"
+      ]
+    },
+    {
+      "map": "MAP_NEW_BARK_TOWN_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 2,
+      "max_level": 5,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MAGIKARP",
+        "SPECIES_WOOPER",
+        "SPECIES_POLIWAG",
+        "SPECIES_SURSKIT"
+      ]
+    },
+    {
+      "map": "MAP_OLIVINE_CITY_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 40,
+      "max_level": 43,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TENTACOOL",
+        "SPECIES_RELICANTH",
+        "SPECIES_SHELLDER",
+        "SPECIES_WATTREL"
+      ]
+    },
+    {
+      "map": "MAP_OLIVINE_CITY_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 40,
+      "max_level": 43,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BLITZLE",
+        "SPECIES_MUNCHLAX",
+        "SPECIES_VIGOROTH",
+        "SPECIES_MAGNEMITE"
+      ]
+    },
+    {
+      "map": "MAP_OLIVINE_CITY_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 40,
+      "max_level": 43,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WINGULL",
+        "SPECIES_TENTACOOL",
+        "SPECIES_CHINCHOU",
+        "SPECIES_HORSEA"
+      ]
+    },
+    {
+      "map": "MAP_OLIVINE_CITY_PORT_OUTSIDE_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 40,
+      "max_level": 44,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BASCULIN_RED_STRIPED",
+        "SPECIES_POLIWHIRL",
+        "SPECIES_SEADRA",
+        "SPECIES_PALAFIN_ZERO"
+      ]
+    },
+    {
+      "map": "MAP_OLIVINE_CITY_PORT_OUTSIDE_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 40,
+      "max_level": 44,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BERGMITE",
+        "SPECIES_PONYTA",
+        "SPECIES_MAGCARGO",
+        "SPECIES_SCORBUNNY"
+      ]
+    },
+    {
+      "map": "MAP_OLIVINE_CITY_PORT_OUTSIDE_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 40,
+      "max_level": 44,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_OMANYTE",
+        "SPECIES_KABUTO",
+        "SPECIES_CORSOLA",
+        "SPECIES_LANTURN"
+      ]
+    },
+    {
+      "map": "MAP_PALLET_TOWN_HNS",
+      "method": "fishing_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WAILORD",
+        "SPECIES_GOLISOPOD",
+        "SPECIES_BASCULEGION_M",
+        "SPECIES_WALREIN"
+      ]
+    },
+    {
+      "map": "MAP_PALLET_TOWN_HNS",
+      "method": "water_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FLOATZEL",
+        "SPECIES_CLAWITZER",
+        "SPECIES_BARBARACLE",
+        "SPECIES_SEISMITOAD"
+      ]
+    },
+    {
+      "map": "MAP_ROCK_TUNNEL_1F_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TOXAPEX",
+        "SPECIES_BARRASKEWDA",
+        "SPECIES_TENTACRUEL",
+        "SPECIES_WALREIN"
+      ]
+    },
+    {
+      "map": "MAP_ROCK_TUNNEL_1F_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_HOUNDOOM",
+        "SPECIES_GALLADE",
+        "SPECIES_CHANDELURE",
+        "SPECIES_DUSKNOIR"
+      ]
+    },
+    {
+      "map": "MAP_ROCK_TUNNEL_1F_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TOEDSCRUEL",
+        "SPECIES_GLISCOR",
+        "SPECIES_CONKELDURR",
+        "SPECIES_AGGRON"
+      ]
+    },
+    {
+      "map": "MAP_ROCK_TUNNEL_1F_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BARRASKEWDA",
+        "SPECIES_WAILORD",
+        "SPECIES_BASCULEGION_M",
+        "SPECIES_GOLISOPOD"
+      ]
+    },
+    {
+      "map": "MAP_ROCK_TUNNEL_B1F_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TOXAPEX",
+        "SPECIES_CLAWITZER",
+        "SPECIES_BARBARACLE",
+        "SPECIES_SEISMITOAD"
+      ]
+    },
+    {
+      "map": "MAP_ROCK_TUNNEL_B1F_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_POLTEAGEIST",
+        "SPECIES_WEAVILE",
+        "SPECIES_NOIVERN",
+        "SPECIES_HYDRAPPLE"
+      ]
+    },
+    {
+      "map": "MAP_ROCK_TUNNEL_B1F_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MIENSHAO",
+        "SPECIES_GIGALITH",
+        "SPECIES_COALOSSAL",
+        "SPECIES_RHYPERIOR"
+      ]
+    },
+    {
+      "map": "MAP_ROCK_TUNNEL_B1F_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FLOATZEL",
+        "SPECIES_TOXAPEX",
+        "SPECIES_BARRASKEWDA",
+        "SPECIES_TENTACRUEL"
+      ]
+    },
+    {
+      "map": "MAP_ROCKET_HIDEOUT_B1F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 54,
+      "max_level": 55,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BOLDORE",
+        "SPECIES_DUSCLOPS",
+        "SPECIES_BANETTE",
+        "SPECIES_TREVENANT"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE1_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SHARPEDO",
+        "SPECIES_BARRASKEWDA",
+        "SPECIES_BASCULEGION_M",
+        "SPECIES_PALAFIN_ZERO"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE1_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TYRANITAR",
+        "SPECIES_GARCHOMP",
+        "SPECIES_SALAMENCE",
+        "SPECIES_METAGROSS"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE1_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_HYDREIGON",
+        "SPECIES_DRAGAPULT",
+        "SPECIES_KINGAMBIT",
+        "SPECIES_GHOLDENGO"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE1_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_GYARADOS",
+        "SPECIES_MILOTIC",
+        "SPECIES_DONDOZO",
+        "SPECIES_TENTACRUEL"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE10_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FLOATZEL",
+        "SPECIES_GOLISOPOD",
+        "SPECIES_BASCULEGION_M",
+        "SPECIES_WALREIN"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE10_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PYROAR",
+        "SPECIES_BRAVIARY",
+        "SPECIES_TANGROWTH",
+        "SPECIES_TSAREENA"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE10_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MANDIBUZZ",
+        "SPECIES_OVERQWIL",
+        "SPECIES_SNEASLER",
+        "SPECIES_KROOKODILE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE10_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WAILORD",
+        "SPECIES_CLAWITZER",
+        "SPECIES_BARBARACLE",
+        "SPECIES_SEISMITOAD"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE11_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FLOATZEL",
+        "SPECIES_TOXAPEX",
+        "SPECIES_BARRASKEWDA",
+        "SPECIES_TENTACRUEL"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE11_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_NINETALES",
+        "SPECIES_TANGROWTH",
+        "SPECIES_HATTERENE",
+        "SPECIES_NOIVERN"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE11_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SINISTCHA",
+        "SPECIES_OVERQWIL",
+        "SPECIES_KROOKODILE",
+        "SPECIES_ANNIHILAPE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE11_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WAILORD",
+        "SPECIES_GOLISOPOD",
+        "SPECIES_BASCULEGION_M",
+        "SPECIES_WALREIN"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE12_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FLOATZEL",
+        "SPECIES_CLAWITZER",
+        "SPECIES_BARBARACLE",
+        "SPECIES_SEISMITOAD"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE12_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_URSARING",
+        "SPECIES_ROSERADE",
+        "SPECIES_TALONFLAME",
+        "SPECIES_TINKATON"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE12_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_DRAPION",
+        "SPECIES_SINISTCHA",
+        "SPECIES_TOXTRICITY_AMPED",
+        "SPECIES_HONCHKROW"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE12_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SANDACONDA",
+        "SPECIES_DONPHAN",
+        "SPECIES_HIPPOWDON",
+        "SPECIES_MAGNEZONE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE12_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TOXAPEX",
+        "SPECIES_BARRASKEWDA",
+        "SPECIES_TENTACRUEL",
+        "SPECIES_WALREIN"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE13_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WAILORD",
+        "SPECIES_BARBARACLE",
+        "SPECIES_BASCULEGION_M",
+        "SPECIES_GOLISOPOD"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE13_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_ABOMASNOW",
+        "SPECIES_WYRDEER",
+        "SPECIES_TALONFLAME",
+        "SPECIES_FLORGES_RED"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE13_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_REVAVROOM",
+        "SPECIES_ROSERADE",
+        "SPECIES_NIDOQUEEN",
+        "SPECIES_GLIMMORA"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE13_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FLOATZEL",
+        "SPECIES_TOXAPEX",
+        "SPECIES_CLAWITZER",
+        "SPECIES_SEISMITOAD"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE14_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BARRASKEWDA",
+        "SPECIES_TENTACRUEL",
+        "SPECIES_GOLISOPOD",
+        "SPECIES_WALREIN"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE14_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FERROTHORN",
+        "SPECIES_KILOWATTREL",
+        "SPECIES_ZEBSTRIKA",
+        "SPECIES_GALLADE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE14_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PANGORO",
+        "SPECIES_HONCHKROW",
+        "SPECIES_DRAGALGE",
+        "SPECIES_NIDOKING"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE14_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WAILORD",
+        "SPECIES_CLAWITZER",
+        "SPECIES_BARBARACLE",
+        "SPECIES_BASCULEGION_M"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE15_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FLOATZEL",
+        "SPECIES_TOXAPEX",
+        "SPECIES_BARRASKEWDA",
+        "SPECIES_SEISMITOAD"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE15_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SCOVILLAIN",
+        "SPECIES_TOEDSCRUEL",
+        "SPECIES_MAGMAR",
+        "SPECIES_LUXRAY"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE15_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TOXICROAK",
+        "SPECIES_GOURGEIST",
+        "SPECIES_TOXTRICITY_AMPED",
+        "SPECIES_GRIMMSNARL"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE15_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MUDSDALE",
+        "SPECIES_EXCADRILL",
+        "SPECIES_KLINKLANG",
+        "SPECIES_RHYPERIOR"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE15_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TENTACRUEL",
+        "SPECIES_GOLISOPOD",
+        "SPECIES_BASCULEGION_M",
+        "SPECIES_WALREIN"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE16_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WAILORD",
+        "SPECIES_CLAWITZER",
+        "SPECIES_BARBARACLE",
+        "SPECIES_SEISMITOAD"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE16_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BELLIBOLT",
+        "SPECIES_DIPPLIN",
+        "SPECIES_TOUCANNON",
+        "SPECIES_HYDRAPPLE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE16_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SCRAFTY",
+        "SPECIES_DRAPION",
+        "SPECIES_MANDIBUZZ",
+        "SPECIES_SNEASLER"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE16_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FLOATZEL",
+        "SPECIES_TOXAPEX",
+        "SPECIES_DRACOVISH",
+        "SPECIES_DONDOZO"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE17_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_RELICANTH",
+        "SPECIES_DREDNAW",
+        "SPECIES_BARRASKEWDA",
+        "SPECIES_TENTACRUEL"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE17_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_ELECTABUZZ",
+        "SPECIES_BRAVIARY",
+        "SPECIES_GLISCOR",
+        "SPECIES_TSAREENA"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE17_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_REVAVROOM",
+        "SPECIES_OVERQWIL",
+        "SPECIES_KROOKODILE",
+        "SPECIES_ANNIHILAPE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE17_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BASCULIN_RED_STRIPED",
+        "SPECIES_TATSUGIRI_CURLY",
+        "SPECIES_ARCTOVISH",
+        "SPECIES_LAPRAS"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE18_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_OCTILLERY",
+        "SPECIES_GOLISOPOD",
+        "SPECIES_BASCULEGION_M",
+        "SPECIES_WALREIN"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE18_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BOLTUND",
+        "SPECIES_TANGROWTH",
+        "SPECIES_HATTERENE",
+        "SPECIES_NOIVERN"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE18_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SINISTCHA",
+        "SPECIES_HONCHKROW",
+        "SPECIES_ROSERADE",
+        "SPECIES_NIDOQUEEN"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE18_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BEWEAR",
+        "SPECIES_GIGALITH",
+        "SPECIES_CONKELDURR",
+        "SPECIES_AEGISLASH_SHIELD"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE18_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WAILORD",
+        "SPECIES_CLAWITZER",
+        "SPECIES_BARBARACLE",
+        "SPECIES_SEISMITOAD"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE19_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_VELUZA",
+        "SPECIES_FLOATZEL",
+        "SPECIES_MILOTIC",
+        "SPECIES_GYARADOS"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE19_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BRUXISH",
+        "SPECIES_CRAMORANT",
+        "SPECIES_TOXAPEX",
+        "SPECIES_DRACOVISH"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE2_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BASCULIN_RED_STRIPED",
+        "SPECIES_OCTILLERY",
+        "SPECIES_ARCTOVISH",
+        "SPECIES_WALREIN"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE2_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_ZEBSTRIKA",
+        "SPECIES_TOEDSCRUEL",
+        "SPECIES_LUXRAY",
+        "SPECIES_URSALUNA"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE2_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_GOURGEIST",
+        "SPECIES_SINISTCHA",
+        "SPECIES_ROSERADE",
+        "SPECIES_ANNIHILAPE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE2_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WAILORD",
+        "SPECIES_BARBARACLE",
+        "SPECIES_BASCULEGION_M",
+        "SPECIES_GOLISOPOD"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE20_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BASCULIN_RED_STRIPED",
+        "SPECIES_ARAQUANID",
+        "SPECIES_TATSUGIRI_CURLY",
+        "SPECIES_LAPRAS"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE20_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_OCTILLERY",
+        "SPECIES_ARCTOVISH",
+        "SPECIES_GOLISOPOD",
+        "SPECIES_WALREIN"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE21_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WAILORD",
+        "SPECIES_CLAWITZER",
+        "SPECIES_BARBARACLE",
+        "SPECIES_BASCULEGION_M"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE21_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PYROAR",
+        "SPECIES_TALONFLAME",
+        "SPECIES_PORYGON_Z",
+        "SPECIES_BLISSEY"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE21_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SCRAFTY",
+        "SPECIES_NIDOQUEEN",
+        "SPECIES_NIDOKING",
+        "SPECIES_GLIMMORA"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE21_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_LYCANROC_MIDDAY",
+        "SPECIES_SANDACONDA",
+        "SPECIES_DONPHAN",
+        "SPECIES_AGGRON"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE21_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WAILMER",
+        "SPECIES_MILOTIC",
+        "SPECIES_GYARADOS",
+        "SPECIES_SEISMITOAD"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE22_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CRAWDAUNT",
+        "SPECIES_VELUZA",
+        "SPECIES_WHISCASH",
+        "SPECIES_FLOATZEL"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE22_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_ABOMASNOW",
+        "SPECIES_URSARING",
+        "SPECIES_WYRDEER",
+        "SPECIES_FLORGES_RED"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE22_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PANGORO",
+        "SPECIES_GOURGEIST",
+        "SPECIES_DRAGALGE",
+        "SPECIES_GRIMMSNARL"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE22_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BRUXISH",
+        "SPECIES_CRAMORANT",
+        "SPECIES_TOXAPEX",
+        "SPECIES_DRACOVISH"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE24_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SEALEO",
+        "SPECIES_GASTRODON_WEST",
+        "SPECIES_BARRASKEWDA",
+        "SPECIES_DONDOZO"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE24_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_KILOWATTREL",
+        "SPECIES_MUDSDALE",
+        "SPECIES_VIKAVOLT",
+        "SPECIES_GALLADE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE24_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SCRAFTY",
+        "SPECIES_TOXICROAK",
+        "SPECIES_MANDIBUZZ",
+        "SPECIES_NIDOKING"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE24_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_COPPERAJAH",
+        "SPECIES_BEWEAR",
+        "SPECIES_KLEAVOR",
+        "SPECIES_GALLADE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE24_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_LUMINEON",
+        "SPECIES_SHARPEDO",
+        "SPECIES_RELICANTH",
+        "SPECIES_TENTACRUEL"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE25_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PELIPPER",
+        "SPECIES_PALAFIN_ZERO",
+        "SPECIES_DREDNAW",
+        "SPECIES_LAPRAS"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE25_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FERROTHORN",
+        "SPECIES_KILOWATTREL",
+        "SPECIES_SCOVILLAIN",
+        "SPECIES_HIPPOWDON"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE25_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PANGORO",
+        "SPECIES_OVERQWIL",
+        "SPECIES_SNEASLER",
+        "SPECIES_KROOKODILE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE25_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_ARAQUANID",
+        "SPECIES_WUGTRIO",
+        "SPECIES_LANTURN",
+        "SPECIES_TATSUGIRI_CURLY"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE26_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 63,
+      "max_level": 66,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CRAWDAUNT",
+        "SPECIES_DREDNAW",
+        "SPECIES_ARCTOVISH",
+        "SPECIES_MILOTIC"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE26_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 63,
+      "max_level": 66,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_ELECTIVIRE",
+        "SPECIES_MAGMORTAR",
+        "SPECIES_CORVIKNIGHT",
+        "SPECIES_SALAMENCE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE26_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 63,
+      "max_level": 66,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_KINGAMBIT",
+        "SPECIES_GHOLDENGO",
+        "SPECIES_GOODRA",
+        "SPECIES_METAGROSS"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE26_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 63,
+      "max_level": 66,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BASCULIN_RED_STRIPED",
+        "SPECIES_LUMINEON",
+        "SPECIES_GASTRODON_WEST",
+        "SPECIES_GYARADOS"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE27_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 63,
+      "max_level": 65,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_ARAQUANID",
+        "SPECIES_TATSUGIRI_CURLY",
+        "SPECIES_OCTILLERY",
+        "SPECIES_PALAFIN_ZERO"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE27_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 63,
+      "max_level": 65,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_LUCARIO",
+        "SPECIES_GARCHOMP",
+        "SPECIES_CORVIKNIGHT",
+        "SPECIES_NOIVERN"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE27_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 63,
+      "max_level": 65,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TYRANITAR",
+        "SPECIES_HYDREIGON",
+        "SPECIES_DRAGAPULT",
+        "SPECIES_DRAGONITE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE27_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 63,
+      "max_level": 65,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_AZUMARILL",
+        "SPECIES_RELICANTH",
+        "SPECIES_LAPRAS",
+        "SPECIES_DRACOVISH"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE28_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 72,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PIDGEOT",
+        "SPECIES_STARAPTOR",
+        "SPECIES_UNFEZANT",
+        "SPECIES_DRAGONITE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE28_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 72,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_AMOONGUSS",
+        "SPECIES_GOLURK",
+        "SPECIES_SALAZZLE",
+        "SPECIES_VILEPLUME"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE29_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 2,
+      "max_level": 6,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SENTRET",
+        "SPECIES_PIDGEY",
+        "SPECIES_STARLY",
+        "SPECIES_FLETCHLING"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE29_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 2,
+      "max_level": 6,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SENTRET",
+        "SPECIES_RATTATA",
+        "SPECIES_SPINARAK",
+        "SPECIES_ZUBAT"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE3_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WAILMER",
+        "SPECIES_CLAWITZER",
+        "SPECIES_GYARADOS",
+        "SPECIES_SEISMITOAD"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE3_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SCOVILLAIN",
+        "SPECIES_BELLIBOLT",
+        "SPECIES_TOUCANNON",
+        "SPECIES_HYDRAPPLE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE3_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TOXICROAK",
+        "SPECIES_DRAPION",
+        "SPECIES_TOXTRICITY_AMPED",
+        "SPECIES_HONCHKROW"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE3_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_COPPERAJAH",
+        "SPECIES_BISHARP",
+        "SPECIES_MIENSHAO",
+        "SPECIES_GARGANACL"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE3_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CRAWDAUNT",
+        "SPECIES_VELUZA",
+        "SPECIES_WHISCASH",
+        "SPECIES_MILOTIC"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE30_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 4,
+      "max_level": 6,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MAGIKARP",
+        "SPECIES_GOLDEEN",
+        "SPECIES_BARBOACH",
+        "SPECIES_FEEBAS"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE30_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 4,
+      "max_level": 6,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CATERPIE",
+        "SPECIES_WEEDLE",
+        "SPECIES_PIDGEY",
+        "SPECIES_WURMPLE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE30_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 4,
+      "max_level": 6,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SPINARAK",
+        "SPECIES_VENONAT",
+        "SPECIES_RATTATA",
+        "SPECIES_SCATTERBUG"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE30_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 4,
+      "max_level": 6,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_NYMBLE",
+        "SPECIES_GEODUDE",
+        "SPECIES_MANKEY",
+        "SPECIES_MACHOP"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE30_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 4,
+      "max_level": 6,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_POLIWAG",
+        "SPECIES_WOOPER",
+        "SPECIES_LOTAD",
+        "SPECIES_SURSKIT"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE31_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 7,
+      "max_level": 11,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MAGIKARP",
+        "SPECIES_GOLDEEN",
+        "SPECIES_CORPHISH",
+        "SPECIES_FEEBAS"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE31_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 7,
+      "max_level": 11,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BELLSPROUT",
+        "SPECIES_TAILLOW",
+        "SPECIES_SPEAROW",
+        "SPECIES_RALTS"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE31_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 7,
+      "max_level": 11,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_RATTATA",
+        "SPECIES_ZUBAT",
+        "SPECIES_MORELULL",
+        "SPECIES_DUSKULL"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE31_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 7,
+      "max_level": 11,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WOOPER",
+        "SPECIES_POLIWAG",
+        "SPECIES_TYMPOLE",
+        "SPECIES_LOTAD"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE32_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 16,
+      "max_level": 19,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MAGIKARP",
+        "SPECIES_GOLDEEN",
+        "SPECIES_BARBOACH",
+        "SPECIES_FEEBAS"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE32_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 16,
+      "max_level": 19,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MAREEP",
+        "SPECIES_NIDORAN_F",
+        "SPECIES_NIDORAN_M",
+        "SPECIES_SHINX"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE32_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 16,
+      "max_level": 19,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WOOPER",
+        "SPECIES_RATTATA",
+        "SPECIES_SPINARAK",
+        "SPECIES_MURKROW"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE32_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 16,
+      "max_level": 19,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WOOPER",
+        "SPECIES_POLIWAG",
+        "SPECIES_TYMPOLE",
+        "SPECIES_LOTAD"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE33_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 18,
+      "max_level": 21,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BOUNSWEET",
+        "SPECIES_BUDEW",
+        "SPECIES_COTTONEE",
+        "SPECIES_PETILIL"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE33_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 18,
+      "max_level": 21,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_EKANS",
+        "SPECIES_ODDISH",
+        "SPECIES_GRIMER",
+        "SPECIES_KOFFING"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE33_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 18,
+      "max_level": 21,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TAROUNTULA",
+        "SPECIES_CUBONE",
+        "SPECIES_PHANPY",
+        "SPECIES_RHYHORN"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE34_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 25,
+      "max_level": 28,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_LUVDISC",
+        "SPECIES_CLAUNCHER",
+        "SPECIES_SKRELP",
+        "SPECIES_TOTODILE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE34_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 25,
+      "max_level": 28,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MAREEP",
+        "SPECIES_GROWLITHE",
+        "SPECIES_SPINARAK",
+        "SPECIES_PAWMI"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE34_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 25,
+      "max_level": 28,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_ELECTRIKE",
+        "SPECIES_BLITZLE",
+        "SPECIES_YAMPER",
+        "SPECIES_DREEPY"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE34_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 25,
+      "max_level": 28,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TYMPOLE",
+        "SPECIES_BINACLE",
+        "SPECIES_CORPHISH",
+        "SPECIES_MUDKIP"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE35_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 27,
+      "max_level": 30,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FINIZEN",
+        "SPECIES_SHELLOS_WEST",
+        "SPECIES_BUIZEL",
+        "SPECIES_PIPLUP"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE35_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 27,
+      "max_level": 30,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MEOWTH",
+        "SPECIES_TEDDIURSA",
+        "SPECIES_TANDEMAUS",
+        "SPECIES_EEVEE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE35_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 27,
+      "max_level": 30,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MURKROW",
+        "SPECIES_HOUNDOUR",
+        "SPECIES_ZORUA",
+        "SPECIES_ABSOL"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE35_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 27,
+      "max_level": 30,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SPHEAL",
+        "SPECIES_CARVANHA",
+        "SPECIES_CORPHISH",
+        "SPECIES_OSHAWOTT"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE36_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 27,
+      "max_level": 30,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SCRAGGY",
+        "SPECIES_SPINARAK",
+        "SPECIES_STUFFUL",
+        "SPECIES_CHARMANDER"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE36_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 27,
+      "max_level": 30,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CRABRAWLER",
+        "SPECIES_SPINARAK",
+        "SPECIES_SINISTEA",
+        "SPECIES_ELEKID"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE36_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 27,
+      "max_level": 30,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MIENFOO",
+        "SPECIES_CRANIDOS",
+        "SPECIES_SHIELDON",
+        "SPECIES_DRILBUR"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE37_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 32,
+      "max_level": 35,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_GROWLITHE",
+        "SPECIES_SPINARAK",
+        "SPECIES_TEDDIURSA",
+        "SPECIES_VULPIX"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE37_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 32,
+      "max_level": 35,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MISDREAVUS",
+        "SPECIES_HOUNDOUR",
+        "SPECIES_MURKROW",
+        "SPECIES_TEPIG"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE38_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 38,
+      "max_level": 41,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_KIRLIA",
+        "SPECIES_FLOETTE_RED",
+        "SPECIES_TANGELA",
+        "SPECIES_SNIVY"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE38_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 38,
+      "max_level": 41,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_KANGASKHAN",
+        "SPECIES_ROTOM",
+        "SPECIES_RATTATA",
+        "SPECIES_FENNEKIN"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE39_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TAUROS",
+        "SPECIES_JIGGLYPUFF",
+        "SPECIES_SWELLOW",
+        "SPECIES_CHESPIN"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE39_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MORPEKO_FULL_BELLY",
+        "SPECIES_RATTATA",
+        "SPECIES_DUSKULL",
+        "SPECIES_BOUFFALANT"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE39_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 39,
+      "max_level": 42,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_HIPPOPOTAS",
+        "SPECIES_TYRUNT",
+        "SPECIES_SPIDOPS",
+        "SPECIES_DARUMAKA"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE4_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SEADRA",
+        "SPECIES_FLOATZEL",
+        "SPECIES_TOXAPEX",
+        "SPECIES_BASCULEGION_M"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE4_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BRAVIARY",
+        "SPECIES_GLISCOR",
+        "SPECIES_DIPPLIN",
+        "SPECIES_BLISSEY"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE4_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_REVAVROOM",
+        "SPECIES_NIDOQUEEN",
+        "SPECIES_GLIMMORA",
+        "SPECIES_PORYGON_Z"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE4_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BRUXISH",
+        "SPECIES_AZUMARILL",
+        "SPECIES_CRAMORANT",
+        "SPECIES_DRACOVISH"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE40_HNS",
+      "method": "fishing_mons",
+      "time": "Day",
+      "min_level": 40,
+      "max_level": 43,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MARILL",
+        "SPECIES_WUGTRIO",
+        "SPECIES_PELIPPER",
+        "SPECIES_LAPRAS"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE40_HNS",
+      "method": "water_mons",
+      "time": "Day",
+      "min_level": 40,
+      "max_level": 43,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WAILMER",
+        "SPECIES_WHISCASH",
+        "SPECIES_SHARPEDO",
+        "SPECIES_LAPRAS"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE41_HNS",
+      "method": "fishing_mons",
+      "time": "Day",
+      "min_level": 41,
+      "max_level": 44,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SEALEO",
+        "SPECIES_CRAWDAUNT",
+        "SPECIES_RELICANTH",
+        "SPECIES_ARCTOVISH"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE41_HNS",
+      "method": "water_mons",
+      "time": "Day",
+      "min_level": 41,
+      "max_level": 44,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BASCULIN_RED_STRIPED",
+        "SPECIES_PALPITOAD",
+        "SPECIES_SEALEO",
+        "SPECIES_LUMINEON"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE42_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 52,
+      "max_level": 54,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_LUVDISC",
+        "SPECIES_BUIZEL",
+        "SPECIES_TATSUGIRI_CURLY",
+        "SPECIES_DONDOZO"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE42_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 52,
+      "max_level": 54,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_GRANBULL",
+        "SPECIES_MAUSHOLD_THREE",
+        "SPECIES_LURANTIS",
+        "SPECIES_HELIOLISK"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE42_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 52,
+      "max_level": 54,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_KROKOROK",
+        "SPECIES_ROSELIA",
+        "SPECIES_SALAZZLE",
+        "SPECIES_DHELMISE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE42_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 52,
+      "max_level": 54,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CHARJABUG",
+        "SPECIES_GURDURR",
+        "SPECIES_KLANG",
+        "SPECIES_SCYTHER"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE42_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 52,
+      "max_level": 54,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CLAUNCHER",
+        "SPECIES_FINNEON",
+        "SPECIES_TIRTOUGA",
+        "SPECIES_MANTYKE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE43_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 53,
+      "max_level": 55,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_OMANYTE",
+        "SPECIES_KABUTO",
+        "SPECIES_LANTURN",
+        "SPECIES_OCTILLERY"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE43_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 53,
+      "max_level": 55,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CLEFAIRY",
+        "SPECIES_GLALIE",
+        "SPECIES_LURANTIS",
+        "SPECIES_MANECTRIC"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE43_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 53,
+      "max_level": 55,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_AMOONGUSS",
+        "SPECIES_TREVENANT",
+        "SPECIES_DARMANITAN_STANDARD",
+        "SPECIES_SALAZZLE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE43_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 53,
+      "max_level": 55,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MARILL",
+        "SPECIES_PELIPPER",
+        "SPECIES_SHARPEDO",
+        "SPECIES_LAPRAS"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE44_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 57,
+      "max_level": 59,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TATSUGIRI_CURLY",
+        "SPECIES_ARCTOVISH",
+        "SPECIES_MILOTIC",
+        "SPECIES_GYARADOS"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE44_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 57,
+      "max_level": 59,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MAGNETON",
+        "SPECIES_PILOSWINE",
+        "SPECIES_SKARMORY",
+        "SPECIES_LAIRON"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE44_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 57,
+      "max_level": 59,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_DUSCLOPS",
+        "SPECIES_SNEASEL",
+        "SPECIES_FROSLASS",
+        "SPECIES_HAUNTER"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE44_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 57,
+      "max_level": 59,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_AZUMARILL",
+        "SPECIES_LAPRAS",
+        "SPECIES_DRACOVISH",
+        "SPECIES_GYARADOS"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE45_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 64,
+      "max_level": 66,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_VELUZA",
+        "SPECIES_RELICANTH",
+        "SPECIES_MILOTIC",
+        "SPECIES_GYARADOS"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE45_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 64,
+      "max_level": 66,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_GRAVELER",
+        "SPECIES_SKARMORY",
+        "SPECIES_DRAGONAIR",
+        "SPECIES_LAIRON"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE45_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 64,
+      "max_level": 66,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TREVENANT",
+        "SPECIES_PALOSSAND",
+        "SPECIES_DHELMISE",
+        "SPECIES_VILEPLUME"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE45_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 64,
+      "max_level": 66,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_LUCARIO",
+        "SPECIES_CORVIKNIGHT",
+        "SPECIES_GHOLDENGO",
+        "SPECIES_VOLCARONA"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE45_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 64,
+      "max_level": 66,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BRUXISH",
+        "SPECIES_CRAMORANT",
+        "SPECIES_WHISCASH",
+        "SPECIES_DONDOZO"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE46_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 6,
+      "max_level": 9,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SPEAROW",
+        "SPECIES_GEODUDE",
+        "SPECIES_PHANPY",
+        "SPECIES_MANKEY"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE46_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 6,
+      "max_level": 9,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_RATTATA",
+        "SPECIES_ZUBAT",
+        "SPECIES_GEODUDE",
+        "SPECIES_ROOKIDEE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE47_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 45,
+      "max_level": 48,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MARILL",
+        "SPECIES_BRUXISH",
+        "SPECIES_ARAQUANID",
+        "SPECIES_WHISCASH"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE47_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 45,
+      "max_level": 48,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FLABEBE_RED",
+        "SPECIES_PIKACHU",
+        "SPECIES_SQUAWKABILLY_GREEN",
+        "SPECIES_ROWLET"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE47_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 45,
+      "max_level": 48,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CHANSEY",
+        "SPECIES_VULLABY",
+        "SPECIES_VAROOM",
+        "SPECIES_CHARCADET"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE47_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 45,
+      "max_level": 48,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WUGTRIO",
+        "SPECIES_CRAMORANT",
+        "SPECIES_PALAFIN_ZERO",
+        "SPECIES_ARCTOVISH"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE48_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 46,
+      "max_level": 49,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MR_MIME",
+        "SPECIES_STEENEE",
+        "SPECIES_SHIINOTIC",
+        "SPECIES_GROOKEY"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE48_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 46,
+      "max_level": 49,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_AUDINO",
+        "SPECIES_SHROOMISH",
+        "SPECIES_POLTCHAGEIST",
+        "SPECIES_SANDILE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE48_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 46,
+      "max_level": 49,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_NUMEL",
+        "SPECIES_SPEWPA",
+        "SPECIES_CLOBBOPUS",
+        "SPECIES_THROH"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE5_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PALPITOAD",
+        "SPECIES_SEALEO",
+        "SPECIES_TENTACRUEL",
+        "SPECIES_DONDOZO"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE5_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_ELECTABUZZ",
+        "SPECIES_WYRDEER",
+        "SPECIES_HATTERENE",
+        "SPECIES_TSAREENA"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE5_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PANGORO",
+        "SPECIES_DRAGALGE",
+        "SPECIES_NIDOKING",
+        "SPECIES_ANNIHILAPE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE5_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SHARPEDO",
+        "SPECIES_GASTRODON_WEST",
+        "SPECIES_BARRASKEWDA",
+        "SPECIES_TENTACRUEL"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE6_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PELIPPER",
+        "SPECIES_LUMINEON",
+        "SPECIES_RELICANTH",
+        "SPECIES_WAILORD"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE6_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BOLTUND",
+        "SPECIES_TANGROWTH",
+        "SPECIES_LUXRAY",
+        "SPECIES_NOIVERN"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE6_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_GOURGEIST",
+        "SPECIES_ZOROARK",
+        "SPECIES_PORYGON2",
+        "SPECIES_GRIMMSNARL"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE6_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_EXCADRILL",
+        "SPECIES_CENTISKORCH",
+        "SPECIES_GOLEM",
+        "SPECIES_URSALUNA"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE6_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_ARAQUANID",
+        "SPECIES_PALAFIN_ZERO",
+        "SPECIES_DREDNAW",
+        "SPECIES_LAPRAS"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE7_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CORSOLA",
+        "SPECIES_WUGTRIO",
+        "SPECIES_TATSUGIRI_CURLY",
+        "SPECIES_BARBARACLE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE7_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PORYGON2",
+        "SPECIES_TINKATON",
+        "SPECIES_EELEKTROSS",
+        "SPECIES_BLISSEY"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE7_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SCRAFTY",
+        "SPECIES_TOXICROAK",
+        "SPECIES_MANDIBUZZ",
+        "SPECIES_POLTEAGEIST"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE7_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BASCULIN_RED_STRIPED",
+        "SPECIES_LANTURN",
+        "SPECIES_OCTILLERY",
+        "SPECIES_ARCTOVISH"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE8_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CLAWITZER",
+        "SPECIES_GOLISOPOD",
+        "SPECIES_BASCULEGION_M",
+        "SPECIES_WALREIN"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE8_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BRAVIARY",
+        "SPECIES_MIENSHAO",
+        "SPECIES_GOLEM",
+        "SPECIES_EELEKTROSS"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE8_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MANDIBUZZ",
+        "SPECIES_OVERQWIL",
+        "SPECIES_SNEASLER",
+        "SPECIES_GRIMMSNARL"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE8_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WAILMER",
+        "SPECIES_WAILORD",
+        "SPECIES_CLAWITZER",
+        "SPECIES_BARBARACLE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE9_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_VELUZA",
+        "SPECIES_MILOTIC",
+        "SPECIES_GYARADOS",
+        "SPECIES_SEISMITOAD"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE9_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SANDACONDA",
+        "SPECIES_HATTERENE",
+        "SPECIES_RHYPERIOR",
+        "SPECIES_MAGNEZONE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE9_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_HOUNDOOM",
+        "SPECIES_SNEASLER",
+        "SPECIES_KROOKODILE",
+        "SPECIES_ANNIHILAPE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE9_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TINKATON",
+        "SPECIES_AEGISLASH_SHIELD",
+        "SPECIES_KLINKLANG",
+        "SPECIES_MAGNEZONE"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE9_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CRAWDAUNT",
+        "SPECIES_WHISCASH",
+        "SPECIES_FLOATZEL",
+        "SPECIES_SEISMITOAD"
+      ]
+    },
+    {
+      "map": "MAP_RUINS_OF_ALPH_B1F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 9,
+      "max_level": 12,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_UNOWN",
+        "SPECIES_EXEGGCUTE",
+        "SPECIES_WOOPER",
+        "SPECIES_ZUBAT"
+      ]
+    },
+    {
+      "map": "MAP_RUINS_OF_ALPH_B1F_HNS",
+      "method": "rock_smash_mons",
+      "time": "Day",
+      "min_level": 9,
+      "max_level": 12,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CATERPIE",
+        "SPECIES_WURMPLE",
+        "SPECIES_RELLOR",
+        "SPECIES_TYROGUE"
+      ]
+    },
+    {
+      "map": "MAP_RUINS_OF_ALPH_OUTSIDE_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 8,
+      "max_level": 12,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WOOPER",
+        "SPECIES_SURSKIT",
+        "SPECIES_SEEL",
+        "SPECIES_MAGIKARP"
+      ]
+    },
+    {
+      "map": "MAP_RUINS_OF_ALPH_OUTSIDE_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 8,
+      "max_level": 12,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_AZURILL",
+        "SPECIES_NACLI",
+        "SPECIES_FOMANTIS",
+        "SPECIES_TOXEL"
+      ]
+    },
+    {
+      "map": "MAP_RUINS_OF_ALPH_OUTSIDE_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 8,
+      "max_level": 12,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WURMPLE",
+        "SPECIES_NINCADA",
+        "SPECIES_ROGGENROLA",
+        "SPECIES_MEDITITE"
+      ]
+    },
+    {
+      "map": "MAP_RUINS_OF_ALPH_OUTSIDE_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 8,
+      "max_level": 12,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_LOTAD",
+        "SPECIES_WINGULL",
+        "SPECIES_REMORAID",
+        "SPECIES_CHINCHOU"
+      ]
+    },
+    {
+      "map": "MAP_SEAFOAM_ISLANDS_1F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BEARTIC",
+        "SPECIES_WEAVILE",
+        "SPECIES_CETITAN",
+        "SPECIES_WALREIN"
+      ]
+    },
+    {
+      "map": "MAP_SEAFOAM_ISLANDS_B1F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_ABOMASNOW",
+        "SPECIES_AVALUGG",
+        "SPECIES_CETITAN",
+        "SPECIES_VANILLUXE"
+      ]
+    },
+    {
+      "map": "MAP_SLOWPOKE_WELL_B1F_HNS",
+      "method": "fishing_mons",
+      "time": "Day",
+      "min_level": 19,
+      "max_level": 22,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MAGIKARP",
+        "SPECIES_SLOWPOKE",
+        "SPECIES_BARBOACH",
+        "SPECIES_CORPHISH"
+      ]
+    },
+    {
+      "map": "MAP_SLOWPOKE_WELL_B1F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 19,
+      "max_level": 22,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_ZUBAT",
+        "SPECIES_WOOPER",
+        "SPECIES_CROAGUNK",
+        "SPECIES_DUSKULL"
+      ]
+    },
+    {
+      "map": "MAP_SLOWPOKE_WELL_B1F_HNS",
+      "method": "water_mons",
+      "time": "Day",
+      "min_level": 19,
+      "max_level": 22,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SLOWPOKE",
+        "SPECIES_WOOPER",
+        "SPECIES_POLIWAG",
+        "SPECIES_CORPHISH"
+      ]
+    },
+    {
+      "map": "MAP_SLOWPOKE_WELL_B2F_HNS",
+      "method": "fishing_mons",
+      "time": "Day",
+      "min_level": 20,
+      "max_level": 23,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MAGIKARP",
+        "SPECIES_WIGLETT",
+        "SPECIES_WOOPER",
+        "SPECIES_CORPHISH"
+      ]
+    },
+    {
+      "map": "MAP_SLOWPOKE_WELL_B2F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 20,
+      "max_level": 23,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_IMPIDIMP",
+        "SPECIES_SLUGMA",
+        "SPECIES_ROCKRUFF",
+        "SPECIES_ZUBAT"
+      ]
+    },
+    {
+      "map": "MAP_SLOWPOKE_WELL_B2F_HNS",
+      "method": "water_mons",
+      "time": "Day",
+      "min_level": 20,
+      "max_level": 23,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_POLIWAG",
+        "SPECIES_SLOWPOKE",
+        "SPECIES_PSYDUCK",
+        "SPECIES_TENTACOOL"
+      ]
+    },
+    {
+      "map": "MAP_SPROUT_TOWER_2F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 8,
+      "max_level": 11,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_RATTATA",
+        "SPECIES_BELLSPROUT",
+        "SPECIES_PIDGEY",
+        "SPECIES_BALTOY"
+      ]
+    },
+    {
+      "map": "MAP_SPROUT_TOWER_2F_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 8,
+      "max_level": 11,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_GASTLY",
+        "SPECIES_ZUBAT",
+        "SPECIES_DUSKULL",
+        "SPECIES_LITWICK"
+      ]
+    },
+    {
+      "map": "MAP_SPROUT_TOWER_3F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 9,
+      "max_level": 12,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_RATTATA",
+        "SPECIES_BELLSPROUT",
+        "SPECIES_RALTS",
+        "SPECIES_BALTOY"
+      ]
+    },
+    {
+      "map": "MAP_SPROUT_TOWER_3F_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 9,
+      "max_level": 12,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_GASTLY",
+        "SPECIES_SHUPPET",
+        "SPECIES_DUSKULL",
+        "SPECIES_MISDREAVUS"
+      ]
+    },
+    {
+      "map": "MAP_TIN_TOWER_3F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 64,
+      "max_level": 66,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_AERODACTYL",
+        "SPECIES_CORVIKNIGHT",
+        "SPECIES_GHOLDENGO",
+        "SPECIES_KINGAMBIT"
+      ]
+    },
+    {
+      "map": "MAP_TIN_TOWER_4F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 64,
+      "max_level": 66,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SHUCKLE",
+        "SPECIES_LUCARIO",
+        "SPECIES_GHOLDENGO",
+        "SPECIES_KINGAMBIT"
+      ]
+    },
+    {
+      "map": "MAP_TIN_TOWER_5F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 65,
+      "max_level": 67,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_HERACROSS",
+        "SPECIES_GRAPPLOCT",
+        "SPECIES_CORVIKNIGHT",
+        "SPECIES_GHOLDENGO"
+      ]
+    },
+    {
+      "map": "MAP_TIN_TOWER_6F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 65,
+      "max_level": 67,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FORRETRESS",
+        "SPECIES_MAGNETON",
+        "SPECIES_CRUSTLE",
+        "SPECIES_DURALUDON"
+      ]
+    },
+    {
+      "map": "MAP_TIN_TOWER_7F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 65,
+      "max_level": 67,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_LOKIX",
+        "SPECIES_AERODACTYL",
+        "SPECIES_DRACOZOLT",
+        "SPECIES_LUCARIO"
+      ]
+    },
+    {
+      "map": "MAP_TIN_TOWER_8F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 66,
+      "max_level": 68,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CYCLIZAR",
+        "SPECIES_HAWLUCHA",
+        "SPECIES_FLAMIGO",
+        "SPECIES_FROSLASS"
+      ]
+    },
+    {
+      "map": "MAP_TIN_TOWER_9F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 66,
+      "max_level": 68,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SHUCKLE",
+        "SPECIES_HERACROSS",
+        "SPECIES_GHOLDENGO",
+        "SPECIES_KINGAMBIT"
+      ]
+    },
+    {
+      "map": "MAP_TOHJO_FALLS_CAVERN_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 62,
+      "max_level": 65,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CARVANHA",
+        "SPECIES_MILOTIC",
+        "SPECIES_VELUZA",
+        "SPECIES_LANTURN"
+      ]
+    },
+    {
+      "map": "MAP_TOHJO_FALLS_CAVERN_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 62,
+      "max_level": 65,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_HAXORUS",
+        "SPECIES_AGGRON",
+        "SPECIES_EXCADRILL",
+        "SPECIES_NOIVERN"
+      ]
+    },
+    {
+      "map": "MAP_TOHJO_FALLS_CAVERN_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 62,
+      "max_level": 65,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_ARCHALUDON",
+        "SPECIES_METAGROSS",
+        "SPECIES_GARCHOMP",
+        "SPECIES_KOMMO_O"
+      ]
+    },
+    {
+      "map": "MAP_TOHJO_FALLS_CAVERN_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 62,
+      "max_level": 65,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SPHEAL",
+        "SPECIES_BARBOACH",
+        "SPECIES_CORPHISH",
+        "SPECIES_GYARADOS"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_1F_HNS",
+      "method": "fishing_mons",
+      "time": "Day",
+      "min_level": 17,
+      "max_level": 20,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_ARROKUDA",
+        "SPECIES_SHELLDER",
+        "SPECIES_PSYDUCK",
+        "SPECIES_SEEL"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_1F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 17,
+      "max_level": 20,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_GEODUDE",
+        "SPECIES_ZUBAT",
+        "SPECIES_SANDSHREW",
+        "SPECIES_ARON"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_1F_HNS",
+      "method": "rock_smash_mons",
+      "time": "Day",
+      "min_level": 17,
+      "max_level": 20,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BLIPBUG",
+        "SPECIES_TAROUNTULA",
+        "SPECIES_VENIPEDE",
+        "SPECIES_DIGLETT"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_1F_HNS",
+      "method": "water_mons",
+      "time": "Day",
+      "min_level": 17,
+      "max_level": 20,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_GOLDEEN",
+        "SPECIES_TYMPOLE",
+        "SPECIES_KRABBY",
+        "SPECIES_STARYU"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_B1F_HNS",
+      "method": "fishing_mons",
+      "time": "Day",
+      "min_level": 18,
+      "max_level": 21,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MAGIKARP",
+        "SPECIES_WIMPOD",
+        "SPECIES_GOLDEEN",
+        "SPECIES_WOOPER"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_B1F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 18,
+      "max_level": 21,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_ROGGENROLA",
+        "SPECIES_ONIX",
+        "SPECIES_MAWILE",
+        "SPECIES_SABLEYE"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_B1F_HNS",
+      "method": "rock_smash_mons",
+      "time": "Day",
+      "min_level": 18,
+      "max_level": 21,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BLIPBUG",
+        "SPECIES_ROLYCOLY",
+        "SPECIES_NYMBLE",
+        "SPECIES_RELLOR"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_B1F_HNS",
+      "method": "water_mons",
+      "time": "Day",
+      "min_level": 18,
+      "max_level": 21,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WOOPER",
+        "SPECIES_LOTAD",
+        "SPECIES_REMORAID",
+        "SPECIES_CHINCHOU"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_B2F_HNS",
+      "method": "fishing_mons",
+      "time": "Day",
+      "min_level": 19,
+      "max_level": 22,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_LOTAD",
+        "SPECIES_SURSKIT",
+        "SPECIES_WINGULL",
+        "SPECIES_SLOWPOKE"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_B2F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 19,
+      "max_level": 22,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_ARON",
+        "SPECIES_WOOPER",
+        "SPECIES_BALTOY",
+        "SPECIES_GIBLE"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_B2F_HNS",
+      "method": "rock_smash_mons",
+      "time": "Day",
+      "min_level": 19,
+      "max_level": 22,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CATERPIE",
+        "SPECIES_TYROGUE",
+        "SPECIES_PARAS",
+        "SPECIES_PHANPY"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_B2F_HNS",
+      "method": "water_mons",
+      "time": "Day",
+      "min_level": 19,
+      "max_level": 22,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_FEEBAS",
+        "SPECIES_WISHIWASHI_SOLO",
+        "SPECIES_DEWPIDER",
+        "SPECIES_WIMPOD"
+      ]
+    },
+    {
+      "map": "MAP_VERMILION_CITY_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TIRTOUGA",
+        "SPECIES_POLIWHIRL",
+        "SPECIES_SEADRA",
+        "SPECIES_TOXAPEX"
+      ]
+    },
+    {
+      "map": "MAP_VERMILION_CITY_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BISHARP",
+        "SPECIES_WEAVILE",
+        "SPECIES_REUNICLUS",
+        "SPECIES_GOTHITELLE"
+      ]
+    },
+    {
+      "map": "MAP_VERMILION_CITY_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BRUXISH",
+        "SPECIES_AZUMARILL",
+        "SPECIES_CRAMORANT",
+        "SPECIES_DRACOVISH"
+      ]
+    },
+    {
+      "map": "MAP_VERMILION_CITY_PORT_OUTSIDE_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PALPITOAD",
+        "SPECIES_SEALEO",
+        "SPECIES_BARRASKEWDA",
+        "SPECIES_DONDOZO"
+      ]
+    },
+    {
+      "map": "MAP_VERMILION_CITY_PORT_OUTSIDE_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_LYCANROC_MIDDAY",
+        "SPECIES_EXCADRILL",
+        "SPECIES_COALOSSAL",
+        "SPECIES_VANILLUXE"
+      ]
+    },
+    {
+      "map": "MAP_VERMILION_CITY_PORT_OUTSIDE_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CARVANHA",
+        "SPECIES_BARBOACH",
+        "SPECIES_BASCULEGION_M",
+        "SPECIES_GASTRODON_WEST"
+      ]
+    },
+    {
+      "map": "MAP_VICTORY_ROAD_KANTO_1F_HNS",
+      "method": "fishing_mons",
+      "time": "Day",
+      "min_level": 64,
+      "max_level": 67,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_ARCTOVISH",
+        "SPECIES_DRACOVISH",
+        "SPECIES_DONDOZO",
+        "SPECIES_MILOTIC"
+      ]
+    },
+    {
+      "map": "MAP_VICTORY_ROAD_KANTO_1F_HNS",
+      "method": "water_mons",
+      "time": "Day",
+      "min_level": 64,
+      "max_level": 67,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_RELICANTH",
+        "SPECIES_DREDNAW",
+        "SPECIES_LAPRAS",
+        "SPECIES_DONDOZO"
+      ]
+    },
+    {
+      "map": "MAP_VICTORY_ROAD_KANTO_B1F_HNS",
+      "method": "fishing_mons",
+      "time": "Day",
+      "min_level": 64,
+      "max_level": 67,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BRUXISH",
+        "SPECIES_ARCTOVISH",
+        "SPECIES_MILOTIC",
+        "SPECIES_GYARADOS"
+      ]
+    },
+    {
+      "map": "MAP_VICTORY_ROAD_KANTO_B1F_HNS",
+      "method": "water_mons",
+      "time": "Day",
+      "min_level": 64,
+      "max_level": 67,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CRAMORANT",
+        "SPECIES_RELICANTH",
+        "SPECIES_DRACOVISH",
+        "SPECIES_DONDOZO"
+      ]
+    },
+    {
+      "map": "MAP_VICTORY_ROAD_KANTO_B2F_HNS",
+      "method": "fishing_mons",
+      "time": "Day",
+      "min_level": 63,
+      "max_level": 66,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BASCULIN_RED_STRIPED",
+        "SPECIES_TATSUGIRI_CURLY",
+        "SPECIES_DREDNAW",
+        "SPECIES_LAPRAS"
+      ]
+    },
+    {
+      "map": "MAP_VICTORY_ROAD_KANTO_B2F_HNS",
+      "method": "water_mons",
+      "time": "Day",
+      "min_level": 63,
+      "max_level": 66,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_OCTILLERY",
+        "SPECIES_ARCTOVISH",
+        "SPECIES_MILOTIC",
+        "SPECIES_GYARADOS"
+      ]
+    },
+    {
+      "map": "MAP_VIOLET_CITY_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 8,
+      "max_level": 12,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_GOLDEEN",
+        "SPECIES_BARBOACH",
+        "SPECIES_CORPHISH",
+        "SPECIES_FEEBAS"
+      ]
+    },
+    {
+      "map": "MAP_VIOLET_CITY_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 8,
+      "max_level": 12,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PIKIPEK",
+        "SPECIES_SLAKOTH",
+        "SPECIES_WOOPER",
+        "SPECIES_ABRA"
+      ]
+    },
+    {
+      "map": "MAP_VIOLET_CITY_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 8,
+      "max_level": 12,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_POLIWAG",
+        "SPECIES_WOOPER",
+        "SPECIES_LOTAD",
+        "SPECIES_SURSKIT"
+      ]
+    },
+    {
+      "map": "MAP_VIRIDIAN_CITY_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SPHEAL",
+        "SPECIES_CORPHISH",
+        "SPECIES_LUVDISC",
+        "SPECIES_BASCULEGION_M"
+      ]
+    },
+    {
+      "map": "MAP_VIRIDIAN_CITY_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PYROAR",
+        "SPECIES_ZOROARK",
+        "SPECIES_GOTHITELLE",
+        "SPECIES_PORYGON_Z"
+      ]
+    },
+    {
+      "map": "MAP_VIRIDIAN_CITY_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SHELLOS_WEST",
+        "SPECIES_BUIZEL",
+        "SPECIES_FINNEON",
+        "SPECIES_MANTYKE"
+      ]
+    },
+    {
+      "map": "MAP_VIRIDIAN_FOREST_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TOEDSCRUEL",
+        "SPECIES_TANGROWTH",
+        "SPECIES_FLORGES_RED",
+        "SPECIES_HYDRAPPLE"
+      ]
+    },
+    {
+      "map": "MAP_VIRIDIAN_FOREST_HNS",
+      "method": "land_mons",
+      "time": "Night",
+      "min_level": 70,
+      "max_level": 84,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CENTISKORCH",
+        "SPECIES_GOLISOPOD",
+        "SPECIES_GLIMMORA",
+        "SPECIES_TSAREENA"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_1F_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 40,
+      "max_level": 43,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WAILMER",
+        "SPECIES_POLIWHIRL",
+        "SPECIES_VELUZA",
+        "SPECIES_RELICANTH"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_1F_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 40,
+      "max_level": 43,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TRAPINCH",
+        "SPECIES_RATTATA",
+        "SPECIES_JANGMO_O",
+        "SPECIES_EISCUE_ICE"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_1F_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 40,
+      "max_level": 43,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_NACLSTACK",
+        "SPECIES_TOGEDEMARU",
+        "SPECIES_ARCHEN",
+        "SPECIES_PASSIMIAN"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_1F_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 40,
+      "max_level": 43,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_LUVDISC",
+        "SPECIES_CORSOLA",
+        "SPECIES_SEADRA",
+        "SPECIES_LANTURN"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B1F_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 41,
+      "max_level": 44,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BUIZEL",
+        "SPECIES_FINNEON",
+        "SPECIES_POLIWHIRL",
+        "SPECIES_VELUZA"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B1F_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 41,
+      "max_level": 44,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_LAMPENT",
+        "SPECIES_APPLIN",
+        "SPECIES_CUBCHOO",
+        "SPECIES_SNORUNT"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B1F_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 41,
+      "max_level": 44,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_STONJOURNER",
+        "SPECIES_AMAURA",
+        "SPECIES_SILICOBRA",
+        "SPECIES_GLIGAR"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B1F_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 41,
+      "max_level": 44,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CLAUNCHER",
+        "SPECIES_OMANYTE",
+        "SPECIES_TIRTOUGA",
+        "SPECIES_MANTYKE"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B1F_INNER_HNS",
+      "method": "fishing_mons",
+      "time": "Day",
+      "min_level": 42,
+      "max_level": 45,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MARILL",
+        "SPECIES_KABUTO",
+        "SPECIES_ARAQUANID",
+        "SPECIES_LAPRAS"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B1F_INNER_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 42,
+      "max_level": 45,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_TINKATINK",
+        "SPECIES_BAGON",
+        "SPECIES_SNEASEL",
+        "SPECIES_DRAGONAIR"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B1F_INNER_HNS",
+      "method": "rock_smash_mons",
+      "time": "Day",
+      "min_level": 42,
+      "max_level": 45,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CASCOON",
+        "SPECIES_CUFANT",
+        "SPECIES_MUDBRAY",
+        "SPECIES_CARKOL"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B1F_INNER_HNS",
+      "method": "water_mons",
+      "time": "Day",
+      "min_level": 42,
+      "max_level": 45,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_WAILMER",
+        "SPECIES_PELIPPER",
+        "SPECIES_WHISCASH",
+        "SPECIES_SHARPEDO"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B2F_HNS",
+      "method": "fishing_mons",
+      "time": "Any",
+      "min_level": 42,
+      "max_level": 45,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_PALPITOAD",
+        "SPECIES_SEALEO",
+        "SPECIES_CRAWDAUNT",
+        "SPECIES_BRUXISH"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B2F_HNS",
+      "method": "land_mons",
+      "time": "Any",
+      "min_level": 42,
+      "max_level": 45,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_NOIBAT",
+        "SPECIES_MAGBY",
+        "SPECIES_DUSCLOPS",
+        "SPECIES_VANILLITE"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B2F_HNS",
+      "method": "rock_smash_mons",
+      "time": "Any",
+      "min_level": 42,
+      "max_level": 45,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BELDUM",
+        "SPECIES_ARCTOZOLT",
+        "SPECIES_LAIRON",
+        "SPECIES_MAGNETON"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B2F_HNS",
+      "method": "water_mons",
+      "time": "Any",
+      "min_level": 42,
+      "max_level": 45,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_BASCULIN_RED_STRIPED",
+        "SPECIES_PALPITOAD",
+        "SPECIES_LUMINEON",
+        "SPECIES_RELICANTH"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B3F_HNS",
+      "method": "fishing_mons",
+      "time": "Day",
+      "min_level": 43,
+      "max_level": 46,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SEADRA",
+        "SPECIES_BRUXISH",
+        "SPECIES_ARAQUANID",
+        "SPECIES_CRAMORANT"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B3F_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 43,
+      "max_level": 46,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_SHUPPET",
+        "SPECIES_DEINO",
+        "SPECIES_PILOSWINE",
+        "SPECIES_SWINUB"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B3F_HNS",
+      "method": "rock_smash_mons",
+      "time": "Day",
+      "min_level": 43,
+      "max_level": 46,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_MINIOR_METEOR",
+        "SPECIES_MAWILE",
+        "SPECIES_DUGTRIO",
+        "SPECIES_LOKIX"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B3F_HNS",
+      "method": "water_mons",
+      "time": "Day",
+      "min_level": 43,
+      "max_level": 46,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_VELUZA",
+        "SPECIES_WUGTRIO",
+        "SPECIES_PALAFIN_ZERO",
+        "SPECIES_ARCTOVISH"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_DESCENT_HNS",
+      "method": "fishing_mons",
+      "time": "Day",
+      "min_level": 43,
+      "max_level": 46,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CORSOLA",
+        "SPECIES_POLIWHIRL",
+        "SPECIES_SEADRA",
+        "SPECIES_PELIPPER"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_DESCENT_HNS",
+      "method": "land_mons",
+      "time": "Day",
+      "min_level": 43,
+      "max_level": 46,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_DUSKULL",
+        "SPECIES_GOOMY",
+        "SPECIES_VANILLISH",
+        "SPECIES_BRELOOM"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_DESCENT_HNS",
+      "method": "rock_smash_mons",
+      "time": "Day",
+      "min_level": 43,
+      "max_level": 46,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_KLINK",
+        "SPECIES_TINKATUFF",
+        "SPECIES_GURDURR",
+        "SPECIES_KLANG"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_DESCENT_HNS",
+      "method": "water_mons",
+      "time": "Day",
+      "min_level": 43,
+      "max_level": 46,
+      "rates": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "species": [
+        "SPECIES_CARVANHA",
+        "SPECIES_BARBOACH",
+        "SPECIES_CORPHISH",
+        "SPECIES_LAPRAS"
+      ]
+    }
+  ],
+  "project": "Pokémon Tactica",
+  "contract": "Four real slots per table, weighted 30/30/30/10; rods gate access to the authored fishing pool."
+}

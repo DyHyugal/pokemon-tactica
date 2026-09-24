@@ -1,0 +1,802 @@
+{
+  "schema_version": 1,
+  "project": "Pokémon Tactica",
+  "source": "Custom_Pokemon_v4 plus owner Charizard correction 2026-09-24",
+  "species_changes": [
+    {
+      "species": "SPECIES_MAROWAK_ALOLA",
+      "display_name": "Ossatueur d'Alola",
+      "source_file": "src/data/pokemon/species_info/gen_1_families.h",
+      "before": {
+        "hp": 60,
+        "atk": 80,
+        "def": 110,
+        "spa": 50,
+        "spd": 80,
+        "spe": 45,
+        "types": [
+          "FIRE",
+          "GHOST"
+        ]
+      },
+      "after": {
+        "hp": 90,
+        "atk": 110,
+        "def": 110,
+        "spa": 50,
+        "spd": 80,
+        "spe": 45,
+        "types": [
+          "FIRE",
+          "GHOST"
+        ]
+      },
+      "notes": "+30 HP, +30 Atk."
+    },
+    {
+      "species": "SPECIES_ELEKID",
+      "display_name": "Élekid",
+      "source_file": "src/data/pokemon/species_info/gen_1_families.h",
+      "before": {
+        "types": [
+          "ELECTRIC"
+        ],
+        "hidden_ability": "VITAL_SPIRIT"
+      },
+      "after": {
+        "types": [
+          "ELECTRIC"
+        ],
+        "hidden_ability": "SHEER_FORCE"
+      },
+      "notes": "Hidden ability changed for the whole line. Elekid remains pure Electric."
+    },
+    {
+      "species": "SPECIES_ELECTABUZZ",
+      "display_name": "Élektek",
+      "source_file": "src/data/pokemon/species_info/gen_1_families.h",
+      "before": {
+        "types": [
+          "ELECTRIC"
+        ],
+        "hidden_ability": "VITAL_SPIRIT"
+      },
+      "after": {
+        "types": [
+          "ELECTRIC",
+          "FIGHTING"
+        ],
+        "hidden_ability": "SHEER_FORCE"
+      },
+      "notes": "Gets Fighting type from Electabuzz onward."
+    },
+    {
+      "species": "SPECIES_ELECTIVIRE",
+      "display_name": "Élekable",
+      "source_file": "src/data/pokemon/species_info/gen_1_families.h",
+      "before": {
+        "hp": 75,
+        "atk": 123,
+        "def": 67,
+        "spa": 95,
+        "spd": 85,
+        "spe": 95,
+        "types": [
+          "ELECTRIC"
+        ],
+        "hidden_ability": "VITAL_SPIRIT"
+      },
+      "after": {
+        "hp": 75,
+        "atk": 123,
+        "def": 67,
+        "spa": 95,
+        "spd": 85,
+        "spe": 110,
+        "types": [
+          "ELECTRIC",
+          "FIGHTING"
+        ],
+        "hidden_ability": "SHEER_FORCE"
+      },
+      "notes": "+15 Speed; Electric/Fighting; Sheer Force hidden ability."
+    },
+    {
+      "species": "SPECIES_HAXORUS",
+      "display_name": "Tranchodon",
+      "source_file": "src/data/pokemon/species_info/gen_5_families.h",
+      "before": {
+        "hp": 76,
+        "atk": 147,
+        "def": 90,
+        "spa": 60,
+        "spd": 70,
+        "spe": 97,
+        "types": [
+          "DRAGON"
+        ]
+      },
+      "after": {
+        "hp": 76,
+        "atk": 147,
+        "def": 90,
+        "spa": 60,
+        "spd": 70,
+        "spe": 110,
+        "types": [
+          "DRAGON",
+          "STEEL"
+        ]
+      },
+      "notes": "+13 Speed; Dragon/Steel."
+    },
+    {
+      "species": "SPECIES_CHARMANDER",
+      "display_name": "Salamèche",
+      "source_file": "src/data/pokemon/species_info/gen_1_families.h",
+      "before": {
+        "types": [
+          "FIRE"
+        ]
+      },
+      "after": {
+        "types": [
+          "FIRE",
+          "DRAGON"
+        ]
+      },
+      "notes": "Whole regular Charizard line becomes Fire/Dragon."
+    },
+    {
+      "species": "SPECIES_CHARMELEON",
+      "display_name": "Reptincel",
+      "source_file": "src/data/pokemon/species_info/gen_1_families.h",
+      "before": {
+        "types": [
+          "FIRE"
+        ]
+      },
+      "after": {
+        "types": [
+          "FIRE",
+          "DRAGON"
+        ]
+      },
+      "notes": "Whole regular Charizard line becomes Fire/Dragon."
+    },
+    {
+      "species": "SPECIES_CHARIZARD",
+      "display_name": "Dracaufeu",
+      "source_file": "src/data/pokemon/species_info/gen_1_families.h",
+      "before": {
+        "hp": 78,
+        "atk": 84,
+        "def": 78,
+        "spa": 109,
+        "spd": 85,
+        "spe": 100,
+        "types": [
+          "FIRE",
+          "FLYING"
+        ]
+      },
+      "after": {
+        "hp": 78,
+        "atk": 110,
+        "def": 78,
+        "spa": 109,
+        "spd": 85,
+        "spe": 110,
+        "types": [
+          "FIRE",
+          "DRAGON"
+        ]
+      },
+      "notes": "Fire/Dragon; +26 Atk and +10 Speed versus original, including owner-approved extra +10 Atk."
+    },
+    {
+      "species": "SPECIES_CHARIZARD_MEGA_X",
+      "display_name": "Méga-Dracaufeu X",
+      "source_file": "src/data/pokemon/species_info/gen_1_families.h",
+      "before": {
+        "hp": 78,
+        "atk": 130,
+        "def": 111,
+        "spa": 130,
+        "spd": 85,
+        "spe": 100,
+        "types": [
+          "FIRE",
+          "DRAGON"
+        ],
+        "ability": "TOUGH_CLAWS"
+      },
+      "after": {
+        "hp": 78,
+        "atk": 156,
+        "def": 111,
+        "spa": 130,
+        "spd": 85,
+        "spe": 110,
+        "types": [
+          "FIRE",
+          "DRAGON"
+        ],
+        "ability": "TOUGH_CLAWS"
+      },
+      "notes": "Fire/Dragon; Mega X receives owner-approved extra +10 Atk, for 156 total."
+    },
+    {
+      "species": "SPECIES_CHARIZARD_MEGA_Y",
+      "display_name": "Méga-Dracaufeu Y",
+      "source_file": "src/data/pokemon/species_info/gen_1_families.h",
+      "before": {
+        "hp": 78,
+        "atk": 104,
+        "def": 78,
+        "spa": 159,
+        "spd": 115,
+        "spe": 100,
+        "types": [
+          "FIRE",
+          "FLYING"
+        ],
+        "ability": "DROUGHT"
+      },
+      "after": {
+        "hp": 78,
+        "atk": 120,
+        "def": 78,
+        "spa": 159,
+        "spd": 115,
+        "spe": 110,
+        "types": [
+          "FIRE",
+          "DRAGON"
+        ],
+        "ability": "DROUGHT"
+      },
+      "notes": "Fire/Dragon; retain v4 special-oriented Mega Y stats including 120 Atk, without later +10."
+    },
+    {
+      "species": "SPECIES_SERPERIOR",
+      "display_name": "Majaspic",
+      "source_file": "src/data/pokemon/species_info/gen_5_families.h",
+      "before": {
+        "hp": 75,
+        "atk": 75,
+        "def": 95,
+        "spa": 75,
+        "spd": 95,
+        "spe": 113,
+        "types": [
+          "GRASS"
+        ]
+      },
+      "after": {
+        "hp": 75,
+        "atk": 75,
+        "def": 95,
+        "spa": 110,
+        "spd": 95,
+        "spe": 113,
+        "types": [
+          "GRASS",
+          "DRAGON"
+        ]
+      },
+      "notes": "+35 SpA; only Serperior becomes Grass/Dragon."
+    },
+    {
+      "species": "SPECIES_SCEPTILE",
+      "display_name": "Jungko",
+      "source_file": "src/data/pokemon/species_info/gen_3_families.h",
+      "before": {
+        "hp": 70,
+        "atk": 85,
+        "def": 65,
+        "spa": 105,
+        "spd": 85,
+        "spe": 120,
+        "types": [
+          "GRASS"
+        ],
+        "hidden_ability": "UNBURDEN"
+      },
+      "after": {
+        "hp": 70,
+        "atk": 105,
+        "def": 65,
+        "spa": 85,
+        "spd": 85,
+        "spe": 120,
+        "types": [
+          "GRASS",
+          "DRAGON"
+        ],
+        "hidden_ability": "CHLOROPHYLL"
+      },
+      "notes": "Physical/special offenses swapped; Grass/Dragon; hidden ability Chlorophyll."
+    },
+    {
+      "species": "SPECIES_SCEPTILE_MEGA",
+      "display_name": "Méga-Jungko",
+      "source_file": "src/data/pokemon/species_info/gen_3_families.h",
+      "before": {
+        "hp": 70,
+        "atk": 110,
+        "def": 75,
+        "spa": 145,
+        "spd": 85,
+        "spe": 145,
+        "types": [
+          "GRASS",
+          "DRAGON"
+        ],
+        "ability": "LIGHTNING_ROD"
+      },
+      "after": {
+        "hp": 70,
+        "atk": 145,
+        "def": 75,
+        "spa": 110,
+        "spd": 85,
+        "spe": 145,
+        "types": [
+          "GRASS",
+          "DRAGON"
+        ],
+        "ability": "CHLOROPHYLL"
+      },
+      "notes": "Mega offenses swapped coherently; uses the modified hidden ability as requested."
+    },
+    {
+      "species": "SPECIES_CYNDAQUIL",
+      "display_name": "Héricendre",
+      "source_file": "src/data/pokemon/species_info/gen_2_families.h",
+      "before": {
+        "types": [
+          "FIRE"
+        ],
+        "hidden_ability": "FLASH_FIRE"
+      },
+      "after": {
+        "types": [
+          "FIRE",
+          "GROUND"
+        ],
+        "hidden_ability": "SOLAR_POWER"
+      },
+      "notes": "Regular line only; Hisuian Typhlosion keeps its regional Fire/Ghost identity."
+    },
+    {
+      "species": "SPECIES_QUILAVA",
+      "display_name": "Feurisson",
+      "source_file": "src/data/pokemon/species_info/gen_2_families.h",
+      "before": {
+        "types": [
+          "FIRE"
+        ],
+        "hidden_ability": "FLASH_FIRE"
+      },
+      "after": {
+        "types": [
+          "FIRE",
+          "GROUND"
+        ],
+        "hidden_ability": "SOLAR_POWER"
+      },
+      "notes": "Regular line."
+    },
+    {
+      "species": "SPECIES_TYPHLOSION",
+      "display_name": "Typhlosion",
+      "source_file": "src/data/pokemon/species_info/gen_2_families.h",
+      "before": {
+        "hp": 78,
+        "atk": 84,
+        "def": 78,
+        "spa": 109,
+        "spd": 85,
+        "spe": 100,
+        "types": [
+          "FIRE"
+        ],
+        "hidden_ability": "FLASH_FIRE"
+      },
+      "after": {
+        "hp": 78,
+        "atk": 84,
+        "def": 78,
+        "spa": 109,
+        "spd": 85,
+        "spe": 115,
+        "types": [
+          "FIRE",
+          "GROUND"
+        ],
+        "hidden_ability": "SOLAR_POWER"
+      },
+      "notes": "+15 Speed; Fire/Ground; Solar Power gives a meaningful but self-balancing Sun boost."
+    },
+    {
+      "species": "SPECIES_KINGDRA",
+      "display_name": "Hyporoi",
+      "source_file": "src/data/pokemon/species_info/gen_1_families.h",
+      "before": {
+        "hp": 75,
+        "atk": 95,
+        "def": 95,
+        "spa": 95,
+        "spd": 95,
+        "spe": 85,
+        "types": [
+          "WATER",
+          "DRAGON"
+        ]
+      },
+      "after": {
+        "hp": 75,
+        "atk": 115,
+        "def": 95,
+        "spa": 95,
+        "spd": 95,
+        "spe": 105,
+        "types": [
+          "WATER",
+          "DRAGON"
+        ]
+      },
+      "notes": "+20 Atk, +20 Speed."
+    },
+    {
+      "species": "SPECIES_FLYGON",
+      "display_name": "Libégon",
+      "source_file": "src/data/pokemon/species_info/gen_3_families.h",
+      "before": {
+        "hp": 80,
+        "atk": 100,
+        "def": 80,
+        "spa": 80,
+        "spd": 80,
+        "spe": 100,
+        "types": [
+          "GROUND",
+          "DRAGON"
+        ]
+      },
+      "after": {
+        "hp": 80,
+        "atk": 115,
+        "def": 80,
+        "spa": 95,
+        "spd": 80,
+        "spe": 115,
+        "types": [
+          "GROUND",
+          "DRAGON"
+        ]
+      },
+      "notes": "+15 Atk, +15 SpA, +15 Speed."
+    },
+    {
+      "species": "SPECIES_LUXRAY",
+      "display_name": "Luxray",
+      "source_file": "src/data/pokemon/species_info/gen_4_families.h",
+      "before": {
+        "types": [
+          "ELECTRIC"
+        ]
+      },
+      "after": {
+        "types": [
+          "ELECTRIC",
+          "DARK"
+        ]
+      },
+      "notes": "Only Luxray gets Dark secondary typing."
+    },
+    {
+      "species": "SPECIES_GARCHOMP",
+      "display_name": "Carchacrok",
+      "source_file": "src/data/pokemon/species_info/gen_4_families.h",
+      "before": {
+        "hp": 108,
+        "atk": 130,
+        "def": 95,
+        "spa": 80,
+        "spd": 85,
+        "spe": 102
+      },
+      "after": {
+        "hp": 108,
+        "atk": 130,
+        "def": 95,
+        "spa": 80,
+        "spd": 85,
+        "spe": 112
+      },
+      "notes": "+10 Speed."
+    },
+    {
+      "species": "SPECIES_GARCHOMP_MEGA",
+      "display_name": "Méga-Carchacrok",
+      "source_file": "src/data/pokemon/species_info/gen_4_families.h",
+      "before": {
+        "hp": 108,
+        "atk": 170,
+        "def": 115,
+        "spa": 120,
+        "spd": 95,
+        "spe": 92
+      },
+      "after": {
+        "hp": 108,
+        "atk": 170,
+        "def": 115,
+        "spa": 120,
+        "spd": 95,
+        "spe": 102
+      },
+      "notes": "Propagates the +10 Speed delta for Mega consistency."
+    },
+    {
+      "species": "SPECIES_OSHAWOTT",
+      "display_name": "Moustillon",
+      "source_file": "src/data/pokemon/species_info/gen_5_families.h",
+      "before": {
+        "types": [
+          "WATER"
+        ]
+      },
+      "after": {
+        "types": [
+          "WATER",
+          "FIGHTING"
+        ]
+      },
+      "notes": "Regular Samurott line becomes Water/Fighting."
+    },
+    {
+      "species": "SPECIES_DEWOTT",
+      "display_name": "Mateloutre",
+      "source_file": "src/data/pokemon/species_info/gen_5_families.h",
+      "before": {
+        "types": [
+          "WATER"
+        ]
+      },
+      "after": {
+        "types": [
+          "WATER",
+          "FIGHTING"
+        ]
+      },
+      "notes": "Regular Samurott line becomes Water/Fighting."
+    },
+    {
+      "species": "SPECIES_SAMUROTT",
+      "display_name": "Clamiral",
+      "source_file": "src/data/pokemon/species_info/gen_5_families.h",
+      "before": {
+        "hp": 95,
+        "atk": 100,
+        "def": 85,
+        "spa": 108,
+        "spd": 70,
+        "spe": 70,
+        "types": [
+          "WATER"
+        ]
+      },
+      "after": {
+        "hp": 95,
+        "atk": 108,
+        "def": 85,
+        "spa": 100,
+        "spd": 70,
+        "spe": 105,
+        "types": [
+          "WATER",
+          "FIGHTING"
+        ]
+      },
+      "notes": "+35 Speed and offensive stats swapped. Hisuian Samurott remains Water/Dark."
+    },
+    {
+      "species": "SPECIES_EXCADRILL",
+      "display_name": "Minotaupe",
+      "source_file": "src/data/pokemon/species_info/gen_5_families.h",
+      "before": {
+        "hp": 110,
+        "atk": 135,
+        "def": 60,
+        "spa": 50,
+        "spd": 65,
+        "spe": 88
+      },
+      "after": {
+        "hp": 110,
+        "atk": 135,
+        "def": 60,
+        "spa": 50,
+        "spd": 65,
+        "spe": 100
+      },
+      "notes": "+12 Speed."
+    },
+    {
+      "species": "SPECIES_DRACOVISH",
+      "display_name": "Hydragon",
+      "source_file": "src/data/pokemon/species_info/gen_8_families.h",
+      "before": {
+        "hp": 90,
+        "atk": 90,
+        "def": 100,
+        "spa": 70,
+        "spd": 80,
+        "spe": 75,
+        "types": [
+          "WATER",
+          "DRAGON"
+        ]
+      },
+      "after": {
+        "hp": 90,
+        "atk": 100,
+        "def": 100,
+        "spa": 70,
+        "spd": 80,
+        "spe": 95,
+        "types": [
+          "WATER",
+          "DRAGON"
+        ]
+      },
+      "notes": "+10 Atk, +20 Speed."
+    }
+  ],
+  "learnset_changes": [
+    {
+      "species": "SPECIES_ELECTABUZZ",
+      "learnset": "sElectabuzzLevelUpLearnset",
+      "source_file": "src/data/pokemon/level_up_learnsets/gen_1.h",
+      "operation": "add",
+      "level": 0,
+      "move": "MOVE_BRICK_BREAK",
+      "notes": "Evolution move: Élektek learns Brick Break when evolving."
+    },
+    {
+      "species": "SPECIES_HAXORUS",
+      "learnset": "sHaxorusLevelUpLearnset",
+      "source_file": "src/data/pokemon/level_up_learnsets/gen_5.h",
+      "operation": "add",
+      "level": 0,
+      "move": "MOVE_IRON_HEAD",
+      "notes": "Guarantees Iron Head access even if already teachable elsewhere."
+    },
+    {
+      "species": "SPECIES_CHARIZARD",
+      "learnset": "sCharizardLevelUpLearnset",
+      "source_file": "src/data/pokemon/level_up_learnsets/gen_1.h",
+      "operation": "add",
+      "level": 0,
+      "move": "MOVE_DRAGON_PULSE",
+      "notes": "Evolution move at level 36."
+    },
+    {
+      "species": "SPECIES_SCEPTILE",
+      "learnset": "sSceptileLevelUpLearnset",
+      "source_file": "src/data/pokemon/level_up_learnsets/gen_3.h",
+      "operation": "add",
+      "level": 0,
+      "move": "MOVE_DRAGON_CLAW",
+      "notes": "Evolution move to immediately support the new physical Dragon identity."
+    },
+    {
+      "species": "SPECIES_SCEPTILE",
+      "learnset": "sSceptileLevelUpLearnset",
+      "source_file": "src/data/pokemon/level_up_learnsets/gen_3.h",
+      "operation": "add",
+      "level": 48,
+      "move": "MOVE_DRAGON_DANCE",
+      "notes": "Later natural access; avoids handing both core tools at evolution."
+    },
+    {
+      "species": "SPECIES_TYPHLOSION",
+      "learnset": "sTyphlosionLevelUpLearnset",
+      "source_file": "src/data/pokemon/level_up_learnsets/gen_2.h",
+      "operation": "add",
+      "level": 0,
+      "move": "MOVE_EARTH_POWER",
+      "notes": "Evolution move supporting Fire/Ground special STAB."
+    },
+    {
+      "species": "SPECIES_KINGDRA",
+      "learnset": "sKingdraLevelUpLearnset",
+      "source_file": "src/data/pokemon/level_up_learnsets/gen_2.h",
+      "operation": "add",
+      "level": 0,
+      "move": "MOVE_LIQUIDATION",
+      "notes": "French 'Aqua-Brèche' = Liquidation; evolution-move access for physical Kingdra."
+    },
+    {
+      "species": "SPECIES_KINGDRA",
+      "learnset": "sKingdraLevelUpLearnset",
+      "source_file": "src/data/pokemon/level_up_learnsets/gen_2.h",
+      "operation": "add",
+      "level": 52,
+      "move": "MOVE_DRAGON_RUSH",
+      "notes": "French 'Dracocharge' = Dragon Rush."
+    },
+    {
+      "species": "SPECIES_GRENINJA",
+      "learnset": "sGreninjaLevelUpLearnset",
+      "source_file": "src/data/pokemon/level_up_learnsets/gen_6.h",
+      "operation": "replace",
+      "level": 49,
+      "move_before": "MOVE_EXTRASENSORY",
+      "move_after": "MOVE_DARK_PULSE",
+      "notes": "Direct replacement requested."
+    },
+    {
+      "species": "SPECIES_HAXORUS",
+      "learnset": "sHaxorusLevelUpLearnset",
+      "source_file": "src/data/pokemon/level_up_learnsets/gen_5.h",
+      "operation": "add_if_missing",
+      "level": 0,
+      "move": "MOVE_PSYCHO_CUT",
+      "notes": "Champion set requirement: give Haxorus Psycho Cut access if it is not already learnable."
+    },
+    {
+      "species": "SPECIES_SCEPTILE",
+      "learnset": "sSceptileLevelUpLearnset",
+      "source_file": "src/data/pokemon/level_up_learnsets/gen_3.h",
+      "operation": "add_if_missing",
+      "level": 52,
+      "move": "MOVE_WOOD_HAMMER",
+      "notes": "Champion set requirement: physical Sceptile gets Wood Hammer before the League."
+    },
+    {
+      "species": "SPECIES_KINGDRA",
+      "learnset": "sKingdraLevelUpLearnset",
+      "source_file": "src/data/pokemon/level_up_learnsets/gen_2.h",
+      "operation": "add_if_missing",
+      "level": 45,
+      "move": "MOVE_WAVE_CRASH",
+      "notes": "Champion requirement: Aquatacle = Wave Crash."
+    },
+    {
+      "species": "SPECIES_KINGDRA",
+      "learnset": "sKingdraLevelUpLearnset",
+      "source_file": "src/data/pokemon/level_up_learnsets/gen_2.h",
+      "operation": "add_if_missing",
+      "level": 0,
+      "move": "MOVE_DRAGON_CLAW",
+      "notes": "Physical Dragon STAB for Champion team."
+    },
+    {
+      "species": "SPECIES_KINGDRA",
+      "learnset": "sKingdraLevelUpLearnset",
+      "source_file": "src/data/pokemon/level_up_learnsets/gen_2.h",
+      "operation": "add_if_missing",
+      "level": 52,
+      "move": "MOVE_DRAGON_DANCE",
+      "notes": "Physical setup option for Champion team."
+    },
+    {
+      "species": "SPECIES_KINGDRA",
+      "learnset": "sKingdraLevelUpLearnset",
+      "source_file": "src/data/pokemon/level_up_learnsets/gen_2.h",
+      "operation": "add_if_missing",
+      "level": 56,
+      "move": "MOVE_FLIP_TURN",
+      "notes": "French 'Eau Revoir' = Flip Turn; pivot option for Champion team."
+    }
+  ],
+  "kingdra_move_clarification": {
+    "Aquatacle": "MOVE_WAVE_CRASH",
+    "Eau Revoir": "MOVE_FLIP_TURN",
+    "note": "Aquatacle is Wave Crash, not Aqua Tail. Add Wave Crash and Flip Turn to Kingdra if absent."
+  }
+}
