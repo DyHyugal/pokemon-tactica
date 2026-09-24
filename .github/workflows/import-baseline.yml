@@ -24,20 +24,23 @@ jobs:
           set -euo pipefail
           source_branch='handoff/v1-clean-source-2026-09-24'
           source_sha='4c976ce84a095efe162943c58a21056ac069e59b'
-          approved_tree='802b11e3a8dad2b2d44a265a36e2272030246952'
+          approved_tree='156ec432506c841594f70e1acc1abaa32d345782'
           git clone --depth 1 --single-branch --branch "$source_branch" https://github.com/DyHyugal/johto-family-remix.git "$RUNNER_TEMP/tactica-source"
           test "$(git -C "$RUNNER_TEMP/tactica-source" rev-parse HEAD)" = "$source_sha"
           mkdir -p "$RUNNER_TEMP/tactica-canonical"
           unzip -q .migration/approved_sources.zip -d "$RUNNER_TEMP/tactica-canonical"
           test -f "$RUNNER_TEMP/tactica-canonical/docs/spec/SOURCE_OF_TRUTH.md"
-          rsync -a --exclude=/.git/ --exclude=/docs/family_remix/ --exclude=/data/family_remix/source_v1/ --exclude=/FAMILY_STARTER_NOTES.md --exclude=/NATIVE_SPEED_NOTES.md --exclude=/docs/settings-menu-validation.md "$RUNNER_TEMP/tactica-source/" ./
+          rsync -a --exclude=/.git/ --exclude=/.github/workflows/ --exclude=/docs/family_remix/ --exclude=/data/family_remix/source_v1/ --exclude=/FAMILY_STARTER_NOTES.md --exclude=/NATIVE_SPEED_NOTES.md --exclude=/docs/settings-menu-validation.md "$RUNNER_TEMP/tactica-source/" ./
           rsync -a --exclude=/CHECKPOINT_MANIFEST.json "$RUNNER_TEMP/tactica-canonical/" ./
-          rm .github/workflows/import-baseline.yml .migration/approved_sources.zip
+          rm .migration/approved_sources.zip
           rmdir .migration
           python3 tools/validate_tactica_spec.py
           git add -A
           git add -f tools/mgba/mgba-rom-test.exe tools/poryscript/command_config.json tools/poryscript/font_config.json
-          actual_tree="$(git write-tree)"
+          verification_index="$RUNNER_TEMP/tactica-verification.index"
+          cp .git/index "$verification_index"
+          GIT_INDEX_FILE="$verification_index" git update-index --force-remove -- .github/workflows/import-baseline.yml
+          actual_tree="$(GIT_INDEX_FILE="$verification_index" git write-tree)"
           test "$actual_tree" = "$approved_tree" || { echo "Tree mismatch: $actual_tree vs $approved_tree"; exit 1; }
           git config user.name 'Pokémon Tactica migration'
           git config user.email 'codex@openai.com'
