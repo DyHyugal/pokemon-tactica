@@ -14,10 +14,13 @@
 #include "challenge_menu.h"
 #include "randomizer.h"
 #include "random.h"
+#include "move.h"
+#include "difficulty.h"
 #include "constants/vars.h"
 #include "constants/flags.h"
 #include "constants/items.h"
 #include "constants/pokeball.h"
+#include "constants/opponents.h"
 
 static EWRAM_DATA struct Pokemon sFamilyStarterPreview = {0};
 static EWRAM_DATA u16 sFamilyStarterPreviewSpecies = SPECIES_NONE;
@@ -79,6 +82,19 @@ static const u16 sCategoryBoosters[] = {
     [FAMILY_ICE] = ITEM_NEVER_MELT_ICE,
     [FAMILY_EEVEE] = ITEM_NONE,
 };
+
+#if IS_HNS
+struct FamilyRivalRosterMon
+{
+    u16 baseSpecies;
+    u16 item;
+    u8 nature;
+    u16 moves[3][MAX_MON_MOVES];
+    u8 hardEvs[NUM_STATS];
+};
+
+#include "data/tactica_rival_rosters.h"
+#endif
 
 struct EeveeTypeBooster
 {
@@ -579,6 +595,14 @@ static u16 UNUSED GetFirstRivalEvolutionAtLevel(u16 species, u8 level)
                     const struct EvolutionParam *param = &evo->params[j];
                     if (param->condition == IF_MIN_LEVEL)
                         eligible &= level >= param->arg1;
+                    else if (param->condition == IF_HOLD_ITEM || param->condition == IF_NOT_REGION)
+                        eligible &= level >= 36; // The rival can meet these before this encounter.
+                    else if (param->condition == IF_KNOWS_MOVE)
+                        eligible &= level >= 40;
+                    else if (param->condition == IF_TIME)
+                        eligible &= level >= 30;
+                    else if (param->condition == IF_LOW_KEY_NATURE)
+                        eligible &= level >= 30; // The rival's Toxel uses a Modest nature.
                     else if (param->condition != IF_MIN_FRIENDSHIP)
                         eligible = FALSE; // A rival template cannot prove special conditions.
                 }
@@ -607,6 +631,89 @@ u16 FamilyStarter_GetRivalSpeciesAtLevel(u16 originalSpecies, u8 level)
 u16 FamilyStarter_GetRivalSpecies(u16 originalSpecies)
 {
     return FamilyStarter_GetRivalSpeciesAtLevel(originalSpecies, MAX_LEVEL);
+}
+
+#if IS_HNS
+static u16 GetRivalRosterSpecies(u16 species, u8 level)
+{
+    u32 stage;
+    for (stage = 0; stage < 2; stage++)
+        species = GetFirstRivalEvolutionAtLevel(species, level);
+    return species;
+}
+#endif
+
+void FamilyStarter_ApplyRivalRoster(struct Pokemon *party, u8 count, u16 trainerNum)
+{
+#if IS_HNS
+    u16 savedSpecies = VarGet(VAR_FAMILY_RIVAL_SPECIES);
+    u32 category, fight, phase, i, j;
+    static const u8 sSlots[7][PARTY_SIZE] = {
+        {1}, {0, 2, 1}, {0, 2, 3, 1},
+        {0, 2, 3, 4, 5, 1}, {0, 2, 3, 4, 1, 5},
+        {0, 2, 3, 4, 1, 5}, {0, 2, 3, 4, 1, 5},
+    };
+    static const u8 sEvFields[NUM_STATS] = {
+        MON_DATA_HP_EV, MON_DATA_ATK_EV, MON_DATA_DEF_EV,
+        MON_DATA_SPATK_EV, MON_DATA_SPDEF_EV, MON_DATA_SPEED_EV,
+    };
+
+    if (trainerNum < TRAINER_RIVAL_CHIKORITA_1_HNS
+     || trainerNum > TRAINER_RIVAL_TOTODILE_7_HNS
+     || !IsMenuSpecies(savedSpecies))
+        return;
+    category = GetMenuCategory(savedSpecies);
+    if (category >= FAMILY_EEVEE)
+        return;
+    fight = (trainerNum - TRAINER_RIVAL_CHIKORITA_1_HNS) % 7;
+    phase = fight == 1 ? 0 : fight == 2 ? 1 : 2;
+    for (i = 0; i < count && i < PARTY_SIZE; i++)
+    {
+        u32 slot = sSlots[fight][i];
+        const struct FamilyRivalRosterMon *roster = &sFamilyRivalRosters[category][slot];
+        struct Pokemon *mon = &party[i];
+        u32 level = GetMonData(mon, MON_DATA_LEVEL);
+        u16 species = GetRivalRosterSpecies(slot == 1 ? savedSpecies : roster->baseSpecies, level);
+        u32 movePhase = category == FAMILY_ICE && slot == 0 && level < 40 ? 1 : phase;
+        u32 exp = gExperienceTables[gSpeciesInfo[species].growthRate][level];
+        u16 item = fight < 3 ? ITEM_NONE : slot == 1 ? sCategoryBoosters[category] : roster->item;
+        u32 abilityNum = 0;
+
+        SetMonData(mon, MON_DATA_SPECIES, &species);
+        SetMonData(mon, MON_DATA_EXP, &exp);
+        SetMonData(mon, MON_DATA_NICKNAME, GetSpeciesName(species));
+        SetMonData(mon, MON_DATA_HELD_ITEM, &item);
+        SetMonData(mon, MON_DATA_ABILITY_NUM, &abilityNum);
+        if (slot == 1)
+            GiveMonInitialMoveset(mon); // All thirty starter families use their own level-up set.
+        else
+            for (j = 0; j < MAX_MON_MOVES; j++)
+            {
+                u32 pp = GetMovePP(roster->moves[movePhase][j]);
+                SetMonData(mon, MON_DATA_MOVE1 + j, &roster->moves[movePhase][j]);
+                SetMonData(mon, MON_DATA_PP1 + j, &pp);
+            }
+        if (slot != 1)
+        {
+            u32 personality = GetMonData(mon, MON_DATA_PERSONALITY);
+            personality = personality - personality % NUM_NATURES + roster->nature;
+            SetMonData(mon, MON_DATA_PERSONALITY, &personality);
+        }
+        if (GetCurrentDifficultyLevel() == DIFFICULTY_HARD)
+        {
+            u8 iv = 31;
+            for (j = 0; j < NUM_STATS; j++)
+            {
+                SetMonData(mon, MON_DATA_HP_IV + j, &iv);
+                u8 ev = slot == 1
+                    ? (j == 0 ? 4 : j == 5 || j == (gSpeciesInfo[species].baseAttack >= gSpeciesInfo[species].baseSpAttack ? 1 : 3) ? 252 : 0)
+                    : roster->hardEvs[j];
+                SetMonData(mon, sEvFields[j], &ev);
+            }
+        }
+        CalculateMonStats(mon);
+    }
+#endif
 }
 
 u16 FamilyStarter_GetPrimarySpecies(void)

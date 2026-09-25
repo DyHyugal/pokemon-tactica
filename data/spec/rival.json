@@ -752,13 +752,13 @@
               "Bulldoze",
               "Bite",
               "Sand Attack",
-              "Bite"
+              "Rock Tomb"
             ],
             "mid": [
-              "Earthquake",
+              "Bulldoze",
               "Rock Slide",
-              "Dragon Breath",
-              "U-turn"
+              "Bite",
+              "Sand Attack"
             ],
             "final": [
               "Earthquake",
@@ -844,7 +844,7 @@
               "Blizzard",
               "Ice Shard",
               "Leech Seed",
-              "Aurora Veil"
+              "Protect"
             ],
             "final": [
               "Blizzard",
@@ -906,10 +906,10 @@
               "Protect"
             ],
             "mid": [
-              "Ice Beam",
+              "Icy Wind",
               "Bug Buzz",
-              "Quiver Dance",
-              "Roost"
+              "Struggle Bug",
+              "Protect"
             ],
             "final": [
               "Blizzard",

@@ -21,6 +21,7 @@ jobs:
       - name: Validate Tactica engine data
         run: |
           python3 tools/validate_tactica_spec.py
+          python3 tools/sync_tactica_rival.py --check
           python3 tools/validate_family_remix.py
           python3 tools/validate_tactica_balance.py
           python3 tools/sync_tactica_encounters.py --check

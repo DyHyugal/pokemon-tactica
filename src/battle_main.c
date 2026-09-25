@@ -2269,6 +2269,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
         retVal = CreateNPCTrainerPartyFromTrainer(party, GetTrainerStructFromId(trainerNum), firstTrainer, gBattleTypeFlags);
     }
     ApplyFamilyRocketPartyLevel(party, min(retVal, PARTY_SIZE), trainerNum);
+    FamilyStarter_ApplyRivalRoster(party, min(retVal, PARTY_SIZE), trainerNum);
     return retVal;
 }
 

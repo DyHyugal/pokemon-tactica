@@ -117,6 +117,10 @@ require(rival["selection"]["counter_categories"]["fire"] == ["water", "ground"],
 require(rival["selection"]["counter_categories"]["electric"] == ["ground"],
         "Electric counter category")
 rosters = rival["fight_rosters"]
+starter_boosters = {
+    "fire": "Charcoal", "water": "Mystic Water", "grass": "Miracle Seed",
+    "electric": "Magnet", "ground": "Soft Sand", "ice": "Never Melt Ice",
+}
 require(set(rosters["categories"]) == set(starter["categories"]),
         "six rival roster categories")
 require(rosters["party_sizes"] == {"before_first_badge": 1, "after_badge_1": 3,
@@ -128,12 +132,15 @@ for category, party in rosters["categories"].items():
             f"{category}: six members with saved starter in slot 2")
     require(len({row["family"] for row in party}) == 6, f"{category}: repeated family")
     items = [row["final_item"] for row in party if row.get("final_item")]
-    require(len(items) == len(set(items)), f"{category}: duplicate rival items")
+    require(len(items + [starter_boosters[category]]) == len(set(items + [starter_boosters[category]])),
+            f"{category}: duplicate rival items, including saved starter booster")
     for row in party:
         if row["family"] != "saved starter":
             require(all(1 <= len(row["phase_moves"][phase]) <= 4
                         for phase in ("early", "mid", "final")),
                     f"{category}/{row['family']}: incomplete phase sets")
+            require(all(len(moves) == len(set(moves)) for moves in row["phase_moves"].values()),
+                    f"{category}/{row['family']}: repeated move in a phase")
             for phase, species in (("early", row["family"]),
                                    ("final", row["target_final_species"])):
                 require(all(learnable(species, move) for move in row["phase_moves"][phase]),

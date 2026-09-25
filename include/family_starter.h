@@ -23,6 +23,7 @@ void FamilyStarter_HasHatchedEgg(void);
 u16 FamilyStarter_GetPrimarySpecies(void);
 u16 FamilyStarter_GetRivalSpecies(u16 originalSpecies);
 u16 FamilyStarter_GetRivalSpeciesAtLevel(u16 originalSpecies, u8 level);
+void FamilyStarter_ApplyRivalRoster(struct Pokemon *party, u8 count, u16 trainerNum);
 u32 FamilyStarter_GetRivalCounterCategory(u32 playerCategory, u32 roll);
 
 #endif

@@ -5,9 +5,11 @@
 #include "event_data.h"
 #include "item.h"
 #include "daycare.h"
+#include "difficulty.h"
 #include "constants/vars.h"
 #include "constants/items.h"
 #include "constants/flags.h"
+#include "constants/opponents.h"
 #include "test/test.h"
 
 #if IS_HNS
@@ -347,6 +349,38 @@ TEST("Family starter: rival evolution follows the battle level")
     VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_ELEKID);
     EXPECT_EQ(FamilyStarter_GetRivalSpeciesAtLevel(SPECIES_BAYLEEF, 18), SPECIES_ELEKID);
     EXPECT_EQ(FamilyStarter_GetRivalSpeciesAtLevel(SPECIES_MEGANIUM, 40), SPECIES_ELECTABUZZ);
+}
+
+TEST("Family starter: rival roster follows the saved category and retains the ace")
+{
+    static const u16 expected[] = {
+        SPECIES_NINETALES, SPECIES_JUMPLUFF, SPECIES_HELIOLISK,
+        SPECIES_HOUNDOOM, SPECIES_ARCANINE, SPECIES_TYPHLOSION,
+    };
+    u32 i, j;
+
+    InitFamilyTest();
+    SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
+    VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_CYNDAQUIL);
+    for (i = 0; i < PARTY_SIZE; i++)
+        CreateRandomMon(&gEnemyParty[i], SPECIES_RATTATA, 40);
+    FamilyStarter_ApplyRivalRoster(gEnemyParty, PARTY_SIZE, TRAINER_RIVAL_CHIKORITA_4_HNS);
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        EXPECT_EQ(GetMonData(&gEnemyParty[i], MON_DATA_SPECIES), expected[i]);
+        for (j = i + 1; j < PARTY_SIZE; j++)
+            EXPECT_NE(GetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM),
+                      GetMonData(&gEnemyParty[j], MON_DATA_HELD_ITEM));
+    }
+    EXPECT_EQ(GetMonData(&gEnemyParty[5], MON_DATA_HELD_ITEM), ITEM_CHARCOAL);
+
+    VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_HORSEA);
+    for (i = 0; i < 3; i++)
+        CreateRandomMon(&gEnemyParty[i], SPECIES_RATTATA, 18);
+    FamilyStarter_ApplyRivalRoster(gEnemyParty, 3, TRAINER_RIVAL_CHIKORITA_2_HNS);
+    EXPECT_EQ(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES), SPECIES_WINGULL);
+    EXPECT_EQ(GetMonData(&gEnemyParty[1], MON_DATA_SPECIES), SPECIES_LOMBRE);
+    EXPECT_EQ(GetMonData(&gEnemyParty[2], MON_DATA_SPECIES), SPECIES_HORSEA);
 }
 
 TEST("Family starter: rival category draw follows the canonical counter matrix")
