@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import argparse
 from collections import OrderedDict
 from pathlib import Path
 
@@ -41,7 +42,7 @@ def _base_label(map_name: str, time: str) -> str:
     return f"gTactica_{map_name.removeprefix('MAP_')}_hns_{time}"
 
 
-def synchronize() -> None:
+def synchronize(check: bool = False) -> None:
     engine = json.loads(ENGINE_PATH.read_text(encoding="utf-8"))
     spec = json.loads(SPEC_PATH.read_text(encoding="utf-8"))
     tables = spec["tables"]
@@ -107,8 +108,15 @@ def synchronize() -> None:
         "safari_pools": 53,
         "note": "Fishing rods gate access to one authored four-slot pool; encounter frequency is preserved from the imported HnS maps.",
     }
-    ENGINE_PATH.write_text(json.dumps(engine, ensure_ascii=False, indent=2), encoding="utf-8")
+    synchronized = json.dumps(engine, ensure_ascii=False, indent=2)
+    if check:
+        if synchronized != ENGINE_PATH.read_text(encoding="utf-8"):
+            raise SystemExit("Tactica encounters are not synchronized; run tools/sync_tactica_encounters.py")
+        return
+    ENGINE_PATH.write_text(synchronized, encoding="utf-8")
 
 
 if __name__ == "__main__":
-    synchronize()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--check", action="store_true")
+    synchronize(parser.parse_args().check)

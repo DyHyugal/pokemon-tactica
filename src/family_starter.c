@@ -55,13 +55,19 @@ enum FamilyStarterCategory
     FAMILY_EEVEE,
 };
 
-static const u8 sCounterCategory[] = {
-    [FAMILY_FIRE] = FAMILY_WATER,
-    [FAMILY_WATER] = FAMILY_GRASS,
-    [FAMILY_GRASS] = FAMILY_FIRE,
-    [FAMILY_ELECTRIC] = FAMILY_GROUND,
-    [FAMILY_GROUND] = FAMILY_WATER,
-    [FAMILY_ICE] = FAMILY_FIRE,
+struct RivalCounterCategories
+{
+    u8 count;
+    u8 categories[3];
+};
+
+static const struct RivalCounterCategories sRivalCounterCategories[] = {
+    [FAMILY_FIRE] = {2, {FAMILY_WATER, FAMILY_GROUND}},
+    [FAMILY_WATER] = {2, {FAMILY_GRASS, FAMILY_ELECTRIC}},
+    [FAMILY_GRASS] = {2, {FAMILY_FIRE, FAMILY_ICE}},
+    [FAMILY_ELECTRIC] = {1, {FAMILY_GROUND}},
+    [FAMILY_GROUND] = {3, {FAMILY_WATER, FAMILY_GRASS, FAMILY_ICE}},
+    [FAMILY_ICE] = {1, {FAMILY_FIRE}},
 };
 
 static const u16 sCategoryBoosters[] = {
@@ -277,12 +283,26 @@ static u32 GetMenuCategory(u16 species)
     return FAMILY_EEVEE;
 }
 
+u32 FamilyStarter_GetRivalCounterCategory(u32 playerCategory, u32 roll)
+{
+    const struct RivalCounterCategories *candidates;
+
+    if (playerCategory >= FAMILY_EEVEE)
+        return roll % FAMILY_EEVEE;
+    candidates = &sRivalCounterCategories[playerCategory];
+    return candidates->categories[roll % candidates->count];
+}
+
 static void SelectRivalStarter(u16 playerSpecies)
 {
     u32 playerCategory = GetMenuCategory(playerSpecies);
-    u32 counterCategory = playerCategory == FAMILY_EEVEE
-        ? Random() % FAMILY_EEVEE
-        : sCounterCategory[playerCategory];
+    u32 counterCategory;
+    u16 savedSpecies = VarGet(VAR_FAMILY_RIVAL_SPECIES);
+
+    if (IsMenuSpecies(savedSpecies))
+        return;
+
+    counterCategory = FamilyStarter_GetRivalCounterCategory(playerCategory, Random());
     u16 rivalSpecies = sMenuSpecies[counterCategory][Random() % ARRAY_COUNT(sMenuSpecies[0])];
     VarSet(VAR_FAMILY_RIVAL_SPECIES, rivalSpecies);
 }

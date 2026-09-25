@@ -64,11 +64,11 @@ TEST("Level cap: first Rocket boss escalates two levels from the previous cap")
     EXPECT_EQ(GetCurrentLevelCap(), 16);
 }
 
-TEST("Level cap: consecutive Rocket bosses chain plus two")
+TEST("Level cap: consecutive Rocket bosses share the last canonical milestone plus two")
 {
     SetLevelCapMode(1);
     EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_PETREL_1_HNS), 40);
-    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_ARIANA_1_HNS), 42);
+    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_ARIANA_1_HNS), 40);
 }
 
 TEST("Level cap: defeated Rocket level persists as the progression floor")

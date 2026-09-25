@@ -331,6 +331,37 @@ TEST("Family starter: rival uses a Ground starter against Electric")
     EXPECT_EQ(FamilyStarter_GetRivalSpecies(SPECIES_CHIKORITA), SPECIES_CHIKORITA);
 }
 
+TEST("Family starter: rival category draw follows the canonical counter matrix")
+{
+    static const u8 expected[][3] = {
+        {1, 4, 1},
+        {2, 3, 2},
+        {0, 5, 0},
+        {4, 4, 4},
+        {1, 2, 5},
+        {0, 0, 0},
+    };
+
+    for (u32 playerCategory = 0; playerCategory < ARRAY_COUNT(expected); playerCategory++)
+        for (u32 roll = 0; roll < ARRAY_COUNT(expected[0]); roll++)
+            EXPECT_EQ(FamilyStarter_GetRivalCounterCategory(playerCategory, roll), expected[playerCategory][roll]);
+}
+
+TEST("Family starter: rival draw is persisted once")
+{
+    u16 rival;
+
+    InitFamilyTest();
+    CreateRandomMon(&gPlayerParty[0], SPECIES_ELEKID, 5);
+    FamilyStarter_RecordPrimary();
+    rival = VarGet(VAR_FAMILY_RIVAL_SPECIES);
+    EXPECT_NE(rival, SPECIES_NONE);
+
+    SetMonData(&gPlayerParty[0], MON_DATA_SPECIES, &(u16){SPECIES_CYNDAQUIL});
+    FamilyStarter_RecordPrimary();
+    EXPECT_EQ(VarGet(VAR_FAMILY_RIVAL_SPECIES), rival);
+}
+
 TEST("Family starter: monotype keeps the historical rival selection")
 {
     InitFamilyTest();

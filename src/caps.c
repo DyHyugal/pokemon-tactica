@@ -229,7 +229,8 @@ static u32 GetBossProgressionLevelCap(const struct BossLevelCapMilestone *milest
             ? min(progressionReference + 2, MAX_LEVEL)
             : GetMilestoneLevelCap(&milestones[i], useLowestLevel);
 
-        progressionReference = max(progressionReference, milestoneCap);
+        if (!IsFamilyRocketTrainer(trainerId))
+            progressionReference = max(progressionReference, milestoneCap);
         if (IsMilestoneComplete(&milestones[i]))
         {
             if (milestoneCap > progressionFloor)
@@ -260,7 +261,8 @@ u32 GetFamilyRocketTrainerLevel(u16 trainerId)
             ? min(progressionReference + 2, MAX_LEVEL)
             : GetMilestoneLevelCap(&sJohtoBossMilestones[i], useLowestLevel);
 
-        progressionReference = max(progressionReference, milestoneCap);
+        if (!IsFamilyRocketTrainer(milestoneTrainerId))
+            progressionReference = max(progressionReference, milestoneCap);
         if (milestoneTrainerId == trainerId)
             return milestoneCap;
     }

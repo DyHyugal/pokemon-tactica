@@ -99,6 +99,17 @@ def validate_bosses():
         if value not in hard:
             fail(f"owner-locked boss datum is missing: {value}")
 
+    hard_by_trainer = dict(blocks)
+    jasmine = hard_by_trainer["TRAINER_JASMINE_1_HNS"]
+    jasmine_ace = (
+        "Aggron @ Aggronite", "Ability: Filter", "Nature: Careful",
+        "EVs: 252 HP / 4 Def / 252 SpD", "- Heavy Slam", "- Curse", "- Rest", "- Sleep Talk",
+    )
+    if any(value not in jasmine for value in jasmine_ace):
+        fail("Jasmine does not use the canonical Mega Aggron Curse set")
+    if "Steelixite" in jasmine:
+        fail("Jasmine still contains the obsolete Mega Steelix ace")
+
 
 def validate_rockets():
     text = (ROOT / "src/data/trainers_hns.party").read_text()

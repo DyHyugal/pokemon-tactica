@@ -15,7 +15,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends binutils-arm-none-eabi gcc-arm-none-eabi libnewlib-arm-none-eabi libpng-dev python3
       - name: Validate Tactica engine data
-        run: python3 tools/validate_family_remix.py
+        run: |
+          python3 tools/validate_tactica_spec.py
+          python3 tools/validate_family_remix.py
+          python3 tools/sync_tactica_encounters.py --check
+          python3 tools/sync_tactica_bosses.py --check
       - name: Build HnS
         run: make hns -j2
       - name: Level Cap tests
