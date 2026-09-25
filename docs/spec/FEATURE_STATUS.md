@@ -1,6 +1,8 @@
 # Suivi des features — Tactica V1
 
-**Point de départ au 24 septembre 2026, avant l'audit post-migration.** Ce registre suit l'état de l'implémentation ; les règles produit restent dans `SOURCE_OF_TRUTH.md` et `data/spec/`. Un tag décrit les preuves disponibles, pas une nouvelle décision de game design. La branche `feature/wiki` contient du travail en cours qui n'est pas encore fusionné dans `integration/v1`.
+**État audité au 25 septembre 2026 sur `integration/v1` (`80039831`).** Ce registre suit l'état de l'implémentation ; les règles produit restent dans `SOURCE_OF_TRUTH.md` et `data/spec/`. Un tag décrit les preuves disponibles, pas une nouvelle décision de game design. La branche `feature/wiki` contient du travail en cours qui n'est pas encore fusionné dans `integration/v1`.
+
+Le build `make hns -j4` passe. La référence automatisée passe avec `Native` 3/3, `Audio` 6/6, `Settings` 5/5, `Family` 27/27, `Evolution requirements` 4/4, `Level cap` 9/9, `Training NPC` 7/7 et `Family Safari` 4/4. Les validateurs statiques `validate_tactica_spec.py` et `validate_family_remix.py` passent également. Ces résultats établissent l'absence de régression de compilation sur la base importée ; ils ne valident pas les contrats obsolètes explicitement relevés ci-dessous. En particulier, le test `Level cap` attend encore l'enchaînement Rocket `+2`, et le validateur historique accepte encore les groupes natifs 12/5/10 comme représentation des quatre slots.
 
 ## Règles des tags
 
@@ -22,21 +24,21 @@ La colonne « preuve / prochain contrôle » décrit la **situation connue au ge
 
 | Feature | Tag | Preuve / prochain contrôle |
 |---|---|---|
-| Vitesse native x1–x4 | `[À RECONTRÔLER]` | Testée dans l'ancienne production `e5c7191` ; vérifier vitesse et musique sur Tactica sans réécrire le moteur. |
-| Audio indépendant et preset Recommended | `[À RECONTRÔLER]` | Tests antérieurs validés ; vérifier volumes, sauvegarde et libellés dans le nouveau build. |
-| Menu Shiny Rate existant | `[À RECONTRÔLER]` | Choix testés auparavant ; relever les valeurs réelles et vérifier leur persistance. |
-| Sélecteur des 30 starters et Évoli | `[À RECONTRÔLER]` | `src/family_starter.c` ; retester choix, annulation, doublons, objet et équipe/PC pleins. |
-| Œuf d'Orme et second choix | `[À RECONTRÔLER]` | Même sélecteur ; retester dialogue, livraison, sauvegarde et cas limites. |
-| Évolutions sans échange | `[À RECONTRÔLER]` | Validées avant migration ; retester seuils et objets sans changer les règles. |
-| Structure du menu Settings | `[À AUDITER]` | Contrat dans `GAME_SYSTEMS.md` ; comparer l'ordre et les options à la ROM. |
-| Assistant d'entraînement | `[À AUDITER]` | Vérifier EXP/cap, IV, EV/reset, nature, talent, bonheur et accès réel. |
+| Vitesse native x1–x4 | `[DONE]` | `test/native_speed.c`, 3/3 le 25-09-2026 ; valeurs historiques, quatre multiplicateurs, audio et tours de combat couverts. Contrôle visuel final de confort conservé pour la recette ROM. |
+| Audio indépendant et preset Recommended | `[DONE]` | `test/audio_volume.c`, 6/6 le 24-09-2026 ; volumes, muting, preset et sérialisation couverts. Contrôle auditif final conservé pour la recette ROM. |
+| Menu Shiny Rate existant | `[DONE]` | `test/settings_menu.c`, 5/5 le 24-09-2026 ; seuils et sauvegarde/annulation couverts. |
+| Sélecteur des 30 starters et Évoli | `[DONE]` | `src/family_starter.c` et `test/family_starter.c`, inclus dans `Family` 27/27 le 25-09-2026 ; sélection exacte, annulation, objets, équipe/PC pleins et cas Évoli couverts. |
+| Œuf d'Orme et second choix | `[DONE]` | `test/family_starter.c`, inclus dans `Family` 27/27 le 25-09-2026 ; aperçu, personnalité, éclosion, livraison unique et PC couverts. |
+| Évolutions sans échange | `[DONE]` | `test/evolution_requirements.c`, 4/4 le 25-09-2026 ; seuils, objets, branches et remplacements des échanges couverts. |
+| Structure du menu Settings | `[PARTIEL]` | `test/settings_menu.c`, 5/5 le 24-09-2026 ; comportement et persistance passent. L'ordre et les libellés exacts de toutes les pages restent à contrôler dans la ROM. |
+| Assistant d'entraînement | `[DONE]` | `src/training_npc.c`, `data/scripts/training_npc.inc` et `test/training_npc.c`, 7/7 le 25-09-2026 ; EXP/cap, IV, EV/reset, nature, talent et bonheur couverts. L'accès est câblé dans les scripts de carte. |
 | Rencontres standard à quatre slots 30/30/30/10 | `[À CORRIGER]` | 405 tables canoniques ; ancien mapping 12/5/10 dans `src/data/wild_encounters.json`. Adapter moteur, données compilées, validateur et tirages limites. |
-| Rotation Safari | `[À RECONTRÔLER]` | 53 pools dans `data/spec/encounters_special.json` ; retester secteur/session et niveaux. |
+| Rotation Safari | `[DONE]` | 53 pools canoniques ; `test/family_safari.c`, 4/4 le 25-09-2026, et groupe `Family` vert ; compteurs par secteur, rotation de session, pools et poids 30/30/30/10 couverts. |
 | Headbutt | `[À RECONTRÔLER]` | 4 tables spéciales ; contrôler sélection et niveaux en jeu. |
 | Tirage/persistance du starter rival | `[À CORRIGER]` | `src/family_starter.c` utilise un contre-type unique ; appliquer la matrice de catégories de `data/spec/rival.json`. |
 | Équipes et thème évolutif du rival | `[PARTIEL]` | Archétypes définis ; rosters précis à inventorier et proposer avant de les coder. |
-| Caps champions/rival | `[À AUDITER]` | Courbe canonique dans `PROGRESSION.md` ; comparer chaque jalon au code. |
-| Caps Rocket | `[À CORRIGER]` | `src/caps.c` enchaîne la référence après Rocket ; dernier cap champion/rival jalon +2 requis. |
+| Caps champions/rival | `[PARTIEL]` | `test/level_caps.c`, 9/9 le 25-09-2026, confirme les jalons existants, la Ligue/Kanto/Red et le calcul HARD. Comparaison exhaustive à `PROGRESSION.md` à terminer avec la correction Rocket. |
+| Caps Rocket | `[À CORRIGER]` | `src/caps.c` enchaîne la référence après Rocket et `test/level_caps.c` entérine encore ce comportement ; dernier cap champion/rival jalon +2 requis. Le vert 9/9 du 25-09-2026 n'est donc pas une validation du contrat actuel. |
 | Équipes boss et légalité des évolutions | `[PARTIEL]` | Dataset `data/spec/bosses.json` ; comparer aux rosters compilés, niveaux, objets et formes. |
 | NORMAL/HARD, EV/IV et IA | `[PARTIEL]` | Vérifier même contenu des équipes, EV légaux, IV, stratégie et absence d'information cachée. |
 | Méga uniques et Jasmine | `[PARTIEL]` | Vérifier disponibilité des Méga, unicité et set de Méga-Galeking en combat. |
