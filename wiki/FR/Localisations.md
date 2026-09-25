@@ -1,6 +1,8 @@
-[Accueil](Accueil.md) · [Guide de jeu](Guide-de-jeu.md) · [Changements](Changements.md) · [Pokédex](Pokedex.md) · [Localisations](Localisations.md) · [Boss & Conseils](Boss-et-Conseils.md) · [Crédits & Versions](Credits-et-Versions.md) · **[EN](../EN/Home.md)**
+[Accueil](Accueil.md) · [Guide de jeu](Guide-de-jeu.md) · [Changements](Changements.md) · [Pokédex](Pokedex.md) · [Localisations](Localisations.md) · [Boss & Conseils](Boss-et-Conseils.md) · [Crédits](Credits-et-Versions.md) · [Roadmap](Roadmap.md) · **[EN](../EN/Locations.md)**
 
 # Localisations
+
+Les données ci-dessous reflètent les tables intégrées. Elles seront régénérées après la passe finale encounters afin que le wiki reste aligné sur la ROM candidate.
 
 **405 tables standard + 4 Coup d'Boule + 53 pools Safari.** Quatre slots réels par table en 30/30/30/10. La pêche possède un pool par table ; les cannes en contrôlent l'accès.
 
