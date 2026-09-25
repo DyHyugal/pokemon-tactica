@@ -10960,65 +10960,35 @@ Double Battle: No
 AI: Check Bad Move
 Mugshot: Dark Red
 
-Crobat @ Sharp Beak
+Zubat
 Level: 1
-Ability: Infiltrator
+Ability: Inner Focus
 Nature: Jolly
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Brave Bird
-- Cross Poison
-- U-turn
-- Roost
+- Wing Attack
+- Bite
+- Confuse Ray
+- Air Cutter
 
-Weezing @ Black Sludge
-Level: 1
-Ability: Levitate
-Nature: Bold
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Sludge Bomb
-- Will-O-Wisp
-- Pain Split
-- Explosion
-
-Raticate @ Flame Orb
+Rattata
 Level: 1
 Ability: Guts
 Nature: Jolly
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Super Fang
-- Facade
-- Sucker Punch
-- U-turn
+- Hyper Fang
+- Quick Attack
+- Bite
+- Focus Energy
 
-Scolipede @ Life Orb
-Level: 1
-Ability: Speed Boost
-Nature: Jolly
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Megahorn
-- Poison Jab
-- Earthquake
-- Protect
-
-Toxicroak @ Expert Belt
-Level: 1
-Ability: Dry Skin
-Nature: Jolly
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Close Combat
-- Gunk Shot
-- Sucker Punch
-- Ice Punch
-
-Muk-Alola @ Assault Vest
+Grimer-Alola
 Level: 1
 Ability: Poison Touch
 Nature: Adamant
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Gunk Shot
-- Knock Off
-- Fire Punch
-- Shadow Sneak
+- Poison Fang
+- Acid Spray
+- Bite
+- Disable
 
 === TRAINER_PROTON_2_HNS ===
 Name: PROTON
@@ -11314,58 +11284,38 @@ Ditto @ Choice Scarf
 Level: 1
 Ability: Imposter
 Nature: Timid
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Transform
 
 Weezing @ Sitrus Berry
 Level: 1
 Ability: Levitate
 Nature: Bold
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Will-O-Wisp
-- Disable
-- Pain Split
-- Explosion
+- Smokescreen
+- Sludge Bomb
+- Self-Destruct
 
-Electrode @ Focus Sash
-Level: 1
-Ability: Aftermath
-Nature: Timid
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunderbolt
-- Taunt
-- Thunder Wave
-- Explosion
-
-Muk @ Black Sludge
-Level: 1
-Ability: Sticky Hold
-Nature: Careful
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Poison Jab
-- Minimize
-- Disable
-- Explosion
-
-Zoroark-Hisui @ Life Orb
-Level: 1
-Ability: Illusion
-Nature: Timid
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Hyper Voice
-- Shadow Ball
-- Flamethrower
-- U-turn
-
-Raticate @ Flame Orb
+Raticate
 Level: 1
 Ability: Guts
 Nature: Jolly
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Super Fang
-- Facade
 - Sucker Punch
+- Crunch
 - Protect
+
+Electrode
+Level: 1
+Ability: Aftermath
+Nature: Timid
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Discharge
+- Taunt
+- Thunder Wave
+- Self-Destruct
 
 === TRAINER_PETREL_2_HNS ===
 Name: PETREL
@@ -11450,61 +11400,41 @@ Arbok @ Black Sludge
 Level: 1
 Ability: Intimidate
 Nature: Jolly
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Glare
-- Gunk Shot
-- Earthquake
+- Poison Fang
 - Crunch
+- Screech
 
-Vileplume @ Leftovers
+Gloom
 Level: 1
-Ability: Effect Spore
+Ability: Chlorophyll
 Nature: Bold
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Sleep Powder
 - Giga Drain
-- Sludge Bomb
-- Nature Power
+- Acid
+- Moonlight
+
+Murkrow
+Level: 1
+Ability: Super Luck
+Nature: Adamant
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Wing Attack
+- Assurance
+- Taunt
+- Haze
 
 Grafaiai @ Sitrus Berry
 Level: 1
 Ability: Prankster
 Nature: Jolly
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Parting Shot
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Encore
-- Toxic
-- Knock Off
-
-Nidoqueen @ Life Orb
-Level: 1
-Ability: Sheer Force
-Nature: Modest
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earth Power
-- Ice Beam
-- Thunderbolt
-- Sludge Bomb
-
-Salazzle @ Focus Sash
-Level: 1
-Ability: Oblivious
-Nature: Timid
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Nasty Plot
-- Flamethrower
-- Sludge Wave
-- Dragon Pulse
-
-Honchkrow @ Sharp Beak
-Level: 1
-Ability: Moxie
-Nature: Adamant
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Brave Bird
-- Sucker Punch
-- Superpower
-- Roost
+- Poison Jab
+- U-turn
+- Taunt
 
 === TRAINER_ARIANA_2_HNS ===
 Name: ARIANA
@@ -18283,71 +18213,38 @@ AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Preventi
 Mugshot: Dark Red
 Difficulty: Hard
 
-Crobat @ Sharp Beak
+Zubat
 Level: 1
-Ability: Infiltrator
+Ability: Inner Focus
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Spe / 4 HP
-- Brave Bird
-- Cross Poison
-- U-turn
-- Roost
+EVs: 64 HP / 64 Spe
+- Wing Attack
+- Bite
+- Confuse Ray
+- Air Cutter
 
-Weezing @ Black Sludge
-Level: 1
-Ability: Levitate
-Nature: Bold
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 4 SpD
-- Sludge Bomb
-- Will-O-Wisp
-- Pain Split
-- Explosion
-
-Raticate @ Flame Orb
+Rattata
 Level: 1
 Ability: Guts
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Spe / 4 HP
-- Super Fang
-- Facade
-- Sucker Punch
-- U-turn
+EVs: 64 Atk / 64 Spe
+- Hyper Fang
+- Quick Attack
+- Bite
+- Focus Energy
 
-Scolipede @ Life Orb
-Level: 1
-Ability: Speed Boost
-Nature: Jolly
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Spe / 4 HP
-- Megahorn
-- Poison Jab
-- Earthquake
-- Protect
-
-Toxicroak @ Expert Belt
-Level: 1
-Ability: Dry Skin
-Nature: Jolly
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Spe / 4 HP
-- Close Combat
-- Gunk Shot
-- Sucker Punch
-- Ice Punch
-
-Muk-Alola @ Assault Vest
+Grimer-Alola
 Level: 1
 Ability: Poison Touch
 Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 4 SpD
-- Gunk Shot
-- Knock Off
-- Fire Punch
-- Shadow Sneak
+EVs: 64 HP / 64 Atk
+- Poison Fang
+- Acid Spray
+- Bite
+- Disable
 
 === TRAINER_PROTON_2_HNS ===
 Name: PROTON
@@ -18444,7 +18341,7 @@ Level: 1
 Ability: Imposter
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 4 SpD
+EVs: 128 HP / 128 Def
 - Transform
 
 Weezing @ Sitrus Berry
@@ -18452,55 +18349,33 @@ Level: 1
 Ability: Levitate
 Nature: Bold
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 4 SpD
+EVs: 128 HP / 128 Def
 - Will-O-Wisp
-- Disable
-- Pain Split
-- Explosion
+- Smokescreen
+- Sludge Bomb
+- Self-Destruct
 
-Electrode @ Focus Sash
-Level: 1
-Ability: Aftermath
-Nature: Timid
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 SpA / 252 Spe / 4 HP
-- Thunderbolt
-- Taunt
-- Thunder Wave
-- Explosion
-
-Muk @ Black Sludge
-Level: 1
-Ability: Sticky Hold
-Nature: Careful
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 SpD / 4 Def
-- Poison Jab
-- Minimize
-- Disable
-- Explosion
-
-Zoroark-Hisui @ Life Orb
-Level: 1
-Ability: Illusion
-Nature: Timid
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 SpA / 252 Spe / 4 HP
-- Hyper Voice
-- Shadow Ball
-- Flamethrower
-- U-turn
-
-Raticate @ Flame Orb
+Raticate
 Level: 1
 Ability: Guts
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Spe / 4 HP
+EVs: 128 Atk / 128 Spe
 - Super Fang
-- Facade
 - Sucker Punch
+- Crunch
 - Protect
+
+Electrode
+Level: 1
+Ability: Aftermath
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 128 SpA / 128 Spe
+- Discharge
+- Taunt
+- Thunder Wave
+- Self-Destruct
 
 === TRAINER_PETREL_2_HNS ===
 Name: PETREL
@@ -18594,66 +18469,44 @@ Level: 1
 Ability: Intimidate
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Spe / 4 Def
+EVs: 128 HP / 128 Spe
 - Glare
-- Gunk Shot
-- Earthquake
+- Poison Fang
 - Crunch
+- Screech
 
-Vileplume @ Leftovers
+Gloom
 Level: 1
-Ability: Effect Spore
+Ability: Chlorophyll
 Nature: Bold
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 4 SpD
+EVs: 128 HP / 128 Def
 - Sleep Powder
 - Giga Drain
-- Sludge Bomb
-- Nature Power
+- Acid
+- Moonlight
+
+Murkrow
+Level: 1
+Ability: Super Luck
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 128 Atk / 128 Spe
+- Wing Attack
+- Assurance
+- Taunt
+- Haze
 
 Grafaiai @ Sitrus Berry
 Level: 1
 Ability: Prankster
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Spe / 4 Def
-- Parting Shot
+EVs: 128 HP / 128 Spe
 - Encore
-- Toxic
-- Knock Off
-
-Nidoqueen @ Life Orb
-Level: 1
-Ability: Sheer Force
-Nature: Modest
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 SpA / 4 SpD
-- Earth Power
-- Ice Beam
-- Thunderbolt
-- Sludge Bomb
-
-Salazzle @ Focus Sash
-Level: 1
-Ability: Oblivious
-Nature: Timid
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 SpA / 252 Spe / 4 HP
-- Nasty Plot
-- Flamethrower
-- Sludge Wave
-- Dragon Pulse
-
-Honchkrow @ Sharp Beak
-Level: 1
-Ability: Moxie
-Nature: Adamant
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Spe / 4 HP
-- Brave Bird
-- Sucker Punch
-- Superpower
-- Roost
+- Poison Jab
+- U-turn
+- Taunt
 
 === TRAINER_ARIANA_2_HNS ===
 Name: ARIANA

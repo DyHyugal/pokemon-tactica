@@ -3,10 +3,19 @@
 
 import collections
 import json
+import re
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1] / "data" / "spec"
+LEARNABLES = json.loads((ROOT.parents[1] / "src/data/pokemon/all_learnables.json").read_text())
+
+
+def learnable(species, move):
+    species_key = re.sub(r"[^A-Z0-9]+", "_", species.upper()).strip("_")
+    species_key = {"TOXTRICITY": "TOXTRICITY_AMPED"}.get(species_key, species_key)
+    move_key = "MOVE_" + re.sub(r"[^A-Z0-9]+", "_", move.upper()).strip("_")
+    return move_key in LEARNABLES.get(species_key, ())
 
 
 def read(name):
@@ -107,6 +116,28 @@ require(rival["selection"]["counter_categories"]["fire"] == ["water", "ground"],
         "Fire counter categories")
 require(rival["selection"]["counter_categories"]["electric"] == ["ground"],
         "Electric counter category")
+rosters = rival["fight_rosters"]
+require(set(rosters["categories"]) == set(starter["categories"]),
+        "six rival roster categories")
+require(rosters["party_sizes"] == {"before_first_badge": 1, "after_badge_1": 3,
+        "after_badge_2": 4, "after_badge_3_and_later": 6}, "rival party progression")
+require(rosters["phase_slots"] == {"early": [1, 2, 3], "mid": [1, 2, 3, 4],
+        "final": [1, 2, 3, 4, 5, 6]}, "persistent rival slots")
+for category, party in rosters["categories"].items():
+    require(len(party) == 6 and party[1]["species_source"] == "VAR_FAMILY_RIVAL_SPECIES",
+            f"{category}: six members with saved starter in slot 2")
+    require(len({row["family"] for row in party}) == 6, f"{category}: repeated family")
+    items = [row["final_item"] for row in party if row.get("final_item")]
+    require(len(items) == len(set(items)), f"{category}: duplicate rival items")
+    for row in party:
+        if row["family"] != "saved starter":
+            require(all(1 <= len(row["phase_moves"][phase]) <= 4
+                        for phase in ("early", "mid", "final")),
+                    f"{category}/{row['family']}: incomplete phase sets")
+            for phase, species in (("early", row["family"]),
+                                   ("final", row["target_final_species"])):
+                require(all(learnable(species, move) for move in row["phase_moves"][phase]),
+                        f"{category}/{species}/{phase}: move unavailable in build")
 
 balance = read("pokemon_balance.json")
 require(len(balance["species_changes"]) == 26, "expected 26 custom species entries")
@@ -120,6 +151,33 @@ teams = read("bosses.json")["teams"]
 bosses = collections.defaultdict(list)
 for row in teams:
     bosses[(row["region"], row["category"], row["boss"])].append(row)
+rocket = read("rocket_progression.json")
+require(set(rocket["rosters"]) == {"Proton", "Petrel", "Ariana", "Archer"},
+        "four Rocket executive progressions")
+require(len(rocket["active_fights"]) == 7, "seven existing Rocket fights")
+for name, phases in rocket["rosters"].items():
+    final = bosses[("Johto", "Rocket Executive", name)]
+    require(len(final) == 6, f"{name}: final party size")
+    for phase, size in (("early", 3), ("mid", 4)):
+        party = phases[phase]
+        require(len(party) == size and len({row["slot"] for row in party}) == size,
+                f"{name}/{phase}: unique persistent slots")
+        require(all(row["slot"] in {member["slot"] for member in final} for row in party),
+                f"{name}/{phase}: unknown final slot")
+        items = [row["item"] for row in party if row["item"]]
+        require(len(items) == len(set(items)), f"{name}/{phase}: duplicate items")
+        require(all(1 <= len(row["moves"]) <= 4 for row in party),
+                f"{name}/{phase}: incomplete moves")
+        require(all(learnable(row["species"], move) for row in party for move in row["moves"]),
+                f"{name}/{phase}: move unavailable in build")
+    require([row["slot"] for row in phases["early"]] ==
+            [row["slot"] for row in phases["mid"][:3]],
+            f"{name}: early members do not persist")
+    require({row["slot"] for row in phases["mid"]} <= {row["slot"] for row in final},
+            f"{name}: mid members do not persist")
+for trainer, (boss, phase) in rocket["active_fights"].items():
+    require(trainer.startswith(f"TRAINER_{boss.upper()}") and
+            phase in ("early", "mid", "final"), f"{trainer}: invalid Rocket mapping")
 for name, expected in [("Albert", 3), ("Hector", 4), ("Blanche", 6)]:
     require(len(next(v for k, v in bosses.items() if k[2] == name)) == expected, f"{name} roster size")
 early_items = {

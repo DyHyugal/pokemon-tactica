@@ -119,6 +119,13 @@ def validate_bosses():
 
 
 def validate_rockets():
+    from sync_tactica_bosses import engine_species
+    progression = json.loads((ROOT / "data/spec/rocket_progression.json").read_text())
+    final_rows = json.loads((ROOT / "data/spec/bosses.json").read_text())["teams"]
+    final_by_boss = {}
+    for row in final_rows:
+        if row["category"] == "Rocket Executive":
+            final_by_boss.setdefault(row["boss"], []).append(row)
     text = (ROOT / "src/data/trainers_hns.party").read_text()
     hard_marker = "/* ========== Family Remix FINAL hard boss parties ========== */"
     rocket_marker = "/* ========== Family Remix FINAL Rocket parties ========== */"
@@ -127,15 +134,11 @@ def validate_rockets():
     hard_blocks = dict(re.findall(
         r"^=== ([A-Z0-9_]+) ===\n(.*?)(?=^=== |\Z)", rocket, re.M | re.S
     ))
-    expected = {
-        "TRAINER_PROTON_1_HNS": ("Crobat", "Weezing", "Raticate", "Scolipede", "Toxicroak", "Muk-Alola"),
-        "TRAINER_PROTON_2_HNS": ("Crobat", "Weezing", "Raticate", "Scolipede", "Toxicroak", "Muk-Alola"),
-        "TRAINER_PETREL_1_HNS": ("Ditto", "Weezing", "Electrode", "Muk", "Zoroark-Hisui", "Raticate"),
-        "TRAINER_PETREL_2_HNS": ("Ditto", "Weezing", "Electrode", "Muk", "Zoroark-Hisui", "Raticate"),
-        "TRAINER_ARIANA_1_HNS": ("Arbok", "Vileplume", "Grafaiai", "Nidoqueen", "Salazzle", "Honchkrow"),
-        "TRAINER_ARIANA_2_HNS": ("Arbok", "Vileplume", "Grafaiai", "Nidoqueen", "Salazzle", "Honchkrow"),
-        "TRAINER_ARCHER_HNS": ("Weavile", "Crobat", "Nidoking", "Magnezone", "Drapion", "Houndoom"),
-    }
+    expected = {}
+    for trainer_id, (boss, phase) in progression["active_fights"].items():
+        rows = (final_by_boss[boss] if phase == "final" else
+                progression["rosters"][boss][phase])
+        expected[trainer_id] = tuple(engine_species(row["species"]) for row in rows)
     if set(hard_blocks) != set(expected):
         fail(f"expected seven final HARD Rocket variants, got {sorted(hard_blocks)}")
 
@@ -179,7 +182,7 @@ def validate_rockets():
             re.M,
         ))
         if species != roster:
-            fail(f"{trainer_id} final Rocket roster differs: {species}")
+            fail(f"{trainer_id} Rocket {progression['active_fights'][trainer_id][1]} roster differs: {species}")
         items = held_items(hard_party)
         if len(items) != len(set(items)):
             fail(f"{trainer_id} contains duplicate held items")
@@ -187,9 +190,9 @@ def validate_rockets():
             fail(f"{trainer_id} Rocket source levels must remain runtime placeholders")
         iv_lines = re.findall(r"^IVs: (.+)$", hard_party, re.M)
         ev_lines = re.findall(r"^EVs: (.+)$", hard_party, re.M)
-        if len(iv_lines) != 6 or any(set(map(int, re.findall(r"\d+", line))) != {31} for line in iv_lines):
+        if len(iv_lines) != len(roster) or any(set(map(int, re.findall(r"\d+", line))) != {31} for line in iv_lines):
             fail(f"{trainer_id} HARD Rocket IVs are not all 31")
-        if len(ev_lines) != 6:
+        if len(ev_lines) != len(roster):
             fail(f"{trainer_id} HARD Rocket EV data is incomplete")
         for line in ev_lines:
             values = [int(value) for value in re.findall(r"(\d+) (?:HP|Atk|Def|SpA|SpD|Spe)", line)]

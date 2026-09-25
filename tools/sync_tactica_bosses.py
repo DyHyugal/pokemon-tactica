@@ -13,6 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PARTY_PATH = ROOT / "src/data/trainers_hns.party"
 SPEC_PATH = ROOT / "data/spec/bosses.json"
+ROCKET_PROGRESS_PATH = ROOT / "data/spec/rocket_progression.json"
 HARD_MARKER = "/* ========== Family Remix FINAL hard boss parties ========== */"
 ROCKET_MARKER = "/* ========== Family Remix FINAL Rocket parties ========== */"
 
@@ -154,8 +155,35 @@ def replace_party(section: str, trainer_id: str, canonical: list[dict], hard: bo
     return section[:match.start()] + replacement + section[match.end():]
 
 
+def replace_rocket_phase(section: str, trainer_id: str, stage: list[dict],
+                         final: list[dict], hard: bool) -> str:
+    """Render a short Rocket team using stable final-slot IDs, not old party positions."""
+    pattern = re.compile(rf"(?m)^=== {re.escape(trainer_id)} ===\n(.*?)(?=^=== |\Z)", re.S)
+    matches = list(pattern.finditer(section))
+    if len(matches) != 1:
+        raise ValueError(f"Expected one {trainer_id} block, found {len(matches)}")
+    match = matches[0]
+    header = match.group(1).rstrip().split("\n\n", 1)[0]
+    final_by_slot = {row["slot"]: row for row in final}
+    blocks = []
+    for row in stage:
+        source = final_by_slot[row["slot"]]
+        lines = [row["species"] + (f" @ {row['item']}" if row["item"] else ""),
+                 "Level: 1", f"Ability: {row['ability']}",
+                 f"Nature: {source['nature']}",
+                 "IVs: " + " / ".join(f"{31 if hard else 0} {stat}" for stat in
+                                         ("HP", "Atk", "Def", "SpA", "SpD", "Spe"))]
+        if hard:
+            lines.append(f"EVs: {row['hard_evs']}")
+        lines.extend(f"- {move}" for move in row["moves"])
+        blocks.append("\n".join(lines))
+    replacement = f"=== {trainer_id} ===\n{header}\n\n" + "\n\n".join(blocks) + "\n\n"
+    return section[:match.start()] + replacement + section[match.end():]
+
+
 def synchronize(check: bool = False) -> None:
     spec = json.loads(SPEC_PATH.read_text(encoding="utf-8"))
+    progression = json.loads(ROCKET_PROGRESS_PATH.read_text(encoding="utf-8"))
     groups: OrderedDict[tuple[str, str, str], list[dict]] = OrderedDict()
     for row in spec["teams"]:
         groups.setdefault((row["region"], row["category"], row["boss"]), []).append(row)
@@ -172,8 +200,16 @@ def synchronize(check: bool = False) -> None:
     for key, trainer_ids in ROCKET_TRAINERS.items():
         canonical = groups[key]
         for trainer_id in trainer_ids:
-            normal = replace_party(normal, trainer_id, canonical, False)
-            rocket = replace_party(rocket, trainer_id, canonical, True)
+            boss, phase = progression["active_fights"][trainer_id]
+            if boss != key[2]:
+                raise ValueError(f"{trainer_id} belongs to {key[2]}, not {boss}")
+            if phase == "final":
+                normal = replace_party(normal, trainer_id, canonical, False)
+                rocket = replace_party(rocket, trainer_id, canonical, True)
+            else:
+                stage = progression["rosters"][boss][phase]
+                normal = replace_rocket_phase(normal, trainer_id, stage, canonical, False)
+                rocket = replace_rocket_phase(rocket, trainer_id, stage, canonical, True)
     synchronized = (normal + HARD_MARKER + hard + ROCKET_MARKER + rocket).rstrip() + "\n"
     if check:
         if synchronized != text:

@@ -200,6 +200,8 @@ Chaque Exécutif possède trois versions de roster définies à l'avance :
 
 Les Pokémon déjà introduits restent présents dans les versions suivantes.
 
+Les membres et sets précis sont décrits dans [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md) et dans `data/spec/rocket_progression.json` (EARLY/MID) et `data/spec/bosses.json` (FINAL).
+
 Le stade d'évolution réel est déterminé par le niveau du combat.
 
 ## Proton
@@ -304,6 +306,8 @@ Les sets suivent les phases EARLY / MID / FINAL.
 
 L'unicité des objets tenus est obligatoire dans chacune des six équipes finales et dans toutes leurs versions intermédiaires.
 
+Les six compositions et sets de travail sont dans `data/spec/rival.json` (`fight_rosters`) et [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Leurs propositions de capacités doivent être vérifiées au niveau du combat avant intégration moteur.
+
 ---
 
 # Encounters — niveau et accessibilité
@@ -383,16 +387,11 @@ Aucune famille starter ne doit être capturable avant l'obtention du deuxième b
 
 La première apparition de la famille doit idéalement occuper le slot rare 10 %.
 
-Audit actuel :
-
-- famille Germignon absente : à ajouter ;
-- famille Goupix d'Alola absente : à ajouter dans une zone Glace ;
-- famille Darumarond de Galar absente : à ajouter dans une zone Glace ;
-- famille Pichu déjà couverte par Pikachu Route 47.
+Audit du 25 septembre après le bloc `feature/strategic-rules` : Germignon est ajouté au Bois aux Chênes ; Feunard d'Alola et Darumacho de Galar à la Route de Glace ; Pichu est couvert par Pikachu Route 47. Le validateur contrôle les familles et les slots rares ; l'audit exhaustif des caps d'accès des cartes reste à faire.
 
 Dans la Route de Glace, privilégier les formes cohérentes avec les niveaux élevés de la zone, notamment Feunard d'Alola et Darumacho de Galar si approprié.
 
-Salamèche et Élekid actuellement présents Route 36 sont disponibles trop tôt et doivent être déplacés après badge 2 via des échanges de slots cohérents.
+Salamèche et Élekid ont été retirés de la Route 36 et placés dans des zones accessibles après badge 2 (respectivement Route 37 et Route 42). Vérifier l'accès réel de toutes les autres tables avec `earliest_access_cap`.
 
 ---
 

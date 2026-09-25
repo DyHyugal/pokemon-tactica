@@ -36,4 +36,4 @@ Branches prévues : `integration/v1`, `feature/encounters`, `feature/rival`, `fe
 
 ## Limites de ce gel
 
-Les rosters complets du rival doivent encore être proposés après inventaire. L'exhaustivité réelle des Move IDs et des items, l'existence d'un marchand de Méga-Gemmes et la palette ROM sont à auditer dans le code. Les données des boss migrées doivent être confrontées aux parties réellement compilées. Ne pas marquer ces points DONE sans preuve.
+Cette liste était l'état initial de migration : les rosters complets du rival étaient à proposer après inventaire. Le document de suivi actuel `FEATURE_STATUS.md` et `ROSTERS_ROCKET_RIVAL.md` distinguent maintenant propositions rédigées, parties effectivement générées et intégration encore requise. L'exhaustivité réelle des Move IDs, les items, la boutique de Méga-Gemmes et la palette ROM se vérifient dans le code et les tests avant de marquer ces points DONE.
