@@ -149,10 +149,7 @@ ItemShop_Text_Useful:
 	.string "Other Useful$"
 
 	.align 2
-ItemShop_Items_Stones:
-	.2byte ITEM_FIRE_STONE
-	.2byte ITEM_WATER_STONE
-	.2byte ITEM_THUNDER_STONE
+ItemShop_Items_Stones::
 	.2byte ITEM_LEAF_STONE
 	.2byte ITEM_ICE_STONE
 	.2byte ITEM_SUN_STONE
@@ -163,7 +160,7 @@ ItemShop_Items_Stones:
 	pokemartlistend
 
 	.align 2
-ItemShop_Items_TradeHeld:
+ItemShop_Items_TradeHeld::
 	.2byte ITEM_DRAGON_SCALE
 	.2byte ITEM_UPGRADE
 	.2byte ITEM_PROTECTOR
@@ -184,7 +181,7 @@ ItemShop_Items_TradeHeld:
 	pokemartlistend
 
 	.align 2
-ItemShop_Items_SpecialRegional:
+ItemShop_Items_SpecialRegional::
 	.2byte ITEM_SWEET_APPLE
 	.2byte ITEM_TART_APPLE
 	.2byte ITEM_SYRUPY_APPLE
@@ -213,7 +210,7 @@ ItemShop_Items_SpecialRegional:
 	pokemartlistend
 
 	.align 2
-ItemShop_Items_TypeBoosters:
+ItemShop_Items_TypeBoosters::
 	.2byte ITEM_SILK_SCARF
 	.2byte ITEM_BLACK_BELT
 	.2byte ITEM_SHARP_BEAK
@@ -232,10 +229,61 @@ ItemShop_Items_TypeBoosters:
 	.2byte ITEM_DRAGON_FANG
 	.2byte ITEM_BLACK_GLASSES
 	.2byte ITEM_FAIRY_FEATHER
+	.2byte ITEM_FLAME_PLATE
+	.2byte ITEM_SPLASH_PLATE
+	.2byte ITEM_ZAP_PLATE
+	.2byte ITEM_MEADOW_PLATE
+	.2byte ITEM_ICICLE_PLATE
+	.2byte ITEM_FIST_PLATE
+	.2byte ITEM_TOXIC_PLATE
+	.2byte ITEM_EARTH_PLATE
+	.2byte ITEM_SKY_PLATE
+	.2byte ITEM_MIND_PLATE
+	.2byte ITEM_INSECT_PLATE
+	.2byte ITEM_STONE_PLATE
+	.2byte ITEM_SPOOKY_PLATE
+	.2byte ITEM_DRACO_PLATE
+	.2byte ITEM_DREAD_PLATE
+	.2byte ITEM_PIXIE_PLATE
+	.2byte ITEM_FIRE_MEMORY
+	.2byte ITEM_WATER_MEMORY
+	.2byte ITEM_ELECTRIC_MEMORY
+	.2byte ITEM_GRASS_MEMORY
+	.2byte ITEM_ICE_MEMORY
+	.2byte ITEM_FIGHTING_MEMORY
+	.2byte ITEM_POISON_MEMORY
+	.2byte ITEM_GROUND_MEMORY
+	.2byte ITEM_FLYING_MEMORY
+	.2byte ITEM_PSYCHIC_MEMORY
+	.2byte ITEM_BUG_MEMORY
+	.2byte ITEM_ROCK_MEMORY
+	.2byte ITEM_GHOST_MEMORY
+	.2byte ITEM_DRAGON_MEMORY
+	.2byte ITEM_DARK_MEMORY
+	.2byte ITEM_STEEL_MEMORY
+	.2byte ITEM_FAIRY_MEMORY
+	.2byte ITEM_NORMAL_GEM
+	.2byte ITEM_FIRE_GEM
+	.2byte ITEM_WATER_GEM
+	.2byte ITEM_ELECTRIC_GEM
+	.2byte ITEM_GRASS_GEM
+	.2byte ITEM_ICE_GEM
+	.2byte ITEM_FIGHTING_GEM
+	.2byte ITEM_POISON_GEM
+	.2byte ITEM_GROUND_GEM
+	.2byte ITEM_FLYING_GEM
+	.2byte ITEM_PSYCHIC_GEM
+	.2byte ITEM_BUG_GEM
+	.2byte ITEM_ROCK_GEM
+	.2byte ITEM_GHOST_GEM
+	.2byte ITEM_DRAGON_GEM
+	.2byte ITEM_DARK_GEM
+	.2byte ITEM_STEEL_GEM
+	.2byte ITEM_FAIRY_GEM
 	pokemartlistend
 
 	.align 2
-ItemShop_Items_ChoiceOffensive:
+ItemShop_Items_ChoiceOffensive::
 	.2byte ITEM_CHOICE_BAND
 	.2byte ITEM_CHOICE_SPECS
 	.2byte ITEM_CHOICE_SCARF
@@ -252,10 +300,16 @@ ItemShop_Items_ChoiceOffensive:
 	.2byte ITEM_LOADED_DICE
 	.2byte ITEM_PUNCHING_GLOVE
 	.2byte ITEM_METRONOME
+	.2byte ITEM_LIGHT_BALL
+	.2byte ITEM_LEEK
+	.2byte ITEM_THICK_CLUB
+	.2byte ITEM_LUCKY_PUNCH
+	.2byte ITEM_METAL_POWDER
+	.2byte ITEM_QUICK_POWDER
 	pokemartlistend
 
 	.align 2
-ItemShop_Items_DefenseSustain:
+ItemShop_Items_DefenseSustain::
 	.2byte ITEM_LEFTOVERS
 	.2byte ITEM_BLACK_SLUDGE
 	.2byte ITEM_SHELL_BELL
@@ -269,20 +323,29 @@ ItemShop_Items_DefenseSustain:
 	.2byte ITEM_COVERT_CLOAK
 	.2byte ITEM_CLEAR_AMULET
 	.2byte ITEM_ABILITY_SHIELD
+	.2byte ITEM_GRIP_CLAW
+	.2byte ITEM_STICKY_BARB
+	.2byte ITEM_BIG_ROOT
+	.2byte ITEM_FLOAT_STONE
+	.2byte ITEM_BINDING_BAND
 	pokemartlistend
 
 	.align 2
-ItemShop_Items_WeatherTerrain:
+ItemShop_Items_WeatherTerrain::
 	.2byte ITEM_HEAT_ROCK
 	.2byte ITEM_DAMP_ROCK
 	.2byte ITEM_SMOOTH_ROCK
 	.2byte ITEM_ICY_ROCK
 	.2byte ITEM_TERRAIN_EXTENDER
 	.2byte ITEM_UTILITY_UMBRELLA
+	.2byte ITEM_ELECTRIC_SEED
+	.2byte ITEM_PSYCHIC_SEED
+	.2byte ITEM_MISTY_SEED
+	.2byte ITEM_GRASSY_SEED
 	pokemartlistend
 
 	.align 2
-ItemShop_Items_ActivationUtility:
+ItemShop_Items_ActivationUtility::
 	.2byte ITEM_WHITE_HERB
 	.2byte ITEM_MENTAL_HERB
 	.2byte ITEM_POWER_HERB
@@ -302,10 +365,28 @@ ItemShop_Items_ActivationUtility:
 	.2byte ITEM_SAFETY_GOGGLES
 	.2byte ITEM_PROTECTIVE_PADS
 	.2byte ITEM_ADRENALINE_ORB
+	.2byte ITEM_ABSORB_BULB
+	.2byte ITEM_CELL_BATTERY
+	.2byte ITEM_LUMINOUS_MOSS
+	.2byte ITEM_SNOWBALL
 	pokemartlistend
 
 	.align 2
-ItemShop_Items_CompetitiveBerries:
+ItemShop_Items_CompetitiveBerries::
+	.2byte ITEM_BERRY_JUICE
+	.2byte ITEM_CHERI_BERRY
+	.2byte ITEM_CHESTO_BERRY
+	.2byte ITEM_PECHA_BERRY
+	.2byte ITEM_RAWST_BERRY
+	.2byte ITEM_ASPEAR_BERRY
+	.2byte ITEM_LEPPA_BERRY
+	.2byte ITEM_ORAN_BERRY
+	.2byte ITEM_PERSIM_BERRY
+	.2byte ITEM_FIGY_BERRY
+	.2byte ITEM_WIKI_BERRY
+	.2byte ITEM_MAGO_BERRY
+	.2byte ITEM_AGUAV_BERRY
+	.2byte ITEM_IAPAPA_BERRY
 	.2byte ITEM_LUM_BERRY
 	.2byte ITEM_SITRUS_BERRY
 	.2byte ITEM_CHILAN_BERRY
@@ -334,10 +415,16 @@ ItemShop_Items_CompetitiveBerries:
 	.2byte ITEM_LANSAT_BERRY
 	.2byte ITEM_STARF_BERRY
 	.2byte ITEM_CUSTAP_BERRY
+	.2byte ITEM_ENIGMA_BERRY
+	.2byte ITEM_MICLE_BERRY
+	.2byte ITEM_JABOCA_BERRY
+	.2byte ITEM_ROWAP_BERRY
+	.2byte ITEM_KEE_BERRY
+	.2byte ITEM_MARANGA_BERRY
 	pokemartlistend
 
 	.align 2
-ItemShop_Items_Training:
+ItemShop_Items_Training::
 	.2byte ITEM_MACHO_BRACE
 	.2byte ITEM_POWER_WEIGHT
 	.2byte ITEM_POWER_BRACER
@@ -354,14 +441,14 @@ ItemShop_Items_Training:
 	pokemartlistend
 
 	.align 2
-ItemShop_Items_BreedingFriendship:
+ItemShop_Items_BreedingFriendship::
 	.2byte ITEM_EVERSTONE
 	.2byte ITEM_DESTINY_KNOT
 	.2byte ITEM_SOOTHE_BELL
 	pokemartlistend
 
 	.align 2
-ItemShop_Items_Useful:
+ItemShop_Items_Useful::
 	.2byte ITEM_LUCKY_EGG
 	.2byte ITEM_AMULET_COIN
 	.2byte ITEM_SMOKE_BALL

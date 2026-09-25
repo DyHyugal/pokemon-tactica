@@ -322,14 +322,40 @@ def validate_shops():
         fail("TM shop must contain each of the 92 active HnS TMs exactly once")
 
     items = parse_shop_items(ROOT / "data/scripts/item_shop.inc")
-    if len(items) != 172 or len(set(items)) != 172:
+    if len(items) != 259 or len(set(items)) != 259:
         fail("item shop stock is incomplete or contains duplicates")
-    safe_ball_names = {"ITEM_AIR_BALLOON", "ITEM_IRON_BALL", "ITEM_SMOKE_BALL"}
+    safe_ball_names = {"ITEM_AIR_BALLOON", "ITEM_IRON_BALL", "ITEM_LIGHT_BALL", "ITEM_SMOKE_BALL"}
     forbidden_words = ("POTION", "REVIVE", "HEAL", "REPEL", "ESCAPE_ROPE")
     for item in items:
         if (any(word in item for word in forbidden_words)
          or (item.endswith("_BALL") and item not in safe_ball_names)):
             fail(f"progression-bypassing item in special shop: {item}")
+
+    normal_shop_items = set()
+    item_shop_path = ROOT / "data/scripts/item_shop.inc"
+    for path in (ROOT / "data").rglob("*.inc"):
+        if path == item_shop_path or path.name in {"tm_shop.inc", "mega_shop.inc"}:
+            continue
+        text = path.read_text(encoding="utf-8")
+        for match in re.finditer(
+            r"^[A-Za-z0-9_]+:\s*\n((?:\s*\.2byte\s+ITEM_[A-Z0-9_]+\s*\n)+)\s*\tpokemartlistend",
+            text,
+            re.MULTILINE,
+        ):
+            normal_shop_items.update(re.findall(r"ITEM_[A-Z0-9_]+", match.group(1)))
+    duplicates = sorted(set(items) & normal_shop_items)
+    if duplicates:
+        fail(f"special item shop duplicates normal mart stock: {', '.join(duplicates)}")
+
+    required_strategic_items = {
+        "ITEM_FLAME_PLATE", "ITEM_FIRE_MEMORY", "ITEM_NORMAL_GEM",
+        "ITEM_LIGHT_BALL", "ITEM_ELECTRIC_SEED", "ITEM_ABSORB_BULB",
+        "ITEM_GRIP_CLAW", "ITEM_CHERI_BERRY", "ITEM_MICLE_BERRY",
+        "ITEM_KEE_BERRY", "ITEM_MARANGA_BERRY",
+    }
+    missing = sorted(required_strategic_items - set(items))
+    if missing:
+        fail(f"special item shop is missing strategic inventory: {', '.join(missing)}")
 
     form_changes = (ROOT / "src/data/pokemon/form_change_tables.h").read_text()
     playable_mega_stones = set(re.findall(
