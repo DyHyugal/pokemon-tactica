@@ -3957,6 +3957,22 @@ void BattlePutTextOnWindow(const u8 *text, u8 windowId)
         copyToVram = TRUE;
     }
 
+#if IS_HNS
+    if (!gBattleStruct->zmove.viewing
+     && B_WIN_MOVE_NAME_1 <= windowId
+     && windowId <= B_WIN_MOVE_NAME_4)
+    {
+        u32 moveSlot = windowId - B_WIN_MOVE_NAME_1;
+
+        // Draw the horizontal half of the red grid inside the move windows.
+        // The vertical separator is a dedicated tile in textbox_map.bin.
+        if (moveSlot < 2)
+            FillWindowPixelRect(windowId, PIXEL_FILL(2), 0, 14, 64, 2);
+        else
+            FillWindowPixelRect(windowId, PIXEL_FILL(2), 0, 0, 64, 2);
+    }
+#endif
+
     printerTemplate.currentChar = text;
     printerTemplate.type = WINDOW_TEXT_PRINTER;
     printerTemplate.windowId = windowId;

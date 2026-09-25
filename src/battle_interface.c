@@ -38,7 +38,11 @@
 #include "caps.h"
 #include "battle_gfx_sfx_util.h"
 
+#if IS_HNS
+#define HEALTHBOX_BG_INDEX 7
+#else
 #define HEALTHBOX_BG_INDEX 2
+#endif
 
 enum
 {   // Corresponds to gHealthboxElementsGfxTable (and the tables after it) in graphics.c
@@ -592,9 +596,15 @@ static const struct WindowTemplate sHealthboxWindowTemplate = {
 
 static const union TextColor sHealthBoxTextColor =
 {
+#if IS_HNS
+    .background = 7,
+    .foreground = 2,
+    .shadow = 6,
+#else
     .background = 0,
     .foreground = 1,
     .shadow = 3,
+#endif
     .accent = 0
 };
 

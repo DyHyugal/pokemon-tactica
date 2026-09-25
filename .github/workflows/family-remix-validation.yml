@@ -25,6 +25,8 @@ jobs:
           python3 tools/sync_tactica_move_shop.py --check
       - name: Build HnS
         run: make hns -j2
+      - name: Validate Tactica UI assets
+        run: python3 tools/validate_tactica_ui.py
       - name: Level Cap tests
         run: make check BUILD=hns TESTS='*Level cap:' -j2
       - name: Evolution requirement tests

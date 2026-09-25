@@ -18,6 +18,7 @@ Pokémon Tactica est un fork jouable de HnS tourné vers les combats stratégiqu
 8. Les Pokémon modifiés et les 15 entrées de learnset de `data/spec/pokemon_balance.json` sont le contrat de balance. Dracaufeu a 110 Atk ; Méga-Dracaufeu X a 156 Atk ; Méga Y conserve les chiffres du dataset v4, sans ces dix points supplémentaires.
 9. Chaque Méga de boss important est unique, sauf dérogation explicitement écrite. Pierre garde Méga-Steelix ; Jasmine reçoit Méga-Galeking avec un set de **Méga-Galeking** éprouvé. Vérifier la disponibilité réelle des Méga propres au build.
 10. FR et EN sont des miroirs, avec les noms officiels Pokémon et une interface lisible. Le wiki tire sa palette des vraies valeurs de la ROM ; Guide de jeu, Changements, Pokédex, Localisations et Boss & Conseils ont chacun un rôle propre.
+11. Les retours de playtest datés du 25 septembre 2026 fixent la lisibilité rouge/noir de l'interface et les règles détaillées d'équipes, de caps et d'accessibilité. Voir [VISUAL_FEEDBACK_2026-09-25.md](VISUAL_FEEDBACK_2026-09-25.md) et [STRATEGIC_TEAMS_AND_ACCESS.md](STRATEGIC_TEAMS_AND_ACCESS.md).
 
 ## Livraison
 

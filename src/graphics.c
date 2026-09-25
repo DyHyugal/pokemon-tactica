@@ -3,7 +3,10 @@
 
 #if IS_HNS
 const u32 gBattleTextboxTiles[] = INCBIN_U32("graphics/battle_interface/hns/textbox.4bpp.smol");
-const u16 gBattleTextboxPalette[] = INCBIN_U16("graphics/battle_interface/hns/textbox.gbapal");
+// The battle tilemap uses palette banks 0 and 1. Keep both banks explicit;
+// loading 32 colors from a single 16-color file read into the next symbol.
+const u16 gBattleTextboxPalette[] = INCBIN_U16("graphics/battle_interface/hns/textbox.gbapal",
+                                              "graphics/battle_interface/hns/textbox.gbapal");
 const u32 gBattleTextboxTilemap[] = INCBIN_U32("graphics/battle_interface/hns/textbox_map.bin.smolTM");
 #else
 const u32 gBattleTextboxTiles[] = INCBIN_U32("graphics/battle_interface/textbox.4bpp.smol");
