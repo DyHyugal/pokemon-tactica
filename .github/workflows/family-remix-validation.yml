@@ -1,7 +1,7 @@
-name: Family Remix validation
+name: Tactica validation
 on:
   push:
-    branches: [work/native-speed-starter-egg]
+    branches: [integration/v1, 'feature/**']
   workflow_dispatch:
 permissions:
   contents: read
@@ -14,7 +14,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends binutils-arm-none-eabi gcc-arm-none-eabi libnewlib-arm-none-eabi libpng-dev python3
-      - name: Validate Family Remix data
+      - name: Validate Tactica engine data
         run: python3 tools/validate_family_remix.py
       - name: Build HnS
         run: make hns -j2
@@ -26,6 +26,8 @@ jobs:
         run: make check BUILD=hns TESTS='*Training NPC:' -j2
       - name: Family Safari tests
         run: make check BUILD=hns TESTS='*Family Safari:' -j2
+      - name: Tactica encounter tests
+        run: make check BUILD=hns TESTS='Tactica encounters:' -j2
       - name: Existing audio regression tests
         run: make check BUILD=hns TESTS=Audio -j2
       - name: Existing Settings regression tests

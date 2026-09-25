@@ -178,43 +178,77 @@ def validate_rockets():
 
 def validate_encounters():
     wild = json.loads((ROOT / "src/data/wild_encounters.json").read_text())
-    audit = wild.get("family_remix_encounter_audit", {})
+    audit = wild.get("tactica_encounter_audit", {})
     expected = {
-        "dataset_version": 3,
-        "imported_standard_tables": 405,
-        "imported_headbutt_tables": 4,
-        "special_tables_deferred": 0,
-        "integrated_safari_pools": 53,
+        "dataset_version": 4,
+        "standard_tables": 405,
+        "physical_time_records": 624,
+        "real_slots_per_table": 4,
+        "slot_rates": [30, 30, 30, 10],
+        "headbutt_tables": 4,
+        "safari_pools": 53,
     }
     for key, value in expected.items():
         if audit.get(key) != value:
             fail(f"encounter audit {key}: expected {value}, got {audit.get(key)}")
 
-    # Family Remix ships the HnS world as its playable base.  Validate every
-    # active HnS encounter table, including inherited HnS data: inherited does
-    # not mean exempt when a malformed table affects the Family Remix ROM.
-    map_group = next(group for group in wild["wild_encounter_groups"] if group.get("for_maps"))
-    expected_slots = {field["type"]: len(field["encounter_rates"]) for field in map_group["fields"]}
+    canonical = json.loads((ROOT / "data/spec/encounters_standard.json").read_text())["tables"]
+    canonical_by_key = {
+        (table["map"], table["method"], table["time"]): table
+        for table in canonical
+    }
+    if len(canonical_by_key) != 405:
+        fail("canonical standard encounter keys are not unique")
 
+    map_group = next(group for group in wild["wild_encounter_groups"] if group.get("for_maps"))
+    compiled = {}
     for encounter in map_group.get("encounters", []):
         map_name = encounter.get("map", "")
         if not map_name.endswith("_HNS"):
             continue
+        label = encounter.get("base_label", "")
+        time = "Night" if label.endswith("_Night") else "Day"
         for method in ("land_mons", "water_mons", "rock_smash_mons", "fishing_mons"):
             if method not in encounter:
                 continue
             mons = encounter[method]["mons"]
-            expected = expected_slots[method]
-            if len(mons) != expected:
-                fail(
-                    f"{encounter.get('base_label', map_name)} {method}: "
-                    f"expected {expected} engine slots, got {len(mons)}"
-                )
+            if len(mons) != 4:
+                fail(f"{label} {method}: expected four real engine slots, got {len(mons)}")
             for mon in mons:
                 if not (1 <= mon["min_level"] <= mon["max_level"] <= 100):
                     fail(f"invalid wild level range in {map_name}")
                 if not mon["species"].startswith("SPECIES_"):
                     fail("wild species constant is malformed")
+            key = (map_name, method, time)
+            if key in compiled:
+                fail(f"duplicate compiled encounter table: {key}")
+            compiled[key] = mons
+
+    expected_compiled = {}
+    for table in canonical:
+        times = ("Day", "Night") if table["time"] == "Any" else (table["time"],)
+        for time in times:
+            expected_compiled[(table["map"], table["method"], time)] = table
+    if set(compiled) != set(expected_compiled):
+        missing = sorted(set(expected_compiled) - set(compiled))
+        extra = sorted(set(compiled) - set(expected_compiled))
+        fail(f"compiled standard encounter keys differ; missing={missing[:3]}, extra={extra[:3]}")
+
+    for key, table in expected_compiled.items():
+        mons = compiled[key]
+        species = [mon["species"] for mon in mons]
+        if species != table["species"]:
+            fail(f"compiled species differ for {key}: {species}")
+        levels = {(mon["min_level"], mon["max_level"]) for mon in mons}
+        if levels != {(table["min_level"], table["max_level"])}:
+            fail(f"compiled levels differ for {key}: {sorted(levels)}")
+
+    constants = (ROOT / "include/constants/wild_encounter.h").read_text()
+    if not all(re.search(rf"^#define {name}_WILD_COUNT\s+4$", constants, re.M) for name in ("LAND", "WATER", "ROCK", "FISH")):
+        fail("HnS encounter constants do not expose four real slots for every method")
+    engine = (ROOT / "src/wild_encounter.c").read_text()
+    if engine.count("return ChooseTacticaEncounterSlot(Random());") != 4:
+        fail("not every standard HnS encounter selector uses the Tactica four-slot picker")
 
     special = json.loads((ROOT / "data/family_remix/special_encounter_pools.json").read_text())
     headbutt = [table for table in special["tables"] if table["method"] == "headbutt_mons"]
@@ -228,6 +262,16 @@ def validate_encounters():
     headbutt_c = (ROOT / "src/data/family_remix_headbutt.h").read_text()
     if len(re.findall(r"\{MAP_GROUP\(MAP_", headbutt_c)) != 4:
         fail("dedicated Headbutt engine table does not contain four maps")
+    headbutt_arrays = re.findall(
+        r"static const struct WildPokemon sFamilyHeadbutt\w+\[\]\s*=\s*\{(.*?)\};",
+        headbutt_c,
+        re.S,
+    )
+    if len(headbutt_arrays) != 4:
+        fail("dedicated Headbutt engine data does not contain four tables")
+    for body in headbutt_arrays:
+        if len(re.findall(r"\{\d+, \d+, SPECIES_[A-Z0-9_]+\}", body)) != 4:
+            fail("Headbutt tables must contain four real engine slots")
 
     if special.get("status") != "INTEGRATED" or special.get("engine_status", {}).get("safari") != "INTEGRATED_SESSION_ROTATION":
         fail("Safari metadata is not marked integrated")
@@ -282,7 +326,7 @@ def main():
     validate_rockets()
     validate_encounters()
     validate_shops()
-    print("Family Remix data validation passed: bosses, Rockets, EVs, encounters, Safari and shops")
+    print("Tactica engine data validation passed: bosses, Rockets, EVs, encounters, Safari and shops")
 
 
 if __name__ == "__main__":
