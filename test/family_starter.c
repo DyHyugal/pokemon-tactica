@@ -375,6 +375,7 @@ TEST("Family starter: rival roster follows the saved category and retains the ac
                       GetMonData(&gEnemyParty[j], MON_DATA_HELD_ITEM));
     }
     EXPECT_EQ(GetMonData(&gEnemyParty[5], MON_DATA_HELD_ITEM), ITEM_CHARCOAL);
+    EXPECT_EQ(GetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM), 2);
 
     SetCurrentDifficultyLevel(DIFFICULTY_HARD);
     FamilyStarter_ApplyRivalRoster(gEnemyParty, PARTY_SIZE, TRAINER_RIVAL_CHIKORITA_4_HNS);

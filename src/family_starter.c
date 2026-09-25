@@ -655,6 +655,8 @@ void FamilyStarter_ApplyRivalRoster(struct Pokemon *party, u8 count, u16 trainer
         {0, 2, 3, 4, 5, 1}, {0, 2, 3, 4, 1, 5},
         {0, 2, 3, 4, 1, 5}, {0, 2, 3, 4, 1, 5},
     };
+    // Weather and terrain lead abilities are selected from the compiled species data.
+    static const u8 sLeadAbilityNum[6] = {2, 1, 0, 2, 0, 0};
     static const u8 sEvFields[NUM_STATS] = {
         MON_DATA_HP_EV, MON_DATA_ATK_EV, MON_DATA_DEF_EV,
         MON_DATA_SPATK_EV, MON_DATA_SPDEF_EV, MON_DATA_SPEED_EV,
@@ -679,7 +681,9 @@ void FamilyStarter_ApplyRivalRoster(struct Pokemon *party, u8 count, u16 trainer
         u32 movePhase = category == FAMILY_ICE && slot == 0 && level < 40 ? 1 : phase;
         u32 exp = gExperienceTables[gSpeciesInfo[species].growthRate][level];
         u16 item = fight < 3 ? ITEM_NONE : slot == 1 ? sCategoryBoosters[category] : roster->item;
-        u32 abilityNum = 0;
+        u32 abilityNum = slot == 0 ? sLeadAbilityNum[category] : 0;
+        if (category == FAMILY_WATER && species == SPECIES_WINGULL)
+            abilityNum = 0; // Drizzle becomes available on Pelipper.
 
         SetMonData(mon, MON_DATA_SPECIES, &species);
         SetMonData(mon, MON_DATA_EXP, &exp);
