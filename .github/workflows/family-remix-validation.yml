@@ -2,6 +2,8 @@ name: Tactica validation
 on:
   push:
     branches: [integration/v1, 'feature/**']
+  pull_request:
+    branches: [integration/v1]
   workflow_dispatch:
 permissions:
   contents: read

@@ -6,6 +6,8 @@ Le build `make hns -j4` passe (ROM 31 888 084 octets, 95,03 % ; EWRAM 94,70 % ; 
 
 Ces résultats de compilation précèdent le nouveau bloc des équipes Rocket : sur l'espace de travail actuel, `make hns -j4` ne démarre pas faute de `arm-none-eabi-gcc`, de `pkg-config` et de `libpng-dev`. Les validateurs statiques et la vérification d'idempotence des parties Rocket ont été relancés avec succès ; la compilation de ce bloc doit être relancée en CI ou dans un environnement équipé avant promotion vers `main`.
 
+La PR #4 a révélé deux écarts CI de l'ancien périmètre : `docs/SUMMARY.md` n'incluait ni `docs/spec/` ni le wiki FR/EN ; une fonction de menu propre à HnS restait compilée, mais inutilisée, sur les builds Emerald/FRLG. La branche de PR corrige le sommaire et protège la fonction par `IS_HNS`, puis déclenche la validation Tactica sur les PR d'intégration. Vérifier les résultats de ces jobs avant la fusion.
+
 ## Règles des tags
 
 | Tag unique par feature | Sens |
