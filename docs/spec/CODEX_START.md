@@ -70,6 +70,87 @@ Corriger **le générateur**, pas seulement Ectoplasma :
 
 Ce bloc est prioritaire sur le wiki : une ROM avec assert de boss ou Méga non fonctionnelle n'est pas candidate au playthrough complet.
 
+## Ordre d'exécution prioritaire avant la première RC de playthrough complet
+
+Objectif immédiat : produire le plus vite possible une **ROM candidate à un playthrough complet de Nouvelle Écorce jusqu'à la deuxième Ligue**, sans sacrifier la qualité technique. L'équilibrage fin et le playtest utilisateur complet sont hors de ce chemin critique ; les tests automatisés, builds, validateurs et contrôles de cohérence restent obligatoires à chaque bloc.
+
+**Ne pas consommer une rotation Codex entière sur le wiki tant qu'une régression CORE/gameplay/UI bloque ou dégrade fortement la ROM.** Le wiki reste requis pour la V1, mais passe après la première RC jouable.
+
+Exécuter les blocs dans cet ordre :
+
+### 1. CORE / gameplay bloquant
+
+Priorité absolue. Réconcilier les branches/PR en cours puis fermer les écarts qui peuvent casser une run ou rendre les combats incorrects :
+
+- intégrer/réconcilier les changements rival actuellement en branches/PR et les décisions normalisées ;
+- diagnostiquer et corriger toute régression de CI existante avant d'empiler de nouveaux changements ;
+- finir le rival : catégorie/starter persistants, rosters progressifs, évolutions/attaques légales et **profil de niveaux du prochain boss/Champion obligatoire** ;
+- appliquer **Ursaring niv. 30** chez Blanche avec le set canonique ;
+- empêcher l'œuf d'Orme de redonner exactement le starter principal ;
+- corriger le générateur des boss Méga : talent légal sur la forme de base, Méga-Gemme conservée, talent Méga acquis uniquement après transformation ;
+- vérifier que l'IA déclenche réellement les Méga prévues et auditer les autres boss Méga ;
+- remettre le **Méga-Anneau après badge 4 + CT de Mortimer**, avec jingle/texte standard, et prouver qu'une Méga joueur est utilisable immédiatement avant le badge 5 ;
+- revalider NORMAL/HARD, caps, boss/Rocket/rival, évolutions et non-régressions protégées.
+
+**Sortie obligatoire du bloc :** build HnS réussi, tests ciblés verts, validateurs/synchronisations concernés verts, écarts restants documentés. Ne pas passer volontairement au wiki pour contourner un bug CORE non résolu.
+
+### 2. Encounters / progression
+
+Une fois le CORE stabilisé :
+
+- construire le dataset canonique `earliest_access_cap` par map/méthode ;
+- auditer les 405 tables standard ;
+- mesurer la couverture Pokédex/familles avant la première Ligue ;
+- supprimer les doublons/triplons inter-zones inutiles de formes de base ;
+- rendre notamment **Scorplane** disponible avant la première Ligue ;
+- corriger les stades évolutifs incohérents avec le niveau réel, ex. **Héricendre 33 → Feurisson 33** ;
+- préserver habitat, méthode, progression, rareté et quatre slots `30/30/30/10` ;
+- régénérer données moteur et Localisations dépendantes ;
+- ajouter/mettre à jour les validateurs et tests d'accès/couverture.
+
+**Sortie obligatoire du bloc :** données synchronisées, couverture pré-Ligue chiffrée, exceptions documentées, build/tests/validateurs verts.
+
+### 3. UI / UX de la ROM
+
+Traiter ensuite ce qui affecte directement le confort d'une run longue :
+
+- **Summary en priorité** : corriger BG/tilemaps/windows, supprimer les superpositions et rendre STATS/IV/EV lisibles ;
+- si nécessaire, remplacer `CONTEST MOVES` par une **page IV/EV dédiée** approuvée par l'owner ;
+- finaliser HUD de combat, menus et fenêtres PNJ/shop dans la palette noir / rouge / gris ;
+- vérifier contrastes, curseurs, textes longs, pages d'attaques et absence de grandes surfaces blanches ;
+- terminer les petits polish UX directement rencontrés pendant une run, dont le retour de curseur du sélecteur starter si le coût reste raisonnable.
+
+**Sortie obligatoire du bloc :** build réussi, validateur UI adapté au rendu réellement voulu, contrôles visuels reproductibles documentés.
+
+### 4. Stabilisation / première RC
+
+Quand CORE + encounters + UI sont intégrés :
+
+- fusionner/réconcilier toutes les branches requises ;
+- exécuter `make hns -j4` ;
+- exécuter tous les groupes de tests Tactica et les validateurs statiques ;
+- exécuter tous les générateurs/synchronisations avec `--check` ;
+- vérifier qu'aucune source canonique n'est désynchronisée ;
+- faire un audit technique final des boss, rival, Rocket, Méga, caps, shops, starters/œuf, évolutions, encounters et traduction ROM bloquante ;
+- produire une branche/commit/ROM candidate clairement identifiée pour le premier playthrough complet.
+
+Un défaut qui peut casser la progression, provoquer un assert, fausser une équipe/cap, empêcher une Méga prévue ou rendre un écran essentiel illisible **bloque la RC**. Un défaut purement rédactionnel/web ou un polish non bloquant ne la bloque pas.
+
+### 5. Secondaire après la première RC
+
+Seulement après obtention d'une RC techniquement jouable de bout en bout :
+
+- corrections et finition du wiki FR/EN ;
+- recherche localisée du wiki ;
+- switch de langue page-à-page ;
+- sprites web transparents ;
+- Roadmap ;
+- responsive/mobile ;
+- finition rédactionnelle ;
+- polish visuel web non bloquant.
+
+La qualité n'est **pas** reportée à la fin : chaque bloc doit sortir avec ses propres tests, validateurs, build et documentation de preuve. L'ordre ci-dessus sert uniquement à concentrer les quotas Codex sur ce qui rapproche le plus vite d'une ROM complète, stable et agréable à tester.
+
 ## Premier bloc : prise de contexte, sans changement de gameplay
 
 1. Note SHA, branche et propreté Git. Vérifie la présence et la cohérence de tous les documents et JSON canoniques. Repère les restes de documentation produit contradictoire et les mentions de l'ancien nom visibles au joueur ; garde les crédits/licences et identifiants HnS techniques nécessaires.
