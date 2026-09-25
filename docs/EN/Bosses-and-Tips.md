@@ -1,6 +1,8 @@
-[Home](Home.md) · [Game Guide](Game-Guide.md) · [Changes](Changes.md) · [Pokédex](Pokedex.md) · [Locations](Locations.md) · [Bosses & Tips](Bosses-and-Tips.md) · [Credits & Versions](Credits-and-Versions.md) · **[FR](../FR/Accueil.md)**
+[Home](Home.md) · [Game Guide](Game-Guide.md) · [Changes](Changes.md) · [Pokédex](Pokedex.md) · [Locations](Locations.md) · [Bosses & Tips](Bosses-and-Tips.md) · [Credits](Credits-and-Versions.md) · [Roadmap](Roadmap.md) · **[FR](../FR/Boss-et-Conseils.md)**
 
 # Bosses & Tips
+
+This page is a **team-preparation reference**: rosters, items, abilities, moves and battle logic. Tips explain the opposing win condition without prescribing a turn-by-turn walkthrough.
 
 ## Falkner — Flying / Tailwind
 
@@ -32,7 +34,7 @@ Baton Pass becomes dangerous if Eevee gets too many free turns.
 | Eevee | 29 | Eviolite | Adaptability | Double Team · Baton Pass · Substitute · Wish |
 | Porygon2 | 29 | Eviolite | Download | Thunderbolt · Ice Beam · Recover · Tri Attack |
 | Ambipom | 29 | Silk Scarf | Technician | Fake Out · Double Hit · Knock Off · Aerial Ace |
-| Ursaring | 29 | Flame Orb | Guts | Facade · Earthquake · Close Combat · Crunch |
+| Ursaring | 30 | Flame Orb | Guts | Facade · Earthquake · Close Combat · Crunch |
 | Maushold | 29 | Wide Lens | Technician | Population Bomb · Bite · Encore · U-turn |
 | Miltank | 32 | Leftovers | Scrappy | Body Slam · Milk Drink · Zen Headbutt · Rollout |
 
