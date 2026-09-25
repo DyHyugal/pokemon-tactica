@@ -83,6 +83,8 @@ Objets retenus :
 
 Évoli, Capidextre et Écrémeuh n'ont pas d'objet tenu.
 
+Décision owner du 25 septembre 2026 : Blanche possède bien **6 Pokémon** et le slot Ours est **Ursaring niv. 30**, talent **Cran**, avec **Façade / Séisme / Close Combat / Mâchouille**. Les anciennes données Teddiursa ou Ursaring niv. 29 sont obsolètes et doivent être réconciliées dans le JSON canonique, le moteur, les tests et le wiki.
+
 À partir de Mortimer, l'équipe complète peut être équipée, sous réserve de respecter l'unicité des objets.
 
 ---
@@ -427,6 +429,32 @@ Ajouter un test automatisé explicitement dédié à la transition :
 
 ---
 
+# Encounters — couverture Pokédex pré-Ligue et déduplication
+
+L'audit d'accessibilité doit optimiser la diversité, pas seulement vérifier les caps.
+
+Objectif :
+- **100 %** des familles/espèces non légendaires et non fabuleuses prévues par le build accessibles avant la première Ligue via une forme de base/pré-évolution capturable ;
+- **90–95 %** accepté uniquement si les exceptions restantes sont justifiées par une vraie contrainte de progression, d'habitat ou de mécanique.
+
+Une forme de base déjà disponible ne doit pas être répétée sur plusieurs routes standard au détriment d'une autre famille absente. Une forme de base possède donc une **zone canonique principale** avant Ligue. Wattouat doit par exemple être concentré sur une seule zone ; même logique pour Mimigal/Spinarak et les autres doublons/triplons.
+
+Les répétitions ne sont tolérées que si elles sont explicitement justifiées et si elles n'empêchent pas d'introduire une famille encore absente.
+
+**Scorplane doit être disponible avant la première Ligue.** L'accès tardif à Scorvol à Kanto suivi de reproduction ne satisfait pas cette règle.
+
+Le stade évolutif sauvage suit le niveau réel. Exemple normatif : **Héricendre niv. 33 → Feurisson niv. 33**. Appliquer la même logique à toutes les familles et préférer la forme légalement atteignable au niveau de la rencontre.
+
+Le rapport d'audit doit lister :
+- couverture pré-Ligue ;
+- familles absentes ;
+- doublons/triplons inter-zones ;
+- remplacements proposés ;
+- cohérence habitat/méthode ;
+- légalité des stades d'évolution.
+
+---
+
 # Validateurs obligatoires
 
 Les tests de données doivent vérifier automatiquement :
@@ -442,4 +470,8 @@ Les tests de données doivent vérifier automatiquement :
 9. Blanche <= 3 objets ;
 10. progression correcte des caps, notamment Proton 1 -> Hector ;
 11. persistance des membres des équipes intermédiaires rival/Rocket ;
-12. formes évolutives légales au niveau réel du combat.
+12. formes évolutives légales au niveau réel du combat ;
+13. taux de couverture des familles avant la première Ligue ;
+14. absence de doublons/triplons de formes de base entre zones standard sauf exception documentée ;
+15. Scorplane disponible avant la première Ligue ;
+16. stade évolutif des encounters cohérent avec le niveau réel, notamment Héricendre 33 → Feurisson 33.
