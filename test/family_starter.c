@@ -338,7 +338,8 @@ TEST("Family starter: rival evolution follows the battle level")
     EXPECT_EQ(FamilyStarter_GetRivalSpeciesAtLevel(SPECIES_CHIKORITA, 5), SPECIES_HORSEA);
     EXPECT_EQ(FamilyStarter_GetRivalSpeciesAtLevel(SPECIES_BAYLEEF, 18), SPECIES_HORSEA);
     EXPECT_EQ(FamilyStarter_GetRivalSpeciesAtLevel(SPECIES_MEGANIUM, 24), SPECIES_HORSEA);
-    EXPECT_EQ(FamilyStarter_GetRivalSpeciesAtLevel(SPECIES_MEGANIUM, 40), SPECIES_SEADRA);
+    EXPECT_EQ(FamilyStarter_GetRivalSpeciesAtLevel(SPECIES_MEGANIUM, 32), SPECIES_SEADRA);
+    EXPECT_EQ(FamilyStarter_GetRivalSpeciesAtLevel(SPECIES_MEGANIUM, 40), SPECIES_KINGDRA);
 
     VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_GOLETT);
     EXPECT_EQ(FamilyStarter_GetRivalSpeciesAtLevel(SPECIES_MEGANIUM, 40), SPECIES_GOLETT);
