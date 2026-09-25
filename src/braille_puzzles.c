@@ -372,6 +372,7 @@ bool8 CheckOmanyte(void)
     return FALSE;
 }
 
+#if IS_HNS
 bool8 CheckTogepi(void)
 {
     // Elm doesn't check Togepi until the egg has been received.
@@ -387,6 +388,7 @@ bool8 CheckTogepi(void)
     }
     return FALSE;
 }
+#endif
 
 bool8 CheckCelebi(void)
 {
