@@ -2,7 +2,7 @@
 
 **État audité au 25 septembre 2026 sur `feature/rival-progression-bosses` (`7bc70345`), issue d'`integration/v1` (`2aa3d086`).** Ce registre suit l'état de l'implémentation ; les règles produit restent dans `SOURCE_OF_TRUTH.md` et `data/spec/`. Un tag décrit les preuves disponibles, pas une nouvelle décision de game design. Les commits fonctionnels locaux sont distingués de leur intégration distante tant que l'authentification GitHub empêche leur publication.
 
-Le build `make hns -j4` passe (ROM 94,53 %, EWRAM 94,70 %, IWRAM 78,45 %). La référence automatisée passe avec `Native` 3/3, `Audio` 6/6, `Settings` 5/5, `Family` 29/29, `Evolution requirements` 4/4, `Level cap` 9/9, `Training NPC` 7/7 et `Family Safari` 4/4. Le bloc rencontres ajoute `Tactica encounters` 2/2 et un validateur qui compare les 405 tables compilées à la source canonique. Les validateurs statiques `validate_tactica_spec.py` et `validate_family_remix.py`, ainsi que les contrôles d'idempotence `sync_tactica_encounters.py --check` et `sync_tactica_bosses.py --check`, passent également.
+Le build `make hns -j4` passe (ROM 94,53 %, EWRAM 94,70 %, IWRAM 78,45 %). La référence automatisée passe avec `Native` 3/3, `Audio` 6/6, `Settings` 5/5, `Family` 29/29, `Evolution requirements` 4/4, `Level cap` 9/9, `Training NPC` 7/7 et `Family Safari` 4/4. Les blocs dédiés ajoutent `Tactica encounters` 2/2 et `Tactica balance` 2/2. Les validateurs statiques `validate_tactica_spec.py`, `validate_family_remix.py` et `validate_tactica_balance.py`, ainsi que les contrôles d'idempotence `sync_tactica_encounters.py --check` et `sync_tactica_bosses.py --check`, passent également.
 
 ## Règles des tags
 
@@ -43,8 +43,8 @@ La colonne « preuve / prochain contrôle » décrit la **situation connue au ge
 | NORMAL/HARD, EV/IV et IA | `[PARTIEL]` | `7bc70345` garantit le même contenu NORMAL/HARD, l'absence d'EV optimisés en NORMAL, des EV/IV légaux en HARD et une IA stratégique sans information cachée. Le validateur contrôle 22 équipes fixes et 7 variantes Rocket ; reste à publier et intégrer. |
 | Méga uniques et Jasmine | `[PARTIEL]` | `7bc70345` synchronise les objets Méga canoniques et remplace l'ancien ace par Méga-Galeking : Filter, Careful, Heavy Slam / Curse / Rest / Sleep Talk, EV 252 PV / 4 Déf / 252 Déf. Spé. Contrôles statiques et build passent ; disponibilité en jeu à auditer avec les boutiques. |
 | Objets de soins des champions | `[À AUDITER]` | Jusqu'à deux si prévus ; vérifier disponibilité des objets au stade du jeu. |
-| Balance de 26 espèces | `[PARTIEL]` | `data/spec/pokemon_balance.json` ; comparer statistiques/types/talents codés, notamment Dracaufeu X/Y. |
-| Quinze learnsets custom | `[PARTIEL]` | JSON canonique ; comparer les 15 entrées au code et au niveau réel d'apprentissage. |
+| Balance de 26 espèces | `[PARTIEL]` | Le validateur exhaustif `tools/validate_tactica_balance.py` contrôle les statistiques, types et talents des 26 entrées de `data/spec/pokemon_balance.json`. Le bloc local corrige Dracaufeu à 110 Atk et Méga-Dracaufeu X à 156 Atk sans modifier les 120 Atk de Méga Y ; `Tactica balance` 2/2 et build HNS passent le 25-09-2026. Reste à publier et intégrer. |
+| Quinze learnsets custom | `[PARTIEL]` | Les 15 changements canoniques sont contrôlés dans le learnset Gen 7 réellement compilé, dont Aquatacle et Eau Revoir aux niveaux requis, et testés via les données moteur par `Tactica balance` 2/2 le 25-09-2026. Reste à publier et intégrer. |
 | PNJ capacités/CT | `[PARTIEL]` | PNJ existant ; inventaire de toutes capacités actives, compatibilité et achat à finir. |
 | PNJ objets stratégiques | `[PARTIEL]` | Catalogues partiels ; inventaire exhaustif des objets utiles hors boutiques normales et scénario. |
 | PNJ Méga-Gemmes | `[À AUDITER]` | Vérifier existence et catalogue ; si absent, créer le PNJ dédié près des capacités. |
