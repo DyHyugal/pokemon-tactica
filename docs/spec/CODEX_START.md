@@ -16,6 +16,7 @@ Ces décisions sont postérieures aux anciens handoffs et doivent être propagé
 - Le rival conserve son starter/catégorie et ses rosters thématiques, mais son **profil de niveaux doit suivre le prochain boss/Champion obligatoire**. Exemple : après le badge 2, le rival avant Blanche utilise le profil de Blanche, soit membres autour de 29 et ace à 32, au lieu des anciens niveaux historiques 16–19/24.
 - Albert = 3 Pokémon ; Hector = 4 ; Blanche = 6. Pour Blanche, remplacer le slot Ursaring/Teddiursa obsolète par **Ursaring niv. 30 @ Orbe Flamme, Cran, Façade / Séisme / Close Combat / Mâchouille**. Réconcilier `data/spec/bosses.json`, données moteur, wiki et tests.
 - Salamèche et Reptincel **Dragon / Feu** ont été confirmés en ROM ; ne pas régresser ces types.
+- **Méga-Évolution joueur débloquée après le badge 4** : Mortimer doit remettre le **Méga-Anneau / Mega Ring** juste après le badge puis la CT, avec le jingle et le texte standard d'obtention d'objet. Le joueur doit pouvoir utiliser les Méga **dès la sortie de l'arène de Mortimer**, donc pendant toute la portion de jeu entre l'obtention du badge 4 et le badge 5. Ne pas calibrer le déblocage sur le badge 5 ni sur un événement ultérieur. Le moteur actuel vérifie déjà la présence de `ITEM_MEGA_RING` côté joueur dans `CanMegaEvolve()` ; le script de Mortimer doit donc être la source du déblocage.
 
 ### Wiki : contenu et comportement
 
