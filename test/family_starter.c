@@ -347,7 +347,8 @@ TEST("Family starter: rival evolution follows the battle level")
 
     VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_ELEKID);
     EXPECT_EQ(FamilyStarter_GetRivalSpeciesAtLevel(SPECIES_BAYLEEF, 18), SPECIES_ELEKID);
-    EXPECT_EQ(FamilyStarter_GetRivalSpeciesAtLevel(SPECIES_MEGANIUM, 40), SPECIES_ELECTABUZZ);
+    EXPECT_EQ(FamilyStarter_GetRivalSpeciesAtLevel(SPECIES_MEGANIUM, 30), SPECIES_ELECTABUZZ);
+    EXPECT_EQ(FamilyStarter_GetRivalSpeciesAtLevel(SPECIES_MEGANIUM, 40), SPECIES_ELECTIVIRE);
 }
 
 TEST("Family starter: rival category draw follows the canonical counter matrix")
