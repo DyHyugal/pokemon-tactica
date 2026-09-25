@@ -30,6 +30,72 @@ for entry in standard + special:
 unique_standard = {(x["map"], x["method"], x.get("time", "Any")) for x in standard}
 require(len(unique_standard) == 405, "duplicate standard map/method/time table")
 
+encounter_species = {species for table in standard for species in table["species"]}
+required_starter_families = {
+    "Bulbasaur": ("BULBASAUR", "IVYSAUR", "VENUSAUR"),
+    "Charmander": ("CHARMANDER", "CHARMELEON", "CHARIZARD"),
+    "Squirtle": ("SQUIRTLE", "WARTORTLE", "BLASTOISE"),
+    "Chikorita": ("CHIKORITA", "BAYLEEF", "MEGANIUM"),
+    "Cyndaquil": ("CYNDAQUIL", "QUILAVA", "TYPHLOSION"),
+    "Totodile": ("TOTODILE", "CROCONAW", "FERALIGATR"),
+    "Treecko": ("TREECKO", "GROVYLE", "SCEPTILE"),
+    "Torchic": ("TORCHIC", "COMBUSKEN", "BLAZIKEN"),
+    "Mudkip": ("MUDKIP", "MARSHTOMP", "SWAMPERT"),
+    "Turtwig": ("TURTWIG", "GROTLE", "TORTERRA"),
+    "Chimchar": ("CHIMCHAR", "MONFERNO", "INFERNAPE"),
+    "Piplup": ("PIPLUP", "PRINPLUP", "EMPOLEON"),
+    "Snivy": ("SNIVY", "SERVINE", "SERPERIOR"),
+    "Tepig": ("TEPIG", "PIGNITE", "EMBOAR"),
+    "Oshawott": ("OSHAWOTT", "DEWOTT", "SAMUROTT"),
+    "Chespin": ("CHESPIN", "QUILLADIN", "CHESNAUGHT"),
+    "Fennekin": ("FENNEKIN", "BRAIXEN", "DELPHOX"),
+    "Froakie": ("FROAKIE", "FROGADIER", "GRENINJA"),
+    "Rowlet": ("ROWLET", "DARTRIX", "DECIDUEYE"),
+    "Litten": ("LITTEN", "TORRACAT", "INCINEROAR"),
+    "Popplio": ("POPPLIO", "BRIONNE", "PRIMARINA"),
+    "Grookey": ("GROOKEY", "THWACKEY", "RILLABOOM"),
+    "Scorbunny": ("SCORBUNNY", "RABOOT", "CINDERACE"),
+    "Sobble": ("SOBBLE", "DRIZZILE", "INTELEON"),
+    "Sprigatito": ("SPRIGATITO", "FLORAGATO", "MEOWSCARADA"),
+    "Fuecoco": ("FUECOCO", "CROCALOR", "SKELEDIRGE"),
+    "Quaxly": ("QUAXLY", "QUAXWELL", "QUAQUAVAL"),
+    "Charcadet": ("CHARCADET", "ARMAROUGE", "CERULEDGE"),
+    "Horsea": ("HORSEA", "SEADRA", "KINGDRA"),
+    "Elekid": ("ELEKID", "ELECTABUZZ", "ELECTIVIRE"),
+    "Magnemite": ("MAGNEMITE", "MAGNETON", "MAGNEZONE"),
+    "Pawmi": ("PAWMI", "PAWMO", "PAWMOT"),
+    "Wattrel": ("WATTREL", "KILOWATTREL"),
+    "Pichu": ("PICHU", "PIKACHU", "RAICHU"),
+    "Gligar": ("GLIGAR", "GLISCOR"),
+    "Drilbur": ("DRILBUR", "EXCADRILL"),
+    "Sandile": ("SANDILE", "KROKOROK", "KROOKODILE"),
+    "Golett": ("GOLETT", "GOLURK"),
+    "Sandygast": ("SANDYGAST", "PALOSSAND"),
+    "Alolan Vulpix": ("VULPIX_ALOLA", "NINETALES_ALOLA"),
+    "Snorunt": ("SNORUNT", "GLALIE", "FROSLASS"),
+    "Swinub": ("SWINUB", "PILOSWINE", "MAMOSWINE"),
+    "Galarian Darumaka": ("DARUMAKA_GALAR", "DARMANITAN_GALAR"),
+    "Vanillite": ("VANILLITE", "VANILLISH", "VANILLUXE"),
+}
+for family, members in required_starter_families.items():
+    require(any(any(species.startswith(f"SPECIES_{member}") for member in members)
+                for species in encounter_species), f"missing starter family {family}")
+
+tables_by_key = {(x["map"], x["method"], x.get("time", "Any")): x for x in standard}
+route36_day = tables_by_key[("MAP_ROUTE36_HNS", "land_mons", "Day")]
+route36_night = tables_by_key[("MAP_ROUTE36_HNS", "land_mons", "Night")]
+require("SPECIES_CHARMANDER" not in route36_day["species"], "Charmander remains on early Route 36")
+require("SPECIES_ELEKID" not in route36_night["species"], "Elekid remains on early Route 36")
+required_rare_slots = {
+    ("MAP_ROUTE37_HNS", "land_mons", "Day"): "SPECIES_CHARMANDER",
+    ("MAP_ROUTE42_HNS", "land_mons", "Day"): "SPECIES_ELEKID",
+    ("MAP_ILEX_FOREST_HNS", "land_mons", "Night"): "SPECIES_CHIKORITA",
+    ("MAP_ICE_PATH_1F_HNS", "land_mons", "Any"): "SPECIES_NINETALES_ALOLA",
+    ("MAP_ICE_PATH_B2F_HNS", "land_mons", "Any"): "SPECIES_DARMANITAN_GALAR_STANDARD",
+}
+for key, species in required_rare_slots.items():
+    require(tables_by_key[key]["species"][3] == species, f"rare starter-family slot {key}")
+
 starter = read("starters.json")
 require(len(starter["categories"]) == 6, "six starter categories")
 require(all(len(x["species"]) == 5 for x in starter["categories"].values()),

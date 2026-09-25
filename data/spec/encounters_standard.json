@@ -1118,7 +1118,7 @@
         "SPECIES_PILOSWINE",
         "SPECIES_FROSLASS",
         "SPECIES_BEARTIC",
-        "SPECIES_FRIGIBAX"
+        "SPECIES_NINETALES_ALOLA"
       ]
     },
     {
@@ -1156,7 +1156,7 @@
         "SPECIES_PILOSWINE",
         "SPECIES_CETITAN",
         "SPECIES_CRYOGONAL",
-        "SPECIES_MAMOSWINE"
+        "SPECIES_DARMANITAN_GALAR_STANDARD"
       ]
     },
     {
@@ -1251,7 +1251,7 @@
         "SPECIES_SPINARAK",
         "SPECIES_VENONAT",
         "SPECIES_JOLTIK",
-        "SPECIES_PINSIR"
+        "SPECIES_CHIKORITA"
       ]
     },
     {
@@ -4842,7 +4842,7 @@
         "SPECIES_SCRAGGY",
         "SPECIES_SPINARAK",
         "SPECIES_STUFFUL",
-        "SPECIES_CHARMANDER"
+        "SPECIES_VULPIX"
       ]
     },
     {
@@ -4861,7 +4861,7 @@
         "SPECIES_CRABRAWLER",
         "SPECIES_SPINARAK",
         "SPECIES_SINISTEA",
-        "SPECIES_ELEKID"
+        "SPECIES_HELIOPTILE"
       ]
     },
     {
@@ -4899,7 +4899,7 @@
         "SPECIES_GROWLITHE",
         "SPECIES_SPINARAK",
         "SPECIES_TEDDIURSA",
-        "SPECIES_VULPIX"
+        "SPECIES_CHARMANDER"
       ]
     },
     {
@@ -5203,7 +5203,7 @@
         "SPECIES_GRANBULL",
         "SPECIES_MAUSHOLD_THREE",
         "SPECIES_LURANTIS",
-        "SPECIES_HELIOLISK"
+        "SPECIES_ELEKID"
       ]
     },
     {

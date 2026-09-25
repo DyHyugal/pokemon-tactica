@@ -38980,7 +38980,7 @@
               {
                 "min_level": 58,
                 "max_level": 60,
-                "species": "SPECIES_FRIGIBAX"
+                "species": "SPECIES_NINETALES_ALOLA"
               }
             ]
           }
@@ -39009,7 +39009,7 @@
               {
                 "min_level": 58,
                 "max_level": 60,
-                "species": "SPECIES_FRIGIBAX"
+                "species": "SPECIES_NINETALES_ALOLA"
               }
             ]
           }
@@ -39096,7 +39096,7 @@
               {
                 "min_level": 59,
                 "max_level": 61,
-                "species": "SPECIES_MAMOSWINE"
+                "species": "SPECIES_DARMANITAN_GALAR_STANDARD"
               }
             ]
           }
@@ -39125,7 +39125,7 @@
               {
                 "min_level": 59,
                 "max_level": 61,
-                "species": "SPECIES_MAMOSWINE"
+                "species": "SPECIES_DARMANITAN_GALAR_STANDARD"
               }
             ]
           }
@@ -39374,7 +39374,7 @@
               {
                 "min_level": 24,
                 "max_level": 27,
-                "species": "SPECIES_PINSIR"
+                "species": "SPECIES_CHIKORITA"
               }
             ]
           },
@@ -47441,7 +47441,7 @@
               {
                 "min_level": 27,
                 "max_level": 30,
-                "species": "SPECIES_CHARMANDER"
+                "species": "SPECIES_VULPIX"
               }
             ]
           },
@@ -47495,7 +47495,7 @@
               {
                 "min_level": 27,
                 "max_level": 30,
-                "species": "SPECIES_ELEKID"
+                "species": "SPECIES_HELIOPTILE"
               }
             ]
           },
@@ -47549,7 +47549,7 @@
               {
                 "min_level": 32,
                 "max_level": 35,
-                "species": "SPECIES_VULPIX"
+                "species": "SPECIES_CHARMANDER"
               }
             ]
           }
@@ -48064,7 +48064,7 @@
               {
                 "min_level": 52,
                 "max_level": 54,
-                "species": "SPECIES_HELIOLISK"
+                "species": "SPECIES_ELEKID"
               }
             ]
           },
