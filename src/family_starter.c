@@ -679,15 +679,24 @@ void FamilyStarter_ApplyRivalRoster(struct Pokemon *party, u8 count, u16 trainer
         u32 level = GetMonData(mon, MON_DATA_LEVEL);
         u16 species = GetRivalRosterSpecies(slot == 1 ? savedSpecies : roster->baseSpecies, level);
         u32 movePhase = category == FAMILY_ICE && slot == 0 && level < 40 ? 1 : phase;
-        u32 exp = gExperienceTables[gSpeciesInfo[species].growthRate][level];
+        u32 originalIvs = GetMonData(mon, MON_DATA_IVS);
+        u32 otId = GetMonData(mon, MON_DATA_OT_ID);
+        u32 friendship = GetMonData(mon, MON_DATA_FRIENDSHIP);
+        u32 ball = GetMonData(mon, MON_DATA_POKEBALL);
+        u32 personality = GetMonData(mon, MON_DATA_PERSONALITY);
         u16 item = fight < 3 ? ITEM_NONE : slot == 1 ? sCategoryBoosters[category] : roster->item;
         u32 abilityNum = slot == 0 ? sLeadAbilityNum[category] : 0;
         if (category == FAMILY_WATER && species == SPECIES_WINGULL)
             abilityNum = 0; // Drizzle becomes available on Pelipper.
 
-        SetMonData(mon, MON_DATA_SPECIES, &species);
-        SetMonData(mon, MON_DATA_EXP, &exp);
-        SetMonData(mon, MON_DATA_NICKNAME, GetSpeciesName(species));
+        if (slot != 1)
+            personality = personality - personality % NUM_NATURES + roster->nature;
+        // Personality selects the boxed substruct order. Construct with the desired
+        // nature instead of changing the personality of an existing Pokemon.
+        CreateMon(mon, species, level, personality, OTID_STRUCT_PRESET(otId));
+        SetMonData(mon, MON_DATA_IVS, &originalIvs);
+        SetMonData(mon, MON_DATA_FRIENDSHIP, &friendship);
+        SetMonData(mon, MON_DATA_POKEBALL, &ball);
         SetMonData(mon, MON_DATA_HELD_ITEM, &item);
         SetMonData(mon, MON_DATA_ABILITY_NUM, &abilityNum);
         if (slot == 1)
@@ -699,12 +708,6 @@ void FamilyStarter_ApplyRivalRoster(struct Pokemon *party, u8 count, u16 trainer
                 SetMonData(mon, MON_DATA_MOVE1 + j, &roster->moves[movePhase][j]);
                 SetMonData(mon, MON_DATA_PP1 + j, &pp);
             }
-        if (slot != 1)
-        {
-            u32 personality = GetMonData(mon, MON_DATA_PERSONALITY);
-            personality = personality - personality % NUM_NATURES + roster->nature;
-            SetMonData(mon, MON_DATA_PERSONALITY, &personality);
-        }
         if (GetCurrentDifficultyLevel() == DIFFICULTY_HARD)
         {
             u8 iv = 31;
