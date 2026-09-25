@@ -408,12 +408,37 @@ def validate_shops():
         fail("dedicated Mega Stone vendor is missing beside the Goldenrod TM clerk")
 
 
+def validate_rival_progression():
+    text = (ROOT / "src/data/trainers_hns.party").read_text().split(
+        "/* ========== Family Remix FINAL hard boss parties ========== */", 1)[0]
+    expected = (1, 3, 4, 6, 6, 6, 6)
+    for starter, stages in (("CHIKORITA", ("Chikorita", "Bayleef", "Bayleef", "Meganium", "Meganium")),
+                            ("CYNDAQUIL", ("Cyndaquil", "Quilava", "Quilava", "Typhlosion", "Typhlosion")),
+                            ("TOTODILE", ("Totodile", "Croconaw", "Croconaw", "Feraligatr", "Feraligatr"))):
+        for fight, party_size in enumerate(expected, start=1):
+            trainer_id = f"TRAINER_RIVAL_{starter}_{fight}_HNS"
+            matches = re.findall(rf"^=== {trainer_id} ===\n(.*?)(?=^=== |\Z)", text, re.M | re.S)
+            if len(matches) != 1:
+                fail(f"expected exactly one {trainer_id} trainer")
+            party = matches[0].split("\n\n", 1)[1]
+            if len(re.findall(r"^Level: (\d+)$", party, re.M)) != party_size:
+                fail(f"{trainer_id}: expected {party_size} members")
+            if fight <= 5 and len(re.findall(rf"^{stages[fight - 1]}(?: @ .+)?$", party, re.M)) != 1:
+                fail(f"{trainer_id}: saved starter placeholder missing or duplicated")
+            if fight in (4, 5) and len(re.findall(r"^Ursaring(?: @ .+)?$", party, re.M)) != 1:
+                fail(f"{trainer_id}: the sixth member must persist to the next fight")
+            items = held_items(party)
+            if len(items) != len(set(items)):
+                fail(f"{trainer_id}: duplicate rival held items")
+
+
 def main():
     validate_bosses()
     validate_rockets()
+    validate_rival_progression()
     validate_encounters()
     validate_shops()
-    print("Tactica engine data validation passed: bosses, Rockets, EVs, encounters, Safari and shops")
+    print("Tactica engine data validation passed: bosses, Rockets, rival sizes, EVs, encounters, Safari and shops")
 
 
 if __name__ == "__main__":
