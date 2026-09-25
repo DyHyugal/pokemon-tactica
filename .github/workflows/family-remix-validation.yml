@@ -1,9 +1,9 @@
 name: Tactica validation
 on:
   push:
-    branches: [integration/v1, 'feature/**']
+    branches: [main, integration/v1, 'feature/**']
   pull_request:
-    branches: [integration/v1]
+    branches: [main, integration/v1]
   workflow_dispatch:
 permissions:
   contents: read
@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Validate documentation index
+        run: .github/docs_validate/inclusive_summary.py
       - name: Install build dependencies
         run: |
           sudo apt-get update
