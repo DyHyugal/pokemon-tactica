@@ -293,7 +293,7 @@ u32 FamilyStarter_GetRivalCounterCategory(u32 playerCategory, u32 roll)
     return candidates->categories[roll % candidates->count];
 }
 
-static void SelectRivalStarter(u16 playerSpecies)
+static void UNUSED SelectRivalStarter(u16 playerSpecies)
 {
     u32 playerCategory = GetMenuCategory(playerSpecies);
     u32 counterCategory;
@@ -459,7 +459,7 @@ static u16 GetEeveeTypeBooster(u16 preference)
     return ITEM_NONE;
 }
 
-static void QueueStarterRewards(u16 species, u16 preference)
+static void UNUSED QueueStarterRewards(u16 species, u16 preference)
 {
     u16 evolutionItem;
     u32 category;
@@ -522,7 +522,7 @@ void FamilyStarter_RecordPrimary(void)
 #endif
 }
 
-static u32 GetJohtoRivalStarterStage(u16 species)
+static u32 UNUSED GetJohtoRivalStarterStage(u16 species)
 {
     switch (species)
     {
