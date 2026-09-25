@@ -1,9 +1,4 @@
 [Home](Home.md) · [Game Guide](Game-Guide.md) · [Changes](Changes.md) · [Pokédex](Pokedex.md) · [Locations](Locations.md) · [Bosses & Tips](Bosses-and-Tips.md) · [Credits & Versions](Credits-and-Versions.md) · **[FR](../FR/Credits-et-Versions.md)**
-layout: default
-title: "Credits & Versions"
----
-
-[Home](Home.md) · [Game Guide](Game-Guide.md) · [Changes](Changes.md) · [Bosses & Tips](Bosses-and-Tips.md) · [Pokédex](Pokedex.md) · [Locations](Locations.md) · [Credits & Versions](Credits-and-Versions.md) · **[FR](../FR/Credits-et-Versions.md)**
 
 # Credits & Versions
 
