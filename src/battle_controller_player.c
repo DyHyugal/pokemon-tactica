@@ -75,7 +75,9 @@ static void PlayerHandleEndBounceEffect(enum BattlerId battler);
 static void PlayerHandleLinkStandbyMsg(enum BattlerId battler);
 static void PlayerHandleResetActionMoveSelection(enum BattlerId battler);
 static void PlayerHandleEndLinkBattle(enum BattlerId battler);
+#if IS_HNS
 static void DrawHnsBattleActionMenu(u8 cursorPosition);
+#endif
 static void PlayerHandleBattleDebug(enum BattlerId battler);
 
 static void PlayerBufferRunCommand(enum BattlerId battler);
@@ -1837,9 +1839,9 @@ void MoveSelectionDestroyCursorAt(u8 cursorPosition)
     CopyBgTilemapBufferToVram(0);
 }
 
+#if IS_HNS
 static void DrawHnsBattleActionMenu(u8 cursorPosition)
 {
-#if IS_HNS
     static const u8 sText_Attack[] = _("ATTAQUE");
     static const u8 sText_Bag[] = _("SAC");
     static const u8 sText_Team[] = _("EQUIPE");
@@ -1878,8 +1880,8 @@ static void DrawHnsBattleActionMenu(u8 cursorPosition)
     }
     PutWindowTilemap(B_WIN_ACTION_MENU);
     CopyWindowToVram(B_WIN_ACTION_MENU, COPYWIN_FULL);
-#endif
 }
+#endif
 
 void ActionSelectionCreateCursorAt(u8 cursorPosition, u8 baseTileNum)
 {

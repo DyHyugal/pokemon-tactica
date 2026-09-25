@@ -1,7 +1,9 @@
-name: Family Remix validation
+name: Tactica validation
 on:
   push:
-    branches: [work/native-speed-starter-egg]
+    branches: [main, integration/v1, 'feature/**']
+  pull_request:
+    branches: [main, integration/v1]
   workflow_dispatch:
 permissions:
   contents: read
@@ -10,14 +12,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Validate documentation index
+        run: .github/docs_validate/inclusive_summary.py
       - name: Install build dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends binutils-arm-none-eabi gcc-arm-none-eabi libnewlib-arm-none-eabi libpng-dev python3
-      - name: Validate Family Remix data
-        run: python3 tools/validate_family_remix.py
+      - name: Validate Tactica engine data
+        run: |
+          python3 tools/validate_tactica_spec.py
+          python3 tools/validate_family_remix.py
+          python3 tools/validate_tactica_balance.py
+          python3 tools/sync_tactica_encounters.py --check
+          python3 tools/sync_tactica_bosses.py --check
+          python3 tools/sync_tactica_mega_shop.py --check
+          python3 tools/sync_tactica_move_shop.py --check
       - name: Build HnS
         run: make hns -j2
+      - name: Validate Tactica UI assets
+        run: python3 tools/validate_tactica_ui.py
       - name: Level Cap tests
         run: make check BUILD=hns TESTS='*Level cap:' -j2
       - name: Evolution requirement tests
@@ -26,6 +39,12 @@ jobs:
         run: make check BUILD=hns TESTS='*Training NPC:' -j2
       - name: Family Safari tests
         run: make check BUILD=hns TESTS='*Family Safari:' -j2
+      - name: Tactica encounter tests
+        run: make check BUILD=hns TESTS='Tactica encounters:' -j2
+      - name: Tactica balance tests
+        run: make check BUILD=hns TESTS='Tactica balance:' -j2
+      - name: Tactica shop tests
+        run: make check BUILD=hns TESTS='Tactica shops:' -j2
       - name: Existing audio regression tests
         run: make check BUILD=hns TESTS=Audio -j2
       - name: Existing Settings regression tests

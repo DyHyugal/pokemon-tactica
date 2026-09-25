@@ -7187,7 +7187,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Wing Attack
 - U-turn
 
-Gligar @ Sitrus Berry
+Gligar
 Level: 14
 Ability: Immunity
 Nature: Impish
@@ -7197,7 +7197,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Knock Off
 - Roost
 
-Pidgeotto @ Sharp Beak
+Pidgeotto
 Level: 17
 Ability: Big Pecks
 Nature: Adamant
@@ -7206,7 +7206,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Quick Attack
 - Roost
 - Work Up
-
 
 === TRAINER_FALKNER_2_HNS ===
 Name: FALKNER
@@ -7289,7 +7288,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Explosion
 - Gyro Ball
 
-Yanma @ Wise Glasses
+Yanma
 Level: 22
 Ability: Speed Boost
 Nature: Modest
@@ -7299,7 +7298,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Psychic
 - Protect
 
-Heracross @ Expert Belt
+Heracross
 Level: 22
 Ability: Guts
 Nature: Adamant
@@ -7318,7 +7317,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Aerial Ace
 - X-Scissor
 - Quick Attack
-
 
 === TRAINER_BUGSY_2_HNS ===
 Name: BUGSY
@@ -7391,7 +7389,7 @@ Mugshot: Pink
 Items: Super Potion / Potion
 Difficulty: Normal
 
-Eevee @ Eviolite
+Eevee
 Level: 29
 Ability: Adaptability
 Nature: Timid
@@ -7411,7 +7409,7 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 - Recover
 - Tri Attack
 
-Ambipom @ Silk Scarf
+Ambipom
 Level: 29
 Ability: Technician
 Nature: Jolly
@@ -7421,7 +7419,7 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 - Knock Off
 - Aerial Ace
 
-Teddiursa @ Eviolite
+Teddiursa @ Flame Orb
 Level: 29
 Ability: Quick Feet
 Nature: Adamant
@@ -7441,7 +7439,7 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 - Encore
 - U-turn
 
-Miltank @ Leftovers
+Miltank
 Level: 32
 Ability: Scrappy
 Nature: Impish
@@ -7450,7 +7448,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 - Milk Drink
 - Zen Headbutt
 - Rollout
-
 
 === TRAINER_WHITNEY_2_HNS ===
 Name: WHITNEY
@@ -7553,15 +7550,15 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Shadow Sneak
 - Drain Punch
 
-Lampent @ Eviolite
+Chandelure @ Choice Specs
 Level: 35
 Ability: Flash Fire
 Nature: Modest
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Shadow Ball
-- Flamethrower
+- Fire Blast
 - Energy Ball
-- Pain Split
+- Psychic
 
 Annihilape @ Chesto Berry
 Level: 35
@@ -7582,7 +7579,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Sludge Bomb
 - Focus Blast
 - Disable
-
 
 === TRAINER_MORTY_2_HNS ===
 Name: MORTY
@@ -7716,7 +7712,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Thunderbolt
 - Low Kick
 - Substitute
-
 
 === TRAINER_PRYCE_2_HNS ===
 Name: PRYCE
@@ -7921,7 +7916,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Brave Bird
 - Roost
 
-Archaludon @ Leftovers
+Archaludon @ Sitrus Berry
 Level: 48
 Ability: Stamina
 Nature: Bold
@@ -7941,16 +7936,15 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Volt Switch
 - Signal Beam
 
-Steelix @ Steelixite
+Aggron @ Aggronite
 Level: 52
-Ability: Sand Force
-Nature: Impish
+Ability: Filter
+Nature: Careful
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Heavy Slam
-- Earthquake
-- Stone Edge
-- Body Press
-
+- Curse
+- Rest
+- Sleep Talk
 
 === TRAINER_JASMINE_2_HNS ===
 Name: JASMINE
@@ -8185,7 +8179,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Drain Punch
 - Aqua Jet
 
-
 === TRAINER_CHUCK_2_HNS ===
 Name: CHUCK
 Class: Leader Hns
@@ -8389,7 +8382,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - U-turn
 - Flamethrower
 
-Zweilous @ Choice Band
+Zweilous @ Choice Specs
 Level: 61
 Ability: Hustle
 Nature: Adamant
@@ -8418,7 +8411,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Dragon Pulse
 - Hydro Pump
 - Ice Beam
-
 
 === TRAINER_CLAIR_2_HNS ===
 Name: CLAIR
@@ -8521,7 +8513,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Iron Defense
 - Body Press
 
-Cradily @ Leftovers
+Cradily @ Sitrus Berry
 Level: 84
 Ability: Storm Drain
 Nature: Calm
@@ -8544,13 +8536,12 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Steelix @ Steelixite
 Level: 86
 Ability: Sand Force
-Nature: Impish
+Nature: Adamant
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Heavy Slam
 - Earthquake
 - Stone Edge
 - Body Press
-
 
 === TRAINER_MISTY_HNS ===
 Name: MISTY
@@ -8574,7 +8565,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - U-turn
 - Roost
 
-Starmie @ Life Orb
+Starmie @ Starminite
 Level: 78
 Ability: Analytic
 Nature: Timid
@@ -8614,16 +8605,15 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Volt Switch
 - Will-O-Wisp
 
-Gyarados @ Gyaradosite
+Gyarados @ Lum Berry
 Level: 76
-Ability: Mold Breaker
+Ability: Intimidate
 Nature: Jolly
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Dragon Dance
 - Waterfall
-- Crunch
+- Dragon Dance
 - Earthquake
-
+- Ice Fang
 
 === TRAINER_LTSURGE_HNS ===
 Name: LTSURGE
@@ -8647,9 +8637,9 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Recover
 - Memento
 
-Raichu-Alola @ Life Orb
+Raichu @ Raichunite Y
 Level: 72
-Ability: Surge Surfer
+Ability: Lightning Rod
 Nature: Timid
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Rising Voltage
@@ -8667,15 +8657,15 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Ice Punch
 - Rock Slide
 
-Raichu @ Life Orb
+Magnezone @ Choice Specs
 Level: 74
-Ability: Lightning Rod
-Nature: Timid
+Ability: Analytic
+Nature: Modest
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Thunderbolt
-- Focus Blast
-- Surf
-- Nasty Plot
+- Flash Cannon
+- Volt Switch
+- Signal Beam
 
 Iron Hands @ Electric Seed
 Level: 72
@@ -8687,7 +8677,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Ice Punch
 - Swords Dance
 
-Manectric @ Manectite
+Manectric @ Expert Belt
 Level: 72
 Ability: Intimidate
 Nature: Timid
@@ -8696,7 +8686,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Flamethrower
 - Volt Switch
 - Hidden Power
-
 
 === TRAINER_ERIKA_HNS ===
 Name: ERIKA
@@ -8720,15 +8709,15 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - U-turn
 - Knock Off
 
-Vileplume @ Black Sludge
+Whimsicott @ Light Clay
 Level: 76
-Ability: Effect Spore
-Nature: Bold
+Ability: Prankster
+Nature: Timid
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Giga Drain
-- Sludge Bomb
-- Sleep Powder
-- Moonlight
+- Tailwind
+- Encore
+- Moonblast
+- Memento
 
 Serperior @ Leftovers
 Level: 74
@@ -8750,15 +8739,15 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Gyro Ball
 - Protect
 
-Tsareena @ Life Orb
+Vileplume @ Black Sludge
 Level: 74
-Ability: Queenly Majesty
-Nature: Jolly
+Ability: Effect Spore
+Nature: Bold
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Power Whip
-- High Jump Kick
-- Triple Axel
-- U-turn
+- Giga Drain
+- Sludge Bomb
+- Strength Sap
+- Moonblast
 
 Venusaur @ Venusaurite
 Level: 74
@@ -8769,7 +8758,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Sludge Bomb
 - Earth Power
 - Synthesis
-
 
 === TRAINER_SABRINA_HNS ===
 Name: SABRINA
@@ -8843,7 +8831,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Focus Blast
 - Calm Mind
 
-
 === TRAINER_JANINE_HNS ===
 Name: JANINE
 Class: Leader Kanto Hns
@@ -8886,7 +8873,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Sludge Bomb
 - Foul Play
 
-Weezing-Galar @ Black Sludge
+Weezing-Galar @ Sitrus Berry
 Level: 80
 Ability: Neutralizing Gas
 Nature: Bold
@@ -8896,8 +8883,18 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Pain Split
 - Haze
 
-Venomoth @ Black Sludge
+Muk-Alola @ Assault Vest
 Level: 82
+Ability: Poison Touch
+Nature: Careful
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Knock Off
+- Poison Jab
+- Fire Punch
+- Shadow Sneak
+
+Venomoth @ Focus Sash
+Level: 80
 Ability: Tinted Lens
 Nature: Timid
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8905,17 +8902,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Bug Buzz
 - Sludge Bomb
 - Roost
-
-Crobat @ Heavy-Duty Boots
-Level: 80
-Ability: Infiltrator
-Nature: Jolly
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Toxic
-- Taunt
-- Roost
-- U-turn
-
 
 === TRAINER_BLAINE_HNS ===
 Name: BLAINE
@@ -8939,15 +8925,15 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Rapid Spin
 - Yawn
 
-Rapidash @ Life Orb
+Ninetales @ Leftovers
 Level: 88
-Ability: Flash Fire
-Nature: Jolly
+Ability: Drought
+Nature: Timid
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Flare Blitz
-- High Horsepower
-- Wild Charge
-- Megahorn
+- Flamethrower
+- Solar Beam
+- Will-O-Wisp
+- Encore
 
 Scovillain @ Life Orb
 Level: 86
@@ -8988,7 +8974,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Solar Beam
 - Focus Blast
 - Roost
-
 
 === TRAINER_BLUE_HNS ===
 Name: BLUE
@@ -9061,7 +9046,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Leaf Storm
 - Sludge Bomb
 - Ancient Power
-
 
 === TRAINER_BLUE_2_HNS ===
 Name: BLUE
@@ -9154,36 +9138,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psychic
 - Slack Off
 
-Hatterene @ Leftovers
-Level: 65
-Ability: Magic Bounce
-Nature: Bold
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Calm Mind
-- Psychic
-- Mystical Fire
-- Draining Kiss
-
-Gallade @ Life Orb
-Level: 65
-Ability: Sharpness
-Nature: Jolly
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Swords Dance
-- Sacred Sword
-- Psycho Cut
-- Shadow Sneak
-
-Gardevoir @ Gardevoirite
-Level: 65
-Ability: Pixilate
-Nature: Timid
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Hyper Voice
-- Psychic
-- Focus Blast
-- Calm Mind
-
 Xatu @ Life Orb
 Level: 67
 Ability: Magic Bounce
@@ -9194,6 +9148,35 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Heat Wave
 - Roost
 
+Gallade @ Expert Belt
+Level: 65
+Ability: Sharpness
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Swords Dance
+- Sacred Sword
+- Psycho Cut
+- Shadow Sneak
+
+Metagross @ Assault Vest
+Level: 65
+Ability: Clear Body
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Meteor Mash
+- Zen Headbutt
+- Earthquake
+- Ice Punch
+
+Gardevoir @ Gardevoirite
+Level: 65
+Ability: Pixilate
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Hyper Voice
+- Focus Blast
+- Calm Mind
 
 === TRAINER_WILL_2_HNS ===
 Name: WILL
@@ -9326,7 +9309,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Blast
 - Pin Missile
 
-
 === TRAINER_BRUNO_2_HNS ===
 Name: BRUNO
 Class: Elite Four Hns
@@ -9418,7 +9400,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Foul Play
 - Toxic
 
-Weavile @ Life Orb
+Weavile @ Expert Belt
 Level: 65
 Ability: Pressure
 Nature: Jolly
@@ -9457,7 +9439,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dark Pulse
 - Flamethrower
 - Sludge Bomb
-
 
 === TRAINER_KAREN_2_HNS ===
 Name: KAREN
@@ -9590,7 +9571,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Drill Run
 - Knock Off
 
-
 === TRAINER_KOGA_2_HNS ===
 Name: KOGA
 Class: Elite Four Hns
@@ -9721,7 +9701,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dragon Claw
 - Dragon Dance
 - Flip Turn
-
 
 === TRAINER_LANCE_2_HNS ===
 Name: LANCE
@@ -10981,65 +10960,35 @@ Double Battle: No
 AI: Check Bad Move
 Mugshot: Dark Red
 
-Crobat @ Sharp Beak
+Zubat
 Level: 1
-Ability: Infiltrator
+Ability: Inner Focus
 Nature: Jolly
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Brave Bird
-- Cross Poison
-- U-turn
-- Roost
+- Wing Attack
+- Bite
+- Confuse Ray
+- Air Cutter
 
-Weezing @ Black Sludge
-Level: 1
-Ability: Levitate
-Nature: Bold
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Sludge Bomb
-- Will-O-Wisp
-- Pain Split
-- Explosion
-
-Raticate @ Flame Orb
+Rattata
 Level: 1
 Ability: Guts
 Nature: Jolly
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Super Fang
-- Facade
-- Sucker Punch
-- U-turn
+- Hyper Fang
+- Quick Attack
+- Bite
+- Focus Energy
 
-Scolipede @ Life Orb
-Level: 1
-Ability: Speed Boost
-Nature: Jolly
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Megahorn
-- Poison Jab
-- Earthquake
-- Protect
-
-Toxicroak @ Expert Belt
-Level: 1
-Ability: Dry Skin
-Nature: Jolly
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Close Combat
-- Gunk Shot
-- Sucker Punch
-- Ice Punch
-
-Muk-Alola @ Assault Vest
+Grimer-Alola
 Level: 1
 Ability: Poison Touch
 Nature: Adamant
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Gunk Shot
-- Knock Off
-- Fire Punch
-- Shadow Sneak
+- Poison Fang
+- Acid Spray
+- Bite
+- Disable
 
 === TRAINER_PROTON_2_HNS ===
 Name: PROTON
@@ -11123,7 +11072,7 @@ AI: Basic Trainer
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
-Weavile @ Life Orb
+Weavile @ Expert Belt
 Level: 1
 Ability: Pressure
 Nature: Jolly
@@ -11161,7 +11110,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunderbolt
 - Flash Cannon
 - Volt Switch
-- Body Press
+- Signal Beam
 
 Drapion @ Black Sludge
 Level: 1
@@ -11173,7 +11122,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
 - Taunt
 
-Houndoom @ Life Orb
+Houndoom @ Focus Sash
 Level: 1
 Ability: Flash Fire
 Nature: Timid
@@ -11335,58 +11284,38 @@ Ditto @ Choice Scarf
 Level: 1
 Ability: Imposter
 Nature: Timid
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Transform
 
-Weezing @ Black Sludge
+Weezing @ Sitrus Berry
 Level: 1
 Ability: Levitate
 Nature: Bold
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Will-O-Wisp
-- Disable
-- Pain Split
-- Explosion
+- Smokescreen
+- Sludge Bomb
+- Self-Destruct
 
-Electrode @ Focus Sash
-Level: 1
-Ability: Aftermath
-Nature: Timid
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunderbolt
-- Taunt
-- Thunder Wave
-- Explosion
-
-Muk @ Black Sludge
-Level: 1
-Ability: Sticky Hold
-Nature: Careful
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Poison Jab
-- Minimize
-- Disable
-- Explosion
-
-Zoroark-Hisui @ Life Orb
-Level: 1
-Ability: Illusion
-Nature: Timid
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Hyper Voice
-- Shadow Ball
-- Flamethrower
-- U-turn
-
-Raticate @ Flame Orb
+Raticate
 Level: 1
 Ability: Guts
 Nature: Jolly
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Super Fang
-- Facade
 - Sucker Punch
+- Crunch
 - Protect
+
+Electrode
+Level: 1
+Ability: Aftermath
+Nature: Timid
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Discharge
+- Taunt
+- Thunder Wave
+- Self-Destruct
 
 === TRAINER_PETREL_2_HNS ===
 Name: PETREL
@@ -11406,7 +11335,7 @@ Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Transform
 
-Weezing @ Black Sludge
+Weezing @ Sitrus Berry
 Level: 1
 Ability: Levitate
 Nature: Bold
@@ -11471,61 +11400,41 @@ Arbok @ Black Sludge
 Level: 1
 Ability: Intimidate
 Nature: Jolly
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Glare
-- Gunk Shot
-- Earthquake
+- Poison Fang
 - Crunch
+- Screech
 
-Vileplume @ Leftovers
+Gloom
 Level: 1
-Ability: Effect Spore
+Ability: Chlorophyll
 Nature: Bold
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Sleep Powder
 - Giga Drain
-- Sludge Bomb
-- Nature Power
+- Acid
+- Moonlight
 
-Grafaiai @ Focus Sash
+Murkrow
+Level: 1
+Ability: Super Luck
+Nature: Adamant
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Wing Attack
+- Assurance
+- Taunt
+- Haze
+
+Grafaiai @ Sitrus Berry
 Level: 1
 Ability: Prankster
 Nature: Jolly
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Parting Shot
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Encore
-- Toxic
-- Knock Off
-
-Nidoqueen @ Life Orb
-Level: 1
-Ability: Sheer Force
-Nature: Modest
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earth Power
-- Ice Beam
-- Thunderbolt
-- Sludge Bomb
-
-Salazzle @ Focus Sash
-Level: 1
-Ability: Oblivious
-Nature: Timid
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Nasty Plot
-- Flamethrower
-- Sludge Wave
-- Dragon Pulse
-
-Honchkrow @ Life Orb
-Level: 1
-Ability: Moxie
-Nature: Adamant
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Brave Bird
-- Sucker Punch
-- Superpower
-- Roost
+- Poison Jab
+- U-turn
+- Taunt
 
 === TRAINER_ARIANA_2_HNS ===
 Name: ARIANA
@@ -11558,7 +11467,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sludge Bomb
 - Nature Power
 
-Grafaiai @ Focus Sash
+Grafaiai @ Sitrus Berry
 Level: 1
 Ability: Prankster
 Nature: Jolly
@@ -11588,7 +11497,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sludge Wave
 - Dragon Pulse
 
-Honchkrow @ Life Orb
+Honchkrow @ Sharp Beak
 Level: 1
 Ability: Moxie
 Nature: Adamant
@@ -16653,7 +16562,7 @@ EVs: 252 HP / 252 Spe / 4 Def
 - Wing Attack
 - U-turn
 
-Gligar @ Sitrus Berry
+Gligar
 Level: 14
 Ability: Immunity
 Nature: Impish
@@ -16664,7 +16573,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Knock Off
 - Roost
 
-Pidgeotto @ Sharp Beak
+Pidgeotto
 Level: 17
 Ability: Big Pecks
 Nature: Adamant
@@ -16674,7 +16583,6 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Quick Attack
 - Roost
 - Work Up
-
 
 === TRAINER_BUGSY_1_HNS ===
 Name: BUGSY
@@ -16699,7 +16607,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Explosion
 - Gyro Ball
 
-Yanma @ Wise Glasses
+Yanma
 Level: 22
 Ability: Speed Boost
 Nature: Modest
@@ -16710,7 +16618,7 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Psychic
 - Protect
 
-Heracross @ Expert Belt
+Heracross
 Level: 22
 Ability: Guts
 Nature: Adamant
@@ -16732,7 +16640,6 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - X-Scissor
 - Quick Attack
 
-
 === TRAINER_WHITNEY_1_HNS ===
 Name: WHITNEY
 Class: Leader Hns
@@ -16745,7 +16652,7 @@ Mugshot: Pink
 Items: Super Potion / Potion
 Difficulty: Hard
 
-Eevee @ Eviolite
+Eevee
 Level: 29
 Ability: Adaptability
 Nature: Timid
@@ -16767,7 +16674,7 @@ EVs: 252 HP / 252 SpA / 4 SpD
 - Recover
 - Tri Attack
 
-Ambipom @ Silk Scarf
+Ambipom
 Level: 29
 Ability: Technician
 Nature: Jolly
@@ -16778,7 +16685,7 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Knock Off
 - Aerial Ace
 
-Teddiursa @ Eviolite
+Teddiursa @ Flame Orb
 Level: 29
 Ability: Quick Feet
 Nature: Adamant
@@ -16800,7 +16707,7 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Encore
 - U-turn
 
-Miltank @ Leftovers
+Miltank
 Level: 32
 Ability: Scrappy
 Nature: Impish
@@ -16810,7 +16717,6 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Milk Drink
 - Zen Headbutt
 - Rollout
-
 
 === TRAINER_MORTY_1_HNS ===
 Name: MORTY
@@ -16857,16 +16763,16 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Shadow Sneak
 - Drain Punch
 
-Lampent @ Eviolite
+Chandelure @ Choice Specs
 Level: 35
 Ability: Flash Fire
 Nature: Modest
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 Spe / 4 HP
 - Shadow Ball
-- Flamethrower
+- Fire Blast
 - Energy Ball
-- Pain Split
+- Psychic
 
 Annihilape @ Chesto Berry
 Level: 35
@@ -16889,7 +16795,6 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Sludge Bomb
 - Focus Blast
 - Disable
-
 
 === TRAINER_CHUCK_1_HNS ===
 Name: CHUCK
@@ -16969,7 +16874,6 @@ EVs: 252 HP / 252 Atk / 4 SpD
 - Drain Punch
 - Aqua Jet
 
-
 === TRAINER_JASMINE_1_HNS ===
 Name: JASMINE
 Class: Leader Hns
@@ -17015,7 +16919,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Brave Bird
 - Roost
 
-Archaludon @ Leftovers
+Archaludon @ Sitrus Berry
 Level: 48
 Ability: Stamina
 Nature: Bold
@@ -17037,17 +16941,16 @@ EVs: 252 HP / 252 SpA / 4 SpD
 - Volt Switch
 - Signal Beam
 
-Steelix @ Steelixite
+Aggron @ Aggronite
 Level: 52
-Ability: Sand Force
-Nature: Impish
+Ability: Filter
+Nature: Careful
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 4 SpD
+EVs: 252 HP / 4 Def / 252 SpD
 - Heavy Slam
-- Earthquake
-- Stone Edge
-- Body Press
-
+- Curse
+- Rest
+- Sleep Talk
 
 === TRAINER_PRYCE_1_HNS ===
 Name: PRYCE
@@ -17127,7 +17030,6 @@ EVs: 252 Atk / 252 Spe / 4 SpA
 - Low Kick
 - Substitute
 
-
 === TRAINER_CLAIR_1_HNS ===
 Name: CLAIR
 Class: Leader Hns
@@ -17173,7 +17075,7 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - U-turn
 - Flamethrower
 
-Zweilous @ Choice Band
+Zweilous @ Choice Specs
 Level: 61
 Ability: Hustle
 Nature: Adamant
@@ -17205,7 +17107,6 @@ EVs: 252 HP / 252 SpA / 4 SpD
 - Dragon Pulse
 - Hydro Pump
 - Ice Beam
-
 
 === TRAINER_WILL_1_HNS ===
 Name: WILL
@@ -17241,39 +17142,6 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Psychic
 - Slack Off
 
-Hatterene @ Leftovers
-Level: 65
-Ability: Magic Bounce
-Nature: Bold
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 4 SpD
-- Calm Mind
-- Psychic
-- Mystical Fire
-- Draining Kiss
-
-Gallade @ Life Orb
-Level: 65
-Ability: Sharpness
-Nature: Jolly
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Spe / 4 HP
-- Swords Dance
-- Sacred Sword
-- Psycho Cut
-- Shadow Sneak
-
-Gardevoir @ Gardevoirite
-Level: 65
-Ability: Pixilate
-Nature: Timid
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 SpA / 252 Spe / 4 HP
-- Hyper Voice
-- Psychic
-- Focus Blast
-- Calm Mind
-
 Xatu @ Life Orb
 Level: 67
 Ability: Magic Bounce
@@ -17285,6 +17153,38 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Heat Wave
 - Roost
 
+Gallade @ Expert Belt
+Level: 65
+Ability: Sharpness
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 HP
+- Swords Dance
+- Sacred Sword
+- Psycho Cut
+- Shadow Sneak
+
+Metagross @ Assault Vest
+Level: 65
+Ability: Clear Body
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+- Meteor Mash
+- Zen Headbutt
+- Earthquake
+- Ice Punch
+
+Gardevoir @ Gardevoirite
+Level: 65
+Ability: Pixilate
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 HP
+- Psychic
+- Hyper Voice
+- Focus Blast
+- Calm Mind
 
 === TRAINER_KOGA_1_HNS ===
 Name: KOGA
@@ -17364,7 +17264,6 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Drill Run
 - Knock Off
 
-
 === TRAINER_BRUNO_1_HNS ===
 Name: BRUNO
 Class: Elite Four Hns
@@ -17443,7 +17342,6 @@ EVs: 252 HP / 252 Atk / 4 SpD
 - Rock Blast
 - Pin Missile
 
-
 === TRAINER_KAREN_1_HNS ===
 Name: KAREN
 Class: Elite Four Hns
@@ -17478,7 +17376,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Foul Play
 - Toxic
 
-Weavile @ Life Orb
+Weavile @ Expert Belt
 Level: 65
 Ability: Pressure
 Nature: Jolly
@@ -17521,7 +17419,6 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Dark Pulse
 - Flamethrower
 - Sludge Bomb
-
 
 === TRAINER_LANCE_1_HNS ===
 Name: LANCE
@@ -17601,7 +17498,6 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Dragon Dance
 - Flip Turn
 
-
 === TRAINER_BROCK_HNS ===
 Name: BROCK
 Class: Leader Kanto Hns
@@ -17647,7 +17543,7 @@ EVs: 252 HP / 252 SpD / 4 Def
 - Iron Defense
 - Body Press
 
-Cradily @ Leftovers
+Cradily @ Sitrus Berry
 Level: 84
 Ability: Storm Drain
 Nature: Calm
@@ -17672,14 +17568,13 @@ EVs: 252 HP / 252 Atk / 4 SpD
 Steelix @ Steelixite
 Level: 86
 Ability: Sand Force
-Nature: Impish
+Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 128 Def / 128 SpD
 - Heavy Slam
 - Earthquake
 - Stone Edge
 - Body Press
-
 
 === TRAINER_MISTY_HNS ===
 Name: MISTY
@@ -17704,7 +17599,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - U-turn
 - Roost
 
-Starmie @ Life Orb
+Starmie @ Starminite
 Level: 78
 Ability: Analytic
 Nature: Timid
@@ -17748,17 +17643,16 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Volt Switch
 - Will-O-Wisp
 
-Gyarados @ Gyaradosite
+Gyarados @ Lum Berry
 Level: 76
-Ability: Mold Breaker
+Ability: Intimidate
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 4 HP
-- Dragon Dance
 - Waterfall
-- Crunch
+- Dragon Dance
 - Earthquake
-
+- Ice Fang
 
 === TRAINER_LTSURGE_HNS ===
 Name: LTSURGE
@@ -17783,9 +17677,9 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Recover
 - Memento
 
-Raichu-Alola @ Life Orb
+Raichu @ Raichunite Y
 Level: 72
-Ability: Surge Surfer
+Ability: Lightning Rod
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -17805,16 +17699,16 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Ice Punch
 - Rock Slide
 
-Raichu @ Life Orb
+Magnezone @ Choice Specs
 Level: 74
-Ability: Lightning Rod
-Nature: Timid
+Ability: Analytic
+Nature: Modest
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 SpA / 252 Spe / 4 HP
+EVs: 252 HP / 252 SpA / 4 SpD
 - Thunderbolt
-- Focus Blast
-- Surf
-- Nasty Plot
+- Flash Cannon
+- Volt Switch
+- Signal Beam
 
 Iron Hands @ Electric Seed
 Level: 72
@@ -17827,7 +17721,7 @@ EVs: 252 HP / 252 Atk / 4 SpD
 - Ice Punch
 - Swords Dance
 
-Manectric @ Manectite
+Manectric @ Expert Belt
 Level: 72
 Ability: Intimidate
 Nature: Timid
@@ -17837,7 +17731,6 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Flamethrower
 - Volt Switch
 - Hidden Power
-
 
 === TRAINER_ERIKA_HNS ===
 Name: ERIKA
@@ -17862,16 +17755,16 @@ EVs: 252 HP / 252 Atk / 4 SpD
 - U-turn
 - Knock Off
 
-Vileplume @ Black Sludge
+Whimsicott @ Light Clay
 Level: 76
-Ability: Effect Spore
-Nature: Bold
+Ability: Prankster
+Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 128 Def / 128 SpD
-- Giga Drain
-- Sludge Bomb
-- Sleep Powder
-- Moonlight
+EVs: 252 HP / 252 Spe / 4 SpD
+- Tailwind
+- Encore
+- Moonblast
+- Memento
 
 Serperior @ Leftovers
 Level: 74
@@ -17895,16 +17788,16 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Gyro Ball
 - Protect
 
-Tsareena @ Life Orb
+Vileplume @ Black Sludge
 Level: 74
-Ability: Queenly Majesty
-Nature: Jolly
+Ability: Effect Spore
+Nature: Bold
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Spe / 4 HP
-- Power Whip
-- High Jump Kick
-- Triple Axel
-- U-turn
+EVs: 252 HP / 128 Def / 128 SpD
+- Giga Drain
+- Sludge Bomb
+- Strength Sap
+- Moonblast
 
 Venusaur @ Venusaurite
 Level: 74
@@ -17916,7 +17809,6 @@ EVs: 252 HP / 252 SpA / 4 SpD
 - Sludge Bomb
 - Earth Power
 - Synthesis
-
 
 === TRAINER_JANINE_HNS ===
 Name: JANINE
@@ -17963,7 +17855,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Sludge Bomb
 - Foul Play
 
-Weezing-Galar @ Black Sludge
+Weezing-Galar @ Sitrus Berry
 Level: 80
 Ability: Neutralizing Gas
 Nature: Bold
@@ -17974,8 +17866,19 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Pain Split
 - Haze
 
-Venomoth @ Black Sludge
+Muk-Alola @ Assault Vest
 Level: 82
+Ability: Poison Touch
+Nature: Careful
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpD / 4 Def
+- Knock Off
+- Poison Jab
+- Fire Punch
+- Shadow Sneak
+
+Venomoth @ Focus Sash
+Level: 80
 Ability: Tinted Lens
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17984,18 +17887,6 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Bug Buzz
 - Sludge Bomb
 - Roost
-
-Crobat @ Heavy-Duty Boots
-Level: 80
-Ability: Infiltrator
-Nature: Jolly
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Spe / 4 Def
-- Toxic
-- Taunt
-- Roost
-- U-turn
-
 
 === TRAINER_SABRINA_HNS ===
 Name: SABRINA
@@ -18075,7 +17966,6 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Focus Blast
 - Calm Mind
 
-
 === TRAINER_BLAINE_HNS ===
 Name: BLAINE
 Class: Leader Kanto Hns
@@ -18099,16 +17989,16 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Rapid Spin
 - Yawn
 
-Rapidash @ Life Orb
+Ninetales @ Leftovers
 Level: 88
-Ability: Flash Fire
-Nature: Jolly
+Ability: Drought
+Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Spe / 4 HP
-- Flare Blitz
-- High Horsepower
-- Wild Charge
-- Megahorn
+EVs: 252 SpA / 252 Spe / 4 HP
+- Flamethrower
+- Solar Beam
+- Will-O-Wisp
+- Encore
 
 Scovillain @ Life Orb
 Level: 86
@@ -18153,7 +18043,6 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Solar Beam
 - Focus Blast
 - Roost
-
 
 === TRAINER_BLUE_HNS ===
 Name: BLUE
@@ -18232,7 +18121,6 @@ EVs: 252 HP / 252 SpA / 4 SpD
 - Leaf Storm
 - Sludge Bomb
 - Ancient Power
-
 
 === TRAINER_LANCE_2_HNS ===
 Name: LANCE
@@ -18325,71 +18213,38 @@ AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Preventi
 Mugshot: Dark Red
 Difficulty: Hard
 
-Crobat @ Sharp Beak
+Zubat
 Level: 1
-Ability: Infiltrator
+Ability: Inner Focus
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Spe / 4 HP
-- Brave Bird
-- Cross Poison
-- U-turn
-- Roost
+EVs: 64 HP / 64 Spe
+- Wing Attack
+- Bite
+- Confuse Ray
+- Air Cutter
 
-Weezing @ Black Sludge
-Level: 1
-Ability: Levitate
-Nature: Bold
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 4 SpD
-- Sludge Bomb
-- Will-O-Wisp
-- Pain Split
-- Explosion
-
-Raticate @ Flame Orb
+Rattata
 Level: 1
 Ability: Guts
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Spe / 4 HP
-- Super Fang
-- Facade
-- Sucker Punch
-- U-turn
+EVs: 64 Atk / 64 Spe
+- Hyper Fang
+- Quick Attack
+- Bite
+- Focus Energy
 
-Scolipede @ Life Orb
-Level: 1
-Ability: Speed Boost
-Nature: Jolly
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Spe / 4 HP
-- Megahorn
-- Poison Jab
-- Earthquake
-- Protect
-
-Toxicroak @ Expert Belt
-Level: 1
-Ability: Dry Skin
-Nature: Jolly
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Spe / 4 HP
-- Close Combat
-- Gunk Shot
-- Sucker Punch
-- Ice Punch
-
-Muk-Alola @ Assault Vest
+Grimer-Alola
 Level: 1
 Ability: Poison Touch
 Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 4 SpD
-- Gunk Shot
-- Knock Off
-- Fire Punch
-- Shadow Sneak
+EVs: 64 HP / 64 Atk
+- Poison Fang
+- Acid Spray
+- Bite
+- Disable
 
 === TRAINER_PROTON_2_HNS ===
 Name: PROTON
@@ -18486,63 +18341,41 @@ Level: 1
 Ability: Imposter
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 4 SpD
+EVs: 128 HP / 128 Def
 - Transform
 
-Weezing @ Black Sludge
+Weezing @ Sitrus Berry
 Level: 1
 Ability: Levitate
 Nature: Bold
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 4 SpD
+EVs: 128 HP / 128 Def
 - Will-O-Wisp
-- Disable
-- Pain Split
-- Explosion
+- Smokescreen
+- Sludge Bomb
+- Self-Destruct
 
-Electrode @ Focus Sash
-Level: 1
-Ability: Aftermath
-Nature: Timid
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 SpA / 252 Spe / 4 HP
-- Thunderbolt
-- Taunt
-- Thunder Wave
-- Explosion
-
-Muk @ Black Sludge
-Level: 1
-Ability: Sticky Hold
-Nature: Careful
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 SpD / 4 Def
-- Poison Jab
-- Minimize
-- Disable
-- Explosion
-
-Zoroark-Hisui @ Life Orb
-Level: 1
-Ability: Illusion
-Nature: Timid
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 SpA / 252 Spe / 4 HP
-- Hyper Voice
-- Shadow Ball
-- Flamethrower
-- U-turn
-
-Raticate @ Flame Orb
+Raticate
 Level: 1
 Ability: Guts
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Spe / 4 HP
+EVs: 128 Atk / 128 Spe
 - Super Fang
-- Facade
 - Sucker Punch
+- Crunch
 - Protect
+
+Electrode
+Level: 1
+Ability: Aftermath
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 128 SpA / 128 Spe
+- Discharge
+- Taunt
+- Thunder Wave
+- Self-Destruct
 
 === TRAINER_PETREL_2_HNS ===
 Name: PETREL
@@ -18564,7 +18397,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 4 SpD
 - Transform
 
-Weezing @ Black Sludge
+Weezing @ Sitrus Berry
 Level: 1
 Ability: Levitate
 Nature: Bold
@@ -18636,66 +18469,44 @@ Level: 1
 Ability: Intimidate
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Spe / 4 Def
+EVs: 128 HP / 128 Spe
 - Glare
-- Gunk Shot
-- Earthquake
+- Poison Fang
 - Crunch
+- Screech
 
-Vileplume @ Leftovers
+Gloom
 Level: 1
-Ability: Effect Spore
+Ability: Chlorophyll
 Nature: Bold
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 4 SpD
+EVs: 128 HP / 128 Def
 - Sleep Powder
 - Giga Drain
-- Sludge Bomb
-- Nature Power
+- Acid
+- Moonlight
 
-Grafaiai @ Focus Sash
+Murkrow
+Level: 1
+Ability: Super Luck
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 128 Atk / 128 Spe
+- Wing Attack
+- Assurance
+- Taunt
+- Haze
+
+Grafaiai @ Sitrus Berry
 Level: 1
 Ability: Prankster
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Spe / 4 Def
-- Parting Shot
+EVs: 128 HP / 128 Spe
 - Encore
-- Toxic
-- Knock Off
-
-Nidoqueen @ Life Orb
-Level: 1
-Ability: Sheer Force
-Nature: Modest
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 SpA / 4 SpD
-- Earth Power
-- Ice Beam
-- Thunderbolt
-- Sludge Bomb
-
-Salazzle @ Focus Sash
-Level: 1
-Ability: Oblivious
-Nature: Timid
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 SpA / 252 Spe / 4 HP
-- Nasty Plot
-- Flamethrower
-- Sludge Wave
-- Dragon Pulse
-
-Honchkrow @ Life Orb
-Level: 1
-Ability: Moxie
-Nature: Adamant
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Spe / 4 HP
-- Brave Bird
-- Sucker Punch
-- Superpower
-- Roost
+- Poison Jab
+- U-turn
+- Taunt
 
 === TRAINER_ARIANA_2_HNS ===
 Name: ARIANA
@@ -18731,7 +18542,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Sludge Bomb
 - Nature Power
 
-Grafaiai @ Focus Sash
+Grafaiai @ Sitrus Berry
 Level: 1
 Ability: Prankster
 Nature: Jolly
@@ -18764,7 +18575,7 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Sludge Wave
 - Dragon Pulse
 
-Honchkrow @ Life Orb
+Honchkrow @ Sharp Beak
 Level: 1
 Ability: Moxie
 Nature: Adamant
@@ -18787,7 +18598,7 @@ Mugshot: Dark Red
 Items: Full Restore / Full Restore
 Difficulty: Hard
 
-Weavile @ Life Orb
+Weavile @ Expert Belt
 Level: 1
 Ability: Pressure
 Nature: Jolly
@@ -18829,7 +18640,7 @@ EVs: 252 HP / 252 SpA / 4 SpD
 - Thunderbolt
 - Flash Cannon
 - Volt Switch
-- Body Press
+- Signal Beam
 
 Drapion @ Black Sludge
 Level: 1
@@ -18842,7 +18653,7 @@ EVs: 252 HP / 252 SpD / 4 Def
 - Earthquake
 - Taunt
 
-Houndoom @ Life Orb
+Houndoom @ Focus Sash
 Level: 1
 Ability: Flash Fire
 Nature: Timid

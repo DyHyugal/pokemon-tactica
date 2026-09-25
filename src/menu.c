@@ -399,7 +399,10 @@ u8 AddStartMenuWindow(u8 numActions)
     if (sStartMenuWindowId == WINDOW_NONE)
     {
 #if IS_HNS
-        sStartMenuWindowId = AddWindowParameterized(0, 10, 1, 19, (numActions * 2) + 2, 15, 0x250);
+        // BG0 uses charblock 2 while the field tilemaps start at screenblock 28.
+        // Keep this large window below tile 0x300 so its pixels cannot overwrite
+        // the overworld tilemaps while the menu is opening.
+        sStartMenuWindowId = AddWindowParameterized(0, 10, 1, 19, (numActions * 2) + 2, 15, 0x50);
 #else
         sStartMenuWindowId = AddWindowParameterized(0, 22, 1, 7, (numActions * 2) + 2, 15, 0x139);
 #endif

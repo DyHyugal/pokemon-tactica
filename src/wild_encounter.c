@@ -193,9 +193,24 @@ static void FeebasSeedRng(u16 seed)
     sFeebasRngValue = seed;
 }
 
+u32 ChooseTacticaEncounterSlot(u32 roll)
+{
+    roll %= 100;
+    if (roll < 30)
+        return 0;
+    if (roll < 60)
+        return 1;
+    if (roll < 90)
+        return 2;
+    return 3;
+}
+
 // LAND_WILD_COUNT
 u32 ChooseWildMonIndex_Land(void)
 {
+#if IS_HNS
+    return ChooseTacticaEncounterSlot(Random());
+#else
     u8 wildMonIndex = 0;
     bool8 swap = FALSE;
     u8 rand = Random() % ENCOUNTER_CHANCE_LAND_MONS_TOTAL;
@@ -232,11 +247,15 @@ u32 ChooseWildMonIndex_Land(void)
         wildMonIndex = 11 - wildMonIndex;
 
     return wildMonIndex;
+#endif
 }
 
 // WATER_WILD_COUNT
 u32 ChooseWildMonIndex_Water(void)
 {
+#if IS_HNS
+    return ChooseTacticaEncounterSlot(Random());
+#else
     u32 wildMonIndex = 0;
     bool8 swap = FALSE;
     u8 rand = Random() % ENCOUNTER_CHANCE_WATER_MONS_TOTAL;
@@ -259,11 +278,15 @@ u32 ChooseWildMonIndex_Water(void)
         wildMonIndex = 4 - wildMonIndex;
 
     return wildMonIndex;
+#endif
 }
 
 // ROCK_WILD_COUNT
 u32 ChooseWildMonIndex_Rocks(void)
 {
+#if IS_HNS
+    return ChooseTacticaEncounterSlot(Random());
+#else
     u32 wildMonIndex = 0;
     bool8 swap = FALSE;
     u8 rand = Random() % ENCOUNTER_CHANCE_ROCK_SMASH_MONS_TOTAL;
@@ -286,11 +309,18 @@ u32 ChooseWildMonIndex_Rocks(void)
         wildMonIndex = 4 - wildMonIndex;
 
     return wildMonIndex;
+#endif
 }
 
 // FISH_WILD_COUNT
 static u32 ChooseWildMonIndex_Fishing(u8 rod)
 {
+#if IS_HNS
+    // Rods unlock access according to progression; every rod reads the same
+    // authored Tactica pool once fishing is allowed.
+    (void)rod;
+    return ChooseTacticaEncounterSlot(Random());
+#else
     u8 wildMonIndex = 0;
     bool8 swap = FALSE;
     u8 rand = Random() % max(max(ENCOUNTER_CHANCE_FISHING_MONS_OLD_ROD_TOTAL, ENCOUNTER_CHANCE_FISHING_MONS_GOOD_ROD_TOTAL),
@@ -338,6 +368,7 @@ static u32 ChooseWildMonIndex_Fishing(u8 rod)
         break;
     }
     return wildMonIndex;
+#endif
 }
 
 static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIndex, enum WildPokemonArea area)
@@ -959,12 +990,12 @@ void HeadbuttWildEncounter(void)
     const struct WildPokemonInfo *wildPokemonInfo = NULL;
     u32 i;
 
-    for (i = 0; i < ARRAY_COUNT(sFamilyRemixHeadbuttEncounters); i++)
+    for (i = 0; i < ARRAY_COUNT(sTacticaHeadbuttEncounters); i++)
     {
-        if (sFamilyRemixHeadbuttEncounters[i].mapGroup == gSaveBlock1Ptr->location.mapGroup
-         && sFamilyRemixHeadbuttEncounters[i].mapNum == gSaveBlock1Ptr->location.mapNum)
+        if (sTacticaHeadbuttEncounters[i].mapGroup == gSaveBlock1Ptr->location.mapGroup
+         && sTacticaHeadbuttEncounters[i].mapNum == gSaveBlock1Ptr->location.mapNum)
         {
-            wildPokemonInfo = &sFamilyRemixHeadbuttEncounters[i].info;
+            wildPokemonInfo = &sTacticaHeadbuttEncounters[i].info;
             break;
         }
     }

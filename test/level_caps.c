@@ -64,25 +64,25 @@ TEST("Level cap: first Rocket boss escalates two levels from the previous cap")
     EXPECT_EQ(GetCurrentLevelCap(), 16);
 }
 
-TEST("Level cap: consecutive Rocket bosses chain plus two")
+TEST("Level cap: consecutive Rocket bosses share the last canonical milestone plus two")
 {
     SetLevelCapMode(1);
     EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_PETREL_1_HNS), 40);
-    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_ARIANA_1_HNS), 42);
+    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_ARIANA_1_HNS), 40);
 }
 
-TEST("Level cap: defeated Rocket level persists as the progression floor")
+TEST("Level cap: Proton 1 immediately advances preparation to Bugsy")
 {
     SetLevelCapMode(1);
-    SetTrainerFlag(TRAINER_RIVAL_CYNDAQUIL_1_HNS);
     FlagSet(FLAG_DEFEATED_VIOLET_GYM);
     SetTrainerFlag(TRAINER_PROTON_1_HNS);
-    EXPECT_EQ(GetCurrentLevelCap(), 19);
-
-    SetTrainerFlag(TRAINER_RIVAL_CYNDAQUIL_2_HNS);
     EXPECT_EQ(GetCurrentLevelCap(), 25);
+
+    SetLevelCapMode(2);
+    EXPECT_EQ(GetCurrentLevelCap(), 22);
+
     FlagSet(FLAG_DEFEATED_AZALEA_TOWN_GYM);
-    EXPECT_EQ(GetCurrentLevelCap(), 32);
+    EXPECT_EQ(GetCurrentLevelCap(), 29);
 }
 
 TEST("Level cap: Rocket parties use legal evolution stages at their resolved level")

@@ -4,9 +4,40 @@ TmShop_EventScript::
 	msgbox TmShop_Text_Welcome, MSGBOX_DEFAULT
 TmShop_MainMenu:
 	closemessage
-	dynmultichoice 1, 1, FALSE, 2, 0, DYN_MULTICHOICE_CB_NONE, TmShop_Text_Buy, TmShop_Text_Quit
-	goto_if_eq VAR_RESULT, 0, TmShop_CategoryMenu
+	dynmultichoice 1, 1, FALSE, 3, 0, DYN_MULTICHOICE_CB_NONE, TmShop_Text_Buy, TmShop_Text_TeachMove, TmShop_Text_Quit
+	switch VAR_RESULT
+	case 0, TmShop_CategoryMenu
+	case 1, TmShop_TeachMove
 	goto TmShop_Exit
+
+TmShop_TeachMove:
+	getpartysize
+	goto_if_eq VAR_RESULT, 0, TmShop_TeachMove_NoPkmn
+	msgbox MoveRelearner_Text_ChoosePkmn, MSGBOX_DEFAULT
+	chooseboxmon SELECT_PC_MON_MOVE_RELEARNER
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, TmShop_MainMenu
+	special IsSelectedMonEgg
+	goto_if_eq VAR_RESULT, TRUE, TmShop_TeachMove_CantTeachEgg
+	setmoverelearnerstate MOVE_RELEARNER_TACTICA_SHOP_MOVES
+	special HasMovesToRelearn
+	goto_if_eq VAR_RESULT, FALSE, TmShop_TeachMove_NoCompatibleMove
+	msgbox TmShop_Text_ChooseMove, MSGBOX_DEFAULT
+	special TeachMoveRelearnerMove
+	waitstate
+	goto TmShop_MainMenu
+
+TmShop_TeachMove_NoPkmn:
+	msgbox MoveRelearner_Text_HaveNoPkmn, MSGBOX_DEFAULT
+	goto TmShop_MainMenu
+
+TmShop_TeachMove_CantTeachEgg:
+	msgbox MoveRelearner_Text_CantTeachMoveToEgg, MSGBOX_DEFAULT
+	goto TmShop_MainMenu
+
+TmShop_TeachMove_NoCompatibleMove:
+	msgbox TmShop_Text_NoCompatibleMove, MSGBOX_DEFAULT
+	goto TmShop_MainMenu
 
 TmShop_CategoryMenu:
 	msgbox TmShop_Text_ChooseCategory, MSGBOX_DEFAULT
@@ -279,9 +310,15 @@ TmShop_Text_ChooseCategory:
 TmShop_Text_ChooseType:
 	.string "Which move type are you looking for?$"
 TmShop_Text_Buy:
-	.string "Buy$"
+	.string "Buy TMs$"
+TmShop_Text_TeachMove:
+	.string "Teach move$"
 TmShop_Text_Quit:
 	.string "Quit$"
+TmShop_Text_ChooseMove:
+	.string "Choose a compatible move.\nEach lesson costs ¥3,000.$"
+TmShop_Text_NoCompatibleMove:
+	.string "That POKéMON already knows every\nmove I can teach it.$"
 TmShop_Text_Support:
 	.string "Support$"
 TmShop_Text_Weak:

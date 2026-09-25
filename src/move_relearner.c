@@ -16,6 +16,7 @@
 #include "menu.h"
 #include "menu_helpers.h"
 #include "menu_specialized.h"
+#include "money.h"
 #include "overworld.h"
 #include "palette.h"
 #include "party_menu.h"
@@ -31,6 +32,7 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "data/pokemon/egg_moves.h"
+#include "data/pokemon/tactica_move_shop_learnsets.h"
 #include "data/tutor_moves.h"
 
 /*
@@ -179,7 +181,7 @@ static EWRAM_DATA struct
     u8 partyMon;                                             /*0x044*/
     u8 moveSlot;                                             /*0x045*/
     struct ListMenuItem menuItems[MAX_RELEARNER_MOVES + 1];  /*0x0E8*/
-    u8 numMenuChoices;                                       /*0x110*/
+    u16 numMenuChoices;                                      /*0x110*/
     u8 numToShowAtOnce;                                      /*0x111*/
     u8 moveListMenuTask;                                     /*0x112*/
     u8 moveListScrollArrowTask;                              /*0x113*/
@@ -377,17 +379,19 @@ static bool32 HasRelearnerLevelUpMoves(struct BoxPokemon *boxMon);
 static bool32 HasRelearnerEggMoves(struct BoxPokemon *boxMon);
 static bool32 HasRelearnerTMMoves(struct BoxPokemon *boxMon);
 static bool32 HasRelearnerTutorMoves(struct BoxPokemon *boxMon);
+static bool32 HasTacticaMoveShopMoves(struct BoxPokemon *boxMon);
 static u32 GetRelearnerLevelUpMoves(struct BoxPokemon *mon, u16 *moves);
 static u32 GetRelearnerEggMoves(struct BoxPokemon *mon, u16 *moves);
 static u32 GetRelearnerTMMoves(struct BoxPokemon *mon, u16 *moves);
 static u32 GetRelearnerTutorMoves(struct BoxPokemon *mon, u16 *moves);
 
-static const struct RelearnType sRelearnTypes[MOVE_RELEARNER_COUNT] =
+static const struct RelearnType sRelearnTypes[MOVE_RELEARNER_STATE_COUNT] =
 {
     [MOVE_RELEARNER_LEVEL_UP_MOVES] = {HasRelearnerLevelUpMoves},
     [MOVE_RELEARNER_EGG_MOVES] = {HasRelearnerEggMoves},
     [MOVE_RELEARNER_TM_MOVES] = {HasRelearnerTMMoves},
     [MOVE_RELEARNER_TUTOR_MOVES] = {HasRelearnerTutorMoves},
+    [MOVE_RELEARNER_TACTICA_SHOP_MOVES] = {HasTacticaMoveShopMoves},
 };
 
 static void VBlankCB_MoveRelearner(void)
@@ -452,6 +456,9 @@ void CB2_InitLearnMove(void)
             break;
         case MOVE_RELEARNER_TUTOR_MOVES:
             StringCopy(gStringVar3, MoveRelearner_Text_TutorMoveLWR);
+            break;
+        case MOVE_RELEARNER_TACTICA_SHOP_MOVES:
+            StringCopy(gStringVar3, MoveRelearner_Text_MoveLWR);
             break;
         case MOVE_RELEARNER_LEVEL_UP_MOVES:
         default:
@@ -592,6 +599,15 @@ static void DoMoveRelearnerMain(void)
             if (selection == 0)
             {
                 struct BoxPokemon *boxmon;
+
+                if (gMoveRelearnerState == MOVE_RELEARNER_TACTICA_SHOP_MOVES
+                 && !CanAffordTacticaMoveShopPurchase())
+                {
+                    PrintMessageWithPlaceholders(gText_TacticaMoveShopNotEnoughMoney);
+                    gSpecialVar_0x8004 = FALSE;
+                    sMoveRelearnerStruct->state = MENU_STATE_WAIT_FOR_A_BUTTON;
+                    break;
+                }
                 if (sMoveRelearnerStruct->partyMon == PC_MON_CHOSEN)
                     boxmon = GetBoxedMonPtr(gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos);
                 else
@@ -862,6 +878,8 @@ static void DoMoveRelearnerMain(void)
         {
             PlayFanfare(MUS_LEVEL_UP);
             RemoveRelearnerTMFromBag(GetCurrentSelectedMove());
+            if (gMoveRelearnerState == MOVE_RELEARNER_TACTICA_SHOP_MOVES)
+                PurchaseTacticaMoveShopMove();
             sMoveRelearnerStruct->state = MENU_STATE_WAIT_FOR_FANFARE;
         }
         break;
@@ -952,7 +970,10 @@ static void HandleInput(bool8 showContest)
         RemoveScrollArrows();
         sMoveRelearnerStruct->state = MENU_STATE_PRINT_TEACH_MOVE_PROMPT;
         StringCopy(gStringVar2, GetMoveName(itemId));
-        StringExpandPlaceholders(gStringVar4, gText_MoveRelearnerTeachMoveConfirm);
+        if (gMoveRelearnerState == MOVE_RELEARNER_TACTICA_SHOP_MOVES)
+            StringExpandPlaceholders(gStringVar4, gText_TacticaMoveShopTeachMoveConfirm);
+        else
+            StringExpandPlaceholders(gStringVar4, gText_MoveRelearnerTeachMoveConfirm);
         MoveRelearnerPrintMessage(gStringVar4);
         break;
     }
@@ -1050,6 +1071,9 @@ static void CreateLearnableMovesList(void)
         break;
     case MOVE_RELEARNER_TUTOR_MOVES:
         sMoveRelearnerStruct->numMenuChoices = GetRelearnerTutorMoves(boxmon, sMoveRelearnerStruct->movesToLearn);
+        break;
+    case MOVE_RELEARNER_TACTICA_SHOP_MOVES:
+        sMoveRelearnerStruct->numMenuChoices = GetTacticaMoveShopMoves(boxmon, sMoveRelearnerStruct->movesToLearn, MAX_RELEARNER_MOVES);
         break;
     case MOVE_RELEARNER_LEVEL_UP_MOVES:
     default:
@@ -1303,6 +1327,50 @@ static u32 GetRelearnerTutorMoves(struct BoxPokemon *mon, u16 *moves)
     return numMoves;
 }
 
+bool32 CanSpeciesLearnTacticaShopMove(u16 species, enum Move move)
+{
+    if (species >= NUM_SPECIES || move <= MOVE_NONE || move >= MOVES_COUNT || move == MOVE_STRUGGLE)
+        return FALSE;
+    return (sTacticaMoveShopLearnsets[species][move / 8] & (1 << (move % 8))) != 0;
+}
+
+u32 GetTacticaMoveShopMoves(struct BoxPokemon *boxMon, u16 *moves, u32 capacity)
+{
+    u32 count = 0;
+    u32 species = GetBoxMonData(boxMon, MON_DATA_SPECIES_OR_EGG);
+
+    if (species == SPECIES_EGG)
+        return 0;
+
+    for (enum Move move = MOVE_NONE + 1; move < MOVES_COUNT; move++)
+    {
+        if (!CanSpeciesLearnTacticaShopMove(species, move) || BoxMonKnowsMove(boxMon, move))
+            continue;
+        if (count >= capacity)
+            break;
+        moves[count++] = move;
+    }
+
+    if (P_SORT_MOVES)
+        SortMovesAlphabetically(moves, count);
+
+    return count;
+}
+
+bool32 CanAffordTacticaMoveShopPurchase(void)
+{
+    return IsEnoughMoney(&gSaveBlock1Ptr->money, TACTICA_MOVE_SHOP_PRICE);
+}
+
+bool32 PurchaseTacticaMoveShopMove(void)
+{
+    if (!CanAffordTacticaMoveShopPurchase())
+        return FALSE;
+
+    RemoveMoney(&gSaveBlock1Ptr->money, TACTICA_MOVE_SHOP_PRICE);
+    return TRUE;
+}
+
 void HasMovesToRelearn(void)
 {
     struct BoxPokemon *boxmon = GetSelectedBoxMonFromPcOrParty();
@@ -1434,6 +1502,20 @@ static bool32 HasRelearnerTutorMoves(struct BoxPokemon *boxMon)
         if (!BoxMonKnowsMove(boxMon, move))
             return TRUE;
     }
+
+    return FALSE;
+}
+
+static bool32 HasTacticaMoveShopMoves(struct BoxPokemon *boxMon)
+{
+    u32 species = GetBoxMonData(boxMon, MON_DATA_SPECIES_OR_EGG);
+
+    if (species == SPECIES_EGG)
+        return FALSE;
+
+    for (enum Move move = MOVE_NONE + 1; move < MOVES_COUNT; move++)
+        if (!BoxMonKnowsMove(boxMon, move) && CanSpeciesLearnTacticaShopMove(species, move))
+            return TRUE;
 
     return FALSE;
 }

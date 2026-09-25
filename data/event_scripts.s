@@ -1865,6 +1865,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 @ HnS scripts
 	.include "data/scripts/item_shop.inc"
 	.include "data/scripts/tm_shop.inc"
+	.include "data/scripts/mega_shop.inc"
 	.include "data/scripts/training_npc.inc"
 	.include "data/maps/TestMap2_hns/scripts.inc"
 

@@ -645,6 +645,8 @@ extern const u8 gText_MoveRelearnerPkmnForgotMoveAndLearnedNew[];
 extern const u8 gText_TeachWhichMoveToPkmn[];
 extern const u8 gText_MoveRelearnerGiveUp[];
 extern const u8 gText_MoveRelearnerTeachMoveConfirm[];
+extern const u8 gText_TacticaMoveShopTeachMoveConfirm[];
+extern const u8 gText_TacticaMoveShopNotEnoughMoney[];
 extern const u8 gText_MoveRelearnerBattleMoves[];
 extern const u8 gText_MoveRelearnerPP[];
 extern const u8 gText_MoveRelearnerPower[];

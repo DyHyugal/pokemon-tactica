@@ -12,6 +12,10 @@ def fail(message):
     raise SystemExit(f"Family Remix validation failed: {message}")
 
 
+def held_items(block):
+    return re.findall(r"^[^\n@]+ @ ([^\n]+)$", block, re.M)
+
+
 def validate_bosses():
     text = (ROOT / "src/data/trainers_hns.party").read_text()
     marker = "/* ========== Family Remix FINAL hard boss parties ========== */"
@@ -69,6 +73,9 @@ def validate_bosses():
             fail(f"{trainer_id} NORMAL must retain native Basic Trainer AI")
         if re.search(r"^EVs:", normal_party, re.M):
             fail(f"{trainer_id} NORMAL received HARD optimized EVs")
+        items = held_items(hard_party)
+        if len(items) != len(set(items)):
+            fail(f"{trainer_id} contains duplicate held items")
 
         levels = re.findall(r"^Level: (\d+)$", block, re.M)
         iv_lines = re.findall(r"^IVs: (.+)$", block, re.M)
@@ -99,8 +106,26 @@ def validate_bosses():
         if value not in hard:
             fail(f"owner-locked boss datum is missing: {value}")
 
+    hard_by_trainer = dict(blocks)
+    jasmine = hard_by_trainer["TRAINER_JASMINE_1_HNS"]
+    jasmine_ace = (
+        "Aggron @ Aggronite", "Ability: Filter", "Nature: Careful",
+        "EVs: 252 HP / 4 Def / 252 SpD", "- Heavy Slam", "- Curse", "- Rest", "- Sleep Talk",
+    )
+    if any(value not in jasmine for value in jasmine_ace):
+        fail("Jasmine does not use the canonical Mega Aggron Curse set")
+    if "Steelixite" in jasmine:
+        fail("Jasmine still contains the obsolete Mega Steelix ace")
+
 
 def validate_rockets():
+    from sync_tactica_bosses import engine_species
+    progression = json.loads((ROOT / "data/spec/rocket_progression.json").read_text())
+    final_rows = json.loads((ROOT / "data/spec/bosses.json").read_text())["teams"]
+    final_by_boss = {}
+    for row in final_rows:
+        if row["category"] == "Rocket Executive":
+            final_by_boss.setdefault(row["boss"], []).append(row)
     text = (ROOT / "src/data/trainers_hns.party").read_text()
     hard_marker = "/* ========== Family Remix FINAL hard boss parties ========== */"
     rocket_marker = "/* ========== Family Remix FINAL Rocket parties ========== */"
@@ -109,15 +134,11 @@ def validate_rockets():
     hard_blocks = dict(re.findall(
         r"^=== ([A-Z0-9_]+) ===\n(.*?)(?=^=== |\Z)", rocket, re.M | re.S
     ))
-    expected = {
-        "TRAINER_PROTON_1_HNS": ("Crobat", "Weezing", "Raticate", "Scolipede", "Toxicroak", "Muk-Alola"),
-        "TRAINER_PROTON_2_HNS": ("Crobat", "Weezing", "Raticate", "Scolipede", "Toxicroak", "Muk-Alola"),
-        "TRAINER_PETREL_1_HNS": ("Ditto", "Weezing", "Electrode", "Muk", "Zoroark-Hisui", "Raticate"),
-        "TRAINER_PETREL_2_HNS": ("Ditto", "Weezing", "Electrode", "Muk", "Zoroark-Hisui", "Raticate"),
-        "TRAINER_ARIANA_1_HNS": ("Arbok", "Vileplume", "Grafaiai", "Nidoqueen", "Salazzle", "Honchkrow"),
-        "TRAINER_ARIANA_2_HNS": ("Arbok", "Vileplume", "Grafaiai", "Nidoqueen", "Salazzle", "Honchkrow"),
-        "TRAINER_ARCHER_HNS": ("Weavile", "Crobat", "Nidoking", "Magnezone", "Drapion", "Houndoom"),
-    }
+    expected = {}
+    for trainer_id, (boss, phase) in progression["active_fights"].items():
+        rows = (final_by_boss[boss] if phase == "final" else
+                progression["rosters"][boss][phase])
+        expected[trainer_id] = tuple(engine_species(row["species"]) for row in rows)
     if set(hard_blocks) != set(expected):
         fail(f"expected seven final HARD Rocket variants, got {sorted(hard_blocks)}")
 
@@ -161,14 +182,17 @@ def validate_rockets():
             re.M,
         ))
         if species != roster:
-            fail(f"{trainer_id} final Rocket roster differs: {species}")
+            fail(f"{trainer_id} Rocket {progression['active_fights'][trainer_id][1]} roster differs: {species}")
+        items = held_items(hard_party)
+        if len(items) != len(set(items)):
+            fail(f"{trainer_id} contains duplicate held items")
         if set(re.findall(r"^Level: (\d+)$", hard_party, re.M)) != {"1"}:
             fail(f"{trainer_id} Rocket source levels must remain runtime placeholders")
         iv_lines = re.findall(r"^IVs: (.+)$", hard_party, re.M)
         ev_lines = re.findall(r"^EVs: (.+)$", hard_party, re.M)
-        if len(iv_lines) != 6 or any(set(map(int, re.findall(r"\d+", line))) != {31} for line in iv_lines):
+        if len(iv_lines) != len(roster) or any(set(map(int, re.findall(r"\d+", line))) != {31} for line in iv_lines):
             fail(f"{trainer_id} HARD Rocket IVs are not all 31")
-        if len(ev_lines) != 6:
+        if len(ev_lines) != len(roster):
             fail(f"{trainer_id} HARD Rocket EV data is incomplete")
         for line in ev_lines:
             values = [int(value) for value in re.findall(r"(\d+) (?:HP|Atk|Def|SpA|SpD|Spe)", line)]
@@ -178,43 +202,77 @@ def validate_rockets():
 
 def validate_encounters():
     wild = json.loads((ROOT / "src/data/wild_encounters.json").read_text())
-    audit = wild.get("family_remix_encounter_audit", {})
+    audit = wild.get("tactica_encounter_audit", {})
     expected = {
-        "dataset_version": 3,
-        "imported_standard_tables": 405,
-        "imported_headbutt_tables": 4,
-        "special_tables_deferred": 0,
-        "integrated_safari_pools": 53,
+        "dataset_version": 4,
+        "standard_tables": 405,
+        "physical_time_records": 624,
+        "real_slots_per_table": 4,
+        "slot_rates": [30, 30, 30, 10],
+        "headbutt_tables": 4,
+        "safari_pools": 53,
     }
     for key, value in expected.items():
         if audit.get(key) != value:
             fail(f"encounter audit {key}: expected {value}, got {audit.get(key)}")
 
-    # Family Remix ships the HnS world as its playable base.  Validate every
-    # active HnS encounter table, including inherited HnS data: inherited does
-    # not mean exempt when a malformed table affects the Family Remix ROM.
-    map_group = next(group for group in wild["wild_encounter_groups"] if group.get("for_maps"))
-    expected_slots = {field["type"]: len(field["encounter_rates"]) for field in map_group["fields"]}
+    canonical = json.loads((ROOT / "data/spec/encounters_standard.json").read_text())["tables"]
+    canonical_by_key = {
+        (table["map"], table["method"], table["time"]): table
+        for table in canonical
+    }
+    if len(canonical_by_key) != 405:
+        fail("canonical standard encounter keys are not unique")
 
+    map_group = next(group for group in wild["wild_encounter_groups"] if group.get("for_maps"))
+    compiled = {}
     for encounter in map_group.get("encounters", []):
         map_name = encounter.get("map", "")
         if not map_name.endswith("_HNS"):
             continue
+        label = encounter.get("base_label", "")
+        time = "Night" if label.endswith("_Night") else "Day"
         for method in ("land_mons", "water_mons", "rock_smash_mons", "fishing_mons"):
             if method not in encounter:
                 continue
             mons = encounter[method]["mons"]
-            expected = expected_slots[method]
-            if len(mons) != expected:
-                fail(
-                    f"{encounter.get('base_label', map_name)} {method}: "
-                    f"expected {expected} engine slots, got {len(mons)}"
-                )
+            if len(mons) != 4:
+                fail(f"{label} {method}: expected four real engine slots, got {len(mons)}")
             for mon in mons:
                 if not (1 <= mon["min_level"] <= mon["max_level"] <= 100):
                     fail(f"invalid wild level range in {map_name}")
                 if not mon["species"].startswith("SPECIES_"):
                     fail("wild species constant is malformed")
+            key = (map_name, method, time)
+            if key in compiled:
+                fail(f"duplicate compiled encounter table: {key}")
+            compiled[key] = mons
+
+    expected_compiled = {}
+    for table in canonical:
+        times = ("Day", "Night") if table["time"] == "Any" else (table["time"],)
+        for time in times:
+            expected_compiled[(table["map"], table["method"], time)] = table
+    if set(compiled) != set(expected_compiled):
+        missing = sorted(set(expected_compiled) - set(compiled))
+        extra = sorted(set(compiled) - set(expected_compiled))
+        fail(f"compiled standard encounter keys differ; missing={missing[:3]}, extra={extra[:3]}")
+
+    for key, table in expected_compiled.items():
+        mons = compiled[key]
+        species = [mon["species"] for mon in mons]
+        if species != table["species"]:
+            fail(f"compiled species differ for {key}: {species}")
+        levels = {(mon["min_level"], mon["max_level"]) for mon in mons}
+        if levels != {(table["min_level"], table["max_level"])}:
+            fail(f"compiled levels differ for {key}: {sorted(levels)}")
+
+    constants = (ROOT / "include/constants/wild_encounter.h").read_text()
+    if not all(re.search(rf"^#define {name}_WILD_COUNT\s+4$", constants, re.M) for name in ("LAND", "WATER", "ROCK", "FISH")):
+        fail("HnS encounter constants do not expose four real slots for every method")
+    engine = (ROOT / "src/wild_encounter.c").read_text()
+    if engine.count("return ChooseTacticaEncounterSlot(Random());") != 4:
+        fail("not every standard HnS encounter selector uses the Tactica four-slot picker")
 
     special = json.loads((ROOT / "data/family_remix/special_encounter_pools.json").read_text())
     headbutt = [table for table in special["tables"] if table["method"] == "headbutt_mons"]
@@ -228,6 +286,16 @@ def validate_encounters():
     headbutt_c = (ROOT / "src/data/family_remix_headbutt.h").read_text()
     if len(re.findall(r"\{MAP_GROUP\(MAP_", headbutt_c)) != 4:
         fail("dedicated Headbutt engine table does not contain four maps")
+    headbutt_arrays = re.findall(
+        r"static const struct WildPokemon sFamilyHeadbutt\w+\[\]\s*=\s*\{(.*?)\};",
+        headbutt_c,
+        re.S,
+    )
+    if len(headbutt_arrays) != 4:
+        fail("dedicated Headbutt engine data does not contain four tables")
+    for body in headbutt_arrays:
+        if len(re.findall(r"\{\d+, \d+, SPECIES_[A-Z0-9_]+\}", body)) != 4:
+            fail("Headbutt tables must contain four real engine slots")
 
     if special.get("status") != "INTEGRATED" or special.get("engine_status", {}).get("safari") != "INTEGRATED_SESSION_ROTATION":
         fail("Safari metadata is not marked integrated")
@@ -265,16 +333,79 @@ def validate_shops():
     tms = parse_shop_items(ROOT / "data/scripts/tm_shop.inc")
     if len(tms) != 92 or len(set(tms)) != 92 or any(not item.startswith("ITEM_TM_") for item in tms):
         fail("TM shop must contain each of the 92 active HnS TMs exactly once")
+    tm_shop_script = (ROOT / "data/scripts/tm_shop.inc").read_text(encoding="utf-8")
+    for required in (
+        "MOVE_RELEARNER_TACTICA_SHOP_MOVES",
+        "TeachMoveRelearnerMove",
+        "Each lesson costs ¥3,000.",
+    ):
+        if required not in tm_shop_script:
+            fail(f"Tactica move shop is not fully wired: missing {required}")
 
     items = parse_shop_items(ROOT / "data/scripts/item_shop.inc")
-    if len(items) != 172 or len(set(items)) != 172:
+    if len(items) != 259 or len(set(items)) != 259:
         fail("item shop stock is incomplete or contains duplicates")
-    safe_ball_names = {"ITEM_AIR_BALLOON", "ITEM_IRON_BALL", "ITEM_SMOKE_BALL"}
+    safe_ball_names = {"ITEM_AIR_BALLOON", "ITEM_IRON_BALL", "ITEM_LIGHT_BALL", "ITEM_SMOKE_BALL"}
     forbidden_words = ("POTION", "REVIVE", "HEAL", "REPEL", "ESCAPE_ROPE")
     for item in items:
         if (any(word in item for word in forbidden_words)
          or (item.endswith("_BALL") and item not in safe_ball_names)):
             fail(f"progression-bypassing item in special shop: {item}")
+
+    normal_shop_items = set()
+    item_shop_path = ROOT / "data/scripts/item_shop.inc"
+    for path in (ROOT / "data").rglob("*.inc"):
+        if path == item_shop_path or path.name in {"tm_shop.inc", "mega_shop.inc"}:
+            continue
+        text = path.read_text(encoding="utf-8")
+        for match in re.finditer(
+            r"^[A-Za-z0-9_]+:\s*\n((?:\s*\.2byte\s+ITEM_[A-Z0-9_]+\s*\n)+)\s*\tpokemartlistend",
+            text,
+            re.MULTILINE,
+        ):
+            normal_shop_items.update(re.findall(r"ITEM_[A-Z0-9_]+", match.group(1)))
+    duplicates = sorted(set(items) & normal_shop_items)
+    if duplicates:
+        fail(f"special item shop duplicates normal mart stock: {', '.join(duplicates)}")
+
+    required_strategic_items = {
+        "ITEM_FLAME_PLATE", "ITEM_FIRE_MEMORY", "ITEM_NORMAL_GEM",
+        "ITEM_LIGHT_BALL", "ITEM_ELECTRIC_SEED", "ITEM_ABSORB_BULB",
+        "ITEM_GRIP_CLAW", "ITEM_CHERI_BERRY", "ITEM_MICLE_BERRY",
+        "ITEM_KEE_BERRY", "ITEM_MARANGA_BERRY",
+    }
+    missing = sorted(required_strategic_items - set(items))
+    if missing:
+        fail(f"special item shop is missing strategic inventory: {', '.join(missing)}")
+
+    form_changes = (ROOT / "src/data/pokemon/form_change_tables.h").read_text()
+    playable_mega_stones = set(re.findall(
+        r"FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,\s+SPECIES_[A-Z0-9_]+,\s+(ITEM_[A-Z0-9_]+)",
+        form_changes,
+    ))
+    mega_shop = parse_shop_items(ROOT / "data/scripts/mega_shop.inc")
+    if len(playable_mega_stones) != 92:
+        fail(f"expected 92 playable Mega Stones, got {len(playable_mega_stones)}")
+    if len(mega_shop) != len(set(mega_shop)) or set(mega_shop) != playable_mega_stones:
+        fail("Mega Stone shop does not exactly match playable item-based Mega Evolutions")
+
+    item_data = (ROOT / "src/data/items.h").read_text(encoding="utf-8")
+    for item in sorted(playable_mega_stones):
+        match = re.search(
+            rf"\[{item}\]\s*=\s*\{{(?:(?!\n\s*\[ITEM_).)*?\.price\s*=\s*(\d+),",
+            item_data,
+            re.DOTALL,
+        )
+        if match is None or int(match.group(1)) != 3000:
+            fail(f"{item} must cost exactly 3000 Pokédollars")
+
+    events = (ROOT / "data/event_scripts.s").read_text(encoding="utf-8")
+    if events.count('.include "data/scripts/mega_shop.inc"') != 1:
+        fail("Mega Stone shop script is not included exactly once")
+    goldenrod = json.loads((ROOT / "data/maps/GoldenrodCity_DepartmentStore_5F_hns/map.json").read_text())
+    vendors = [event for event in goldenrod["object_events"] if event["script"] == "MegaShop_EventScript"]
+    if len(vendors) != 1 or (vendors[0]["x"], vendors[0]["y"]) != (18, 11):
+        fail("dedicated Mega Stone vendor is missing beside the Goldenrod TM clerk")
 
 
 def main():
@@ -282,7 +413,7 @@ def main():
     validate_rockets()
     validate_encounters()
     validate_shops()
-    print("Family Remix data validation passed: bosses, Rockets, EVs, encounters, Safari and shops")
+    print("Tactica engine data validation passed: bosses, Rockets, EVs, encounters, Safari and shops")
 
 
 if __name__ == "__main__":

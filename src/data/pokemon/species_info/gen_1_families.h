@@ -524,7 +524,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     [SPECIES_CHARIZARD] =
     {
         .baseHP        = 78,
-        .baseAttack    = 100,
+        .baseAttack    = 110,
         .baseDefense   = 78,
         .baseSpeed     = 110,
         .baseSpAttack  = CHARIZARD_SP_ATK,
@@ -593,7 +593,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     [SPECIES_CHARIZARD_MEGA_X] =
     {
         .baseHP        = 78,
-        .baseAttack    = 146,
+        .baseAttack    = 156,
         .baseDefense   = 111,
         .baseSpeed     = 110,
         .baseSpAttack  = 130,
