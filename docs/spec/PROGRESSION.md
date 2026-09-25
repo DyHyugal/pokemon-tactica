@@ -16,3 +16,16 @@ Les Pokémon des champions respectent également les niveaux d'évolution. Cochi
 - Blanche : 6 Pokémon.
 
 Décision owner du 25 septembre 2026 pour Blanche : le slot Ours doit être **Ursaring niv. 30**, talent **Cran**, objet **Orbe Flamme**, avec **Façade / Séisme / Close Combat / Mâchouille**. Les anciennes données Teddiursa ou Ursaring niv. 29 sont à réconcilier dans la source canonique, les données moteur, les tests et le wiki.
+
+## Déblocage de la Méga-Évolution joueur
+
+Le **Méga-Anneau / Mega Ring** devient accessible **immédiatement après l'obtention du badge 4 auprès de Mortimer**. L'ordre de récompense attendu dans le script de l'arène est :
+
+1. victoire contre Mortimer ;
+2. remise du badge 4 et fanfare de badge ;
+3. remise de la CT de Mortimer ;
+4. remise du **Méga-Anneau** avec le jingle et le texte standard d'obtention d'un objet clé.
+
+À partir de cet instant, le joueur doit pouvoir utiliser la Méga-Évolution dès ses combats suivants, **y compris entre le badge 4 et le badge 5**. Il ne faut donc aucune condition supplémentaire liée au badge 5, à Chuck ou à un événement postérieur.
+
+Le moteur actuel de `CanMegaEvolve()` autorise la Méga côté joueur si `ITEM_MEGA_RING` est présent dans le Sac ; le script de Mortimer constitue donc le jalon de progression attendu. Les dresseurs adverses peuvent utiliser leurs Méga avant que le joueur possède le Méga-Anneau lorsque leur combat le prévoit.
