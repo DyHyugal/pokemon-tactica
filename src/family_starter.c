@@ -543,7 +543,7 @@ static u32 UNUSED GetJohtoRivalStarterStage(u16 species)
     }
 }
 
-static u16 GetFirstEvolution(u16 species)
+static u16 UNUSED GetFirstEvolution(u16 species)
 {
     const struct Evolution *evolutions = GetSpeciesEvolutions(species);
     u32 i;
