@@ -331,6 +331,24 @@ TEST("Family starter: rival uses a Ground starter against Electric")
     EXPECT_EQ(FamilyStarter_GetRivalSpecies(SPECIES_CHIKORITA), SPECIES_CHIKORITA);
 }
 
+TEST("Family starter: rival evolution follows the battle level")
+{
+    InitFamilyTest();
+    VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_HORSEA);
+    EXPECT_EQ(FamilyStarter_GetRivalSpeciesAtLevel(SPECIES_CHIKORITA, 5), SPECIES_HORSEA);
+    EXPECT_EQ(FamilyStarter_GetRivalSpeciesAtLevel(SPECIES_BAYLEEF, 18), SPECIES_HORSEA);
+    EXPECT_EQ(FamilyStarter_GetRivalSpeciesAtLevel(SPECIES_MEGANIUM, 24), SPECIES_HORSEA);
+    EXPECT_EQ(FamilyStarter_GetRivalSpeciesAtLevel(SPECIES_MEGANIUM, 40), SPECIES_SEADRA);
+
+    VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_GOLETT);
+    EXPECT_EQ(FamilyStarter_GetRivalSpeciesAtLevel(SPECIES_MEGANIUM, 40), SPECIES_GOLETT);
+    EXPECT_EQ(FamilyStarter_GetRivalSpeciesAtLevel(SPECIES_MEGANIUM, 48), SPECIES_GOLURK);
+
+    VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_ELEKID);
+    EXPECT_EQ(FamilyStarter_GetRivalSpeciesAtLevel(SPECIES_BAYLEEF, 18), SPECIES_ELEKID);
+    EXPECT_EQ(FamilyStarter_GetRivalSpeciesAtLevel(SPECIES_MEGANIUM, 40), SPECIES_ELECTABUZZ);
+}
+
 TEST("Family starter: rival category draw follows the canonical counter matrix")
 {
     static const u8 expected[][3] = {

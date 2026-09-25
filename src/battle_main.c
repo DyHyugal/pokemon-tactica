@@ -2062,6 +2062,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             const struct TrainerMon *partyData = trainer->party;
             struct OriginalTrainerId otId = OTID_STRUCT_RANDOM_NO_SHINY;
             u32 abilityNum = 0;
+            bool32 replacedRivalStarter = FALSE;
 
             useScaledEVs[i] = partyData[monIndex].ev == NULL;
 
@@ -2090,7 +2091,8 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             {
                 u16 species = partyData[monIndex].species;
                 if (trainer->trainerClass == TRAINER_CLASS_RIVAL_HNS)
-                    species = FamilyStarter_GetRivalSpecies(species);
+                    species = FamilyStarter_GetRivalSpeciesAtLevel(species, partyData[monIndex].lvl);
+                replacedRivalStarter = species != partyData[monIndex].species;
                 #if RANDOMIZER_AVAILABLE == TRUE
                 species = RandomizeTrainerMon(trainer->trainerClass, i, monsCount, species);
                 #endif
@@ -2099,6 +2101,8 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[monIndex].heldItem);
 
             CustomTrainerPartyAssignMoves(&party[i], &partyData[monIndex]);
+            if (replacedRivalStarter)
+                GiveMonInitialMoveset(&party[i]); // Johto template moves can be illegal for the saved family.
             SetMonData(&party[i], MON_DATA_IVS, &(partyData[monIndex].iv));
             if (partyData[monIndex].ev != NULL)
             {

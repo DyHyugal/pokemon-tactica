@@ -543,18 +543,52 @@ static u32 UNUSED GetJohtoRivalStarterStage(u16 species)
     }
 }
 
-static u16 UNUSED GetFirstEvolution(u16 species)
+static u16 UNUSED GetFirstRivalEvolutionAtLevel(u16 species, u8 level)
 {
     const struct Evolution *evolutions = GetSpeciesEvolutions(species);
-    u32 i;
+    u32 i, j;
     if (evolutions != NULL)
         for (i = 0; evolutions[i].method != EVOLUTIONS_END; i++)
-            if (FamilyStarter_IsAvailable(evolutions[i].targetSpecies))
-                return evolutions[i].targetSpecies;
+        {
+            const struct Evolution *evo = &evolutions[i];
+            u32 minimumLevel;
+            bool32 eligible = TRUE;
+
+            if (!FamilyStarter_IsAvailable(evo->targetSpecies))
+                continue;
+            switch (evo->method)
+            {
+            case EVO_LEVEL:
+            case EVO_LEVEL_BATTLE_ONLY:
+                minimumLevel = evo->param ? evo->param : 18;
+                break;
+            case EVO_ITEM:
+                minimumLevel = 30;
+                break;
+            case EVO_TRADE:
+                minimumLevel = 36;
+                break;
+            default:
+                continue;
+            }
+            if (level < minimumLevel)
+                continue;
+            if (evo->params != NULL)
+                for (j = 0; evo->params[j].condition != CONDITIONS_END; j++)
+                {
+                    const struct EvolutionParam *param = &evo->params[j];
+                    if (param->condition == IF_MIN_LEVEL)
+                        eligible &= level >= param->arg1;
+                    else if (param->condition != IF_MIN_FRIENDSHIP)
+                        eligible = FALSE; // A rival template cannot prove special conditions.
+                }
+            if (eligible)
+                return evo->targetSpecies;
+        }
     return species;
 }
 
-u16 FamilyStarter_GetRivalSpecies(u16 originalSpecies)
+u16 FamilyStarter_GetRivalSpeciesAtLevel(u16 originalSpecies, u8 level)
 {
 #if IS_HNS
     u32 stage = GetJohtoRivalStarterStage(originalSpecies);
@@ -563,11 +597,16 @@ u16 FamilyStarter_GetRivalSpecies(u16 originalSpecies)
     if (stage < 3 && IsMenuSpecies(species))
     {
         for (i = 0; i < stage; i++)
-            species = GetFirstEvolution(species);
+            species = GetFirstRivalEvolutionAtLevel(species, level);
         return species;
     }
 #endif
     return originalSpecies;
+}
+
+u16 FamilyStarter_GetRivalSpecies(u16 originalSpecies)
+{
+    return FamilyStarter_GetRivalSpeciesAtLevel(originalSpecies, MAX_LEVEL);
 }
 
 u16 FamilyStarter_GetPrimarySpecies(void)
