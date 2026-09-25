@@ -23,6 +23,8 @@ Si l'audio, la vitesse native, le taux shiny, le starter/œuf ou les évolutions
 
 Une feature redevient `[DONE]` après correction intégrée et contrôles post-migration documentés. La spec produit prévaut pour tout écart fonctionnel voulu par Tactica.
 
+L'audit du rival a mis au jour une configuration héritée : `B_VAR_DIFFICULTY = 0` force les équipes NORMAL dans le build HnS même si les variantes HARD sont générées. La PR #8 lie le choix de ces équipes au réglage existant `TRAINER IVs` (HARD = HARD ; OFF/SCALE = NORMAL). Cette anomalie doit être contrôlée dans la ROM avant d'être attribuée à la migration ; les données des équipes HARD ont bien été transférées.
+
 ## Séquence de migration (historique)
 
 1. Préparer localement l'arbre complet, sans écrire dans l'ancien dépôt distant ; noter les trois SHA ci-dessus.

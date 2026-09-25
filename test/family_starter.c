@@ -375,6 +375,14 @@ TEST("Family starter: rival roster follows the saved category and retains the ac
     }
     EXPECT_EQ(GetMonData(&gEnemyParty[5], MON_DATA_HELD_ITEM), ITEM_CHARCOAL);
 
+    SetCurrentDifficultyLevel(DIFFICULTY_HARD);
+    FamilyStarter_ApplyRivalRoster(gEnemyParty, PARTY_SIZE, TRAINER_RIVAL_CHIKORITA_4_HNS);
+    EXPECT_EQ(GetMonData(&gEnemyParty[0], MON_DATA_SPATK_EV), 252);
+    EXPECT_EQ(GetMonData(&gEnemyParty[0], MON_DATA_SPEED_EV), 252);
+    EXPECT_EQ(GetMonData(&gEnemyParty[0], MON_DATA_HP_EV), 4);
+    EXPECT_EQ(GetMonData(&gEnemyParty[0], MON_DATA_SPATK_IV), 31);
+    SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
+
     VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_HORSEA);
     for (i = 0; i < 3; i++)
         CreateRandomMon(&gEnemyParty[i], SPECIES_RATTATA, 18);
@@ -382,6 +390,13 @@ TEST("Family starter: rival roster follows the saved category and retains the ac
     EXPECT_EQ(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES), SPECIES_WINGULL);
     EXPECT_EQ(GetMonData(&gEnemyParty[1], MON_DATA_SPECIES), SPECIES_LOMBRE);
     EXPECT_EQ(GetMonData(&gEnemyParty[2], MON_DATA_SPECIES), SPECIES_HORSEA);
+
+    VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_PAWMI);
+    for (i = 0; i < PARTY_SIZE; i++)
+        CreateRandomMon(&gEnemyParty[i], SPECIES_RATTATA, 40);
+    FamilyStarter_ApplyRivalRoster(gEnemyParty, PARTY_SIZE, TRAINER_RIVAL_CHIKORITA_4_HNS);
+    EXPECT_EQ(GetMonData(&gEnemyParty[3], MON_DATA_SPECIES), SPECIES_TOXTRICITY_LOW_KEY);
+    EXPECT_EQ(GetMonData(&gEnemyParty[5], MON_DATA_SPECIES), SPECIES_PAWMOT);
 }
 
 TEST("Family starter: rival category draw follows the canonical counter matrix")

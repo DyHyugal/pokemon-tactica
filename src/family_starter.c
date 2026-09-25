@@ -599,6 +599,8 @@ static u16 UNUSED GetFirstRivalEvolutionAtLevel(u16 species, u8 level)
                         eligible &= level >= 36; // The rival can meet these before this encounter.
                     else if (param->condition == IF_KNOWS_MOVE)
                         eligible &= level >= 40;
+                    else if (param->condition == IF_MIN_OVERWORLD_STEPS)
+                        eligible &= level >= 40;
                     else if (param->condition == IF_TIME)
                         eligible &= level >= 30;
                     else if (param->condition == IF_LOW_KEY_NATURE)

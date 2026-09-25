@@ -6,14 +6,25 @@
 
 enum DifficultyLevel GetCurrentDifficultyLevel(void)
 {
+#if IS_HNS && !TESTING
+    // Tactica's existing Trainer IVs setting provides HARD (2) and native
+    // NORMAL (0); SCALE (1) keeps the native trainer roster with scaled IVs.
+    return gSaveBlock3Ptr->challengeSettings.tx_Challenges_TrainerScalingIVs == 2
+        ? DIFFICULTY_HARD : DIFFICULTY_NORMAL;
+#else
     if (!B_VAR_DIFFICULTY)
         return DIFFICULTY_NORMAL;
 
     return VarGet(B_VAR_DIFFICULTY);
+#endif
 }
 
 void SetCurrentDifficultyLevel(enum DifficultyLevel desiredDifficulty)
 {
+#if IS_HNS && !TESTING
+    gSaveBlock3Ptr->challengeSettings.tx_Challenges_TrainerScalingIVs =
+        desiredDifficulty == DIFFICULTY_HARD ? 2 : 0;
+#else
     if (!B_VAR_DIFFICULTY)
         return;
 
@@ -21,6 +32,7 @@ void SetCurrentDifficultyLevel(enum DifficultyLevel desiredDifficulty)
         desiredDifficulty = DIFFICULTY_MAX;
 
     VarSet(B_VAR_DIFFICULTY, desiredDifficulty);
+#endif
 }
 
 enum DifficultyLevel GetBattlePartnerDifficultyLevel(u16 partnerId)
