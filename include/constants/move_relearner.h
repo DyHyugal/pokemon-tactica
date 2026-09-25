@@ -1,10 +1,10 @@
 #ifndef GUARD_CONSTANTS_MOVE_RELEARNER_H
 #define GUARD_CONSTANTS_MOVE_RELEARNER_H
 
-// Max number of moves shown by the move relearner.
-// Increased from 25 to 60 so Mew can display all TMs/HMs.
-// If you plan on adding more TMs, increase this number too.
-#define MAX_RELEARNER_MOVES 60
+// Max number of moves shown by the move relearner and Tactica move shop.
+// The largest generated Tactica compatibility list currently has 372 moves.
+#define MAX_RELEARNER_MOVES 400
+#define TACTICA_MOVE_SHOP_PRICE 3000
 
 // Move Relearner menu change constants
 enum MoveRelearnerStates
@@ -14,6 +14,10 @@ enum MoveRelearnerStates
     MOVE_RELEARNER_TM_MOVES,
     MOVE_RELEARNER_TUTOR_MOVES,
     MOVE_RELEARNER_COUNT,
+    // Kept outside MOVE_RELEARNER_COUNT so the regular relearner UI never
+    // treats paid shop lessons as free relearnable moves.
+    MOVE_RELEARNER_TACTICA_SHOP_MOVES = MOVE_RELEARNER_COUNT,
+    MOVE_RELEARNER_STATE_COUNT,
 };
 
 enum RelearnMode

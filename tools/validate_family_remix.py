@@ -320,6 +320,14 @@ def validate_shops():
     tms = parse_shop_items(ROOT / "data/scripts/tm_shop.inc")
     if len(tms) != 92 or len(set(tms)) != 92 or any(not item.startswith("ITEM_TM_") for item in tms):
         fail("TM shop must contain each of the 92 active HnS TMs exactly once")
+    tm_shop_script = (ROOT / "data/scripts/tm_shop.inc").read_text(encoding="utf-8")
+    for required in (
+        "MOVE_RELEARNER_TACTICA_SHOP_MOVES",
+        "TeachMoveRelearnerMove",
+        "Each lesson costs ¥3,000.",
+    ):
+        if required not in tm_shop_script:
+            fail(f"Tactica move shop is not fully wired: missing {required}")
 
     items = parse_shop_items(ROOT / "data/scripts/item_shop.inc")
     if len(items) != 259 or len(set(items)) != 259:
