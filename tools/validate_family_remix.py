@@ -12,6 +12,10 @@ def fail(message):
     raise SystemExit(f"Family Remix validation failed: {message}")
 
 
+def held_items(block):
+    return re.findall(r"^[^\n@]+ @ ([^\n]+)$", block, re.M)
+
+
 def validate_bosses():
     text = (ROOT / "src/data/trainers_hns.party").read_text()
     marker = "/* ========== Family Remix FINAL hard boss parties ========== */"
@@ -69,6 +73,9 @@ def validate_bosses():
             fail(f"{trainer_id} NORMAL must retain native Basic Trainer AI")
         if re.search(r"^EVs:", normal_party, re.M):
             fail(f"{trainer_id} NORMAL received HARD optimized EVs")
+        items = held_items(hard_party)
+        if len(items) != len(set(items)):
+            fail(f"{trainer_id} contains duplicate held items")
 
         levels = re.findall(r"^Level: (\d+)$", block, re.M)
         iv_lines = re.findall(r"^IVs: (.+)$", block, re.M)
@@ -173,6 +180,9 @@ def validate_rockets():
         ))
         if species != roster:
             fail(f"{trainer_id} final Rocket roster differs: {species}")
+        items = held_items(hard_party)
+        if len(items) != len(set(items)):
+            fail(f"{trainer_id} contains duplicate held items")
         if set(re.findall(r"^Level: (\d+)$", hard_party, re.M)) != {"1"}:
             fail(f"{trainer_id} Rocket source levels must remain runtime placeholders")
         iv_lines = re.findall(r"^IVs: (.+)$", hard_party, re.M)

@@ -56,8 +56,37 @@ for row in teams:
     bosses[(row["region"], row["category"], row["boss"])].append(row)
 for name, expected in [("Albert", 3), ("Hector", 4), ("Blanche", 6)]:
     require(len(next(v for k, v in bosses.items() if k[2] == name)) == expected, f"{name} roster size")
+early_items = {
+    "Albert": {"Murkrow": "Focus Sash"},
+    "Hector": {"Pineco": "Sitrus Berry", "Scyther": "Eviolite"},
+    "Blanche": {"Porygon2": "Eviolite", "Ursaring": "Flame Orb", "Maushold": "Wide Lens"},
+}
+for name, expected in early_items.items():
+    roster = next(v for k, v in bosses.items() if k[2] == name)
+    actual = {row["species"]: row["item"] for row in roster if row["item"] is not None}
+    require(actual == expected, f"{name} early held items: {actual}")
+
+required_items = {
+    ("Jasmine", "Corviknight"): "Leftovers", ("Jasmine", "Archaludon"): "Sitrus Berry",
+    ("Clément", "Xatu"): "Life Orb", ("Clément", "Gallade"): "Expert Belt",
+    ("Marion", "Honchkrow"): "Life Orb", ("Marion", "Weavile"): "Expert Belt",
+    ("Petrel", "Muk"): "Black Sludge", ("Petrel", "Weezing"): "Sitrus Berry",
+    ("Ariana", "Salazzle"): "Focus Sash", ("Ariana", "Grafaiai"): "Sitrus Berry",
+    ("Ariana", "Nidoqueen"): "Life Orb", ("Ariana", "Honchkrow"): "Sharp Beak",
+    ("Archer", "Nidoking"): "Life Orb", ("Archer", "Houndoom"): "Focus Sash",
+    ("Archer", "Weavile"): "Expert Belt", ("Pierre", "Garganacl"): "Leftovers",
+    ("Pierre", "Cradily"): "Sitrus Berry", ("Jeannine", "Toxapex"): "Black Sludge",
+    ("Jeannine", "Galarian Weezing"): "Sitrus Berry", ("Jeannine", "Venomoth"): "Focus Sash",
+    ("Auguste", "Torkoal"): "Heat Rock", ("Auguste", "Ninetales"): "Leftovers",
+}
+actual_items = {(row["boss"], row["species"]): row["item"] for row in teams}
+for key, expected in required_items.items():
+    require(actual_items.get(key) == expected, f"canonical held item {key}: {actual_items.get(key)}")
+
 megas = collections.defaultdict(set)
 for (region, category, boss), roster in bosses.items():
+    items = [row["item"] for row in roster if row["item"] is not None]
+    require(len(items) == len(set(items)), f"duplicate held item in {region}/{category}/{boss}")
     for row in roster:
         if row["species"].startswith("Mega "):
             megas[row["species"]].add((region, category, boss))
@@ -66,4 +95,4 @@ require(all(len(users) == 1 for users in megas.values()),
 jasmine = next(v for k, v in bosses.items() if k[2] == "Jasmine")
 require(any(x["species"] == "Mega Aggron" for x in jasmine), "Jasmine Mega Aggron")
 require(not any(x["species"] == "Mega Steelix" for x in jasmine), "Jasmine duplicate Mega Steelix")
-print("Tactica authored sources valid: 405 standard + 57 special tables, starters, rival, balance, unique Megas")
+print("Tactica authored sources valid: encounters, starters, rival, balance, unique held items and Megas")

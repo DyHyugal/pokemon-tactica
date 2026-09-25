@@ -41,16 +41,25 @@ TRAINERS = {
     ("Kanto", "Champion Rematch", "Maître"): "TRAINER_LANCE_2_HNS",
 }
 
+ROCKET_TRAINERS = {
+    ("Johto", "Rocket Executive", "Proton"): ("TRAINER_PROTON_1_HNS", "TRAINER_PROTON_2_HNS"),
+    ("Johto", "Rocket Executive", "Petrel"): ("TRAINER_PETREL_1_HNS", "TRAINER_PETREL_2_HNS"),
+    ("Johto", "Rocket Executive", "Ariana"): ("TRAINER_ARIANA_1_HNS", "TRAINER_ARIANA_2_HNS"),
+    ("Johto", "Rocket Executive", "Archer"): ("TRAINER_ARCHER_HNS",),
+}
+
 SPECIES_ALIASES = {
     "Alolan Ninetales": "Ninetales-Alola",
     "Arctozolt (Galvagla)": "Arctozolt",
     "Galarian Weezing": "Weezing-Galar",
     "Galarian Slowking": "Slowking-Galar",
     "Alolan Muk": "Muk-Alola",
+    "Hisuian Zoroark": "Zoroark-Hisui",
 }
 
 # These final forms are not legal at the authored level. Their current
-# pre-evolution blocks intentionally retain a compatible item, ability and set.
+# pre-evolution blocks retain a compatible ability and set while the canonical
+# held-item assignment still applies.
 LEGAL_PRE_EVOLUTIONS = {
     ("Ursaring", 29): "Teddiursa",
     ("Hydreigon", 61): "Zweilous",
@@ -102,13 +111,17 @@ def render_mon(canonical: dict, current: dict, hard: bool) -> str:
         if current["species"] != legal_species:
             raise ValueError(f"Expected legal {legal_species} fallback, found {current['species']}")
         return "\n".join(
-            [current["species"] + (f" @ {current['item']}" if current["item"] else "")]
+            [current["species"] + (f" @ {canonical['item']}" if canonical["item"] else "")]
             + [f"{key}: {current[key]}" for key in ("Level", "Ability", "Nature", "IVs", "EVs") if current[key]]
             + [f"- {move}" for move in current["moves"]]
         )
 
     first = desired_species + (f" @ {canonical['item']}" if canonical["item"] else "")
-    moves = ["Hidden Power" if move == "Hidden Power Ice" else move for move in canonical["moves"]]
+    moves = [
+        "Hidden Power" if move == "Hidden Power Ice" else move
+        for move in canonical["moves"]
+        if move not in {"—", "�"}
+    ]
     lines = [
         first,
         f"Level: {level}",
@@ -145,20 +158,23 @@ def synchronize(check: bool = False) -> None:
     spec = json.loads(SPEC_PATH.read_text(encoding="utf-8"))
     groups: OrderedDict[tuple[str, str, str], list[dict]] = OrderedDict()
     for row in spec["teams"]:
-        if row["category"] == "Rocket Executive":
-            continue
         groups.setdefault((row["region"], row["category"], row["boss"]), []).append(row)
-    if set(groups) != set(TRAINERS):
+    if set(groups) != set(TRAINERS) | set(ROCKET_TRAINERS):
         raise ValueError("Boss mapping does not match the canonical fixed-team groups")
 
     text = PARTY_PATH.read_text(encoding="utf-8")
     normal, remainder = text.split(HARD_MARKER, 1)
     hard, rocket = remainder.split(ROCKET_MARKER, 1)
-    for key, canonical in groups.items():
-        trainer_id = TRAINERS[key]
+    for key, trainer_id in TRAINERS.items():
+        canonical = groups[key]
         normal = replace_party(normal, trainer_id, canonical, False)
         hard = replace_party(hard, trainer_id, canonical, True)
-    synchronized = normal + HARD_MARKER + hard + ROCKET_MARKER + rocket
+    for key, trainer_ids in ROCKET_TRAINERS.items():
+        canonical = groups[key]
+        for trainer_id in trainer_ids:
+            normal = replace_party(normal, trainer_id, canonical, False)
+            rocket = replace_party(rocket, trainer_id, canonical, True)
+    synchronized = (normal + HARD_MARKER + hard + ROCKET_MARKER + rocket).rstrip() + "\n"
     if check:
         if synchronized != text:
             raise SystemExit("Tactica boss parties are not synchronized; run tools/sync_tactica_bosses.py")

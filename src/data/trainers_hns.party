@@ -7187,7 +7187,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Wing Attack
 - U-turn
 
-Gligar @ Sitrus Berry
+Gligar
 Level: 14
 Ability: Immunity
 Nature: Impish
@@ -7197,7 +7197,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Knock Off
 - Roost
 
-Pidgeotto @ Sharp Beak
+Pidgeotto
 Level: 17
 Ability: Big Pecks
 Nature: Adamant
@@ -7288,7 +7288,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Explosion
 - Gyro Ball
 
-Yanma @ Wise Glasses
+Yanma
 Level: 22
 Ability: Speed Boost
 Nature: Modest
@@ -7298,7 +7298,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Psychic
 - Protect
 
-Heracross @ Expert Belt
+Heracross
 Level: 22
 Ability: Guts
 Nature: Adamant
@@ -7389,7 +7389,7 @@ Mugshot: Pink
 Items: Super Potion / Potion
 Difficulty: Normal
 
-Eevee @ Eviolite
+Eevee
 Level: 29
 Ability: Adaptability
 Nature: Timid
@@ -7409,7 +7409,7 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 - Recover
 - Tri Attack
 
-Ambipom @ Silk Scarf
+Ambipom
 Level: 29
 Ability: Technician
 Nature: Jolly
@@ -7419,7 +7419,7 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 - Knock Off
 - Aerial Ace
 
-Teddiursa @ Eviolite
+Teddiursa @ Flame Orb
 Level: 29
 Ability: Quick Feet
 Nature: Adamant
@@ -7439,7 +7439,7 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 - Encore
 - U-turn
 
-Miltank @ Leftovers
+Miltank
 Level: 32
 Ability: Scrappy
 Nature: Impish
@@ -7916,7 +7916,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Brave Bird
 - Roost
 
-Archaludon @ Leftovers
+Archaludon @ Sitrus Berry
 Level: 48
 Ability: Stamina
 Nature: Bold
@@ -8382,7 +8382,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - U-turn
 - Flamethrower
 
-Zweilous @ Choice Band
+Zweilous @ Choice Specs
 Level: 61
 Ability: Hustle
 Nature: Adamant
@@ -8513,7 +8513,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Iron Defense
 - Body Press
 
-Cradily @ Leftovers
+Cradily @ Sitrus Berry
 Level: 84
 Ability: Storm Drain
 Nature: Calm
@@ -8873,7 +8873,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Sludge Bomb
 - Foul Play
 
-Weezing-Galar @ Black Sludge
+Weezing-Galar @ Sitrus Berry
 Level: 80
 Ability: Neutralizing Gas
 Nature: Bold
@@ -8893,7 +8893,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Fire Punch
 - Shadow Sneak
 
-Venomoth @ Black Sludge
+Venomoth @ Focus Sash
 Level: 80
 Ability: Tinted Lens
 Nature: Timid
@@ -8925,7 +8925,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Rapid Spin
 - Yawn
 
-Ninetales @ Heat Rock
+Ninetales @ Leftovers
 Level: 88
 Ability: Drought
 Nature: Timid
@@ -9148,7 +9148,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Heat Wave
 - Roost
 
-Gallade @ Life Orb
+Gallade @ Expert Belt
 Level: 65
 Ability: Sharpness
 Nature: Jolly
@@ -9400,7 +9400,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Foul Play
 - Toxic
 
-Weavile @ Life Orb
+Weavile @ Expert Belt
 Level: 65
 Ability: Pressure
 Nature: Jolly
@@ -11102,7 +11102,7 @@ AI: Basic Trainer
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
-Weavile @ Life Orb
+Weavile @ Expert Belt
 Level: 1
 Ability: Pressure
 Nature: Jolly
@@ -11140,7 +11140,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunderbolt
 - Flash Cannon
 - Volt Switch
-- Body Press
+- Signal Beam
 
 Drapion @ Black Sludge
 Level: 1
@@ -11152,7 +11152,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
 - Taunt
 
-Houndoom @ Life Orb
+Houndoom @ Focus Sash
 Level: 1
 Ability: Flash Fire
 Nature: Timid
@@ -11317,7 +11317,7 @@ Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Transform
 
-Weezing @ Black Sludge
+Weezing @ Sitrus Berry
 Level: 1
 Ability: Levitate
 Nature: Bold
@@ -11385,7 +11385,7 @@ Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Transform
 
-Weezing @ Black Sludge
+Weezing @ Sitrus Berry
 Level: 1
 Ability: Levitate
 Nature: Bold
@@ -11466,7 +11466,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sludge Bomb
 - Nature Power
 
-Grafaiai @ Focus Sash
+Grafaiai @ Sitrus Berry
 Level: 1
 Ability: Prankster
 Nature: Jolly
@@ -11496,7 +11496,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sludge Wave
 - Dragon Pulse
 
-Honchkrow @ Life Orb
+Honchkrow @ Sharp Beak
 Level: 1
 Ability: Moxie
 Nature: Adamant
@@ -11537,7 +11537,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sludge Bomb
 - Nature Power
 
-Grafaiai @ Focus Sash
+Grafaiai @ Sitrus Berry
 Level: 1
 Ability: Prankster
 Nature: Jolly
@@ -11567,7 +11567,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sludge Wave
 - Dragon Pulse
 
-Honchkrow @ Life Orb
+Honchkrow @ Sharp Beak
 Level: 1
 Ability: Moxie
 Nature: Adamant
@@ -16632,7 +16632,7 @@ EVs: 252 HP / 252 Spe / 4 Def
 - Wing Attack
 - U-turn
 
-Gligar @ Sitrus Berry
+Gligar
 Level: 14
 Ability: Immunity
 Nature: Impish
@@ -16643,7 +16643,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Knock Off
 - Roost
 
-Pidgeotto @ Sharp Beak
+Pidgeotto
 Level: 17
 Ability: Big Pecks
 Nature: Adamant
@@ -16677,7 +16677,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Explosion
 - Gyro Ball
 
-Yanma @ Wise Glasses
+Yanma
 Level: 22
 Ability: Speed Boost
 Nature: Modest
@@ -16688,7 +16688,7 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Psychic
 - Protect
 
-Heracross @ Expert Belt
+Heracross
 Level: 22
 Ability: Guts
 Nature: Adamant
@@ -16722,7 +16722,7 @@ Mugshot: Pink
 Items: Super Potion / Potion
 Difficulty: Hard
 
-Eevee @ Eviolite
+Eevee
 Level: 29
 Ability: Adaptability
 Nature: Timid
@@ -16744,7 +16744,7 @@ EVs: 252 HP / 252 SpA / 4 SpD
 - Recover
 - Tri Attack
 
-Ambipom @ Silk Scarf
+Ambipom
 Level: 29
 Ability: Technician
 Nature: Jolly
@@ -16755,7 +16755,7 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Knock Off
 - Aerial Ace
 
-Teddiursa @ Eviolite
+Teddiursa @ Flame Orb
 Level: 29
 Ability: Quick Feet
 Nature: Adamant
@@ -16777,7 +16777,7 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Encore
 - U-turn
 
-Miltank @ Leftovers
+Miltank
 Level: 32
 Ability: Scrappy
 Nature: Impish
@@ -16989,7 +16989,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Brave Bird
 - Roost
 
-Archaludon @ Leftovers
+Archaludon @ Sitrus Berry
 Level: 48
 Ability: Stamina
 Nature: Bold
@@ -17145,7 +17145,7 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - U-turn
 - Flamethrower
 
-Zweilous @ Choice Band
+Zweilous @ Choice Specs
 Level: 61
 Ability: Hustle
 Nature: Adamant
@@ -17223,7 +17223,7 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Heat Wave
 - Roost
 
-Gallade @ Life Orb
+Gallade @ Expert Belt
 Level: 65
 Ability: Sharpness
 Nature: Jolly
@@ -17446,7 +17446,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Foul Play
 - Toxic
 
-Weavile @ Life Orb
+Weavile @ Expert Belt
 Level: 65
 Ability: Pressure
 Nature: Jolly
@@ -17613,7 +17613,7 @@ EVs: 252 HP / 252 SpD / 4 Def
 - Iron Defense
 - Body Press
 
-Cradily @ Leftovers
+Cradily @ Sitrus Berry
 Level: 84
 Ability: Storm Drain
 Nature: Calm
@@ -17925,7 +17925,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Sludge Bomb
 - Foul Play
 
-Weezing-Galar @ Black Sludge
+Weezing-Galar @ Sitrus Berry
 Level: 80
 Ability: Neutralizing Gas
 Nature: Bold
@@ -17947,7 +17947,7 @@ EVs: 252 HP / 252 SpD / 4 Def
 - Fire Punch
 - Shadow Sneak
 
-Venomoth @ Black Sludge
+Venomoth @ Focus Sash
 Level: 80
 Ability: Tinted Lens
 Nature: Timid
@@ -18059,7 +18059,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Rapid Spin
 - Yawn
 
-Ninetales @ Heat Rock
+Ninetales @ Leftovers
 Level: 88
 Ability: Drought
 Nature: Timid
@@ -18447,7 +18447,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 4 SpD
 - Transform
 
-Weezing @ Black Sludge
+Weezing @ Sitrus Berry
 Level: 1
 Ability: Levitate
 Nature: Bold
@@ -18522,7 +18522,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 4 SpD
 - Transform
 
-Weezing @ Black Sludge
+Weezing @ Sitrus Berry
 Level: 1
 Ability: Levitate
 Nature: Bold
@@ -18611,7 +18611,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Sludge Bomb
 - Nature Power
 
-Grafaiai @ Focus Sash
+Grafaiai @ Sitrus Berry
 Level: 1
 Ability: Prankster
 Nature: Jolly
@@ -18644,7 +18644,7 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Sludge Wave
 - Dragon Pulse
 
-Honchkrow @ Life Orb
+Honchkrow @ Sharp Beak
 Level: 1
 Ability: Moxie
 Nature: Adamant
@@ -18689,7 +18689,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Sludge Bomb
 - Nature Power
 
-Grafaiai @ Focus Sash
+Grafaiai @ Sitrus Berry
 Level: 1
 Ability: Prankster
 Nature: Jolly
@@ -18722,7 +18722,7 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Sludge Wave
 - Dragon Pulse
 
-Honchkrow @ Life Orb
+Honchkrow @ Sharp Beak
 Level: 1
 Ability: Moxie
 Nature: Adamant
@@ -18745,7 +18745,7 @@ Mugshot: Dark Red
 Items: Full Restore / Full Restore
 Difficulty: Hard
 
-Weavile @ Life Orb
+Weavile @ Expert Belt
 Level: 1
 Ability: Pressure
 Nature: Jolly
@@ -18787,7 +18787,7 @@ EVs: 252 HP / 252 SpA / 4 SpD
 - Thunderbolt
 - Flash Cannon
 - Volt Switch
-- Body Press
+- Signal Beam
 
 Drapion @ Black Sludge
 Level: 1
@@ -18800,7 +18800,7 @@ EVs: 252 HP / 252 SpD / 4 Def
 - Earthquake
 - Taunt
 
-Houndoom @ Life Orb
+Houndoom @ Focus Sash
 Level: 1
 Ability: Flash Fire
 Nature: Timid

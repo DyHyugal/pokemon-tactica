@@ -236,7 +236,10 @@ static u32 GetBossProgressionLevelCap(const struct BossLevelCapMilestone *milest
             if (milestoneCap > progressionFloor)
                 progressionFloor = milestoneCap;
         }
-        else if (nextBossCap == 0)
+        // A completed temporary Rocket +2 cap must immediately advance to the
+        // next higher canonical milestone. Lower optional/rival milestones may
+        // still be fought, but they cannot hold the preparation cap backwards.
+        else if (nextBossCap == 0 && milestoneCap > progressionFloor)
         {
             nextBossCap = milestoneCap;
         }
