@@ -9973,6 +9973,14 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Confuse Ray
 - Air Cutter
 
+Ursaring
+Level: 38
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Slash
+- Faint Attack
+- Rock Smash
+- Rest
+
 Meganium
 Level: 40
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
@@ -10292,6 +10300,14 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Double Team
 - Confuse Ray
 - Air Cutter
+
+Ursaring
+Level: 38
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Slash
+- Faint Attack
+- Rock Smash
+- Rest
 
 Typhlosion
 Level: 40
@@ -10613,6 +10629,14 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Confuse Ray
 - Air Cutter
 
+Ursaring
+Level: 38
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Slash
+- Faint Attack
+- Rock Smash
+- Rest
+
 Feraligatr
 Level: 40
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
@@ -10723,7 +10747,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Crunch
 - Double Team
 
-Feraligatr @ Scope Lens
+Feraligatr @ Mystic Water
 Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Beam
@@ -10782,7 +10806,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Crunch
 - Double Team
 
-Feraligatr @ Scope Lens
+Feraligatr @ Mystic Water
 Level: 68
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Beam
