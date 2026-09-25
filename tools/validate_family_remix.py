@@ -342,6 +342,16 @@ def validate_shops():
     if len(mega_shop) != len(set(mega_shop)) or set(mega_shop) != playable_mega_stones:
         fail("Mega Stone shop does not exactly match playable item-based Mega Evolutions")
 
+    item_data = (ROOT / "src/data/items.h").read_text(encoding="utf-8")
+    for item in sorted(playable_mega_stones):
+        match = re.search(
+            rf"\[{item}\]\s*=\s*\{{(?:(?!\n\s*\[ITEM_).)*?\.price\s*=\s*(\d+),",
+            item_data,
+            re.DOTALL,
+        )
+        if match is None or int(match.group(1)) != 3000:
+            fail(f"{item} must cost exactly 3000 Pokédollars")
+
     events = (ROOT / "data/event_scripts.s").read_text(encoding="utf-8")
     if events.count('.include "data/scripts/mega_shop.inc"') != 1:
         fail("Mega Stone shop script is not included exactly once")

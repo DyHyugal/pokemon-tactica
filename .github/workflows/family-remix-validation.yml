@@ -36,6 +36,8 @@ jobs:
         run: make check BUILD=hns TESTS='Tactica encounters:' -j2
       - name: Tactica balance tests
         run: make check BUILD=hns TESTS='Tactica balance:' -j2
+      - name: Tactica shop tests
+        run: make check BUILD=hns TESTS='Tactica shops:' -j2
       - name: Existing audio regression tests
         run: make check BUILD=hns TESTS=Audio -j2
       - name: Existing Settings regression tests

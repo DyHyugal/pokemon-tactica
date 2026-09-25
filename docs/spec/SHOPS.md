@@ -10,7 +10,7 @@ Proposer les objets utiles qui ne sont pas déjà vendus par les marchands habit
 
 ## Méga-Gemmes
 
-Inventorier les Méga-Gemmes réellement supportées et rechercher un vendeur dédié. S'il n'existe pas, créer un PNJ Méga-Gemmes à côté du PNJ capacités/CT. Les gemmes déjà disponibles ailleurs ne doivent pas bloquer un accès cohérent aux Méga du jeu ; exclure celles sans forme jouable. Tester l'emplacement et l'achat dans la ROM.
+Inventorier les Méga-Gemmes réellement supportées et rechercher un vendeur dédié. S'il n'existe pas, créer un PNJ Méga-Gemmes à côté du PNJ capacités/CT. Les gemmes déjà disponibles ailleurs ne doivent pas bloquer un accès cohérent aux Méga du jeu ; exclure celles sans forme jouable. Chaque Méga-Gemme vendue coûte exactement **3000 Pokédollars**. Tester le catalogue, l'emplacement, l'achat, le retrait de l'argent et la réception de l'objet dans la ROM.
 
 ## Entraînement
 

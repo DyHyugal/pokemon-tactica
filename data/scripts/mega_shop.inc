@@ -13,7 +13,7 @@ MegaShop_Text_Welcome:
 	.string "battle system is available here.$"
 
 	.align 2
-MegaShop_Items:
+MegaShop_Items::
 	.2byte ITEM_ABOMASITE
 	.2byte ITEM_ABSOLITE
 	.2byte ITEM_ABSOLITE_Z
