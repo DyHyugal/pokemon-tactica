@@ -45,6 +45,30 @@ L'audit `earliest_access_cap` ne doit pas se limiter aux niveaux. Il doit aussi 
 7. Préserver habitat, méthode, progression et rareté : les remplacements servent à augmenter la couverture sans transformer les biomes en listes arbitraires.
 8. Le rapport d'audit doit fournir : taux de couverture pré-Ligue, familles absentes, doublons inter-zones détectés, remplacements proposés, légalité des stades/niveaux et impact sur les quatre slots.
 
+## Nouveau retour de playtest — badge 4
+
+Priorité **CORE/UI avant wiki** pour préparer la première run complète.
+
+### Summary
+Les captures montrent un problème de composition des fonds : les tilemaps/libellés statiques de l'ancien Summary restent visibles sous les données dynamiques, ce qui rend `STATS / IV / EV` et les pages d'attaques illisibles. Ne pas traiter cela comme un simple problème de couleur. Auditer d'abord BG/tilemaps/windows et supprimer les textes/fonds pré-imprimés qui se superposent aux fenêtres dynamiques.
+
+Décision owner : si nécessaire, **remplacer la page `CONTEST MOVES` par une page IV/EV dédiée**. Garder `BATTLE MOVES` pour les attaques. Cette solution est explicitement approuvée si elle permet une interface beaucoup plus lisible.
+
+### Boss Méga — incident bloquant
+Playtest Mortimer : assert `src/battle_main.c:2121: illegal ability SHADOW TAG for GENGAR`, puis le combat continue après START mais Ectoplasma ne Méga-Évolue pas.
+
+Cause à auditer en priorité : `tools/sync_tactica_bosses.py` transforme les noms `Mega X` en espèce de base mais recopie le talent de la Méga sur cette forme de base. Exemple actuel généré : `Gengar @ Gengarite / Ability: Shadow Tag`.
+
+Corriger **le générateur**, pas seulement Ectoplasma :
+- forme de base avec talent pré-Méga légal ;
+- Méga-Gemme conservée ;
+- transformation réellement déclenchée par l'IA ;
+- talent Méga obtenu par la transformation ;
+- audit de tous les boss Méga dont le talent diffère entre base et Méga ;
+- tests automatisés couvrant au minimum Méga-Ectoplasma + un second cas.
+
+Ce bloc est prioritaire sur le wiki : une ROM avec assert de boss ou Méga non fonctionnelle n'est pas candidate au playthrough complet.
+
 ## Premier bloc : prise de contexte, sans changement de gameplay
 
 1. Note SHA, branche et propreté Git. Vérifie la présence et la cohérence de tous les documents et JSON canoniques. Repère les restes de documentation produit contradictoire et les mentions de l'ancien nom visibles au joueur ; garde les crédits/licences et identifiants HnS techniques nécessaires.
