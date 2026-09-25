@@ -43,7 +43,7 @@
     "ice": "snow"
   },
   "fight_rosters": {
-    "status": "authored design; battle engine integration and move availability checks pending",
+    "status": "engine roster generation proposed in PR #8; CI, battle-level move checks and ROM playtest pending",
     "party_sizes": {
       "before_first_badge": 1,
       "after_badge_1": 3,

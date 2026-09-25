@@ -36,4 +36,4 @@ Branches prévues : `integration/v1`, `feature/encounters`, `feature/rival`, `fe
 
 ## Limites de ce gel
 
-Cette liste était l'état initial de migration : les rosters complets du rival étaient à proposer après inventaire. Le document de suivi actuel `FEATURE_STATUS.md` et `ROSTERS_ROCKET_RIVAL.md` distinguent maintenant propositions rédigées, parties effectivement générées et intégration encore requise. L'exhaustivité réelle des Move IDs, les items, la boutique de Méga-Gemmes et la palette ROM se vérifient dans le code et les tests avant de marquer ces points DONE.
+Cette liste était l'état initial de migration. Les rosters complets du rival sont décrits dans `rival.json` puis branchés au moteur par la PR #8 ; `FEATURE_STATUS.md` et `ROSTERS_ROCKET_RIVAL.md` distinguent rédaction, PR publiée, intégration et recette ROM. L'exhaustivité réelle des Move IDs, les items, la boutique de Méga-Gemmes et la palette ROM se vérifient dans le code et les tests avant de marquer ces points DONE.
