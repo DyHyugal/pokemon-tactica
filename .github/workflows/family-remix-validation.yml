@@ -21,6 +21,7 @@ jobs:
           python3 tools/validate_tactica_balance.py
           python3 tools/sync_tactica_encounters.py --check
           python3 tools/sync_tactica_bosses.py --check
+          python3 tools/sync_tactica_mega_shop.py --check
       - name: Build HnS
         run: make hns -j2
       - name: Level Cap tests

@@ -331,6 +331,25 @@ def validate_shops():
          or (item.endswith("_BALL") and item not in safe_ball_names)):
             fail(f"progression-bypassing item in special shop: {item}")
 
+    form_changes = (ROOT / "src/data/pokemon/form_change_tables.h").read_text()
+    playable_mega_stones = set(re.findall(
+        r"FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,\s+SPECIES_[A-Z0-9_]+,\s+(ITEM_[A-Z0-9_]+)",
+        form_changes,
+    ))
+    mega_shop = parse_shop_items(ROOT / "data/scripts/mega_shop.inc")
+    if len(playable_mega_stones) != 92:
+        fail(f"expected 92 playable Mega Stones, got {len(playable_mega_stones)}")
+    if len(mega_shop) != len(set(mega_shop)) or set(mega_shop) != playable_mega_stones:
+        fail("Mega Stone shop does not exactly match playable item-based Mega Evolutions")
+
+    events = (ROOT / "data/event_scripts.s").read_text(encoding="utf-8")
+    if events.count('.include "data/scripts/mega_shop.inc"') != 1:
+        fail("Mega Stone shop script is not included exactly once")
+    goldenrod = json.loads((ROOT / "data/maps/GoldenrodCity_DepartmentStore_5F_hns/map.json").read_text())
+    vendors = [event for event in goldenrod["object_events"] if event["script"] == "MegaShop_EventScript"]
+    if len(vendors) != 1 or (vendors[0]["x"], vendors[0]["y"]) != (18, 11):
+        fail("dedicated Mega Stone vendor is missing beside the Goldenrod TM clerk")
+
 
 def main():
     validate_bosses()
