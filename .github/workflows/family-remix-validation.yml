@@ -60,7 +60,7 @@ jobs:
 
       - name: Documentation-only validation complete
         if: steps.scope.outputs.docs_only == 'true'
-        run: echo "Documentation-only PR: toolchain, ROM build and gameplay regression suites intentionally skipped."
+        run: |\n          echo "Documentation-only PR: toolchain, ROM build and gameplay regression suites intentionally skipped."
 
       - name: Install build dependencies
         if: steps.scope.outputs.docs_only != 'true' || steps.scope.outputs.full == 'true'
