@@ -2,9 +2,15 @@
 
 ## Candidate owner
 
-**Aucune candidate owner n’est actuellement déclarée.**
+**Candidate owner : `7ab670bea4deabc70d4eee8ba5fbedd0425b242c`.**
 
-Un SHA n’est inscrit ici comme candidate que lorsque toutes les corrections annoncées sont fusionnées dans `integration/v1`, que la CI est verte sur ce SHA et qu’une ROM fraîche a été reconstruite.
+- branche : `integration/v1` ;
+- CI complète : run [36274367144](https://github.com/DyHyugal/pokemon-tactica/actions/runs/36274367144), verte ;
+- build propre : `make clean && make hns -j4`, terminé le 27 septembre 2026 à 00:01 (Europe/Paris) ;
+- ROM : `pokehns.gba`, 33 554 432 octets ;
+- SHA-256 : `C9EAFBDBFDA510DBE48D961F593B4CDA56B1F192B6B272F72372FC9D936DFF62`.
+
+La présente mise à jour de statut est uniquement documentaire et ne modifie pas le contenu de cette ROM. Les contrôles mGBA listés ci-dessous ne sont pas encore effectués.
 
 ## Ce qui est déjà couvert automatiquement
 
