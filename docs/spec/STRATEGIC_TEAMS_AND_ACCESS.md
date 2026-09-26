@@ -325,8 +325,9 @@ Le premier accès réel doit prendre en compte :
 - obstacles ;
 - événements ;
 - badges ;
-- CS ;
-- méthodes de rencontre réellement utilisables.
+- CS nécessaires pour **atteindre la zone**.
+
+Le déblocage d'une méthode de rencontre à l'intérieur d'une zone déjà visitée (pêche, Surf, Éclate-Roc) **ne rehausse pas le niveau de cette zone**. Il ouvre seulement la méthode concernée. Le niveau reste celui du prochain champion/jalon correspondant au premier accès de la zone.
 
 L'ordre numérique des routes n'est pas une information suffisante.
 
@@ -391,7 +392,7 @@ Audit du 25 septembre après le bloc `feature/strategic-rules` : Germignon est a
 
 Dans la Route de Glace, privilégier les formes cohérentes avec les niveaux élevés de la zone, notamment Feunard d'Alola et Darumacho de Galar si approprié.
 
-Salamèche et Élekid ont été retirés de la Route 36 et placés dans des zones accessibles après badge 2 (respectivement Route 37 et Route 42). Route 36 est désormais une zone témoin de recette runtime : la ROM fraîche doit correspondre exactement aux quatre slots jour/nuit/Éclate-Roc de `ENCOUNTERS.md`. Vérifier l'accès réel de toutes les autres tables avec `earliest_access_cap`.
+Salamèche et Élekid ont été retirés de la Route 36 et placés dans des zones accessibles après badge 2 (respectivement Route 37 et Route 42). **Route 36 est accessible avant Albert : toutes ses tables doivent donc rester 14–17 max**, même pour une méthode débloquée plus tard. L'actuel cap 32/38 est une erreur de dataset. Vérifier toutes les autres zones avec la même logique de premier accès de zone.
 
 ---
 
