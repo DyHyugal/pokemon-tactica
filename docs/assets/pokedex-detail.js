@@ -66,7 +66,7 @@ const speciesLabel=(constant)=>{
   if(lang==="fr") return L().species?.[en.toLowerCase()]||en;
   return en;
 };
-const allCards=[...document.querySelectorAll(".dex-card")];
+let allCards=[...document.querySelectorAll(".dex-card")];
 const constByCard=new Map(), displayByConst=new Map();
 function resolveCard(card){
   if(constByCard.has(card))return constByCard.get(card);
@@ -89,6 +89,63 @@ function resolveCard(card){
   return best;
 }
 allCards.forEach(resolveCard);
+
+function ensureEvolutionFamilyCards(){
+  const dex=document.getElementById("dex");
+  if(!dex)return;
+  const edges=[];
+  for(const [src,d] of Object.entries(S()))
+    for(const ev of d.evolutions||[])
+      if(S()[ev.target])edges.push([src,ev.target]);
+  const wanted=new Set([...constByCard.values()]);
+  let changed=true;
+  while(changed){
+    changed=false;
+    for(const [a,b] of edges){
+      if(wanted.has(a)&&!wanted.has(b)){wanted.add(b);changed=true;}
+      if(wanted.has(b)&&!wanted.has(a)){wanted.add(a);changed=true;}
+    }
+  }
+  const existing=new Set([...constByCard.values()]);
+  for(const constant of wanted){
+    if(existing.has(constant))continue;
+    const d=S()[constant];
+    if(!d)continue;
+    const en=title(d.name);
+    const display=lang==="fr"?(L().species?.[en.toLowerCase()]||en):en;
+    const other=lang==="fr"?en:(L().species?.[en.toLowerCase()]||en);
+    const card=document.createElement("article");
+    card.className="card dex-card";
+    card.dataset.search=(display+" "+other+" "+en).toLowerCase();
+    const loc=(lang==="fr"?"Localisations.html?q=":"Locations.html?q=")+encodeURIComponent(display);
+    card.innerHTML='<span class="poke-name"><img class="poke-sprite" loading="lazy" src="https://play.pokemonshowdown.com/sprites/gen5/'+spriteSlugFromConst(constant)+'.png" alt="'+display+'" onerror="this.style.display=\'none\'"><strong>'+display+'</strong></span><small>'+(lang==="fr"?"Fiche ROM":"ROM entry")+'</small><a class="card-link" href="'+loc+'">'+t.allLocations+' →</a>';
+    dex.append(card);
+    existing.add(constant);
+  }
+  allCards=[...document.querySelectorAll(".dex-card")];
+  allCards.sort((a,b)=>(a.querySelector("strong")?.textContent||"").localeCompare((b.querySelector("strong")?.textContent||""),lang,{sensitivity:"base"}));
+  allCards.forEach(card=>dex.append(card));
+  allCards.forEach(resolveCard);
+}
+ensureEvolutionFamilyCards();
+
+function bindDexSearch(){
+  const q=document.getElementById("q"), count=document.getElementById("count");
+  if(!q||!count)return;
+  const apply=()=>{
+    const term=norm(q.value);
+    let n=0;
+    allCards.forEach(card=>{
+      const ok=!term||norm(card.dataset.search||"").includes(term);
+      card.hidden=!ok;
+      if(ok)n++;
+    });
+    count.textContent=n+" Pokémon";
+  };
+  q.addEventListener("input",apply);
+  apply();
+}
+bindDexSearch();
 
 let dialog=document.getElementById("dex-detail");
 if(!dialog){
@@ -176,7 +233,7 @@ function abilitiesHtml(d){
   return '<div class="ability-grid">'+abs.map(({a,i})=>{
     const hidden=i===2;
     const ai=abilityInfo(a);
-    return '<div class="ability-card"><small>'+(hidden?t.hidden:t.regular)+'</small><strong>'+ai.name+'</strong>'+(lang==="en"&&ai.description?'<span>'+ai.description+'</span>':'')+'</div>';
+    return '<div class="ability-card"><small>'+(hidden?t.hidden:t.regular)+'</small><strong>'+ai.name+'</strong>'+(ai.description?'<span class="ability-description">'+ai.description+'</span>':'')+'</div>';
   }).join("")+'</div>';
 }
 function moveTable(list){
@@ -200,7 +257,7 @@ async function fillLocations(constant,displayName,linkHref){
   const rows=[...doc.querySelectorAll("#loc tbody tr")].filter(r=>{
     const slots=r.children[4]?.textContent||"";
     return slots.split("·").some(slot=>{
-      const species=norm(slot.replace(/\b\d+%\b/g,"").trim());
+      const species=norm(slot.replace(/\s*\d+\s*%\s*$/,"").trim());
       return candidates.some(candidate=>species===candidate);
     });
   }).slice(0,10);
