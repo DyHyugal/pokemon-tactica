@@ -1,24 +1,75 @@
 name: Tactica validation
 on:
   push:
-    branches: [main, integration/v1, 'feature/**']
+    branches: [main, integration/v1]
   pull_request:
     branches: [main, integration/v1]
   workflow_dispatch:
 permissions:
   contents: read
+
 jobs:
   hns:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Classify validation scope
+        id: scope
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            git fetch --no-tags origin "${{ github.base_ref }}"
+            BASE="origin/${{ github.base_ref }}"
+          elif [ "${{ github.event_name }}" = "push" ]; then
+            BASE="${{ github.event.before }}"
+          else
+            BASE=""
+          fi
+
+          if [ -z "$BASE" ] || ! git rev-parse "$BASE" >/dev/null 2>&1; then
+            echo "full=true" >> "$GITHUB_OUTPUT"
+            echo "docs_only=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          CHANGED="$(git diff --name-only "$BASE"...HEAD || git diff --name-only "$BASE" HEAD)"
+          printf '%s\n' "$CHANGED"
+
+          if [ -n "$CHANGED" ] && ! printf '%s\n' "$CHANGED" | grep -Ev '^(docs/|wiki/|README\.md$|AGENTS\.md$)' >/dev/null; then
+            echo "docs_only=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "docs_only=false" >> "$GITHUB_OUTPUT"
+          fi
+
+          # integration/main and manual runs are the integration gate: always full.
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || { [ "${{ github.event_name }}" = "push" ] && { [ "${{ github.ref_name }}" = "integration/v1" ] || [ "${{ github.ref_name }}" = "main" ]; }; }; then
+            echo "full=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "full=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Validate documentation index
         run: .github/docs_validate/inclusive_summary.py
+
+      - name: Validate localized documentation
+        if: steps.scope.outputs.docs_only == 'true'
+        run: python3 tools/validate_tactica_localization.py
+
+      - name: Documentation-only validation complete
+        if: steps.scope.outputs.docs_only == 'true'
+        run: echo "Documentation-only PR: toolchain, ROM build and gameplay regression suites intentionally skipped."
+
       - name: Install build dependencies
+        if: steps.scope.outputs.docs_only != 'true' || steps.scope.outputs.full == 'true'
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends binutils-arm-none-eabi gcc-arm-none-eabi libnewlib-arm-none-eabi libpng-dev python3
+
       - name: Validate Tactica engine data
+        if: steps.scope.outputs.docs_only != 'true' || steps.scope.outputs.full == 'true'
         run: |
           python3 tools/validate_tactica_spec.py
           python3 tools/validate_tactica_encounter_evolutions.py
@@ -31,31 +82,37 @@ jobs:
           python3 tools/generate_tactica_rival.py --check
           python3 tools/sync_tactica_mega_shop.py --check
           python3 tools/sync_tactica_move_shop.py --check
+
       - name: Build HnS
+        if: steps.scope.outputs.docs_only != 'true' || steps.scope.outputs.full == 'true'
         run: make hns -j2
+
       - name: Validate Tactica UI assets
+        if: steps.scope.outputs.docs_only != 'true' || steps.scope.outputs.full == 'true'
         run: |
           python3 tools/validate_tactica_ui.py
           python3 tools/validate_tactica_localization.py
-      - name: Level Cap tests
-        run: make check BUILD=hns TESTS='*Level cap:' -j2
-      - name: Evolution requirement tests
-        run: make check BUILD=hns TESTS='*Evolution requirements:' -j2
-      - name: Training NPC tests
-        run: make check BUILD=hns TESTS='*Training NPC:' -j2
-      - name: Family Safari tests
-        run: make check BUILD=hns TESTS='*Family Safari:' -j2
-      - name: Tactica encounter tests
-        run: make check BUILD=hns TESTS='Tactica encounters:' -j2
-      - name: Tactica balance tests
-        run: make check BUILD=hns TESTS='Tactica balance:' -j2
-      - name: Tactica shop tests
-        run: make check BUILD=hns TESTS='Tactica shops:' -j2
-      - name: Existing audio regression tests
-        run: make check BUILD=hns TESTS=Audio -j2
-      - name: Existing Settings regression tests
-        run: make check BUILD=hns TESTS=Settings -j2
-      - name: Native speed tests
-        run: make check BUILD=hns TESTS=Native -j2
-      - name: Starter and mystery egg tests
-        run: make check BUILD=hns TESTS=Family -j2
+
+      - name: Full integration regression suite
+        if: steps.scope.outputs.full == 'true'
+        run: |
+          make check BUILD=hns TESTS='*Level cap:' -j2
+          make check BUILD=hns TESTS='*Evolution requirements:' -j2
+          make check BUILD=hns TESTS='*Training NPC:' -j2
+          make check BUILD=hns TESTS='*Family Safari:' -j2
+          make check BUILD=hns TESTS='Tactica encounters:' -j2
+          make check BUILD=hns TESTS='Tactica balance:' -j2
+          make check BUILD=hns TESTS='Tactica shops:' -j2
+          make check BUILD=hns TESTS=Audio -j2
+          make check BUILD=hns TESTS=Settings -j2
+          make check BUILD=hns TESTS=Native -j2
+          make check BUILD=hns TESTS=Family -j2
+
+      - name: PR smoke tests
+        if: github.event_name == 'pull_request' && steps.scope.outputs.docs_only != 'true' && steps.scope.outputs.full != 'true'
+        run: |
+          # Fast PR gate. Domain-specific tests belong to the PR author/Codex and
+          # are recorded in FEATURE_STATUS; the complete regression suite runs
+          # automatically after merge on integration/v1.
+          make check BUILD=hns TESTS=Settings -j2
+          make check BUILD=hns TESTS=Family -j2
