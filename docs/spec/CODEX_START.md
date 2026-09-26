@@ -1,6 +1,6 @@
 # Prompt de reprise Codex — Pokémon Tactica V1
 
-Tu travailles dans le dépôt Pokémon Tactica, **à partir du dernier `integration/v1`** ou d'une branche fonctionnelle créée depuis ce SHA. Lis d'abord `AGENTS.md`, `docs/spec/SOURCE_OF_TRUTH.md`, `docs/spec/PLAYTEST_STATUS.md`, puis tous les autres `docs/spec/*.md` et `data/spec/*.json`. Ces fichiers sont les seules sources normatives du produit. Le code importé montre l'état actuel ; les docs HnS sont techniques/upstream. Ne transforme jamais une ancienne habitude HnS, un vieux prompt ou une branche non fusionnée en règle Tactica.
+Tu travailles dans le dépôt Pokémon Tactica, **à partir du dernier `integration/v1`** ou d'une branche fonctionnelle créée depuis ce SHA. Lis d'abord `AGENTS.md`, `docs/spec/SOURCE_OF_TRUTH.md`, `docs/spec/PLAYTEST_STATUS.md`, puis tous les autres `docs/spec/*.md` et `data/spec/*.json`. La hiérarchie normative est stricte : `SOURCE_OF_TRUTH.md` arbitre les règles globales ; les documents métier `docs/spec/*.md` portent les décisions détaillées ; `data/spec/*.json` en sont la représentation machine ; le code/runtime généré vient ensuite. Une exception temporaire document -> JSON doit disparaître dans la PR d'implémentation qui régénère les données. Le code importé montre l'état actuel ; les docs HnS sont techniques/upstream. Ne transforme jamais une ancienne habitude HnS, un vieux prompt ou une branche non fusionnée en règle Tactica.
 
 Ce dépôt a un nouvel historique : lire `docs/spec/MIGRATION.md` pour les branches et SHA de provenance. Une régression peut venir d'un changement de dépôt, branche, build ou ROM réellement lancée. Tenir `docs/spec/FEATURE_STATUS.md` à jour avec **un statut par feature, la preuve, le SHA, le test et la prochaine action**.
 
@@ -85,6 +85,12 @@ Réconcilier et fusionner tout ce qui précède, CI verte, build propre, mettre 
 ### Bloc 5 — Wiki / secondaire
 Le wiki reste géré séparément et ne doit pas consommer le chemin critique tant que CORE/encounters/UI ne sont pas une candidate jouable.
 
+## Validation proportionnée au risque
+
+Ne pas rejouer localement toute la non-régression à chaque petite correction. Pendant le développement : exécuter le validateur et les tests du domaine touché, puis un build incrémental si du code/runtime change. La CI de PR assure le contrôle documentaire, les validateurs, le build et un smoke test pour le code ; une PR docs/wiki ne compile pas la ROM. Après merge sur `integration/v1`, la CI exécute automatiquement la suite complète de régression. `make clean && make hns -j4` et la recette ROM complète sont réservés à une candidate owner, à une grosse passe transversale ou à un doute sur des artefacts anciens.
+
+Un test ciblé doit être préféré à une run owner complète : starter -> flow starter ; Summary -> Summary ; boss -> combat concerné. Ne demander une run de progression complète qu'une fois plusieurs blocs intégrés dans une candidate explicite.
+
 ## Production par PR
 
 - Une branche de domaine issue du dernier `integration/v1` à la fois.
@@ -97,6 +103,6 @@ Le wiki reste géré séparément et ne doit pas consommer le chemin critique ta
 
 ## Portes de sortie
 
-Avant une candidate owner : validateurs actualisés, synchronisations `--check`, tests ciblés + non-régression, `make clean && make hns -j4`, CI verte sur le SHA fusionné, puis checklist ROM de `PLAYTEST_STATUS.md`.
+Avant une candidate owner : validateurs actualisés, synchronisations `--check`, suite complète d'intégration verte, `make clean && make hns -j4`, puis checklist ROM de `PLAYTEST_STATUS.md`. Pour une PR ordinaire, ne lancer que les tests du domaine modifié et laisser la CI d'intégration rejouer la non-régression globale après merge.
 
 Un build réussi ne prouve pas le rendu UI, les encounters runtime ou le comportement des combats. Une feature nécessitant une observation en jeu reste `PARTIEL` / `À CORRIGER` jusqu'à cette observation.
