@@ -39,6 +39,22 @@ for entry in standard + special:
 unique_standard = {(x["map"], x["method"], x.get("time", "Any")) for x in standard}
 require(len(unique_standard) == 405, "duplicate standard map/method/time table")
 
+access = read("encounter_access_caps.json")
+access_caps = {
+    (entry["map"], entry["method"]): entry["earliest_access_cap"]
+    for entry in access["tables"]
+}
+standard_pairs = {(entry["map"], entry["method"]) for entry in standard}
+require(len(access_caps) == access["table_count"] == len(access["tables"]),
+        "duplicate or inconsistent earliest_access_cap table count")
+require(set(access_caps) == standard_pairs,
+        "earliest_access_cap must cover every standard map/method pair exactly once")
+for entry in standard:
+    key = (entry["map"], entry["method"])
+    require(entry["max_level"] <= access_caps[key],
+            f"max level {entry['max_level']} exceeds first-access cap {access_caps[key]}: "
+            f"{entry['map']} {entry['method']} {entry.get('time', 'Any')}")
+
 encounter_species = {species for table in standard for species in table["species"]}
 required_starter_families = {
     "Bulbasaur": ("BULBASAUR", "IVYSAUR", "VENUSAUR"),
@@ -89,6 +105,13 @@ required_starter_families = {
 for family, members in required_starter_families.items():
     require(any(any(species.startswith(f"SPECIES_{member}") for member in members)
                 for species in encounter_species), f"missing starter family {family}")
+    for table in standard:
+        if access_caps[(table["map"], table["method"])] >= 32:
+            continue
+        require(not any(any(species.startswith(f"SPECIES_{member}") for member in members)
+                        for species in table["species"]),
+                f"starter family {family} available before badge 2: "
+                f"{table['map']} {table['method']} {table.get('time', 'Any')}")
 
 tables_by_key = {(x["map"], x["method"], x.get("time", "Any")): x for x in standard}
 route36_day = tables_by_key[("MAP_ROUTE36_HNS", "land_mons", "Day")]
@@ -223,4 +246,4 @@ require(all(len(users) == 1 for users in megas.values()),
 jasmine = next(v for k, v in bosses.items() if k[2] == "Jasmine")
 require(any(x["species"] == "Mega Aggron" for x in jasmine), "Jasmine Mega Aggron")
 require(not any(x["species"] == "Mega Steelix" for x in jasmine), "Jasmine duplicate Mega Steelix")
-print("Tactica authored sources valid: encounters, starters, rival, balance, unique held items and Megas")
+print("Tactica authored sources valid: encounters/access caps, starters, rival, balance, unique held items and Megas")
