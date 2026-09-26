@@ -1,6 +1,6 @@
 # Pokémon Tactica — source de vérité V1
 
-État : décisions produit consolidées au 26 septembre 2026. Cette documentation et les fichiers `data/spec/` décrivent **l'objectif** ; le code importé décrit uniquement son état actuel. `docs/spec/` fixe les règles, `data/spec/` fixe les listes et valeurs. Une donnée absente ne doit pas être inventée. En cas de contradiction, signaler le conflit avant de modifier le comportement concerné.
+État : décisions produit consolidées au 26 septembre 2026. La hiérarchie normative est : **1)** ce fichier pour les règles globales et arbitrages ; **2)** les documents métier `docs/spec/*.md` pour les décisions détaillées ; **3)** `data/spec/*.json` comme représentation machine ; **4)** code/runtime généré. Une donnée absente ne doit pas être inventée. Une contradiction document -> JSON peut exister uniquement comme dette temporaire explicitement signalée et doit être supprimée par la PR d'implémentation qui régénère les données.
 
 ## Périmètre
 
@@ -29,7 +29,7 @@ Le premier travail de Codex est un audit **code contre spec** `DONE / PARTIEL / 
 
 Une candidate owner n'existe que si toutes les corrections annoncées sont fusionnées dans `integration/v1`, la CI est verte sur le SHA exact, puis une ROM fraîche est reconstruite. **Un simple `git pull` ne met pas à jour `pokehns.gba`**, car les `*.gba` et `build/` sont ignorés par Git.
 
-Validation avant candidate owner : validateurs + synchronisations `--check`, groupes Settings/Audio/Native/Family/Evolution/Level Caps, boss NORMAL/HARD et Rocket, encounters standard/Safari/Headbutt, shops/rival, `make clean && make hns -j4`, puis checklist ROM de [PLAYTEST_STATUS.md](PLAYTEST_STATUS.md). Une vérification manuelle n'est déclarée faite que si elle a réellement eu lieu.
+Validation avant candidate owner : validateurs + synchronisations `--check`, suite complète d'intégration (Settings/Audio/Native/Family/Evolution/Level Caps, boss NORMAL/HARD et Rocket, encounters standard/Safari/Headbutt, shops/rival), `make clean && make hns -j4`, puis checklist ROM de [PLAYTEST_STATUS.md](PLAYTEST_STATUS.md). Une vérification manuelle n'est déclarée faite que si elle a réellement eu lieu.
 
 
 ## Décision owner 26-09-2026 — Rival et Team Rocket
@@ -37,3 +37,8 @@ Validation avant candidate owner : validateurs + synchronisations `--check`, gro
 Les compositions finales et sets du rival et des Exécutifs Rocket sont désormais définis par [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). En cas de contradiction avec `data/spec/rival.json`, `data/spec/rocket_progression.json` ou les entrées Rocket de `data/spec/bosses.json`, **ROSTERS_ROCKET_RIVAL.md prévaut jusqu'à régénération de ces JSON**.
 
 Le rival utilise un starter fixe par archétype, développe progressivement son équipe 1 -> 3 -> 4 -> 6 et n'utilise sa Méga qu'après le badge 4. Les Exécutifs Rocket suivent 3 -> 4 -> 6 et n'utilisent leur Méga qu'en FINAL. Toute équipe météo/terrain du rival possède deux setters, avec exception documentée du Terrain Électrique où seul Wattapik dispose de Créa-Élec parmi les non-légendaires du build et Salarsen assure le second setup manuellement. Archer utilise **Méga-Sharpedo** en FINAL ; Méga-Démolosse reste réservé à Marion. Méga-Sharpedo Méga-évolue immédiatement lorsqu'il entre en jeu : aucun plan Abri -> Méga retardée n'est requis ni autorisé.
+
+
+## Politique de validation
+
+La validation est proportionnée au risque. Une PR docs/wiki exécute uniquement les contrôles documentaires/localisation. Une PR de code ou de données exécute validateurs, contrôles de synchronisation, build HnS et smoke tests ; les tests métier ciblés sont exécutés pendant le développement et consignés dans la PR/statut. Chaque push fusionné sur `integration/v1` ou `main` rejoue la suite complète de régression. La recette owner et le clean build complet ne sont pas une étape de chaque PR : ils sont réservés aux candidates explicitement déclarées dans `PLAYTEST_STATUS.md`.
