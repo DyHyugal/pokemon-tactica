@@ -157,6 +157,7 @@
     - [Guide de jeu](FR/Guide-de-jeu.md)
     - [Localisations](FR/Localisations.md)
     - [Pokedex](FR/Pokedex.md)
+    - [Roadmap](FR/Roadmap.md)
 
 - [Wiki anglais]()
     - [Bosses and Tips](EN/Bosses-and-Tips.md)
@@ -166,3 +167,4 @@
     - [Home](EN/Home.md)
     - [Locations](EN/Locations.md)
     - [Pokedex](EN/Pokedex.md)
+    - [Roadmap](EN/Roadmap.md)
