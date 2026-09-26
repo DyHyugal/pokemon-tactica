@@ -26,7 +26,19 @@ NORMAL and HARD keep the same Pokémon, rosters, sets, levels and mechanics. HAR
 
 ### Starters and Elm's Egg
 
-The Johto trio is replaced by a selector with **30 starters across six categories + Eevee**. The rival keeps a coherent category and starter throughout the adventure. Elm's Egg then becomes a **second starter choice** and cannot give exactly the same species as the first choice. Required type boosters or intended evolution items are granted automatically.
+Johto's classic three-starter choice is replaced by a **Tactica selector with 30 Pokémon grouped by type, plus Eevee**. This is a progression change in its own right: the player builds an opening pair from two distinct choices, while the rival keeps its own category and starter throughout the adventure.
+
+| Group | Tactica starters |
+|---|---|
+| **Fire** | Charmander · Torchic · Chimchar · Cyndaquil · Charcadet |
+| **Water** | Mudkip · Piplup · Froakie · Oshawott · Horsea |
+| **Grass** | Bulbasaur · Treecko · Snivy · Sprigatito · Grookey |
+| **Electric** | Elekid · Magnemite · Pawmi · Wattrel · Pichu |
+| **Ground** | Gligar · Drilbur · Sandile · Golett · Sandygast |
+| **Ice** | Alolan Vulpix · Snorunt · Swinub · Galarian Darumaka · Vanillite |
+| **Eevee** | Eevee, with the intended evolution selected |
+
+The **second starter is chosen inside Elm's lab**, after returning from Mr. Pokémon and completing the theft/police scene, when the player identifies the Mystery Egg species. **Elm's aide is not the trigger for this second choice.** The Egg cannot duplicate the first starter species. Type boosters and intended evolution items tied to the selection are granted automatically.
 
 ### Settings and quality of life
 
