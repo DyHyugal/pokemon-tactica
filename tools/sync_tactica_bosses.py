@@ -58,6 +58,34 @@ SPECIES_ALIASES = {
     "Hisuian Zoroark": "Zoroark-Hisui",
 }
 
+# Trainer data stores the base species before battle. A Mega's canonical
+# ability is acquired only when the held stone transforms that species, so the
+# authored pre-transformation ability must be legal on the base form.
+MEGA_BASE_ABILITIES = {
+    "Mega Gengar": "Cursed Body",
+    "Mega Medicham": "Pure Power",
+    "Mega Aggron": "Sturdy",
+    "Mega Abomasnow": "Snow Warning",
+    "Mega Altaria": "Natural Cure",
+    "Mega Gardevoir": "Trace",
+    "Mega Beedrill": "Swarm",
+    "Mega Scolipede": "Speed Boost",
+    "Mega Banette": "Cursed Body",
+    "Mega Absol": "Super Luck",
+    "Mega Sharpedo": "Speed Boost",
+    "Mega Heracross": "Guts",
+    "Mega Houndoom": "Flash Fire",
+    "Mega Steelix": "Sturdy",
+    "Mega Starmie": "Analytic",
+    "Mega Raichu Y": "Lightning Rod",
+    "Mega Venusaur": "Chlorophyll",
+    "Mega Alakazam": "Magic Guard",
+    "Mega Charizard Y": "Solar Power",
+    "Mega Pidgeot": "Big Pecks",
+    "Mega Charizard X": "Blaze",
+    "Mega Metagross": "Clear Body",
+}
+
 # These final forms are not legal at the authored level. Their current
 # pre-evolution blocks retain a compatible ability and set while the canonical
 # held-item assignment still applies.
@@ -126,7 +154,7 @@ def render_mon(canonical: dict, current: dict, hard: bool) -> str:
     lines = [
         first,
         f"Level: {level}",
-        f"Ability: {canonical['ability']}",
+        f"Ability: {MEGA_BASE_ABILITIES.get(canonical['species'], canonical['ability'])}",
         f"Nature: {canonical['nature']}",
         f"IVs: {current['IVs']}",
     ]

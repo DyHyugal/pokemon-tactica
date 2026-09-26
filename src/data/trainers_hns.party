@@ -7572,7 +7572,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Gengar @ Gengarite
 Level: 38
-Ability: Shadow Tag
+Ability: Cursed Body
 Nature: Timid
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Shadow Ball
@@ -7938,7 +7938,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Aggron @ Aggronite
 Level: 52
-Ability: Filter
+Ability: Sturdy
 Nature: Careful
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Heavy Slam
@@ -8394,7 +8394,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Altaria @ Altarianite
 Level: 61
-Ability: Pixilate
+Ability: Natural Cure
 Nature: Adamant
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Dragon Dance
@@ -8535,7 +8535,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Steelix @ Steelixite
 Level: 86
-Ability: Sand Force
+Ability: Sturdy
 Nature: Adamant
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Heavy Slam
@@ -8751,7 +8751,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Venusaur @ Venusaurite
 Level: 74
-Ability: Thick Fat
+Ability: Chlorophyll
 Nature: Modest
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Giga Drain
@@ -8823,7 +8823,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Alakazam @ Alakazite
 Level: 84
-Ability: Trace
+Ability: Magic Guard
 Nature: Timid
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Psychic
@@ -8967,7 +8967,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Charizard @ Charizardite Y
 Level: 86
-Ability: Drought
+Ability: Solar Power
 Nature: Timid
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Fire Blast
@@ -8989,7 +8989,7 @@ Difficulty: Normal
 
 Pidgeot @ Pidgeotite
 Level: 90
-Ability: No Guard
+Ability: Big Pecks
 Nature: Timid
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Hurricane
@@ -9170,7 +9170,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Gardevoir @ Gardevoirite
 Level: 65
-Ability: Pixilate
+Ability: Trace
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psychic
@@ -9301,7 +9301,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Heracross @ Heracronite
 Level: 65
-Ability: Skill Link
+Ability: Guts
 Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Close Combat
@@ -9432,7 +9432,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Houndoom @ Houndoominite
 Level: 67
-Ability: Solar Power
+Ability: Flash Fire
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Nasty Plot
@@ -9561,15 +9561,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Acrobatics
 - Swords Dance
 
-Beedrill @ Beedrillite
+Scolipede @ Scolipite
 Level: 65
-Ability: Adaptability
+Ability: Speed Boost
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Megahorn
 - Poison Jab
-- U-turn
-- Drill Run
-- Knock Off
+- Earthquake
+- Swords Dance
 
 === TRAINER_KOGA_2_HNS ===
 Name: KOGA
@@ -9674,7 +9674,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Charizard @ Charizardite X
 Level: 70
-Ability: Tough Claws
+Ability: Blaze
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
@@ -9766,7 +9766,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Metagross @ Metagrossite
 Level: 96
-Ability: Tough Claws
+Ability: Clear Body
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Meteor Mash
@@ -9849,7 +9849,7 @@ AI: Basic Trainer
 Mugshot: Dark Red
 
 Chikorita
-Level: 5
+Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_RIVAL_CHIKORITA_2_HNS ===
@@ -10177,7 +10177,7 @@ AI: Basic Trainer
 Mugshot: Dark Red
 
 Cyndaquil
-Level: 5
+Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_RIVAL_CYNDAQUIL_2_HNS ===
@@ -10505,7 +10505,7 @@ AI: Basic Trainer
 Mugshot: Dark Red
 
 Totodile
-Level: 5
+Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_RIVAL_TOTODILE_2_HNS ===
@@ -10994,15 +10994,15 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Confuse Ray
 - Air Cutter
 
-Rattata
+Venipede
 Level: 1
-Ability: Guts
+Ability: Speed Boost
 Nature: Jolly
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Hyper Fang
-- Quick Attack
-- Bite
-- Focus Energy
+- Bug Bite
+- Poison Tail
+- Rollout
+- Protect
 
 Grimer-Alola
 Level: 1
@@ -11025,7 +11025,17 @@ AI: Basic Trainer
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
-Crobat @ Sharp Beak
+Glimmora @ Focus Sash
+Level: 1
+Ability: Toxic Debris
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stealth Rock
+- Mortal Spin
+- Power Gem
+- Earth Power
+
+Crobat @ Heavy-Duty Boots
 Level: 1
 Ability: Infiltrator
 Nature: Jolly
@@ -11034,26 +11044,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Cross Poison
 - U-turn
 - Roost
-
-Weezing @ Black Sludge
-Level: 1
-Ability: Levitate
-Nature: Bold
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sludge Bomb
-- Will-O-Wisp
-- Pain Split
-- Explosion
-
-Raticate @ Flame Orb
-Level: 1
-Ability: Guts
-Nature: Jolly
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Super Fang
-- Facade
-- Sucker Punch
-- U-turn
 
 Scolipede @ Life Orb
 Level: 1
@@ -11085,6 +11075,16 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fire Punch
 - Shadow Sneak
 
+Beedrill @ Beedrillite
+Level: 1
+Ability: Swarm
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- U-turn
+- Poison Jab
+- Drill Run
+- Knock Off
+
 === TRAINER_ARCHER_HNS ===
 Name: ARCHER
 Class: Rocket Admin Hns
@@ -11096,16 +11096,6 @@ AI: Basic Trainer
 Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
-Weavile @ Expert Belt
-Level: 1
-Ability: Pressure
-Nature: Jolly
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Icicle Crash
-- Knock Off
-- Ice Shard
-- Low Kick
-
 Crobat @ Heavy-Duty Boots
 Level: 1
 Ability: Infiltrator
@@ -11115,6 +11105,16 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Cross Poison
 - U-turn
 - Roost
+
+Weavile @ Choice Band
+Level: 1
+Ability: Pressure
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Icicle Crash
+- Knock Off
+- Ice Shard
+- Low Kick
 
 Nidoking @ Life Orb
 Level: 1
@@ -11136,25 +11136,25 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Volt Switch
 - Signal Beam
 
-Drapion @ Black Sludge
+Klefki @ Light Clay
 Level: 1
-Ability: Battle Armor
+Ability: Prankster
 Nature: Careful
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Knock Off
-- Poison Jab
-- Earthquake
-- Taunt
+- Reflect
+- Light Screen
+- Thunder Wave
+- Foul Play
 
-Houndoom @ Focus Sash
+Sharpedo @ Sharpedonite
 Level: 1
-Ability: Flash Fire
-Nature: Timid
+Ability: Speed Boost
+Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Nasty Plot
-- Dark Pulse
-- Flamethrower
-- Sludge Bomb
+- Crunch
+- Liquidation
+- Psychic Fangs
+- Ice Fang
 
 === TRAINER_ARCHER_1_HNS ===
 Name: ARCHER
@@ -11311,27 +11311,27 @@ Nature: Timid
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Transform
 
-Weezing @ Sitrus Berry
+Weezing @ Black Sludge
 Level: 1
 Ability: Levitate
 Nature: Bold
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Will-O-Wisp
-- Smokescreen
+- Taunt
 - Sludge Bomb
-- Self-Destruct
+- Explosion
 
-Raticate
+Zoroark-Hisui @ Life Orb
 Level: 1
-Ability: Guts
-Nature: Jolly
+Ability: Illusion
+Nature: Timid
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Super Fang
-- Sucker Punch
-- Crunch
-- Protect
+- Hyper Voice
+- Shadow Ball
+- Flamethrower
+- U-turn
 
-Electrode
+Electrode @ Focus Sash
 Level: 1
 Ability: Aftermath
 Nature: Timid
@@ -11339,7 +11339,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Discharge
 - Taunt
 - Thunder Wave
-- Self-Destruct
+- Explosion
 
 === TRAINER_PETREL_2_HNS ===
 Name: PETREL
@@ -11359,7 +11359,17 @@ Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Transform
 
-Weezing @ Sitrus Berry
+Zoroark-Hisui @ Life Orb
+Level: 1
+Ability: Illusion
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hyper Voice
+- Shadow Ball
+- Flamethrower
+- U-turn
+
+Weezing @ Black Sludge
 Level: 1
 Ability: Levitate
 Nature: Bold
@@ -11379,35 +11389,25 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder Wave
 - Explosion
 
-Muk @ Black Sludge
+Grimmsnarl @ Light Clay
 Level: 1
-Ability: Sticky Hold
+Ability: Prankster
 Nature: Careful
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Poison Jab
-- Minimize
-- Disable
-- Explosion
+- Reflect
+- Light Screen
+- Parting Shot
+- Spirit Break
 
-Zoroark-Hisui @ Life Orb
+Banette @ Banettite
 Level: 1
-Ability: Illusion
-Nature: Timid
+Ability: Cursed Body
+Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Hyper Voice
-- Shadow Ball
-- Flamethrower
-- U-turn
-
-Raticate @ Flame Orb
-Level: 1
-Ability: Guts
-Nature: Jolly
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Super Fang
-- Facade
-- Sucker Punch
-- Protect
+- Will-O-Wisp
+- Knock Off
+- Destiny Bond
+- Shadow Sneak
 
 === TRAINER_ARIANA_1_HNS ===
 Name: ARIANA
@@ -11430,17 +11430,17 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Crunch
 - Screech
 
-Gloom
+Roselia @ Focus Sash
 Level: 1
-Ability: Chlorophyll
-Nature: Bold
+Ability: Natural Cure
+Nature: Timid
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Sleep Powder
+- Toxic Spikes
 - Giga Drain
-- Acid
-- Moonlight
+- Sludge Bomb
 
-Murkrow
+Murkrow @ Sharp Beak
 Level: 1
 Ability: Super Luck
 Nature: Adamant
@@ -11450,15 +11450,15 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Taunt
 - Haze
 
-Grafaiai @ Sitrus Berry
+Salandit @ Sitrus Berry
 Level: 1
-Ability: Prankster
-Nature: Jolly
+Ability: Corrosion
+Nature: Timid
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Encore
-- Poison Jab
-- U-turn
-- Taunt
+- Toxic
+- Flame Burst
+- Venoshock
+- Nasty Plot
 
 === TRAINER_ARIANA_2_HNS ===
 Name: ARIANA
@@ -11481,25 +11481,25 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
 - Crunch
 
-Vileplume @ Leftovers
+Roserade @ Focus Sash
 Level: 1
-Ability: Effect Spore
-Nature: Bold
+Ability: Natural Cure
+Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sleep Powder
+- Toxic Spikes
 - Giga Drain
 - Sludge Bomb
-- Nature Power
 
-Grafaiai @ Sitrus Berry
+Salazzle @ Heavy-Duty Boots
 Level: 1
-Ability: Prankster
-Nature: Jolly
+Ability: Corrosion
+Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Parting Shot
-- Encore
 - Toxic
-- Knock Off
+- Nasty Plot
+- Flamethrower
+- Sludge Wave
 
 Nidoqueen @ Life Orb
 Level: 1
@@ -11511,16 +11511,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunderbolt
 - Sludge Bomb
 
-Salazzle @ Focus Sash
-Level: 1
-Ability: Oblivious
-Nature: Timid
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Nasty Plot
-- Flamethrower
-- Sludge Wave
-- Dragon Pulse
-
 Honchkrow @ Sharp Beak
 Level: 1
 Ability: Moxie
@@ -11530,6 +11520,16 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sucker Punch
 - Superpower
 - Roost
+
+Absol @ Absolite
+Level: 1
+Ability: Super Luck
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Swords Dance
+- Knock Off
+- Sucker Punch
+- Play Rough
 
 === TRAINER_ANABEL_BF_BRAIN_HNS ===
 Name: ANABEL
@@ -16811,7 +16811,7 @@ EVs: 252 HP / 252 SpD / 4 Def
 
 Gengar @ Gengarite
 Level: 38
-Ability: Shadow Tag
+Ability: Cursed Body
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -16967,7 +16967,7 @@ EVs: 252 HP / 252 SpA / 4 SpD
 
 Aggron @ Aggronite
 Level: 52
-Ability: Filter
+Ability: Sturdy
 Nature: Careful
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 4 Def / 252 SpD
@@ -17112,7 +17112,7 @@ EVs: 252 Atk / 252 Spe / 4 HP
 
 Altaria @ Altarianite
 Level: 61
-Ability: Pixilate
+Ability: Natural Cure
 Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 4 HP
@@ -17201,7 +17201,7 @@ EVs: 252 HP / 252 Atk / 4 SpD
 
 Gardevoir @ Gardevoirite
 Level: 65
-Ability: Pixilate
+Ability: Trace
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -17277,16 +17277,16 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Acrobatics
 - Swords Dance
 
-Beedrill @ Beedrillite
+Scolipede @ Scolipite
 Level: 65
-Ability: Adaptability
+Ability: Speed Boost
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 4 HP
+- Megahorn
 - Poison Jab
-- U-turn
-- Drill Run
-- Knock Off
+- Earthquake
+- Swords Dance
 
 === TRAINER_BRUNO_1_HNS ===
 Name: BRUNO
@@ -17357,7 +17357,7 @@ EVs: 252 Atk / 252 Spe / 4 HP
 
 Heracross @ Heracronite
 Level: 65
-Ability: Skill Link
+Ability: Guts
 Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 4 SpD
@@ -17435,7 +17435,7 @@ EVs: 252 HP / 252 Atk / 4 SpD
 
 Houndoom @ Houndoominite
 Level: 67
-Ability: Solar Power
+Ability: Flash Fire
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -17491,7 +17491,7 @@ EVs: 252 Atk / 252 Spe / 4 HP
 
 Charizard @ Charizardite X
 Level: 70
-Ability: Tough Claws
+Ability: Blaze
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 4 HP
@@ -17591,7 +17591,7 @@ EVs: 252 HP / 252 Atk / 4 SpD
 
 Steelix @ Steelixite
 Level: 86
-Ability: Sand Force
+Ability: Sturdy
 Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 128 Def / 128 SpD
@@ -17825,7 +17825,7 @@ EVs: 252 HP / 128 Def / 128 SpD
 
 Venusaur @ Venusaurite
 Level: 74
-Ability: Thick Fat
+Ability: Chlorophyll
 Nature: Modest
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 SpA / 4 SpD
@@ -17981,7 +17981,7 @@ EVs: 252 HP / 252 Atk / 4 SpD
 
 Alakazam @ Alakazite
 Level: 84
-Ability: Trace
+Ability: Magic Guard
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -18059,7 +18059,7 @@ EVs: 252 SpA / 252 Spe / 4 HP
 
 Charizard @ Charizardite Y
 Level: 86
-Ability: Drought
+Ability: Solar Power
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -18082,7 +18082,7 @@ Difficulty: Hard
 
 Pidgeot @ Pidgeotite
 Level: 90
-Ability: No Guard
+Ability: Big Pecks
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 Spe / 4 HP
@@ -18215,7 +18215,7 @@ EVs: 252 Atk / 252 Spe / 4 HP
 
 Metagross @ Metagrossite
 Level: 96
-Ability: Tough Claws
+Ability: Clear Body
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 4 HP
@@ -18242,22 +18242,22 @@ Level: 1
 Ability: Inner Focus
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 64 HP / 64 Spe
+EVs: 64 Atk / 64 Spe
 - Wing Attack
 - Bite
 - Confuse Ray
 - Air Cutter
 
-Rattata
+Venipede
 Level: 1
-Ability: Guts
+Ability: Speed Boost
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 64 Atk / 64 Spe
-- Hyper Fang
-- Quick Attack
-- Bite
-- Focus Energy
+- Bug Bite
+- Poison Tail
+- Rollout
+- Protect
 
 Grimer-Alola
 Level: 1
@@ -18282,7 +18282,18 @@ Mugshot: Dark Red
 Items: Full Restore / Full Restore
 Difficulty: Hard
 
-Crobat @ Sharp Beak
+Glimmora @ Focus Sash
+Level: 1
+Ability: Toxic Debris
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 HP
+- Stealth Rock
+- Mortal Spin
+- Power Gem
+- Earth Power
+
+Crobat @ Heavy-Duty Boots
 Level: 1
 Ability: Infiltrator
 Nature: Jolly
@@ -18292,28 +18303,6 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Cross Poison
 - U-turn
 - Roost
-
-Weezing @ Black Sludge
-Level: 1
-Ability: Levitate
-Nature: Bold
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 4 SpD
-- Sludge Bomb
-- Will-O-Wisp
-- Pain Split
-- Explosion
-
-Raticate @ Flame Orb
-Level: 1
-Ability: Guts
-Nature: Jolly
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Spe / 4 HP
-- Super Fang
-- Facade
-- Sucker Punch
-- U-turn
 
 Scolipede @ Life Orb
 Level: 1
@@ -18348,6 +18337,17 @@ EVs: 252 HP / 252 Atk / 4 SpD
 - Fire Punch
 - Shadow Sneak
 
+Beedrill @ Beedrillite
+Level: 1
+Ability: Swarm
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 HP
+- U-turn
+- Poison Jab
+- Drill Run
+- Knock Off
+
 === TRAINER_PETREL_1_HNS ===
 Name: PETREL
 Class: Rocket Admin Hns
@@ -18368,29 +18368,29 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 128 HP / 128 Def
 - Transform
 
-Weezing @ Sitrus Berry
+Weezing @ Black Sludge
 Level: 1
 Ability: Levitate
 Nature: Bold
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 128 HP / 128 Def
 - Will-O-Wisp
-- Smokescreen
+- Taunt
 - Sludge Bomb
-- Self-Destruct
+- Explosion
 
-Raticate
+Zoroark-Hisui @ Life Orb
 Level: 1
-Ability: Guts
-Nature: Jolly
+Ability: Illusion
+Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 128 Atk / 128 Spe
-- Super Fang
-- Sucker Punch
-- Crunch
-- Protect
+EVs: 128 SpA / 128 Spe
+- Hyper Voice
+- Shadow Ball
+- Flamethrower
+- U-turn
 
-Electrode
+Electrode @ Focus Sash
 Level: 1
 Ability: Aftermath
 Nature: Timid
@@ -18399,7 +18399,7 @@ EVs: 128 SpA / 128 Spe
 - Discharge
 - Taunt
 - Thunder Wave
-- Self-Destruct
+- Explosion
 
 === TRAINER_PETREL_2_HNS ===
 Name: PETREL
@@ -18421,7 +18421,18 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 4 SpD
 - Transform
 
-Weezing @ Sitrus Berry
+Zoroark-Hisui @ Life Orb
+Level: 1
+Ability: Illusion
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 HP
+- Hyper Voice
+- Shadow Ball
+- Flamethrower
+- U-turn
+
+Weezing @ Black Sludge
 Level: 1
 Ability: Levitate
 Nature: Bold
@@ -18443,38 +18454,27 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Thunder Wave
 - Explosion
 
-Muk @ Black Sludge
+Grimmsnarl @ Light Clay
 Level: 1
-Ability: Sticky Hold
+Ability: Prankster
 Nature: Careful
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 SpD / 4 Def
-- Poison Jab
-- Minimize
-- Disable
-- Explosion
+- Reflect
+- Light Screen
+- Parting Shot
+- Spirit Break
 
-Zoroark-Hisui @ Life Orb
+Banette @ Banettite
 Level: 1
-Ability: Illusion
-Nature: Timid
+Ability: Cursed Body
+Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 SpA / 252 Spe / 4 HP
-- Hyper Voice
-- Shadow Ball
-- Flamethrower
-- U-turn
-
-Raticate @ Flame Orb
-Level: 1
-Ability: Guts
-Nature: Jolly
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Spe / 4 HP
-- Super Fang
-- Facade
-- Sucker Punch
-- Protect
+EVs: 252 HP / 252 Atk / 4 SpD
+- Will-O-Wisp
+- Knock Off
+- Destiny Bond
+- Shadow Sneak
 
 === TRAINER_ARIANA_1_HNS ===
 Name: ARIANA
@@ -18499,18 +18499,18 @@ EVs: 128 HP / 128 Spe
 - Crunch
 - Screech
 
-Gloom
+Roselia @ Focus Sash
 Level: 1
-Ability: Chlorophyll
-Nature: Bold
+Ability: Natural Cure
+Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 128 HP / 128 Def
+EVs: 128 SpA / 128 Spe
 - Sleep Powder
+- Toxic Spikes
 - Giga Drain
-- Acid
-- Moonlight
+- Sludge Bomb
 
-Murkrow
+Murkrow @ Sharp Beak
 Level: 1
 Ability: Super Luck
 Nature: Adamant
@@ -18521,16 +18521,16 @@ EVs: 128 Atk / 128 Spe
 - Taunt
 - Haze
 
-Grafaiai @ Sitrus Berry
+Salandit @ Sitrus Berry
 Level: 1
-Ability: Prankster
-Nature: Jolly
+Ability: Corrosion
+Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 128 HP / 128 Spe
-- Encore
-- Poison Jab
-- U-turn
-- Taunt
+EVs: 128 SpA / 128 Spe
+- Toxic
+- Flame Burst
+- Venoshock
+- Nasty Plot
 
 === TRAINER_ARIANA_2_HNS ===
 Name: ARIANA
@@ -18555,27 +18555,27 @@ EVs: 252 HP / 252 Spe / 4 Def
 - Earthquake
 - Crunch
 
-Vileplume @ Leftovers
+Roserade @ Focus Sash
 Level: 1
-Ability: Effect Spore
-Nature: Bold
+Ability: Natural Cure
+Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 4 SpD
+EVs: 252 SpA / 252 Spe / 4 HP
 - Sleep Powder
+- Toxic Spikes
 - Giga Drain
 - Sludge Bomb
-- Nature Power
 
-Grafaiai @ Sitrus Berry
+Salazzle @ Heavy-Duty Boots
 Level: 1
-Ability: Prankster
-Nature: Jolly
+Ability: Corrosion
+Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Spe / 4 Def
-- Parting Shot
-- Encore
+EVs: 252 SpA / 252 Spe / 4 HP
 - Toxic
-- Knock Off
+- Nasty Plot
+- Flamethrower
+- Sludge Wave
 
 Nidoqueen @ Life Orb
 Level: 1
@@ -18588,17 +18588,6 @@ EVs: 252 HP / 252 SpA / 4 SpD
 - Thunderbolt
 - Sludge Bomb
 
-Salazzle @ Focus Sash
-Level: 1
-Ability: Oblivious
-Nature: Timid
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 SpA / 252 Spe / 4 HP
-- Nasty Plot
-- Flamethrower
-- Sludge Wave
-- Dragon Pulse
-
 Honchkrow @ Sharp Beak
 Level: 1
 Ability: Moxie
@@ -18609,6 +18598,17 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Sucker Punch
 - Superpower
 - Roost
+
+Absol @ Absolite
+Level: 1
+Ability: Super Luck
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 HP
+- Swords Dance
+- Knock Off
+- Sucker Punch
+- Play Rough
 
 === TRAINER_ARCHER_HNS ===
 Name: ARCHER
@@ -18622,17 +18622,6 @@ Mugshot: Dark Red
 Items: Full Restore / Full Restore
 Difficulty: Hard
 
-Weavile @ Expert Belt
-Level: 1
-Ability: Pressure
-Nature: Jolly
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Spe / 4 HP
-- Icicle Crash
-- Knock Off
-- Ice Shard
-- Low Kick
-
 Crobat @ Heavy-Duty Boots
 Level: 1
 Ability: Infiltrator
@@ -18643,6 +18632,17 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Cross Poison
 - U-turn
 - Roost
+
+Weavile @ Choice Band
+Level: 1
+Ability: Pressure
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Spe / 4 HP
+- Icicle Crash
+- Knock Off
+- Ice Shard
+- Low Kick
 
 Nidoking @ Life Orb
 Level: 1
@@ -18666,24 +18666,24 @@ EVs: 252 HP / 252 SpA / 4 SpD
 - Volt Switch
 - Signal Beam
 
-Drapion @ Black Sludge
+Klefki @ Light Clay
 Level: 1
-Ability: Battle Armor
+Ability: Prankster
 Nature: Careful
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 SpD / 4 Def
-- Knock Off
-- Poison Jab
-- Earthquake
-- Taunt
+- Reflect
+- Light Screen
+- Thunder Wave
+- Foul Play
 
-Houndoom @ Focus Sash
+Sharpedo @ Sharpedonite
 Level: 1
-Ability: Flash Fire
-Nature: Timid
+Ability: Speed Boost
+Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 SpA / 252 Spe / 4 HP
-- Nasty Plot
-- Dark Pulse
-- Flamethrower
-- Sludge Bomb
+EVs: 252 Atk / 252 Spe / 4 HP
+- Crunch
+- Liquidation
+- Psychic Fangs
+- Ice Fang

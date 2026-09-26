@@ -57,6 +57,7 @@ EcruteakCity_Gym_EventScript_Morty::
 	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 4
 	call Common_EventScript_SetGymTrainers_hns
+	giveitem ITEM_MEGA_RING
 	giveitem ITEM_TM_SHADOW_BALL
 	msgbox MortyText_ShadowBallSpeech, MSGBOX_DEFAULT
 	setvar VAR_ECRUTEAK_CITY_STATE, 4

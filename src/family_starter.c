@@ -94,9 +94,18 @@ static const struct RivalCounterCategories sRivalCounterCategories[] = {
     [FAMILY_FIRE] = {2, {FAMILY_WATER, FAMILY_GROUND}},
     [FAMILY_WATER] = {2, {FAMILY_GRASS, FAMILY_ELECTRIC}},
     [FAMILY_GRASS] = {2, {FAMILY_FIRE, FAMILY_ICE}},
-    [FAMILY_ELECTRIC] = {1, {FAMILY_GROUND}},
-    [FAMILY_GROUND] = {3, {FAMILY_WATER, FAMILY_GRASS, FAMILY_ICE}},
-    [FAMILY_ICE] = {1, {FAMILY_FIRE}},
+    [FAMILY_ELECTRIC] = {2, {FAMILY_GROUND, FAMILY_GRASS}},
+    [FAMILY_GROUND] = {2, {FAMILY_WATER, FAMILY_ICE}},
+    [FAMILY_ICE] = {2, {FAMILY_FIRE, FAMILY_WATER}},
+};
+
+static const u16 sRivalFixedStarters[FAMILY_EEVEE] = {
+    [FAMILY_FIRE] = SPECIES_TORCHIC,
+    [FAMILY_WATER] = SPECIES_MUDKIP,
+    [FAMILY_GRASS] = SPECIES_TREECKO,
+    [FAMILY_ELECTRIC] = SPECIES_ELEKID,
+    [FAMILY_GROUND] = SPECIES_DRILBUR,
+    [FAMILY_ICE] = SPECIES_DARUMAKA_GALAR,
 };
 
 static const u16 sCategoryBoosters[] = {
@@ -322,6 +331,13 @@ u32 FamilyStarter_GetRivalCounterCategory(u32 playerCategory, u32 roll)
     return candidates->categories[roll % candidates->count];
 }
 
+u16 FamilyStarter_GetRivalFixedStarter(u32 rivalCategory)
+{
+    if (rivalCategory >= FAMILY_EEVEE)
+        return SPECIES_NONE;
+    return sRivalFixedStarters[rivalCategory];
+}
+
 static void UNUSED SelectRivalStarter(u16 playerSpecies)
 {
     u32 playerCategory = GetMenuCategory(playerSpecies);
@@ -332,8 +348,7 @@ static void UNUSED SelectRivalStarter(u16 playerSpecies)
         return;
 
     counterCategory = FamilyStarter_GetRivalCounterCategory(playerCategory, Random());
-    u16 rivalSpecies = sMenuSpecies[counterCategory][Random() % ARRAY_COUNT(sMenuSpecies[0])];
-    VarSet(VAR_FAMILY_RIVAL_SPECIES, rivalSpecies);
+    VarSet(VAR_FAMILY_RIVAL_SPECIES, FamilyStarter_GetRivalFixedStarter(counterCategory));
 }
 
 static void PushChoice(const u8 *text, u16 id)
@@ -374,23 +389,14 @@ void FamilyStarter_BuildSpeciesMenu(void)
 
 void FamilyStarter_SaveSpeciesCursor(void)
 {
-    u32 index;
-
-    gSpecialVar_0x8007 = 0;
-    for (index = 0; index < ARRAY_COUNT(sMenuSpecies[0]); index++)
-    {
-        if (FamilyStarter_GetCandidate(gSpecialVar_0x8004, index) == gSpecialVar_Result)
-        {
-            gSpecialVar_0x8007 = index;
-            break;
-        }
-    }
+    gSpecialVar_0x8007 = 0xFFFF;
+    if (IsMenuSpecies(gSpecialVar_Result))
+        gSpecialVar_0x8007 = gSpecialVar_Result;
 }
 
 void FamilyStarter_SaveEvolutionCursor(void)
 {
     u32 i;
-    u32 row = 0;
 
     gSpecialVar_0x8008 = 0;
     for (i = 0; i < ARRAY_COUNT(sStarterEvolutions); i++)
@@ -400,10 +406,9 @@ void FamilyStarter_SaveEvolutionCursor(void)
             continue;
         if (sStarterEvolutions[i].target == gSpecialVar_Result)
         {
-            gSpecialVar_0x8008 = row;
+            gSpecialVar_0x8008 = gSpecialVar_Result;
             return;
         }
-        row++;
     }
 }
 
@@ -636,6 +641,28 @@ static u32 GetTacticaRivalFight(u16 trainerId)
     return 0;
 }
 
+static bool32 TacticaRivalSpeciesCanReach(u16 species, u16 target, u32 depth)
+{
+    const struct Evolution *evolutions;
+    u32 i;
+
+    if (species == target)
+        return TRUE;
+    if (depth == 0)
+        return FALSE;
+    evolutions = GetSpeciesEvolutions(species);
+    if (evolutions == NULL)
+        return FALSE;
+    for (i = 0; evolutions[i].method != EVOLUTIONS_END; i++)
+    {
+        if (evolutions[i].method == EVO_NONE || evolutions[i].method == EVO_SPLIT_FROM_EVO)
+            continue;
+        if (TacticaRivalSpeciesCanReach(evolutions[i].targetSpecies, target, depth - 1))
+            return TRUE;
+    }
+    return FALSE;
+}
+
 static u16 GetTacticaRivalSpeciesAtLevel(u16 species, u16 finalSpecies, u8 level, bool32 allowSpecialEvolution)
 {
     u32 step;
@@ -655,6 +682,9 @@ static u16 GetTacticaRivalSpeciesAtLevel(u16 species, u16 finalSpecies, u8 level
             if (IsTacticaRivalEvolutionAvailable(&evolutions[i], level, allowSpecialEvolution))
             {
                 if (!FamilyStarter_IsAvailable(evolutions[i].targetSpecies))
+                    continue;
+                if (finalSpecies != SPECIES_NONE
+                 && !TacticaRivalSpeciesCanReach(evolutions[i].targetSpecies, finalSpecies, 2 - step))
                     continue;
                 species = evolutions[i].targetSpecies;
                 evolved = TRUE;
@@ -683,7 +713,7 @@ bool32 FamilyStarter_ResolveRivalMon(u16 trainerId, u32 slot, struct TrainerMon 
 
     if (fight == 1)
     {
-        mon->species = savedStarter;
+        mon->species = GetTacticaRivalSpeciesAtLevel(savedStarter, SPECIES_NONE, mon->lvl, FALSE);
         memset(mon->moves, MOVE_NONE, sizeof(mon->moves));
         return TRUE;
     }
@@ -693,7 +723,7 @@ bool32 FamilyStarter_ResolveRivalMon(u16 trainerId, u32 slot, struct TrainerMon 
     if (source->isSavedStarter)
     {
         mon->species = GetTacticaRivalSpeciesAtLevel(savedStarter, SPECIES_NONE, mon->lvl, phase == TACTICA_RIVAL_FINAL);
-        mon->heldItem = phase == TACTICA_RIVAL_FINAL ? sCategoryBoosters[category] : ITEM_NONE;
+        mon->heldItem = phase == TACTICA_RIVAL_FINAL ? sTacticaRivalStarterItems[category] : ITEM_NONE;
         mon->nature = gSpeciesInfo[mon->species].baseAttack >= gSpeciesInfo[mon->species].baseSpAttack
             ? NATURE_JOLLY : NATURE_TIMID;
         mon->ev = GetTrainerDifficultyLevel(trainerId) == DIFFICULTY_HARD
@@ -742,7 +772,8 @@ void FamilyStarter_GiveEgg(void)
     gSpecialVar_Result = MON_CANT_GIVE;
     if (VarGet(VAR_FAMILY_EGG_SPECIES) != SPECIES_NONE
      || !CheckBagHasItem(ITEM_MYSTERY_EGG, 1)
-     || !IsMenuSpecies(species))
+     || !IsMenuSpecies(species)
+     || (FlagGet(FLAG_SYS_POKEMON_GET) && species == FamilyStarter_GetPrimarySpecies()))
         return;
     if (sFamilyStarterPreviewSpecies != species
      || sFamilyStarterPreviewPreference != preference

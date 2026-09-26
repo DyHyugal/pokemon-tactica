@@ -46,6 +46,8 @@ def held_items(block):
 
 
 def validate_bosses():
+    from sync_tactica_bosses import MEGA_BASE_ABILITIES, engine_species
+
     text = (ROOT / "src/data/trainers_hns.party").read_text()
     marker = "/* ========== Family Remix FINAL hard boss parties ========== */"
     if text.count(marker) != 1:
@@ -180,7 +182,7 @@ def validate_bosses():
     hard_by_trainer = dict(blocks)
     jasmine = hard_by_trainer["TRAINER_JASMINE_1_HNS"]
     jasmine_ace = (
-        "Aggron @ Aggronite", "Ability: Filter", "Nature: Careful",
+        "Aggron @ Aggronite", "Ability: Sturdy", "Nature: Careful",
         "EVs: 252 HP / 4 Def / 252 SpD", "- Heavy Slam", "- Curse", "- Rest", "- Sleep Talk",
     )
     if any(value not in jasmine for value in jasmine_ace):
@@ -188,9 +190,37 @@ def validate_bosses():
     if "Steelixite" in jasmine:
         fail("Jasmine still contains the obsolete Mega Steelix ace")
 
+    canonical = json.loads((ROOT / "data/spec/bosses.json").read_text())["teams"]
+    mega_rows = [row for row in canonical if row["species"].startswith("Mega ")]
+    if {row["species"] for row in mega_rows} != set(MEGA_BASE_ABILITIES):
+        fail("base-ability mapping does not cover every canonical Mega boss")
+    trainer_by_group = {
+        ("Johto", "Gym", "Mortimer"): "TRAINER_MORTY_1_HNS",
+        ("Johto", "Gym", "Jasmine"): "TRAINER_JASMINE_1_HNS",
+    }
+    for group, trainer_id in trainer_by_group.items():
+        row = next(row for row in mega_rows if (row["region"], row["category"], row["boss"]) == group)
+        block = hard_by_trainer[trainer_id]
+        expected = (
+            f"{engine_species(row['species'])} @ {row['item']}\n"
+            f"Level: {row['level']}\nAbility: {MEGA_BASE_ABILITIES[row['species']]}"
+        )
+        if expected not in block:
+            fail(f"{trainer_id} does not enter battle with a legal base-form Mega ability")
+
+    morty_script = (ROOT / "data/maps/EcruteakCity_Gym_hns/scripts.inc").read_text()
+    morty_reward = morty_script.split("EcruteakCity_Gym_EventScript_Morty::", 1)[1].split(
+        "EcruteakCity_Gym_EventScript_Morty_Defeated::", 1
+    )[0]
+    reward_order = ("setflag FLAG_BADGE04_GET", "giveitem ITEM_MEGA_RING", "giveitem ITEM_TM_SHADOW_BALL")
+    if any(token not in morty_reward for token in reward_order):
+        fail("Morty must award badge 4, the Mega Ring, then Shadow Ball")
+    if list(map(morty_reward.index, reward_order)) != sorted(map(morty_reward.index, reward_order)):
+        fail("Morty's badge, Mega Ring and TM rewards are in the wrong order")
+
 
 def validate_rockets():
-    from sync_tactica_bosses import engine_species
+    from sync_tactica_bosses import MEGA_BASE_ABILITIES, engine_species
     progression = json.loads((ROOT / "data/spec/rocket_progression.json").read_text())
     final_rows = json.loads((ROOT / "data/spec/bosses.json").read_text())["teams"]
     final_by_boss = {}
@@ -248,6 +278,16 @@ def validate_rockets():
             fail(f"{trainer_id} HARD is missing fair strategic Rocket AI")
         if any(flag in hard_ai for flag in ("Smart Trainer", "Omniscient", "Prediction")):
             fail(f"{trainer_id} HARD uses forbidden hidden-information AI")
+
+        if progression["active_fights"][trainer_id][1] == "final":
+            mega = next(row for row in final_by_boss[progression["active_fights"][trainer_id][0]]
+                        if row["species"].startswith("Mega "))
+            expected_mega = (f"{engine_species(mega['species'])} @ {mega['item']}\n"
+                             f"Level: 1\nAbility: {MEGA_BASE_ABILITIES[mega['species']]}")
+            if expected_mega not in hard_party:
+                fail(f"{trainer_id} does not enter with a legal base-form Mega ability")
+            if trainer_id == "TRAINER_ARCHER_HNS" and "- Protect" in hard_party:
+                fail("Archer must Mega-evolve Sharpedo immediately without Protect")
 
         species = tuple(re.findall(
             r"^(?!Level:|Ability:|Nature:|IVs:|EVs:|-)([^\n@]+?)(?: @ .+)?$",
@@ -516,8 +556,11 @@ def validate_rival_progression():
             if len(matches) != 1:
                 fail(f"expected exactly one {trainer_id} trainer")
             party = matches[0].split("\n\n", 1)[1]
-            if len(re.findall(r"^Level: (\d+)$", party, re.M)) != party_size:
+            levels = [int(level) for level in re.findall(r"^Level: (\d+)$", party, re.M)]
+            if len(levels) != party_size:
                 fail(f"{trainer_id}: expected {party_size} members")
+            if fight == 1 and levels != [17]:
+                fail(f"{trainer_id}: first rival must use one level 17 starter")
             if fight <= 5 and len(re.findall(rf"^{stages[fight - 1]}(?: @ .+)?$", party, re.M)) != 1:
                 fail(f"{trainer_id}: saved starter placeholder missing or duplicated")
             if fight in (4, 5) and len(re.findall(r"^Ursaring(?: @ .+)?$", party, re.M)) != 1:
@@ -537,6 +580,13 @@ def validate_rival_progression():
         fail("generated rival data must contain one saved starter slot per category")
     if generated.count(".baseSpecies = ") != 30:
         fail("generated rival data must contain five authored members per category")
+
+    selector_script = (ROOT / "data/scripts/family_starter.inc").read_text()
+    if selector_script.count("setvar VAR_0x8007, 0xFFFF") != 2:
+        fail("starter species lists must use an unmatched initial id so they open on the first row")
+    selector_runtime = (ROOT / "src/family_starter.c").read_text()
+    if 'PushChoice(COMPOUND_STRING("Retour"), SPECIES_NONE);' not in selector_runtime:
+        fail("starter species menu must keep Retour as its final entry")
 
 
 def main():

@@ -31,31 +31,31 @@ static void InitFamilyTest(void)
     AddBagItem(ITEM_MYSTERY_EGG, 1);
 }
 
-TEST("Family starter: species cursor uses the selected row rather than the species id")
+TEST("Family starter: species menu reopens on the selected species id")
 {
     InitFamilyTest();
     gSpecialVar_0x8004 = 2;
     gSpecialVar_Result = SPECIES_SNIVY;
     FamilyStarter_SaveSpeciesCursor();
-    EXPECT_EQ(gSpecialVar_0x8007, 2);
+    EXPECT_EQ(gSpecialVar_0x8007, SPECIES_SNIVY);
 
     gSpecialVar_Result = SPECIES_NONE;
     FamilyStarter_SaveSpeciesCursor();
-    EXPECT_EQ(gSpecialVar_0x8007, 0);
+    EXPECT_EQ(gSpecialVar_0x8007, 0xFFFF);
 }
 
-TEST("Family starter: evolution cursor uses the selected row rather than the species id")
+TEST("Family starter: evolution menu reopens on the selected species id")
 {
     InitFamilyTest();
     gSpecialVar_0x8005 = SPECIES_EEVEE;
     gSpecialVar_Result = SPECIES_GLACEON;
     FamilyStarter_SaveEvolutionCursor();
-    EXPECT_EQ(gSpecialVar_0x8008, 6);
+    EXPECT_EQ(gSpecialVar_0x8008, SPECIES_GLACEON);
 
     gSpecialVar_0x8005 = SPECIES_CHARCADET;
     gSpecialVar_Result = SPECIES_CERULEDGE;
     FamilyStarter_SaveEvolutionCursor();
-    EXPECT_EQ(gSpecialVar_0x8008, 1);
+    EXPECT_EQ(gSpecialVar_0x8008, SPECIES_CERULEDGE);
 
     gSpecialVar_Result = SPECIES_NONE;
     FamilyStarter_SaveEvolutionCursor();
@@ -316,18 +316,14 @@ TEST("Family starter: a full bag sends every reward to item storage")
     EXPECT_EQ(gSpecialVar_Result, FALSE);
 }
 
-TEST("Family starter: rival uses a Ground starter against Electric")
+TEST("Family starter: rival uses an allowed fixed counter starter against Electric")
 {
     u16 rival;
     InitFamilyTest();
     CreateRandomMon(&gPlayerParty[0], SPECIES_ELEKID, 5);
     FamilyStarter_RecordPrimary();
     rival = VarGet(VAR_FAMILY_RIVAL_SPECIES);
-    EXPECT(rival == SPECIES_GLIGAR
-        || rival == SPECIES_DRILBUR
-        || rival == SPECIES_SANDILE
-        || rival == SPECIES_GOLETT
-        || rival == SPECIES_SANDYGAST);
+    EXPECT(rival == SPECIES_DRILBUR || rival == SPECIES_TREECKO);
     EXPECT_EQ(FamilyStarter_GetRivalSpecies(SPECIES_CHIKORITA), rival);
     EXPECT(FamilyStarter_IsAvailable(FamilyStarter_GetRivalSpecies(SPECIES_BAYLEEF)));
     VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_NONE);
@@ -340,14 +336,30 @@ TEST("Family starter: rival category draw follows the canonical counter matrix")
         {1, 4, 1},
         {2, 3, 2},
         {0, 5, 0},
-        {4, 4, 4},
-        {1, 2, 5},
-        {0, 0, 0},
+        {4, 2, 4},
+        {1, 5, 1},
+        {0, 1, 0},
     };
 
     for (u32 playerCategory = 0; playerCategory < ARRAY_COUNT(expected); playerCategory++)
         for (u32 roll = 0; roll < ARRAY_COUNT(expected[0]); roll++)
             EXPECT_EQ(FamilyStarter_GetRivalCounterCategory(playerCategory, roll), expected[playerCategory][roll]);
+}
+
+TEST("Family starter: every rival archetype has one fixed starter")
+{
+    static const u16 expected[] = {
+        SPECIES_TORCHIC,
+        SPECIES_MUDKIP,
+        SPECIES_TREECKO,
+        SPECIES_ELEKID,
+        SPECIES_DRILBUR,
+        SPECIES_DARUMAKA_GALAR,
+    };
+
+    for (u32 category = 0; category < ARRAY_COUNT(expected); category++)
+        EXPECT_EQ(FamilyStarter_GetRivalFixedStarter(category), expected[category]);
+    EXPECT_EQ(FamilyStarter_GetRivalFixedStarter(ARRAY_COUNT(expected)), SPECIES_NONE);
 }
 
 TEST("Family starter: rival draw is persisted once")
@@ -370,38 +382,55 @@ TEST("Family starter: saved rival category resolves every authored party phase")
     struct TrainerMon mon = {0};
 
     InitFamilyTest();
-    VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_CHARMANDER);
+    VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_TORCHIC);
 
-    mon.lvl = 15;
+    mon.lvl = 17;
+    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_1_HNS, 0, &mon));
+    EXPECT_EQ(mon.species, SPECIES_COMBUSKEN);
+    EXPECT_EQ(mon.moves[0], MOVE_NONE);
+
+    mon = (struct TrainerMon){.lvl = 15};
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_2_HNS, 0, &mon));
-    EXPECT_EQ(mon.species, SPECIES_VULPIX);
+    EXPECT_EQ(mon.species, SPECIES_TORKOAL);
     EXPECT_EQ(mon.moves[0], MOVE_EMBER);
     EXPECT_EQ(mon.heldItem, ITEM_NONE);
     EXPECT_EQ(mon.ev, NULL);
 
     mon = (struct TrainerMon){.lvl = 16};
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_2_HNS, 1, &mon));
-    EXPECT_EQ(mon.species, SPECIES_CHARMELEON);
+    EXPECT_EQ(mon.species, SPECIES_COMBUSKEN);
     EXPECT_EQ(mon.moves[0], MOVE_NONE);
 
     mon = (struct TrainerMon){.lvl = 24};
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_3_HNS, 2, &mon));
-    EXPECT_EQ(mon.species, SPECIES_SKIPLOOM);
+    EXPECT_EQ(mon.species, SPECIES_IVYSAUR);
     EXPECT_EQ(mon.moves[0], MOVE_MEGA_DRAIN);
+
+    mon = (struct TrainerMon){.lvl = 24};
+    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_3_HNS, 1, &mon));
+    EXPECT_EQ(mon.heldItem, ITEM_NONE);
+    mon = (struct TrainerMon){.lvl = 39};
+    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_4_HNS, 1, &mon));
+    EXPECT_EQ(mon.heldItem, ITEM_BLAZIKENITE);
 
     mon = (struct TrainerMon){.lvl = 68};
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_7_HNS, 5, &mon));
-    EXPECT_EQ(mon.species, SPECIES_ARCANINE);
-    EXPECT_EQ(mon.moves[0], MOVE_FLARE_BLITZ);
-    EXPECT_EQ(mon.heldItem, ITEM_EXPERT_BELT);
+    EXPECT_EQ(mon.species, SPECIES_GREAT_TUSK);
+    EXPECT_EQ(mon.moves[0], MOVE_HEADLONG_RUSH);
+    EXPECT_EQ(mon.heldItem, ITEM_ASSAULT_VEST);
 
-    VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_GLIGAR);
+    VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_DRILBUR);
     mon = (struct TrainerMon){.lvl = 40};
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_4_HNS, 3, &mon));
-    EXPECT_EQ(mon.species, SPECIES_VIBRAVA);
+    EXPECT_EQ(mon.species, SPECIES_GABITE);
     mon.lvl = 48;
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_5_HNS, 3, &mon));
-    EXPECT_EQ(mon.species, SPECIES_FLYGON);
+    EXPECT_EQ(mon.species, SPECIES_GARCHOMP);
+
+    VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_MUDKIP);
+    mon = (struct TrainerMon){.lvl = 39};
+    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_4_HNS, 3, &mon));
+    EXPECT_EQ(mon.species, SPECIES_POLITOED);
 
     VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_ELEKID);
     mon = (struct TrainerMon){.lvl = 18};
@@ -410,6 +439,7 @@ TEST("Family starter: saved rival category resolves every authored party phase")
     mon.lvl = 40;
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_4_HNS, 1, &mon));
     EXPECT_EQ(mon.species, SPECIES_ELECTIVIRE);
+    EXPECT_EQ(mon.heldItem, ITEM_EXPERT_BELT);
 
     EXPECT(!FamilyStarter_ResolveRivalMon(TRAINER_YOUNGSTER_CALVIN, 0, &mon));
 }
@@ -445,6 +475,18 @@ TEST("Family starter: the actual selected egg is granted exactly once")
     SetMonData(&gPlayerParty[1], MON_DATA_IS_EGG, &isEgg);
     FamilyStarter_HasHatchedEgg();
     EXPECT_EQ(gSpecialVar_Result, TRUE);
+}
+
+TEST("Family starter: Elm egg cannot duplicate the primary starter")
+{
+    InitFamilyTest();
+    FlagSet(FLAG_SYS_POKEMON_GET);
+    VarSet(VAR_FAMILY_STARTER_SPECIES, SPECIES_CHARCADET);
+    FamilyStarter_GiveEgg();
+    EXPECT_EQ(gSpecialVar_Result, MON_CANT_GIVE);
+    EXPECT_EQ(gPlayerPartyCount, 1);
+    EXPECT(CheckBagHasItem(ITEM_MYSTERY_EGG, 1));
+    EXPECT_EQ(VarGet(VAR_FAMILY_EGG_SPECIES), SPECIES_NONE);
 }
 
 TEST("Family starter: selected party egg is ready to hatch on the next step")

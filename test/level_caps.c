@@ -15,7 +15,7 @@ static u32 GetTestBossLevel(u16 trainerId, bool8 useLowestLevel)
     case TRAINER_RIVAL_CHIKORITA_1_HNS:
     case TRAINER_RIVAL_CYNDAQUIL_1_HNS:
     case TRAINER_RIVAL_TOTODILE_1_HNS:
-        return 5;
+        return 17;
     case TRAINER_FALKNER_1_HNS:
         return useLowestLevel ? 14 : 17;
     case TRAINER_RIVAL_CHIKORITA_2_HNS:
