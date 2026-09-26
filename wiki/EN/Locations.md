@@ -7,7 +7,7 @@
 | Area | Method | Time | Lv. | Slots / rates |
 |---|---|---|---:|---|
 | Blackthorn City | Fishing | Any | 59–62 | Seadra 30% · Whiscash 30% · Crawdaunt 30% · Dragonite 10% |
-| Blackthorn City | Land | Any | 59–62 | Vileplume 30% · Snorlax 30% · Electivire 30% · Kingambit 10% |
+| Blackthorn City | Land | Any | 59–62 | Reuniclus 30% · Snorlax 30% · Revavroom 30% · Blissey 10% |
 | Blackthorn City | Surf | Any | 59–62 | Seadra 30% · Dragonite 30% · Gyarados 30% · Milotic 10% |
 | Burned Tower 1F | Land | Day | 33–36 | Cetoddle 30% · Torkoal 30% · Oricorio (Baile Style) 30% · Quilava 10% |
 | Burned Tower 1F | Land | Night | 33–36 | Bombirdier 30% · Salandit 30% · Phantump 30% · Combusken 10% |
@@ -39,12 +39,12 @@
 | Cinnabar Island | Fishing | Any | 60–74 | Wailord 30% · Barbaracle 30% · Basculegion (Male) 30% · Golisopod 10% |
 | Cinnabar Island | Land | Any | 60–74 | Hippowdon 30% · Noivern 30% · Aggron 30% · Rhyperior 10% |
 | Cinnabar Island | Surf | Any | 60–74 | Floatzel 30% · Toxapex 30% · Clawitzer 30% · Seismitoad 10% |
-| Cliff Edge Cave | Land | Day | 37–40 | Gimmighoul Chest 30% · Axew 30% · Misdreavus 30% · Golett 10% |
+| Cliff Edge Cave | Land | Day | 37–40 | Gimmighoul Chest 30% · Axew 30% · Toxicroak 30% · Golett 10% |
 | Cliff Edge Cave | Rock Smash | Day | 37–40 | Sawk 30% · Beautifly 30% · Gurdurr 30% · Sandygast 10% |
 | Cliff Edge Gate | Fishing | Day | 38–40 | Corsola 30% · Sealeo 30% · Lumineon 30% · Cramorant 10% |
 | Cliff Edge Gate | Surf | Day | 38–40 | Seismitoad 30% · Araquanid 30% · Wugtrio 30% · Palafin (Zero Form) 10% |
 | Dark Cave North Side | Fishing | Any | 38–40 | Azumarill 30% · Tatsugiri Curly 30% · Milotic 30% · Gyarados 10% |
-| Dark Cave North Side | Land | Any | 38–40 | Lucario 30% · Gholdengo 30% · Mamoswine 30% · Kingambit 10% |
+| Dark Cave North Side | Land | Any | 38–40 | Lucario 30% · Gholdengo 30% · Mamoswine 30% · Toxtricity (Amped Form) 10% |
 | Dark Cave North Side | Rock Smash | Any | 38–40 | Vivillon Meadow 30% · Lucario 30% · Volcarona 30% · Kingambit 10% |
 | Dark Cave North Side | Surf | Any | 38–40 | Azumarill 30% · Lapras 30% · Milotic 30% · Gyarados 10% |
 | Dark Cave South Side | Fishing | Day | 7–11 | Magikarp 30% · Barboach 30% · Corphish 30% · Chinchou 10% |
@@ -63,8 +63,8 @@
 | Fuchsia City | Fishing | Any | 60–74 | Floatzel 30% · Toxapex 30% · Barraskewda 30% · Seismitoad 10% |
 | Fuchsia City | Land | Any | 60–74 | Wyrdeer 30% · Glimmora 30% · Porygon-Z 30% · Florges Red 10% |
 | Fuchsia City | Surf | Any | 60–74 | Tentacruel 30% · Golisopod 30% · Basculegion (Male) 30% · Walrein 10% |
-| Ice Path 1F | Land | Any | 58–60 | Piloswine 30% · Froslass 30% · Beartic 30% · Alolan Ninetales 10% |
-| Ice Path B1F | Land | Any | 58–61 | Abomasnow 30% · Glalie 30% · Sneasel 30% · Weavile 10% |
+| Ice Path 1F | Land | Any | 58–60 | Avalugg 30% · Froslass 30% · Beartic 30% · Alolan Ninetales 10% |
+| Ice Path B1F | Land | Any | 58–61 | Abomasnow 30% · Glalie 30% · Sneasler 30% · Weavile 10% |
 | Ice Path B2F | Land | Any | 59–61 | Piloswine 30% · Cetitan 30% · Cryogonal 30% · Galarian Darmanitan 10% |
 | Ice Path B3F | Land | Any | 59–62 | Baxcalibur 30% · Vanilluxe 30% · Frosmoth 30% · Baxcalibur 10% |
 | Ice Path B4F | Land | Any | 60–62 | Froslass 30% · Mamoswine 30% · Glalie 30% · Baxcalibur 10% |
@@ -87,8 +87,8 @@
 | Mt Mortar 1F South | Rock Smash | Any | 36–38 | Pinsir 30% · Crabominable 30% · Palossand 30% · Grapploct 10% |
 | Mt Mortar 1F South | Surf | Any | 36–38 | Sealeo 30% · Gastrodon (West Sea) 30% · Drednaw 30% · Dondozo 10% |
 | Mt Mortar 2F | Fishing | Any | 53–55 | Seismitoad 30% · Drednaw 30% · Octillery 30% · Tatsugiri Curly 10% |
-| Mt Mortar 2F | Land | Any | 53–55 | Shuckle 30% · Hawlucha 30% · Golurk 30% · Crustle 10% |
-| Mt Mortar 2F | Rock Smash | Any | 53–55 | Masquerain 30% · Aggron 30% · Frosmoth 30% · Rabsca 10% |
+| Mt Mortar 2F | Land | Any | 53–55 | Annihilape 30% · Pangoro 30% · Toedscruel 30% · Crustle 10% |
+| Mt Mortar 2F | Rock Smash | Any | 53–55 | Masquerain 30% · Centiskorch 30% · Conkeldurr 30% · Glimmora 10% |
 | Mt Mortar 2F | Surf | Any | 53–55 | Dragalge 30% · Toxapex 30% · Barbaracle 30% · Dracovish 10% |
 | Mt Mortar B1F | Fishing | Any | 38–40 | Drednaw 30% · Seismitoad 30% · Drednaw 30% · Octillery 10% |
 | Mt Mortar B1F | Land | Any | 38–40 | Riolu 30% · Heracross 30% · Drampa 30% · Crabominable 10% |
@@ -133,7 +133,7 @@
 | New Bark Town | Land | Any | 2–5 | Pidove 30% · Smoliv 30% · Hatenna 30% · Tynamo 10% |
 | New Bark Town | Surf | Any | 2–5 | Magikarp 30% · Wooper 30% · Poliwag 30% · Surskit 10% |
 | Olivine City | Fishing | Any | 35–38 | Tentacruel 30% · Relicanth 30% · Shellder 30% · Kilowattrel 10% |
-| Olivine City | Land | Any | 35–38 | Zebstrika 30% · Munchlax 30% · Vigoroth 30% · Magneton 10% |
+| Olivine City | Land | Any | 35–38 | Zebstrika 30% · Munchlax 30% · Vigoroth 30% · Magnezone 10% |
 | Olivine City | Surf | Any | 35–38 | Pelipper 30% · Tentacruel 30% · Lanturn 30% · Seadra 10% |
 | Olivine City Port Outside | Fishing | Any | 36–40 | Basculin (Red-Striped Form) 30% · Poliwhirl 30% · Seadra 30% · Palafin (Zero Form) 10% |
 | Olivine City Port Outside | Land | Any | 36–40 | Bergmite 30% · Ponyta 30% · Magcargo 30% · Cinderace 10% |
@@ -148,7 +148,7 @@
 | Rock Tunnel B1F | Land | Any | 60–74 | Polteageist 30% · Weavile 30% · Noivern 30% · Hydrapple 10% |
 | Rock Tunnel B1F | Rock Smash | Any | 60–74 | Mienshao 30% · Gigalith 30% · Coalossal 30% · Rhyperior 10% |
 | Rock Tunnel B1F | Surf | Any | 60–74 | Floatzel 30% · Toxapex 30% · Barraskewda 30% · Tentacruel 10% |
-| Rocket Hideout B1F | Land | Day | 39–40 | Boldore 30% · Dusclops 30% · Banette 30% · Trevenant 10% |
+| Rocket Hideout B1F | Land | Day | 39–40 | Boldore 30% · Porygon2 30% · Porygon-Z 30% · Trevenant 10% |
 | Route 1 | Fishing | Any | 60–74 | Sharpedo 30% · Barraskewda 30% · Basculegion (Male) 30% · Palafin (Zero Form) 10% |
 | Route 1 | Land | Day | 60–74 | Tyranitar 30% · Garchomp 30% · Salamence 30% · Metagross 10% |
 | Route 1 | Land | Night | 60–74 | Hydreigon 30% · Dragapult 30% · Kingambit 30% · Gholdengo 10% |
@@ -219,12 +219,12 @@
 | Route 25 | Land | Night | 60–74 | Pangoro 30% · Overqwil 30% · Sneasler 30% · Krookodile 10% |
 | Route 25 | Surf | Any | 60–74 | Araquanid 30% · Wugtrio 30% · Lanturn 30% · Tatsugiri Curly 10% |
 | Route 26 | Fishing | Any | 63–66 | Crawdaunt 30% · Drednaw 30% · Arctovish 30% · Milotic 10% |
-| Route 26 | Land | Day | 63–66 | Electivire 30% · Magmortar 30% · Corviknight 30% · Salamence 10% |
-| Route 26 | Land | Night | 63–66 | Kingambit 30% · Gholdengo 30% · Goodra 30% · Metagross 10% |
+| Route 26 | Land | Day | 63–66 | Electivire 30% · Magmortar 30% · Braviary 30% · Salamence 10% |
+| Route 26 | Land | Night | 63–66 | Grimmsnarl 30% · Scrafty 30% · Goodra 30% · Metagross 10% |
 | Route 26 | Surf | Any | 63–66 | Basculin (Red-Striped Form) 30% · Lumineon 30% · Gastrodon (West Sea) 30% · Gyarados 10% |
 | Route 27 | Fishing | Any | 63–65 | Araquanid 30% · Tatsugiri Curly 30% · Octillery 30% · Palafin (Zero Form) 10% |
-| Route 27 | Land | Day | 63–65 | Lucario 30% · Garchomp 30% · Corviknight 30% · Noivern 10% |
-| Route 27 | Land | Night | 63–65 | Tyranitar 30% · Hydreigon 30% · Dragapult 30% · Dragonite 10% |
+| Route 27 | Land | Day | 63–65 | Pidgeot 30% · Garchomp 30% · Talonflame 30% · Toucannon 10% |
+| Route 27 | Land | Night | 63–65 | Tyranitar 30% · Hydreigon 30% · Dragapult 30% · Mandibuzz 10% |
 | Route 27 | Surf | Any | 63–65 | Azumarill 30% · Relicanth 30% · Lapras 30% · Dracovish 10% |
 | Route 28 | Land | Day | 72–84 | Pidgeot 30% · Staraptor 30% · Unfezant 30% · Dragonite 10% |
 | Route 28 | Land | Night | 72–84 | Amoonguss 30% · Golurk 30% · Salazzle 30% · Vileplume 10% |
@@ -262,13 +262,13 @@
 | Route 36 | Land | Day | 14–17 | Scraggy 30% · Gligar 30% · Stufful 30% · Vulpix 10% |
 | Route 36 | Land | Night | 14–17 | Crabrawler 30% · Spinarak 30% · Sinistea 30% · Helioptile 10% |
 | Route 36 | Rock Smash | Any | 14–17 | Mienfoo 30% · Cranidos 30% · Shieldon 30% · Geodude 10% |
-| Route 37 | Land | Day | 32–35 | Growlithe 30% · Ariados 30% · Ursaring 30% · Charmeleon 10% |
-| Route 37 | Land | Night | 32–35 | Misdreavus 30% · Houndoom 30% · Murkrow 30% · Pignite 10% |
+| Route 37 | Land | Day | 32–35 | Unfezant 30% · Staraptor 30% · Ursaring 30% · Charmeleon 10% |
+| Route 37 | Land | Night | 32–35 | Scovillain 30% · Zoroark 30% · Tangrowth 30% · Pignite 10% |
 | Route 38 | Land | Day | 35–38 | Gardevoir 30% · Floette Red 30% · Tangela 30% · Servine 10% |
-| Route 38 | Land | Night | 35–38 | Kangaskhan 30% · Rotom (Rotom) 30% · Raticate 30% · Braixen 10% |
+| Route 38 | Land | Night | 35–38 | Kangaskhan 30% · Rotom (Rotom) 30% · Wyrdeer 30% · Braixen 10% |
 | Route 39 | Land | Day | 35–38 | Tauros 30% · Jigglypuff 30% · Swellow 30% · Quilladin 10% |
-| Route 39 | Land | Night | 35–38 | Morpeko (Full Belly Mode) 30% · Raticate 30% · Duskull 30% · Bouffalant 10% |
-| Route 39 | Rock Smash | Any | 35–38 | Hippowdon 30% · Tyrunt 30% · Spidops 30% · Darmanitan (Standard Mode) 10% |
+| Route 39 | Land | Night | 35–38 | Morpeko (Full Belly Mode) 30% · Ursaluna 30% · Nidoqueen 30% · Bouffalant 10% |
+| Route 39 | Rock Smash | Any | 35–38 | Hippowdon 30% · Tyrunt 30% · Kleavor 30% · Lycanroc (Midday Form) 10% |
 | Route 4 | Fishing | Any | 60–74 | Seadra 30% · Floatzel 30% · Toxapex 30% · Basculegion (Male) 10% |
 | Route 4 | Land | Day | 60–74 | Braviary 30% · Gliscor 30% · Dipplin 30% · Blissey 10% |
 | Route 4 | Land | Night | 60–74 | Revavroom 30% · Nidoqueen 30% · Glimmora 30% · Porygon-Z 10% |
@@ -278,21 +278,21 @@
 | Route 41 | Fishing | Day | 37–40 | Sealeo 30% · Crawdaunt 30% · Relicanth 30% · Arctovish 10% |
 | Route 41 | Surf | Day | 37–40 | Basculin (Red-Striped Form) 30% · Seismitoad 30% · Sealeo 30% · Lumineon 10% |
 | Route 42 | Fishing | Any | 36–38 | Luvdisc 30% · Floatzel 30% · Tatsugiri Curly 30% · Dondozo 10% |
-| Route 42 | Land | Day | 36–38 | Granbull 30% · Maushold Three 30% · Lurantis 30% · Electabuzz 10% |
-| Route 42 | Land | Night | 36–38 | Krokorok 30% · Roselia 30% · Salazzle 30% · Dhelmise 10% |
-| Route 42 | Rock Smash | Any | 36–38 | Charjabug 30% · Gurdurr 30% · Klang 30% · Scyther 10% |
+| Route 42 | Land | Day | 36–38 | Granbull 30% · Maushold Three 30% · Dipplin 30% · Electabuzz 10% |
+| Route 42 | Land | Night | 36–38 | Bellibolt 30% · Roselia 30% · Eelektross 30% · Dhelmise 10% |
+| Route 42 | Rock Smash | Any | 36–38 | Vikavolt 30% · Gurdurr 30% · Klang 30% · Scyther 10% |
 | Route 42 | Surf | Any | 36–38 | Clauncher 30% · Lumineon 30% · Tirtouga 30% · Mantyke 10% |
 | Route 43 | Fishing | Any | 36–38 | Omanyte 30% · Kabuto 30% · Lanturn 30% · Octillery 10% |
-| Route 43 | Land | Day | 36–38 | Clefairy 30% · Glalie 30% · Lurantis 30% · Manectric 10% |
-| Route 43 | Land | Night | 36–38 | Amoonguss 30% · Trevenant 30% · Darmanitan (Standard Mode) 30% · Salazzle 10% |
+| Route 43 | Land | Day | 36–38 | Clefairy 30% · Florges Red 30% · Lurantis 30% · Manectric 10% |
+| Route 43 | Land | Night | 36–38 | Amoonguss 30% · Roserade 30% · Darmanitan (Standard Mode) 30% · Salazzle 10% |
 | Route 43 | Surf | Any | 36–38 | Azumarill 30% · Pelipper 30% · Sharpedo 30% · Lapras 10% |
 | Route 44 | Fishing | Any | 57–59 | Tatsugiri Curly 30% · Arctovish 30% · Milotic 30% · Gyarados 10% |
-| Route 44 | Land | Day | 57–59 | Magneton 30% · Piloswine 30% · Skarmory 30% · Aggron 10% |
-| Route 44 | Land | Night | 57–59 | Dusclops 30% · Sneasel 30% · Froslass 30% · Gengar 10% |
+| Route 44 | Land | Day | 57–59 | Luxray 30% · Ferrothorn 30% · Skarmory 30% · Ninetales 10% |
+| Route 44 | Land | Night | 57–59 | Honchkrow 30% · Sneasel 30% · Froslass 30% · Gengar 10% |
 | Route 44 | Surf | Any | 57–59 | Azumarill 30% · Lapras 30% · Dracovish 30% · Gyarados 10% |
 | Route 45 | Fishing | Any | 38–40 | Veluza 30% · Relicanth 30% · Milotic 30% · Gyarados 10% |
-| Route 45 | Land | Day | 38–40 | Golem 30% · Skarmory 30% · Dragonair 30% · Lairon 10% |
-| Route 45 | Land | Night | 38–40 | Trevenant 30% · Palossand 30% · Dhelmise 30% · Vileplume 10% |
+| Route 45 | Land | Day | 38–40 | Golem 30% · Bewear 30% · Donphan 30% · Lairon 10% |
+| Route 45 | Land | Night | 38–40 | Drapion 30% · Krookodile 30% · Nidoking 30% · Vileplume 10% |
 | Route 45 | Rock Smash | Any | 38–40 | Lucario 30% · Corviknight 30% · Gholdengo 30% · Volcarona 10% |
 | Route 45 | Surf | Any | 38–40 | Bruxish 30% · Cramorant 30% · Whiscash 30% · Dondozo 10% |
 | Route 46 | Land | Day | 6–9 | Spearow 30% · Geodude 30% · Phanpy 30% · Mankey 10% |
@@ -302,7 +302,7 @@
 | Route 47 | Land | Night | 37–40 | Chansey 30% · Vullaby 30% · Varoom 30% · Charcadet 10% |
 | Route 47 | Surf | Any | 37–40 | Wugtrio 30% · Cramorant 30% · Palafin (Zero Form) 30% · Arctovish 10% |
 | Route 48 | Land | Day | 37–40 | Mr. Mime 30% · Steenee 30% · Shiinotic 30% · Rillaboom 10% |
-| Route 48 | Land | Night | 37–40 | Audino 30% · Breloom 30% · Poltchageist 30% · Krokorok 10% |
+| Route 48 | Land | Night | 37–40 | Audino 30% · Tsareena 30% · Poltchageist 30% · Krokorok 10% |
 | Route 48 | Rock Smash | Any | 37–40 | Camerupt 30% · Spewpa 30% · Clobbopus 30% · Throh 10% |
 | Route 5 | Fishing | Any | 60–74 | Seismitoad 30% · Walrein 30% · Tentacruel 30% · Dondozo 10% |
 | Route 5 | Land | Day | 60–74 | Electabuzz 30% · Wyrdeer 30% · Hatterene 30% · Tsareena 10% |
@@ -344,16 +344,16 @@
 | Sprout Tower 2F | Land | Night | 8–11 | Gastly 30% · Zubat 30% · Duskull 30% · Litwick 10% |
 | Sprout Tower 3F | Land | Day | 9–12 | Rattata 30% · Bellsprout 30% · Ralts 30% · Baltoy 10% |
 | Sprout Tower 3F | Land | Night | 9–12 | Gastly 30% · Shuppet 30% · Duskull 30% · Misdreavus 10% |
-| Tin Tower 3F | Land | Day | 62–64 | Aerodactyl 30% · Corviknight 30% · Gholdengo 30% · Kingambit 10% |
-| Tin Tower 4F | Land | Day | 62–64 | Shuckle 30% · Lucario 30% · Gholdengo 30% · Kingambit 10% |
-| Tin Tower 5F | Land | Day | 62–64 | Heracross 30% · Grapploct 30% · Corviknight 30% · Gholdengo 10% |
-| Tin Tower 6F | Land | Day | 62–64 | Forretress 30% · Magneton 30% · Crustle 30% · Duraludon 10% |
-| Tin Tower 7F | Land | Day | 62–64 | Lokix 30% · Aerodactyl 30% · Dracozolt 30% · Lucario 10% |
-| Tin Tower 8F | Land | Day | 62–64 | Cyclizar 30% · Hawlucha 30% · Flamigo 30% · Froslass 10% |
-| Tin Tower 9F | Land | Day | 62–64 | Shuckle 30% · Heracross 30% · Gholdengo 30% · Kingambit 10% |
+| Tin Tower 3F | Land | Day | 62–64 | Aerodactyl 30% · Corviknight 30% · Bisharp 30% · Kingambit 10% |
+| Tin Tower 4F | Land | Day | 62–64 | Shuckle 30% · Gothitelle 30% · Gholdengo 30% · Kingambit 10% |
+| Tin Tower 5F | Land | Day | 62–64 | Heracross 30% · Grapploct 30% · Mienshao 30% · Gallade 10% |
+| Tin Tower 6F | Land | Day | 62–64 | Forretress 30% · Aegislash (Shield Forme) 30% · Klinklang 30% · Duraludon 10% |
+| Tin Tower 7F | Land | Day | 62–64 | Lokix 30% · Aerodactyl 30% · Dracozolt 30% · Polteageist 10% |
+| Tin Tower 8F | Land | Day | 62–64 | Hydrapple 30% · Hawlucha 30% · Sinistcha 30% · Hatterene 10% |
+| Tin Tower 9F | Land | Day | 62–64 | Mismagius 30% · Gourgeist 30% · Chandelure 30% · Dusknoir 10% |
 | Tohjo Falls Cavern | Fishing | Any | 62–65 | Sharpedo 30% · Milotic 30% · Veluza 30% · Lanturn 10% |
 | Tohjo Falls Cavern | Land | Any | 62–65 | Haxorus 30% · Aggron 30% · Excadrill 30% · Noivern 10% |
-| Tohjo Falls Cavern | Rock Smash | Any | 62–65 | Archaludon 30% · Metagross 30% · Garchomp 30% · Kommo-o 10% |
+| Tohjo Falls Cavern | Rock Smash | Any | 62–65 | Archaludon 30% · Gigalith 30% · Rhyperior 30% · Kommo-o 10% |
 | Tohjo Falls Cavern | Surf | Any | 62–65 | Walrein 30% · Whiscash 30% · Crawdaunt 30% · Gyarados 10% |
 | Union Cave 1F | Fishing | Day | 16–19 | Arrokuda 30% · Shellder 30% · Psyduck 30% · Seel 10% |
 | Union Cave 1F | Land | Day | 16–19 | Geodude 30% · Zubat 30% · Sandshrew 30% · Aron 10% |
@@ -391,14 +391,14 @@
 | Whirl Islands 1F | Land | Any | 40–43 | Vibrava 30% · Raticate 30% · Hakamo O 30% · Eiscue (Ice Face) 10% |
 | Whirl Islands 1F | Rock Smash | Any | 40–43 | Garganacl 30% · Togedemaru 30% · Archeops 30% · Passimian 10% |
 | Whirl Islands 1F | Surf | Any | 40–43 | Luvdisc 30% · Corsola 30% · Seadra 30% · Lanturn 10% |
-| Whirl Islands B1F | Fishing | Any | 41–44 | Floatzel 30% · Lumineon 30% · Poliwhirl 30% · Veluza 10% |
+| Whirl Islands B1F | Fishing | Any | 41–44 | Floatzel 30% · Barraskewda 30% · Poliwhirl 30% · Veluza 10% |
 | Whirl Islands B1F | Land | Any | 41–44 | Lampent 30% · Applin 30% · Beartic 30% · Glalie 10% |
-| Whirl Islands B1F | Rock Smash | Any | 41–44 | Stonjourner 30% · Amaura 30% · Sandaconda 30% · Gligar 10% |
-| Whirl Islands B1F | Surf | Any | 41–44 | Clawitzer 30% · Omastar 30% · Carracosta 30% · Mantyke 10% |
+| Whirl Islands B1F | Rock Smash | Any | 41–44 | Stonjourner 30% · Amaura 30% · Sandaconda 30% · Gliscor 10% |
+| Whirl Islands B1F | Surf | Any | 41–44 | Basculegion (Male) 30% · Omastar 30% · Carracosta 30% · Mantyke 10% |
 | Whirl Islands B1F Inner | Fishing | Day | 42–45 | Azumarill 30% · Kabutops 30% · Araquanid 30% · Lapras 10% |
 | Whirl Islands B1F Inner | Land | Day | 42–45 | Tinkaton 30% · Shelgon 30% · Sneasel 30% · Dragonair 10% |
 | Whirl Islands B1F Inner | Rock Smash | Day | 42–45 | Dustox 30% · Copperajah 30% · Mudsdale 30% · Coalossal 10% |
-| Whirl Islands B1F Inner | Surf | Day | 42–45 | Wailord 30% · Pelipper 30% · Whiscash 30% · Sharpedo 10% |
+| Whirl Islands B1F Inner | Surf | Day | 42–45 | Wailord 30% · Pelipper 30% · Golisopod 30% · Sharpedo 10% |
 | Whirl Islands B2F | Fishing | Any | 42–45 | Seismitoad 30% · Sealeo 30% · Crawdaunt 30% · Bruxish 10% |
 | Whirl Islands B2F | Land | Any | 42–45 | Noibat 30% · Magmar 30% · Dusclops 30% · Vanillish 10% |
 | Whirl Islands B2F | Rock Smash | Any | 42–45 | Metang 30% · Arctozolt 30% · Aggron 30% · Magneton 10% |
@@ -406,7 +406,7 @@
 | Whirl Islands B3F | Fishing | Day | 43–46 | Seadra 30% · Bruxish 30% · Araquanid 30% · Cramorant 10% |
 | Whirl Islands B3F | Land | Day | 43–46 | Banette 30% · Deino 30% · Piloswine 30% · Piloswine 10% |
 | Whirl Islands B3F | Rock Smash | Day | 43–46 | Minior Meteor 30% · Mawile 30% · Dugtrio 30% · Lokix 10% |
-| Whirl Islands B3F | Surf | Day | 43–46 | Veluza 30% · Wugtrio 30% · Palafin (Zero Form) 30% · Arctovish 10% |
+| Whirl Islands B3F | Surf | Day | 43–46 | Veluza 30% · Wugtrio 30% · Palafin (Zero Form) 30% · Overqwil 10% |
 | Whirl Islands Descent | Fishing | Day | 43–46 | Corsola 30% · Poliwhirl 30% · Seadra 30% · Pelipper 10% |
 | Whirl Islands Descent | Land | Day | 43–46 | Dusclops 30% · Goomy 30% · Vanillish 30% · Breloom 10% |
 | Whirl Islands Descent | Rock Smash | Day | 43–46 | Klang 30% · Tinkaton 30% · Gurdurr 30% · Klang 10% |

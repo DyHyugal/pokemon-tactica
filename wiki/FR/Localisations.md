@@ -7,7 +7,7 @@
 | Zone | Méthode | Moment | Niv. | Slots / taux |
 |---|---|---|---:|---|
 | Blackthorn City | Pêche | Tous | 59–62 | Hypocéan 30% · Barbicha 30% · Colhomard 30% · Dracolosse 10% |
-| Blackthorn City | Herbe / sol | Tous | 59–62 | Rafflesia 30% · Ronflex 30% · Élekable 30% · Scalpereur 10% |
+| Blackthorn City | Herbe / sol | Tous | 59–62 | Symbios 30% · Ronflex 30% · Vrombotor 30% · Leuphorie 10% |
 | Blackthorn City | Surf | Tous | 59–62 | Hypocéan 30% · Dracolosse 30% · Léviator 30% · Milobellus 10% |
 | Burned Tower 1F | Herbe / sol | Jour | 33–36 | Piétacé 30% · Chartor 30% · Plumeline (Style Flamenco) 30% · Feurisson 10% |
 | Burned Tower 1F | Herbe / sol | Nuit | 33–36 | Lestombaile 30% · Tritox 30% · Brocélôme 30% · Galifeu 10% |
@@ -39,12 +39,12 @@
 | Cinnabar Island | Pêche | Tous | 60–74 | Wailord 30% · Golgopathe 30% · Paragruel (Mâle) 30% · Sarmuraï 10% |
 | Cinnabar Island | Herbe / sol | Tous | 60–74 | Hippodocus 30% · Bruyverne 30% · Galeking 30% · Rhinastoc 10% |
 | Cinnabar Island | Surf | Tous | 60–74 | Mustéflott 30% · Prédastérie 30% · Gamblast 30% · Crapustule 10% |
-| Cliff Edge Cave | Herbe / sol | Jour | 37–40 | Mordudor (Forme Coffre) 30% · Coupenotte 30% · Feuforêve 30% · Gringolem 10% |
+| Cliff Edge Cave | Herbe / sol | Jour | 37–40 | Mordudor (Forme Coffre) 30% · Coupenotte 30% · Coatox 30% · Gringolem 10% |
 | Cliff Edge Cave | Éclate-Roc | Jour | 37–40 | Karaclée 30% · Charmillon 30% · Ouvrifier 30% · Bacabouh 10% |
 | Cliff Edge Gate | Pêche | Jour | 38–40 | Corayon 30% · Phogleur 30% · Luminéon 30% · Nigosier 10% |
 | Cliff Edge Gate | Surf | Jour | 38–40 | Crapustule 30% · Tarenbulle 30% · Triopikeau 30% · Superdofin 10% |
 | Dark Cave North Side | Pêche | Tous | 38–40 | Azumarill 30% · Nigirigon (Forme Courbée) 30% · Milobellus 30% · Léviator 10% |
-| Dark Cave North Side | Herbe / sol | Tous | 38–40 | Lucario 30% · Gromago 30% · Mammochon 30% · Scalpereur 10% |
+| Dark Cave North Side | Herbe / sol | Tous | 38–40 | Lucario 30% · Gromago 30% · Mammochon 30% · Salarsen 10% |
 | Dark Cave North Side | Éclate-Roc | Tous | 38–40 | Vivillon Meadow 30% · Lucario 30% · Pyrax 30% · Scalpereur 10% |
 | Dark Cave North Side | Surf | Tous | 38–40 | Azumarill 30% · Lokhlass 30% · Milobellus 30% · Léviator 10% |
 | Dark Cave South Side | Pêche | Jour | 7–11 | Magicarpe 30% · Barloche 30% · Écrapince 30% · Loupio 10% |
@@ -63,8 +63,8 @@
 | Fuchsia City | Pêche | Tous | 60–74 | Mustéflott 30% · Prédastérie 30% · Hastacuda 30% · Crapustule 10% |
 | Fuchsia City | Herbe / sol | Tous | 60–74 | Cerbyllin 30% · Floréclat 30% · Porygon-Z 30% · Florges Red 10% |
 | Fuchsia City | Surf | Tous | 60–74 | Tentacruel 30% · Sarmuraï 30% · Paragruel (Mâle) 30% · Kaimorse 10% |
-| Ice Path 1F | Herbe / sol | Tous | 58–60 | Cochignon 30% · Momartik 30% · Polagriffe 30% · Feunard d’Alola 10% |
-| Ice Path B1F | Herbe / sol | Tous | 58–61 | Blizzaroi 30% · Oniglali 30% · Farfuret 30% · Dimoret 10% |
+| Ice Path 1F | Herbe / sol | Tous | 58–60 | Séracrawl 30% · Momartik 30% · Polagriffe 30% · Feunard d’Alola 10% |
+| Ice Path B1F | Herbe / sol | Tous | 58–61 | Blizzaroi 30% · Oniglali 30% · Farfurex 30% · Dimoret 10% |
 | Ice Path B2F | Herbe / sol | Tous | 59–61 | Cochignon 30% · Balbalèze 30% · Hexagel 30% · Darumacho de Galar 10% |
 | Ice Path B3F | Herbe / sol | Tous | 59–62 | Glaivodo 30% · Sorbouboul 30% · Beldeneige 30% · Glaivodo 10% |
 | Ice Path B4F | Herbe / sol | Tous | 60–62 | Momartik 30% · Mammochon 30% · Oniglali 30% · Glaivodo 10% |
@@ -87,8 +87,8 @@
 | Mt Mortar 1F South | Éclate-Roc | Tous | 36–38 | Scarabrute 30% · Crabominable 30% · Trépassable 30% · Krakos 10% |
 | Mt Mortar 1F South | Surf | Tous | 36–38 | Phogleur 30% · Tritosor (Mer Occident) 30% · Torgamord 30% · Oyacata 10% |
 | Mt Mortar 2F | Pêche | Tous | 53–55 | Crapustule 30% · Torgamord 30% · Octillery 30% · Nigirigon (Forme Courbée) 10% |
-| Mt Mortar 2F | Herbe / sol | Tous | 53–55 | Caratroc 30% · Brutalibré 30% · Golemastoc 30% · Crabaraque 10% |
-| Mt Mortar 2F | Éclate-Roc | Tous | 53–55 | Maskadra 30% · Galeking 30% · Beldeneige 30% · Bérasca 10% |
+| Mt Mortar 2F | Herbe / sol | Tous | 53–55 | Courrousinge 30% · Pandarbare 30% · Terracruel 30% · Crabaraque 10% |
+| Mt Mortar 2F | Éclate-Roc | Tous | 53–55 | Maskadra 30% · Scolocendre 30% · Bétochef 30% · Floréclat 10% |
 | Mt Mortar 2F | Surf | Tous | 53–55 | Kravarech 30% · Prédastérie 30% · Golgopathe 30% · Hydragon 10% |
 | Mt Mortar B1F | Pêche | Tous | 38–40 | Torgamord 30% · Crapustule 30% · Torgamord 30% · Octillery 10% |
 | Mt Mortar B1F | Herbe / sol | Tous | 38–40 | Riolu 30% · Scarhino 30% · Draïeul 30% · Crabominable 10% |
@@ -133,7 +133,7 @@
 | New Bark Town | Herbe / sol | Tous | 2–5 | Poichigeon 30% · Olivini 30% · Bibichut 30% · Anchwatt 10% |
 | New Bark Town | Surf | Tous | 2–5 | Magicarpe 30% · Axoloto 30% · Ptitard 30% · Arakdo 10% |
 | Olivine City | Pêche | Tous | 35–38 | Tentacruel 30% · Relicanth 30% · Kokiyas 30% · Fulgulairo 10% |
-| Olivine City | Herbe / sol | Tous | 35–38 | Zéblitz 30% · Goinfrex 30% · Vigoroth 30% · Magnéton 10% |
+| Olivine City | Herbe / sol | Tous | 35–38 | Zéblitz 30% · Goinfrex 30% · Vigoroth 30% · Magnézone 10% |
 | Olivine City | Surf | Tous | 35–38 | Bekipan 30% · Tentacruel 30% · Lanturn 30% · Hypocéan 10% |
 | Olivine City Port Outside | Pêche | Tous | 36–40 | Bargantua 30% · Têtarte 30% · Hypocéan 30% · Superdofin 10% |
 | Olivine City Port Outside | Herbe / sol | Tous | 36–40 | Grelaçon 30% · Ponyta 30% · Volcaropod 30% · Pyrobut 10% |
@@ -148,7 +148,7 @@
 | Rock Tunnel B1F | Herbe / sol | Tous | 60–74 | Polteageist 30% · Dimoret 30% · Bruyverne 30% · Pomdorochi 10% |
 | Rock Tunnel B1F | Éclate-Roc | Tous | 60–74 | Shaofouine 30% · Gigalithe 30% · Monthracite 30% · Rhinastoc 10% |
 | Rock Tunnel B1F | Surf | Tous | 60–74 | Mustéflott 30% · Prédastérie 30% · Hastacuda 30% · Tentacruel 10% |
-| Rocket Hideout B1F | Herbe / sol | Jour | 39–40 | Géolithe 30% · Téraclope 30% · Branette 30% · Desséliande 10% |
+| Rocket Hideout B1F | Herbe / sol | Jour | 39–40 | Géolithe 30% · Porygon2 30% · Porygon-Z 30% · Desséliande 10% |
 | Route 1 | Pêche | Tous | 60–74 | Sharpedo 30% · Hastacuda 30% · Paragruel (Mâle) 30% · Superdofin 10% |
 | Route 1 | Herbe / sol | Jour | 60–74 | Tyranocif 30% · Carchacrok 30% · Drattak 30% · Métalosse 10% |
 | Route 1 | Herbe / sol | Nuit | 60–74 | Trioxhydre 30% · Lanssorien 30% · Scalpereur 30% · Gromago 10% |
@@ -219,12 +219,12 @@
 | Route 25 | Herbe / sol | Nuit | 60–74 | Pandarbare 30% · Qwilpik 30% · Farfurex 30% · Crocorible 10% |
 | Route 25 | Surf | Tous | 60–74 | Tarenbulle 30% · Triopikeau 30% · Lanturn 30% · Nigirigon (Forme Courbée) 10% |
 | Route 26 | Pêche | Tous | 63–66 | Colhomard 30% · Torgamord 30% · Hydragla 30% · Milobellus 10% |
-| Route 26 | Herbe / sol | Jour | 63–66 | Élekable 30% · Maganon 30% · Corvaillus 30% · Drattak 10% |
-| Route 26 | Herbe / sol | Nuit | 63–66 | Scalpereur 30% · Gromago 30% · Muplodocus 30% · Métalosse 10% |
+| Route 26 | Herbe / sol | Jour | 63–66 | Élekable 30% · Maganon 30% · Gueriaigle 30% · Drattak 10% |
+| Route 26 | Herbe / sol | Nuit | 63–66 | Angoliath 30% · Baggaïd 30% · Muplodocus 30% · Métalosse 10% |
 | Route 26 | Surf | Tous | 63–66 | Bargantua 30% · Luminéon 30% · Tritosor (Mer Occident) 30% · Léviator 10% |
 | Route 27 | Pêche | Tous | 63–65 | Tarenbulle 30% · Nigirigon (Forme Courbée) 30% · Octillery 30% · Superdofin 10% |
-| Route 27 | Herbe / sol | Jour | 63–65 | Lucario 30% · Carchacrok 30% · Corvaillus 30% · Bruyverne 10% |
-| Route 27 | Herbe / sol | Nuit | 63–65 | Tyranocif 30% · Trioxhydre 30% · Lanssorien 30% · Dracolosse 10% |
+| Route 27 | Herbe / sol | Jour | 63–65 | Roucarnage 30% · Carchacrok 30% · Flambusard 30% · Bazoucan 10% |
+| Route 27 | Herbe / sol | Nuit | 63–65 | Tyranocif 30% · Trioxhydre 30% · Lanssorien 30% · Vaututrice 10% |
 | Route 27 | Surf | Tous | 63–65 | Azumarill 30% · Relicanth 30% · Lokhlass 30% · Hydragon 10% |
 | Route 28 | Herbe / sol | Jour | 72–84 | Roucarnage 30% · Étouraptor 30% · Déflaisan 30% · Dracolosse 10% |
 | Route 28 | Herbe / sol | Nuit | 72–84 | Gaulet 30% · Golemastoc 30% · Malamandre 30% · Rafflesia 10% |
@@ -262,13 +262,13 @@
 | Route 36 | Herbe / sol | Jour | 14–17 | Baggiguane 30% · Scorplane 30% · Nounourson 30% · Goupix 10% |
 | Route 36 | Herbe / sol | Nuit | 14–17 | Crabagarre 30% · Mimigal 30% · Sinistea 30% · Galvaran 10% |
 | Route 36 | Éclate-Roc | Tous | 14–17 | Kungfouine 30% · Kranidos 30% · Dinoclier 30% · Racaillou 10% |
-| Route 37 | Herbe / sol | Jour | 32–35 | Caninos 30% · Migalos 30% · Ursaring 30% · Reptincel 10% |
-| Route 37 | Herbe / sol | Nuit | 32–35 | Feuforêve 30% · Démolosse 30% · Cornèbre 30% · Grotichon 10% |
+| Route 37 | Herbe / sol | Jour | 32–35 | Déflaisan 30% · Étouraptor 30% · Ursaring 30% · Reptincel 10% |
+| Route 37 | Herbe / sol | Nuit | 32–35 | Scovilain 30% · Zoroark 30% · Bouldeneu 30% · Grotichon 10% |
 | Route 38 | Herbe / sol | Jour | 35–38 | Gardevoir 30% · Floette Red 30% · Saquedeneu 30% · Lianaja 10% |
-| Route 38 | Herbe / sol | Nuit | 35–38 | Kangourex 30% · Motisma 30% · Rattatac 30% · Roussil 10% |
+| Route 38 | Herbe / sol | Nuit | 35–38 | Kangourex 30% · Motisma 30% · Cerbyllin 30% · Roussil 10% |
 | Route 39 | Herbe / sol | Jour | 35–38 | Tauros 30% · Rondoudou 30% · Hélédelle 30% · Boguérisse 10% |
-| Route 39 | Herbe / sol | Nuit | 35–38 | Morpeko 30% · Rattatac 30% · Skelénox 30% · Frison 10% |
-| Route 39 | Éclate-Roc | Tous | 35–38 | Hippodocus 30% · Ptyranidur 30% · Filentrappe 30% · Darumacho 10% |
+| Route 39 | Herbe / sol | Nuit | 35–38 | Morpeko 30% · Ursaking 30% · Nidoqueen 30% · Frison 10% |
+| Route 39 | Éclate-Roc | Tous | 35–38 | Hippodocus 30% · Ptyranidur 30% · Hachécateur 30% · Lougaroc 10% |
 | Route 4 | Pêche | Tous | 60–74 | Hypocéan 30% · Mustéflott 30% · Prédastérie 30% · Paragruel (Mâle) 10% |
 | Route 4 | Herbe / sol | Jour | 60–74 | Gueriaigle 30% · Scorvol 30% · Pomdramour 30% · Leuphorie 10% |
 | Route 4 | Herbe / sol | Nuit | 60–74 | Vrombotor 30% · Nidoqueen 30% · Floréclat 30% · Porygon-Z 10% |
@@ -278,21 +278,21 @@
 | Route 41 | Pêche | Jour | 37–40 | Phogleur 30% · Colhomard 30% · Relicanth 30% · Hydragla 10% |
 | Route 41 | Surf | Jour | 37–40 | Bargantua 30% · Crapustule 30% · Phogleur 30% · Luminéon 10% |
 | Route 42 | Pêche | Tous | 36–38 | Lovdisc 30% · Mustéflott 30% · Nigirigon (Forme Courbée) 30% · Oyacata 10% |
-| Route 42 | Herbe / sol | Jour | 36–38 | Granbull 30% · Famignol (Famille de Trois) 30% · Floramantis 30% · Élektek 10% |
-| Route 42 | Herbe / sol | Nuit | 36–38 | Escroco 30% · Rosélia 30% · Malamandre 30% · Sinistrail 10% |
-| Route 42 | Éclate-Roc | Tous | 36–38 | Chrysapile 30% · Ouvrifier 30% · Clic 30% · Insécateur 10% |
+| Route 42 | Herbe / sol | Jour | 36–38 | Granbull 30% · Famignol (Famille de Trois) 30% · Pomdramour 30% · Élektek 10% |
+| Route 42 | Herbe / sol | Nuit | 36–38 | Ampibidou 30% · Rosélia 30% · Ohmassacre 30% · Sinistrail 10% |
+| Route 42 | Éclate-Roc | Tous | 36–38 | Lucanon 30% · Ouvrifier 30% · Clic 30% · Insécateur 10% |
 | Route 42 | Surf | Tous | 36–38 | Flingouste 30% · Luminéon 30% · Carapagos 30% · Babimanta 10% |
 | Route 43 | Pêche | Tous | 36–38 | Amonita 30% · Kabuto 30% · Lanturn 30% · Octillery 10% |
-| Route 43 | Herbe / sol | Jour | 36–38 | Mélofée 30% · Oniglali 30% · Floramantis 30% · Élecsprint 10% |
-| Route 43 | Herbe / sol | Nuit | 36–38 | Gaulet 30% · Desséliande 30% · Darumacho 30% · Malamandre 10% |
+| Route 43 | Herbe / sol | Jour | 36–38 | Mélofée 30% · Florges Red 30% · Floramantis 30% · Élecsprint 10% |
+| Route 43 | Herbe / sol | Nuit | 36–38 | Gaulet 30% · Roserade 30% · Darumacho 30% · Malamandre 10% |
 | Route 43 | Surf | Tous | 36–38 | Azumarill 30% · Bekipan 30% · Sharpedo 30% · Lokhlass 10% |
 | Route 44 | Pêche | Tous | 57–59 | Nigirigon (Forme Courbée) 30% · Hydragla 30% · Milobellus 30% · Léviator 10% |
-| Route 44 | Herbe / sol | Jour | 57–59 | Magnéton 30% · Cochignon 30% · Airmure 30% · Galeking 10% |
-| Route 44 | Herbe / sol | Nuit | 57–59 | Téraclope 30% · Farfuret 30% · Momartik 30% · Ectoplasma 10% |
+| Route 44 | Herbe / sol | Jour | 57–59 | Luxray 30% · Noacier 30% · Airmure 30% · Feunard 10% |
+| Route 44 | Herbe / sol | Nuit | 57–59 | Corboss 30% · Farfuret 30% · Momartik 30% · Ectoplasma 10% |
 | Route 44 | Surf | Tous | 57–59 | Azumarill 30% · Lokhlass 30% · Hydragon 30% · Léviator 10% |
 | Route 45 | Pêche | Tous | 38–40 | Délestin 30% · Relicanth 30% · Milobellus 30% · Léviator 10% |
-| Route 45 | Herbe / sol | Jour | 38–40 | Grolem 30% · Airmure 30% · Draco 30% · Galegon 10% |
-| Route 45 | Herbe / sol | Nuit | 38–40 | Desséliande 30% · Trépassable 30% · Sinistrail 30% · Rafflesia 10% |
+| Route 45 | Herbe / sol | Jour | 38–40 | Grolem 30% · Chelours 30% · Donphan 30% · Galegon 10% |
+| Route 45 | Herbe / sol | Nuit | 38–40 | Drascore 30% · Crocorible 30% · Nidoking 30% · Rafflesia 10% |
 | Route 45 | Éclate-Roc | Tous | 38–40 | Lucario 30% · Corvaillus 30% · Gromago 30% · Pyrax 10% |
 | Route 45 | Surf | Tous | 38–40 | Denticrisse 30% · Nigosier 30% · Barbicha 30% · Oyacata 10% |
 | Route 46 | Herbe / sol | Jour | 6–9 | Piafabec 30% · Racaillou 30% · Phanpy 30% · Férosinge 10% |
@@ -302,7 +302,7 @@
 | Route 47 | Herbe / sol | Nuit | 37–40 | Leveinard 30% · Vostourno 30% · Vrombi 30% · Charbambin 10% |
 | Route 47 | Surf | Tous | 37–40 | Triopikeau 30% · Nigosier 30% · Superdofin 30% · Hydragla 10% |
 | Route 48 | Herbe / sol | Jour | 37–40 | M. Mime 30% · Candine 30% · Lampignon 30% · Gorythmic 10% |
-| Route 48 | Herbe / sol | Nuit | 37–40 | Nanméouïe 30% · Chapignon 30% · Poltchageist 30% · Escroco 10% |
+| Route 48 | Herbe / sol | Nuit | 37–40 | Nanméouïe 30% · Sucreine 30% · Poltchageist 30% · Escroco 10% |
 | Route 48 | Éclate-Roc | Tous | 37–40 | Camérupt 30% · Spewpa 30% · Poulpaf 30% · Judokrak 10% |
 | Route 5 | Pêche | Tous | 60–74 | Crapustule 30% · Kaimorse 30% · Tentacruel 30% · Oyacata 10% |
 | Route 5 | Herbe / sol | Jour | 60–74 | Élektek 30% · Cerbyllin 30% · Sorcilence 30% · Sucreine 10% |
@@ -344,16 +344,16 @@
 | Sprout Tower 2F | Herbe / sol | Nuit | 8–11 | Fantominus 30% · Nosferapti 30% · Skelénox 30% · Funécire 10% |
 | Sprout Tower 3F | Herbe / sol | Jour | 9–12 | Rattata 30% · Chétiflor 30% · Tarsal 30% · Balbuto 10% |
 | Sprout Tower 3F | Herbe / sol | Nuit | 9–12 | Fantominus 30% · Polichombr 30% · Skelénox 30% · Feuforêve 10% |
-| Tin Tower 3F | Herbe / sol | Jour | 62–64 | Ptéra 30% · Corvaillus 30% · Gromago 30% · Scalpereur 10% |
-| Tin Tower 4F | Herbe / sol | Jour | 62–64 | Caratroc 30% · Lucario 30% · Gromago 30% · Scalpereur 10% |
-| Tin Tower 5F | Herbe / sol | Jour | 62–64 | Scarhino 30% · Krakos 30% · Corvaillus 30% · Gromago 10% |
-| Tin Tower 6F | Herbe / sol | Jour | 62–64 | Foretress 30% · Magnéton 30% · Crabaraque 30% · Duralugon 10% |
-| Tin Tower 7F | Herbe / sol | Jour | 62–64 | Gambex 30% · Ptéra 30% · Galvagon 30% · Lucario 10% |
-| Tin Tower 8F | Herbe / sol | Jour | 62–64 | Motorizard 30% · Brutalibré 30% · Flamenroule 30% · Momartik 10% |
-| Tin Tower 9F | Herbe / sol | Jour | 62–64 | Caratroc 30% · Scarhino 30% · Gromago 30% · Scalpereur 10% |
+| Tin Tower 3F | Herbe / sol | Jour | 62–64 | Ptéra 30% · Corvaillus 30% · Scalproie 30% · Scalpereur 10% |
+| Tin Tower 4F | Herbe / sol | Jour | 62–64 | Caratroc 30% · Sidérella 30% · Gromago 30% · Scalpereur 10% |
+| Tin Tower 5F | Herbe / sol | Jour | 62–64 | Scarhino 30% · Krakos 30% · Shaofouine 30% · Gallame 10% |
+| Tin Tower 6F | Herbe / sol | Jour | 62–64 | Foretress 30% · Exagide 30% · Cliticlic 30% · Duralugon 10% |
+| Tin Tower 7F | Herbe / sol | Jour | 62–64 | Gambex 30% · Ptéra 30% · Galvagon 30% · Polteageist 10% |
+| Tin Tower 8F | Herbe / sol | Jour | 62–64 | Pomdorochi 30% · Brutalibré 30% · Sinistcha 30% · Sorcilence 10% |
+| Tin Tower 9F | Herbe / sol | Jour | 62–64 | Magirêve 30% · Gourgeist 30% · Lugulabre 30% · Noctunoir 10% |
 | Tohjo Falls Cavern | Pêche | Tous | 62–65 | Sharpedo 30% · Milobellus 30% · Délestin 30% · Lanturn 10% |
 | Tohjo Falls Cavern | Herbe / sol | Tous | 62–65 | Tranchodon 30% · Galeking 30% · Minotaupe 30% · Bruyverne 10% |
-| Tohjo Falls Cavern | Éclate-Roc | Tous | 62–65 | Pondralugon 30% · Métalosse 30% · Carchacrok 30% · Ékaïser 10% |
+| Tohjo Falls Cavern | Éclate-Roc | Tous | 62–65 | Pondralugon 30% · Gigalithe 30% · Rhinastoc 30% · Ékaïser 10% |
 | Tohjo Falls Cavern | Surf | Tous | 62–65 | Kaimorse 30% · Barbicha 30% · Colhomard 30% · Léviator 10% |
 | Union Cave 1F | Pêche | Jour | 16–19 | Embrochet 30% · Kokiyas 30% · Psykokwak 30% · Otaria 10% |
 | Union Cave 1F | Herbe / sol | Jour | 16–19 | Racaillou 30% · Nosferapti 30% · Sabelette 30% · Galekid 10% |
@@ -391,14 +391,14 @@
 | Whirl Islands 1F | Herbe / sol | Tous | 40–43 | Vibraninf 30% · Rattatac 30% · Hakamo O 30% · Bekaglaçon 10% |
 | Whirl Islands 1F | Éclate-Roc | Tous | 40–43 | Gigansel 30% · Togedemaru 30% · Aéroptéryx 30% · Quartermac 10% |
 | Whirl Islands 1F | Surf | Tous | 40–43 | Lovdisc 30% · Corayon 30% · Hypocéan 30% · Lanturn 10% |
-| Whirl Islands B1F | Pêche | Tous | 41–44 | Mustéflott 30% · Luminéon 30% · Têtarte 30% · Délestin 10% |
+| Whirl Islands B1F | Pêche | Tous | 41–44 | Mustéflott 30% · Hastacuda 30% · Têtarte 30% · Délestin 10% |
 | Whirl Islands B1F | Herbe / sol | Tous | 41–44 | Mélancolux 30% · Verpom 30% · Polagriffe 30% · Oniglali 10% |
-| Whirl Islands B1F | Éclate-Roc | Tous | 41–44 | Dolman 30% · Amagara 30% · Dunaconda 30% · Scorplane 10% |
-| Whirl Islands B1F | Surf | Tous | 41–44 | Gamblast 30% · Amonistar 30% · Mégapagos 30% · Babimanta 10% |
+| Whirl Islands B1F | Éclate-Roc | Tous | 41–44 | Dolman 30% · Amagara 30% · Dunaconda 30% · Scorvol 10% |
+| Whirl Islands B1F | Surf | Tous | 41–44 | Paragruel (Mâle) 30% · Amonistar 30% · Mégapagos 30% · Babimanta 10% |
 | Whirl Islands B1F Inner | Pêche | Jour | 42–45 | Azumarill 30% · Kabutops 30% · Tarenbulle 30% · Lokhlass 10% |
 | Whirl Islands B1F Inner | Herbe / sol | Jour | 42–45 | Forgelina 30% · Drackhaus 30% · Farfuret 30% · Draco 10% |
 | Whirl Islands B1F Inner | Éclate-Roc | Jour | 42–45 | Papinox 30% · Pachyradjah 30% · Bourrinos 30% · Monthracite 10% |
-| Whirl Islands B1F Inner | Surf | Jour | 42–45 | Wailord 30% · Bekipan 30% · Barbicha 30% · Sharpedo 10% |
+| Whirl Islands B1F Inner | Surf | Jour | 42–45 | Wailord 30% · Bekipan 30% · Sarmuraï 30% · Sharpedo 10% |
 | Whirl Islands B2F | Pêche | Tous | 42–45 | Crapustule 30% · Phogleur 30% · Colhomard 30% · Denticrisse 10% |
 | Whirl Islands B2F | Herbe / sol | Tous | 42–45 | Sonistrelle 30% · Magmar 30% · Téraclope 30% · Sorboul 10% |
 | Whirl Islands B2F | Éclate-Roc | Tous | 42–45 | Métang 30% · Galvagla 30% · Galeking 30% · Magnéton 10% |
@@ -406,7 +406,7 @@
 | Whirl Islands B3F | Pêche | Jour | 43–46 | Hypocéan 30% · Denticrisse 30% · Tarenbulle 30% · Nigosier 10% |
 | Whirl Islands B3F | Herbe / sol | Jour | 43–46 | Branette 30% · Solochi 30% · Cochignon 30% · Cochignon 10% |
 | Whirl Islands B3F | Éclate-Roc | Jour | 43–46 | Minior Meteor 30% · Mysdibule 30% · Triopikeur 30% · Gambex 10% |
-| Whirl Islands B3F | Surf | Jour | 43–46 | Délestin 30% · Triopikeau 30% · Superdofin 30% · Hydragla 10% |
+| Whirl Islands B3F | Surf | Jour | 43–46 | Délestin 30% · Triopikeau 30% · Superdofin 30% · Qwilpik 10% |
 | Whirl Islands Descent | Pêche | Jour | 43–46 | Corayon 30% · Têtarte 30% · Hypocéan 30% · Bekipan 10% |
 | Whirl Islands Descent | Herbe / sol | Jour | 43–46 | Téraclope 30% · Mucuscule 30% · Sorboul 30% · Chapignon 10% |
 | Whirl Islands Descent | Éclate-Roc | Jour | 43–46 | Clic 30% · Forgelina 30% · Ouvrifier 30% · Clic 10% |
