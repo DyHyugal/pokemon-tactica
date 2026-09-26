@@ -1,6 +1,23 @@
-[Accueil](Accueil.md) · [Guide de jeu](Guide-de-jeu.md) · [Changements](Changements.md) · [Pokédex](Pokedex.md) · [Localisations](Localisations.md) · [Boss & Conseils](Boss-et-Conseils.md) · [Crédits & Versions](Credits-et-Versions.md) · **[EN](../EN/Home.md)**
+[Accueil](Accueil.md) · [Guide de jeu](Guide-de-jeu.md) · [Changements](Changements.md) · [Pokédex](Pokedex.md) · [Localisations](Localisations.md) · [Boss & Conseils](Boss-et-Conseils.md) · [Crédits](Credits-et-Versions.md) · [Roadmap](Roadmap.md) · **[EN](../EN/Changes.md)**
 
 # Changements
+
+Cette page regroupe les changements de gameplay propres à Pokémon Tactica. Elle doit rester **exhaustive** sur les modifications V1 qui affectent directement la construction d'équipe ou la progression.
+
+## Systèmes et qualité de vie
+
+- NORMAL et HARD utilisent le même contenu ; HARD optimise IV/EV et IA.
+- Level Caps liés aux combats majeurs.
+- Rival thématique persistant dont les niveaux suivent le prochain boss obligatoire.
+- Training NPC pour EXP, IV, EV/reset, nature, talent et bonheur.
+- Vitesse native x1/x2/x3/x4 sans accélérer la musique.
+- Volumes musique et effets/cris indépendants.
+- Shiny Rate configurable de 1/8192 à 1/1.
+- Sélecteur de 30 starters + Évoli.
+- Second starter via l'œuf d'Orme, différent du starter principal.
+- Méga-Anneau obtenu après le badge 4 auprès de Mortimer.
+- Boutiques stratégiques, capacités/CT et Méga-Gemmes dédiées.
+- Interfaces custom harmonisées autour du noir, rouge et gris.
 
 ## Pokémon modifiés — 26 entrées
 
@@ -53,10 +70,38 @@
 | Hyporoi | Danse Draco (niv. 52) |
 | Hyporoi | Eau Revoir (niv. 56) |
 
-## Rencontres
-
-405 tables standard + 4 Coup d'Boule + 53 Safari. Quatre slots 30/30/30/10. La pêche a un pool par table.
-
 ## Évolutions
 
-Les évolutions d'échange sont adaptées au solo. L'ancien tableau générique 16/30/36 n'est plus publié comme règle universelle.
+Les évolutions par échange sont adaptées au jeu solo. Les exigences réelles viennent des données compilées ; il n'existe pas de règle universelle 16/30/36 à appliquer à toutes les familles.
+
+Les rencontres sauvages respectent aussi le stade cohérent avec le niveau : une forme de base ne doit pas rester artificiellement utilisée bien après son niveau normal d'évolution.
+
+## Rencontres sauvages
+
+La V1 utilise **405 tables standard**, **4 tables Coup d'Boule** et **53 pools Safari**. Les tables ciblées suivent quatre slots réels en **30/30/30/10**.
+
+La passe finale poursuit quatre objectifs : cohérence d'habitat, progression, stade évolutif légal/cohérent et disponibilité maximale des familles avant la première Ligue. Les répétitions inutiles d'une même forme de base entre plusieurs routes sont supprimées lorsqu'elles empêchent une autre famille d'être accessible.
+
+Aucun légendaire ou fabuleux n'est ajouté comme rencontre aléatoire standard.
+
+## Boss, rival et Team Rocket
+
+Les nouvelles équipes sont communes à NORMAL et HARD. HARD ajoute l'optimisation, pas des espèces différentes.
+
+Albert utilise 3 Pokémon, Hector 4 et Blanche 6. Les boss suivants utilisent leurs compositions canoniques prévues dans **Boss & Conseils**.
+
+Le rival conserve sa catégorie et son starter, progresse vers des équipes plus complètes et utilise le profil de niveaux du **prochain boss obligatoire**.
+
+Les dirigeants Rocket utilisent le dernier jalon Champion/rival pertinent **+2**, sans chaîner le niveau du Rocket précédent.
+
+Les Méga font partie de certains combats de boss. Le joueur obtient son Méga-Anneau après Mortimer et peut utiliser ses propres Méga immédiatement après le badge 4.
+
+## Boutiques
+
+Le PNJ capacités/CT filtre les capacités selon la compatibilité du Pokémon. Le magasin d'objets stratégiques complète les Poké Marts avec les objets d'évolution et de combat pertinents qui ne doivent pas dépendre d'un grind ou d'un détour inutile. Les Méga-Gemmes jouables sont proposées par un PNJ dédié.
+
+Les objets de scénario, Balls, soins courants et autres éléments de progression normale ne sont pas court-circuités par ces boutiques.
+
+## Interface
+
+La V1 conserve la base HnS mais harmonise les interfaces custom autour du **noir / rouge / gris**. Les priorités sont la lisibilité du HUD, du Summary, des menus et des boutiques. Une refonte graphique beaucoup plus profonde reste hors du chemin critique de la V1.
