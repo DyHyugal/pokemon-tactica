@@ -4,10 +4,10 @@ La courbe des niveaux d'ace validée est : Albert 17, Hector 25, Blanche 32, Mor
 
 ## Rival
 
-Le rival suit les jalons de préparation de la progression, pas les niveaux historiques du jeu d'origine.
+Le rival suit les jalons de préparation de la progression, pas les niveaux historiques du jeu d'origine. Il persiste un **archétype** puis utilise le starter fixe de cet archétype ; l'ancien tirage d'une espèce parmi cinq starters est obsolète.
 
 - Premier combat : **1 Pokémon**, le starter rival, **niveau 17**, avec stade d'évolution légal au niveau 17.
-- Les combats suivants gardent leurs tailles progressives canoniques et utilisent le profil du prochain jalon obligatoire.
+- Les combats suivants gardent la progression **3 -> 4 -> 6** puis restent à 6 ; après le badge 4, l'équipe complète peut utiliser sa Méga définie dans `ROSTERS_ROCKET_RIVAL.md`.
 - Un rival peut devenir jalon canonique uniquement lorsqu'il est explicitement désigné dans la progression.
 
 ## Rocket
