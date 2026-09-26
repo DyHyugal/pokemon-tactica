@@ -19,6 +19,27 @@ Cette page regroupe les changements de gameplay propres à Pokémon Tactica. Ell
 - Boutiques stratégiques, capacités/CT et Méga-Gemmes dédiées.
 - Interfaces custom harmonisées autour du noir, rouge et gris.
 
+
+### Difficulté et Level Caps
+
+NORMAL et HARD conservent les mêmes Pokémon, équipes, sets, niveaux et mécaniques. HARD ajoute surtout une préparation IV/EV plus poussée et une IA plus exigeante. Le Level Cap suit le prochain combat majeur et ne redescend jamais : Albert 17, Hector 25, Blanche 32, Mortimer 38, Chuck 45, Jasmine 52, Frédo 57, Sandra 64, Conseil 4 67, Maître 70.
+
+### Starters et œuf d'Orme
+
+Le trio Johto est remplacé par un sélecteur de **30 starters répartis en six catégories + Évoli**. Le rival conserve une catégorie et un starter cohérents au fil de l'aventure. L'œuf d'Orme sert ensuite de **second choix de starter** et ne peut pas redonner exactement le premier. Les objets nécessaires au choix (booster de type ou objet d'évolution prévu) sont remis automatiquement.
+
+### Réglages et confort de jeu
+
+La vitesse native propose **x1 / x2 / x3 / x4** sans accélérer la musique. Les volumes musique et effets/cris sont séparés. Le **Shiny Rate** est configurable de **1/8192 à 1/1**. Les réglages restent regroupés dans les menus Mode / Features / Randomizer / Nuzlocke / Difficulty / Challenges.
+
+### Préparation d'équipe
+
+L'assistant d'entraînement couvre **EXP jusqu'au cap, IV, EV, reset EV, nature, talent et bonheur**. Les PNJ dédiés aux capacités/CT, objets stratégiques et Méga-Gemmes permettent de préparer une équipe sans dépendre d'un grind inutile, tout en laissant les objets et événements de scénario à leur place normale.
+
+### Méga-Évolution
+
+Le **Méga-Anneau** est remis par Mortimer après le badge 4 et sa CT. Le joueur peut donc Méga-Évoluer immédiatement dans toute la portion entre les badges 4 et 5. Les boss qui utilisent une Méga doivent commencer avec une forme de base et un talent légaux ; le talent de la Méga vient de la transformation elle-même.
+
 ## Pokémon modifiés — 26 entrées
 
 | Pokémon | Type(s) | Changements |
