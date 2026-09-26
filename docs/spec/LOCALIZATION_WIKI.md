@@ -1,10 +1,10 @@
 # Interface, traduction et wiki
 
-La direction visuelle est tirée des **valeurs réelles** de la ROM : fond sombre noir/bleu, rouge, bleu et accents clairs. Lire la palette des assets et du code UI avant de fixer les variables CSS, puis vérifier par capture en jeu et dans le navigateur. Ne pas conserver une approximation rouge/noir différente. Préserver l'interface de jeu validée hors correction démontrée.
+La direction visuelle custom validée est **noir / rouge / gris**, sans grandes surfaces blanches dominantes. Lire les assets et le code UI avant de fixer les variables CSS, puis vérifier par capture en jeu et dans le navigateur. Préserver l'interface de jeu validée hors correction démontrée.
 
 FR : noms officiels français des Pokémon, attaques, talents, objets, types et personnages ; EN : termes officiels anglais. Relire les textes naturels, sans anglais résiduel en FR (par exemple Famignol, pas Maushold) ni jargon inexpliqué. Le contenu doit être un miroir entre langues. Les sprites Pokémon et Champions accompagnent leurs informations pertinentes.
 
-Navigation : **Guide de jeu**, **Changements**, **Pokédex**, **Localisations**, **Boss & Conseils**, **Crédits/versions** ; Pokédex et Localisations sont deux rubriques distinctes. Le Guide explique concrètement réglages, sélection, captures, entraînement, shops, caps et préparation de combat. Changements inventorie **toutes** les modifications réelles et présente chaque Pokémon modifié sur une ligne/carte `sprite + nom + type(s) + changements précis`. Pokédex offre recherche et fiches FR/EN ; Localisations expose zone, méthode, niveau, taux et éventuel jour/nuit à partir des JSON canoniques ; Boss & Conseils montre le roster réel et des conseils compréhensibles, sans séquence de tours imposée. Les guides d'arène en jeu s'adaptent aux équipes et conservent l'Eau Fraîche selon la logique prévue.
+Navigation : **Guide de jeu**, **Changements**, **Pokédex**, **Localisations**, **Boss & Conseils**, **Crédits**, **Roadmap** ; Pokédex et Localisations sont deux rubriques distinctes. Le Guide explique concrètement réglages, sélection, captures, entraînement, shops, caps et préparation de combat. Changements inventorie **toutes** les modifications réelles et présente chaque Pokémon modifié sur une ligne/carte `sprite + nom + type(s) + changements précis`. Pokédex offre recherche et fiches FR/EN ; Localisations expose zone, méthode, niveau, taux et éventuel jour/nuit à partir des JSON canoniques ; Boss & Conseils montre le roster réel et des conseils compréhensibles, sans séquence de tours imposée. Les guides d'arène en jeu s'adaptent aux équipes et conservent l'Eau Fraîche selon la logique prévue.
 
 Les données du wiki sont générées ou vérifiées contre `data/spec/`, puis contrôlées sur mobile. Le wiki importé de l'ancienne branche est une **base éditable**, et ses pages construites depuis des données anciennes doivent être régénérées.
 
@@ -50,3 +50,14 @@ Conserver l'index actuel avec recherche et cartes compactes.
 7. Bloc **Modifié dans Tactica** uniquement si l'espèce fait partie des changements canoniques.
 
 Toutes ces données doivent être dérivées du dépôt Tactica : `species_info`, évolutions compilées, learnsets compilés, talents, `data/spec/` et tables de rencontres synchronisées. Aucun copier-coller manuel de données externes.
+
+
+## Corrections éditoriales owner — 26 septembre 2026
+
+- Le **second starter** n'est pas déclenché par l'assistant d'Orme à Mauville. Il est choisi **au laboratoire d'Orme**, au retour de chez M. Pokémon, après la séquence du vol / police, lorsque le joueur reconnaît l'espèce de l'Œuf Mystère.
+- Les starters doivent être présentés **par groupes de type** : Feu, Eau, Plante, Électrik, Sol, Glace, puis Évoli séparément. Éviter une grille plate de 31 cartes sans séparation visuelle.
+- Le remplacement du trio Johto par le sélecteur **30 starters + Évoli** et le second choix via l'œuf sont des changements majeurs et doivent apparaître explicitement dans **Changements**.
+- La page **Changements** doit décrire les systèmes de façon concrète et orientée joueur. Exemple Boutiques : présenter séparément les **trois PNJ ajoutés** — PNJ Objets, PNJ Capacités/CT, PNJ Méga-Gemmes — avec rôle, limites et lien avec la progression.
+- La version FR ne doit pas exposer les noms de zones anglais dans **Localisations**. Les noms de villes, grottes, tours, forêts, îles et zones Safari doivent être localisés en français, tout en conservant les alias anglais dans la recherche quand utile.
+- Les fiches Pokédex FR ne doivent jamais afficher un nom ou une description de talent en anglais. Si une description française fiable n'est pas disponible, afficher le **nom français du talent sans la description anglaise** plutôt que mélanger les langues.
+- Les références externes de type Poképédia / Insurgence / Decay servent uniquement à l'ergonomie et à l'organisation. Les données de la fiche restent exclusivement celles de la ROM Tactica.
