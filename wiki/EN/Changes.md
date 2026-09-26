@@ -19,6 +19,39 @@ This page groups the gameplay changes specific to Pokémon Tactica. It is intend
 - Dedicated strategic-item, move/TM and Mega Stone shops.
 - Custom interfaces aligned around black, red and gray.
 
+
+### Difficulty and Level Caps
+
+NORMAL and HARD keep the same Pokémon, rosters, sets, levels and mechanics. HARD mainly adds stronger IV/EV preparation and more demanding AI. The Level Cap follows the next major battle and never moves backward: Falkner 17, Bugsy 25, Whitney 32, Morty 38, Chuck 45, Jasmine 52, Pryce 57, Clair 64, Elite Four 67, Champion 70.
+
+### Starters and Elm's Egg
+
+Johto's classic three-starter choice is replaced by a **Tactica selector with 30 Pokémon grouped by type, plus Eevee**. This is a progression change in its own right: the player builds an opening pair from two distinct choices, while the rival keeps its own category and starter throughout the adventure.
+
+| Group | Tactica starters |
+|---|---|
+| **Fire** | Charmander · Torchic · Chimchar · Cyndaquil · Charcadet |
+| **Water** | Mudkip · Piplup · Froakie · Oshawott · Horsea |
+| **Grass** | Bulbasaur · Treecko · Snivy · Sprigatito · Grookey |
+| **Electric** | Elekid · Magnemite · Pawmi · Wattrel · Pichu |
+| **Ground** | Gligar · Drilbur · Sandile · Golett · Sandygast |
+| **Ice** | Alolan Vulpix · Snorunt · Swinub · Galarian Darumaka · Vanillite |
+| **Eevee** | Eevee, with the intended evolution selected |
+
+The **second starter is chosen inside Elm's lab**, after returning from Mr. Pokémon and completing the theft/police scene, when the player identifies the Mystery Egg species. **Elm's aide is not the trigger for this second choice.** The Egg cannot duplicate the first starter species. Type boosters and intended evolution items tied to the selection are granted automatically.
+
+### Settings and quality of life
+
+Native speed offers **x1 / x2 / x3 / x4** without speeding up music. Music and SFX/cries use separate volume settings. **Shiny Rate** is configurable from **1/8192 to 1/1**. Settings remain grouped under Mode / Features / Randomizer / Nuzlocke / Difficulty / Challenges.
+
+### Team preparation
+
+The Training NPC covers **EXP up to the cap, IVs, EVs, EV reset, nature, ability and friendship**. Dedicated move/TM, strategic-item and Mega Stone NPCs let players prepare teams without unnecessary grind while leaving story items and progression events intact.
+
+### Mega Evolution
+
+Morty gives the **Mega Ring** after Badge 4 and his TM, so the player can Mega Evolve immediately throughout the section between Badges 4 and 5. Boss Mega users must start from a legal base form and legal base ability; the Mega ability is obtained through the transformation itself.
+
 ## Modified Pokémon — 26 entries
 
 | Pokémon | Type(s) | Changes |
