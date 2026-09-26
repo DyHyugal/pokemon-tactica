@@ -225,6 +225,10 @@ for name, phases in rocket["rosters"].items():
             f"{name}: early members do not persist")
     require({row["slot"] for row in phases["mid"]} <= {row["slot"] for row in final},
             f"{name}: mid members do not persist")
+for name in ("Proton", "Petrel", "Ariana", "Archer"):
+    final = bosses[("Johto", "Rocket Executive", name)]
+    require(sum(row["species"].startswith("Mega ") for row in final) == 1,
+            f"{name}: exactly one final Mega")
 for trainer, (boss, phase) in rocket["active_fights"].items():
     require(trainer.startswith(f"TRAINER_{boss.upper()}") and
             phase in ("early", "mid", "final"), f"{trainer}: invalid Rocket mapping")
@@ -244,11 +248,13 @@ required_items = {
     ("Jasmine", "Corviknight"): "Leftovers", ("Jasmine", "Archaludon"): "Sitrus Berry",
     ("Clément", "Xatu"): "Life Orb", ("Clément", "Gallade"): "Expert Belt",
     ("Marion", "Honchkrow"): "Life Orb", ("Marion", "Weavile"): "Expert Belt",
-    ("Petrel", "Muk"): "Black Sludge", ("Petrel", "Weezing"): "Sitrus Berry",
-    ("Ariana", "Salazzle"): "Focus Sash", ("Ariana", "Grafaiai"): "Sitrus Berry",
+    ("Proton", "Alolan Muk"): "Assault Vest", ("Proton", "Mega Scolipede"): "Scolipite",
+    ("Petrel", "Ditto"): "Choice Scarf", ("Petrel", "Weezing"): "Black Sludge",
+    ("Ariana", "Roserade"): "Focus Sash", ("Ariana", "Salazzle"): "Air Balloon",
     ("Ariana", "Nidoqueen"): "Life Orb", ("Ariana", "Honchkrow"): "Sharp Beak",
     ("Archer", "Nidoking"): "Life Orb", ("Archer", "Houndoom"): "Focus Sash",
-    ("Archer", "Weavile"): "Expert Belt", ("Pierre", "Garganacl"): "Leftovers",
+    ("Archer", "Weavile"): "Choice Band", ("Archer", "Mega Gyarados"): "Gyaradosite",
+    ("Pierre", "Garganacl"): "Leftovers",
     ("Pierre", "Cradily"): "Sitrus Berry", ("Jeannine", "Toxapex"): "Black Sludge",
     ("Jeannine", "Galarian Weezing"): "Sitrus Berry", ("Jeannine", "Venomoth"): "Focus Sash",
     ("Auguste", "Torkoal"): "Heat Rock", ("Auguste", "Ninetales"): "Leftovers",
