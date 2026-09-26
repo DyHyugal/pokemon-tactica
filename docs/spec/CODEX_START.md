@@ -66,6 +66,10 @@ La ROM de référence du propriétaire doit donc être reconstruite après le pu
 
 ## Ordre de production actuel
 
+### Décision owner prioritaire — rosters Rival/Rocket du 26-09
+
+Avant toute poursuite du bloc rival/Rocket, relire [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Les anciennes compositions de `rival.json`, `rocket_progression.json` et des entrées Rocket de `bosses.json` sont **à régénérer** lorsqu'elles contredisent ce document. Ne pas conserver l'ancien tirage d'un starter parmi cinq : le rival possède désormais un starter fixe par archétype, des équipes Singles finalisées et une Méga déverrouillée après le badge 4.
+
 ### Bloc 1 — CORE / gameplay restant
 Corriger rival niveau/stade, Méga boss, Mega Ring, starter/œuf et toute régression bloquante. Build/tests/validateurs verts obligatoires.
 
