@@ -323,11 +323,7 @@ TEST("Family starter: rival uses a Ground starter against Electric")
     CreateRandomMon(&gPlayerParty[0], SPECIES_ELEKID, 5);
     FamilyStarter_RecordPrimary();
     rival = VarGet(VAR_FAMILY_RIVAL_SPECIES);
-    EXPECT(rival == SPECIES_GLIGAR
-        || rival == SPECIES_DRILBUR
-        || rival == SPECIES_SANDILE
-        || rival == SPECIES_GOLETT
-        || rival == SPECIES_SANDYGAST);
+    EXPECT_EQ(rival, SPECIES_DRILBUR);
     EXPECT_EQ(FamilyStarter_GetRivalSpecies(SPECIES_CHIKORITA), rival);
     EXPECT(FamilyStarter_IsAvailable(FamilyStarter_GetRivalSpecies(SPECIES_BAYLEEF)));
     VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_NONE);
@@ -365,43 +361,48 @@ TEST("Family starter: rival draw is persisted once")
     EXPECT_EQ(VarGet(VAR_FAMILY_RIVAL_SPECIES), rival);
 }
 
-TEST("Family starter: saved rival category resolves every authored party phase")
+TEST("Family starter: fixed rival archetype resolves authored phases and gates Mega until badge 4")
 {
     struct TrainerMon mon = {0};
 
     InitFamilyTest();
-    VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_CHARMANDER);
+    VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_TORCHIC);
 
-    mon.lvl = 15;
-    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_2_HNS, 0, &mon));
-    EXPECT_EQ(mon.species, SPECIES_VULPIX);
-    EXPECT_EQ(mon.moves[0], MOVE_EMBER);
+    mon.lvl = 5;
+    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_1_HNS, 0, &mon));
+    EXPECT_EQ(mon.lvl, 17);
+    EXPECT_EQ(mon.species, SPECIES_COMBUSKEN);
+    EXPECT_EQ(mon.moves[0], MOVE_FLAME_CHARGE);
     EXPECT_EQ(mon.heldItem, ITEM_NONE);
-    EXPECT_EQ(mon.ev, NULL);
-
-    mon = (struct TrainerMon){.lvl = 16};
-    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_2_HNS, 1, &mon));
-    EXPECT_EQ(mon.species, SPECIES_CHARMELEON);
-    EXPECT_EQ(mon.moves[0], MOVE_NONE);
 
     mon = (struct TrainerMon){.lvl = 24};
-    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_3_HNS, 2, &mon));
-    EXPECT_EQ(mon.species, SPECIES_SKIPLOOM);
-    EXPECT_EQ(mon.moves[0], MOVE_MEGA_DRAIN);
+    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_2_HNS, 0, &mon));
+    EXPECT_EQ(mon.species, SPECIES_TORKOAL);
+    EXPECT_EQ(mon.moves[0], MOVE_LAVA_PLUME);
+    EXPECT_EQ(mon.heldItem, ITEM_NONE);
 
-    mon = (struct TrainerMon){.lvl = 68};
-    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_7_HNS, 5, &mon));
-    EXPECT_EQ(mon.species, SPECIES_ARCANINE);
-    EXPECT_EQ(mon.moves[0], MOVE_FLARE_BLITZ);
-    EXPECT_EQ(mon.heldItem, ITEM_EXPERT_BELT);
+    mon = (struct TrainerMon){.lvl = 24};
+    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_2_HNS, 1, &mon));
+    EXPECT_EQ(mon.species, SPECIES_COMBUSKEN);
+    EXPECT_EQ(mon.moves[0], MOVE_FLAME_CHARGE);
 
-    VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_GLIGAR);
+    mon = (struct TrainerMon){.lvl = 40};
+    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_4_HNS, 1, &mon));
+    EXPECT_EQ(mon.species, SPECIES_BLAZIKEN);
+    EXPECT_EQ(mon.heldItem, ITEM_NONE);
+    FlagSet(FLAG_BADGE04_GET);
+    mon = (struct TrainerMon){.lvl = 40};
+    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_4_HNS, 1, &mon));
+    EXPECT_EQ(mon.heldItem, ITEM_BLAZIKENITE);
+
+    VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_DRILBUR);
     mon = (struct TrainerMon){.lvl = 40};
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_4_HNS, 3, &mon));
-    EXPECT_EQ(mon.species, SPECIES_VIBRAVA);
-    mon.lvl = 48;
+    EXPECT_EQ(mon.species, SPECIES_PUPITAR);
+    EXPECT_EQ(mon.heldItem, ITEM_TYRANITARITE);
+    mon.lvl = 56;
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_5_HNS, 3, &mon));
-    EXPECT_EQ(mon.species, SPECIES_FLYGON);
+    EXPECT_EQ(mon.species, SPECIES_TYRANITAR);
 
     VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_ELEKID);
     mon = (struct TrainerMon){.lvl = 18};
