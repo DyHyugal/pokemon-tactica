@@ -43,7 +43,7 @@
     "ice": "snow"
   },
   "fight_rosters": {
-    "status": "authored design; battle engine integration and move availability checks pending",
+    "status": "runtime integration complete; generated table and automated move availability checks complete; ROM playtest pending",
     "party_sizes": {
       "before_first_badge": 1,
       "after_badge_1": 3,
@@ -179,9 +179,9 @@
               "Smog"
             ],
             "mid": [
-              "Flame Burst",
+              "Flame Charge",
               "Fire Fang",
-              "Feint Attack",
+              "Bite",
               "Roar"
             ],
             "final": [
@@ -209,7 +209,7 @@
             "mid": [
               "Fire Fang",
               "Crunch",
-              "Extreme Speed",
+              "Flame Charge",
               "Agility"
             ],
             "final": [
@@ -277,7 +277,7 @@
               "Bubble Beam",
               "Mega Drain",
               "Rain Dance",
-              "Fake Out"
+              "Protect"
             ],
             "final": [
               "Hydro Pump",
@@ -511,7 +511,7 @@
             "mid": [
               "Rock Slide",
               "Recover",
-              "Salt Cure",
+              "Stealth Rock",
               "Protect"
             ],
             "final": [
@@ -632,10 +632,10 @@
               "Flail"
             ],
             "mid": [
-              "Overdrive",
-              "Sludge Bomb",
-              "Boomburst",
-              "Volt Switch"
+              "Acid",
+              "Nuzzle",
+              "Encore",
+              "Protect"
             ],
             "final": [
               "Overdrive",
@@ -727,7 +727,7 @@
               "Protect"
             ],
             "mid": [
-              "Salt Cure",
+              "Bulldoze",
               "Recover",
               "Rock Slide",
               "Protect"
@@ -752,13 +752,13 @@
               "Bulldoze",
               "Bite",
               "Sand Attack",
-              "Bite"
+              "Rock Tomb"
             ],
             "mid": [
               "Earthquake",
               "Rock Slide",
-              "Dragon Breath",
-              "U-turn"
+              "Crunch",
+              "Sandstorm"
             ],
             "final": [
               "Earthquake",
@@ -844,7 +844,7 @@
               "Blizzard",
               "Ice Shard",
               "Leech Seed",
-              "Aurora Veil"
+              "Light Screen"
             ],
             "final": [
               "Blizzard",
@@ -906,10 +906,10 @@
               "Protect"
             ],
             "mid": [
-              "Ice Beam",
+              "Icy Wind",
               "Bug Buzz",
-              "Quiver Dance",
-              "Roost"
+              "Protect",
+              "Mirror Coat"
             ],
             "final": [
               "Blizzard",
@@ -962,7 +962,7 @@
               "Powder Snow"
             ],
             "mid": [
-              "Ice Punch",
+              "Ice Fang",
               "Ice Shard",
               "Belly Drum",
               "Body Slam"

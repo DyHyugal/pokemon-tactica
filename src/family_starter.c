@@ -12,11 +12,15 @@
 #include "malloc.h"
 #include "item.h"
 #include "challenge_menu.h"
+#include "data.h"
+#include "difficulty.h"
 #include "randomizer.h"
 #include "random.h"
 #include "constants/vars.h"
 #include "constants/flags.h"
 #include "constants/items.h"
+#include "constants/moves.h"
+#include "constants/opponents.h"
 #include "constants/pokeball.h"
 
 static EWRAM_DATA struct Pokemon sFamilyStarterPreview = {0};
@@ -54,6 +58,31 @@ enum FamilyStarterCategory
     FAMILY_ICE,
     FAMILY_EEVEE,
 };
+
+#if IS_HNS
+enum TacticaRivalPhase
+{
+    TACTICA_RIVAL_EARLY,
+    TACTICA_RIVAL_MID,
+    TACTICA_RIVAL_FINAL,
+};
+
+struct TacticaRivalMon
+{
+    u16 baseSpecies;
+    u16 finalSpecies;
+    enum Move moves[3][MAX_MON_MOVES];
+    u16 finalItem;
+    const u8 *hardEvs;
+    u8 nature;
+    bool8 isSavedStarter;
+};
+
+static const u8 sTacticaRivalPhysicalEvs[NUM_STATS] = {4, 252, 0, 0, 0, 252};
+static const u8 sTacticaRivalSpecialEvs[NUM_STATS] = {4, 0, 0, 252, 0, 252};
+
+#include "data/tactica_rival.h"
+#endif
 
 struct RivalCounterCategories
 {
@@ -568,6 +597,128 @@ u16 FamilyStarter_GetRivalSpecies(u16 originalSpecies)
     }
 #endif
     return originalSpecies;
+}
+
+#if IS_HNS
+static bool32 IsTacticaRivalEvolutionAvailable(const struct Evolution *evolution, u8 level, bool32 allowSpecialEvolution)
+{
+    bool32 isLevelEvolution = evolution->method == EVO_LEVEL
+        || evolution->method == EVO_LEVEL_BATTLE_ONLY;
+    bool32 hasSpecialCondition = FALSE;
+    u16 minimumLevel = isLevelEvolution ? evolution->param : 0;
+    u32 i;
+
+    if (evolution->params != NULL)
+    {
+        for (i = 0; evolution->params[i].condition != CONDITIONS_END; i++)
+        {
+            if (evolution->params[i].condition == IF_MIN_LEVEL)
+                minimumLevel = max(minimumLevel, evolution->params[i].arg1);
+            else
+                hasSpecialCondition = TRUE;
+        }
+    }
+    if (minimumLevel > level)
+        return FALSE;
+    if (!isLevelEvolution || minimumLevel == 0 || hasSpecialCondition)
+        return allowSpecialEvolution;
+    return TRUE;
+}
+
+static u32 GetTacticaRivalFight(u16 trainerId)
+{
+    if (trainerId >= TRAINER_RIVAL_CHIKORITA_1_HNS && trainerId <= TRAINER_RIVAL_CHIKORITA_7_HNS)
+        return trainerId - TRAINER_RIVAL_CHIKORITA_1_HNS + 1;
+    if (trainerId >= TRAINER_RIVAL_CYNDAQUIL_1_HNS && trainerId <= TRAINER_RIVAL_CYNDAQUIL_7_HNS)
+        return trainerId - TRAINER_RIVAL_CYNDAQUIL_1_HNS + 1;
+    if (trainerId >= TRAINER_RIVAL_TOTODILE_1_HNS && trainerId <= TRAINER_RIVAL_TOTODILE_7_HNS)
+        return trainerId - TRAINER_RIVAL_TOTODILE_1_HNS + 1;
+    return 0;
+}
+
+static u16 GetTacticaRivalSpeciesAtLevel(u16 species, u16 finalSpecies, u8 level, bool32 allowSpecialEvolution)
+{
+    u32 step;
+
+    for (step = 0; step < 3 && species != finalSpecies; step++)
+    {
+        const struct Evolution *evolutions = GetSpeciesEvolutions(species);
+        u32 i;
+        bool32 evolved = FALSE;
+
+        if (evolutions == NULL)
+            break;
+        for (i = 0; evolutions[i].method != EVOLUTIONS_END; i++)
+        {
+            if (evolutions[i].method == EVO_NONE || evolutions[i].method == EVO_SPLIT_FROM_EVO)
+                continue;
+            if (IsTacticaRivalEvolutionAvailable(&evolutions[i], level, allowSpecialEvolution))
+            {
+                if (!FamilyStarter_IsAvailable(evolutions[i].targetSpecies))
+                    continue;
+                species = evolutions[i].targetSpecies;
+                evolved = TRUE;
+                break;
+            }
+        }
+        if (!evolved)
+            break;
+    }
+    return species;
+}
+#endif
+
+bool32 FamilyStarter_ResolveRivalMon(u16 trainerId, u32 slot, struct TrainerMon *mon)
+{
+#if IS_HNS
+    u32 fight = GetTacticaRivalFight(trainerId);
+    u16 savedStarter = VarGet(VAR_FAMILY_RIVAL_SPECIES);
+    u32 category = GetMenuCategory(savedStarter);
+    enum TacticaRivalPhase phase;
+    const struct TacticaRivalMon *source;
+    u32 i;
+
+    if (fight == 0 || slot >= PARTY_SIZE || category >= FAMILY_EEVEE || !IsMenuSpecies(savedStarter))
+        return FALSE;
+
+    if (fight == 1)
+    {
+        mon->species = savedStarter;
+        memset(mon->moves, MOVE_NONE, sizeof(mon->moves));
+        return TRUE;
+    }
+
+    phase = fight == 2 ? TACTICA_RIVAL_EARLY : fight == 3 ? TACTICA_RIVAL_MID : TACTICA_RIVAL_FINAL;
+    source = &sTacticaRivalMons[category][slot];
+    if (source->isSavedStarter)
+    {
+        mon->species = GetTacticaRivalSpeciesAtLevel(savedStarter, SPECIES_NONE, mon->lvl, phase == TACTICA_RIVAL_FINAL);
+        mon->heldItem = phase == TACTICA_RIVAL_FINAL ? sCategoryBoosters[category] : ITEM_NONE;
+        mon->nature = gSpeciesInfo[mon->species].baseAttack >= gSpeciesInfo[mon->species].baseSpAttack
+            ? NATURE_JOLLY : NATURE_TIMID;
+        mon->ev = GetTrainerDifficultyLevel(trainerId) == DIFFICULTY_HARD
+            ? (gSpeciesInfo[mon->species].baseAttack >= gSpeciesInfo[mon->species].baseSpAttack
+                ? sTacticaRivalPhysicalEvs : sTacticaRivalSpecialEvs)
+            : NULL;
+        memset(mon->moves, MOVE_NONE, sizeof(mon->moves));
+        return TRUE;
+    }
+
+    mon->species = GetTacticaRivalSpeciesAtLevel(
+        source->baseSpecies,
+        source->finalSpecies,
+        mon->lvl,
+        phase == TACTICA_RIVAL_FINAL
+    );
+    mon->heldItem = phase == TACTICA_RIVAL_FINAL ? source->finalItem : ITEM_NONE;
+    mon->nature = source->nature;
+    mon->ev = GetTrainerDifficultyLevel(trainerId) == DIFFICULTY_HARD ? source->hardEvs : NULL;
+    for (i = 0; i < MAX_MON_MOVES; i++)
+        mon->moves[i] = source->moves[phase][i];
+    return TRUE;
+#else
+    return FALSE;
+#endif
 }
 
 u16 FamilyStarter_GetPrimarySpecies(void)

@@ -134,7 +134,11 @@ for category, party in rosters["categories"].items():
             require(all(1 <= len(row["phase_moves"][phase]) <= 4
                         for phase in ("early", "mid", "final")),
                     f"{category}/{row['family']}: incomplete phase sets")
+            require(all(len(row["phase_moves"][phase]) == len(set(row["phase_moves"][phase]))
+                        for phase in ("early", "mid", "final")),
+                    f"{category}/{row['family']}: duplicate move in phase set")
             for phase, species in (("early", row["family"]),
+                                   ("mid", row["family"]),
                                    ("final", row["target_final_species"])):
                 require(all(learnable(species, move) for move in row["phase_moves"][phase]),
                         f"{category}/{species}/{phase}: move unavailable in build")
