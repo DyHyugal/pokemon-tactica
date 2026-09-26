@@ -601,7 +601,7 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Spewpa | 1 |
 | Spheal | 1 |
 | Spidops | 2 |
-| Spinarak | 4 |
+| Spinarak | 5 |
 | Spinda | 1 |
 | Spiritomb | 1 |
 | Spoink | 1 |

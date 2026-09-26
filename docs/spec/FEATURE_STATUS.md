@@ -30,12 +30,12 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | Mega Ring après Mortimer | `[PARTIEL]` | Ordre scripté et validé ; réception/utilisation à confirmer en ROM. |
 | Méga uniques globalement | `[PARTIEL]` | Unicité automatisée ; transformations boss à observer en ROM. |
 | Une Méga par Champion dès Mortimer | `[PARTIEL]` | Validateur exige exactement une Méga pour chaque Champion concerné. |
-| Jeannine = Méga-Kravarech | `[PARTIEL]` | Canonique + runtime + Dragalgite + Adaptabilité de forme Méga + validateur ; combat non observé en ROM. |
+| Jeannine : Aéromite ace + Méga-Kravarech | `[PARTIEL]` | Aéromite reste l’ace ; Méga-Kravarech remplace Gaulet au slot 3. Canonique/runtime/Dragalgite/Adaptabilité/validateur intégrés ; combat non observé en ROM. |
 | Soins des Champions | `[DONE]` | Au plus deux soins selon la progression ; ne pas recoder sans défaut concret. |
 | Encounters 4 slots 30/30/30/10 | `[DONE]` | 405 tables standard + pools spéciaux structurés. |
 | Premier accès réel / scaling | `[DONE]` | Déblocage des méthodes séparé du niveau de la zone. |
 | Route 36 14–17 | `[DONE]` | Source/runtime synchronisés ; témoin ROM conservé pour candidate. |
-| Scorplane early | `[DONE]` | Route 36 jour, slot 30 %. |
+| Scorplane après badge 2 | `[DONE]` | Route 34 jour, niveaux 25–28, slot 30 % à la place de Migalos ; aucune famille Scorplane avant le cap badge 2. |
 | Wattouat disponible | `[DONE]` | Route 31 jour, slot 30 %. |
 | Couverture globale pré-Ligue | `[DONE]` | Dataset standard : 479 espèces utilisées et 479 disponibles avant/à la Ligue ; 0 espèce utilisée reste uniquement post-Ligue. 72 slots ont été remplacés sur 43 tables ; 125 espèces restent dupliquées avant Ligue, ce qui est acceptable puisque la couverture est assurée. |
 | Headbutt | `[DONE]` | 4 tables dédiées. |

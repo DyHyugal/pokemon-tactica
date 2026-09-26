@@ -36,16 +36,27 @@ Contraintes :
 
 Wattouat doit rester disponible avant la première Ligue.
 
+### Route 34 — jour — après badge 2
+
+`25–28`, herbe/sol :
+
+- Lainergie 30 %
+- Caninos 30 %
+- Scorplane 30 %
+- Pohmotte 10 %
+
+Scorplane est un starter Tactica : sa famille reste interdite avant le badge 2. Route 34 est sa première occurrence sauvage canonique et remplace le doublon Migalos.
+
 ### Route 36 — jour
 
 `14–17`, herbe/sol :
 
 - Baggiguane 30 %
-- Scorplane 30 %
+- Mimigal 30 %
 - Nounourson 30 %
 - Goupix 10 %
 
-Scorplane est volontairement disponible early. Son occurrence tardive aux Tourb’Îles peut être réévaluée pendant l’audit global si elle occupe un slot utile à une espèce absente.
+Aucune famille starter Tactica ne doit être introduite ici.
 
 ### Route 36 — autres méthodes
 

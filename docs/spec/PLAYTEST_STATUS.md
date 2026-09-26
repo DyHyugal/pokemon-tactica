@@ -22,12 +22,12 @@ Les points suivants ne doivent pas être recodés simplement parce qu’une obse
 - Mega Ring placé après Mortimer ;
 - premier accès réel pour les encounters ;
 - Route 36 à 14–17 ;
-- Scorplane Route 36 jour ;
+- Scorplane Route 34 jour après badge 2 ;
 - Wattouat Route 31 jour ;
 - synchronisation runtime des 405 tables ;
 - unicité globale des Méga ;
 - exactement une Méga par Champion à partir de Mortimer ;
-- Jeannine = Méga-Kravarech @ Dragalgite ;
+- Jeannine : Aéromite reste l’ace ; Méga-Kravarech @ Dragalgite remplace Gaulet ;
 - Localisations/Pokédex dérivés des encounters canoniques.
 
 ## Témoins ROM encore utiles
@@ -45,12 +45,13 @@ Les points suivants ne doivent pas être recodés simplement parce qu’une obse
 - progression des tailles Rival/Rocket ;
 - Mortimer : Méga réellement déclenchée sans assert ;
 - réception du Mega Ring après badge 4 puis utilisation joueur avant badge 5 ;
-- Jeannine : Kravarech entre avec un talent de base légal puis Méga-évolue en Adaptabilité.
+- Jeannine : Aéromite reste l’ace ; Kravarech du slot 3 entre avec un talent de base légal puis Méga-évolue en Adaptabilité.
 
 ### Encounters
 
 - Route 31 jour : Wattouat présent ;
-- Route 36 jour : Scorplane présent, niveaux 14–17 ;
+- Route 36 jour : aucun Scorplane/Scorvol, Mimigal restauré au slot 30 % ;
+- Route 34 jour : Scorplane présent après badge 2, niveaux 25–28, slot 30 % ;
 - une méthode tardive sur une ancienne zone ne rehausse pas les niveaux.
 
 ### UI

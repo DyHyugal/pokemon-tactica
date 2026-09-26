@@ -601,7 +601,7 @@ Recherche principale en **français**, avec les noms anglais acceptés comme ali
 | Pérégrain | 1 |
 | Obalie | 1 |
 | Filentrappe | 2 |
-| Mimigal | 4 |
+| Mimigal | 5 |
 | Spinda | 1 |
 | Spiritomb | 1 |
 | Spoink | 1 |

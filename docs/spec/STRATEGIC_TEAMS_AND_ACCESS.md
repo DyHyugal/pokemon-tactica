@@ -178,8 +178,9 @@ Ne pas utiliser deux Restes.
 ## Jeannine
 
 - Prédastérie : Boue Noire
+- Méga-Kravarech : Dragalgite
 - Smogogo de Galar : Baie Sitrus
-- Aéromite : Ceinture Force
+- Aéromite : Ceinture Force — ace
 
 ## Auguste
 
@@ -329,7 +330,7 @@ Audit du 25 septembre après le bloc `feature/strategic-rules` : Germignon est a
 
 Dans la Route de Glace, privilégier les formes cohérentes avec les niveaux élevés de la zone, notamment Feunard d'Alola et Darumacho de Galar si approprié.
 
-Salamèche et Élekid ont été retirés de la Route 36 et placés dans des zones accessibles après badge 2 (respectivement Route 37 et Route 42). **Route 36 est accessible avant Albert : toutes ses tables doivent donc rester 14–17 max**, même pour une méthode débloquée plus tard. L'actuel cap 32/38 est une erreur de dataset. Vérifier toutes les autres zones avec la même logique de premier accès de zone.
+Salamèche et Élekid ont été retirés de la Route 36 et placés dans des zones accessibles après badge 2 (respectivement Route 37 et Route 42). Scorplane suit la même règle starter : il n’apparaît qu’après le badge 2, Route 34 jour, à la place de Migalos. **Route 36 est accessible avant Albert : toutes ses tables doivent donc rester 14–17 max**, même pour une méthode débloquée plus tard. L'actuel cap 32/38 est une erreur de dataset. Vérifier toutes les autres zones avec la même logique de premier accès de zone.
 
 ---
 

@@ -8863,15 +8863,15 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Recover
 - Protect
 
-Amoonguss @ Rocky Helmet
+Dragalge @ Dragalgite
 Level: 80
-Ability: Regenerator
-Nature: Bold
+Ability: Poison Touch
+Nature: Modest
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Spore
-- Giga Drain
 - Sludge Bomb
-- Foul Play
+- Dragon Pulse
+- Hydro Pump
+- Toxic
 
 Weezing-Galar @ Sitrus Berry
 Level: 80
@@ -8893,15 +8893,15 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Fire Punch
 - Shadow Sneak
 
-Dragalge @ Dragalgite
+Venomoth @ Focus Sash
 Level: 80
-Ability: Poison Touch
-Nature: Modest
+Ability: Tinted Lens
+Nature: Timid
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Quiver Dance
+- Bug Buzz
 - Sludge Bomb
-- Dragon Pulse
-- Hydro Pump
-- Toxic
+- Roost
 
 === TRAINER_BLAINE_HNS ===
 Name: BLAINE
@@ -17868,16 +17868,16 @@ EVs: 252 HP / 252 SpD / 4 Def
 - Recover
 - Protect
 
-Amoonguss @ Rocky Helmet
+Dragalge @ Dragalgite
 Level: 80
-Ability: Regenerator
-Nature: Bold
+Ability: Poison Touch
+Nature: Modest
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Def / 4 SpD
-- Spore
-- Giga Drain
+EVs: 252 HP / 252 SpA / 4 SpD
 - Sludge Bomb
-- Foul Play
+- Dragon Pulse
+- Hydro Pump
+- Toxic
 
 Weezing-Galar @ Sitrus Berry
 Level: 80
@@ -17901,16 +17901,16 @@ EVs: 252 HP / 252 SpD / 4 Def
 - Fire Punch
 - Shadow Sneak
 
-Dragalge @ Dragalgite
+Venomoth @ Focus Sash
 Level: 80
-Ability: Poison Touch
-Nature: Modest
+Ability: Tinted Lens
+Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 SpA / 4 SpD
+EVs: 252 SpA / 252 Spe / 4 HP
+- Quiver Dance
+- Bug Buzz
 - Sludge Bomb
-- Dragon Pulse
-- Hydro Pump
-- Toxic
+- Roost
 
 === TRAINER_SABRINA_HNS ===
 Name: SABRINA
