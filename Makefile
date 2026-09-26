@@ -20,7 +20,7 @@ ifeq (leafgreen, $(or $(BUILD), $(MAKECMDGOALS)))
 else
 ifeq (hns, $(or $(BUILD), $(MAKECMDGOALS)))
 	GAME_VERSION 	:= POKEMON_HNS
-	TITLE       	:= POKEMON HNS
+	TITLE       	:= PKMN TACTICA
 	GAME_CODE   	:= BPEE
 	BUILD_NAME  	:= hns
 	MAP_VERSION 	:= hns

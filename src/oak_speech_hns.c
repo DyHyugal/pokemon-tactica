@@ -350,9 +350,9 @@ static void Task_NewGameHnsSpeech_WaitForSpriteFadeInWelcome(u8 taskId)
 static void Task_NewGameHnsSpeech_FamilyRemixDisclaimer(u8 taskId)
 {
     static const u8 sText_FamilyRemixDisclaimer[] = _(
-        "{COLOR RED}POKéMON FAMILY REMIX defaults to HARD.{COLOR DARK_GRAY}\p"
+        "{COLOR RED}POKéMON TACTICA defaults to HARD.{COLOR DARK_GRAY}\p"
         "Boss battles are more strategic and demanding.\p"
-        "NORMAL remains available in the settings if you prefer standard HEART & SOUL balance.");
+        "NORMAL remains available in the settings if you prefer a lighter challenge.");
 
     StringCopy(gStringVar4, sText_FamilyRemixDisclaimer);
     AddTextPrinterForMessage(TRUE);
