@@ -54,7 +54,7 @@ Ne pas recoder sans défaut démontré :
 ## État encounters courant
 
 - quatre slots `30/30/30/10` ;
-- Scorplane : Route 36 jour, early ;
+- Scorplane : Route 34 jour, niveaux 25–28, uniquement après badge 2 ;
 - Wattouat : Route 31 jour ;
 - les localisations/wiki doivent être régénérés depuis les JSON, espèces **et** niveaux ;
 - la couverture du dataset standard pré-Ligue est complète : 479 espèces utilisées sur 479 sont disponibles avant/à la première Ligue. Conserver cette couverture ; ne pas réintroduire d’espèce uniquement post-Ligue lors d’une future passe.
@@ -63,7 +63,7 @@ Ne pas recoder sans défaut démontré :
 
 - exactement une Méga par Champion à partir de Mortimer ;
 - unicité globale Champions / Conseil 4 / Rival / Rocket ;
-- Jeannine = Méga-Kravarech @ Dragalgite ;
+- Jeannine : Aéromite reste l’ace ; Méga-Kravarech @ Dragalgite remplace Gaulet ;
 - forme de base légale avant Méga, talent Méga appliqué par la transformation.
 
 ## Priorités UI V1

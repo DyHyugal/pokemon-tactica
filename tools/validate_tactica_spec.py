@@ -123,12 +123,6 @@ for family, members in required_starter_families.items():
             for species in table["species"]
             if any(species.startswith(f"SPECIES_{member}") for member in members)
         ]
-        if family == "Gligar" and (
-            table["map"], table["method"], table.get("time", "Any")
-        ) == ("MAP_ROUTE36_HNS", "land_mons", "Day"):
-            require(early_family_members == ["SPECIES_GLIGAR"],
-                    "only base Gligar is allowed in the explicit Route 36 early exception")
-            continue
         require(not early_family_members,
                 f"starter family {family} available before badge 2: "
                 f"{table['map']} {table['method']} {table.get('time', 'Any')}")
@@ -137,10 +131,13 @@ tables_by_key = {(x["map"], x["method"], x.get("time", "Any")): x for x in stand
 route36_day = tables_by_key[("MAP_ROUTE36_HNS", "land_mons", "Day")]
 route36_night = tables_by_key[("MAP_ROUTE36_HNS", "land_mons", "Night")]
 route31_day = tables_by_key[("MAP_ROUTE31_HNS", "land_mons", "Day")]
+route34_day = tables_by_key[("MAP_ROUTE34_HNS", "land_mons", "Day")]
 require("SPECIES_CHARMANDER" not in route36_day["species"], "Charmander remains on early Route 36")
 require("SPECIES_ELEKID" not in route36_night["species"], "Elekid remains on early Route 36")
-require(route36_day["species"][1] == "SPECIES_GLIGAR",
-        "Route 36 Day slot 2 must provide early Gligar")
+require(route36_day["species"][1] == "SPECIES_SPINARAK",
+        "Route 36 Day slot 2 must remain Spinarak; starter Gligar is forbidden before badge 2")
+require(route34_day["species"][2] == "SPECIES_GLIGAR",
+        "Route 34 Day slot 3 must provide Gligar after badge 2")
 require(route31_day["species"][0] == "SPECIES_MAREEP",
         "Route 31 Day slot 1 must keep Mareep available before the League")
 required_rare_slots = {
@@ -307,6 +304,7 @@ required_items = {
     ("Archer", "Weavile"): "Choice Band", ("Pierre", "Garganacl"): "Leftovers",
     ("Pierre", "Cradily"): "Sitrus Berry", ("Jeannine", "Toxapex"): "Black Sludge",
     ("Jeannine", "Galarian Weezing"): "Sitrus Berry", ("Jeannine", "Mega Dragalge"): "Dragalgite",
+    ("Jeannine", "Venomoth"): "Focus Sash",
     ("Auguste", "Torkoal"): "Heat Rock", ("Auguste", "Ninetales"): "Leftovers",
 }
 actual_items = {(row["boss"], row["species"]): row["item"] for row in teams}
@@ -340,12 +338,21 @@ for gym in required_mega_gyms:
 
 janine = bosses[("Kanto", "Gym", "Jeannine")]
 janine_ace = next(row for row in janine if row["ace"])
-require(janine_ace["species"] == "Mega Dragalge" and
-        janine_ace["item"] == "Dragalgite" and
-        janine_ace["ability"] == "Adaptability",
-        "Jeannine ace must be Mega Dragalge @ Dragalgite with Adaptability")
-require(janine_ace["moves"] == ["Sludge Bomb", "Dragon Pulse", "Hydro Pump", "Toxic"],
+require(janine_ace["species"] == "Venomoth" and
+        janine_ace["item"] == "Focus Sash" and
+        janine_ace["ability"] == "Tinted Lens",
+        "Jeannine ace must remain Venomoth @ Focus Sash with Tinted Lens")
+require(janine_ace["moves"] == ["Quiver Dance", "Bug Buzz", "Sludge Bomb", "Roost"],
+        "Jeannine Venomoth canonical ace set changed")
+janine_mega = next(row for row in janine if row["species"] == "Mega Dragalge")
+require(janine_mega["slot"] == 3 and not janine_mega["ace"] and
+        janine_mega["item"] == "Dragalgite" and
+        janine_mega["ability"] == "Adaptability",
+        "Jeannine Mega Dragalge must replace Amoonguss in slot 3 without replacing the ace")
+require(janine_mega["moves"] == ["Sludge Bomb", "Dragon Pulse", "Hydro Pump", "Toxic"],
         "Jeannine Mega Dragalge canonical set changed")
+require(not any(row["species"] == "Amoonguss" for row in janine),
+        "Amoonguss must be replaced by Mega Dragalge in Jeannine's team")
 
 species_info = (ROOT.parents[1] / "src/data/pokemon/species_info/gen_6_families.h").read_text(encoding="utf-8")
 dragalge_mega = re.search(r"\[SPECIES_DRAGALGE_MEGA\]\s*=\s*\{(.*?)^\s*\},",

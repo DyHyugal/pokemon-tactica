@@ -25,7 +25,7 @@ Pokémon Tactica est un remake/fork jouable de la 2G basé sur HnS, centré sur 
 - Habitat et stade d’évolution doivent rester cohérents avec la zone et le niveau.
 - Aucune famille starter n’est disponible avant le badge 2.
 - Aucun légendaire/fabuleux n’est ajouté comme encounter standard.
-- Scorplane est disponible early : Route 36, herbe/sol, jour, slot 30 %.
+- Scorplane appartient aux starters Tactica : aucune occurrence de sa famille avant le badge 2. Sa première occurrence sauvage est Route 34, herbe/sol, jour, niveaux 25–28, slot 30 %, à la place de Migalos.
 - Wattouat reste disponible avant la Ligue : Route 31, herbe/sol, jour, slot 30 %.
 - Objectif de couverture : une espèce pertinente doit être disponible avant la première Ligue. Lorsqu’un doublon occupe un slot alors qu’une espèce reste uniquement post-Ligue, le doublon est le premier candidat au remplacement, sous réserve d’habitat, progression, niveau et stade cohérents.
 - La couverture globale pré-Ligue est un chantier de rééquilibrage dédié : ne pas randomiser les tables pour faire monter artificiellement un compteur.
@@ -47,7 +47,7 @@ Détail : [ENCOUNTERS.md](ENCOUNTERS.md).
 - Une Méga importante est unique globalement entre Champions, Conseil 4, Rival et Rocket sauf exception owner explicitement écrite.
 - La forme de base doit entrer avec un talent légal ; le talent de Méga vient de la transformation.
 - Mortimer remet le Mega Ring après le badge 4 puis la CT.
-- Jeannine utilise Méga-Kravarech @ Dragalgite comme ace. Kravarech entre avec un talent de base légal ; Méga-Kravarech reçoit Adaptabilité à la transformation.
+- Jeannine conserve Aéromite comme ace et Pokémon de prédilection. Méga-Kravarech @ Dragalgite remplace Gaulet au slot 3 ; Kravarech entre avec un talent de base légal et reçoit Adaptabilité à la transformation.
 
 ### Rival et Team Rocket
 
