@@ -37,16 +37,16 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | Route 36 14–17 | `[DONE]` | Source/runtime synchronisés ; témoin ROM conservé pour candidate. |
 | Scorplane early | `[DONE]` | Route 36 jour, slot 30 %. |
 | Wattouat disponible | `[DONE]` | Route 31 jour, slot 30 %. |
-| Couverture globale pré-Ligue | `[PARTIEL]` | Dataset standard : 479 espèces utilisées, 409 présentes avant/à la Ligue, 70 uniquement post-Ligue, 152 espèces dupliquées avant Ligue. Rebalance dédiée à poursuivre par lots écologiques. |
+| Couverture globale pré-Ligue | `[DONE]` | Dataset standard : 479 espèces utilisées et 479 disponibles avant/à la Ligue ; 0 espèce utilisée reste uniquement post-Ligue. 72 slots ont été remplacés sur 43 tables ; 125 espèces restent dupliquées avant Ligue, ce qui est acceptable puisque la couverture est assurée. |
 | Headbutt | `[DONE]` | 4 tables dédiées. |
 | Safari | `[DONE]` | 53 pools. |
 | Wiki baseline owner | `[DONE]` | PR #29 intégrée, y compris Guide/Accueil/Changements/Roadmap/Routes-Villes. Ne pas restaurer une ancienne baseline. |
 | Sync Localisations — niveaux | `[DONE]` | Générateur canonique. |
-| Sync Localisations — espèces / recherche | `[PARTIEL]` | Générateur étendu aux espèces et `data-search`; CI/idempotence à confirmer sur la PR de nettoyage. |
-| Compteurs Pokédex | `[PARTIEL]` | Recalculés depuis les tables standard + pools spéciaux visibles ; CI/idempotence à confirmer. |
-| Summary ROM | `[À CORRIGER]` | Recomposition BG/tilemaps/windows, suppression doublons ; page IV/EV autorisée. |
-| HUD combat | `[À CORRIGER]` | Supprimer le rectangle blanc à gauche des PV et harmoniser action/attaques. |
-| UI boutiques | `[À CORRIGER]` | Fond rouge, texte noir, sélection lisible, aucune grande plaque blanche. |
+| Sync Localisations — espèces / recherche | `[DONE]` | Générateur étendu aux espèces et `data-search`; synchronisations `--check` et CI Tactica vertes sur le HEAD de la PR de nettoyage. |
+| Compteurs Pokédex | `[DONE]` | Recalculés depuis les tables standard + pools spéciaux visibles ; synchronisation idempotente confirmée par la CI Tactica. |
+| Summary ROM | `[PARTIEL]` | Recomposition structurelle intégrée et protégée par le validateur UI ; rendu réel à confirmer dans une ROM fraîche. |
+| HUD combat | `[PARTIEL]` | Plaque blanche résiduelle de la barre PV supprimée dans l’asset et protégée par le validateur UI ; panneaux/rendu final à confirmer en ROM. |
+| UI boutiques | `[PARTIEL]` | Charte rouge/noir intégrée dans le runtime shop et protégée par le validateur UI ; lisibilité/sélection à confirmer en ROM. |
 | Assistant d’entraînement | `[DONE]` | Tests dédiés existants. |
 | Boutiques objets/moves/Méga-Gemmes — contenu | `[PARTIEL]` | Catalogues/runtime présents ; parcours d’achat ROM à revalider. |
 | Balance 26 espèces / 15 learnsets | `[DONE]` | Source canonique + validateur dédié. |
@@ -60,7 +60,6 @@ Ne jamais transformer « non testé manuellement » en « non implémenté », e
 ## Prochain ordre de travail
 
 1. remettre toutes les synchronisations et la CI au vert ;
-2. traiter Summary ;
-3. traiter HUD combat + boutiques ;
-4. poursuivre la couverture pré-Ligue par lots cohérents séparés ;
-5. réconcilier, clean build, puis déclarer une candidate owner dans `PLAYTEST_STATUS.md`.
+2. confirmer Summary, HUD et boutiques dans une ROM fraîche ;
+3. réconcilier tout nouveau défaut observé ;
+4. clean build puis déclarer une candidate owner dans `PLAYTEST_STATUS.md`.
