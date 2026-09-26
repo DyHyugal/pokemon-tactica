@@ -1,6 +1,8 @@
-[Home](Home.md) · [Game Guide](Game-Guide.md) · [Changes](Changes.md) · [Pokédex](Pokedex.md) · [Locations](Locations.md) · [Bosses & Tips](Bosses-and-Tips.md) · [Credits & Versions](Credits-and-Versions.md) · **[FR](../FR/Accueil.md)**
+[Home](Home.md) · [Game Guide](Game-Guide.md) · [Changes](Changes.md) · [Pokédex](Pokedex.md) · [Locations](Locations.md) · [Bosses & Tips](Bosses-and-Tips.md) · [Credits](Credits-and-Versions.md) · [Roadmap](Roadmap.md) · **[FR](../FR/Pokedex.md)**
 
 # Pokédex
+
+Primary search uses **English** names, with French names accepted as aliases on the static site. Locations stay on a separate page so the Pokédex remains easy to browse.
 
 | Pokémon | Tables |
 |---|---:|
