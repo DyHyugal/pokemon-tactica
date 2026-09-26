@@ -31,8 +31,17 @@
       ]
     },
     "category_draw": "uniform among candidate categories",
-    "species_draw": "uniform among five starters in the drawn category",
-    "persist_once": true
+    "species_draw": "fixed starter for the drawn counter category; no random starter draw",
+    "persist_once": true,
+    "fixed_starters": {
+      "fire": "Torchic",
+      "water": "Mudkip",
+      "grass": "Treecko",
+      "electric": "Elekid",
+      "ground": "Drilbur",
+      "ice": "Darumaka-Galar"
+    },
+    "mega_unlock": "Mega Stone is withheld until FLAG_BADGE04_GET; legal evolution stage still applies"
   },
   "archetypes": {
     "fire": "sun",
@@ -43,7 +52,7 @@
     "ice": "snow"
   },
   "fight_rosters": {
-    "status": "runtime integration complete; generated table and automated move availability checks complete; ROM playtest pending",
+    "status": "owner-redesigned competitive singles teams; fixed rival starter per archetype; progressive 1/3/4/6 runtime",
     "party_sizes": {
       "before_first_badge": 1,
       "after_badge_1": 3,
@@ -71,521 +80,336 @@
         6
       ]
     },
-    "notes": "Indices persist by saved rival category. The first story battle keeps only the saved starter but must be resolved at level 17 (Falkner preparation cap), including any legal evolution at level 17; the historical level-5 trainer template is an implementation gap, not the product rule. No new story encounter is implied by the authored four-member phase. Resolve every later evolution from its actual combat level and availability of stones/items, not a fixed roster name.",
+    "notes": "Slot 2 is the fixed starter of the selected rival archetype. The first story battle uses only that starter at level 17 and its legal stage. Slots 1-3 unlock after badge 1, slot 4 after badge 2, and slots 5-6 after badge 3. Mega Stones are present only after badge 4; Tyranitar and Baxcalibur still cannot Mega-evolve until their base species is legally reached.",
     "categories": {
       "fire": [
         {
-          "family": "Vulpix",
-          "role": "sun setter",
-          "target_final_species": "Ninetales",
+          "family": "Torkoal",
+          "role": "sun setter #1 / hazards / conditional spin",
+          "target_final_species": "Torkoal",
+          "ability": "Drought",
           "phase_moves": {
             "early": [
-              "Ember",
-              "Quick Attack",
-              "Confuse Ray",
-              "Will-O-Wisp"
+              "Lava Plume",
+              "Yawn",
+              "Rapid Spin",
+              "Protect"
             ],
             "mid": [
+              "Lava Plume",
+              "Yawn",
+              "Rapid Spin",
+              "Stealth Rock"
+            ],
+            "final": [
+              "Lava Plume",
+              "Yawn",
+              "Rapid Spin",
+              "Stealth Rock"
+            ]
+          },
+          "final_item": "Heavy-Duty Boots",
+          "nature": "Bold",
+          "hard_evs": "252 HP / 252 Def / 4 SpD",
+          "setter": "ability"
+        },
+        {
+          "family": "Torchic",
+          "role": "fixed starter / Mega cleaner",
+          "target_final_species": "Blaziken",
+          "ability": "Speed Boost",
+          "phase_moves": {
+            "early": [
+              "Flame Charge",
+              "Double Kick",
+              "Quick Attack",
+              "Protect"
+            ],
+            "mid": [
+              "Blaze Kick",
+              "Brick Break",
+              "Aerial Ace",
+              "Protect"
+            ],
+            "final": [
+              "Flare Blitz",
+              "Close Combat",
+              "Brave Bird",
+              "Protect"
+            ]
+          },
+          "final_item": "Blazikenite",
+          "nature": "Jolly",
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "tactica_starter_family": true,
+          "is_rival_starter": true,
+          "mega": true
+        },
+        {
+          "family": "Bulbasaur",
+          "role": "Chlorophyll special sweeper",
+          "target_final_species": "Venusaur",
+          "ability": "Chlorophyll",
+          "phase_moves": {
+            "early": [
+              "Mega Drain",
+              "Sleep Powder",
+              "Sludge",
+              "Growth"
+            ],
+            "mid": [
+              "Giga Drain",
+              "Sleep Powder",
+              "Sludge Bomb",
+              "Growth"
+            ],
+            "final": [
+              "Giga Drain",
+              "Sludge Bomb",
+              "Earth Power",
+              "Growth"
+            ]
+          },
+          "final_item": "Life Orb",
+          "nature": "Modest",
+          "hard_evs": "252 SpA / 252 Spe / 4 HP",
+          "tactica_starter_family": true
+        },
+        {
+          "family": "Vulpix",
+          "role": "sun setter #2 / setup special breaker",
+          "target_final_species": "Ninetales",
+          "ability": "Drought",
+          "phase_moves": {
+            "early": [
               "Flame Burst",
               "Will-O-Wisp",
               "Hex",
-              "Sunny Day"
+              "Confuse Ray"
             ],
-            "final": [
+            "mid": [
               "Flamethrower",
               "Will-O-Wisp",
               "Solar Beam",
-              "Sunny Day"
+              "Nasty Plot"
+            ],
+            "final": [
+              "Flamethrower",
+              "Solar Beam",
+              "Dark Pulse",
+              "Nasty Plot"
             ]
           },
           "final_item": "Heat Rock",
           "nature": "Timid",
-          "hard_evs": "252 SpA / 252 Spe / 4 HP"
+          "hard_evs": "252 SpA / 252 Spe / 4 HP",
+          "setter": "ability"
         },
         {
-          "family": "saved starter",
-          "role": "persistent ace",
-          "species_source": "VAR_FAMILY_RIVAL_SPECIES",
-          "phase_moves": "select four level-legal moves for the saved starter species, including a current STAB and a role-appropriate utility move; resolve evolution at actual level",
-          "final_item_source": "starter type booster from data/spec/starters.json; unique within the team",
-          "nature": "role-dependent: speed or primary attack",
-          "hard_evs": "252 primary attack / 252 Spe / 4 HP"
-        },
-        {
-          "family": "Hoppip",
-          "role": "water/ground answer",
-          "target_final_species": "Jumpluff",
+          "family": "Lilligant-Hisui",
+          "role": "Chlorophyll physical sweeper",
+          "target_final_species": "Lilligant-Hisui",
+          "ability": "Chlorophyll",
           "phase_moves": {
             "early": [
-              "Absorb",
-              "Synthesis",
-              "Stun Spore",
-              "Fairy Wind"
+              "Leaf Blade",
+              "Close Combat",
+              "Victory Dance",
+              "Ice Spinner"
             ],
             "mid": [
-              "Mega Drain",
-              "Sleep Powder",
-              "Leech Seed",
-              "U-turn"
+              "Leaf Blade",
+              "Close Combat",
+              "Victory Dance",
+              "Ice Spinner"
             ],
             "final": [
-              "Giga Drain",
-              "Sleep Powder",
-              "U-turn",
-              "Acrobatics"
+              "Leaf Blade",
+              "Close Combat",
+              "Victory Dance",
+              "Ice Spinner"
             ]
           },
           "final_item": "Focus Sash",
           "nature": "Jolly",
-          "hard_evs": "252 HP / 252 Spe / 4 Def"
-        },
-        {
-          "family": "Helioptile",
-          "role": "water check and pivot",
-          "target_final_species": "Heliolisk",
-          "phase_moves": {
-            "early": [
-              "Thunder Shock",
-              "Quick Attack",
-              "Mud-Slap",
-              "Charge"
-            ],
-            "mid": [
-              "Volt Switch",
-              "Thunderbolt",
-              "Glare",
-              "Surf"
-            ],
-            "final": [
-              "Thunderbolt",
-              "Volt Switch",
-              "Surf",
-              "Dark Pulse"
-            ]
-          },
-          "final_item": "Choice Specs",
-          "nature": "Timid",
-          "hard_evs": "252 SpA / 252 Spe / 4 HP"
-        },
-        {
-          "family": "Houndour",
-          "role": "dark/fire pressure",
-          "target_final_species": "Houndoom",
-          "phase_moves": {
-            "early": [
-              "Ember",
-              "Bite",
-              "Howl",
-              "Smog"
-            ],
-            "mid": [
-              "Flame Charge",
-              "Fire Fang",
-              "Bite",
-              "Roar"
-            ],
-            "final": [
-              "Flamethrower",
-              "Dark Pulse",
-              "Nasty Plot",
-              "Sludge Bomb"
-            ]
-          },
-          "final_item": "Life Orb",
-          "nature": "Timid",
-          "hard_evs": "252 SpA / 252 Spe / 4 HP"
-        },
-        {
-          "family": "Growlithe",
-          "role": "late physical finisher",
-          "target_final_species": "Arcanine",
-          "phase_moves": {
-            "early": [
-              "Ember",
-              "Bite",
-              "Howl",
-              "Flame Wheel"
-            ],
-            "mid": [
-              "Fire Fang",
-              "Crunch",
-              "Flame Charge",
-              "Agility"
-            ],
-            "final": [
-              "Flare Blitz",
-              "Extreme Speed",
-              "Close Combat",
-              "Wild Charge"
-            ]
-          },
-          "final_item": "Expert Belt",
-          "nature": "Jolly",
           "hard_evs": "252 Atk / 252 Spe / 4 HP"
+        },
+        {
+          "family": "Great Tusk",
+          "role": "Protosynthesis physical breaker",
+          "target_final_species": "Great Tusk",
+          "ability": "Protosynthesis",
+          "phase_moves": {
+            "early": [
+              "Headlong Rush",
+              "Close Combat",
+              "Knock Off",
+              "Iron Head"
+            ],
+            "mid": [
+              "Headlong Rush",
+              "Close Combat",
+              "Knock Off",
+              "Iron Head"
+            ],
+            "final": [
+              "Headlong Rush",
+              "Close Combat",
+              "Knock Off",
+              "Iron Head"
+            ]
+          },
+          "final_item": "Assault Vest",
+          "nature": "Adamant",
+          "hard_evs": "252 HP / 252 Atk / 4 SpD"
         }
       ],
       "water": [
         {
           "family": "Wingull",
-          "role": "rain setter",
+          "role": "rain setter #1 / pivot",
           "target_final_species": "Pelipper",
+          "ability": "Drizzle",
           "phase_moves": {
             "early": [
-              "Water Gun",
-              "Wing Attack",
-              "Supersonic",
-              "Quick Attack"
+              "Water Pulse",
+              "Air Cutter",
+              "U-turn",
+              "Roost"
             ],
             "mid": [
               "Scald",
-              "Air Cutter",
-              "Roost",
-              "Rain Dance"
+              "Hurricane",
+              "U-turn",
+              "Roost"
             ],
             "final": [
-              "Hurricane",
               "Scald",
-              "Roost",
-              "U-turn"
+              "Hurricane",
+              "U-turn",
+              "Roost"
             ]
           },
           "final_item": "Damp Rock",
           "nature": "Bold",
-          "hard_evs": "252 HP / 252 Def / 4 SpD"
+          "hard_evs": "252 HP / 252 Def / 4 SpD",
+          "setter": "ability"
         },
         {
-          "family": "saved starter",
-          "role": "persistent ace",
-          "species_source": "VAR_FAMILY_RIVAL_SPECIES",
-          "phase_moves": "select four level-legal moves for the saved starter species, including a current STAB and a role-appropriate utility move; resolve evolution at actual level",
-          "final_item_source": "starter type booster from data/spec/starters.json; unique within the team",
-          "nature": "role-dependent: speed or primary attack",
-          "hard_evs": "252 primary attack / 252 Spe / 4 HP"
-        },
-        {
-          "family": "Lotad",
-          "role": "rain sweeper",
-          "target_final_species": "Ludicolo",
+          "family": "Mudkip",
+          "role": "fixed starter / Mega rain sweeper",
+          "target_final_species": "Swampert",
+          "ability": "Torrent",
           "phase_moves": {
             "early": [
-              "Absorb",
-              "Bubble",
-              "Astonish",
-              "Growl"
-            ],
-            "mid": [
-              "Bubble Beam",
-              "Mega Drain",
-              "Rain Dance",
+              "Water Gun",
+              "Mud Shot",
+              "Rock Tomb",
               "Protect"
             ],
+            "mid": [
+              "Waterfall",
+              "Bulldoze",
+              "Ice Punch",
+              "Rock Slide"
+            ],
             "final": [
-              "Hydro Pump",
-              "Giga Drain",
+              "Waterfall",
+              "Earthquake",
+              "Ice Punch",
+              "Rock Slide"
+            ]
+          },
+          "final_item": "Swampertite",
+          "nature": "Adamant",
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "tactica_starter_family": true,
+          "is_rival_starter": true,
+          "mega": true
+        },
+        {
+          "family": "Horsea",
+          "role": "Swift Swim special sweeper",
+          "target_final_species": "Kingdra",
+          "ability": "Swift Swim",
+          "phase_moves": {
+            "early": [
+              "Bubble Beam",
+              "Dragon Breath",
+              "Icy Wind",
+              "Focus Energy"
+            ],
+            "mid": [
+              "Surf",
+              "Dragon Pulse",
               "Ice Beam",
-              "Rain Dance"
+              "Focus Energy"
+            ],
+            "final": [
+              "Surf",
+              "Dragon Pulse",
+              "Ice Beam",
+              "Hurricane"
             ]
           },
           "final_item": "Life Orb",
           "nature": "Modest",
-          "hard_evs": "252 SpA / 252 Spe / 4 HP"
+          "hard_evs": "252 SpA / 252 Spe / 4 HP",
+          "tactica_starter_family": true
         },
         {
-          "family": "Chinchou",
-          "role": "electric pivot",
-          "target_final_species": "Lanturn",
+          "family": "Poliwag",
+          "role": "rain setter #2 / control",
+          "target_final_species": "Politoed",
+          "ability": "Drizzle",
           "phase_moves": {
             "early": [
-              "Water Gun",
-              "Spark",
-              "Confuse Ray",
-              "Thunder Wave"
+              "Bubble Beam",
+              "Hypnosis",
+              "Mud Shot",
+              "Rain Dance"
             ],
             "mid": [
               "Scald",
-              "Volt Switch",
-              "Discharge",
-              "Thunder Wave"
+              "Encore",
+              "Ice Beam",
+              "Protect"
             ],
             "final": [
               "Scald",
-              "Volt Switch",
-              "Thunderbolt",
+              "Encore",
+              "Perish Song",
               "Ice Beam"
             ]
           },
           "final_item": "Leftovers",
           "nature": "Calm",
-          "hard_evs": "252 HP / 252 SpD / 4 Def"
+          "hard_evs": "252 HP / 252 SpD / 4 Def",
+          "setter": "ability"
         },
         {
-          "family": "Croagunk",
-          "role": "anti-grass and rain synergy",
-          "target_final_species": "Toxicroak",
+          "family": "Arrokuda",
+          "role": "Swift Swim physical breaker",
+          "target_final_species": "Barraskewda",
+          "ability": "Swift Swim",
           "phase_moves": {
             "early": [
-              "Poison Sting",
-              "Mud-Slap",
-              "Revenge",
-              "Astonish"
-            ],
-            "mid": [
-              "Poison Jab",
-              "Drain Punch",
-              "Sucker Punch",
-              "Taunt"
-            ],
-            "final": [
-              "Gunk Shot",
-              "Drain Punch",
-              "Sucker Punch",
-              "Ice Punch"
-            ]
-          },
-          "final_item": "Black Sludge",
-          "nature": "Jolly",
-          "hard_evs": "252 Atk / 252 Spe / 4 HP"
-        },
-        {
-          "family": "Staryu",
-          "role": "special coverage closer",
-          "target_final_species": "Starmie",
-          "phase_moves": {
-            "early": [
-              "Water Gun",
-              "Rapid Spin",
-              "Swift",
-              "Recover"
-            ],
-            "mid": [
-              "Surf",
-              "Psybeam",
-              "Rapid Spin",
-              "Recover"
-            ],
-            "final": [
-              "Hydro Pump",
-              "Psychic",
-              "Ice Beam",
-              "Recover"
-            ]
-          },
-          "final_item": "Expert Belt",
-          "nature": "Timid",
-          "hard_evs": "252 SpA / 252 Spe / 4 HP"
-        }
-      ],
-      "grass": [
-        {
-          "family": "Smoliv",
-          "role": "grassy terrain setter",
-          "target_final_species": "Arboliva",
-          "phase_moves": {
-            "early": [
-              "Absorb",
-              "Growth",
-              "Sweet Scent",
-              "Tackle"
-            ],
-            "mid": [
-              "Mega Drain",
-              "Leech Seed",
-              "Grassy Terrain",
-              "Protect"
-            ],
-            "final": [
-              "Giga Drain",
-              "Grassy Terrain",
-              "Earth Power",
-              "Strength Sap"
-            ]
-          },
-          "final_item": "Terrain Extender",
-          "nature": "Modest",
-          "hard_evs": "252 HP / 252 SpA / 4 SpD"
-        },
-        {
-          "family": "saved starter",
-          "role": "persistent ace",
-          "species_source": "VAR_FAMILY_RIVAL_SPECIES",
-          "phase_moves": "select four level-legal moves for the saved starter species, including a current STAB and a role-appropriate utility move; resolve evolution at actual level",
-          "final_item_source": "starter type booster from data/spec/starters.json; unique within the team",
-          "nature": "role-dependent: speed or primary attack",
-          "hard_evs": "252 primary attack / 252 Spe / 4 HP"
-        },
-        {
-          "family": "Foongus",
-          "role": "status and sustain",
-          "target_final_species": "Amoonguss",
-          "phase_moves": {
-            "early": [
-              "Absorb",
-              "Stun Spore",
-              "Growth",
-              "Mega Drain"
-            ],
-            "mid": [
-              "Giga Drain",
-              "Spore",
-              "Clear Smog",
-              "Synthesis"
-            ],
-            "final": [
-              "Spore",
-              "Giga Drain",
-              "Sludge Bomb",
-              "Clear Smog"
-            ]
-          },
-          "final_item": "Black Sludge",
-          "nature": "Bold",
-          "hard_evs": "252 HP / 252 Def / 4 SpD"
-        },
-        {
-          "family": "Fletchling",
-          "role": "anti-bug/fire pivot",
-          "target_final_species": "Talonflame",
-          "phase_moves": {
-            "early": [
-              "Peck",
-              "Quick Attack",
-              "Ember",
-              "Agility"
-            ],
-            "mid": [
-              "Aerial Ace",
-              "Flame Charge",
-              "U-turn",
-              "Roost"
-            ],
-            "final": [
-              "Brave Bird",
-              "Flare Blitz",
-              "U-turn",
-              "Roost"
-            ]
-          },
-          "final_item": "Sharp Beak",
-          "nature": "Jolly",
-          "hard_evs": "252 Atk / 252 Spe / 4 HP"
-        },
-        {
-          "family": "Skiddo",
-          "role": "grassy terrain beneficiary",
-          "target_final_species": "Gogoat",
-          "phase_moves": {
-            "early": [
-              "Vine Whip",
-              "Tackle",
-              "Leech Seed",
-              "Growth"
-            ],
-            "mid": [
-              "Razor Leaf",
-              "Horn Leech",
-              "Bulldoze",
-              "Milk Drink"
-            ],
-            "final": [
-              "Horn Leech",
-              "Earthquake",
-              "Bulk Up",
-              "Milk Drink"
-            ]
-          },
-          "final_item": "Leftovers",
-          "nature": "Adamant",
-          "hard_evs": "252 HP / 252 Atk / 4 Def"
-        },
-        {
-          "family": "Nacli",
-          "role": "physical wall",
-          "target_final_species": "Garganacl",
-          "phase_moves": {
-            "early": [
-              "Rock Throw",
-              "Harden",
-              "Tackle",
-              "Protect"
-            ],
-            "mid": [
-              "Rock Slide",
-              "Recover",
-              "Stealth Rock",
-              "Protect"
-            ],
-            "final": [
-              "Salt Cure",
-              "Recover",
-              "Body Press",
-              "Stealth Rock"
-            ]
-          },
-          "final_item": "Rocky Helmet",
-          "nature": "Impish",
-          "hard_evs": "252 HP / 252 Def / 4 SpD"
-        }
-      ],
-      "electric": [
-        {
-          "family": "Pincurchin",
-          "role": "electric terrain setter",
-          "target_final_species": "Pincurchin",
-          "phase_moves": {
-            "early": [
-              "Spark",
-              "Thunder Wave",
-              "Recover",
-              "Poison Jab"
-            ],
-            "mid": [
-              "Discharge",
-              "Electric Terrain",
-              "Recover",
-              "Spikes"
-            ],
-            "final": [
-              "Thunderbolt",
-              "Electric Terrain",
-              "Recover",
-              "Spikes"
-            ]
-          },
-          "final_item": "Terrain Extender",
-          "nature": "Bold",
-          "hard_evs": "252 HP / 252 Def / 4 SpD"
-        },
-        {
-          "family": "saved starter",
-          "role": "persistent ace",
-          "species_source": "VAR_FAMILY_RIVAL_SPECIES",
-          "phase_moves": "select four level-legal moves for the saved starter species, including a current STAB and a role-appropriate utility move; resolve evolution at actual level",
-          "final_item_source": "starter type booster from data/spec/starters.json; unique within the team",
-          "nature": "role-dependent: speed or primary attack",
-          "hard_evs": "252 primary attack / 252 Spe / 4 HP"
-        },
-        {
-          "family": "Shinx",
-          "role": "physical electric pivot",
-          "target_final_species": "Luxray",
-          "phase_moves": {
-            "early": [
-              "Spark",
+              "Aqua Jet",
               "Bite",
-              "Charge",
-              "Quick Attack"
+              "Fury Attack",
+              "Focus Energy"
             ],
             "mid": [
-              "Wild Charge",
+              "Liquidation",
               "Crunch",
-              "Volt Switch",
-              "Thunder Wave"
+              "Psychic Fangs",
+              "Aqua Jet"
             ],
             "final": [
-              "Wild Charge",
-              "Crunch",
-              "Ice Fang",
-              "Volt Switch"
+              "Liquidation",
+              "Close Combat",
+              "Psychic Fangs",
+              "Flip Turn"
             ]
           },
           "final_item": "Choice Band",
@@ -593,357 +417,697 @@
           "hard_evs": "252 Atk / 252 Spe / 4 HP"
         },
         {
-          "family": "Mareep",
-          "role": "special tank",
-          "target_final_species": "Ampharos",
+          "family": "Dracovish",
+          "role": "Choice Scarf Strong Jaw finisher",
+          "target_final_species": "Dracovish",
+          "ability": "Strong Jaw",
           "phase_moves": {
             "early": [
-              "Thunder Shock",
-              "Cotton Spore",
-              "Tackle",
-              "Charge"
+              "Fishious Rend",
+              "Crunch",
+              "Psychic Fangs",
+              "Ice Fang"
             ],
             "mid": [
-              "Discharge",
-              "Thunder Wave",
-              "Power Gem",
-              "Volt Switch"
+              "Fishious Rend",
+              "Crunch",
+              "Psychic Fangs",
+              "Ice Fang"
             ],
             "final": [
-              "Thunderbolt",
-              "Dragon Pulse",
-              "Focus Blast",
-              "Volt Switch"
+              "Fishious Rend",
+              "Crunch",
+              "Psychic Fangs",
+              "Ice Fang"
             ]
           },
-          "final_item": "Assault Vest",
-          "nature": "Modest",
-          "hard_evs": "252 HP / 252 SpA / 4 SpD"
-        },
+          "final_item": "Choice Scarf",
+          "nature": "Adamant",
+          "hard_evs": "252 Atk / 252 Spe / 4 HP"
+        }
+      ],
+      "grass": [
         {
-          "family": "Toxel",
-          "role": "punk-rock special breaker",
-          "target_final_species": "Toxtricity",
+          "family": "Grookey",
+          "role": "grassy terrain setter #1 / pivot",
+          "target_final_species": "Rillaboom",
+          "ability": "Grassy Surge",
           "phase_moves": {
             "early": [
-              "Acid",
-              "Nuzzle",
-              "Growl",
-              "Flail"
+              "Branch Poke",
+              "Fake Out",
+              "Taunt",
+              "U-turn"
             ],
             "mid": [
-              "Acid",
-              "Nuzzle",
-              "Encore",
+              "Grassy Glide",
+              "Knock Off",
+              "U-turn",
+              "Wood Hammer"
+            ],
+            "final": [
+              "Grassy Glide",
+              "Wood Hammer",
+              "Knock Off",
+              "U-turn"
+            ]
+          },
+          "final_item": "Terrain Extender",
+          "nature": "Adamant",
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "tactica_starter_family": true,
+          "setter": "ability"
+        },
+        {
+          "family": "Treecko",
+          "role": "fixed starter / physical Mega setup",
+          "target_final_species": "Sceptile",
+          "ability": "Overgrow",
+          "phase_moves": {
+            "early": [
+              "Mega Drain",
+              "Quick Attack",
+              "Detect",
+              "Rock Tomb"
+            ],
+            "mid": [
+              "Leaf Blade",
+              "Dragon Breath",
+              "Rock Slide",
+              "Swords Dance"
+            ],
+            "final": [
+              "Dragon Dance",
+              "Leaf Blade",
+              "Dragon Claw",
+              "Rock Slide"
+            ]
+          },
+          "final_item": "Sceptilite",
+          "nature": "Jolly",
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "tactica_starter_family": true,
+          "is_rival_starter": true,
+          "mega": true
+        },
+        {
+          "family": "Ferroseed",
+          "role": "hazards / sustain / terrain-boosted STAB",
+          "target_final_species": "Ferrothorn",
+          "ability": "Iron Barbs",
+          "phase_moves": {
+            "early": [
+              "Leech Seed",
+              "Gyro Ball",
+              "Pin Missile",
               "Protect"
             ],
+            "mid": [
+              "Stealth Rock",
+              "Leech Seed",
+              "Bullet Seed",
+              "Gyro Ball"
+            ],
             "final": [
-              "Overdrive",
-              "Boomburst",
-              "Sludge Wave",
-              "Volt Switch"
+              "Stealth Rock",
+              "Leech Seed",
+              "Power Whip",
+              "Gyro Ball"
             ]
           },
-          "final_item": "Choice Specs",
-          "nature": "Modest",
-          "hard_evs": "252 SpA / 252 Spe / 4 HP"
+          "final_item": "Leftovers",
+          "nature": "Relaxed",
+          "hard_evs": "252 HP / 252 Def / 4 SpD"
         },
         {
-          "family": "Rotom",
-          "role": "fast disruptor",
-          "target_final_species": "Rotom",
+          "family": "Smoliv",
+          "role": "grassy terrain setter #2 / sustain",
+          "target_final_species": "Arboliva",
+          "ability": "Seed Sower",
           "phase_moves": {
             "early": [
-              "Thunder Shock",
-              "Astonish",
+              "Absorb",
+              "Tackle",
+              "Growth",
+              "Sweet Scent"
+            ],
+            "mid": [
+              "Giga Drain",
+              "Hyper Voice",
+              "Earth Power",
+              "Strength Sap"
+            ],
+            "final": [
+              "Giga Drain",
+              "Hyper Voice",
+              "Earth Power",
+              "Strength Sap"
+            ]
+          },
+          "final_item": "Throat Spray",
+          "nature": "Modest",
+          "hard_evs": "252 HP / 252 SpA / 4 SpD",
+          "setter": "ability"
+        },
+        {
+          "family": "Hawlucha",
+          "role": "Grassy Seed Unburden sweeper",
+          "target_final_species": "Hawlucha",
+          "ability": "Unburden",
+          "phase_moves": {
+            "early": [
+              "Swords Dance",
+              "Acrobatics",
+              "Close Combat",
+              "Encore"
+            ],
+            "mid": [
+              "Swords Dance",
+              "Acrobatics",
+              "Close Combat",
+              "Encore"
+            ],
+            "final": [
+              "Swords Dance",
+              "Acrobatics",
+              "Close Combat",
+              "Encore"
+            ]
+          },
+          "final_item": "Grassy Seed",
+          "nature": "Adamant",
+          "hard_evs": "252 Atk / 252 Spe / 4 HP"
+        },
+        {
+          "family": "Gholdengo",
+          "role": "anti-removal special breaker",
+          "target_final_species": "Gholdengo",
+          "ability": "Good as Gold",
+          "phase_moves": {
+            "early": [
+              "Nasty Plot",
+              "Make It Rain",
+              "Shadow Ball",
+              "Recover"
+            ],
+            "mid": [
+              "Nasty Plot",
+              "Make It Rain",
+              "Shadow Ball",
+              "Recover"
+            ],
+            "final": [
+              "Nasty Plot",
+              "Make It Rain",
+              "Shadow Ball",
+              "Recover"
+            ]
+          },
+          "final_item": "Air Balloon",
+          "nature": "Timid",
+          "hard_evs": "252 SpA / 252 Spe / 4 HP"
+        }
+      ],
+      "electric": [
+        {
+          "family": "Pincurchin",
+          "role": "electric terrain setter #1 / hazards",
+          "target_final_species": "Pincurchin",
+          "ability": "Electric Surge",
+          "phase_moves": {
+            "early": [
+              "Spark",
               "Thunder Wave",
-              "Confuse Ray"
+              "Recover",
+              "Spikes"
             ],
             "mid": [
               "Discharge",
-              "Hex",
-              "Will-O-Wisp",
-              "Volt Switch"
+              "Thunder Wave",
+              "Recover",
+              "Spikes"
             ],
             "final": [
               "Thunderbolt",
-              "Shadow Ball",
-              "Will-O-Wisp",
+              "Spikes",
+              "Recover",
+              "Memento"
+            ]
+          },
+          "final_item": "Terrain Extender",
+          "nature": "Bold",
+          "hard_evs": "252 HP / 252 Def / 4 SpD",
+          "setter": "ability"
+        },
+        {
+          "family": "Elekid",
+          "role": "fixed starter / physical Electric-Ground breaker",
+          "target_final_species": "Electivire",
+          "ability": "Motor Drive",
+          "phase_moves": {
+            "early": [
+              "Thunder Punch",
+              "Low Kick",
+              "Quick Attack",
+              "Light Screen"
+            ],
+            "mid": [
+              "Thunder Punch",
+              "Ice Punch",
+              "Cross Chop",
               "Volt Switch"
+            ],
+            "final": [
+              "Wild Charge",
+              "Earthquake",
+              "Ice Punch",
+              "Drain Punch"
+            ]
+          },
+          "final_item": "Expert Belt",
+          "nature": "Jolly",
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "tactica_starter_family": true,
+          "is_rival_starter": true
+        },
+        {
+          "family": "Raichu-Alola",
+          "role": "Surge Surfer special sweeper",
+          "target_final_species": "Raichu-Alola",
+          "ability": "Surge Surfer",
+          "phase_moves": {
+            "early": [
+              "Electro Ball",
+              "Psybeam",
+              "Nuzzle",
+              "Surf"
+            ],
+            "mid": [
+              "Discharge",
+              "Psychic",
+              "Surf",
+              "Nasty Plot"
+            ],
+            "final": [
+              "Thunderbolt",
+              "Psychic",
+              "Surf",
+              "Nasty Plot"
             ]
           },
           "final_item": "Life Orb",
           "nature": "Timid",
-          "hard_evs": "252 SpA / 252 Spe / 4 HP"
+          "hard_evs": "252 SpA / 252 Spe / 4 HP",
+          "tactica_starter_family": true
+        },
+        {
+          "family": "Toxtricity",
+          "role": "manual terrain setter #2 / Punk Rock breaker",
+          "target_final_species": "Toxtricity",
+          "ability": "Punk Rock",
+          "phase_moves": {
+            "early": [
+              "Acid",
+              "Nuzzle",
+              "Shock Wave",
+              "Encore"
+            ],
+            "mid": [
+              "Overdrive",
+              "Sludge Bomb",
+              "Electric Terrain",
+              "Encore"
+            ],
+            "final": [
+              "Electric Terrain",
+              "Overdrive",
+              "Boomburst",
+              "Sludge Wave"
+            ]
+          },
+          "final_item": "Throat Spray",
+          "nature": "Modest",
+          "hard_evs": "252 SpA / 252 Spe / 4 HP",
+          "setter": "move"
+        },
+        {
+          "family": "Iron Hands",
+          "role": "Quark Drive bulky physical breaker",
+          "target_final_species": "Iron Hands",
+          "ability": "Quark Drive",
+          "phase_moves": {
+            "early": [
+              "Drain Punch",
+              "Wild Charge",
+              "Ice Punch",
+              "Volt Switch"
+            ],
+            "mid": [
+              "Drain Punch",
+              "Wild Charge",
+              "Ice Punch",
+              "Volt Switch"
+            ],
+            "final": [
+              "Drain Punch",
+              "Wild Charge",
+              "Ice Punch",
+              "Volt Switch"
+            ]
+          },
+          "final_item": "Assault Vest",
+          "nature": "Adamant",
+          "hard_evs": "252 HP / 252 Atk / 4 SpD"
+        },
+        {
+          "family": "Electrike",
+          "role": "Mega pivot / Intimidate after transformation",
+          "target_final_species": "Manectric",
+          "ability": "Lightning Rod",
+          "phase_moves": {
+            "early": [
+              "Spark",
+              "Bite",
+              "Quick Attack",
+              "Thunder Wave"
+            ],
+            "mid": [
+              "Discharge",
+              "Flamethrower",
+              "Volt Switch",
+              "Snarl"
+            ],
+            "final": [
+              "Thunderbolt",
+              "Flamethrower",
+              "Volt Switch",
+              "Snarl"
+            ]
+          },
+          "final_item": "Manectite",
+          "nature": "Timid",
+          "hard_evs": "252 SpA / 252 Spe / 4 HP",
+          "mega": true
         }
       ],
       "ground": [
         {
           "family": "Hippopotas",
-          "role": "sand setter",
+          "role": "sand setter #1 / rocks / phazing",
           "target_final_species": "Hippowdon",
+          "ability": "Sand Stream",
           "phase_moves": {
             "early": [
-              "Sand Attack",
-              "Bite",
-              "Tackle",
-              "Yawn"
+              "Bulldoze",
+              "Yawn",
+              "Slack Off",
+              "Rock Tomb"
             ],
             "mid": [
-              "Bulldoze",
+              "Earthquake",
+              "Yawn",
               "Slack Off",
-              "Stealth Rock",
-              "Yawn"
+              "Stealth Rock"
             ],
             "final": [
               "Earthquake",
-              "Slack Off",
               "Stealth Rock",
+              "Slack Off",
               "Whirlwind"
             ]
           },
           "final_item": "Smooth Rock",
           "nature": "Impish",
-          "hard_evs": "252 HP / 252 Def / 4 SpD"
+          "hard_evs": "252 HP / 252 Def / 4 SpD",
+          "setter": "ability"
         },
         {
-          "family": "saved starter",
-          "role": "persistent ace",
-          "species_source": "VAR_FAMILY_RIVAL_SPECIES",
-          "phase_moves": "select four level-legal moves for the saved starter species, including a current STAB and a role-appropriate utility move; resolve evolution at actual level",
-          "final_item_source": "starter type booster from data/spec/starters.json; unique within the team",
-          "nature": "role-dependent: speed or primary attack",
-          "hard_evs": "252 primary attack / 252 Spe / 4 HP"
-        },
-        {
-          "family": "Nacli",
-          "role": "sand wall",
-          "target_final_species": "Garganacl",
-          "phase_moves": {
-            "early": [
-              "Rock Throw",
-              "Harden",
-              "Tackle",
-              "Protect"
-            ],
-            "mid": [
-              "Bulldoze",
-              "Recover",
-              "Rock Slide",
-              "Protect"
-            ],
-            "final": [
-              "Salt Cure",
-              "Recover",
-              "Body Press",
-              "Rock Slide"
-            ]
-          },
-          "final_item": "Leftovers",
-          "nature": "Careful",
-          "hard_evs": "252 HP / 252 SpD / 4 Def"
-        },
-        {
-          "family": "Trapinch",
-          "role": "physical wallbreaker",
-          "target_final_species": "Flygon",
+          "family": "Drilbur",
+          "role": "fixed starter / Mold Breaker sweeper",
+          "target_final_species": "Excadrill",
+          "ability": "Mold Breaker",
           "phase_moves": {
             "early": [
               "Bulldoze",
-              "Bite",
-              "Sand Attack",
+              "Metal Claw",
+              "Hone Claws",
               "Rock Tomb"
             ],
             "mid": [
+              "Swords Dance",
               "Earthquake",
+              "Iron Head",
+              "Rock Slide"
+            ],
+            "final": [
+              "Swords Dance",
+              "Earthquake",
+              "Iron Head",
+              "Rock Slide"
+            ]
+          },
+          "final_item": "Life Orb",
+          "nature": "Jolly",
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "tactica_starter_family": true,
+          "is_rival_starter": true
+        },
+        {
+          "family": "Gligar",
+          "role": "Poison Heal disruptor",
+          "target_final_species": "Gliscor",
+          "ability": "Poison Heal",
+          "phase_moves": {
+            "early": [
+              "Bulldoze",
+              "Knock Off",
+              "U-turn",
+              "Roost"
+            ],
+            "mid": [
+              "Earthquake",
+              "Knock Off",
+              "Toxic",
+              "Roost"
+            ],
+            "final": [
+              "Earthquake",
+              "Knock Off",
+              "Toxic",
+              "Roost"
+            ]
+          },
+          "final_item": "Toxic Orb",
+          "nature": "Impish",
+          "hard_evs": "252 HP / 252 Def / 4 SpD",
+          "tactica_starter_family": true
+        },
+        {
+          "family": "Larvitar",
+          "role": "sand setter #2 / Mega Dragon Dance win condition",
+          "target_final_species": "Tyranitar",
+          "ability": "Sand Stream",
+          "phase_moves": {
+            "early": [
+              "Rock Slide",
+              "Bite",
+              "Scary Face",
+              "Protect"
+            ],
+            "mid": [
               "Rock Slide",
               "Crunch",
+              "Ice Fang",
+              "Dragon Dance"
+            ],
+            "final": [
+              "Dragon Dance",
+              "Crunch",
+              "Rock Slide",
+              "Ice Punch"
+            ]
+          },
+          "final_item": "Tyranitarite",
+          "nature": "Jolly",
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "setter": "ability",
+          "mega": true
+        },
+        {
+          "family": "Gible",
+          "role": "Sand Veil physical breaker",
+          "target_final_species": "Garchomp",
+          "ability": "Sand Veil",
+          "phase_moves": {
+            "early": [
+              "Bulldoze",
+              "Bite",
+              "Rock Tomb",
               "Sandstorm"
             ],
+            "mid": [
+              "Dragon Claw",
+              "Earthquake",
+              "Iron Head",
+              "Swords Dance"
+            ],
             "final": [
+              "Swords Dance",
               "Earthquake",
               "Dragon Claw",
-              "Stone Edge",
-              "U-turn"
+              "Iron Head"
             ]
           },
-          "final_item": "Choice Scarf",
+          "final_item": "Lum Berry",
           "nature": "Jolly",
           "hard_evs": "252 Atk / 252 Spe / 4 HP"
         },
         {
-          "family": "Baltoy",
-          "role": "spin and screens",
-          "target_final_species": "Claydol",
+          "family": "Rookidee",
+          "role": "defensive pivot / Body Press win condition",
+          "target_final_species": "Corviknight",
+          "ability": "Mirror Armor",
           "phase_moves": {
             "early": [
-              "Confusion",
-              "Rapid Spin",
-              "Mud-Slap",
-              "Harden"
-            ],
-            "mid": [
-              "Psychic",
-              "Rapid Spin",
-              "Reflect",
-              "Light Screen"
-            ],
-            "final": [
-              "Earth Power",
-              "Psychic",
-              "Rapid Spin",
-              "Light Screen"
-            ]
-          },
-          "final_item": "Light Clay",
-          "nature": "Bold",
-          "hard_evs": "252 HP / 252 Def / 4 SpD"
-        },
-        {
-          "family": "Skorupi",
-          "role": "late pivot",
-          "target_final_species": "Drapion",
-          "phase_moves": {
-            "early": [
-              "Poison Sting",
-              "Bite",
-              "Knock Off",
-              "Toxic Spikes"
-            ],
-            "mid": [
-              "Poison Jab",
-              "Knock Off",
+              "Pluck",
               "Taunt",
-              "Toxic Spikes"
+              "Hone Claws",
+              "Roost"
+            ],
+            "mid": [
+              "Drill Peck",
+              "Taunt",
+              "Iron Defense",
+              "Roost"
             ],
             "final": [
-              "Poison Jab",
-              "Knock Off",
-              "Earthquake",
-              "Taunt"
+              "Iron Defense",
+              "Body Press",
+              "Brave Bird",
+              "Roost"
             ]
           },
-          "final_item": "Black Sludge",
-          "nature": "Jolly",
-          "hard_evs": "252 Atk / 252 Spe / 4 HP"
+          "final_item": "Leftovers",
+          "nature": "Impish",
+          "hard_evs": "252 HP / 252 Def / 4 SpD"
         }
       ],
       "ice": [
         {
-          "family": "Snover",
-          "role": "snow setter",
-          "target_final_species": "Abomasnow",
+          "family": "Vanillite",
+          "role": "snow setter #1 / special control",
+          "target_final_species": "Vanilluxe",
+          "ability": "Snow Warning",
           "phase_moves": {
             "early": [
-              "Powder Snow",
-              "Razor Leaf",
-              "Mist",
-              "Icy Wind"
-            ],
-            "mid": [
-              "Blizzard",
-              "Ice Shard",
-              "Leech Seed",
-              "Light Screen"
-            ],
-            "final": [
-              "Blizzard",
-              "Giga Drain",
-              "Aurora Veil",
-              "Leech Seed"
-            ]
-          },
-          "final_item": "Icy Rock",
-          "nature": "Quiet",
-          "hard_evs": "252 HP / 252 SpA / 4 SpD"
-        },
-        {
-          "family": "saved starter",
-          "role": "persistent ace",
-          "species_source": "VAR_FAMILY_RIVAL_SPECIES",
-          "phase_moves": "select four level-legal moves for the saved starter species, including a current STAB and a role-appropriate utility move; resolve evolution at actual level",
-          "final_item_source": "starter type booster from data/spec/starters.json; unique within the team",
-          "nature": "role-dependent: speed or primary attack",
-          "hard_evs": "252 primary attack / 252 Spe / 4 HP"
-        },
-        {
-          "family": "Spheal",
-          "role": "bulky ice/water",
-          "target_final_species": "Walrein",
-          "phase_moves": {
-            "early": [
-              "Powder Snow",
-              "Water Gun",
-              "Rollout",
-              "Encore"
+              "Icy Wind",
+              "Mirror Coat",
+              "Uproar",
+              "Taunt"
             ],
             "mid": [
               "Ice Beam",
-              "Surf",
-              "Encore",
-              "Rest"
+              "Freeze-Dry",
+              "Flash Cannon",
+              "Taunt"
             ],
             "final": [
               "Blizzard",
-              "Surf",
-              "Encore",
-              "Rest"
+              "Freeze-Dry",
+              "Flash Cannon",
+              "Taunt"
             ]
           },
-          "final_item": "Leftovers",
-          "nature": "Bold",
-          "hard_evs": "252 HP / 252 Def / 4 SpD"
+          "final_item": "Icy Rock",
+          "nature": "Timid",
+          "hard_evs": "252 SpA / 252 Spe / 4 HP",
+          "tactica_starter_family": true,
+          "setter": "ability"
         },
         {
-          "family": "Snom",
-          "role": "special ice pivot",
-          "target_final_species": "Frosmoth",
+          "family": "Darumaka-Galar",
+          "role": "fixed starter / Gorilla Tactics breaker",
+          "target_final_species": "Darmanitan-Galar",
+          "ability": "Gorilla Tactics",
+          "phase_moves": {
+            "early": [
+              "Ice Fang",
+              "Headbutt",
+              "U-turn",
+              "Taunt"
+            ],
+            "mid": [
+              "Icicle Crash",
+              "Fire Punch",
+              "Earthquake",
+              "U-turn"
+            ],
+            "final": [
+              "Icicle Crash",
+              "Flare Blitz",
+              "Earthquake",
+              "U-turn"
+            ]
+          },
+          "final_item": "Choice Band",
+          "nature": "Jolly",
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "tactica_starter_family": true,
+          "is_rival_starter": true
+        },
+        {
+          "family": "Amaura",
+          "role": "snow setter #2 / special coverage",
+          "target_final_species": "Aurorus",
+          "ability": "Snow Warning",
           "phase_moves": {
             "early": [
               "Powder Snow",
-              "Struggle Bug",
+              "Ancient Power",
               "Icy Wind",
-              "Protect"
+              "Thunder Wave"
             ],
             "mid": [
-              "Icy Wind",
-              "Bug Buzz",
-              "Protect",
-              "Mirror Coat"
+              "Ice Beam",
+              "Ancient Power",
+              "Earth Power",
+              "Thunderbolt"
             ],
             "final": [
               "Blizzard",
-              "Bug Buzz",
-              "Quiver Dance",
-              "Tailwind"
+              "Freeze-Dry",
+              "Earth Power",
+              "Thunderbolt"
             ]
           },
-          "final_item": "Heavy-Duty Boots",
-          "nature": "Timid",
-          "hard_evs": "252 SpA / 252 Spe / 4 HP"
+          "final_item": "Assault Vest",
+          "nature": "Modest",
+          "hard_evs": "252 HP / 252 SpA / 4 SpD",
+          "setter": "ability"
         },
         {
           "family": "Sandshrew-Alola",
-          "role": "physical wallbreaker",
+          "role": "Slush Rush physical sweeper",
           "target_final_species": "Sandslash-Alola",
+          "ability": "Slush Rush",
           "phase_moves": {
             "early": [
-              "Powder Snow",
+              "Ice Shard",
               "Metal Claw",
               "Rapid Spin",
               "Defense Curl"
             ],
             "mid": [
+              "Swords Dance",
               "Ice Punch",
               "Iron Head",
-              "Rapid Spin",
-              "Swords Dance"
+              "Rock Slide"
             ],
             "final": [
+              "Swords Dance",
               "Icicle Crash",
               "Iron Head",
-              "Earthquake",
-              "Swords Dance"
+              "Earthquake"
             ]
           },
           "final_item": "Life Orb",
@@ -951,34 +1115,81 @@
           "hard_evs": "252 Atk / 252 Spe / 4 HP"
         },
         {
-          "family": "Cetoddle",
-          "role": "late physical ace",
-          "target_final_species": "Cetitan",
+          "family": "Arctovish",
+          "role": "physical Aurora Veil support / fire coverage",
+          "target_final_species": "Arctovish",
+          "ability": "Slush Rush",
           "phase_moves": {
             "early": [
-              "Ice Shard",
-              "Tackle",
-              "Growl",
-              "Powder Snow"
+              "Icicle Crash",
+              "Aurora Veil",
+              "Fishious Rend",
+              "Rock Slide"
             ],
             "mid": [
-              "Ice Fang",
-              "Ice Shard",
-              "Belly Drum",
-              "Body Slam"
+              "Icicle Crash",
+              "Aurora Veil",
+              "Fishious Rend",
+              "Rock Slide"
             ],
             "final": [
               "Icicle Crash",
-              "Earthquake",
-              "Ice Shard",
-              "Belly Drum"
+              "Aurora Veil",
+              "Fishious Rend",
+              "Rock Slide"
             ]
           },
-          "final_item": "Sitrus Berry",
+          "final_item": "Light Clay",
           "nature": "Adamant",
-          "hard_evs": "252 Atk / 252 HP / 4 SpD"
+          "hard_evs": "252 HP / 252 Atk / 4 SpD"
+        },
+        {
+          "family": "Frigibax",
+          "role": "Mega physical carry",
+          "target_final_species": "Baxcalibur",
+          "ability": "Thermal Exchange",
+          "phase_moves": {
+            "early": [
+              "Ice Fang",
+              "Dragon Tail",
+              "Bite",
+              "Protect"
+            ],
+            "mid": [
+              "Dragon Claw",
+              "Icicle Crash",
+              "Earthquake",
+              "Dragon Dance"
+            ],
+            "final": [
+              "Dragon Dance",
+              "Glaive Rush",
+              "Icicle Crash",
+              "Earthquake"
+            ]
+          },
+          "final_item": "Baxcalibrite",
+          "nature": "Jolly",
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "mega": true
         }
       ]
+    },
+    "rules": {
+      "format": "singles 1v1",
+      "max_tactica_starter_families_per_team": 2,
+      "weather_or_terrain_setters": "two per themed final team; prefer automatic abilities; Electric uses Pincurchin Electric Surge plus Toxtricity Electric Terrain because Tapu Koko is excluded",
+      "mega": "exactly one Mega plan per final archetype; held Mega Stone only after player badge 4; species must still be at a legal evolution stage",
+      "held_items": "unique within each final team",
+      "reliability": "prefer reliable moves when comparable; avoid unnecessary miss-heavy coverage"
+    },
+    "mega_by_category": {
+      "fire": "Blazikenite",
+      "water": "Swampertite",
+      "grass": "Sceptilite",
+      "electric": "Manectite",
+      "ground": "Tyranitarite",
+      "ice": "Baxcalibrite"
     }
   }
 }
