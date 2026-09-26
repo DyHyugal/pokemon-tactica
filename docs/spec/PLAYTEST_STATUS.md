@@ -6,7 +6,15 @@ Ce fichier est la référence opérationnelle pour savoir **quelle ROM le propri
 
 **Aucune candidate owner validée au 26 septembre 2026.**
 
-Deux SHA sont suivis séparément afin de ne plus confondre état Git et état gameplay validé.\n\nDernier SHA `integration/v1` observé après la PR #20 :\n\n```text\n8cbdbeb41adfeb62d78d520200e53659fbb1441b\n```\n\nDernier SHA gameplay/runtime servant encore de référence automatisée :
+Deux SHA sont suivis séparément afin de ne plus confondre état Git et état gameplay validé.
+
+Dernier SHA `integration/v1` observé après la PR #20 :
+
+```text
+8cbdbeb41adfeb62d78d520200e53659fbb1441b
+```
+
+Dernier SHA gameplay/runtime servant encore de référence automatisée :
 
 ```text
 04e805a318fd00b882df4cd6283808b9ae25b3b8
