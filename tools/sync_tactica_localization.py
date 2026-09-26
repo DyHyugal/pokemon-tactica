@@ -40,9 +40,9 @@ POKEDEX_HTML_FILES = (
     (ROOT / "docs/EN/Pokedex.html", "en"),
 )
 
-HTML_STANDARD_ROW = re.compile(r'<tr data-kind="standard".*?</tr>')
-HTML_CELL = re.compile(r"<td>.*?</td>")
-DEX_CARD = re.compile(r'<article class="card dex-card".*?</article>')
+HTML_STANDARD_ROW = re.compile(r'<tr data-kind="standard".*?</tr>', re.S)
+HTML_CELL = re.compile(r"<td>.*?</td>", re.S)
+DEX_CARD = re.compile(r'<article class="card dex-card".*?</article>', re.S)
 DEX_CARD_NAME = re.compile(r"<strong>([^<]+)</strong>")
 DEX_CARD_SPRITE = re.compile(r'/([^/"?]+)\.png(?:\?[^"]*)?"')
 DEX_CARD_COUNT = re.compile(r"<small>\d+ tables?</small>")
@@ -110,46 +110,52 @@ def load_fr_species() -> dict[str, str]:
     return json.loads(payload).get("species", {})
 
 
-def pokedex_cards(path: Path) -> list[tuple[str, str]]:
+def pokedex_cards(path: Path) -> dict[str, str]:
     text = path.read_text(encoding="utf-8")
-    cards: list[tuple[str, str]] = []
+    cards: dict[str, str] = {}
     for match in DEX_CARD.finditer(text):
         card = match.group(0)
         sprite = DEX_CARD_SPRITE.search(card)
         name = DEX_CARD_NAME.search(card)
         if sprite and name:
-            cards.append((html.unescape(sprite.group(1)), html.unescape(name.group(1))))
+            cards[html.unescape(sprite.group(1))] = html.unescape(name.group(1))
     return cards
+
+
+def runtime_slug(value: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", (value or "").lower()).strip("-")
+
+
+def slug_candidates(constant: str, species_meta: dict[str, dict]) -> list[str]:
+    base = constant.removeprefix("SPECIES_").lower().replace("_", "-")
+    runtime = runtime_slug(species_meta.get(constant, {}).get("name", ""))
+    candidates = [base, runtime]
+    if base.endswith("-m"):
+        candidates.extend((base[:-2] + "-male", base[:-2]))
+    if base.endswith("-f"):
+        candidates.extend((base[:-2] + "-female", base[:-2]))
+    if base.endswith("-galar-standard"):
+        candidates.append(base.removesuffix("-standard"))
+    for suffix in (
+        "-red", "-shield", "-zero", "-overcast", "-midday", "-amped",
+        "-curly", "-droopy", "-stretchy", "-meadow", "-average",
+        "-small", "-large", "-super", "-meteor", "-red-striped",
+        "-west", "-east",
+    ):
+        if base.endswith(suffix):
+            candidates.append(base.removesuffix(suffix))
+    return list(dict.fromkeys(candidate for candidate in candidates if candidate))
 
 
 def build_display_map(lang: str, species_meta: dict[str, dict]) -> dict[str, str]:
     path = ROOT / ("docs/FR/Pokedex.html" if lang == "fr" else "docs/EN/Pokedex.html")
+    cards = pokedex_cards(path)
     result: dict[str, str] = {}
-    for slug, name in pokedex_cards(path):
-        slug_n = normalize(slug)
-        name_n = normalize(name)
-        best = None
-        best_score = -1
-        for constant, data in species_meta.items():
-            constant_n = normalize(constant.removeprefix("SPECIES_"))
-            runtime_n = normalize(data.get("name", ""))
-            score = 0
-            if slug_n and constant_n == slug_n:
-                score += 1000
-            if name_n and runtime_n == name_n:
-                score += 200
-            if slug_n and runtime_n and slug_n.startswith(runtime_n):
-                score += 80
-            if constant_n == name_n:
-                score += 100
-            for token in constant.removeprefix("SPECIES_").lower().split("_")[1:]:
-                if len(token) > 1 and normalize(token) in slug_n:
-                    score += 4
-            if score > best_score:
-                best = constant
-                best_score = score
-        if best:
-            result[best] = name
+    for constant in species_meta:
+        for slug in slug_candidates(constant, species_meta):
+            if slug in cards:
+                result[constant] = cards[slug]
+                break
     return result
 
 
@@ -166,27 +172,6 @@ def markdown_data_rows(text: str) -> tuple[str, list[str], list[int]]:
     if len(data_rows) != 462:
         raise ValueError(f"expected 462 encounter rows, got {len(data_rows)}")
     return newline, lines, data_rows
-
-
-def seed_display_map_from_locations(
-    lang: str,
-    display_map: dict[str, str],
-    species_meta: dict[str, dict],
-    standard: list[dict],
-) -> None:
-    path = ROOT / ("wiki/FR/Localisations.md" if lang == "fr" else "wiki/EN/Locations.md")
-    _, lines, rows = markdown_data_rows(path.read_text(encoding="utf-8"))
-    for table, row_index in zip(standard, rows[: len(standard)]):
-        cells = lines[row_index].split("|")
-        names = [part.strip().rsplit(" ", 1)[0] for part in cells[5].split("·")]
-        for constant, current_name in zip(table["species"], names):
-            if constant in display_map:
-                continue
-            runtime = species_meta.get(constant, {}).get("name", "")
-            runtime_base = normalize(runtime.split("-")[0])
-            current_n = normalize(current_name)
-            if runtime_base and (current_n.startswith(runtime_base) or runtime_base.startswith(current_n)):
-                display_map[constant] = current_name
 
 
 def fallback_label(
@@ -241,23 +226,41 @@ def update_markdown(
     display_maps: dict[str, dict[str, str]],
     species_meta: dict[str, dict],
     fr_species: dict[str, str],
-    path: Path,
 ) -> str:
     newline, lines, data_rows = markdown_data_rows(text)
     for table, index in zip(standard, data_rows[: len(standard)]):
         cells = lines[index].split("|")
-        level_range = format_range(table["min_level"], table["max_level"])
-        slots = species_text(table, lang, display_maps, species_meta, fr_species)
-        changed = False
-        if cells[4].strip() != level_range:
-            cells[4] = f" {level_range} "
-            changed = True
-        if cells[5].strip() != slots:
-            cells[5] = f" {slots} "
-            changed = True
-        if changed:
-            lines[index] = "|".join(cells)
+        cells[4] = f" {format_range(table['min_level'], table['max_level'])} "
+        cells[5] = f" {species_text(table, lang, display_maps, species_meta, fr_species)} "
+        lines[index] = "|".join(cells)
     return newline.join(lines)
+
+
+def html_cell_text(cell: str) -> str:
+    return html.unescape(re.sub(r"<[^>]+>", "", cell))
+
+
+def search_aliases() -> list[tuple[str, str, str, str, str, str]]:
+    pages = {}
+    for lang, path in (
+        ("fr", ROOT / "docs/FR/Localisations.html"),
+        ("en", ROOT / "docs/EN/Locations.html"),
+    ):
+        rows = list(HTML_STANDARD_ROW.finditer(path.read_text(encoding="utf-8")))
+        if len(rows) != 405:
+            raise ValueError(f"{path.relative_to(ROOT)}: expected 405 standard rows")
+        pages[lang] = [
+            [html_cell_text(cell.group(0)) for cell in HTML_CELL.finditer(row.group(0))][:3]
+            for row in rows
+        ]
+    return [
+        (
+            pages["fr"][index][0], pages["en"][index][0],
+            pages["fr"][index][1], pages["en"][index][1],
+            pages["fr"][index][2], pages["en"][index][2],
+        )
+        for index in range(405)
+    ]
 
 
 def update_html(
@@ -267,6 +270,7 @@ def update_html(
     display_maps: dict[str, dict[str, str]],
     species_meta: dict[str, dict],
     fr_species: dict[str, str],
+    aliases: list[tuple[str, str, str, str, str, str]],
     path: Path,
 ) -> str:
     rows = list(HTML_STANDARD_ROW.finditer(text))
@@ -275,21 +279,31 @@ def update_html(
             f"{path.relative_to(ROOT)}: expected {len(standard)} standard rows, got {len(rows)}"
         )
     replacements: list[str] = []
-    for row_match, table in zip(rows, standard):
-        row = row_match.group(0)
-        cells = list(HTML_CELL.finditer(row))
-        if len(cells) != 5:
-            raise ValueError(f"{path.relative_to(ROOT)}: malformed encounter row")
-        level_range = format_range(table["min_level"], table["max_level"])
-        slots = html.escape(
-            species_text(table, lang, display_maps, species_meta, fr_species),
-            quote=False,
-        )
-        replacement = row
-        for cell_index, value in ((4, slots), (3, level_range)):
-            cells_now = list(HTML_CELL.finditer(replacement))
-            cell = cells_now[cell_index]
+    for index, (row_match, table) in enumerate(zip(rows, standard)):
+        replacement = row_match.group(0)
+        for cell_index, value in (
+            (4, html.escape(species_text(table, lang, display_maps, species_meta, fr_species), quote=False)),
+            (3, format_range(table["min_level"], table["max_level"])),
+        ):
+            cells = list(HTML_CELL.finditer(replacement))
+            if len(cells) != 5:
+                raise ValueError(f"{path.relative_to(ROOT)}: malformed encounter row")
+            cell = cells[cell_index]
             replacement = replacement[: cell.start()] + f"<td>{value}</td>" + replacement[cell.end() :]
+
+        search_terms = list(aliases[index])
+        for constant in table["species"]:
+            search_terms.extend((
+                display_label(constant, "fr", display_maps, species_meta, fr_species),
+                display_label(constant, "en", display_maps, species_meta, fr_species),
+            ))
+        search_value = html.escape(" ".join(search_terms).lower(), quote=True)
+        replacement = re.sub(
+            r'data-search="[^"]*"',
+            f'data-search="{search_value}"',
+            replacement,
+            count=1,
+        )
         replacements.append(replacement)
 
     parts: list[str] = []
@@ -309,7 +323,7 @@ def special_display_counts(lang: str) -> collections.Counter[str]:
     for row_index in rows[405:]:
         cells = lines[row_index].split("|")
         for part in cells[5].split("·"):
-            name = part.strip().rsplit(" ", 1)[0]
+            name = re.sub(r"\s+\d+%$", "", part.strip())
             counts[name] += 1
     return counts
 
@@ -321,7 +335,7 @@ def encounter_counts(
     species_meta: dict[str, dict],
     fr_species: dict[str, str],
 ) -> collections.Counter[str]:
-    counts: collections.Counter[str] = special_display_counts(lang)
+    counts = special_display_counts(lang)
     for table in standard:
         for constant in table["species"]:
             counts[display_label(constant, lang, display_maps, species_meta, fr_species)] += 1
@@ -342,7 +356,7 @@ def update_pokedex_markdown(text: str, counts: collections.Counter[str]) -> str:
 
 
 def update_pokedex_html(text: str, counts: collections.Counter[str]) -> str:
-    pieces: list[str] = []
+    parts: list[str] = []
     cursor = 0
     for match in DEX_CARD.finditer(text):
         card = match.group(0)
@@ -357,11 +371,11 @@ def update_pokedex_html(text: str, counts: collections.Counter[str]) -> str:
             card,
             count=1,
         )
-        pieces.append(text[cursor : match.start()])
-        pieces.append(replacement)
+        parts.append(text[cursor : match.start()])
+        parts.append(replacement)
         cursor = match.end()
-    pieces.append(text[cursor:])
-    return "".join(pieces)
+    parts.append(text[cursor:])
+    return "".join(parts)
 
 
 def main() -> int:
@@ -370,22 +384,19 @@ def main() -> int:
     args = parser.parse_args()
 
     standard = load_standard()
-    load_special()  # structural guard; special rows remain authored textual pools
+    load_special()
     species_meta = load_species_metadata()
     fr_species = load_fr_species()
     display_maps = {
         "fr": build_display_map("fr", species_meta),
         "en": build_display_map("en", species_meta),
     }
-    for lang in ("fr", "en"):
-        seed_display_map_from_locations(lang, display_maps[lang], species_meta, standard)
+    aliases = search_aliases()
 
     stale: list[Path] = []
     for path, lang in MARKDOWN_FILES:
         current = path.read_text(encoding="utf-8")
-        expected = update_markdown(
-            current, standard, lang, display_maps, species_meta, fr_species, path
-        )
+        expected = update_markdown(current, standard, lang, display_maps, species_meta, fr_species)
         if expected != current:
             stale.append(path)
             if not args.check:
@@ -394,7 +405,7 @@ def main() -> int:
     for path, lang in HTML_FILES:
         current = path.read_text(encoding="utf-8")
         expected = update_html(
-            current, standard, lang, display_maps, species_meta, fr_species, path
+            current, standard, lang, display_maps, species_meta, fr_species, aliases, path
         )
         if expected != current:
             stale.append(path)
