@@ -645,25 +645,40 @@ Progression de familles :
    - Talent : Farceur
    - Protection
    - Mur Lumière
-   - Zénith
    - Cage Éclair
+   - Tricherie / Picots selon disponibilité et légalité au niveau réel
 
-6. **Démolosse -> Méga-Démolosse @ Démolossite**
-   - talent pré-Méga légal
-   - Talent Méga : Force Soleil
-   - Machination
-   - Vibrobscur
-   - Lance-Flammes
-   - Bomb-Beurk
+6. **Sharpedo -> Méga-Sharpedo @ Sharpedonite**
+   - Talent avant Méga : **Turbo** si disponible sur la forme de base, sinon talent légal de Sharpedo
+   - Talent Méga : **Prognathe**
+   - Nature : Jovial
+   - EV HARD : 252 Atk / 252 Vit / 4 PV
+   - Mâchouille
+   - Liquidation
+   - Psycho-Croc
+   - Crocs Givre
 
-Zénith de Trousselin sert explicitement à activer Force Soleil sans transformer Archer en équipe Sun complète.
+**Règle IA/Méga d'Archer :**
+- Méga-Sharpedo doit **Méga-évoluer immédiatement dès qu'il entre en jeu et que la Méga est disponible**.
+- Ne pas implémenter de logique spéciale « Abri au tour 1 puis Méga au tour 2 ».
+- **Abri n'appartient pas à ce set.**
+- Le talent Turbo de Sharpedo pré-Méga est seulement un talent légal de la forme de base ; le plan tactique ne dépend pas d'un tour passé volontairement sans Méga.
+- Mâchouille, Psycho-Croc et Crocs Givre sont des attaques de morsure et profitent de Prognathe après Méga-évolution.
+- Liquidation fournit le STAB Eau fiable à 100 % de précision.
 
-Ace FINAL : Méga-Démolosse.
+Les quatre attaques retenues sont présentes dans le learnset teachable généré de Sharpedo dans le build actuel.
+
+Ace FINAL : **Méga-Sharpedo**.
+
+Méga-Démolosse est explicitement interdit ici : il est déjà réservé à **Marion** au Conseil 4 et violerait la règle d'unicité des Méga importantes.
 
 Progression de familles :
-- EARLY 3 : Farfuret / Nosferapti / Malosse
-- MID 4 : + Nidoran♂
-- FINAL 6 : + Magnéti / Trousselin
+- EARLY 3 : **Farfuret / Nosferapti / Carvanha**
+- MID 4 : + **Nidorino**
+- FINAL 6 : + **Magnéti / Trousselin**
+
+Les familles EARLY/MID sont donc toutes conservées dans FINAL ; ne pas réintroduire Malosse/Démolosse dans la progression d'Archer.
+
 
 ---
 
@@ -682,4 +697,6 @@ Codex doit, dans cet ordre :
 9. valider unicité des objets ;
 10. valider la légalité de chaque move au niveau réel ;
 11. vérifier spécifiquement Tonnerre sur Dragmara ; si non teachable, choisir une couverture Électrik légale et documenter le remplacement ;
-12. ne pas modifier les événements scénario : les nouveaux rosters s'appliquent aux combats existants.
+12. ne pas modifier les événements scénario : les nouveaux rosters s'appliquent aux combats existants ;
+13. pour Archer, utiliser **Méga-Sharpedo** et non Méga-Démolosse ; Méga-évolution immédiate, aucun séquençage Abri -> Méga ;
+14. valider automatiquement l'unicité des Méga importantes entre Champions, Conseil 4, rival et Rocket afin d'empêcher la réutilisation accidentelle d'une Méga déjà réservée.
