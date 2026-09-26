@@ -19,6 +19,27 @@ This page groups the gameplay changes specific to Pokémon Tactica. It is intend
 - Dedicated strategic-item, move/TM and Mega Stone shops.
 - Custom interfaces aligned around black, red and gray.
 
+
+### Difficulty and Level Caps
+
+NORMAL and HARD keep the same Pokémon, rosters, sets, levels and mechanics. HARD mainly adds stronger IV/EV preparation and more demanding AI. The Level Cap follows the next major battle and never moves backward: Falkner 17, Bugsy 25, Whitney 32, Morty 38, Chuck 45, Jasmine 52, Pryce 57, Clair 64, Elite Four 67, Champion 70.
+
+### Starters and Elm's Egg
+
+The Johto trio is replaced by a selector with **30 starters across six categories + Eevee**. The rival keeps a coherent category and starter throughout the adventure. Elm's Egg then becomes a **second starter choice** and cannot give exactly the same species as the first choice. Required type boosters or intended evolution items are granted automatically.
+
+### Settings and quality of life
+
+Native speed offers **x1 / x2 / x3 / x4** without speeding up music. Music and SFX/cries use separate volume settings. **Shiny Rate** is configurable from **1/8192 to 1/1**. Settings remain grouped under Mode / Features / Randomizer / Nuzlocke / Difficulty / Challenges.
+
+### Team preparation
+
+The Training NPC covers **EXP up to the cap, IVs, EVs, EV reset, nature, ability and friendship**. Dedicated move/TM, strategic-item and Mega Stone NPCs let players prepare teams without unnecessary grind while leaving story items and progression events intact.
+
+### Mega Evolution
+
+Morty gives the **Mega Ring** after Badge 4 and his TM, so the player can Mega Evolve immediately throughout the section between Badges 4 and 5. Boss Mega users must start from a legal base form and legal base ability; the Mega ability is obtained through the transformation itself.
+
 ## Modified Pokémon — 26 entries
 
 | Pokémon | Type(s) | Changes |
