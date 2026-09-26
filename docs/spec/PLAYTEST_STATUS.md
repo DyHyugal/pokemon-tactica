@@ -8,17 +8,13 @@ Ce fichier est la référence opérationnelle pour savoir **quelle ROM le propri
 
 Deux SHA sont suivis séparément afin de ne plus confondre état Git et état gameplay validé.
 
-Dernier SHA `integration/v1` observé après la PR #20 :
+Dernier SHA `integration/v1` intégré après les PR #22 CORE et #23 Encounters :
 
 ```text
-8cbdbeb41adfeb62d78d520200e53659fbb1441b
+96f0b2c86da3d7bdfc8af47309bf366656351f0d
 ```
 
-Dernier SHA gameplay/runtime servant encore de référence automatisée :
-
-```text
-04e805a318fd00b882df4cd6283808b9ae25b3b8
-```
+Ce SHA contient les corrections CORE et Encounters automatisées. Il n'est **pas encore une candidate owner** : le bloc UI/UX reste à corriger avant la prochaine recette globale.
 
 Le SHA gameplay ci-dessus contient beaucoup d'avancées automatisées (encounters, rival dynamique, boss/Rocket, balance, shops, caps), mais il **ne doit pas être présenté comme la RC / build finale des blocs CORE + encounters + UI**, car plusieurs retours owner connus restent non implémentés ou non validés en ROM.
 
@@ -53,16 +49,16 @@ Pour les rebuilds quotidiens sans doute sur les artefacts, `make hns -j4` suffit
 
 ## Écarts connus avant la prochaine candidate
 
-Ces points sont **à corriger ou à revalider avant de demander un nouveau playtest de progression** :
+Les anciens défauts source « rival niveau 5 », Route 36 27–30, talent Méga illégal de Mortimer, Mega Ring absent après badge 4 et bugs logiques du sélecteur ont été corrigés par les PR #22/#23 et ne doivent plus être présentés comme non implémentés. Ils restent des **témoins ROM à revalider** sur la future candidate.
 
-- sélecteur starter : position initiale et retour après annulation incohérents ; Élekid peut renvoyer sur `Retour` ;
-- Summary : ancienne composition BG/tilemaps/windows encore présente, superpositions STATS/IV/EV et pages d'attaques ;
-- menus custom des boutiques : rendu actuel non conforme à la charte rouge/noir ;
-- HUD combat : healthboxes déjà assombries mais panneaux action/attaques encore non conformes au rendu final attendu ;
-- premier rival : le template moteur reste niveau 5 ; contrat owner = starter seul mais niveau 17, avec évolution légale à ce niveau ;
-- Route 36 : **ne pas retester l'état actuel**. Les sources fusionnées sont déjà connues fausses (27–30, cap de zone mal classé). Corriger d'abord à 14–17 max avec les stades correspondants, puis reconstruire la ROM ;
-- Mortimer : le générateur peut encore produire Ectoplasma @ Ectoplasmite avec Shadow Tag sur la forme de base ; la Méga doit être corrigée ;
-- Mega Ring : doit être remis après le badge 4, avant la portion vers le badge 5.
+Les écarts encore réellement à corriger avant cette candidate sont UI/UX :
+
+- Summary : recomposition BG/tilemaps/windows, lisibilité STATS/IV/EV et remplacement possible de `CONTEST MOVES` par une page IV/EV ;
+- boutiques custom : fond rouge, texte noir, sélection lisible sans grand surlignage blanc ;
+- HUD combat : healthboxes déjà assombries, panneaux action/attaques encore à harmoniser noir/rouge/gris ;
+- polish visuel du sélecteur starter et des fenêtres custom à confirmer pendant la recette.
+
+Les témoins gameplay à **revalider**, et non à recoder sans défaut démontré, sont : curseur/annulation starter, premier rival niveau 17, combats Rival/Rocket progressifs, Méga de Mortimer, réception/utilisation du Mega Ring et Route 36 14–17.
 
 ## Règle de publication d'une prochaine candidate
 
