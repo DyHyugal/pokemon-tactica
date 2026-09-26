@@ -8,6 +8,14 @@ const AFR=()=>window.TacticaAbilityDescriptionsFR||{};
 const LS=()=>window.TacticaDexLearnsets||{};
 const TM=()=>window.TacticaDexTutorMoves||{};
 const lang=document.documentElement.lang==="fr"?"fr":"en";
+window.tacticaSpriteFallback=img=>{
+  if(!img||img.dataset.spriteFallback){if(img)img.style.display="none";return;}
+  img.dataset.spriteFallback="1";
+  const clean=img.src.replace(/\?.*$/,"");
+  const next=clean.replace(/-[^-/.]+\.png$/, ".png");
+  if(next===clean){img.style.display="none";return;}
+  img.src=next;
+};
 const t=lang==="fr"?{
   source:"Données issues de Pokémon Tactica",
   stats:"Statistiques de base", evo:"Lignée évolutive", evoHow:"Conditions d’évolution",
@@ -119,7 +127,7 @@ function ensureEvolutionFamilyCards(){
     card.className="card dex-card";
     card.dataset.search=(display+" "+other+" "+en).toLowerCase();
     const loc=(lang==="fr"?"Localisations.html?q=":"Locations.html?q=")+encodeURIComponent(display);
-    card.innerHTML='<span class="poke-name"><img class="poke-sprite" loading="lazy" src="https://play.pokemonshowdown.com/sprites/gen5/'+spriteSlugFromConst(constant)+'.png" alt="'+display+'" onerror="this.style.display=\'none\'"><strong>'+display+'</strong></span><small>'+(lang==="fr"?"Fiche ROM":"ROM entry")+'</small><a class="card-link" href="'+loc+'">'+t.allLocations+' →</a>';
+    card.innerHTML='<span class="poke-name"><img class="poke-sprite" loading="lazy" src="https://play.pokemonshowdown.com/sprites/gen5/'+spriteSlugFromConst(constant)+'.png" alt="'+display+'" onerror="window.tacticaSpriteFallback(this)"><strong>'+display+'</strong></span><small>'+(lang==="fr"?"Fiche ROM":"ROM entry")+'</small><a class="card-link" href="'+loc+'">'+t.allLocations+' →</a>';
     dex.append(card);
     existing.add(constant);
   }
@@ -224,7 +232,7 @@ function evoHtml(constant){
   let roots=[...nodes].filter(n=>!predecessors.has(n)); if(!roots.length)roots=[constant];
   const depth=new Map(roots.map(r=>[r,0]));let changed=true;
   while(changed){changed=false;for(const e of edges){if(depth.has(e.src)&&(!depth.has(e.target)||depth.get(e.target)>depth.get(e.src)+1)){depth.set(e.target,depth.get(e.src)+1);changed=true}}}
-  const nodeHtml=[...nodes].sort((a,b)=>(depth.get(a)??99)-(depth.get(b)??99)).map(n=>'<button type="button" class="evo-node'+(n===constant?" current":"")+'" data-open-species="'+n+'"><img src="https://play.pokemonshowdown.com/sprites/gen5/'+spriteSlugFromConst(n)+'.png" alt="" onerror="this.style.display=\'none\'"><span>'+speciesLabel(n)+'</span></button>').join("");
+  const nodeHtml=[...nodes].sort((a,b)=>(depth.get(a)??99)-(depth.get(b)??99)).map(n=>'<button type="button" class="evo-node'+(n===constant?" current":"")+'" data-open-species="'+n+'"><img src="https://play.pokemonshowdown.com/sprites/gen5/'+spriteSlugFromConst(n)+'.png" alt="" onerror="window.tacticaSpriteFallback(this)"><span>'+speciesLabel(n)+'</span></button>').join("");
   const edgeHtml=edges.map(e=>'<div class="evo-rule"><button type="button" data-open-species="'+e.src+'">'+speciesLabel(e.src)+'</button><span>→ <strong>'+evoText(e)+'</strong> →</span><button type="button" data-open-species="'+e.target+'">'+speciesLabel(e.target)+'</button></div>').join("");
   return '<div class="evo-nodes">'+nodeHtml+'</div><div class="evo-rules">'+edgeHtml+'</div>';
 }
@@ -281,7 +289,7 @@ function openSpecies(constant,originCard=null){
   const levelMoves=d.learnset?(LS()[d.learnset]||[]):[];
   const q=encodeURIComponent(display);
   const locHref=(lang==="fr"?"Localisations.html?q=":"Locations.html?q=")+q;
-  content.innerHTML='<div class="dex-detail-hero"><img class="dex-detail-sprite" src="'+sprite+'" alt="'+display+'" onerror="this.style.display=\'none\'"><div><span class="eyebrow">'+t.source+'</span><h2>'+display+'</h2><div class="type-list">'+(d.types||[]).map(x=>'<span class="type">'+typeName(x)+'</span>').join("")+'</div></div></div>'+
+  content.innerHTML='<div class="dex-detail-hero"><img class="dex-detail-sprite" src="'+sprite+'" alt="'+display+'" onerror="window.tacticaSpriteFallback(this)"><div><span class="eyebrow">'+t.source+'</span><h2>'+display+'</h2><div class="type-list">'+(d.types||[]).map(x=>'<span class="type">'+typeName(x)+'</span>').join("")+'</div></div></div>'+
     '<div class="dex-detail-grid"><section><h3>'+t.stats+'</h3><div class="stats-panel">'+statRows(d)+'</div></section><section><h3>'+t.abilities+'</h3>'+abilitiesHtml(d)+'</section></div>'+
     '<section><h3>'+t.evo+'</h3>'+evoHtml(constant)+'</section>'+
     '<section><h3>'+t.levelMoves+'</h3>'+moveTable(levelMoves)+'</section>'+
