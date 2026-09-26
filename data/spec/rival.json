@@ -71,7 +71,7 @@
         6
       ]
     },
-    "notes": "Indices persist by saved rival category; the existing first level-5 battle has only the saved starter. No new story encounter is implied by the authored four-member phase. Resolve each evolution from its actual combat level and availability of stones/items, not a fixed roster name.",
+    "notes": "Indices persist by saved rival category. The first story battle keeps only the saved starter but must be resolved at level 17 (Falkner preparation cap), including any legal evolution at level 17; the historical level-5 trainer template is an implementation gap, not the product rule. No new story encounter is implied by the authored four-member phase. Resolve every later evolution from its actual combat level and availability of stones/items, not a fixed roster name.",
     "categories": {
       "fire": [
         {

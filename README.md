@@ -7,10 +7,24 @@ Pokémon Tactica reprend la base jouable **Pokémon Heart & Soul (HnS)** pour un
 - [Source de vérité](docs/spec/SOURCE_OF_TRUTH.md) : choix produit validés et liens vers les données.
 - [Prompt de reprise Codex](docs/spec/CODEX_START.md) : audit avant production et travail par blocs.
 - [État des features](docs/spec/FEATURE_STATUS.md) : un tag et les preuves de suivi pour chaque fonction.
+- [Statut de playtest](docs/spec/PLAYTEST_STATUS.md) : SHA réellement testable, écarts connus et checklist owner.
 - [Migration](docs/spec/MIGRATION.md) : provenance, contrôles et branches.
 - `data/spec/` : tables de rencontres, boss, starters, rival et Pokémon modifiés.
 
-Build technique : `make hns -j4`. Le nom de la cible `hns` et certains identifiants historiques du moteur sont conservés pour la compatibilité. Une réussite de build ne suffit pas à déclarer la V1 testée ou publiée.
+Build technique : `make hns -j4`. La ROM produite est `pokehns.gba`.
+
+**Important : `git pull` ne recompilera jamais la ROM.** Les fichiers `*.gba` et `build/` sont ignorés par Git. Pour une candidate owner ou après une grosse passe, utiliser :
+
+```bash
+git fetch origin
+git switch integration/v1
+git pull --ff-only origin integration/v1
+git rev-parse --short HEAD
+make clean
+make hns -j4
+```
+
+Puis ouvrir explicitement le `pokehns.gba` fraîchement généré dans mGBA. Une réussite de build ne suffit pas à déclarer la V1 testée ou publiée ; se reporter à `PLAYTEST_STATUS.md`.
 
 ## Base et crédits
 
