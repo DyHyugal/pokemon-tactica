@@ -33,6 +33,32 @@ def validate_bosses():
     required_ai = ("Basic Trainer", "Try To 2HKO", "Smart Switching", "HP Aware",
                    "PP Stall Prevention", "Assumptions")
     mon_count = 0
+    expected_healing = {
+        "TRAINER_FALKNER_1_HNS": None,
+        "TRAINER_BUGSY_1_HNS": "Potion / Potion",
+        "TRAINER_WHITNEY_1_HNS": "Super Potion / Potion",
+        "TRAINER_MORTY_1_HNS": "Super Potion / Super Potion",
+        "TRAINER_CHUCK_1_HNS": "Super Potion / Super Potion",
+        "TRAINER_JASMINE_1_HNS": "Super Potion / Super Potion",
+        "TRAINER_PRYCE_1_HNS": "Super Potion / Super Potion",
+        "TRAINER_CLAIR_1_HNS": "Full Restore / Full Restore",
+        "TRAINER_WILL_1_HNS": "Full Restore / Full Restore",
+        "TRAINER_KOGA_1_HNS": "Full Restore / Full Restore",
+        "TRAINER_BRUNO_1_HNS": "Full Restore / Full Restore",
+        "TRAINER_KAREN_1_HNS": "Full Restore / Full Restore",
+        "TRAINER_LANCE_1_HNS": "Full Restore / Full Restore",
+        "TRAINER_BROCK_HNS": "Full Restore / Full Restore",
+        "TRAINER_MISTY_HNS": "Full Restore / Full Restore",
+        "TRAINER_LTSURGE_HNS": "Full Restore / Full Restore",
+        "TRAINER_ERIKA_HNS": "Full Restore / Full Restore",
+        "TRAINER_JANINE_HNS": "Full Restore / Full Restore",
+        "TRAINER_SABRINA_HNS": "Full Restore / Full Restore",
+        "TRAINER_BLAINE_HNS": "Full Restore / Full Restore",
+        "TRAINER_BLUE_HNS": "Full Restore / Full Restore",
+        "TRAINER_LANCE_2_HNS": "Full Restore / Full Restore",
+    }
+    if set(expected_healing) != {trainer_id for trainer_id, _ in blocks}:
+        fail("healing-item progression does not cover every fixed boss")
     for trainer_id, block in blocks:
         normal_matches = re.findall(
             rf"^=== {re.escape(trainer_id)} ===\n(.*?)(?=^=== |\Z)",
@@ -54,6 +80,20 @@ def validate_bosses():
         items_match = re.search(r"^Items: (.+)$", header, re.M)
         if items_match and len([x for x in items_match.group(1).split(" / ") if x]) > 2:
             fail(f"{trainer_id} has more than two healing items")
+        actual_healing = items_match.group(1) if items_match else None
+        if actual_healing != expected_healing[trainer_id]:
+            fail(f"{trainer_id} has invalid healing progression: {actual_healing}")
+
+        availability = {
+            "Potion": "data/maps/NewBarkTown_Lab_hns/scripts.inc",
+            "Super Potion": "data/maps/Route32_hns/scripts.inc",
+            "Full Restore": "data/maps/LakeOfRage_hns/scripts.inc",
+        }
+        for item, relative_path in availability.items():
+            if actual_healing and item in actual_healing:
+                token = "ITEM_" + item.upper().replace(" ", "_")
+                if token not in (ROOT / relative_path).read_text():
+                    fail(f"{item} is no longer available at its documented progression point")
 
         normal_header, normal_party = normal_block.split("\n\n", 1)
         hard_header, hard_party = block.split("\n\n", 1)
