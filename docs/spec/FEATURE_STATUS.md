@@ -1,69 +1,65 @@
-# Suivi des features — Tactica V1
+# Suivi des features — Pokémon Tactica V1
 
-**État réconcilié au 26 septembre 2026 après fusion des PR #22 (CORE) et #23 (Encounters). `integration/v1` = `96f0b2c8`.** Les sources, générateurs et validations automatiques CORE/Encounters sont intégrés. Les contrôles qui exigent une observation en ROM restent explicitement ouverts ; aucune candidate owner n'est déclarée tant que le bloc UI/UX n'est pas intégré et que `PLAYTEST_STATUS.md` n'annonce pas un SHA de recette.
+Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique de décisions : les anciens états sont dans Git.
 
-Le bloc CORE a été fusionné par la PR #22 (`068c3a74`) avec non-régression complète verte. Le bloc Encounters a été fusionné par la PR #23 (`96f0b2c8`) : 354 couples map/méthode utilisent le premier accès réel de la carte, 405 tables sont synchronisées, 37 lignes d'accès sur 24 cartes ont été corrigées et 15 tables ont réellement été abaissées. Route 36 est désormais 14–17 et les déblocages de méthode ne relèvent plus le scaling d'une ancienne zone.
+## Tags
 
-## Règles des tags
-
-| Tag unique par feature | Sens |
+| Tag | Sens |
 |---|---|
-| `[À RECONTRÔLER]` | Fonction validée et testée avant migration, à vérifier dans le nouveau dépôt. **Protégée** : ne pas la réécrire sans défaut démontré. |
-| `[À AUDITER]` | Présence ou conformité non établie avec assez de preuves. Inventaire nécessaire avant de conclure. |
-| `[À FAIRE]` | Fonction requise en V1 et non implémentée d'après les preuves disponibles. |
-| `[PARTIEL]` | Une partie existe ; le contrat complet n'est pas prouvé ou des éléments restent à réaliser. |
-| `[À CORRIGER]` | Écart précis entre code connu et contrat validé. |
-| `[DONE]` | Code intégré à `integration/v1`, contrat contrôlé et tests pertinents documentés **après migration** ; une vérification manuelle encore requise est indiquée explicitement. |
-| `[HORS V1]` | Décision reportée après V1 ; aucun développement à lancer maintenant. |
+| `[DONE]` | Développement et validation automatisée pertinents terminés. Un contrôle ROM de confort peut rester listé sans rouvrir la feature. |
+| `[PARTIEL]` | Une partie importante est intégrée mais un contrôle runtime/ROM ou un sous-contrat reste ouvert. |
+| `[À CORRIGER]` | Écart concret connu entre l’état actuel et le contrat. |
+| `[À FAIRE]` | Fonction V1 requise non commencée. |
+| `[HORS V1]` | Reporté après V1. |
 
-À chaque audit ou PR, conserver **une ligne et un seul tag par feature** ; inscrire branche/SHA, fichiers, test exécuté et résultat, limite éventuelle, puis date. Ne passer à `[DONE]` qu'avec des preuves du dépôt Tactica, et ne pas déduire « terminé » d'un JSON conforme seul. Si un test anciennement validé échoue, passer à `[À CORRIGER]`, relier l'incident à la migration si les preuves le montrent, puis corriger et retester au plus près. La création d'une branche ou d'une PR ne change pas le tag à elle seule.
+## État courant
 
-## Registre initial à réviser par Codex
-
-La colonne « preuve / prochain contrôle » décrit les vérifications effectuées dans le dépôt Tactica et les contrôles encore ouverts. `e5c7191` désigne l'ancienne production ; `f5a2a3d` est le premier arbre complet du nouveau `main`/`integration/v1`. Le wiki a été intégré via la PR #2, les blocs gameplay et Rocket via les PR #4/#5, le rival dynamique via la PR #11, les caps de rencontres via la PR #13 et la clôture automatisée des blocs 1 à 3 via la PR #17.
-
-| Feature | Tag | Preuve / prochain contrôle |
+| Feature | Statut | Preuve / contrôle restant |
 |---|---|---|
-| Vitesse native x1–x4 | `[DONE]` | `test/native_speed.c`, 3/3 le 25-09-2026 ; valeurs historiques, quatre multiplicateurs, audio et tours de combat couverts. Contrôle visuel final de confort conservé pour la recette ROM. |
-| Audio indépendant et preset Recommended | `[DONE]` | `test/audio_volume.c`, 6/6 le 24-09-2026 ; volumes, muting, preset et sérialisation couverts. Contrôle auditif final conservé pour la recette ROM. |
-| Menu Shiny Rate existant | `[DONE]` | `test/settings_menu.c`, 5/5 le 24-09-2026 ; seuils et sauvegarde/annulation couverts. |
-| Sélecteur des 30 starters et Évoli — logique cœur | `[DONE]` | Sélection, aperçu, attribution et cas limites automatisés restent couverts. |
-| Sélecteur starter — UX curseur/annulation | `[PARTIEL]` | Commit `232eab87` : le menu utilise désormais l'identifiant d'espèce, une sentinelle absente pour ouvrir sur la première ligne et conserve `Retour` en dernière position. Tests ciblés inclus dans `Family` 32/32 ; contrôle ROM du curseur et de l'annulation Élekid encore requis après intégration. |
-| Œuf d'Orme et second choix | `[PARTIEL]` | Commit `232eab87` : l'œuf refuse désormais exactement l'espèce du starter principal sans consommer l'Œuf Mystère. Régression automatisée incluse dans `Family` 32/32 ; intégration et contrôle ROM restent ouverts. |
-| Évolutions sans échange | `[DONE]` | `test/evolution_requirements.c`, 4/4 le 26-09-2026 ; seuils, objets, branches et remplacements des échanges couverts. La PR #12 fixe explicitement l'heure diurne du cas Ptiravi puis la restaure, supprimant l'échec nocturne sans changer la règle de jeu. |
-| Structure du menu Settings | `[PARTIEL]` | `test/settings_menu.c`, 5/5 le 24-09-2026 ; comportement et persistance passent. L'ordre et les libellés exacts de toutes les pages restent à contrôler dans la ROM. |
-| UI — stabilité menu principal | `[PARTIEL]` | La correction VRAM et le menu rouge/noir sont intégrés et protégés statiquement ; recontrôle sur ROM fraîche requis. |
-| UI — Summary | `[À CORRIGER]` | `src/pokemon_summary_screen.c` et les assets Summary n'ont pas reçu la passe owner attendue : superpositions BG/tilemaps/windows, STATS/IV/EV et anciennes zones concours restent à corriger. Une page IV/EV dédiée peut remplacer `CONTEST MOVES`. |
-| UI — boutiques custom | `[À CORRIGER]` | Retour owner 26-09 : menus encore en rendu sombre/gris avec surlignage blanc. Attendu : fond rouge, texte noir, sélection lisible sans grande zone blanche. |
-| UI — HUD/menu combat | `[À CORRIGER]` | Les healthboxes sombres sont intégrées, mais les panneaux actions/attaques observés gardent de grandes surfaces gris/blanc. Harmoniser l'ensemble noir/rouge/gris et revalider en ROM. |
-| Assistant d'entraînement | `[DONE]` | `src/training_npc.c`, `data/scripts/training_npc.inc` et `test/training_npc.c`, 7/7 le 25-09-2026 ; EXP/cap, IV, EV/reset, nature, talent et bonheur couverts. L'accès est câblé dans les scripts de carte. |
-| Rencontres standard à quatre slots 30/30/30/10 | `[DONE]` | Les 405 tables canoniques et le moteur généré respectent quatre slots / poids 30-30-30-10 dans les contrôles statiques et compilés. |
-| Encounters — Route 36 | `[DONE]` | PR #23 fusionnée dans `integration/v1` (`96f0b2c8`) : sol jour/nuit et Éclate-Roc à 14–17, stades prématurés corrigés, runtime/localisations resynchronisés et CI PR verte. Contrôle ROM conservé dans la recette candidate, sans défaut source connu. |
-| Rotation Safari | `[DONE]` | 53 pools canoniques ; `test/family_safari.c`, 4/4 le 25-09-2026, et groupe `Family` vert ; compteurs par secteur, rotation de session, pools et poids 30/30/30/10 couverts. |
-| Headbutt | `[DONE]` | Les 4 tables dédiées de `src/data/family_remix_headbutt.h` correspondent aux pools canoniques et utilisent quatre entrées réelles. Le sélecteur commun 30/30/30/10 et le validateur statique passent le 25-09-2026. |
-| Tirage/persistance du starter rival | `[PARTIEL]` | Commit `232eab87` : l'archétype reste tiré une seule fois selon la matrice owner et détermine maintenant un starter fixe (Poussifeu/Gobou/Arcko/Élekid/Rototaupe/Darumarond-G), sans second tirage parmi cinq. Génération idempotente et `Family` 32/32 passent ; contrôle ROM après intégration requis. |
-| Équipes et thème évolutif du rival | `[PARTIEL]` | Commit `232eab87` : `rival.json`, table générée et runtime portent les six équipes owner, la progression 1->3->4->6, les deux setters, les objets uniques, le niveau 17, les évolutions ramifiées vers la bonne cible et la Méga dans la phase post-badge 4. Moves contrôlés contre le build ; recette des combats en ROM encore requise. |
-| Équipes Rocket 3/4/6 | `[PARTIEL]` | Commit `232eab87` : EARLY/MID/FINAL sont régénérés depuis `ROSTERS_ROCKET_RIVAL.md`, familles persistantes et Méga uniquement en FINAL. Proton/Petrel/Ariana/Archer utilisent Méga-Dardargnan/Méga-Branette/Méga-Absol/Méga-Sharpedo ; Archer n'a pas Abri et entre avec Turbo légal avant Méga. Validateurs verts ; combats ROM encore requis. |
-| Caps champions/rival | `[PARTIEL]` | `test/level_caps.c`, 9/9 le 25-09-2026, confirme les jalons existants, la Ligue/Kanto/Red et le calcul HARD. Les niveaux fixes sont synchronisés avec `data/spec/bosses.json` ; les rosters rival utilisent ces niveaux sur `feature/rival-v1`. La recette des sept combats reste ouverte. |
-| Caps Rocket | `[PARTIEL]` | Chaque Rocket utilise le dernier jalon champion/rival +2 sans chaîner les Rocket précédents. La logique saute désormais tout ancien jalon inférieur après la victoire : le test compilé dédié confirme Albert battu = 19, Proton 1 battu = 25 avant Hector, puis absence de recul. `Level cap` 9/9 passe le 25-09-2026 ; restent les autres audits de chronologie globale. |
-| Équipes boss et légalité des évolutions | `[PARTIEL]` | Commit `232eab87` réconcilie `rival.json`, `rocket_progression.json`, `bosses.json` et le runtime NORMAL/HARD. Les moves sont teachables, les stades suivent le niveau réel et les formes de base des Méga portent un talent légal. Validateurs et build passent ; observation ROM des transformations reste requise. |
-| Règles équipes/accessibilité du 25-09 | `[DONE]` | PR #23 fusionnée (`96f0b2c8`) : niveau déterminé par le premier accès réel de la zone ; Surf/Pêche/Éclate-Roc n'augmentent plus le scaling. 37 couples corrigés sur 24 cartes, 15 tables abaissées. |
-| Caps du premier accès aux rencontres | `[DONE]` | PR #23 fusionnée (`96f0b2c8`) : 354 couples normalisés, 405 tables synchronisées, suffixes `*_unlock` exclus du scaling et garde-fous CI ajoutés. |
-| NORMAL/HARD, EV/IV et IA | `[PARTIEL]` | Intégré via la PR #4 : même contenu NORMAL/HARD, absence d'EV optimisés en NORMAL, EV/IV légaux en HARD et IA stratégique sans information cachée. Le validateur contrôle 22 équipes fixes et 7 variantes Rocket ; reste la recette ROM des deux modes. |
-| CI Tactica et documentation | `[PARTIEL]` | Depuis la passe process du 26-09, les PR docs/wiki évitent toolchain/build/tests gameplay ; les PR code/données gardent validateurs + build + smoke tests ; chaque push fusionné sur `integration/v1`/`main` rejoue la suite complète.  Les PR #4 et #5 compilent et testent HnS via le job dédié (runs `36165187313` et `36166254957` verts). Le sommaire `docs/SUMMARY.md` couvre les sources Tactica et le wiki. Le workflow dédié contrôle aussi le sommaire pour `main` ; la CI générique Emerald/FRLG reste déclenchée uniquement pour les branches amont `master` et `upcoming`. Les synchronisations de caps, rencontres, rival, shops et wiki localisé sont contrôlées en CI. La recette manuelle demeure ouverte. |
-| Méga uniques boss/rival/Rocket | `[PARTIEL]` | Commit `232eab87` ajoute le contrôle global d'unicité. Proton conserve Méga-Dardargnan imposé par l'owner ; Koga passe à Méga-Brutapode pour conserver son identité Poison/vitesse. Archer utilise Méga-Sharpedo et Méga-Démolosse reste réservé à Marion. Contrôle ROM encore requis. |
-| Boss Méga — talent pré-transformation | `[PARTIEL]` | Commit `232eab87` génère un talent légal de forme de base pour chaque boss Méga ; Ectoplasma entre avec Corps Maudit, Galeking avec Fermeté et Sharpedo avec Turbo, puis reçoit le talent Méga par transformation. Validateur et build passent ; observation ROM encore requise. |
-| Mega Ring après badge 4 | `[PARTIEL]` | Commit `232eab87` place `ITEM_MEGA_RING` après le badge 4 et avant la CT Ball'Ombre, avec contrôle statique de l'ordre. Réception et utilisation avant le badge 5 à confirmer en ROM. |
-| Objets de soins des champions | `[DONE]` | Fusionné via la PR #15 (`6cca998e`) : les 22 boss fixes respectent la limite de deux soins, d'aucun pour Albert jusqu'aux deux Guérisons de Sandra et des boss de fin. `validate_family_remix.py` contrôle cette progression et la présence native de chaque objet avant son premier usage (Bourg Geon, Route 32, Lac Colère). L'observation de l'IA reste dans la recette ROM différée. |
-| Balance de 26 espèces | `[PARTIEL]` | Intégré via la PR #4 : `tools/validate_tactica_balance.py` contrôle les statistiques, types et talents des 26 entrées de `data/spec/pokemon_balance.json`, dont Dracaufeu à 110 Atk et Méga-Dracaufeu X à 156 Atk sans modifier les 120 Atk de Méga Y. `Tactica balance` 2/2 et build HnS passent ; reste la confirmation en ROM. |
-| Quinze learnsets custom | `[PARTIEL]` | Intégrés via la PR #4 : les 15 changements canoniques sont contrôlés dans le learnset Gen 7 réellement compilé, dont Aquatacle et Eau Revoir aux niveaux requis, et testés via les données moteur par `Tactica balance` 2/2. Reste la confirmation en ROM. |
-| PNJ capacités/CT | `[PARTIEL]` | Intégré via la PR #4 : le vendeur CT conserve ses 92 CT et propose des leçons filtrées par compatibilité. `tools/sync_tactica_move_shop.py` génère une table compacte depuis 824 Move IDs jouables pour 1 110 espèces/formes, sans Z/Max/placeholder/Struggle ; Boutefeu et Colère sont couvertes. Confirmation, refus si fonds insuffisants, retrait unique de 3000 Pokédollars et apprentissage sont implémentés. `Tactica shops` 5/5, contrôle d'idempotence et build passent ; parcours ROM et équilibrage du tarif restent dans la recette utilisateur. |
-| PNJ objets stratégiques | `[PARTIEL]` | Intégré via la PR #4 : `data/scripts/item_shop.inc` expose 259 objets uniques après inventaire du build : évolutions hors stock normal, objets tenus compétitifs, plaques, mémoires, gemmes, objets d'espèce, graines/activations et baies pertinentes. Les trois pierres déjà vendues normalement sont retirées ; Key Items, scénario/progression, soins/Balls/Repousses/Corde Sortie, objets à prix nul et systèmes hors V1 sont exclus. `validate_family_remix.py`, `Tactica shops` 5/5 et le build passent ; reste le parcours ROM. |
-| PNJ Méga-Gemmes | `[PARTIEL]` | Intégré via la PR #4 : le PNJ dédié est placé à côté du vendeur CT au 5e étage de Doublonville et son catalogue contient les 92 Méga-Gemmes jouables à 3000 Pokédollars. `Tactica shops` contrôle le catalogue compilé, le prix, l'ajout au Sac et le retrait de l'argent. Validateur, synchronisation et build passent ; restent le contrôle visuel de la position et le parcours d'achat ROM. |
-| Textes du jeu FR/EN | `[PARTIEL]` | L'identité visible Tactica et le wiki synchronisé sont fusionnés via la PR #14 (`be07319b`). La V1 testable reste anglaise : un bilingue complet dépasserait la marge linker d'environ 1,31 Mio, les seules chaînes de scripts anglaises représentant déjà environ 1,56 Mio avant traduction et tables associées. Une ROM française distincte est reportée à la V1.1/V2. |
-| Wiki FR/EN | `[PARTIEL]` | Intégré via les PR #2 et #14 : pages cœur FR/EN, Pokédex, Localisations et données de boss sont publiés et les niveaux des 405 tables restent synchronisés depuis les JSON canoniques. À la demande du propriétaire, Codex n'effectue plus la revue visuelle ou éditoriale du wiki ; elle est gérée séparément dans ChatGPT. |
-| Shiny Only dans Nuzlocke | `[HORS V1]` | Prévu après V1 stable ; ne pas l'implémenter dans ce cycle. |
+| Vitesse native x1–x4 | `[DONE]` | Tests natifs existants ; ne pas réécrire sans défaut démontré. |
+| Audio indépendant / preset | `[DONE]` | Tests audio existants ; contrôle auditif final uniquement. |
+| Shiny Rate | `[DONE]` | Menu et persistance couverts. |
+| Shiny Only | `[HORS V1]` | À reprendre après stabilisation V1. |
+| 30 starters + Évoli | `[DONE]` | Logique cœur intégrée. |
+| Sélecteur — curseur initial / annulation | `[PARTIEL]` | Correction intégrée automatiquement ; comportement visuel à revalider en ROM fraîche. |
+| Œuf d’Orme / second starter distinct | `[PARTIEL]` | Garde-fou intégré ; flow à revalider en ROM. |
+| Évolutions sans échange | `[DONE]` | Tests dédiés existants. |
+| Rival — starter fixe / niveau 17 / 1→3→4→6 | `[PARTIEL]` | JSON/runtime/validateurs intégrés ; combats ROM à observer. |
+| Rocket — 3→4→6 / Méga FINAL | `[PARTIEL]` | JSON/runtime/validateurs intégrés ; combats ROM à observer. |
+| Archer = Méga-Sharpedo immédiat | `[PARTIEL]` | Set et garde-fou automatisés ; transformation à observer en ROM. |
+| Mega Ring après Mortimer | `[PARTIEL]` | Ordre scripté et validé ; réception/utilisation à confirmer en ROM. |
+| Méga uniques globalement | `[PARTIEL]` | Unicité automatisée ; transformations boss à observer en ROM. |
+| Une Méga par Champion dès Mortimer | `[PARTIEL]` | Validateur exige exactement une Méga pour chaque Champion concerné. |
+| Jeannine = Méga-Kravarech | `[PARTIEL]` | Canonique + runtime + Dragalgite + Adaptabilité de forme Méga + validateur ; combat non observé en ROM. |
+| Soins des Champions | `[DONE]` | Au plus deux soins selon la progression ; ne pas recoder sans défaut concret. |
+| Encounters 4 slots 30/30/30/10 | `[DONE]` | 405 tables standard + pools spéciaux structurés. |
+| Premier accès réel / scaling | `[DONE]` | Déblocage des méthodes séparé du niveau de la zone. |
+| Route 36 14–17 | `[DONE]` | Source/runtime synchronisés ; témoin ROM conservé pour candidate. |
+| Scorplane early | `[DONE]` | Route 36 jour, slot 30 %. |
+| Wattouat disponible | `[DONE]` | Route 31 jour, slot 30 %. |
+| Couverture globale pré-Ligue | `[DONE]` | Dataset standard : 479 espèces utilisées et 479 disponibles avant/à la Ligue ; 0 espèce utilisée reste uniquement post-Ligue. 72 slots ont été remplacés sur 43 tables ; 125 espèces restent dupliquées avant Ligue, ce qui est acceptable puisque la couverture est assurée. |
+| Headbutt | `[DONE]` | 4 tables dédiées. |
+| Safari | `[DONE]` | 53 pools. |
+| Wiki baseline owner | `[DONE]` | PR #29 intégrée, y compris Guide/Accueil/Changements/Roadmap/Routes-Villes. Ne pas restaurer une ancienne baseline. |
+| Sync Localisations — niveaux | `[DONE]` | Générateur canonique. |
+| Sync Localisations — espèces / recherche | `[DONE]` | Générateur étendu aux espèces et `data-search`; synchronisations `--check` et CI Tactica vertes sur le HEAD de la PR de nettoyage. |
+| Compteurs Pokédex | `[DONE]` | Recalculés depuis les tables standard + pools spéciaux visibles ; synchronisation idempotente confirmée par la CI Tactica. |
+| Summary ROM | `[PARTIEL]` | Recomposition structurelle intégrée et protégée par le validateur UI ; rendu réel à confirmer dans une ROM fraîche. |
+| HUD combat | `[PARTIEL]` | Plaque blanche résiduelle de la barre PV supprimée dans l’asset et protégée par le validateur UI ; panneaux/rendu final à confirmer en ROM. |
+| UI boutiques | `[PARTIEL]` | Charte rouge/noir intégrée dans le runtime shop et protégée par le validateur UI ; lisibilité/sélection à confirmer en ROM. |
+| Assistant d’entraînement | `[DONE]` | Tests dédiés existants. |
+| Boutiques objets/moves/Méga-Gemmes — contenu | `[PARTIEL]` | Catalogues/runtime présents ; parcours d’achat ROM à revalider. |
+| Balance 26 espèces / 15 learnsets | `[DONE]` | Source canonique + validateur dédié. |
 
-Le premier audit Codex actualise ce tableau avec des chemins, SHA, tests et preuves. Il peut découper une ligne en sous-features si leurs états divergent, sans perdre le lien avec ce registre. Toute régression d'une feature protégée se traite comme un incident à diagnostiquer selon `MIGRATION.md`.
+## Règle de merge
 
-**Prochain ordre réel :** 1) terminer/fusionner `fix/encounters-first-access-v1` après CI ; 2) UI/UX ROM (Summary, boutiques, HUD/actions/moves) ; 3) fusion + CI + build propre + `PLAYTEST_STATUS.md` ; 4) seulement ensuite nouvelle recette owner. Le CORE est fusionné sur `integration/v1` au SHA `068c3a74`. Le wiki reste séparé.
+Une feature automatisée propre n’attend pas le playtest owner final pour rejoindre `integration/v1`. Elle doit cependant conserver dans ce fichier ou `PLAYTEST_STATUS.md` les observations ROM encore utiles.
+
+Ne jamais transformer « non testé manuellement » en « non implémenté », et ne jamais déclarer un contrôle ROM effectué s’il ne l’a pas été.
+
+## Prochain ordre de travail
+
+1. remettre toutes les synchronisations et la CI au vert ;
+2. confirmer Summary, HUD et boutiques dans une ROM fraîche ;
+3. réconcilier tout nouveau défaut observé ;
+4. clean build puis déclarer une candidate owner dans `PLAYTEST_STATUS.md`.

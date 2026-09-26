@@ -1,42 +1,97 @@
 # Rencontres V1
 
-Les sources détaillées sont `data/spec/encounters_standard.json` (405 tables) et `data/spec/encounters_special.json` (4 Headbutt et 53 Safari). Chaque table active a quatre **entrées réelles**, avec poids `[30,30,30,10]`, sans duplication ou décomposition 9+1. Chaque méthode disponible dans une zone a sa propre table ; les niveaux et variantes temporelles viennent des données. Les starters sauvages autorisés sont rares dans le slot 10 %, les évolutions finales puissantes suivent la progression, et aucun légendaire/fabuleux ordinaire n'est ajouté.
+Sources canoniques :
 
-`land_mons`, `water_mons`, `rock_smash_mons` et `fishing_mons` désignent les méthodes de la source standard. Les cannes ouvrent la pêche selon la progression. La source actuelle ne décrit **pas** de pools différents par canne : ne pas en inventer. Le code doit adapter le sélecteur Tactica aux quatre entrées et à leurs poids, y compris lorsque l'ancien moteur impose 12/5/10 entrées.
+- `data/spec/encounters_standard.json` : 405 tables standard ;
+- `data/spec/encounters_special.json` : 4 Headbutt + 53 pools Safari ;
+- `data/spec/encounter_access_caps.json` : premier accès réel par map/méthode.
 
-Les pools Safari restent au nombre de 53, avec rotation par secteur/session ; les quatre tables Headbutt restent distinctes.
+## Contrat
 
-## Premier accès et caps
+Chaque table active contient quatre entrées réelles pondérées `30/30/30/10`.
 
-`data/spec/encounter_access_caps.json` doit décrire **le premier accès réel à la zone dans la progression de l'histoire**. Le déblocage ultérieur d'une méthode (Vieille Canne, Éclate-Roc, Surf, etc.) contrôle seulement la disponibilité de cette méthode ; il **ne doit pas augmenter le niveau cible de la zone**.
+Méthodes standard : `land_mons`, `water_mons`, `rock_smash_mons`, `fishing_mons`.
 
-Exemple : si une route est accessible avant Albert, ses tables restent calibrées sur le cap 17 même si Surf ou Éclate-Roc n'y deviennent utilisables que plus tard. Pour une table historiquement large de 3 niveaux, le recalage attendu est `14–17`.
+Les cannes/CS ouvrent une méthode mais ne modifient pas le scaling d’une zone déjà accessible. Le niveau cible vient du **premier accès réel à la zone**.
 
-Le dataset actuel fusionné contient encore des classifications erronées issues de l'ancien calcul par méthode. Il doit être audité/régénéré. `tools/sync_tactica_encounter_access.py` peut conserver la largeur des plages, mais le cap d'entrée doit provenir de la zone et du prochain champion/jalon pertinent, pas du déblocage de la méthode.
+Contraintes :
 
-`tools/validate_tactica_encounter_evolutions.py` lit les évolutions par niveau réellement compilées et rejette toute forme sauvage dont l'évolution déterministe est déjà dépassée au niveau minimum de la table. Son audit initial du 26-09-2026 a fait évoluer 220 slots sans changer leur famille, leur habitat, leur taux ou leur plage de niveaux.
+- habitat cohérent ;
+- stade d’évolution cohérent au niveau rencontré ;
+- aucune famille starter avant badge 2 ;
+- pas de légendaire/fabuleux ajouté comme encounter standard ;
+- starters sauvages autorisés ensuite de façon rare et cohérente ;
+- Route 36 reste `14–17`.
 
-## Contrôle runtime obligatoire
+## Témoins canoniques early
 
-Une validation JSON/compilée ne suffit pas à elle seule à déclarer les encounters « testés ». La ROM de candidate doit être reconstruite depuis le SHA annoncé et quelques zones témoins doivent être vérifiées en jeu.
+### Route 31 — jour
 
-### Route 36 — témoin de référence
+`7–11`, herbe/sol :
 
-État canonique actuel de `integration/v1` observé le 26-09-2026 :
+- Wattouat 30 %
+- Nirondelle 30 %
+- Piafabec 30 %
+- Tarsal 10 %
 
-| Méthode | Temps | Niveaux | Slots 30 / 30 / 30 / 10 |
-|---|---|---:|---|
-| Sol | Jour | **14–17 attendu** | Conserver les familles canoniques, avec stades légaux à 14–17 |
-| Sol | Nuit | **14–17 attendu** | Conserver les familles canoniques, avec stades légaux à 14–17 |
-| Éclate-Roc | Tous | **14–17 attendu** | Méthode débloquée plus tard, mais niveau toujours calé sur la progression de Route 36 |
+Wattouat doit rester disponible avant la première Ligue.
 
-État actuel connu à corriger : `encounter_access_caps.json` classe encore Route 36 `before_blanche` / cap 32 pour le sol et cap 38 pour Éclate-Roc ; les tables fusionnées sont donc restées 27–30. La passe d'évolution suivante a même remplacé Spinarak/Stufful par Ariados/Bewear parce qu'elle raisonnait à partir de ces niveaux erronés. La correction doit d'abord remettre la zone à 14–17, puis recalculer les stades d'évolution.
+### Route 36 — jour
 
-Si la ROM fraîche ne produit pas les espèces de cette table :
+`14–17`, herbe/sol :
 
-1. vérifier le SHA ;
-2. vérifier que `pokehns.gba` vient d'être recompilé ;
-3. vérifier la synchronisation `data/spec/encounters_standard.json` → `src/data/wild_encounters.json` ;
-4. diagnostiquer le sélecteur runtime avant de déclarer la candidate testable.
+- Baggiguane 30 %
+- Scorplane 30 %
+- Nounourson 30 %
+- Goupix 10 %
 
-Toute divergence entre ces tables canoniques et la ROM bloque la candidate owner.
+Scorplane est volontairement disponible early. Son occurrence tardive aux Tourb’Îles peut être réévaluée pendant l’audit global si elle occupe un slot utile à une espèce absente.
+
+### Route 36 — autres méthodes
+
+Toutes les méthodes de Route 36 partagent le même cap de premier accès et restent à `14–17`. Le déblocage ultérieur d’Éclate-Roc ne rehausse pas les niveaux.
+
+## Couverture avant la première Ligue
+
+Objectif owner : maximiser la variété réellement capturable avant la première Ligue.
+
+Règle :
+
+> Lorsqu’une espèce apparaît plusieurs fois avant la Ligue alors qu’une autre espèce reste uniquement post-Ligue, remplacer en priorité les doublons inutiles, sous réserve d’habitat, de progression, de niveau et de stade d’évolution cohérents.
+
+Cette règle complète les contraintes précédentes et ne justifie jamais un remplissage aléatoire.
+
+Audit courant du dataset standard après la passe de couverture :
+
+- 479 espèces différentes sont utilisées dans les tables standard ;
+- les 479 sont présentes dans au moins une table dont le premier accès est au plus tard au cap Ligue (`<= 67`) ;
+- 0 espèce utilisée par ce dataset reste uniquement post-Ligue ;
+- 125 espèces apparaissent plus d’une fois avant la Ligue ;
+- 72 slots ont été remplacés sur 43 tables par rapport au baseline `integration/v1` de départ.
+
+Ces chiffres décrivent uniquement le dataset standard actuellement utilisé ; ils ne prétendent pas représenter l’intégralité des espèces compilées dans le moteur.
+
+La couverture pré-Ligue du dataset standard courant est complète. Les doublons restants sont acceptables tant qu’ils restent cohérents avec l’habitat et ne privent plus une espèce utilisée d’un accès pré-Ligue.
+
+## Synchronisation
+
+Ordre obligatoire après modification :
+
+1. éditer le JSON canonique ;
+2. `tools/sync_tactica_encounter_access.py` si les caps changent ;
+3. `tools/sync_tactica_encounters.py` pour le runtime ;
+4. `tools/validate_tactica_encounter_evolutions.py` ;
+5. `tools/sync_tactica_localization.py` pour Localisations/Pokédex ;
+6. relancer les modes `--check` concernés.
+
+`sync_tactica_localization.py` synchronise désormais les niveaux **et les espèces** des 405 tables standard dans les pages FR/EN, reconstruit les index de recherche HTML et recalcule les compteurs Pokédex.
+
+## Contrôle ROM
+
+La cohérence JSON/runtime est automatisée, mais une candidate owner doit encore vérifier quelques zones témoins en ROM fraîche :
+
+- Route 31 jour : Wattouat ;
+- Route 36 jour : Scorplane et niveaux 14–17 ;
+- au moins une méthode débloquée plus tard sur une ancienne zone pour confirmer l’absence de scaling artificiel.
+
+Ne jamais déclarer cette observation faite sans test réel.

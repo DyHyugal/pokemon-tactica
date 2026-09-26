@@ -35,6 +35,8 @@ def main() -> None:
     battle_interface = (ROOT / "src/battle_interface.c").read_text(encoding="utf-8")
     battle_message = (ROOT / "src/battle_message.c").read_text(encoding="utf-8")
     graphics = (ROOT / "src/graphics.c").read_text(encoding="utf-8")
+    shop = (ROOT / "src/shop.c").read_text(encoding="utf-8")
+    summary = (ROOT / "src/pokemon_summary_screen.c").read_text(encoding="utf-8")
     violet_gym = (ROOT / "data/maps/VioletCity_Gym_hns/scripts.inc").read_text(encoding="utf-8")
     violet_map = (ROOT / "data/maps/VioletCity_Gym_hns/map.json").read_text(encoding="utf-8")
     trainers = (ROOT / "src/data/trainers_hns.party").read_text(encoding="utf-8")
@@ -53,6 +55,15 @@ def main() -> None:
             "move rows must retain their red horizontal separator")
     require(graphics.count('graphics/battle_interface/hns/textbox.gbapal') == 2,
             "both battle tilemap palette banks must be initialized explicitly")
+    require(".fillValue = 12" in shop
+            and "[COLORID_NORMAL]      = {12, 10, 13}" in shop
+            and "FillWindowPixelBuffer(sMartInfo.windowId, PIXEL_FILL(12))" in shop
+            and "FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(12))" in shop,
+            "HNS shops must keep the red surface / black text runtime treatment")
+    require("sMonSummaryScreen->maxPageIndex = PSS_PAGE_BATTLE_MOVES;" in summary
+            and 'static const u8 sText_HnsHeldItem[] = _("{STR_VAR_1}")' in summary
+            and 'static const u8 sText_HnsFriendship[] = _("{STR_VAR_1}")' in summary,
+            "HNS Summary must keep IV/EV on Skills without duplicate fixed labels or normal Contest page")
 
     require('"script": "VioletCity_Gym_EventScript_GymGuy"' in violet_map,
             "the Violet Gym guide must remain wired to the map")
@@ -79,6 +90,10 @@ def main() -> None:
         entry = tilemap[offset] | tilemap[offset + 1] << 8
         require(entry == 31, f"missing red move separator at tilemap row {y}")
 
+    hpbar = (ui_root / "hpbar.4bpp").read_bytes()
+    require(all((packed & 0xF) != 2 and (packed >> 4) != 2 for packed in hpbar),
+            "HNS HP bar still contains the residual white plate color")
+
     expbar = (ui_root / "expbar.4bpp").read_bytes()
     for fill in range(9):
         pixels = tile_pixels(expbar, fill)
@@ -88,7 +103,7 @@ def main() -> None:
                 expected[:fill] = [14] * fill
             require(row == expected, f"EXP bar state {fill}, row {y} is not dark/red only")
 
-    print("Tactica UI validation passed: safe menu VRAM, readable battle UI and Violet Gym guide")
+    print("Tactica UI validation passed: Summary, shops, battle HUD/panels, menu VRAM and Violet Gym guide")
 
 
 if __name__ == "__main__":

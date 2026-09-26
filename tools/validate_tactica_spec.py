@@ -56,6 +56,16 @@ for entry in standard:
             f"{entry['map']} {entry['method']} {entry.get('time', 'Any')}")
 
 encounter_species = {species for table in standard for species in table["species"]}
+preleague_species = {
+    species
+    for table in standard
+    if access_caps[(table["map"], table["method"])] <= 67
+    for species in table["species"]
+}
+missing_preleague_species = sorted(encounter_species - preleague_species)
+require(not missing_preleague_species,
+        "standard species only available after first League: " +
+        ", ".join(missing_preleague_species))
 required_starter_families = {
     "Bulbasaur": ("BULBASAUR", "IVYSAUR", "VENUSAUR"),
     "Charmander": ("CHARMANDER", "CHARMELEON", "CHARIZARD"),
@@ -108,16 +118,31 @@ for family, members in required_starter_families.items():
     for table in standard:
         if access_caps[(table["map"], table["method"])] >= 32:
             continue
-        require(not any(any(species.startswith(f"SPECIES_{member}") for member in members)
-                        for species in table["species"]),
+        early_family_members = [
+            species
+            for species in table["species"]
+            if any(species.startswith(f"SPECIES_{member}") for member in members)
+        ]
+        if family == "Gligar" and (
+            table["map"], table["method"], table.get("time", "Any")
+        ) == ("MAP_ROUTE36_HNS", "land_mons", "Day"):
+            require(early_family_members == ["SPECIES_GLIGAR"],
+                    "only base Gligar is allowed in the explicit Route 36 early exception")
+            continue
+        require(not early_family_members,
                 f"starter family {family} available before badge 2: "
                 f"{table['map']} {table['method']} {table.get('time', 'Any')}")
 
 tables_by_key = {(x["map"], x["method"], x.get("time", "Any")): x for x in standard}
 route36_day = tables_by_key[("MAP_ROUTE36_HNS", "land_mons", "Day")]
 route36_night = tables_by_key[("MAP_ROUTE36_HNS", "land_mons", "Night")]
+route31_day = tables_by_key[("MAP_ROUTE31_HNS", "land_mons", "Day")]
 require("SPECIES_CHARMANDER" not in route36_day["species"], "Charmander remains on early Route 36")
 require("SPECIES_ELEKID" not in route36_night["species"], "Elekid remains on early Route 36")
+require(route36_day["species"][1] == "SPECIES_GLIGAR",
+        "Route 36 Day slot 2 must provide early Gligar")
+require(route31_day["species"][0] == "SPECIES_MAREEP",
+        "Route 31 Day slot 1 must keep Mareep available before the League")
 required_rare_slots = {
     ("MAP_ROUTE37_HNS", "land_mons", "Day"): "SPECIES_CHARMELEON",
     ("MAP_ROUTE42_HNS", "land_mons", "Day"): "SPECIES_ELECTABUZZ",
@@ -281,7 +306,7 @@ required_items = {
     ("Archer", "Nidoking"): "Life Orb", ("Archer", "Mega Sharpedo"): "Sharpedonite",
     ("Archer", "Weavile"): "Choice Band", ("Pierre", "Garganacl"): "Leftovers",
     ("Pierre", "Cradily"): "Sitrus Berry", ("Jeannine", "Toxapex"): "Black Sludge",
-    ("Jeannine", "Galarian Weezing"): "Sitrus Berry", ("Jeannine", "Venomoth"): "Focus Sash",
+    ("Jeannine", "Galarian Weezing"): "Sitrus Berry", ("Jeannine", "Mega Dragalge"): "Dragalgite",
     ("Auguste", "Torkoal"): "Heat Rock", ("Auguste", "Ninetales"): "Leftovers",
 }
 actual_items = {(row["boss"], row["species"]): row["item"] for row in teams}
@@ -301,6 +326,33 @@ for category, rules in rival["archetype_rules"].items():
         megas[mega].add(("Johto", "Rival", category))
 require(all(len(users) == 1 for users in megas.values()),
         f"duplicate boss mega: {dict((m, list(u)) for m, u in megas.items() if len(u)>1)}")
+
+required_mega_gyms = {
+    "Mortimer", "Chuck", "Jasmine", "Frédo", "Sandra",
+    "Pierre", "Ondine", "Major Bob", "Erika", "Morgane",
+    "Jeannine", "Auguste", "Blue",
+}
+for gym in required_mega_gyms:
+    roster = next(v for (region, category, boss), v in bosses.items()
+                  if category == "Gym" and boss == gym)
+    require(sum(row["species"].startswith("Mega ") for row in roster) == 1,
+            f"{gym}: exactly one Mega is required from Mortimer onward")
+
+janine = bosses[("Kanto", "Gym", "Jeannine")]
+janine_ace = next(row for row in janine if row["ace"])
+require(janine_ace["species"] == "Mega Dragalge" and
+        janine_ace["item"] == "Dragalgite" and
+        janine_ace["ability"] == "Adaptability",
+        "Jeannine ace must be Mega Dragalge @ Dragalgite with Adaptability")
+require(janine_ace["moves"] == ["Sludge Bomb", "Dragon Pulse", "Hydro Pump", "Toxic"],
+        "Jeannine Mega Dragalge canonical set changed")
+
+species_info = (ROOT.parents[1] / "src/data/pokemon/species_info/gen_6_families.h").read_text(encoding="utf-8")
+dragalge_mega = re.search(r"\[SPECIES_DRAGALGE_MEGA\]\s*=\s*\{(.*?)^\s*\},",
+                          species_info, re.M | re.S)
+require(dragalge_mega is not None and
+        ".abilities = { ABILITY_ADAPTABILITY, ABILITY_ADAPTABILITY, ABILITY_ADAPTABILITY }," in dragalge_mega.group(1),
+        "Mega Dragalge must receive Adaptability from Mega Evolution")
 require(next(row for row in bosses[("Johto", "Rocket Executive", "Archer")]
              if row["ace"])["species"] == "Mega Sharpedo",
         "Archer FINAL ace must be Mega Sharpedo")

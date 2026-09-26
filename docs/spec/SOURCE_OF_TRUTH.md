@@ -1,44 +1,108 @@
 # Pokémon Tactica — source de vérité V1
 
-État : décisions produit consolidées au 26 septembre 2026. La hiérarchie normative est : **1)** ce fichier pour les règles globales et arbitrages ; **2)** les documents métier `docs/spec/*.md` pour les décisions détaillées ; **3)** `data/spec/*.json` comme représentation machine ; **4)** code/runtime généré. Une donnée absente ne doit pas être inventée. Une contradiction document -> JSON peut exister uniquement comme dette temporaire explicitement signalée et doit être supprimée par la PR d'implémentation qui régénère les données.
+État : décisions produit courantes au 26 septembre 2026.
+
+La hiérarchie normative est stricte :
+
+1. `docs/spec/SOURCE_OF_TRUTH.md` pour les règles globales ;
+2. les documents métier `docs/spec/*.md` pour le détail ;
+3. `data/spec/*.json` comme représentation machine ;
+4. le code/runtime généré.
+
+Les documents actifs décrivent uniquement l’état attendu actuel. L’historique appartient à Git et, lorsqu’il est utile à la migration, à `MIGRATION.md`.
 
 ## Périmètre
 
-Pokémon Tactica est un fork jouable de HnS tourné vers les combats stratégiques, la composition d'équipe et une progression sans grind. Le code HnS peut être modifié lorsqu'il empêche un comportement Tactica approuvé. Conserver ses crédits, licences et identifiants techniques nécessaires au build. Renommer seulement l'identité visible du projet et les fichiers qui lui appartiennent, sans remplacement global aveugle.
+Pokémon Tactica est un remake/fork jouable de la 2G basé sur HnS, centré sur les combats stratégiques, la composition d’équipe et une progression avec peu de grind. Le code HnS peut être modifié lorsqu’il empêche un comportement Tactica approuvé. Les crédits, licences et identifiants techniques nécessaires au build sont conservés.
 
 ## Contrats V1
 
-1. Les rencontres utilisent **quatre vrais slots par table et par méthode applicable**, pondérés `30/30/30/10`. **Le niveau est fixé par le premier accès de la zone dans la progression de l'histoire ; le déblocage ultérieur d'une méthode n'augmente pas ce niveau.** Une zone accessible avant Albert est donc calibrée au cap 17 (ex. Route 36 : 14–17 max avec stades correspondants). Les cannes/CS contrôlent l'accès aux méthodes, pas le scaling de la zone. Détails : [ENCOUNTERS.md](ENCOUNTERS.md).
-2. NORMAL et HARD ont le même contenu : équipes, espèces, niveaux, capacités, objets, talents, natures, progression et rencontres. HARD ajoute IV 31 pour les boss fixes, EV légaux selon les rôles et IA stratégique loyale ; NORMAL garde son optimisation native. HARD est le choix par défaut et NORMAL reste disponible.
-3. Albert a 3 Pokémon, Hector 4, Blanche et les champions suivants 6. Jusqu'à deux soins lorsqu'ils sont prévus, avec des objets appropriés au stade de la progression native. Les formes et capacités doivent être légales au niveau du combat.
-4. Rocket : chaque boss prend **le dernier level cap canonique d'un champion ou d'un rival jalon, plus 2**. Un combat Rocket ne devient jamais le référentiel du Rocket suivant. Réduire automatiquement une forme finale illégale à sa pré-évolution valide.
-5. Starter : trente choix répartis en six catégories et Évoli pour le joueur ; l'œuf d'Orme donne un second choix. **Le rival ne tire plus une espèce au hasard parmi les cinq starters d'une catégorie** : il tire une seule fois un archétype autorisé selon la catégorie du joueur, puis cet archétype impose son starter fixe. Correspondances owner : Feu -> Eau ou Sol ; Eau -> Plante ou Électrik ; Plante -> Feu ou Glace ; Électrik -> Sol ou Plante ; Sol -> Eau ou Glace ; Glace -> Feu ou Eau. Le premier combat reste un 1v1 avec ce starter fixe au niveau 17 et son stade légal. Voir [STARTERS_RIVAL_EVOLUTIONS.md](STARTERS_RIVAL_EVOLUTIONS.md) et [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md).
-6. Les vitesses natives x1 à x4, l'audio indépendant, les taux shiny présents, le cœur du choix starter/œuf et les évolutions solo déjà testés sont protégés contre les réécritures. Les défauts UX du sélecteur (position initiale / retour après annulation) restent néanmoins des corrections ciblées à effectuer. `Shiny Only` est après la V1 stable.
-7. Les boutiques spécialisées rendent accessibles toutes les capacités du build compatibles avec le Pokémon et tous les objets utiles non vendus par les marchands normaux, hors objets de scénario et incohérences de progression. Une boutique de Méga-Gemmes dédiée est requise. Les **menus custom de boutique** respectent la charte rouge/noir : fond rouge, texte noir, sélection lisible sans grand surlignage blanc.
-8. Les Pokémon modifiés et les 15 entrées de learnset de `data/spec/pokemon_balance.json` sont le contrat de balance. Dracaufeu a 110 Atk ; Méga-Dracaufeu X a 156 Atk ; Méga Y conserve les chiffres du dataset v4.
-9. Chaque Méga de boss important est unique, sauf dérogation explicitement écrite. Une forme de base ne peut jamais recevoir illégalement le talent de sa Méga avant transformation. La Méga-Gemme reste tenue et le talent Méga provient de la transformation. Mortimer est un cas de contrôle obligatoire.
-10. Les contenus documentaires FR et EN sont des miroirs, avec les noms officiels Pokémon et une interface lisible. La ROM V1 testable reste anglaise ; une ROM française distincte est reportée à la V1.1/V2.
-11. Les retours de playtest des 25–26 septembre 2026 fixent la direction UI : **noir / rouge / gris, sans grande surface blanche**. Le Summary doit être recomposé proprement (BG/tilemaps/windows) ; la page `CONTEST MOVES` peut être remplacée par une page IV/EV dédiée. Les healthboxes sombres seules ne suffisent pas : panneaux action/attaques et fenêtres custom doivent suivre la même charte.
-12. Le sélecteur starter ouvre une liste d'espèces avec le curseur **en haut**. Après annulation de la confirmation d'un Pokémon, il revient sur **ce même Pokémon** pour toutes les espèces ; `Retour` reste la dernière ligne et n'est jamais la position initiale par défaut.
-13. Mortimer remet le **Mega Ring après le badge 4 puis la CT** ; le joueur doit pouvoir utiliser une Méga immédiatement avant le badge 5.
-14. La conformité d'une feature qui dépend du rendu/runtime ne peut pas être déduite d'un JSON ou d'un test statique. Les encounters, l'UI, les boss Méga et les flows de menu doivent être vérifiés dans une ROM fraîche correspondant au SHA annoncé.
+### Rencontres
 
-## Livraison
+- Chaque table/méthode applicable contient quatre vrais slots pondérés `30/30/30/10`.
+- Le niveau vient du premier accès réel à la zone. Surf, Pêche ou Éclate-Roc débloquent une méthode mais ne rehaussent pas artificiellement une ancienne zone.
+- Route 36 est calibrée `14–17`.
+- Habitat et stade d’évolution doivent rester cohérents avec la zone et le niveau.
+- Aucune famille starter n’est disponible avant le badge 2.
+- Aucun légendaire/fabuleux n’est ajouté comme encounter standard.
+- Scorplane est disponible early : Route 36, herbe/sol, jour, slot 30 %.
+- Wattouat reste disponible avant la Ligue : Route 31, herbe/sol, jour, slot 30 %.
+- Objectif de couverture : une espèce pertinente doit être disponible avant la première Ligue. Lorsqu’un doublon occupe un slot alors qu’une espèce reste uniquement post-Ligue, le doublon est le premier candidat au remplacement, sous réserve d’habitat, progression, niveau et stade cohérents.
+- La couverture globale pré-Ligue est un chantier de rééquilibrage dédié : ne pas randomiser les tables pour faire monter artificiellement un compteur.
 
-Le premier travail de Codex est un audit **code contre spec** `DONE / PARTIEL / À CORRIGER / À FAIRE` par fichier, avec état de tests et différences de données. Il maintient [FEATURE_STATUS.md](FEATURE_STATUS.md) et [PLAYTEST_STATUS.md](PLAYTEST_STATUS.md).
+Détail : [ENCOUNTERS.md](ENCOUNTERS.md).
 
-Une candidate owner n'existe que si toutes les corrections annoncées sont fusionnées dans `integration/v1`, la CI est verte sur le SHA exact, puis une ROM fraîche est reconstruite. **Un simple `git pull` ne met pas à jour `pokehns.gba`**, car les `*.gba` et `build/` sont ignorés par Git.
+### Difficulté et boss
 
-Validation avant candidate owner : validateurs + synchronisations `--check`, suite complète d'intégration (Settings/Audio/Native/Family/Evolution/Level Caps, boss NORMAL/HARD et Rocket, encounters standard/Safari/Headbutt, shops/rival), `make clean && make hns -j4`, puis checklist ROM de [PLAYTEST_STATUS.md](PLAYTEST_STATUS.md). Une vérification manuelle n'est déclarée faite que si elle a réellement eu lieu.
+- NORMAL et HARD utilisent le même contenu : équipes, espèces, niveaux, moves, objets, talents, natures, progression et rencontres.
+- HARD ajoute IV 31, EV stratégiques légaux et une IA plus exigeante ; NORMAL conserve l’optimisation native.
+- Albert a 3 Pokémon, Hector 4, Blanche et les Champions suivants 6.
+- Les objets tenus sont uniques au sein d’une équipe.
+- Les formes et moves doivent être légaux au niveau du combat.
+- Les soins de boss existants sont conservés, avec au plus deux soins lorsqu’ils sont prévus.
 
+### Méga-Évolution
 
-## Décision owner 26-09-2026 — Rival et Team Rocket
+- À partir de Mortimer inclus, chaque Champion possède exactement une Méga.
+- Une Méga importante est unique globalement entre Champions, Conseil 4, Rival et Rocket sauf exception owner explicitement écrite.
+- La forme de base doit entrer avec un talent légal ; le talent de Méga vient de la transformation.
+- Mortimer remet le Mega Ring après le badge 4 puis la CT.
+- Jeannine utilise Méga-Kravarech @ Dragalgite comme ace. Kravarech entre avec un talent de base légal ; Méga-Kravarech reçoit Adaptabilité à la transformation.
 
-Les compositions finales et sets du rival et des Exécutifs Rocket sont désormais définis par [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). En cas de contradiction avec `data/spec/rival.json`, `data/spec/rocket_progression.json` ou les entrées Rocket de `data/spec/bosses.json`, **ROSTERS_ROCKET_RIVAL.md prévaut jusqu'à régénération de ces JSON**.
+### Rival et Team Rocket
 
-Le rival utilise un starter fixe par archétype, développe progressivement son équipe 1 -> 3 -> 4 -> 6 et n'utilise sa Méga qu'après le badge 4. Les Exécutifs Rocket suivent 3 -> 4 -> 6 et n'utilisent leur Méga qu'en FINAL. Toute équipe météo/terrain du rival possède deux setters, avec exception documentée du Terrain Électrique où seul Wattapik dispose de Créa-Élec parmi les non-légendaires du build et Salarsen assure le second setup manuellement. Archer utilise **Méga-Sharpedo** en FINAL ; Méga-Démolosse reste réservé à Marion. Méga-Sharpedo Méga-évolue immédiatement lorsqu'il entre en jeu : aucun plan Abri -> Méga retardée n'est requis ni autorisé.
+La source détaillée est [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Les JSON `rival.json`, `rocket_progression.json` et `bosses.json` doivent rester synchronisés avec ce document.
 
+- Le rival possède un starter fixe par archétype, une progression d’équipe `1 → 3 → 4 → 6` et sa Méga seulement après le badge 4.
+- Les Exécutifs Rocket suivent `3 → 4 → 6` et n’utilisent une Méga qu’en FINAL.
+- Archer utilise Méga-Sharpedo et Méga-évolue immédiatement ; aucun plan Abri → Méga retardée.
+- Méga-Démolosse reste réservé à Marion.
 
-## Politique de validation
+### Starters et systèmes protégés
 
-La validation est proportionnée au risque. Une PR docs/wiki exécute uniquement les contrôles documentaires/localisation. Une PR de code ou de données exécute validateurs, contrôles de synchronisation, build HnS et smoke tests ; les tests métier ciblés sont exécutés pendant le développement et consignés dans la PR/statut. Chaque push fusionné sur `integration/v1` ou `main` rejoue la suite complète de régression. La recette owner et le clean build complet ne sont pas une étape de chaque PR : ils sont réservés aux candidates explicitement déclarées dans `PLAYTEST_STATUS.md`.
+- Le joueur choisit parmi 30 starters répartis en six catégories, plus Évoli.
+- L’œuf d’Orme fournit un second choix distinct du starter principal.
+- Le sélecteur ouvre en haut de liste et revient sur le Pokémon annulé ; `Retour` reste la dernière ligne.
+- Vitesse native x1/x2/x3/x4, audio indépendant, Shiny Rate, évolutions solo et cœur du flow starter/œuf sont protégés contre les réécritures sans défaut démontré.
+- `Shiny Only` reste post-V1.
+
+### Boutiques et balance
+
+- Les boutiques spécialisées couvrent moves/CT compatibles, objets stratégiques et Méga-Gemmes sans contourner les objets de scénario.
+- Les 26 espèces modifiées et les 15 changements de learnset de `pokemon_balance.json` sont le contrat de balance courant.
+
+### UI / UX ROM
+
+Direction : noir / rouge / gris, sans grande surface blanche.
+
+- Summary : recomposition structurelle BG/tilemaps/windows ; aucune information en double ; une page IV/EV peut remplacer `CONTEST MOVES`.
+- HUD combat : healthbox visuellement unifiée ; le rectangle blanc à gauche de la barre de PV doit disparaître ; panneaux action/attaques alignés sur la charte.
+- Boutiques : fond rouge, texte noir, sélection lisible, pas de grand rectangle blanc.
+- Une validation statique ne suffit pas pour déclarer une UI terminée : le rendu doit être observé dans une ROM correspondant au SHA testé.
+
+### Wiki joueur
+
+La baseline actuelle inclut la passe owner fusionnée par la PR #29. Elle est protégée contre les restaurations ou refontes globales non demandées.
+
+- Navigation FR/EN : Accueil/Home, Guide, Changements/Changes, Pokédex, Localisations/Locations, Routes et Villes/Routes & Cities, Boss & Conseils/Tips, Crédits, Roadmap.
+- Routes/Villes est intégré et ne doit pas être retiré au nom d’une ancienne consigne.
+- Les pages Localisations et les compteurs Pokédex sont dérivés des sources canoniques par `tools/sync_tactica_localization.py`.
+- Les données de jeu ne doivent pas être recopiées manuellement dans le wiki lorsqu’elles peuvent être régénérées.
+
+## Validation et merge V1
+
+Le playtest owner final n’est pas un gate de merge vers `integration/v1`.
+
+Une correction peut être fusionnée lorsque :
+
+1. le développement est terminé ;
+2. les validateurs/tests pertinents sont verts ;
+3. les générateurs sont idempotents ;
+4. la CI est verte ;
+5. aucun défaut connu n’est masqué.
+
+Les contrôles ROM non encore effectués restent explicitement notés dans `PLAYTEST_STATUS.md`.
+
+Une **candidate owner** est plus stricte : toutes les corrections annoncées sont déjà fusionnées dans `integration/v1`, la CI est verte sur le SHA exact, puis une ROM fraîche est reconstruite avec `make clean && make hns -j4` avant la checklist ROM.
+
+Un simple `git pull` ne met jamais à jour `pokehns.gba`, car les ROM et `build/` sont ignorés par Git.

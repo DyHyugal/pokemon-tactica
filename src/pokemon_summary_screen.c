@@ -804,8 +804,10 @@ static const u8 sText_SkillsModeButton[] = _("START");
 static const u8 sText_SkillsModeStats[] = _("STATS");
 static const u8 sText_SkillsModeIvs[] = _("IV");
 static const u8 sText_SkillsModeEvs[] = _("EV");
-static const u8 sText_HnsHeldItem[] = _("OBJET {STR_VAR_1}");
-static const u8 sText_HnsFriendship[] = _("BONHEUR {STR_VAR_1}");
+// ITEM / BONHEUR are part of the HnS skills background; only print their values
+// dynamically so the Summary does not stack a second label over the tilemap.
+static const u8 sText_HnsHeldItem[] = _("{STR_VAR_1}");
+static const u8 sText_HnsFriendship[] = _("{STR_VAR_1}");
 #endif
 static const u8 sMovesPPLayout[] = _("{PP}{DYNAMIC 0}/{DYNAMIC 1}");
 
@@ -1355,6 +1357,15 @@ void ShowPokemonSummaryScreen(u8 mode, void *mons, u8 monIndex, u8 maxMonIndex, 
     case SUMMARY_MODE_NORMAL:
     case SUMMARY_MODE_BOX:
     case SUMMARY_MODE_BOX_CURSOR:
+        sMonSummaryScreen->minPageIndex = 0;
+#if IS_HNS
+        // Tactica keeps IV/EV on the Skills page. The legacy Contest page is not
+        // part of the normal Summary flow anymore.
+        sMonSummaryScreen->maxPageIndex = PSS_PAGE_BATTLE_MOVES;
+#else
+        sMonSummaryScreen->maxPageIndex = PSS_PAGE_COUNT - 1;
+#endif
+        break;
     case SUMMARY_MODE_RELEARNER_BATTLE:
     case SUMMARY_MODE_RELEARNER_CONTEST:
         sMonSummaryScreen->minPageIndex = 0;

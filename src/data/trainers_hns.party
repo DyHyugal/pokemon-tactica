@@ -8893,15 +8893,15 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Fire Punch
 - Shadow Sneak
 
-Venomoth @ Focus Sash
+Dragalge @ Dragalgite
 Level: 80
-Ability: Tinted Lens
-Nature: Timid
+Ability: Poison Touch
+Nature: Modest
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Quiver Dance
-- Bug Buzz
 - Sludge Bomb
-- Roost
+- Dragon Pulse
+- Hydro Pump
+- Toxic
 
 === TRAINER_BLAINE_HNS ===
 Name: BLAINE
@@ -17901,16 +17901,16 @@ EVs: 252 HP / 252 SpD / 4 Def
 - Fire Punch
 - Shadow Sneak
 
-Venomoth @ Focus Sash
+Dragalge @ Dragalgite
 Level: 80
-Ability: Tinted Lens
-Nature: Timid
+Ability: Poison Touch
+Nature: Modest
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 SpA / 252 Spe / 4 HP
-- Quiver Dance
-- Bug Buzz
+EVs: 252 HP / 252 SpA / 4 SpD
 - Sludge Bomb
-- Roost
+- Dragon Pulse
+- Hydro Pump
+- Toxic
 
 === TRAINER_SABRINA_HNS ===
 Name: SABRINA

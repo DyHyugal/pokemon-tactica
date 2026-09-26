@@ -65,6 +65,7 @@ MEGA_BASE_ABILITIES = {
     "Mega Gengar": "Cursed Body",
     "Mega Medicham": "Pure Power",
     "Mega Aggron": "Sturdy",
+    "Mega Dragalge": "Poison Touch",
     "Mega Abomasnow": "Snow Warning",
     "Mega Altaria": "Natural Cure",
     "Mega Gardevoir": "Trace",
