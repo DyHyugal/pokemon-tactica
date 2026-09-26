@@ -25,6 +25,7 @@ jobs:
           python3 tools/validate_tactica_balance.py
           python3 tools/sync_tactica_encounter_access.py --check
           python3 tools/sync_tactica_encounters.py --check
+          python3 tools/sync_tactica_localization.py --check
           python3 tools/sync_tactica_bosses.py --check
           python3 tools/generate_tactica_rival.py --check
           python3 tools/sync_tactica_mega_shop.py --check
@@ -32,7 +33,9 @@ jobs:
       - name: Build HnS
         run: make hns -j2
       - name: Validate Tactica UI assets
-        run: python3 tools/validate_tactica_ui.py
+        run: |
+          python3 tools/validate_tactica_ui.py
+          python3 tools/validate_tactica_localization.py
       - name: Level Cap tests
         run: make check BUILD=hns TESTS='*Level cap:' -j2
       - name: Evolution requirement tests
