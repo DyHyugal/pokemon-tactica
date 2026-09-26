@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - preview/wiki-player-reference-v2
     paths:
       - 'docs/**'
       - '.github/workflows/docs.yml'
