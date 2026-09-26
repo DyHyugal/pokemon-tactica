@@ -1,4 +1,6 @@
 #include "global.h"
+#include "constants/rtc.h"
+#include "overworld.h"
 #include "pokemon.h"
 #include "test/test.h"
 
@@ -13,6 +15,7 @@ TEST("Evolution requirements: item evolutions reject levels below their family t
 {
     struct Pokemon mon;
     bool32 canStopEvo = TRUE;
+    u16 previousHour = SetTimeOfDay(DAY_HOUR_BEGIN);
 
     InitEvolutionMon(&mon, SPECIES_HAPPINY, 15, MON_FEMALE);
     EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_OVAL_STONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
@@ -20,12 +23,15 @@ TEST("Evolution requirements: item evolutions reject levels below their family t
     EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_ICE_STONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
     InitEvolutionMon(&mon, SPECIES_ELECTABUZZ, 35, MON_MALE);
     EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_ELECTIRIZER, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
+
+    SetTimeOfDay(previousHour);
 }
 
 TEST("Evolution requirements: item evolutions work at levels 16, 30, and 36")
 {
     struct Pokemon mon;
     bool32 canStopEvo = TRUE;
+    u16 previousHour = SetTimeOfDay(DAY_HOUR_BEGIN);
 
     InitEvolutionMon(&mon, SPECIES_HAPPINY, 16, MON_FEMALE);
     EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_OVAL_STONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_CHANSEY);
@@ -33,6 +39,8 @@ TEST("Evolution requirements: item evolutions work at levels 16, 30, and 36")
     EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_ICE_STONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_NINETALES_ALOLA);
     InitEvolutionMon(&mon, SPECIES_ELECTABUZZ, 36, MON_MALE);
     EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_ELECTIRIZER, NULL, &canStopEvo, CHECK_EVO), SPECIES_ELECTIVIRE);
+
+    SetTimeOfDay(previousHour);
 }
 
 TEST("Evolution requirements: branched item evolutions keep the selected branch")
