@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "contract": "For every standard map/method pair, max_level must not exceed earliest_access_cap at first real access.",
+  "contract": "For every standard map/method pair, earliest_access_cap is the cap at the map's first real story access. Method unlocks gate availability only and never raise encounter levels.",
   "method_gates": {
     "land_mons": {
       "earliest_access_cap": 0,
@@ -252,10 +252,9 @@
     {
       "map": "MAP_CHERRYGROVE_CITY_HNS",
       "method": "fishing_mons",
-      "earliest_access_cap": 19,
+      "earliest_access_cap": 17,
       "basis": [
-        "before_albert",
-        "fishing_mons_unlock"
+        "before_albert"
       ]
     },
     {
@@ -269,10 +268,9 @@
     {
       "map": "MAP_CHERRYGROVE_CITY_HNS",
       "method": "water_mons",
-      "earliest_access_cap": 40,
+      "earliest_access_cap": 17,
       "basis": [
-        "before_albert",
-        "water_mons_unlock"
+        "before_albert"
       ]
     },
     {
@@ -390,10 +388,9 @@
     {
       "map": "MAP_DARK_CAVE_SOUTH_SIDE_HNS",
       "method": "fishing_mons",
-      "earliest_access_cap": 19,
+      "earliest_access_cap": 17,
       "basis": [
-        "before_albert",
-        "fishing_mons_unlock"
+        "before_albert"
       ]
     },
     {
@@ -407,19 +404,17 @@
     {
       "map": "MAP_DARK_CAVE_SOUTH_SIDE_HNS",
       "method": "rock_smash_mons",
-      "earliest_access_cap": 38,
+      "earliest_access_cap": 17,
       "basis": [
-        "before_albert",
-        "rock_smash_mons_unlock"
+        "before_albert"
       ]
     },
     {
       "map": "MAP_DARK_CAVE_SOUTH_SIDE_HNS",
       "method": "water_mons",
-      "earliest_access_cap": 40,
+      "earliest_access_cap": 17,
       "basis": [
-        "before_albert",
-        "water_mons_unlock"
+        "before_albert"
       ]
     },
     {
@@ -489,10 +484,9 @@
     {
       "map": "MAP_ECRUTEAK_CITY_HNS",
       "method": "water_mons",
-      "earliest_access_cap": 40,
+      "earliest_access_cap": 38,
       "basis": [
-        "before_mortimer",
-        "water_mons_unlock"
+        "before_mortimer"
       ]
     },
     {
@@ -578,10 +572,9 @@
     {
       "map": "MAP_ILEX_FOREST_HNS",
       "method": "water_mons",
-      "earliest_access_cap": 40,
+      "earliest_access_cap": 32,
       "basis": [
-        "before_blanche",
-        "water_mons_unlock"
+        "before_blanche"
       ]
     },
     {
@@ -595,10 +588,9 @@
     {
       "map": "MAP_LAKE_OF_RAGE_HNS",
       "method": "water_mons",
-      "earliest_access_cap": 40,
+      "earliest_access_cap": 38,
       "basis": [
-        "before_mortimer",
-        "water_mons_unlock"
+        "before_mortimer"
       ]
     },
     {
@@ -692,10 +684,9 @@
     {
       "map": "MAP_MT_MORTAR_1F_SOUTH_HNS",
       "method": "water_mons",
-      "earliest_access_cap": 40,
+      "earliest_access_cap": 38,
       "basis": [
-        "before_mortimer",
-        "water_mons_unlock"
+        "before_mortimer"
       ]
     },
     {
@@ -1029,10 +1020,9 @@
     {
       "map": "MAP_NEW_BARK_TOWN_HNS",
       "method": "fishing_mons",
-      "earliest_access_cap": 19,
+      "earliest_access_cap": 17,
       "basis": [
-        "before_albert",
-        "fishing_mons_unlock"
+        "before_albert"
       ]
     },
     {
@@ -1046,10 +1036,9 @@
     {
       "map": "MAP_NEW_BARK_TOWN_HNS",
       "method": "water_mons",
-      "earliest_access_cap": 40,
+      "earliest_access_cap": 17,
       "basis": [
-        "before_albert",
-        "water_mons_unlock"
+        "before_albert"
       ]
     },
     {
@@ -1071,10 +1060,9 @@
     {
       "map": "MAP_OLIVINE_CITY_HNS",
       "method": "water_mons",
-      "earliest_access_cap": 40,
+      "earliest_access_cap": 38,
       "basis": [
-        "before_mortimer",
-        "water_mons_unlock"
+        "before_mortimer"
       ]
     },
     {
@@ -1688,10 +1676,9 @@
     {
       "map": "MAP_ROUTE30_HNS",
       "method": "fishing_mons",
-      "earliest_access_cap": 19,
+      "earliest_access_cap": 17,
       "basis": [
-        "before_albert",
-        "fishing_mons_unlock"
+        "before_albert"
       ]
     },
     {
@@ -1705,28 +1692,25 @@
     {
       "map": "MAP_ROUTE30_HNS",
       "method": "rock_smash_mons",
-      "earliest_access_cap": 38,
+      "earliest_access_cap": 17,
       "basis": [
-        "before_albert",
-        "rock_smash_mons_unlock"
+        "before_albert"
       ]
     },
     {
       "map": "MAP_ROUTE30_HNS",
       "method": "water_mons",
-      "earliest_access_cap": 40,
+      "earliest_access_cap": 17,
       "basis": [
-        "before_albert",
-        "water_mons_unlock"
+        "before_albert"
       ]
     },
     {
       "map": "MAP_ROUTE31_HNS",
       "method": "fishing_mons",
-      "earliest_access_cap": 19,
+      "earliest_access_cap": 17,
       "basis": [
-        "before_albert",
-        "fishing_mons_unlock"
+        "before_albert"
       ]
     },
     {
@@ -1740,10 +1724,9 @@
     {
       "map": "MAP_ROUTE31_HNS",
       "method": "water_mons",
-      "earliest_access_cap": 40,
+      "earliest_access_cap": 17,
       "basis": [
-        "before_albert",
-        "water_mons_unlock"
+        "before_albert"
       ]
     },
     {
@@ -1765,10 +1748,9 @@
     {
       "map": "MAP_ROUTE32_HNS",
       "method": "water_mons",
-      "earliest_access_cap": 40,
+      "earliest_access_cap": 19,
       "basis": [
-        "before_proton_1",
-        "water_mons_unlock"
+        "before_proton_1"
       ]
     },
     {
@@ -1782,10 +1764,9 @@
     {
       "map": "MAP_ROUTE33_HNS",
       "method": "rock_smash_mons",
-      "earliest_access_cap": 38,
+      "earliest_access_cap": 19,
       "basis": [
-        "before_proton_1",
-        "rock_smash_mons_unlock"
+        "before_proton_1"
       ]
     },
     {
@@ -1807,10 +1788,9 @@
     {
       "map": "MAP_ROUTE34_HNS",
       "method": "water_mons",
-      "earliest_access_cap": 40,
+      "earliest_access_cap": 32,
       "basis": [
-        "before_blanche",
-        "water_mons_unlock"
+        "before_blanche"
       ]
     },
     {
@@ -1832,27 +1812,25 @@
     {
       "map": "MAP_ROUTE35_HNS",
       "method": "water_mons",
-      "earliest_access_cap": 40,
+      "earliest_access_cap": 32,
       "basis": [
-        "before_blanche",
-        "water_mons_unlock"
+        "before_blanche"
       ]
     },
     {
       "map": "MAP_ROUTE36_HNS",
       "method": "land_mons",
-      "earliest_access_cap": 32,
+      "earliest_access_cap": 17,
       "basis": [
-        "before_blanche"
+        "before_albert"
       ]
     },
     {
       "map": "MAP_ROUTE36_HNS",
       "method": "rock_smash_mons",
-      "earliest_access_cap": 38,
+      "earliest_access_cap": 17,
       "basis": [
-        "before_blanche",
-        "rock_smash_mons_unlock"
+        "before_albert"
       ]
     },
     {
@@ -1930,10 +1908,9 @@
     {
       "map": "MAP_ROUTE40_HNS",
       "method": "water_mons",
-      "earliest_access_cap": 40,
+      "earliest_access_cap": 38,
       "basis": [
-        "before_mortimer",
-        "water_mons_unlock"
+        "before_mortimer"
       ]
     },
     {
@@ -1979,10 +1956,9 @@
     {
       "map": "MAP_ROUTE42_HNS",
       "method": "water_mons",
-      "earliest_access_cap": 40,
+      "earliest_access_cap": 38,
       "basis": [
-        "before_mortimer",
-        "water_mons_unlock"
+        "before_mortimer"
       ]
     },
     {
@@ -2004,10 +1980,9 @@
     {
       "map": "MAP_ROUTE43_HNS",
       "method": "water_mons",
-      "earliest_access_cap": 40,
+      "earliest_access_cap": 38,
       "basis": [
-        "before_mortimer",
-        "water_mons_unlock"
+        "before_mortimer"
       ]
     },
     {
@@ -2285,19 +2260,17 @@
     {
       "map": "MAP_RUINS_OF_ALPH_B1F_HNS",
       "method": "rock_smash_mons",
-      "earliest_access_cap": 38,
+      "earliest_access_cap": 17,
       "basis": [
-        "before_albert",
-        "rock_smash_mons_unlock"
+        "before_albert"
       ]
     },
     {
       "map": "MAP_RUINS_OF_ALPH_OUTSIDE_HNS",
       "method": "fishing_mons",
-      "earliest_access_cap": 19,
+      "earliest_access_cap": 17,
       "basis": [
-        "before_albert",
-        "fishing_mons_unlock"
+        "before_albert"
       ]
     },
     {
@@ -2311,19 +2284,17 @@
     {
       "map": "MAP_RUINS_OF_ALPH_OUTSIDE_HNS",
       "method": "rock_smash_mons",
-      "earliest_access_cap": 38,
+      "earliest_access_cap": 17,
       "basis": [
-        "before_albert",
-        "rock_smash_mons_unlock"
+        "before_albert"
       ]
     },
     {
       "map": "MAP_RUINS_OF_ALPH_OUTSIDE_HNS",
       "method": "water_mons",
-      "earliest_access_cap": 40,
+      "earliest_access_cap": 17,
       "basis": [
-        "before_albert",
-        "water_mons_unlock"
+        "before_albert"
       ]
     },
     {
@@ -2361,10 +2332,9 @@
     {
       "map": "MAP_SLOWPOKE_WELL_B1F_HNS",
       "method": "water_mons",
-      "earliest_access_cap": 40,
+      "earliest_access_cap": 19,
       "basis": [
-        "before_proton_1",
-        "water_mons_unlock"
+        "before_proton_1"
       ]
     },
     {
@@ -2514,19 +2484,17 @@
     {
       "map": "MAP_UNION_CAVE_1F_HNS",
       "method": "rock_smash_mons",
-      "earliest_access_cap": 38,
+      "earliest_access_cap": 19,
       "basis": [
-        "before_proton_1",
-        "rock_smash_mons_unlock"
+        "before_proton_1"
       ]
     },
     {
       "map": "MAP_UNION_CAVE_1F_HNS",
       "method": "water_mons",
-      "earliest_access_cap": 40,
+      "earliest_access_cap": 19,
       "basis": [
-        "before_proton_1",
-        "water_mons_unlock"
+        "before_proton_1"
       ]
     },
     {
@@ -2548,19 +2516,17 @@
     {
       "map": "MAP_UNION_CAVE_B1F_HNS",
       "method": "rock_smash_mons",
-      "earliest_access_cap": 38,
+      "earliest_access_cap": 19,
       "basis": [
-        "before_proton_1",
-        "rock_smash_mons_unlock"
+        "before_proton_1"
       ]
     },
     {
       "map": "MAP_UNION_CAVE_B1F_HNS",
       "method": "water_mons",
-      "earliest_access_cap": 40,
+      "earliest_access_cap": 19,
       "basis": [
-        "before_proton_1",
-        "water_mons_unlock"
+        "before_proton_1"
       ]
     },
     {
@@ -2694,10 +2660,9 @@
     {
       "map": "MAP_VIOLET_CITY_HNS",
       "method": "fishing_mons",
-      "earliest_access_cap": 19,
+      "earliest_access_cap": 17,
       "basis": [
-        "before_albert",
-        "fishing_mons_unlock"
+        "before_albert"
       ]
     },
     {
@@ -2711,10 +2676,9 @@
     {
       "map": "MAP_VIOLET_CITY_HNS",
       "method": "water_mons",
-      "earliest_access_cap": 40,
+      "earliest_access_cap": 17,
       "basis": [
-        "before_albert",
-        "water_mons_unlock"
+        "before_albert"
       ]
     },
     {

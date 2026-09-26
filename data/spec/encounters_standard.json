@@ -1296,8 +1296,8 @@
       "map": "MAP_LAKE_OF_RAGE_HNS",
       "method": "water_mons",
       "time": "Day",
-      "min_level": 38,
-      "max_level": 40,
+      "min_level": 36,
+      "max_level": 38,
       "rates": [
         30,
         30,
@@ -1524,8 +1524,8 @@
       "map": "MAP_MT_MORTAR_1F_SOUTH_HNS",
       "method": "water_mons",
       "time": "Any",
-      "min_level": 38,
-      "max_level": 40,
+      "min_level": 36,
+      "max_level": 38,
       "rates": [
         30,
         30,
@@ -2455,8 +2455,8 @@
       "map": "MAP_OLIVINE_CITY_HNS",
       "method": "water_mons",
       "time": "Any",
-      "min_level": 37,
-      "max_level": 40,
+      "min_level": 35,
+      "max_level": 38,
       "rates": [
         30,
         30,
@@ -4659,8 +4659,8 @@
       "map": "MAP_ROUTE33_HNS",
       "method": "rock_smash_mons",
       "time": "Any",
-      "min_level": 18,
-      "max_level": 21,
+      "min_level": 16,
+      "max_level": 19,
       "rates": [
         30,
         30,
@@ -4830,8 +4830,8 @@
       "map": "MAP_ROUTE36_HNS",
       "method": "land_mons",
       "time": "Day",
-      "min_level": 27,
-      "max_level": 30,
+      "min_level": 14,
+      "max_level": 17,
       "rates": [
         30,
         30,
@@ -4840,8 +4840,8 @@
       ],
       "species": [
         "SPECIES_SCRAGGY",
-        "SPECIES_ARIADOS",
-        "SPECIES_BEWEAR",
+        "SPECIES_SPINARAK",
+        "SPECIES_STUFFUL",
         "SPECIES_VULPIX"
       ]
     },
@@ -4849,8 +4849,8 @@
       "map": "MAP_ROUTE36_HNS",
       "method": "land_mons",
       "time": "Night",
-      "min_level": 27,
-      "max_level": 30,
+      "min_level": 14,
+      "max_level": 17,
       "rates": [
         30,
         30,
@@ -4859,7 +4859,7 @@
       ],
       "species": [
         "SPECIES_CRABRAWLER",
-        "SPECIES_ARIADOS",
+        "SPECIES_SPINARAK",
         "SPECIES_SINISTEA",
         "SPECIES_HELIOPTILE"
       ]
@@ -4868,8 +4868,8 @@
       "map": "MAP_ROUTE36_HNS",
       "method": "rock_smash_mons",
       "time": "Any",
-      "min_level": 27,
-      "max_level": 30,
+      "min_level": 14,
+      "max_level": 17,
       "rates": [
         30,
         30,
@@ -4880,7 +4880,7 @@
         "SPECIES_MIENFOO",
         "SPECIES_CRANIDOS",
         "SPECIES_SHIELDON",
-        "SPECIES_DRILBUR"
+        "SPECIES_GEODUDE"
       ]
     },
     {
@@ -5115,8 +5115,8 @@
       "map": "MAP_ROUTE40_HNS",
       "method": "water_mons",
       "time": "Day",
-      "min_level": 37,
-      "max_level": 40,
+      "min_level": 35,
+      "max_level": 38,
       "rates": [
         30,
         30,
@@ -5248,8 +5248,8 @@
       "map": "MAP_ROUTE42_HNS",
       "method": "water_mons",
       "time": "Any",
-      "min_level": 38,
-      "max_level": 40,
+      "min_level": 36,
+      "max_level": 38,
       "rates": [
         30,
         30,
@@ -5257,9 +5257,9 @@
         10
       ],
       "species": [
-        "SPECIES_CLAWITZER",
+        "SPECIES_CLAUNCHER",
         "SPECIES_LUMINEON",
-        "SPECIES_CARRACOSTA",
+        "SPECIES_TIRTOUGA",
         "SPECIES_MANTYKE"
       ]
     },
@@ -5324,8 +5324,8 @@
       "map": "MAP_ROUTE43_HNS",
       "method": "water_mons",
       "time": "Any",
-      "min_level": 38,
-      "max_level": 40,
+      "min_level": 36,
+      "max_level": 38,
       "rates": [
         30,
         30,
@@ -6293,8 +6293,8 @@
       "map": "MAP_SLOWPOKE_WELL_B1F_HNS",
       "method": "water_mons",
       "time": "Day",
-      "min_level": 19,
-      "max_level": 22,
+      "min_level": 16,
+      "max_level": 19,
       "rates": [
         30,
         30,
@@ -6692,8 +6692,8 @@
       "map": "MAP_UNION_CAVE_1F_HNS",
       "method": "rock_smash_mons",
       "time": "Day",
-      "min_level": 17,
-      "max_level": 20,
+      "min_level": 16,
+      "max_level": 19,
       "rates": [
         30,
         30,
@@ -6711,8 +6711,8 @@
       "map": "MAP_UNION_CAVE_1F_HNS",
       "method": "water_mons",
       "time": "Day",
-      "min_level": 17,
-      "max_level": 20,
+      "min_level": 16,
+      "max_level": 19,
       "rates": [
         30,
         30,
@@ -6768,8 +6768,8 @@
       "map": "MAP_UNION_CAVE_B1F_HNS",
       "method": "rock_smash_mons",
       "time": "Day",
-      "min_level": 18,
-      "max_level": 21,
+      "min_level": 16,
+      "max_level": 19,
       "rates": [
         30,
         30,
@@ -6778,7 +6778,7 @@
       ],
       "species": [
         "SPECIES_DOTTLER",
-        "SPECIES_CARKOL",
+        "SPECIES_ROLYCOLY",
         "SPECIES_NYMBLE",
         "SPECIES_RELLOR"
       ]
@@ -6787,8 +6787,8 @@
       "map": "MAP_UNION_CAVE_B1F_HNS",
       "method": "water_mons",
       "time": "Day",
-      "min_level": 18,
-      "max_level": 21,
+      "min_level": 16,
+      "max_level": 19,
       "rates": [
         30,
         30,
