@@ -8,9 +8,11 @@ Les pools Safari restent au nombre de 53, avec rotation par secteur/session ; le
 
 ## Premier accès et caps
 
-`data/spec/encounter_access_caps.json` couvre explicitement les 354 couples carte/méthode des 128 cartes standard. Le cap effectif combine l'accès terrestre à la zone et le premier accès réel à la méthode : Vieille Canne au cap 19, Éclate-Roc après Simularbre au cap 38, Surf après Mortimer au cap 40. Les cartes bloquées par Siphon, Cascade, la Ligue, Kanto ou les badges de Kanto portent leur propre jalon plus tardif.
+`data/spec/encounter_access_caps.json` doit décrire **le premier accès réel à la zone dans la progression de l'histoire**. Le déblocage ultérieur d'une méthode (Vieille Canne, Éclate-Roc, Surf, etc.) contrôle seulement la disponibilité de cette méthode ; il **ne doit pas augmenter le niveau cible de la zone**.
 
-`tools/sync_tactica_encounter_access.py` abaisse uniquement une plage qui dépasse son cap, en conservant sa largeur. `tools/validate_tactica_spec.py` exige une couverture exacte de chaque couple, vérifie `max_level <= earliest_access_cap` et interdit toute famille starter avant le deuxième badge.
+Exemple : si une route est accessible avant Albert, ses tables restent calibrées sur le cap 17 même si Surf ou Éclate-Roc n'y deviennent utilisables que plus tard. Pour une table historiquement large de 3 niveaux, le recalage attendu est `14–17`.
+
+Le dataset actuel fusionné contient encore des classifications erronées issues de l'ancien calcul par méthode. Il doit être audité/régénéré. `tools/sync_tactica_encounter_access.py` peut conserver la largeur des plages, mais le cap d'entrée doit provenir de la zone et du prochain champion/jalon pertinent, pas du déblocage de la méthode.
 
 `tools/validate_tactica_encounter_evolutions.py` lit les évolutions par niveau réellement compilées et rejette toute forme sauvage dont l'évolution déterministe est déjà dépassée au niveau minimum de la table. Son audit initial du 26-09-2026 a fait évoluer 220 slots sans changer leur famille, leur habitat, leur taux ou leur plage de niveaux.
 
@@ -24,11 +26,11 @@ Une validation JSON/compilée ne suffit pas à elle seule à déclarer les encou
 
 | Méthode | Temps | Niveaux | Slots 30 / 30 / 30 / 10 |
 |---|---|---:|---|
-| Sol | Jour | 27–30 | Scraggy / Ariados / Bewear / Vulpix |
-| Sol | Nuit | 27–30 | Crabrawler / Ariados / Sinistea / Helioptile |
-| Éclate-Roc | Tous | 27–30 | Mienfoo / Cranidos / Shieldon / Drilbur |
+| Sol | Jour | **14–17 attendu** | Conserver les familles canoniques, avec stades légaux à 14–17 |
+| Sol | Nuit | **14–17 attendu** | Conserver les familles canoniques, avec stades légaux à 14–17 |
+| Éclate-Roc | Tous | **14–17 attendu** | Méthode débloquée plus tard, mais niveau toujours calé sur la progression de Route 36 |
 
-Le propriétaire a signalé le 26/09 avoir l'impression de retrouver les anciennes rencontres de Route 36. Comme le `pokehns.gba` qu'il avait lancé pouvait ne pas avoir été recompilé après le pull, ce retour est **à recontrôler sur une ROM fraîche**.
+État actuel connu à corriger : `encounter_access_caps.json` classe encore Route 36 `before_blanche` / cap 32 pour le sol et cap 38 pour Éclate-Roc ; les tables fusionnées sont donc restées 27–30. La passe d'évolution suivante a même remplacé Spinarak/Stufful par Ariados/Bewear parce qu'elle raisonnait à partir de ces niveaux erronés. La correction doit d'abord remettre la zone à 14–17, puis recalculer les stades d'évolution.
 
 Si la ROM fraîche ne produit pas les espèces de cette table :
 
