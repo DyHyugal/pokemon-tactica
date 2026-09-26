@@ -13,7 +13,7 @@ LEARNABLES = json.loads((ROOT.parents[1] / "src/data/pokemon/all_learnables.json
 
 def learnable(species, move):
     species_key = re.sub(r"[^A-Z0-9]+", "_", species.upper()).strip("_")
-    species_key = {"TOXTRICITY": "TOXTRICITY_AMPED"}.get(species_key, species_key)
+    species_key = {"TOXTRICITY": "TOXTRICITY_AMPED", "DARMANITAN_GALAR": "DARMANITAN_GALAR_STANDARD"}.get(species_key, species_key)
     move_key = "MOVE_" + re.sub(r"[^A-Z0-9]+", "_", move.upper()).strip("_")
     return move_key in LEARNABLES.get(species_key, ())
 
@@ -146,25 +146,48 @@ require(rosters["party_sizes"] == {"before_first_badge": 1, "after_badge_1": 3,
         "after_badge_2": 4, "after_badge_3_and_later": 6}, "rival party progression")
 require(rosters["phase_slots"] == {"early": [1, 2, 3], "mid": [1, 2, 3, 4],
         "final": [1, 2, 3, 4, 5, 6]}, "persistent rival slots")
+fixed_starters = rival["selection"]["fixed_starters"]
+require(set(fixed_starters) == set(starter["categories"]), "fixed rival starters cover six categories")
+expected_mega = rosters["mega_by_category"]
+setter_abilities = {
+    "fire": {"Drought"},
+    "water": {"Drizzle"},
+    "grass": {"Grassy Surge", "Seed Sower"},
+    "ground": {"Sand Stream"},
+    "ice": {"Snow Warning"},
+}
 for category, party in rosters["categories"].items():
-    require(len(party) == 6 and party[1]["species_source"] == "VAR_FAMILY_RIVAL_SPECIES",
-            f"{category}: six members with saved starter in slot 2")
+    require(len(party) == 6 and party[1]["family"] == fixed_starters[category]
+            and party[1].get("is_rival_starter"),
+            f"{category}: fixed starter must persist in slot 2")
     require(len({row["family"] for row in party}) == 6, f"{category}: repeated family")
+    require(sum(bool(row.get("tactica_starter_family")) for row in party) <=
+            rosters["rules"]["max_tactica_starter_families_per_team"],
+            f"{category}: more than two Tactica starter families")
     items = [row["final_item"] for row in party if row.get("final_item")]
     require(len(items) == len(set(items)), f"{category}: duplicate rival items")
+    require(items.count(expected_mega[category]) == 1, f"{category}: exactly one authored Mega Stone")
+    if category == "electric":
+        require(any(row["ability"] == "Electric Surge" for row in party)
+                and any("Electric Terrain" in row["phase_moves"]["final"] for row in party),
+                "electric: Pincurchin ability setter plus manual Toxtricity setter")
+    else:
+        expected = setter_abilities[category]
+        require(sum(row["ability"] in expected for row in party) >= 2,
+                f"{category}: two automatic weather/terrain setters")
     for row in party:
-        if row["family"] != "saved starter":
-            require(all(1 <= len(row["phase_moves"][phase]) <= 4
-                        for phase in ("early", "mid", "final")),
-                    f"{category}/{row['family']}: incomplete phase sets")
-            require(all(len(row["phase_moves"][phase]) == len(set(row["phase_moves"][phase]))
-                        for phase in ("early", "mid", "final")),
-                    f"{category}/{row['family']}: duplicate move in phase set")
-            for phase, species in (("early", row["family"]),
-                                   ("mid", row["family"]),
-                                   ("final", row["target_final_species"])):
-                require(all(learnable(species, move) for move in row["phase_moves"][phase]),
-                        f"{category}/{species}/{phase}: move unavailable in build")
+        require(row.get("ability"), f"{category}/{row['family']}: authored ability")
+        require(all(1 <= len(row["phase_moves"][phase]) <= 4
+                    for phase in ("early", "mid", "final")),
+                f"{category}/{row['family']}: incomplete phase sets")
+        require(all(len(row["phase_moves"][phase]) == len(set(row["phase_moves"][phase]))
+                    for phase in ("early", "mid", "final")),
+                f"{category}/{row['family']}: duplicate move in phase set")
+        family_species = (row["family"], row["target_final_species"])
+        for phase in ("early", "mid", "final"):
+            require(all(any(learnable(species, move) for species in family_species)
+                        for move in row["phase_moves"][phase]),
+                    f"{category}/{row['family']}/{phase}: move unavailable in family")
 
 balance = read("pokemon_balance.json")
 require(len(balance["species_changes"]) == 26, "expected 26 custom species entries")
