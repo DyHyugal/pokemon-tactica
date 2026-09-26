@@ -102,7 +102,8 @@ Ordre obligatoire après modification :
 La cohérence JSON/runtime est automatisée, mais une candidate owner doit encore vérifier quelques zones témoins en ROM fraîche :
 
 - Route 31 jour : Wattouat ;
-- Route 36 jour : Scorplane et niveaux 14–17 ;
+- Route 36 jour : Mimigal restauré, aucun Scorplane/Scorvol, niveaux 14–17 ;
+- Route 34 jour : Scorplane après le badge 2, niveaux 25–28, slot 30 % ;
 - au moins une méthode débloquée plus tard sur une ancienne zone pour confirmer l’absence de scaling artificiel.
 
 Ne jamais déclarer cette observation faite sans test réel.
