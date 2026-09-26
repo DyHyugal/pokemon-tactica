@@ -57,7 +57,7 @@ Ne pas recoder sans défaut démontré :
 - Scorplane : Route 36 jour, early ;
 - Wattouat : Route 31 jour ;
 - les localisations/wiki doivent être régénérés depuis les JSON, espèces **et** niveaux ;
-- le prochain chantier encounters important est la couverture globale pré-Ligue : remplacer progressivement les doublons inutiles par les espèces encore uniquement post-Ligue, avec cohérence écologique. Ne pas randomiser.
+- la couverture du dataset standard pré-Ligue est complète : 479 espèces utilisées sur 479 sont disponibles avant/à la première Ligue. Conserver cette couverture ; ne pas réintroduire d’espèce uniquement post-Ligue lors d’une future passe.
 
 ## État boss/Méga courant
 
@@ -68,9 +68,9 @@ Ne pas recoder sans défaut démontré :
 
 ## Priorités UI V1
 
-1. Summary structurel : BG/tilemaps/windows, doublons de texte, page IV/EV ;
-2. HUD combat : supprimer le rectangle blanc à gauche de la barre HP et harmoniser action/attaques ;
-3. boutiques : fond rouge, texte noir, sélection lisible ;
+1. vérifier en ROM fraîche le Summary structurel déjà intégré ;
+2. vérifier en ROM le HUD combat, dont la suppression de la plaque blanche à gauche de la barre HP ;
+3. vérifier en ROM les boutiques rouge/noir et la lisibilité de la sélection ;
 4. fenêtres custom / polish restant.
 
 Un validateur statique ne remplace jamais une observation ROM pour ces points.
