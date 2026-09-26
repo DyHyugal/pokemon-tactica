@@ -52,7 +52,7 @@ Ces points sont **à corriger ou à revalider avant de demander un nouveau playt
 - menus custom des boutiques : rendu actuel non conforme à la charte rouge/noir ;
 - HUD combat : healthboxes déjà assombries mais panneaux action/attaques encore non conformes au rendu final attendu ;
 - premier rival : le template moteur reste niveau 5 ; contrat owner = starter seul mais niveau 17, avec évolution légale à ce niveau ;
-- Route 36 : les données canoniques ont été modifiées, mais le propriétaire a observé les rencontres historiques sur la ROM qu'il avait lancée ; retester impérativement sur une ROM fraîche et comparer les quatre slots jour/nuit ;
+- Route 36 : **ne pas retester l'état actuel**. Les sources fusionnées sont déjà connues fausses (27–30, cap de zone mal classé). Corriger d'abord à 14–17 max avec les stades correspondants, puis reconstruire la ROM ;
 - Mortimer : le générateur peut encore produire Ectoplasma @ Ectoplasmite avec Shadow Tag sur la forme de base ; la Méga doit être corrigée ;
 - Mega Ring : doit être remis après le badge 4, avant la portion vers le badge 5.
 
@@ -73,7 +73,7 @@ Quand une candidate sera déclarée prête, vérifier au minimum :
 
 - nouveau jeu → sélecteur starter : curseur en haut ; annulation = retour sur le même Pokémon ;
 - premier rival : un seul Pokémon, niveau 17, stade légal ;
-- Route 36 : quatre slots conformes aux données canoniques de la candidate ;
+- Route 36 : quatre slots conformes aux familles prévues, **niveaux 14–17 max** et stades d'évolution cohérents ;
 - boutiques custom : fond rouge, texte noir, sélection lisible ;
 - combat : healthboxes + menu d'action + menu des attaques conformes à la charte ;
 - Summary : toutes les pages lisibles, sans superposition ; IV/EV utilisables ;
