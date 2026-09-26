@@ -1,6 +1,8 @@
-[Accueil](Accueil.md) · [Guide de jeu](Guide-de-jeu.md) · [Changements](Changements.md) · [Pokédex](Pokedex.md) · [Localisations](Localisations.md) · [Boss & Conseils](Boss-et-Conseils.md) · [Crédits & Versions](Credits-et-Versions.md) · **[EN](../EN/Home.md)**
+[Accueil](Accueil.md) · [Guide de jeu](Guide-de-jeu.md) · [Changements](Changements.md) · [Pokédex](Pokedex.md) · [Localisations](Localisations.md) · [Boss & Conseils](Boss-et-Conseils.md) · [Crédits](Credits-et-Versions.md) · **[EN](../EN/Pokedex.md)**
 
 # Pokédex
+
+Recherche principale en **français**, avec les noms anglais acceptés comme alias sur le site. Les localisations restent dans une page séparée afin de garder le Pokédex lisible.
 
 | Pokémon | Tables |
 |---|---:|
