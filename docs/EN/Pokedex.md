@@ -1,4 +1,4 @@
-[Home](Home.md) · [Game Guide](Game-Guide.md) · [Changes](Changes.md) · [Pokédex](Pokedex.md) · [Locations](Locations.md) · [Bosses & Tips](Bosses-and-Tips.md) · [Credits](Credits-and-Versions.md) · [Roadmap](Roadmap.md) · **[FR](../FR/Pokedex.md)**
+[Home](Home.md) · [Game Guide](Game-Guide.md) · [Changes](Changes.md) · [Pokédex](Pokedex.md) · [Locations](Locations.md) · [Bosses & Tips](Bosses-and-Tips.md) · [Credits](Credits-and-Versions.md) · **[FR](../FR/Pokedex.md)**
 
 # Pokédex
 
