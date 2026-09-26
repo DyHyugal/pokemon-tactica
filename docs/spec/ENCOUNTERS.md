@@ -61,16 +61,17 @@ Règle :
 
 Cette règle complète les contraintes précédentes et ne justifie jamais un remplissage aléatoire.
 
-Audit courant du dataset standard après les corrections early :
+Audit courant du dataset standard après la passe de couverture :
 
 - 479 espèces différentes sont utilisées dans les tables standard ;
-- 409 sont présentes dans une table dont le premier accès est au plus tard au cap Ligue (`<= 67`) ;
-- 70 restent uniquement dans des tables post-Ligue ;
-- 152 espèces apparaissent plus d’une fois avant la Ligue.
+- les 479 sont présentes dans au moins une table dont le premier accès est au plus tard au cap Ligue (`<= 67`) ;
+- 0 espèce utilisée par ce dataset reste uniquement post-Ligue ;
+- 125 espèces apparaissent plus d’une fois avant la Ligue ;
+- 72 slots ont été remplacés sur 43 tables par rapport au baseline `integration/v1` de départ.
 
 Ces chiffres décrivent uniquement le dataset standard actuellement utilisé ; ils ne prétendent pas représenter l’intégralité des espèces compilées dans le moteur.
 
-Le chantier de couverture globale reste donc **PARTIEL**. Les remplacements doivent être effectués par lots cohérents et validés, pas en mélange avec une correction de CI ou d’UI.
+La couverture pré-Ligue du dataset standard courant est complète. Les doublons restants sont acceptables tant qu’ils restent cohérents avec l’habitat et ne privent plus une espèce utilisée d’un accès pré-Ligue.
 
 ## Synchronisation
 
