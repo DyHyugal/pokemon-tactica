@@ -61,3 +61,12 @@ Toutes ces données doivent être dérivées du dépôt Tactica : `species_info`
 - La version FR ne doit pas exposer les noms de zones anglais dans **Localisations**. Les noms de villes, grottes, tours, forêts, îles et zones Safari doivent être localisés en français, tout en conservant les alias anglais dans la recherche quand utile.
 - Les fiches Pokédex FR ne doivent jamais afficher un nom ou une description de talent en anglais. Si une description française fiable n'est pas disponible, afficher le **nom français du talent sans la description anglaise** plutôt que mélanger les langues.
 - Les références externes de type Poképédia / Insurgence / Decay servent uniquement à l'ergonomie et à l'organisation. Les données de la fiche restent exclusivement celles de la ROM Tactica.
+
+
+## Routes et Villes / Routes & Cities
+
+La navigation joueur comprend une rubrique dédiée **Routes et Villes** distincte de `Localisations`. `Localisations` répond à « où capturer ce Pokémon ? » ; `Routes et Villes` répond à « que faire et que récupérer dans cette zone ? ».
+
+Chaque fiche de route/ville peut présenter, uniquement lorsque l’information est vérifiée dans la ROM Tactica : connexions et rôle dans la progression, étapes d’histoire, points d’intérêt et services, objets/récompenses, échanges ou Pokémon cadeaux, prérequis d’exploration et rencontres sauvages. Les rencontres restent dérivées des tables canoniques existantes et ne sont pas recopiées manuellement.
+
+Ergonomie inspirée des wikis Pokémon : index filtrable + fiche synthétique, puis sections histoire, points d’intérêt, objets, échanges/cadeaux et rencontres. Les wikis externes ne sont jamais une source de vérité sur le contenu Tactica.
