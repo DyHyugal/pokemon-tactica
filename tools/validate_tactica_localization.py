@@ -53,8 +53,8 @@ def validate_title_asset() -> None:
 
 def validate_wiki() -> None:
     languages = {
-        "FR": ("Accueil", "Guide-de-jeu", "Changements", "Pokedex", "Localisations", "Boss-et-Conseils", "Credits-et-Versions"),
-        "EN": ("Home", "Game-Guide", "Changes", "Pokedex", "Locations", "Bosses-and-Tips", "Credits-and-Versions"),
+        "FR": ("Accueil", "Guide-de-jeu", "Changements", "Pokedex", "Localisations", "Boss-et-Conseils", "Credits-et-Versions", "Roadmap"),
+        "EN": ("Home", "Game-Guide", "Changes", "Pokedex", "Locations", "Bosses-and-Tips", "Credits-and-Versions", "Roadmap"),
     }
     link_pattern = re.compile(r"\[[^]]+\]\(([^)#]+)(?:#[^)]+)?\)")
 
