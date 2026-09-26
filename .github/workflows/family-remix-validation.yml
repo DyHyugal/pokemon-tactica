@@ -23,6 +23,7 @@ jobs:
           python3 tools/validate_tactica_spec.py
           python3 tools/validate_family_remix.py
           python3 tools/validate_tactica_balance.py
+          python3 tools/sync_tactica_encounter_access.py --check
           python3 tools/sync_tactica_encounters.py --check
           python3 tools/sync_tactica_bosses.py --check
           python3 tools/generate_tactica_rival.py --check

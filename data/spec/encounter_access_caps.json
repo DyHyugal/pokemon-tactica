@@ -1,0 +1,2945 @@
+{
+  "schema_version": 1,
+  "contract": "For every standard map/method pair, max_level must not exceed earliest_access_cap at first real access.",
+  "method_gates": {
+    "land_mons": {
+      "earliest_access_cap": 0,
+      "evidence": "No additional field move."
+    },
+    "fishing_mons": {
+      "earliest_access_cap": 19,
+      "evidence": "Old Rod is obtained on Route 32 after Albert."
+    },
+    "rock_smash_mons": {
+      "earliest_access_cap": 38,
+      "evidence": "Rock Smash is received after clearing Sudowoodo and requires badge 1."
+    },
+    "water_mons": {
+      "earliest_access_cap": 40,
+      "evidence": "Surf is received in Ecruteak and requires Mortimer's badge."
+    }
+  },
+  "milestones": [
+    {
+      "id": "before_albert",
+      "earliest_access_cap": 17,
+      "evidence": "Accessible before the first Gym milestone (Albert, cap 17)."
+    },
+    {
+      "id": "before_proton_1",
+      "earliest_access_cap": 19,
+      "evidence": "Opened after Albert and before Proton 1 (cap 19)."
+    },
+    {
+      "id": "before_blanche",
+      "earliest_access_cap": 32,
+      "evidence": "Opened after Hector and before Blanche (cap 32)."
+    },
+    {
+      "id": "before_mortimer",
+      "earliest_access_cap": 38,
+      "evidence": "Accessible after the Sudowoodo junction and before Mortimer (cap 38)."
+    },
+    {
+      "id": "after_surf",
+      "earliest_access_cap": 40,
+      "evidence": "First reachable after Mortimer/Surf, with the next canonical cap at 40."
+    },
+    {
+      "id": "after_whirlpool",
+      "earliest_access_cap": 52,
+      "evidence": "Whirlpool requires the seventh Johto badge; the earliest following cap is 52."
+    },
+    {
+      "id": "before_sandra",
+      "earliest_access_cap": 64,
+      "evidence": "Opened after the Radio Tower sequence and before Sandra (cap 64)."
+    },
+    {
+      "id": "before_pokemon_league",
+      "earliest_access_cap": 67,
+      "evidence": "Requires Waterfall or the eighth badge; next League milestone cap is 67."
+    },
+    {
+      "id": "kanto_entry",
+      "earliest_access_cap": 74,
+      "evidence": "Available on entering Kanto, before Major Bob (cap 74)."
+    },
+    {
+      "id": "before_red",
+      "earliest_access_cap": 93,
+      "evidence": "Unlocked after the Kanto badges, with Red as the next cap at 93."
+    }
+  ],
+  "table_count": 354,
+  "tables": [
+    {
+      "map": "MAP_BLACKTHORN_CITY_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 64,
+      "basis": [
+        "before_sandra"
+      ]
+    },
+    {
+      "map": "MAP_BLACKTHORN_CITY_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 64,
+      "basis": [
+        "before_sandra"
+      ]
+    },
+    {
+      "map": "MAP_BLACKTHORN_CITY_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 64,
+      "basis": [
+        "before_sandra"
+      ]
+    },
+    {
+      "map": "MAP_BURNED_TOWER_1F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_mortimer"
+      ]
+    },
+    {
+      "map": "MAP_BURNED_TOWER_B1F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_mortimer"
+      ]
+    },
+    {
+      "map": "MAP_CELADON_CITY_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_CELADON_CITY_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_CELADON_CITY_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_1F_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_1F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_1F_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_1F_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_B1F_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_B1F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_B1F_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_B1F_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_B2F_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_B2F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_B2F_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CAVE_B2F_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CITY_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_CERULEAN_CITY_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_CHERRYGROVE_CITY_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 19,
+      "basis": [
+        "before_albert",
+        "fishing_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_CHERRYGROVE_CITY_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 17,
+      "basis": [
+        "before_albert"
+      ]
+    },
+    {
+      "map": "MAP_CHERRYGROVE_CITY_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "before_albert",
+        "water_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_CIANWOOD_CITY_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_CIANWOOD_CITY_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_CIANWOOD_CITY_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_CINNABAR_ISLAND_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_CINNABAR_ISLAND_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_CINNABAR_ISLAND_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_CLIFF_EDGE_CAVE_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_CLIFF_EDGE_CAVE_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_CLIFF_EDGE_GATE_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_CLIFF_EDGE_GATE_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_DARK_CAVE_NORTH_SIDE_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_DARK_CAVE_NORTH_SIDE_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_DARK_CAVE_NORTH_SIDE_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_DARK_CAVE_NORTH_SIDE_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_DARK_CAVE_SOUTH_SIDE_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 19,
+      "basis": [
+        "before_albert",
+        "fishing_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_DARK_CAVE_SOUTH_SIDE_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 17,
+      "basis": [
+        "before_albert"
+      ]
+    },
+    {
+      "map": "MAP_DARK_CAVE_SOUTH_SIDE_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_albert",
+        "rock_smash_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_DARK_CAVE_SOUTH_SIDE_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "before_albert",
+        "water_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_DIGLETTS_CAVE_TUNNEL_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_DIGLETTS_CAVE_TUNNEL_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_DIGLETTS_CAVE_TUNNEL_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_DIGLETTS_CAVE_TUNNEL_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_DRAGONS_DEN_CAVERN_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 67,
+      "basis": [
+        "before_pokemon_league"
+      ]
+    },
+    {
+      "map": "MAP_DRAGONS_DEN_CAVERN_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 67,
+      "basis": [
+        "before_pokemon_league"
+      ]
+    },
+    {
+      "map": "MAP_ECRUTEAK_CITY_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_mortimer"
+      ]
+    },
+    {
+      "map": "MAP_ECRUTEAK_CITY_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_mortimer"
+      ]
+    },
+    {
+      "map": "MAP_ECRUTEAK_CITY_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "before_mortimer",
+        "water_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_FUCHSIA_CITY_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ICE_PATH_1F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 64,
+      "basis": [
+        "before_sandra"
+      ]
+    },
+    {
+      "map": "MAP_ICE_PATH_B1F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 64,
+      "basis": [
+        "before_sandra"
+      ]
+    },
+    {
+      "map": "MAP_ICE_PATH_B2F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 64,
+      "basis": [
+        "before_sandra"
+      ]
+    },
+    {
+      "map": "MAP_ICE_PATH_B3F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 64,
+      "basis": [
+        "before_sandra"
+      ]
+    },
+    {
+      "map": "MAP_ICE_PATH_B4F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 64,
+      "basis": [
+        "before_sandra"
+      ]
+    },
+    {
+      "map": "MAP_ILEX_FOREST_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 32,
+      "basis": [
+        "before_blanche"
+      ]
+    },
+    {
+      "map": "MAP_ILEX_FOREST_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 32,
+      "basis": [
+        "before_blanche"
+      ]
+    },
+    {
+      "map": "MAP_ILEX_FOREST_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "before_blanche",
+        "water_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_LAKE_OF_RAGE_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_mortimer"
+      ]
+    },
+    {
+      "map": "MAP_LAKE_OF_RAGE_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "before_mortimer",
+        "water_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_MT_MOON_CAVE_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_MT_MOON_CAVE_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_MT_MOON_CAVE_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_MT_MOON_CAVE_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_1F_NORTH_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_1F_NORTH_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_1F_NORTH_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_1F_NORTH_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_1F_SOUTH_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_mortimer"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_1F_SOUTH_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_mortimer"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_1F_SOUTH_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_mortimer"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_1F_SOUTH_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "before_mortimer",
+        "water_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_2F_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 67,
+      "basis": [
+        "before_pokemon_league"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_2F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 67,
+      "basis": [
+        "before_pokemon_league"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_2F_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 67,
+      "basis": [
+        "before_pokemon_league"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_2F_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 67,
+      "basis": [
+        "before_pokemon_league"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_B1F_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_B1F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_B1F_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_MT_MORTAR_B1F_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_ITEM_ROOM_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_ITEM_ROOM_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_ITEM_ROOM_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_ITEM_ROOM_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_MOLTRES_ROOM_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_MOLTRES_ROOM_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_MOLTRES_ROOM_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_MOLTRES_ROOM_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_WATERFALL_ROOM_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_WATERFALL_ROOM_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_WATERFALL_ROOM_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_1F_WATERFALL_ROOM_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_2F_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_2F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_2F_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_2F_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_3F_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_3F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_3F_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_3F_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_MOUNTAIN_SIDE_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_MOUNTAIN_SIDE_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_MOUNTAIN_SIDE_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_MOUNTAIN_SIDE_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_OUTSIDE_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_OUTSIDE_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_OUTSIDE_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_OUTSIDE_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_SNOW_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_SNOW_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_MT_SILVER_SNOW_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_NATIONAL_PARK_BUG_CONTEST_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 32,
+      "basis": [
+        "before_blanche"
+      ]
+    },
+    {
+      "map": "MAP_NATIONAL_PARK_NORMAL_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 32,
+      "basis": [
+        "before_blanche"
+      ]
+    },
+    {
+      "map": "MAP_NEW_BARK_TOWN_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 19,
+      "basis": [
+        "before_albert",
+        "fishing_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_NEW_BARK_TOWN_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 17,
+      "basis": [
+        "before_albert"
+      ]
+    },
+    {
+      "map": "MAP_NEW_BARK_TOWN_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "before_albert",
+        "water_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_OLIVINE_CITY_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_mortimer"
+      ]
+    },
+    {
+      "map": "MAP_OLIVINE_CITY_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_mortimer"
+      ]
+    },
+    {
+      "map": "MAP_OLIVINE_CITY_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "before_mortimer",
+        "water_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_OLIVINE_CITY_PORT_OUTSIDE_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_OLIVINE_CITY_PORT_OUTSIDE_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_OLIVINE_CITY_PORT_OUTSIDE_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_PALLET_TOWN_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_PALLET_TOWN_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROCKET_HIDEOUT_B1F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_ROCK_TUNNEL_1F_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROCK_TUNNEL_1F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROCK_TUNNEL_1F_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROCK_TUNNEL_1F_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROCK_TUNNEL_B1F_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROCK_TUNNEL_B1F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROCK_TUNNEL_B1F_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROCK_TUNNEL_B1F_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE10_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE10_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE10_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE11_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE11_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE11_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE12_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE12_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE12_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE12_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE13_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE13_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE13_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE14_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE14_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE14_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE15_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE15_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE15_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE15_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE16_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE16_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE16_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE17_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE17_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE17_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE18_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE18_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE18_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE18_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE19_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE19_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE1_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE1_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE1_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE20_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE20_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE21_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE21_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE21_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE21_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE22_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE22_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE22_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE24_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE24_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE24_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE24_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE25_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE25_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE25_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE26_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 67,
+      "basis": [
+        "before_pokemon_league"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE26_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 67,
+      "basis": [
+        "before_pokemon_league"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE26_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 67,
+      "basis": [
+        "before_pokemon_league"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE27_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 67,
+      "basis": [
+        "before_pokemon_league"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE27_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 67,
+      "basis": [
+        "before_pokemon_league"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE27_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 67,
+      "basis": [
+        "before_pokemon_league"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE28_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 93,
+      "basis": [
+        "before_red"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE29_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 17,
+      "basis": [
+        "before_albert"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE2_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE2_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE2_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE30_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 19,
+      "basis": [
+        "before_albert",
+        "fishing_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE30_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 17,
+      "basis": [
+        "before_albert"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE30_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_albert",
+        "rock_smash_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE30_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "before_albert",
+        "water_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE31_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 19,
+      "basis": [
+        "before_albert",
+        "fishing_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE31_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 17,
+      "basis": [
+        "before_albert"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE31_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "before_albert",
+        "water_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE32_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 19,
+      "basis": [
+        "before_proton_1"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE32_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 19,
+      "basis": [
+        "before_proton_1"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE32_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "before_proton_1",
+        "water_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE33_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 19,
+      "basis": [
+        "before_proton_1"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE33_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_proton_1",
+        "rock_smash_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE34_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 32,
+      "basis": [
+        "before_blanche"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE34_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 32,
+      "basis": [
+        "before_blanche"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE34_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "before_blanche",
+        "water_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE35_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 32,
+      "basis": [
+        "before_blanche"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE35_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 32,
+      "basis": [
+        "before_blanche"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE35_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "before_blanche",
+        "water_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE36_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 32,
+      "basis": [
+        "before_blanche"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE36_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_blanche",
+        "rock_smash_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE37_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_mortimer"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE38_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_mortimer"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE39_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_mortimer"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE39_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_mortimer"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE3_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE3_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE3_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE3_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE40_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_mortimer"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE40_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "before_mortimer",
+        "water_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE41_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE41_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE42_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_mortimer"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE42_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_mortimer"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE42_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_mortimer"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE42_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "before_mortimer",
+        "water_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE43_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_mortimer"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE43_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_mortimer"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE43_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "before_mortimer",
+        "water_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE44_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 64,
+      "basis": [
+        "before_sandra"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE44_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 64,
+      "basis": [
+        "before_sandra"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE44_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 64,
+      "basis": [
+        "before_sandra"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE45_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE45_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE45_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE45_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE46_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 17,
+      "basis": [
+        "before_albert"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE47_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE47_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE47_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE48_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE48_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE4_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE4_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE4_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE5_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE5_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE5_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE6_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE6_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE6_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE6_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE7_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE7_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE7_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE8_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE8_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE8_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE9_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE9_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE9_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_ROUTE9_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_RUINS_OF_ALPH_B1F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 17,
+      "basis": [
+        "before_albert"
+      ]
+    },
+    {
+      "map": "MAP_RUINS_OF_ALPH_B1F_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_albert",
+        "rock_smash_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_RUINS_OF_ALPH_OUTSIDE_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 19,
+      "basis": [
+        "before_albert",
+        "fishing_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_RUINS_OF_ALPH_OUTSIDE_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 17,
+      "basis": [
+        "before_albert"
+      ]
+    },
+    {
+      "map": "MAP_RUINS_OF_ALPH_OUTSIDE_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_albert",
+        "rock_smash_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_RUINS_OF_ALPH_OUTSIDE_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "before_albert",
+        "water_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_SEAFOAM_ISLANDS_1F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_SEAFOAM_ISLANDS_B1F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_SLOWPOKE_WELL_B1F_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 19,
+      "basis": [
+        "before_proton_1"
+      ]
+    },
+    {
+      "map": "MAP_SLOWPOKE_WELL_B1F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 19,
+      "basis": [
+        "before_proton_1"
+      ]
+    },
+    {
+      "map": "MAP_SLOWPOKE_WELL_B1F_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "before_proton_1",
+        "water_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_SLOWPOKE_WELL_B2F_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_SLOWPOKE_WELL_B2F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_SLOWPOKE_WELL_B2F_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_SPROUT_TOWER_2F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 17,
+      "basis": [
+        "before_albert"
+      ]
+    },
+    {
+      "map": "MAP_SPROUT_TOWER_3F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 17,
+      "basis": [
+        "before_albert"
+      ]
+    },
+    {
+      "map": "MAP_TIN_TOWER_3F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 64,
+      "basis": [
+        "before_sandra"
+      ]
+    },
+    {
+      "map": "MAP_TIN_TOWER_4F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 64,
+      "basis": [
+        "before_sandra"
+      ]
+    },
+    {
+      "map": "MAP_TIN_TOWER_5F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 64,
+      "basis": [
+        "before_sandra"
+      ]
+    },
+    {
+      "map": "MAP_TIN_TOWER_6F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 64,
+      "basis": [
+        "before_sandra"
+      ]
+    },
+    {
+      "map": "MAP_TIN_TOWER_7F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 64,
+      "basis": [
+        "before_sandra"
+      ]
+    },
+    {
+      "map": "MAP_TIN_TOWER_8F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 64,
+      "basis": [
+        "before_sandra"
+      ]
+    },
+    {
+      "map": "MAP_TIN_TOWER_9F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 64,
+      "basis": [
+        "before_sandra"
+      ]
+    },
+    {
+      "map": "MAP_TOHJO_FALLS_CAVERN_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 67,
+      "basis": [
+        "before_pokemon_league"
+      ]
+    },
+    {
+      "map": "MAP_TOHJO_FALLS_CAVERN_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 67,
+      "basis": [
+        "before_pokemon_league"
+      ]
+    },
+    {
+      "map": "MAP_TOHJO_FALLS_CAVERN_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 67,
+      "basis": [
+        "before_pokemon_league"
+      ]
+    },
+    {
+      "map": "MAP_TOHJO_FALLS_CAVERN_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 67,
+      "basis": [
+        "before_pokemon_league"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_1F_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 19,
+      "basis": [
+        "before_proton_1"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_1F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 19,
+      "basis": [
+        "before_proton_1"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_1F_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_proton_1",
+        "rock_smash_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_1F_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "before_proton_1",
+        "water_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_B1F_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 19,
+      "basis": [
+        "before_proton_1"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_B1F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 19,
+      "basis": [
+        "before_proton_1"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_B1F_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 38,
+      "basis": [
+        "before_proton_1",
+        "rock_smash_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_B1F_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "before_proton_1",
+        "water_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_B2F_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_B2F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_B2F_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_UNION_CAVE_B2F_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "after_surf"
+      ]
+    },
+    {
+      "map": "MAP_VERMILION_CITY_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_VERMILION_CITY_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_VERMILION_CITY_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_VERMILION_CITY_PORT_OUTSIDE_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_VERMILION_CITY_PORT_OUTSIDE_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_VERMILION_CITY_PORT_OUTSIDE_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_VICTORY_ROAD_KANTO_1F_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 67,
+      "basis": [
+        "before_pokemon_league"
+      ]
+    },
+    {
+      "map": "MAP_VICTORY_ROAD_KANTO_1F_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 67,
+      "basis": [
+        "before_pokemon_league"
+      ]
+    },
+    {
+      "map": "MAP_VICTORY_ROAD_KANTO_B1F_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 67,
+      "basis": [
+        "before_pokemon_league"
+      ]
+    },
+    {
+      "map": "MAP_VICTORY_ROAD_KANTO_B1F_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 67,
+      "basis": [
+        "before_pokemon_league"
+      ]
+    },
+    {
+      "map": "MAP_VICTORY_ROAD_KANTO_B2F_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 67,
+      "basis": [
+        "before_pokemon_league"
+      ]
+    },
+    {
+      "map": "MAP_VICTORY_ROAD_KANTO_B2F_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 67,
+      "basis": [
+        "before_pokemon_league"
+      ]
+    },
+    {
+      "map": "MAP_VIOLET_CITY_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 19,
+      "basis": [
+        "before_albert",
+        "fishing_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_VIOLET_CITY_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 17,
+      "basis": [
+        "before_albert"
+      ]
+    },
+    {
+      "map": "MAP_VIOLET_CITY_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 40,
+      "basis": [
+        "before_albert",
+        "water_mons_unlock"
+      ]
+    },
+    {
+      "map": "MAP_VIRIDIAN_CITY_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_VIRIDIAN_CITY_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_VIRIDIAN_CITY_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_VIRIDIAN_FOREST_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 74,
+      "basis": [
+        "kanto_entry"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_1F_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_1F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_1F_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_1F_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B1F_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B1F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B1F_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B1F_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B1F_INNER_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B1F_INNER_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B1F_INNER_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B1F_INNER_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B2F_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B2F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B2F_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B2F_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B3F_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B3F_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B3F_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_B3F_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_DESCENT_HNS",
+      "method": "fishing_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_DESCENT_HNS",
+      "method": "land_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_DESCENT_HNS",
+      "method": "rock_smash_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    },
+    {
+      "map": "MAP_WHIRL_ISLANDS_DESCENT_HNS",
+      "method": "water_mons",
+      "earliest_access_cap": 52,
+      "basis": [
+        "after_whirlpool"
+      ]
+    }
+  ]
+}
