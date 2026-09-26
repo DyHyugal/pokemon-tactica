@@ -228,12 +228,20 @@ function evoHtml(constant){
   return '<div class="evo-nodes">'+nodeHtml+'</div><div class="evo-rules">'+edgeHtml+'</div>';
 }
 function abilitiesHtml(d){
-  const abs=(d.abilities||[]).map((a,i)=>({a,i})).filter(x=>x.a);
+  const seen=new Set();
+  const abs=(d.abilities||[]).map((a,i)=>({a,i})).filter(x=>{
+    if(!x.a||seen.has(x.a))return false;
+    seen.add(x.a);
+    return true;
+  });
   if(!abs.length)return '<p>'+t.none+'</p>';
   return '<div class="ability-grid">'+abs.map(({a,i})=>{
     const hidden=i===2;
     const ai=abilityInfo(a);
-    return '<div class="ability-card"><small>'+(hidden?t.hidden:t.regular)+'</small><strong>'+ai.name+'</strong>'+(ai.description?'<span class="ability-description">'+ai.description+'</span>':'')+'</div>';
+    // Ability names are localized from the Tactica FR dictionary. Do not leak
+    // the engine's English-only short description into the French player wiki.
+    const description=lang==="fr"?"":(ai.description||"");
+    return '<div class="ability-card"><small>'+(hidden?t.hidden:t.regular)+'</small><strong>'+ai.name+'</strong>'+(description?'<span class="ability-description">'+description+'</span>':'')+'</div>';
   }).join("")+'</div>';
 }
 function moveTable(list){
