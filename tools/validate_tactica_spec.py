@@ -56,6 +56,16 @@ for entry in standard:
             f"{entry['map']} {entry['method']} {entry.get('time', 'Any')}")
 
 encounter_species = {species for table in standard for species in table["species"]}
+preleague_species = {
+    species
+    for table in standard
+    if access_caps[(table["map"], table["method"])] <= 67
+    for species in table["species"]
+}
+missing_preleague_species = sorted(encounter_species - preleague_species)
+require(not missing_preleague_species,
+        "standard species only available after first League: " +
+        ", ".join(missing_preleague_species))
 required_starter_families = {
     "Bulbasaur": ("BULBASAUR", "IVYSAUR", "VENUSAUR"),
     "Charmander": ("CHARMANDER", "CHARMELEON", "CHARIZARD"),
