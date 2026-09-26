@@ -1,5 +1,6 @@
 #include "global.h"
 #include "family_starter.h"
+#include "data.h"
 #include "pokemon.h"
 #include "pokemon_storage_system.h"
 #include "event_data.h"
@@ -7,6 +8,8 @@
 #include "daycare.h"
 #include "constants/vars.h"
 #include "constants/items.h"
+#include "constants/moves.h"
+#include "constants/opponents.h"
 #include "constants/flags.h"
 #include "test/test.h"
 
@@ -360,6 +363,55 @@ TEST("Family starter: rival draw is persisted once")
     SetMonData(&gPlayerParty[0], MON_DATA_SPECIES, &(u16){SPECIES_CYNDAQUIL});
     FamilyStarter_RecordPrimary();
     EXPECT_EQ(VarGet(VAR_FAMILY_RIVAL_SPECIES), rival);
+}
+
+TEST("Family starter: saved rival category resolves every authored party phase")
+{
+    struct TrainerMon mon = {0};
+
+    InitFamilyTest();
+    VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_CHARMANDER);
+
+    mon.lvl = 15;
+    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_2_HNS, 0, &mon));
+    EXPECT_EQ(mon.species, SPECIES_VULPIX);
+    EXPECT_EQ(mon.moves[0], MOVE_EMBER);
+    EXPECT_EQ(mon.heldItem, ITEM_NONE);
+    EXPECT_EQ(mon.ev, NULL);
+
+    mon = (struct TrainerMon){.lvl = 16};
+    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_2_HNS, 1, &mon));
+    EXPECT_EQ(mon.species, SPECIES_CHARMELEON);
+    EXPECT_EQ(mon.moves[0], MOVE_NONE);
+
+    mon = (struct TrainerMon){.lvl = 24};
+    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_3_HNS, 2, &mon));
+    EXPECT_EQ(mon.species, SPECIES_SKIPLOOM);
+    EXPECT_EQ(mon.moves[0], MOVE_MEGA_DRAIN);
+
+    mon = (struct TrainerMon){.lvl = 68};
+    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_7_HNS, 5, &mon));
+    EXPECT_EQ(mon.species, SPECIES_ARCANINE);
+    EXPECT_EQ(mon.moves[0], MOVE_FLARE_BLITZ);
+    EXPECT_EQ(mon.heldItem, ITEM_EXPERT_BELT);
+
+    VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_GLIGAR);
+    mon = (struct TrainerMon){.lvl = 40};
+    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_4_HNS, 3, &mon));
+    EXPECT_EQ(mon.species, SPECIES_VIBRAVA);
+    mon.lvl = 48;
+    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_5_HNS, 3, &mon));
+    EXPECT_EQ(mon.species, SPECIES_FLYGON);
+
+    VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_ELEKID);
+    mon = (struct TrainerMon){.lvl = 18};
+    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_2_HNS, 1, &mon));
+    EXPECT_EQ(mon.species, SPECIES_ELEKID);
+    mon.lvl = 40;
+    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_4_HNS, 1, &mon));
+    EXPECT_EQ(mon.species, SPECIES_ELECTIVIRE);
+
+    EXPECT(!FamilyStarter_ResolveRivalMon(TRAINER_YOUNGSTER_CALVIN, 0, &mon));
 }
 
 TEST("Family starter: monotype keeps the historical rival selection")

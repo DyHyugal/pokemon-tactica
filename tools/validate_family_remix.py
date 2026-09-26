@@ -431,6 +431,18 @@ def validate_rival_progression():
             if len(items) != len(set(items)):
                 fail(f"{trainer_id}: duplicate rival held items")
 
+    runtime = (ROOT / "src/family_starter.c").read_text(encoding="utf-8")
+    battle = (ROOT / "src/battle_main.c").read_text(encoding="utf-8")
+    generated = (ROOT / "src/data/tactica_rival.h").read_text(encoding="utf-8")
+    if '#include "data/tactica_rival.h"' not in runtime:
+        fail("generated rival roster table is not included by the runtime")
+    if "FamilyStarter_ResolveRivalMon(sCreatingTrainerId, i" not in battle:
+        fail("rival category resolver is not wired into trainer party creation")
+    if generated.count(".isSavedStarter = TRUE") != 6:
+        fail("generated rival data must contain one saved starter slot per category")
+    if generated.count(".baseSpecies = ") != 30:
+        fail("generated rival data must contain five authored members per category")
+
 
 def main():
     validate_bosses()
@@ -438,7 +450,7 @@ def main():
     validate_rival_progression()
     validate_encounters()
     validate_shops()
-    print("Tactica engine data validation passed: bosses, Rockets, rival sizes, EVs, encounters, Safari and shops")
+    print("Tactica engine data validation passed: bosses, Rockets, dynamic rival teams, EVs, encounters, Safari and shops")
 
 
 if __name__ == "__main__":
