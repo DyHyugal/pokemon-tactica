@@ -5,7 +5,7 @@ FamilyStarter_Select::
 	setvar VAR_0x8004, 0
 	setvar VAR_0x8005, SPECIES_NONE
 	setvar VAR_0x8006, SPECIES_NONE
-	setvar VAR_0x8007, 0
+	setvar VAR_0x8007, 0xFFFF
 	setvar VAR_0x8008, 0
 FamilyStarter_Category::
 	closemessage
@@ -15,7 +15,7 @@ FamilyStarter_Category::
 	copyvar VAR_0x8004, VAR_RESULT
 	setvar VAR_0x8005, SPECIES_NONE
 	setvar VAR_0x8006, SPECIES_NONE
-	setvar VAR_0x8007, 0
+	setvar VAR_0x8007, 0xFFFF
 	setvar VAR_0x8008, 0
 	goto_if_eq VAR_0x8004, 6, FamilyStarter_EeveeEvolution
 FamilyStarter_Species::

@@ -137,8 +137,22 @@ require(set(rival["selection"]["counter_categories"]) == set(starter["categories
         "rival categories must match starters")
 require(rival["selection"]["counter_categories"]["fire"] == ["water", "ground"],
         "Fire counter categories")
-require(rival["selection"]["counter_categories"]["electric"] == ["ground"],
-        "Electric counter category")
+expected_counters = {
+    "fire": ["water", "ground"], "water": ["grass", "electric"],
+    "grass": ["fire", "ice"], "electric": ["ground", "grass"],
+    "ground": ["water", "ice"], "ice": ["fire", "water"],
+}
+require(rival["selection"]["counter_categories"] == expected_counters,
+        "owner rival counter matrix")
+expected_fixed_starters = {
+    "fire": "Torchic", "water": "Mudkip", "grass": "Treecko",
+    "electric": "Elekid", "ground": "Drilbur", "ice": "Darumaka-Galar",
+}
+require(rival["selection"].get("fixed_starters") == expected_fixed_starters,
+        "one fixed starter per rival archetype")
+require("species_draw" not in rival["selection"] and
+        rival["selection"].get("starter_draw", "").startswith("none"),
+        "rival species draw must be removed")
 rosters = rival["fight_rosters"]
 require(set(rosters["categories"]) == set(starter["categories"]),
         "six rival roster categories")
@@ -146,12 +160,35 @@ require(rosters["party_sizes"] == {"before_first_badge": 1, "after_badge_1": 3,
         "after_badge_2": 4, "after_badge_3_and_later": 6}, "rival party progression")
 require(rosters["phase_slots"] == {"early": [1, 2, 3], "mid": [1, 2, 3, 4],
         "final": [1, 2, 3, 4, 5, 6]}, "persistent rival slots")
+require(rosters.get("mega_unlock") == "after_badge_4", "rival Mega unlock")
+expected_rival_finals = {
+    "fire": ["Torkoal", "saved starter", "Venusaur", "Ninetales", "Lilligant-Hisui", "Great Tusk"],
+    "water": ["Pelipper", "saved starter", "Kingdra", "Politoed", "Barraskewda", "Dracovish"],
+    "grass": ["Rillaboom", "saved starter", "Hawlucha", "Ferrothorn", "Gholdengo", "Arboliva"],
+    "electric": ["Pincurchin", "saved starter", "Raichu-Alola", "Toxtricity", "Iron Hands", "Manectric"],
+    "ground": ["Hippowdon", "saved starter", "Tyranitar", "Garchomp", "Gliscor", "Corviknight"],
+    "ice": ["Vanilluxe", "saved starter", "Aurorus", "Sandslash-Alola", "Arctovish", "Baxcalibur"],
+}
+mega_stones = {"Blazikenite", "Swampertite", "Sceptilite", "Manectite", "Tyranitarite", "Baxcalibrite"}
 for category, party in rosters["categories"].items():
     require(len(party) == 6 and party[1]["species_source"] == "VAR_FAMILY_RIVAL_SPECIES",
             f"{category}: six members with saved starter in slot 2")
     require(len({row["family"] for row in party}) == 6, f"{category}: repeated family")
     items = [row["final_item"] for row in party if row.get("final_item")]
     require(len(items) == len(set(items)), f"{category}: duplicate rival items")
+    require([row.get("target_final_species", row["family"]) for row in party] ==
+            expected_rival_finals[category], f"{category}: owner final roster")
+    require(len(set(items) & mega_stones) == 1, f"{category}: exactly one final Mega")
+    rules = rival["archetype_rules"][category]
+    require(len(rules["setters"]) == 2, f"{category}: two setters")
+    require(len(rules["starter_families"]) <= 2,
+            f"{category}: more than two starter families")
+    require(expected_fixed_starters[category] in rules["starter_families"],
+            f"{category}: fixed starter family missing from family count")
+    if category == "electric":
+        require(rules.get("manual_setter") == "Toxtricity" and
+                rules["setters"] == ["Pincurchin", "Toxtricity"],
+                "Electric setter exception")
     for row in party:
         if row["family"] != "saved starter":
             require(all(1 <= len(row["phase_moves"][phase]) <= 4
@@ -163,8 +200,11 @@ for category, party in rosters["categories"].items():
             for phase, species in (("early", row["family"]),
                                    ("mid", row["family"]),
                                    ("final", row["target_final_species"])):
-                require(all(learnable(species, move) for move in row["phase_moves"][phase]),
-                        f"{category}/{species}/{phase}: move unavailable in build")
+                for move in row["phase_moves"][phase]:
+                    require(learnable(species, move),
+                            f"{category}/{species}/{phase}: {move} unavailable in build")
+require(learnable("Aurorus", "Thunderbolt"),
+        "Aurorus must keep Thunderbolt only while it is teachable in this build")
 
 balance = read("pokemon_balance.json")
 require(len(balance["species_changes"]) == 26, "expected 26 custom species entries")
@@ -182,9 +222,19 @@ rocket = read("rocket_progression.json")
 require(set(rocket["rosters"]) == {"Proton", "Petrel", "Ariana", "Archer"},
         "four Rocket executive progressions")
 require(len(rocket["active_fights"]) == 7, "seven existing Rocket fights")
+expected_rocket_finals = {
+    "Proton": ["Glimmora", "Crobat", "Scolipede", "Toxicroak", "Alolan Muk", "Mega Beedrill"],
+    "Petrel": ["Ditto", "Hisuian Zoroark", "Weezing", "Electrode", "Grimmsnarl", "Mega Banette"],
+    "Ariana": ["Arbok", "Roserade", "Salazzle", "Nidoqueen", "Honchkrow", "Mega Absol"],
+    "Archer": ["Crobat", "Weavile", "Nidoking", "Magnezone", "Klefki", "Mega Sharpedo"],
+}
 for name, phases in rocket["rosters"].items():
     final = bosses[("Johto", "Rocket Executive", name)]
     require(len(final) == 6, f"{name}: final party size")
+    require([row["species"] for row in final] == expected_rocket_finals[name],
+            f"{name}: owner final roster")
+    require(sum(row["species"].startswith("Mega ") for row in final) == 1,
+            f"{name}: exactly one FINAL Mega")
     for phase, size in (("early", 3), ("mid", 4)):
         party = phases[phase]
         require(len(party) == size and len({row["slot"] for row in party}) == size,
@@ -195,8 +245,12 @@ for name, phases in rocket["rosters"].items():
         require(len(items) == len(set(items)), f"{name}/{phase}: duplicate items")
         require(all(1 <= len(row["moves"]) <= 4 for row in party),
                 f"{name}/{phase}: incomplete moves")
-        require(all(learnable(row["species"], move) for row in party for move in row["moves"]),
-                f"{name}/{phase}: move unavailable in build")
+        for row in party:
+            for move in row["moves"]:
+                require(learnable(row["species"], move),
+                        f"{name}/{phase}/{row['species']}: {move} unavailable in build")
+        require(not any((row.get("item") or "").endswith("ite") for row in party),
+                f"{name}/{phase}: Mega Stone before FINAL")
     require([row["slot"] for row in phases["early"]] ==
             [row["slot"] for row in phases["mid"][:3]],
             f"{name}: early members do not persist")
@@ -221,11 +275,11 @@ required_items = {
     ("Jasmine", "Corviknight"): "Leftovers", ("Jasmine", "Archaludon"): "Sitrus Berry",
     ("Clément", "Xatu"): "Life Orb", ("Clément", "Gallade"): "Expert Belt",
     ("Marion", "Honchkrow"): "Life Orb", ("Marion", "Weavile"): "Expert Belt",
-    ("Petrel", "Muk"): "Black Sludge", ("Petrel", "Weezing"): "Sitrus Berry",
-    ("Ariana", "Salazzle"): "Focus Sash", ("Ariana", "Grafaiai"): "Sitrus Berry",
+    ("Petrel", "Weezing"): "Black Sludge", ("Petrel", "Mega Banette"): "Banettite",
+    ("Ariana", "Salazzle"): "Heavy-Duty Boots", ("Ariana", "Roserade"): "Focus Sash",
     ("Ariana", "Nidoqueen"): "Life Orb", ("Ariana", "Honchkrow"): "Sharp Beak",
-    ("Archer", "Nidoking"): "Life Orb", ("Archer", "Houndoom"): "Focus Sash",
-    ("Archer", "Weavile"): "Expert Belt", ("Pierre", "Garganacl"): "Leftovers",
+    ("Archer", "Nidoking"): "Life Orb", ("Archer", "Mega Sharpedo"): "Sharpedonite",
+    ("Archer", "Weavile"): "Choice Band", ("Pierre", "Garganacl"): "Leftovers",
     ("Pierre", "Cradily"): "Sitrus Berry", ("Jeannine", "Toxapex"): "Black Sludge",
     ("Jeannine", "Galarian Weezing"): "Sitrus Berry", ("Jeannine", "Venomoth"): "Focus Sash",
     ("Auguste", "Torkoal"): "Heat Rock", ("Auguste", "Ninetales"): "Leftovers",
@@ -241,8 +295,20 @@ for (region, category, boss), roster in bosses.items():
     for row in roster:
         if row["species"].startswith("Mega "):
             megas[row["species"]].add((region, category, boss))
+for category, rules in rival["archetype_rules"].items():
+    mega = rules.get("mega_species")
+    if mega:
+        megas[mega].add(("Johto", "Rival", category))
 require(all(len(users) == 1 for users in megas.values()),
         f"duplicate boss mega: {dict((m, list(u)) for m, u in megas.items() if len(u)>1)}")
+require(next(row for row in bosses[("Johto", "Rocket Executive", "Archer")]
+             if row["ace"])["species"] == "Mega Sharpedo",
+        "Archer FINAL ace must be Mega Sharpedo")
+archer_ace = next(row for row in bosses[("Johto", "Rocket Executive", "Archer")]
+                  if row["ace"])
+require(archer_ace["item"] == "Sharpedonite" and archer_ace["ability"] == "Strong Jaw" and
+        archer_ace["nature"] == "Jolly" and "Protect" not in archer_ace["moves"],
+        "Archer must Mega-evolve Sharpedo immediately without Protect sequencing")
 jasmine = next(v for k, v in bosses.items() if k[2] == "Jasmine")
 require(any(x["species"] == "Mega Aggron" for x in jasmine), "Jasmine Mega Aggron")
 require(not any(x["species"] == "Mega Steelix" for x in jasmine), "Jasmine duplicate Mega Steelix")
