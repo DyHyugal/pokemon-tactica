@@ -186,7 +186,7 @@ Recherche principale en **français**, avec les noms anglais acceptés comme ali
 | Lampéroie | 1 |
 | Ohmassacre | 2 |
 | Évoli | 1 |
-| Bekaglaçon | 0 |
+| Bekaglaçon | 1 |
 | Abo | 1 |
 | Élektek | 3 |
 | Élekable | 2 |

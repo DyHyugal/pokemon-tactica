@@ -186,7 +186,7 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Eelektrik | 1 |
 | Eelektross | 2 |
 | Eevee | 1 |
-| Eiscue (Ice Face) | 0 |
+| Eiscue (Ice Face) | 1 |
 | Ekans | 1 |
 | Electabuzz | 3 |
 | Electivire | 2 |
