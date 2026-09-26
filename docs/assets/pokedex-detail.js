@@ -164,16 +164,8 @@ if(!dialog){
   document.body.append(dialog);
 }
 dialog.querySelector(".dex-close").addEventListener("click",()=>dialog.close());
-dialog.addEventListener("close",()=>{if(!historySync&&pokemonFromUrl())writePokemonUrl("");});
 dialog.addEventListener("click",e=>{if(e.target===dialog)dialog.close()});
 const content=dialog.querySelector("#dex-detail-content");
-let historySync=false;
-function pokemonFromUrl(){return new URL(location.href).searchParams.get("pokemon")||"";}
-function writePokemonUrl(constant,replace=false){
-  const url=new URL(location.href);
-  if(constant)url.searchParams.set("pokemon",constant);else url.searchParams.delete("pokemon");
-  history[replace?"replaceState":"pushState"]({pokemon:constant||null},"",url);
-}
 let locationsPromise=null;
 function locationDocument(){
   if(!locationsPromise){
@@ -290,7 +282,7 @@ async function fillLocations(constant,displayName,linkHref){
   if(!rows.length){box.innerHTML='<p>'+t.noLocation+'</p><a class="detail-location-link" href="'+linkHref+'">'+t.allLocations+' →</a>';return;}
   box.innerHTML='<div class="location-mini-grid">'+rows.map(r=>{const td=[...r.children];return '<div class="location-mini"><strong>'+td[0].textContent+'</strong><span>'+td[1].textContent+' · '+td[2].textContent+'</span><small>'+td[3].textContent+' · '+td[4].textContent+'</small></div>'}).join("")+'</div><a class="detail-location-link" href="'+linkHref+'">'+t.allLocations+' →</a>';
 }
-function openSpecies(constant,originCard=null,fromHistory=false){
+function openSpecies(constant,originCard=null){
   const d=S()[constant]; if(!d)return;
   const display=originCard?.querySelector("strong")?.textContent||speciesLabel(constant);
   const sprite=originCard?.querySelector(".poke-sprite")?.src||("https://play.pokemonshowdown.com/sprites/gen5/"+spriteSlugFromConst(constant)+".png");
@@ -306,7 +298,6 @@ function openSpecies(constant,originCard=null,fromHistory=false){
   content.querySelectorAll("[data-open-species]").forEach(b=>b.addEventListener("click",()=>openSpecies(b.dataset.openSpecies,null)));
   fillLocations(constant,display,locHref);
   if(!dialog.open)dialog.showModal();
-  if(!fromHistory&&pokemonFromUrl()!==constant)writePokemonUrl(constant);
 }
 allCards.forEach(card=>{
   card.classList.add("dex-card-interactive");
@@ -317,12 +308,4 @@ allCards.forEach(card=>{
   card.addEventListener("click",e=>{if(e.target.closest(".card-link"))return;const c=resolveCard(card);if(c)openSpecies(c,card)});
   card.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&!e.target.closest(".card-link")){e.preventDefault();const c=resolveCard(card);if(c)openSpecies(c,card)}});
 });
-window.addEventListener("popstate",()=>{
-  const constant=pokemonFromUrl();
-  historySync=true;
-  if(constant&&S()[constant])openSpecies(constant,null,true);else if(dialog.open)dialog.close();
-  historySync=false;
-});
-const initialPokemon=pokemonFromUrl();
-if(initialPokemon&&S()[initialPokemon])openSpecies(initialPokemon,null,true);
 })();

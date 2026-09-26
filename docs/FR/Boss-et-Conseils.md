@@ -1,6 +1,8 @@
-[Accueil](Accueil.md) · [Guide de jeu](Guide-de-jeu.md) · [Changements](Changements.md) · [Pokédex](Pokedex.md) · [Localisations](Localisations.md) · [Boss & Conseils](Boss-et-Conseils.md) · [Crédits & Versions](Credits-et-Versions.md) · **[EN](../EN/Home.md)**
+[Accueil](Accueil.md) · [Guide de jeu](Guide-de-jeu.md) · [Changements](Changements.md) · [Pokédex](Pokedex.md) · [Localisations](Localisations.md) · [Boss & Conseils](Boss-et-Conseils.md) · [Crédits](Credits-et-Versions.md) · [Roadmap](Roadmap.md) · **[EN](../EN/Bosses-and-Tips.md)**
 
 # Boss & Conseils
+
+Cette page sert de **référence de préparation** : équipe, objets, talents, capacités et logique de combat. Les conseils expliquent la condition de victoire adverse sans imposer un walkthrough tour par tour.
 
 ## Albert — Vol / Vent Arrière
 
@@ -32,7 +34,7 @@ Le Relais devient dangereux si Évoli obtient trop de tours gratuits.
 | Évoli | 29 | Évoluroc | Adaptabilité | Reflet · Relais · Clonage · Vœu |
 | Porygon2 | 29 | Évoluroc | Télécharge | Tonnerre · Laser Glace · Soin · Triplattaque |
 | Capidextre | 29 | Mouchoir Soie | Technicien | Bluff · Coup Double · Sabotage · Aéropique |
-| Ursaring | 29 | Orbe Flamme | Cran | Façade · Séisme · Close Combat · Mâchouille |
+| Ursaring | 30 | Orbe Flamme | Cran | Façade · Séisme · Close Combat · Mâchouille |
 | Famignol | 29 | Loupe | Technicien | Prolifération · Morsure · Encore · Demi-Tour |
 | Écrémeuh | 32 | Restes | Querelleur | Plaquage · Lait à Boire · Psykoud’Boul · Roulade |
 
