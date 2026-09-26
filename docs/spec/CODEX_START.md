@@ -30,7 +30,7 @@ Avant de demander un playtest :
 
 La ROM de référence du propriétaire doit donc être reconstruite après le pull. Le testeur doit vérifier `git rev-parse --short HEAD` puis l'heure de génération de `pokehns.gba` avant de lancer mGBA.
 
-## Décisions owner à appliquer avant la prochaine candidate de playtest
+## Décisions owner intégrées à préserver / contrôles ROM restants
 
 ### CORE / rival
 
@@ -70,11 +70,11 @@ La ROM de référence du propriétaire doit donc être reconstruite après le pu
 
 Avant toute poursuite du bloc rival/Rocket, relire [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Les anciennes compositions de `rival.json`, `rocket_progression.json` et des entrées Rocket de `bosses.json` sont **à régénérer** lorsqu'elles contredisent ce document. Ne pas conserver l'ancien tirage d'un starter parmi cinq : le rival possède désormais un starter fixe par archétype, des équipes Singles finalisées et une Méga déverrouillée après le badge 4. Pour Archer, la FINAL utilise **Méga-Sharpedo**, qui Méga-évolue immédiatement ; ne pas créer de logique Abri tour 1 -> Méga tour 2. Méga-Démolosse reste réservé à Marion.
 
-### Bloc 1 — CORE / gameplay restant
-Corriger rival niveau/stade, Méga boss, Mega Ring, starter/œuf et toute régression bloquante. Build/tests/validateurs verts obligatoires.
+### Bloc 1 — CORE / gameplay — INTÉGRÉ
+PR #22 fusionnée (`068c3a74`) : rival niveau/stade, rosters Rival/Rocket, talents pré-Méga, Mega Ring et logique starter/œuf sont intégrés et couverts automatiquement. Ne pas les recoder sans défaut démontré ; conserver les témoins ROM pour la candidate.
 
-### Bloc 2 — Encounters / progression
-Conserver les données déjà intégrées, résoudre tout écart runtime, vérifier Route 36 et autres points représentatifs, puis tests/validateurs/build.
+### Bloc 2 — Encounters / progression — INTÉGRÉ
+PR #23 fusionnée (`96f0b2c8`) : 354 couples map/méthode utilisent le premier accès réel, 405 tables sont synchronisées et Route 36 est 14–17. Les déblocages de méthode ne participent plus au scaling. Ne pas rouvrir ce bloc sans défaut démontré.
 
 ### Bloc 3 — UI / UX ROM
 Summary en priorité, puis boutiques, HUD/action/moves, fenêtres custom et polish starter. Les contrôles visuels ROM sont obligatoires ; un validateur statique ne suffit pas à déclarer l'UI terminée.
