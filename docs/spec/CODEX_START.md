@@ -66,6 +66,10 @@ La ROM de référence du propriétaire doit donc être reconstruite après le pu
 
 ## Ordre de production actuel
 
+### Décision owner prioritaire — rosters Rival/Rocket du 26-09
+
+Avant toute poursuite du bloc rival/Rocket, relire [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Les anciennes compositions de `rival.json`, `rocket_progression.json` et des entrées Rocket de `bosses.json` sont **à régénérer** lorsqu'elles contredisent ce document. Ne pas conserver l'ancien tirage d'un starter parmi cinq : le rival possède désormais un starter fixe par archétype, des équipes Singles finalisées et une Méga déverrouillée après le badge 4. Pour Archer, la FINAL utilise **Méga-Sharpedo**, qui Méga-évolue immédiatement ; ne pas créer de logique Abri tour 1 -> Méga tour 2. Méga-Démolosse reste réservé à Marion.
+
 ### Bloc 1 — CORE / gameplay restant
 Corriger rival niveau/stade, Méga boss, Mega Ring, starter/œuf et toute régression bloquante. Build/tests/validateurs verts obligatoires.
 
@@ -88,6 +92,7 @@ Le wiki reste géré séparément et ne doit pas consommer le chemin critique ta
 - Rebase/réconcilie avant PR ; pas de force push sur `main`.
 - Ne réécris pas vitesse native, audio, shiny rate ou évolutions solo sans défaut démontré.
 - Le rival, Rocket, shops et encounters sont générés depuis leurs sources canoniques ; toute modification doit conserver les contrôles d'idempotence.
+- Ajouter/adapter les validateurs pour rejeter toute réutilisation non autorisée d'une Méga déjà réservée entre Champions, Conseil 4, rival et Rocket.
 - Shiny Only reste post-V1.
 
 ## Portes de sortie

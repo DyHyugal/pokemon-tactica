@@ -14,24 +14,42 @@ Le cœur du sélecteur est protégé, mais son comportement de curseur fait part
 
 ## Tirage du rival
 
-Évoli est exclu. Au choix initial, déterminer la catégorie de départ du joueur, tirer uniformément une catégorie parmi celles ci-dessous, puis tirer uniformément un des cinq starters de cette catégorie. Enregistrer le résultat pour que le starter du rival reste le même pendant toute la partie.
+Évoli est exclu du rival. Le rival ne tire plus une espèce parmi les cinq starters disponibles dans une catégorie.
 
-| Joueur | Catégories candidates du rival |
+1. déterminer la catégorie choisie par le joueur ;
+2. tirer uniformément **un archétype rival** parmi les catégories candidates ci-dessous ;
+3. enregistrer cet archétype une seule fois ;
+4. utiliser ensuite le **starter fixe** de cet archétype pendant toute la partie.
+
+| Joueur | Archétypes candidats du rival |
 |---|---|
 | Feu | Eau, Sol |
 | Eau | Plante, Électrik |
 | Plante | Feu, Glace |
-| Électrik | Sol |
-| Sol | Eau, Plante, Glace |
-| Glace | Feu |
+| Électrik | Sol, Plante |
+| Sol | Eau, Glace |
+| Glace | Feu, Eau |
 
-Le type secondaire actuel ou une évolution custom d'un starter ne redéfinit pas rétroactivement sa catégorie de sélection.
+Starters fixes des archétypes :
+
+| Archétype rival | Starter fixe |
+|---|---|
+| Feu / Soleil | Poussifeu |
+| Eau / Pluie | Gobou |
+| Plante / Champ Herbu | Arcko |
+| Électrik / Champ Électrifié | Élekid |
+| Sol / Tempête de sable | Rototaupe |
+| Glace / Neige | Darumarond de Galar |
+
+Le type secondaire actuel ou une évolution custom d'un starter ne redéfinit pas rétroactivement sa catégorie.
+
+**Source détaillée des équipes :** [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Tant que `data/spec/rival.json` n'a pas été régénéré, toute ancienne matrice de tirage d'espèce qu'il contient est obsolète.
 
 ## Équipes et niveaux du rival
 
 L'archétype permanent dépend de la catégorie tirée : Eau → Pluie ; Feu → Soleil ; Plante → Champ Herbu ; Électrik → Champ Électrifié ; Sol → Tempête de sable ; Glace → Neige.
 
-Les six rosters thématiques sont maintenant câblés depuis `data/spec/rival.json` / `src/data/tactica_rival.h`, mais les niveaux de chaque rencontre doivent suivre le jalon de préparation canonique.
+Le runtime actuellement fusionné utilise encore les anciens rosters générés depuis `data/spec/rival.json` / `src/data/tactica_rival.h`. Ils sont **à régénérer** depuis `ROSTERS_ROCKET_RIVAL.md`. Les niveaux de chaque rencontre suivent le jalon de préparation canonique.
 
 ### Premier combat
 
@@ -48,4 +66,4 @@ Le template historique niveau 5 est donc un écart à corriger ; il ne doit pas 
 
 ### Combats suivants
 
-Les tailles progressives restent celles définies dans `data/spec/rival.json` et les niveaux suivent le prochain jalon obligatoire de la progression. Les espèces, évolutions, capacités, objets, natures et EV HARD doivent être résolus au niveau réel du duel puis vérifiés en ROM.
+Les tailles progressives validées sont 1 -> 3 -> 4 -> 6. Après le badge 4, la même équipe complète peut utiliser sa Méga. Les niveaux suivent le prochain jalon obligatoire de la progression. Les espèces, évolutions, capacités, objets, natures et EV HARD doivent être résolus au niveau réel du duel puis vérifiés en ROM.

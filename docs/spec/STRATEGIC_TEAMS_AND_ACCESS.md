@@ -192,121 +192,58 @@ Toutes les autres équipes canoniques doivent également être validées automat
 
 # Team Rocket
 
-Chaque Exécutif possède trois versions de roster définies à l'avance :
+Chaque Exécutif possède trois versions de roster : 3 -> 4 -> 6. Les familles introduites restent présentes dans les versions suivantes. Les équipes et sets détaillés sont définis uniquement dans [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md) ; les anciens rosters de `rocket_progression.json` et `bosses.json` doivent être régénérés lorsqu'ils divergent.
 
-- équipe de 3 ;
-- équipe de 4 ;
-- équipe finale de 6.
+Équipes FINAL validées :
 
-Les Pokémon déjà introduits restent présents dans les versions suivantes.
+- **Proton** : Floréclat / Nostenfer / Brutapode / Coatox / Grotadmorv-A / **Méga-Dardargnan**.
+- **Petrel** : Métamorph / Zoroark-H / Smogogo / Électrode / Angoliath / **Méga-Branette**.
+- **Ariana** : Arbok / Roserade / Malamandre / Nidoqueen / Corboss / **Méga-Absol**.
+- **Archer** : Nostenfer / Dimoret / Nidoking / Magnézone / Trousselin / **Méga-Sharpedo**.
 
-Les membres et sets précis sont décrits dans [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md) et dans `data/spec/rocket_progression.json` (EARLY/MID) et `data/spec/bosses.json` (FINAL).
+Règles Méga Rocket :
 
-Le stade d'évolution réel est déterminé par le niveau du combat.
+- uniquement sur la version FINAL ;
+- Méga-Gemme unique dans l'équipe ;
+- forme de base avec talent légal avant transformation ;
+- **Archer Méga-évolue Sharpedo immédiatement** : aucun séquençage Abri -> Méga différée ;
+- Méga-Démolosse est interdit pour Archer car réservé à Marion.
 
-## Proton
+Progressions de familles validées :
 
-### 3 Pokémon
-- famille Nosferapti
-- famille Rattata
-- famille Tadmorv d'Alola
+- Proton EARLY : Nosferapti / Venipatte / Tadmorv-A ; MID + Cradopaud ; FINAL + Floréclat / Dardargnan.
+- Petrel EARLY : Métamorph / Smogo / Zorua-H ; MID + Voltorbe ; FINAL + Grimalin / Branette.
+- Ariana EARLY : Abo / Rozbouton-Rosélia / Cornèbre ; MID + Tritox ; FINAL + Nidoran♀ / Absol.
+- Archer EARLY : Farfuret / Nosferapti / Carvanha ; MID + Nidoran♂ ; FINAL + Magnéti / Trousselin.
 
-### 4 Pokémon
-- les trois précédents
-- famille Smogo
-
-### 6 Pokémon
-- les quatre précédents
-- famille Venipatte
-- famille Cradopaud
-
-Équipe finale :
-
-Nostenfer / Smogogo / Rattatac / Brutapode / Coatox / Grotadmorv d'Alola
-
-## Petrel
-
-### 3 Pokémon
-- Métamorph
-- famille Smogo
-- famille Rattata
-
-### 4 Pokémon
-- les trois précédents
-- famille Voltorbe
-
-### 6 Pokémon
-- les quatre précédents
-- famille Tadmorv
-- famille Zorua de Hisui
-
-Équipe finale :
-
-Métamorph / Smogogo / Électrode / Grotadmorv / Zoroark de Hisui / Rattatac
-
-## Ariana
-
-### 3 Pokémon
-- famille Abo
-- famille Mystherbe
-- famille Cornèbre
-
-### 4 Pokémon
-- les trois précédents
-- famille Gribouraigne
-
-### 6 Pokémon
-- les quatre précédents
-- famille Nidoran♀
-- famille Tritox
-
-Équipe finale :
-
-Arbok / Rafflesia / Tag-Tag / Nidoqueen / Malamandre / Corboss
-
-## Archer
-
-### 3 Pokémon
-- famille Farfuret
-- famille Nosferapti
-- famille Malosse
-
-### 4 Pokémon
-- les trois précédents
-- famille Nidoran♂
-
-### 6 Pokémon
-- les quatre précédents
-- famille Magnéti
-- famille Rapion
-
-Équipe finale :
-
-Dimoret / Nostenfer / Nidoking / Magnézone / Drascore / Démolosse
-
-Chaque version EARLY / MID / FINAL respecte également l'unicité des objets tenus.
+Toutes les versions respectent l'unicité des objets tenus et la légalité des moves/stades au niveau réel.
 
 ---
 
 # Rival
 
-Le starter du rival est déterminé une seule fois et reste fixe.
+Le rival tire une **catégorie/archétype** une seule fois, puis cet archétype impose un **starter fixe** ; il ne tire plus un starter parmi cinq espèces.
 
 Progression :
 
+- premier combat : starter seul niveau 17, stade légal ;
 - après badge 1 : 3 Pokémon ;
 - après badge 2 : 4 Pokémon ;
-- après badge 3 : équipe finale de 6.
+- après badge 3 : 6 Pokémon ;
+- après badge 4 : la même équipe complète peut utiliser sa Méga.
 
-Les membres déjà choisis persistent dans les combats suivants.
+Archétypes et starters fixes :
 
-Le stade d'évolution dépend du niveau réel. Le template historique niveau 5 du premier duel est un écart à corriger et ne définit plus la règle produit.
+- Feu / Soleil -> Poussifeu ;
+- Eau / Pluie -> Gobou ;
+- Plante / Champ Herbu -> Arcko ;
+- Électrik / Champ Électrifié -> Élekid ;
+- Sol / Tempête de sable -> Rototaupe ;
+- Glace / Neige -> Darumarond de Galar.
 
-Les sets suivent les phases EARLY / MID / FINAL.
+Les six équipes FINAL, leurs deux setters, objets, rôles et moves sont définis dans [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Ce document prévaut sur l'ancien contenu de `data/spec/rival.json` jusqu'à sa régénération.
 
-L'unicité des objets tenus est obligatoire dans chacune des six équipes finales et dans toutes leurs versions intermédiaires.
-
-Les six compositions et sets de travail sont dans `data/spec/rival.json` (`fight_rosters`) et [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Leurs propositions de capacités doivent être vérifiées au niveau du combat avant intégration moteur.
+Le stade d'évolution dépend du niveau réel. Les sets EARLY/MID doivent conserver la stratégie du roster FINAL sans donner prématurément des moves, formes ou objets illégaux. NORMAL/HARD gardent le même roster ; HARD ajoute les IV/EV optimisés prévus.
 
 ---
 
