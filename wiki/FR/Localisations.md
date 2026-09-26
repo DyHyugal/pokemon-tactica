@@ -252,14 +252,14 @@
 | Route 33 | Herbe / sol | Nuit | 16–19 | Abo 30% · Mystherbe 30% · Tadmorv 30% · Smogo 10% |
 | Route 33 | Éclate-Roc | Tous | 16–19 | Filentrappe 30% · Osselait 30% · Phanpy 30% · Rhinocorne 10% |
 | Route 34 | Pêche | Tous | 25–28 | Lovdisc 30% · Flingouste 30% · Venalgue 30% · Crocrodil 10% |
-| Route 34 | Herbe / sol | Jour | 25–28 | Lainergie 30% · Caninos 30% · Migalos 30% · Pohmotte 10% |
+| Route 34 | Herbe / sol | Jour | 25–28 | Lainergie 30% · Caninos 30% · Scorplane 30% · Pohmotte 10% |
 | Route 34 | Herbe / sol | Nuit | 25–28 | Dynavolt 30% · Zébibron 30% · Fulgudog 30% · Fantyrm 10% |
 | Route 34 | Surf | Tous | 25–28 | Batracné 30% · Opermine 30% · Écrapince 30% · Flobio 10% |
 | Route 35 | Pêche | Tous | 27–30 | Dofin 30% · Sancoki (Mer Occident) 30% · Mustéflott 30% · Prinplouf 10% |
 | Route 35 | Herbe / sol | Jour | 27–30 | Miaouss 30% · Teddiursa 30% · Compagnol 30% · Évoli 10% |
 | Route 35 | Herbe / sol | Nuit | 27–30 | Cornèbre 30% · Démolosse 30% · Zorua 30% · Absol 10% |
 | Route 35 | Surf | Tous | 27–30 | Obalie 30% · Carvanha 30% · Écrapince 30% · Mateloutre 10% |
-| Route 36 | Herbe / sol | Jour | 14–17 | Baggiguane 30% · Scorplane 30% · Nounourson 30% · Goupix 10% |
+| Route 36 | Herbe / sol | Jour | 14–17 | Baggiguane 30% · Mimigal 30% · Nounourson 30% · Goupix 10% |
 | Route 36 | Herbe / sol | Nuit | 14–17 | Crabagarre 30% · Mimigal 30% · Sinistea 30% · Galvaran 10% |
 | Route 36 | Éclate-Roc | Tous | 14–17 | Kungfouine 30% · Kranidos 30% · Dinoclier 30% · Racaillou 10% |
 | Route 37 | Herbe / sol | Jour | 32–35 | Déflaisan 30% · Étouraptor 30% · Ursaring 30% · Reptincel 10% |

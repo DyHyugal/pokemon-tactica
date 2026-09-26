@@ -252,14 +252,14 @@
 | Route 33 | Land | Night | 16–19 | Ekans 30% · Oddish 30% · Grimer 30% · Koffing 10% |
 | Route 33 | Rock Smash | Any | 16–19 | Spidops 30% · Cubone 30% · Phanpy 30% · Rhyhorn 10% |
 | Route 34 | Fishing | Any | 25–28 | Luvdisc 30% · Clauncher 30% · Skrelp 30% · Croconaw 10% |
-| Route 34 | Land | Day | 25–28 | Flaaffy 30% · Growlithe 30% · Ariados 30% · Pawmo 10% |
+| Route 34 | Land | Day | 25–28 | Flaaffy 30% · Growlithe 30% · Gligar 30% · Pawmo 10% |
 | Route 34 | Land | Night | 25–28 | Electrike 30% · Blitzle 30% · Boltund 30% · Dreepy 10% |
 | Route 34 | Surf | Any | 25–28 | Palpitoad 30% · Binacle 30% · Corphish 30% · Marshtomp 10% |
 | Route 35 | Fishing | Any | 27–30 | Finizen 30% · Shellos (West Sea) 30% · Floatzel 30% · Prinplup 10% |
 | Route 35 | Land | Day | 27–30 | Meowth 30% · Teddiursa 30% · Tandemaus 30% · Eevee 10% |
 | Route 35 | Land | Night | 27–30 | Murkrow 30% · Houndoom 30% · Zorua 30% · Absol 10% |
 | Route 35 | Surf | Any | 27–30 | Spheal 30% · Carvanha 30% · Corphish 30% · Dewott 10% |
-| Route 36 | Land | Day | 14–17 | Scraggy 30% · Gligar 30% · Stufful 30% · Vulpix 10% |
+| Route 36 | Land | Day | 14–17 | Scraggy 30% · Spinarak 30% · Stufful 30% · Vulpix 10% |
 | Route 36 | Land | Night | 14–17 | Crabrawler 30% · Spinarak 30% · Sinistea 30% · Helioptile 10% |
 | Route 36 | Rock Smash | Any | 14–17 | Mienfoo 30% · Cranidos 30% · Shieldon 30% · Geodude 10% |
 | Route 37 | Land | Day | 32–35 | Unfezant 30% · Staraptor 30% · Ursaring 30% · Charmeleon 10% |
