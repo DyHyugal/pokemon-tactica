@@ -6,12 +6,28 @@ Cette page sert surtout de **soluce si tu ne sais plus où aller**. Elle suit l'
 
 > Les données de Pokémon, niveaux, boss et rencontres viennent de Tactica. Le walkthrough Heart & Soul sert uniquement de repère pour l'ordre narratif et les lieux.
 
+
+## Starters Tactica
+
+Le sélecteur remplace le choix classique de Johto par **six groupes de cinq Pokémon**, plus Évoli. Le second choix via l'œuf utilise le même catalogue mais ne peut pas être identique au premier starter.
+
+| Groupe | Starters disponibles |
+|---|---|
+| **Feu** | Salamèche · Poussifeu · Ouisticram · Héricendre · Charbambin |
+| **Eau** | Gobou · Tiplouf · Grenousse · Moustillon · Hypotrempe |
+| **Plante** | Bulbizarre · Arcko · Vipélierre · Poussacha · Ouistempo |
+| **Électrik** | Élekid · Magnéti · Pohm · Zapétrel · Pichu |
+| **Sol** | Scorplane · Rototaupe · Mascaïman · Gringolem · Bacabouh |
+| **Glace** | Goupix d'Alola · Stalgamin · Marcacrin · Darumarond de Galar · Sorbébé |
+| **Évoli** | Évoli, avec choix de l'évolution prévue |
+
 ## Départ → badge 1 : Albert
 
 1. **Bourg Geon** — règle tes options, parle au Prof. Orme et choisis ton starter Tactica.
 2. **Route 29 → Ville Griotte → Route 30** — rejoins la maison de M. Pokémon et récupère l'Œuf Mystère / le Pokédex.
-3. Retourne vers **Bourg Geon** : le premier combat contre le rival se déclenche sur le trajet. Retourne ensuite au laboratoire d'Orme.
-4. Repars par **Routes 30 et 31** jusqu'à **Mauville**.
+3. Retourne vers **Bourg Geon** : le premier combat contre le rival se déclenche sur le trajet. Au laboratoire, termine la séquence du vol avec la police puis rends l'Œuf Mystère à Orme.
+4. **C'est à ce moment-là, au laboratoire d'Orme, que Tactica propose le second starter** : reconnais l'espèce de l'œuf, choisis une espèce différente de ton starter principal, puis récupère l'œuf et les éventuels objets associés. Ce choix ne vient pas de l'assistant d'Orme.
+5. Repars par **Routes 30 et 31** jusqu'à **Mauville**.
 5. Termine la **Tour Chétiflor** pour débloquer la suite utile de la ville.
 6. Défie **Albert** à l'Arène de Mauville.
 
@@ -19,8 +35,8 @@ Cette page sert surtout de **soluce si tu ne sais plus où aller**. Elle suit l'
 
 ## Badge 1 → badge 2 : Hector
 
-1. Après Albert, suis l'événement de l'assistant d'Orme au Centre Pokémon : dans Tactica, cette partie mène au **second starter via l'œuf**.
-2. Descends par la **Route 32**, traverse les **Caves Jumelles**, puis la **Route 33**.
+1. Après Albert, poursuis les événements prévus à Mauville puis descends vers la **Route 32**. **L'assistant d'Orme ne déclenche pas le choix du second starter** : ce choix a déjà lieu au laboratoire après le retour de chez M. Pokémon.
+2. Traverse les **Caves Jumelles**, puis la **Route 33**.
 3. À **Écorcia**, parle à Fargas puis descends au **Puits Ramoloss** pour chasser la Team Rocket.
 4. Reviens à l'Arène et bats **Hector**.
 5. En quittant Écorcia vers l'ouest, prépare-toi au **combat rival**.
