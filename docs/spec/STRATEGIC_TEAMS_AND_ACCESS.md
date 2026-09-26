@@ -300,7 +300,7 @@ Progression :
 
 Les membres déjà choisis persistent dans les combats suivants.
 
-Le stade d'évolution dépend du niveau réel.
+Le stade d'évolution dépend du niveau réel. Le template historique niveau 5 du premier duel est un écart à corriger et ne définit plus la règle produit.
 
 Les sets suivent les phases EARLY / MID / FINAL.
 
@@ -391,7 +391,7 @@ Audit du 25 septembre après le bloc `feature/strategic-rules` : Germignon est a
 
 Dans la Route de Glace, privilégier les formes cohérentes avec les niveaux élevés de la zone, notamment Feunard d'Alola et Darumacho de Galar si approprié.
 
-Salamèche et Élekid ont été retirés de la Route 36 et placés dans des zones accessibles après badge 2 (respectivement Route 37 et Route 42). Vérifier l'accès réel de toutes les autres tables avec `earliest_access_cap`.
+Salamèche et Élekid ont été retirés de la Route 36 et placés dans des zones accessibles après badge 2 (respectivement Route 37 et Route 42). Route 36 est désormais une zone témoin de recette runtime : la ROM fraîche doit correspondre exactement aux quatre slots jour/nuit/Éclate-Roc de `ENCOUNTERS.md`. Vérifier l'accès réel de toutes les autres tables avec `earliest_access_cap`.
 
 ---
 
