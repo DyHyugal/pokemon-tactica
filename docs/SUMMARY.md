@@ -140,6 +140,7 @@
     - [LOCALIZATION_WIKI](spec/LOCALIZATION_WIKI.md)
     - [MIGRATION](spec/MIGRATION.md)
     - [POKEMON_BALANCE](spec/POKEMON_BALANCE.md)
+    - [PLAYTEST_STATUS](spec/PLAYTEST_STATUS.md)
     - [PROGRESSION](spec/PROGRESSION.md)
     - [ROSTERS_ROCKET_RIVAL](spec/ROSTERS_ROCKET_RIVAL.md)
     - [SHOPS](spec/SHOPS.md)
@@ -157,7 +158,6 @@
     - [Guide de jeu](FR/Guide-de-jeu.md)
     - [Localisations](FR/Localisations.md)
     - [Pokedex](FR/Pokedex.md)
-    - [Roadmap](FR/Roadmap.md)
 
 - [Wiki anglais]()
     - [Bosses and Tips](EN/Bosses-and-Tips.md)
@@ -167,4 +167,3 @@
     - [Home](EN/Home.md)
     - [Locations](EN/Locations.md)
     - [Pokedex](EN/Pokedex.md)
-    - [Roadmap](EN/Roadmap.md)
