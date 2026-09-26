@@ -793,9 +793,15 @@ static const struct ListMenuTemplate sShopBuyMenuListTemplate =
     .item_X = 8,
     .cursor_X = 0,
     .upText_Y = 1,
+#if IS_HNS
+    .cursorPal = 10,
+    .fillValue = 12,
+    .cursorShadowPal = 13,
+#else
     .cursorPal = 2,
     .fillValue = 0,
     .cursorShadowPal = 3,
+#endif
     .lettersSpacing = 0,
     .itemVerticalPadding = 0,
     .scrollMultiple = LIST_NO_MULTIPLE_SCROLL,
@@ -925,9 +931,16 @@ static const struct WindowTemplate sShopBuyMenuYesNoWindowTemplates =
 
 static const u8 sShopBuyMenuTextColors[][3] =
 {
+#if IS_HNS
+    // Tactica shops: red surface, black text, gray secondary state.
+    [COLORID_NORMAL]      = {12, 10, 13},
+    [COLORID_ITEM_LIST]   = {12, 10, 13},
+    [COLORID_GRAY_CURSOR] = {12, 13, 10},
+#else
     [COLORID_NORMAL]      = {1, 2, 3},
     [COLORID_ITEM_LIST]   = {0, 2, 3},
     [COLORID_GRAY_CURSOR] = {0, 3, 2},
+#endif
 };
 
 static u8 CreateShopMenu(u8 martType)
@@ -954,7 +967,12 @@ static u8 CreateShopMenu(u8 martType)
         numMenuItems = ARRAY_COUNT(sShopMenuActions_BuyQuit);
     }
 
+#if IS_HNS
+    // Do not expose the vanilla white shop plate behind the action menu.
+    FillWindowPixelBuffer(sMartInfo.windowId, PIXEL_FILL(12));
+#else
     SetStandardWindowBorderStyle(sMartInfo.windowId, FALSE);
+#endif
     PrintMenuTable(sMartInfo.windowId, numMenuItems, sMartInfo.menuActions);
     InitMenuInUpperLeftCornerNormal(sMartInfo.windowId, numMenuItems, 0);
     PutWindowTilemap(sMartInfo.windowId);
@@ -1260,7 +1278,11 @@ static void BuyMenuPrintItemDescriptionAndShowItemIcon(s32 item, bool8 onInit, s
         }
     }
 
+#if IS_HNS
+    FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(12));
+#else
     FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
+#endif
     BuyMenuPrint(WIN_ITEM_DESCRIPTION, description, 3, 1, 0, COLORID_NORMAL);
 }
 
@@ -2106,7 +2128,11 @@ static void BuyMenuPrintItemQuantityAndPrice(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
 
+#if IS_HNS
+    FillWindowPixelBuffer(WIN_QUANTITY_PRICE, PIXEL_FILL(12));
+#else
     FillWindowPixelBuffer(WIN_QUANTITY_PRICE, PIXEL_FILL(1));
+#endif
     if (sMartInfo.martType == MART_TYPE_KURT)
     {
         u16 berryItem;
