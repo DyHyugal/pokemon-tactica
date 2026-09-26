@@ -119,9 +119,9 @@ route36_night = tables_by_key[("MAP_ROUTE36_HNS", "land_mons", "Night")]
 require("SPECIES_CHARMANDER" not in route36_day["species"], "Charmander remains on early Route 36")
 require("SPECIES_ELEKID" not in route36_night["species"], "Elekid remains on early Route 36")
 required_rare_slots = {
-    ("MAP_ROUTE37_HNS", "land_mons", "Day"): "SPECIES_CHARMANDER",
-    ("MAP_ROUTE42_HNS", "land_mons", "Day"): "SPECIES_ELEKID",
-    ("MAP_ILEX_FOREST_HNS", "land_mons", "Night"): "SPECIES_CHIKORITA",
+    ("MAP_ROUTE37_HNS", "land_mons", "Day"): "SPECIES_CHARMELEON",
+    ("MAP_ROUTE42_HNS", "land_mons", "Day"): "SPECIES_ELECTABUZZ",
+    ("MAP_ILEX_FOREST_HNS", "land_mons", "Night"): "SPECIES_BAYLEEF",
     ("MAP_ICE_PATH_1F_HNS", "land_mons", "Any"): "SPECIES_NINETALES_ALOLA",
     ("MAP_ICE_PATH_B2F_HNS", "land_mons", "Any"): "SPECIES_DARMANITAN_GALAR_STANDARD",
 }
