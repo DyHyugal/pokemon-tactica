@@ -56,7 +56,7 @@ def synchronized_text() -> tuple[str, int]:
         entry["max_level"] = cap
         corrected += 1
 
-    return json.dumps(encounters, ensure_ascii=False, indent=2), corrected
+    return json.dumps(encounters, ensure_ascii=False, indent=2) + "\n", corrected
 
 
 def synchronize(check: bool = False) -> None:
