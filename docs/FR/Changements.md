@@ -26,7 +26,19 @@ NORMAL et HARD conservent les mêmes Pokémon, équipes, sets, niveaux et mécan
 
 ### Starters et œuf d'Orme
 
-Le trio Johto est remplacé par un sélecteur de **30 starters répartis en six catégories + Évoli**. Le rival conserve une catégorie et un starter cohérents au fil de l'aventure. L'œuf d'Orme sert ensuite de **second choix de starter** et ne peut pas redonner exactement le premier. Les objets nécessaires au choix (booster de type ou objet d'évolution prévu) sont remis automatiquement.
+Le choix classique des trois starters de Johto est remplacé par un **sélecteur Tactica de 30 Pokémon répartis par type, plus Évoli**. C'est un changement de progression à part entière : le joueur construit son duo de départ autour de deux choix distincts, et le rival conserve en parallèle sa propre catégorie et son starter pendant l'aventure.
+
+| Groupe | Starters Tactica |
+|---|---|
+| **Feu** | Salamèche · Poussifeu · Ouisticram · Héricendre · Charbambin |
+| **Eau** | Gobou · Tiplouf · Grenousse · Moustillon · Hypotrempe |
+| **Plante** | Bulbizarre · Arcko · Vipélierre · Poussacha · Ouistempo |
+| **Électrik** | Élekid · Magnéti · Pohm · Zapétrel · Pichu |
+| **Sol** | Scorplane · Rototaupe · Mascaïman · Gringolem · Bacabouh |
+| **Glace** | Goupix d'Alola · Stalgamin · Marcacrin · Darumarond de Galar · Sorbébé |
+| **Évoli** | Évoli, avec choix de l'évolution prévue |
+
+Le **second starter est choisi au laboratoire d'Orme**, après le retour de chez M. Pokémon et la séquence du vol avec la police, lorsque le joueur reconnaît l'espèce de l'Œuf Mystère. **La séquence avec l'assistant d'Orme n'est pas le déclencheur de ce second choix.** Le second starter ne peut pas être exactement la même espèce que le premier. Les boosters de type et objets d'évolution prévus par le choix sont remis automatiquement.
 
 ### Réglages et confort de jeu
 
@@ -119,9 +131,13 @@ Les Méga font partie de certains combats de boss. Le joueur obtient son Méga-A
 
 ## Boutiques
 
-Le PNJ capacités/CT filtre les capacités selon la compatibilité du Pokémon. Le magasin d'objets stratégiques complète les Poké Marts avec les objets d'évolution et de combat pertinents qui ne doivent pas dépendre d'un grind ou d'un détour inutile. Les Méga-Gemmes jouables sont proposées par un PNJ dédié.
+Trois PNJ spécialisés ont été ajoutés pour que la préparation d'équipe dépende des choix stratégiques plutôt que du grind :
 
-Les objets de scénario, Balls, soins courants et autres éléments de progression normale ne sont pas court-circuités par ces boutiques.
+- **PNJ Objets** — propose les objets d'évolution, objets tenus, baies et objets de combat utiles qui ne sont pas déjà couverts par les boutiques normales. Les Key Items, objets de scénario, Balls, soins courants, Repousses et autres objets de progression restent exclus.
+- **PNJ Capacités / CT** — donne accès aux capacités jouables du build, y compris celles qui n'ont pas forcément une CT native. La liste est filtrée selon la compatibilité réelle du Pokémon sélectionné ; une capacité incompatible ne peut pas être apprise.
+- **PNJ Méga-Gemmes** — vend les Méga-Gemmes jouables dans Tactica. Il complète le système de Méga-Évolution mais ne le débloque pas : le **Méga-Anneau reste obtenu auprès de Mortimer après le badge 4**.
+
+Ces trois PNJ complètent les boutiques classiques sans remplacer les objets et événements prévus par la progression normale.
 
 ## Interface
 
