@@ -108,8 +108,18 @@ for family, members in required_starter_families.items():
     for table in standard:
         if access_caps[(table["map"], table["method"])] >= 32:
             continue
-        require(not any(any(species.startswith(f"SPECIES_{member}") for member in members)
-                        for species in table["species"]),
+        early_family_members = [
+            species
+            for species in table["species"]
+            if any(species.startswith(f"SPECIES_{member}") for member in members)
+        ]
+        if family == "Gligar" and (
+            table["map"], table["method"], table.get("time", "Any")
+        ) == ("MAP_ROUTE36_HNS", "land_mons", "Day"):
+            require(early_family_members == ["SPECIES_GLIGAR"],
+                    "only base Gligar is allowed in the explicit Route 36 early exception")
+            continue
+        require(not early_family_members,
                 f"starter family {family} available before badge 2: "
                 f"{table['map']} {table['method']} {table.get('time', 'Any')}")
 
