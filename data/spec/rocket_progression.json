@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "source": "docs/spec/STRATEGIC_TEAMS_AND_ACCESS.md and data/spec/bosses.json",
+  "source": "Owner redesign 2026-09-26: competitive Singles identities; persistent 3/4/6 families; final Mega unique per executive",
   "notes": "Slot IDs refer to the six canonical final members in bosses.json. The runtime cap determines actual level; early and mid sets are deliberately weaker than final sets. Unused stages remain authored for future encounters, not automatically placed in the story.",
   "active_fights": {
     "TRAINER_PROTON_1_HNS": [
@@ -36,11 +36,11 @@
     "Proton": {
       "early": [
         {
-          "slot": 1,
+          "slot": 2,
           "species": "Zubat",
           "item": null,
-          "ability": "Inner Focus",
-          "hard_evs": "64 HP / 64 Spe",
+          "ability": "Infiltrator",
+          "hard_evs": "64 Atk / 64 Spe",
           "moves": [
             "Wing Attack",
             "Bite",
@@ -49,35 +49,35 @@
           ]
         },
         {
-          "slot": 3,
-          "species": "Rattata",
+          "slot": 6,
+          "species": "Venipede",
           "item": null,
-          "ability": "Guts",
+          "ability": "Speed Boost",
           "hard_evs": "64 Atk / 64 Spe",
           "moves": [
-            "Hyper Fang",
-            "Quick Attack",
-            "Bite",
-            "Focus Energy"
+            "Poison Tail",
+            "Bug Bite",
+            "Protect",
+            "Rollout"
           ]
         },
         {
-          "slot": 6,
+          "slot": 5,
           "species": "Grimer-Alola",
           "item": null,
           "ability": "Poison Touch",
           "hard_evs": "64 HP / 64 Atk",
           "moves": [
             "Poison Fang",
-            "Acid Spray",
             "Bite",
-            "Disable"
+            "Disable",
+            "Acid Spray"
           ]
         }
       ],
       "mid": [
         {
-          "slot": 1,
+          "slot": 2,
           "species": "Crobat",
           "item": "Sharp Beak",
           "ability": "Infiltrator",
@@ -90,20 +90,20 @@
           ]
         },
         {
-          "slot": 3,
-          "species": "Raticate",
+          "slot": 6,
+          "species": "Whirlipede",
           "item": null,
-          "ability": "Guts",
+          "ability": "Speed Boost",
           "hard_evs": "128 Atk / 128 Spe",
           "moves": [
-            "Super Fang",
-            "Sucker Punch",
-            "Crunch",
-            "Quick Attack"
+            "Poison Tail",
+            "Bug Bite",
+            "Protect",
+            "Rollout"
           ]
         },
         {
-          "slot": 6,
+          "slot": 5,
           "species": "Muk-Alola",
           "item": null,
           "ability": "Poison Touch",
@@ -116,16 +116,16 @@
           ]
         },
         {
-          "slot": 2,
-          "species": "Weezing",
+          "slot": 4,
+          "species": "Croagunk",
           "item": "Sitrus Berry",
-          "ability": "Levitate",
-          "hard_evs": "128 HP / 128 Def",
+          "ability": "Dry Skin",
+          "hard_evs": "128 Atk / 128 Spe",
           "moves": [
-            "Sludge Bomb",
-            "Will-O-Wisp",
-            "Haze",
-            "Self-Destruct"
+            "Poison Jab",
+            "Drain Punch",
+            "Sucker Punch",
+            "Taunt"
           ]
         }
       ]
@@ -156,16 +156,16 @@
           ]
         },
         {
-          "slot": 6,
-          "species": "Rattata",
+          "slot": 3,
+          "species": "Voltorb",
           "item": null,
-          "ability": "Guts",
-          "hard_evs": "64 Atk / 64 Spe",
+          "ability": "Aftermath",
+          "hard_evs": "64 SpA / 64 Spe",
           "moves": [
-            "Hyper Fang",
-            "Quick Attack",
-            "Bite",
-            "Focus Energy"
+            "Spark",
+            "Screech",
+            "Thunder Wave",
+            "Self-Destruct"
           ]
         }
       ],
@@ -183,33 +183,20 @@
         {
           "slot": 2,
           "species": "Weezing",
-          "item": "Sitrus Berry",
-          "ability": "Levitate",
+          "item": "Black Sludge",
+          "ability": "Neutralizing Gas",
           "hard_evs": "128 HP / 128 Def",
           "moves": [
             "Will-O-Wisp",
-            "Smokescreen",
+            "Taunt",
             "Sludge Bomb",
             "Self-Destruct"
           ]
         },
         {
-          "slot": 6,
-          "species": "Raticate",
-          "item": null,
-          "ability": "Guts",
-          "hard_evs": "128 Atk / 128 Spe",
-          "moves": [
-            "Super Fang",
-            "Sucker Punch",
-            "Crunch",
-            "Protect"
-          ]
-        },
-        {
           "slot": 3,
           "species": "Electrode",
-          "item": null,
+          "item": "Focus Sash",
           "ability": "Aftermath",
           "hard_evs": "128 SpA / 128 Spe",
           "moves": [
@@ -217,6 +204,19 @@
             "Taunt",
             "Thunder Wave",
             "Self-Destruct"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "Zoroark-Hisui",
+          "item": "Sitrus Berry",
+          "ability": "Illusion",
+          "hard_evs": "128 SpA / 128 Spe",
+          "moves": [
+            "Hyper Voice",
+            "Shadow Ball",
+            "Flamethrower",
+            "U-turn"
           ]
         }
       ]
@@ -238,19 +238,19 @@
         },
         {
           "slot": 2,
-          "species": "Oddish",
+          "species": "Roselia",
           "item": null,
-          "ability": "Chlorophyll",
-          "hard_evs": "64 HP / 64 Def",
+          "ability": "Natural Cure",
+          "hard_evs": "64 SpA / 64 Spe",
           "moves": [
             "Sleep Powder",
             "Mega Drain",
-            "Acid",
+            "Poison Sting",
             "Stun Spore"
           ]
         },
         {
-          "slot": 6,
+          "slot": 5,
           "species": "Murkrow",
           "item": null,
           "ability": "Super Luck",
@@ -274,46 +274,46 @@
             "Glare",
             "Poison Fang",
             "Crunch",
-            "Screech"
+            "Coil"
           ]
         },
         {
           "slot": 2,
-          "species": "Gloom",
-          "item": null,
-          "ability": "Chlorophyll",
-          "hard_evs": "128 HP / 128 Def",
+          "species": "Roserade",
+          "item": "Focus Sash",
+          "ability": "Natural Cure",
+          "hard_evs": "128 SpA / 128 Spe",
           "moves": [
             "Sleep Powder",
+            "Spikes",
             "Giga Drain",
-            "Acid",
-            "Moonlight"
+            "Sludge Bomb"
           ]
         },
         {
-          "slot": 6,
+          "slot": 5,
           "species": "Murkrow",
-          "item": null,
+          "item": "Eviolite",
           "ability": "Super Luck",
           "hard_evs": "128 Atk / 128 Spe",
           "moves": [
             "Wing Attack",
-            "Assurance",
+            "Sucker Punch",
             "Taunt",
             "Haze"
           ]
         },
         {
           "slot": 3,
-          "species": "Grafaiai",
-          "item": "Sitrus Berry",
-          "ability": "Prankster",
-          "hard_evs": "128 HP / 128 Spe",
+          "species": "Salandit",
+          "item": "Air Balloon",
+          "ability": "Corrosion",
+          "hard_evs": "128 SpA / 128 Spe",
           "moves": [
-            "Encore",
-            "Poison Jab",
-            "U-turn",
-            "Taunt"
+            "Nasty Plot",
+            "Flame Burst",
+            "Sludge Bomb",
+            "Toxic"
           ]
         }
       ]
@@ -321,7 +321,7 @@
     "Archer": {
       "early": [
         {
-          "slot": 1,
+          "slot": 2,
           "species": "Sneasel",
           "item": null,
           "ability": "Inner Focus",
@@ -334,10 +334,10 @@
           ]
         },
         {
-          "slot": 2,
+          "slot": 1,
           "species": "Zubat",
           "item": null,
-          "ability": "Inner Focus",
+          "ability": "Infiltrator",
           "hard_evs": "64 HP / 64 Spe",
           "moves": [
             "Wing Attack",
@@ -347,7 +347,7 @@
           ]
         },
         {
-          "slot": 6,
+          "slot": 5,
           "species": "Houndour",
           "item": null,
           "ability": "Flash Fire",
@@ -362,7 +362,7 @@
       ],
       "mid": [
         {
-          "slot": 1,
+          "slot": 2,
           "species": "Sneasel",
           "item": "Expert Belt",
           "ability": "Inner Focus",
@@ -375,7 +375,7 @@
           ]
         },
         {
-          "slot": 2,
+          "slot": 1,
           "species": "Crobat",
           "item": null,
           "ability": "Infiltrator",
@@ -388,22 +388,22 @@
           ]
         },
         {
-          "slot": 6,
+          "slot": 5,
           "species": "Houndoom",
-          "item": null,
+          "item": "Sitrus Berry",
           "ability": "Flash Fire",
           "hard_evs": "128 SpA / 128 Spe",
           "moves": [
-            "Fire Spin",
-            "Bite",
-            "Fire Fang",
-            "Howl"
+            "Flame Charge",
+            "Dark Pulse",
+            "Flamethrower",
+            "Roar"
           ]
         },
         {
           "slot": 3,
           "species": "Nidorino",
-          "item": "Sitrus Berry",
+          "item": null,
           "ability": "Poison Point",
           "hard_evs": "128 Atk / 128 Spe",
           "moves": [
@@ -415,5 +415,11 @@
         }
       ]
     }
+  },
+  "rules": {
+    "format": "Singles 1v1",
+    "family_persistence": "EARLY 3 persist into MID 4; MID families persist into FINAL 6",
+    "held_items": "unique within each phase",
+    "mega": "no Mega in EARLY/MID; one unique Mega only in FINAL"
   }
 }
