@@ -35,7 +35,7 @@
         "SPECIES_SEADRA",
         "SPECIES_WHISCASH",
         "SPECIES_CRAWDAUNT",
-        "SPECIES_DRATINI"
+        "SPECIES_DRAGONITE"
       ]
     },
     {
@@ -71,7 +71,7 @@
       ],
       "species": [
         "SPECIES_SEADRA",
-        "SPECIES_DRAGONAIR",
+        "SPECIES_DRAGONITE",
         "SPECIES_GYARADOS",
         "SPECIES_MILOTIC"
       ]
@@ -92,7 +92,7 @@
         "SPECIES_CETODDLE",
         "SPECIES_TORKOAL",
         "SPECIES_ORICORIO_BAILE",
-        "SPECIES_CYNDAQUIL"
+        "SPECIES_QUILAVA"
       ]
     },
     {
@@ -111,7 +111,7 @@
         "SPECIES_BOMBIRDIER",
         "SPECIES_SALANDIT",
         "SPECIES_PHANTUMP",
-        "SPECIES_TORCHIC"
+        "SPECIES_COMBUSKEN"
       ]
     },
     {
@@ -129,8 +129,8 @@
       "species": [
         "SPECIES_INDEEDEE_M",
         "SPECIES_ORANGURU",
-        "SPECIES_RATTATA",
-        "SPECIES_CHIMCHAR"
+        "SPECIES_RATICATE",
+        "SPECIES_MONFERNO"
       ]
     },
     {
@@ -149,7 +149,7 @@
         "SPECIES_MIMIKYU_DISGUISED",
         "SPECIES_SKORUPI",
         "SPECIES_HONEDGE",
-        "SPECIES_LITTEN"
+        "SPECIES_INCINEROAR"
       ]
     },
     {
@@ -222,8 +222,8 @@
         10
       ],
       "species": [
-        "SPECIES_TYMPOLE",
-        "SPECIES_BINACLE",
+        "SPECIES_SEISMITOAD",
+        "SPECIES_BARBARACLE",
         "SPECIES_DREDNAW",
         "SPECIES_LAPRAS"
       ]
@@ -279,9 +279,9 @@
         10
       ],
       "species": [
-        "SPECIES_SKRELP",
-        "SPECIES_MAREANIE",
-        "SPECIES_CLAUNCHER",
+        "SPECIES_DRAGALGE",
+        "SPECIES_TOXAPEX",
+        "SPECIES_CLAWITZER",
         "SPECIES_TENTACRUEL"
       ]
     },
@@ -298,9 +298,9 @@
         10
       ],
       "species": [
-        "SPECIES_CHEWTLE",
-        "SPECIES_FINIZEN",
-        "SPECIES_TYMPOLE",
+        "SPECIES_DREDNAW",
+        "SPECIES_PALAFIN_ZERO",
+        "SPECIES_SEISMITOAD",
         "SPECIES_LAPRAS"
       ]
     },
@@ -545,10 +545,10 @@
         10
       ],
       "species": [
-        "SPECIES_CLAUNCHER",
+        "SPECIES_CLAWITZER",
         "SPECIES_RELICANTH",
         "SPECIES_SKRELP",
-        "SPECIES_FROAKIE"
+        "SPECIES_GRENINJA"
       ]
     },
     {
@@ -564,8 +564,8 @@
         10
       ],
       "species": [
-        "SPECIES_GOTHITA",
-        "SPECIES_LITLEO",
+        "SPECIES_GOTHORITA",
+        "SPECIES_PYROAR",
         "SPECIES_GLOOM",
         "SPECIES_EELEKTRIK"
       ]
@@ -583,10 +583,10 @@
         10
       ],
       "species": [
-        "SPECIES_TENTACOOL",
-        "SPECIES_WINGULL",
-        "SPECIES_CLAUNCHER",
-        "SPECIES_POPPLIO"
+        "SPECIES_TENTACRUEL",
+        "SPECIES_PELIPPER",
+        "SPECIES_CLAWITZER",
+        "SPECIES_PRIMARINA"
       ]
     },
     {
@@ -679,8 +679,8 @@
       ],
       "species": [
         "SPECIES_SAWK",
-        "SPECIES_SILCOON",
-        "SPECIES_TIMBURR",
+        "SPECIES_BEAUTIFLY",
+        "SPECIES_GURDURR",
         "SPECIES_SANDYGAST"
       ]
     },
@@ -716,7 +716,7 @@
         10
       ],
       "species": [
-        "SPECIES_PALPITOAD",
+        "SPECIES_SEISMITOAD",
         "SPECIES_ARAQUANID",
         "SPECIES_WUGTRIO",
         "SPECIES_PALAFIN_ZERO"
@@ -849,7 +849,7 @@
         10
       ],
       "species": [
-        "SPECIES_CATERPIE",
+        "SPECIES_METAPOD",
         "SPECIES_SCATTERBUG",
         "SPECIES_PARAS",
         "SPECIES_MACHOP"
@@ -963,7 +963,7 @@
         10
       ],
       "species": [
-        "SPECIES_DRATINI",
+        "SPECIES_DRAGONITE",
         "SPECIES_AZUMARILL",
         "SPECIES_MILOTIC",
         "SPECIES_GYARADOS"
@@ -1004,7 +1004,7 @@
         "SPECIES_FEEBAS",
         "SPECIES_RELICANTH",
         "SPECIES_STARYU",
-        "SPECIES_SOBBLE"
+        "SPECIES_DRIZZILE"
       ]
     },
     {
@@ -1021,7 +1021,7 @@
       ],
       "species": [
         "SPECIES_COMFEY",
-        "SPECIES_SOLOSIS",
+        "SPECIES_DUOSION",
         "SPECIES_PORYGON",
         "SPECIES_JYNX"
       ]
@@ -1041,8 +1041,8 @@
       "species": [
         "SPECIES_FEEBAS",
         "SPECIES_STARYU",
-        "SPECIES_FINNEON",
-        "SPECIES_QUAXLY"
+        "SPECIES_LUMINEON",
+        "SPECIES_QUAXWELL"
       ]
     },
     {
@@ -1134,7 +1134,7 @@
         10
       ],
       "species": [
-        "SPECIES_SNOVER",
+        "SPECIES_ABOMASNOW",
         "SPECIES_GLALIE",
         "SPECIES_SNEASEL",
         "SPECIES_WEAVILE"
@@ -1172,8 +1172,8 @@
         10
       ],
       "species": [
-        "SPECIES_FRIGIBAX",
-        "SPECIES_VANILLISH",
+        "SPECIES_BAXCALIBUR",
+        "SPECIES_VANILLUXE",
         "SPECIES_FROSMOTH",
         "SPECIES_BAXCALIBUR"
       ]
@@ -1230,9 +1230,9 @@
       ],
       "species": [
         "SPECIES_LARVESTA",
-        "SPECIES_WEEDLE",
-        "SPECIES_SEWADDLE",
-        "SPECIES_BULBASAUR"
+        "SPECIES_BEEDRILL",
+        "SPECIES_SWADLOON",
+        "SPECIES_IVYSAUR"
       ]
     },
     {
@@ -1248,10 +1248,10 @@
         10
       ],
       "species": [
-        "SPECIES_SPINARAK",
+        "SPECIES_ARIADOS",
         "SPECIES_VENONAT",
         "SPECIES_JOLTIK",
-        "SPECIES_CHIKORITA"
+        "SPECIES_BAYLEEF"
       ]
     },
     {
@@ -1270,7 +1270,7 @@
         "SPECIES_MAREANIE",
         "SPECIES_TYMPOLE",
         "SPECIES_CORPHISH",
-        "SPECIES_SQUIRTLE"
+        "SPECIES_WARTORTLE"
       ]
     },
     {
@@ -1422,7 +1422,7 @@
         "SPECIES_CYCLIZAR",
         "SPECIES_TURTONATOR",
         "SPECIES_AERODACTYL",
-        "SPECIES_SPRIGATITO"
+        "SPECIES_MEOWSCARADA"
       ]
     },
     {
@@ -1498,7 +1498,7 @@
         "SPECIES_FLAMIGO",
         "SPECIES_GASTRODON_WEST",
         "SPECIES_PALOSSAND",
-        "SPECIES_FUECOCO"
+        "SPECIES_SKELEDIRGE"
       ]
     },
     {
@@ -1533,8 +1533,8 @@
         10
       ],
       "species": [
-        "SPECIES_SPHEAL",
-        "SPECIES_SHELLOS_WEST",
+        "SPECIES_SEALEO",
+        "SPECIES_GASTRODON_WEST",
         "SPECIES_DREDNAW",
         "SPECIES_DONDOZO"
       ]
@@ -1552,7 +1552,7 @@
         10
       ],
       "species": [
-        "SPECIES_TYMPOLE",
+        "SPECIES_SEISMITOAD",
         "SPECIES_DREDNAW",
         "SPECIES_OCTILLERY",
         "SPECIES_TATSUGIRI_CURLY"
@@ -1591,7 +1591,7 @@
       ],
       "species": [
         "SPECIES_MASQUERAIN",
-        "SPECIES_LAIRON",
+        "SPECIES_AGGRON",
         "SPECIES_FROSMOTH",
         "SPECIES_RABSCA"
       ]
@@ -1609,9 +1609,9 @@
         10
       ],
       "species": [
-        "SPECIES_SKRELP",
-        "SPECIES_MAREANIE",
-        "SPECIES_BINACLE",
+        "SPECIES_DRAGALGE",
+        "SPECIES_TOXAPEX",
+        "SPECIES_BARBARACLE",
         "SPECIES_DRACOVISH"
       ]
     },
@@ -1628,8 +1628,8 @@
         10
       ],
       "species": [
-        "SPECIES_CHEWTLE",
-        "SPECIES_TYMPOLE",
+        "SPECIES_DREDNAW",
+        "SPECIES_SEISMITOAD",
         "SPECIES_DREDNAW",
         "SPECIES_OCTILLERY"
       ]
@@ -1685,7 +1685,7 @@
         10
       ],
       "species": [
-        "SPECIES_FINIZEN",
+        "SPECIES_PALAFIN_ZERO",
         "SPECIES_GASTRODON_WEST",
         "SPECIES_DREDNAW",
         "SPECIES_DRACOVISH"
@@ -1704,10 +1704,10 @@
         10
       ],
       "species": [
-        "SPECIES_TYMPOLE",
-        "SPECIES_SHELLOS_WEST",
-        "SPECIES_BARBOACH",
-        "SPECIES_CHEWTLE"
+        "SPECIES_SEISMITOAD",
+        "SPECIES_GASTRODON_WEST",
+        "SPECIES_WHISCASH",
+        "SPECIES_DREDNAW"
       ]
     },
     {
@@ -1761,9 +1761,9 @@
         10
       ],
       "species": [
-        "SPECIES_SKRELP",
-        "SPECIES_MAREANIE",
-        "SPECIES_BINACLE",
+        "SPECIES_DRAGALGE",
+        "SPECIES_TOXAPEX",
+        "SPECIES_BARBARACLE",
         "SPECIES_CRAMORANT"
       ]
     },
@@ -1780,9 +1780,9 @@
         10
       ],
       "species": [
-        "SPECIES_CHEWTLE",
-        "SPECIES_FINIZEN",
-        "SPECIES_TYMPOLE",
+        "SPECIES_DREDNAW",
+        "SPECIES_PALAFIN_ZERO",
+        "SPECIES_SEISMITOAD",
         "SPECIES_BRUXISH"
       ]
     },
@@ -1856,8 +1856,8 @@
         10
       ],
       "species": [
-        "SPECIES_WAILMER",
-        "SPECIES_SEALEO",
+        "SPECIES_WAILORD",
+        "SPECIES_WALREIN",
         "SPECIES_LUMINEON",
         "SPECIES_SHARPEDO"
       ]
@@ -1913,7 +1913,7 @@
         10
       ],
       "species": [
-        "SPECIES_PALPITOAD",
+        "SPECIES_SEISMITOAD",
         "SPECIES_ARAQUANID",
         "SPECIES_GASTRODON_WEST",
         "SPECIES_PALAFIN_ZERO"
@@ -1932,7 +1932,7 @@
         10
       ],
       "species": [
-        "SPECIES_MARILL",
+        "SPECIES_AZUMARILL",
         "SPECIES_CORSOLA",
         "SPECIES_POLIWHIRL",
         "SPECIES_AZUMARILL"
@@ -1989,8 +1989,8 @@
         10
       ],
       "species": [
-        "SPECIES_CARVANHA",
-        "SPECIES_CHEWTLE",
+        "SPECIES_SHARPEDO",
+        "SPECIES_DREDNAW",
         "SPECIES_VELUZA",
         "SPECIES_LANTURN"
       ]
@@ -2008,9 +2008,9 @@
         10
       ],
       "species": [
-        "SPECIES_SPHEAL",
-        "SPECIES_BARBOACH",
-        "SPECIES_CORPHISH",
+        "SPECIES_WALREIN",
+        "SPECIES_WHISCASH",
+        "SPECIES_CRAWDAUNT",
         "SPECIES_LUVDISC"
       ]
     },
@@ -2065,9 +2065,9 @@
         10
       ],
       "species": [
-        "SPECIES_SHELLOS_WEST",
-        "SPECIES_BUIZEL",
-        "SPECIES_FINNEON",
+        "SPECIES_GASTRODON_WEST",
+        "SPECIES_FLOATZEL",
+        "SPECIES_LUMINEON",
         "SPECIES_CRAMORANT"
       ]
     },
@@ -2084,9 +2084,9 @@
         10
       ],
       "species": [
-        "SPECIES_TYMPOLE",
-        "SPECIES_BARBOACH",
-        "SPECIES_TIRTOUGA",
+        "SPECIES_SEISMITOAD",
+        "SPECIES_WHISCASH",
+        "SPECIES_CARRACOSTA",
         "SPECIES_MANTYKE"
       ]
     },
@@ -2141,9 +2141,9 @@
         10
       ],
       "species": [
-        "SPECIES_SKRELP",
-        "SPECIES_CLAUNCHER",
-        "SPECIES_BINACLE",
+        "SPECIES_DRAGALGE",
+        "SPECIES_CLAWITZER",
+        "SPECIES_BARBARACLE",
         "SPECIES_CRAMORANT"
       ]
     },
@@ -2160,9 +2160,9 @@
         10
       ],
       "species": [
-        "SPECIES_MAREANIE",
-        "SPECIES_TYMPOLE",
-        "SPECIES_BARBOACH",
+        "SPECIES_TOXAPEX",
+        "SPECIES_SEISMITOAD",
+        "SPECIES_WHISCASH",
         "SPECIES_BRUXISH"
       ]
     },
@@ -2179,7 +2179,7 @@
         10
       ],
       "species": [
-        "SPECIES_LARVITAR",
+        "SPECIES_TYRANITAR",
         "SPECIES_TYRANITAR",
         "SPECIES_DRAGAPULT",
         "SPECIES_BAXCALIBUR"
@@ -2217,8 +2217,8 @@
         10
       ],
       "species": [
-        "SPECIES_CHEWTLE",
-        "SPECIES_FINIZEN",
+        "SPECIES_DREDNAW",
+        "SPECIES_PALAFIN_ZERO",
         "SPECIES_GASTRODON_WEST",
         "SPECIES_CRAMORANT"
       ]
@@ -2274,8 +2274,8 @@
         10
       ],
       "species": [
-        "SPECIES_OMANYTE",
-        "SPECIES_KABUTO",
+        "SPECIES_OMASTAR",
+        "SPECIES_KABUTOPS",
         "SPECIES_WUGTRIO",
         "SPECIES_SHARPEDO"
       ]
@@ -2296,7 +2296,7 @@
         "SPECIES_PANCHAM",
         "SPECIES_PAWNIARD",
         "SPECIES_LILEEP",
-        "SPECIES_TURTWIG"
+        "SPECIES_GROTLE"
       ]
     },
     {
@@ -2331,10 +2331,10 @@
         10
       ],
       "species": [
-        "SPECIES_NYMBLE",
-        "SPECIES_CUTIEFLY",
-        "SPECIES_GRUBBIN",
-        "SPECIES_TREECKO"
+        "SPECIES_LOKIX",
+        "SPECIES_RIBOMBEE",
+        "SPECIES_CHARJABUG",
+        "SPECIES_GROVYLE"
       ]
     },
     {
@@ -2426,10 +2426,10 @@
         10
       ],
       "species": [
-        "SPECIES_TENTACOOL",
+        "SPECIES_TENTACRUEL",
         "SPECIES_RELICANTH",
         "SPECIES_SHELLDER",
-        "SPECIES_WATTREL"
+        "SPECIES_KILOWATTREL"
       ]
     },
     {
@@ -2445,10 +2445,10 @@
         10
       ],
       "species": [
-        "SPECIES_BLITZLE",
+        "SPECIES_ZEBSTRIKA",
         "SPECIES_MUNCHLAX",
         "SPECIES_VIGOROTH",
-        "SPECIES_MAGNEMITE"
+        "SPECIES_MAGNETON"
       ]
     },
     {
@@ -2464,10 +2464,10 @@
         10
       ],
       "species": [
-        "SPECIES_WINGULL",
-        "SPECIES_TENTACOOL",
-        "SPECIES_CHINCHOU",
-        "SPECIES_HORSEA"
+        "SPECIES_PELIPPER",
+        "SPECIES_TENTACRUEL",
+        "SPECIES_LANTURN",
+        "SPECIES_SEADRA"
       ]
     },
     {
@@ -2505,7 +2505,7 @@
         "SPECIES_BERGMITE",
         "SPECIES_PONYTA",
         "SPECIES_MAGCARGO",
-        "SPECIES_SCORBUNNY"
+        "SPECIES_CINDERACE"
       ]
     },
     {
@@ -3794,7 +3794,7 @@
         10
       ],
       "species": [
-        "SPECIES_WAILMER",
+        "SPECIES_WAILORD",
         "SPECIES_MILOTIC",
         "SPECIES_GYARADOS",
         "SPECIES_SEISMITOAD"
@@ -3889,7 +3889,7 @@
         10
       ],
       "species": [
-        "SPECIES_SEALEO",
+        "SPECIES_WALREIN",
         "SPECIES_GASTRODON_WEST",
         "SPECIES_BARRASKEWDA",
         "SPECIES_DONDOZO"
@@ -4288,7 +4288,7 @@
         10
       ],
       "species": [
-        "SPECIES_WAILMER",
+        "SPECIES_WAILORD",
         "SPECIES_CLAWITZER",
         "SPECIES_GYARADOS",
         "SPECIES_SEISMITOAD"
@@ -4573,10 +4573,10 @@
         10
       ],
       "species": [
-        "SPECIES_MAREEP",
-        "SPECIES_NIDORAN_F",
-        "SPECIES_NIDORAN_M",
-        "SPECIES_SHINX"
+        "SPECIES_FLAAFFY",
+        "SPECIES_NIDORINA",
+        "SPECIES_NIDORINO",
+        "SPECIES_LUXIO"
       ]
     },
     {
@@ -4614,7 +4614,7 @@
         "SPECIES_WOOPER",
         "SPECIES_POLIWAG",
         "SPECIES_TYMPOLE",
-        "SPECIES_LOTAD"
+        "SPECIES_LOMBRE"
       ]
     },
     {
@@ -4668,7 +4668,7 @@
         10
       ],
       "species": [
-        "SPECIES_TAROUNTULA",
+        "SPECIES_SPIDOPS",
         "SPECIES_CUBONE",
         "SPECIES_PHANPY",
         "SPECIES_RHYHORN"
@@ -4690,7 +4690,7 @@
         "SPECIES_LUVDISC",
         "SPECIES_CLAUNCHER",
         "SPECIES_SKRELP",
-        "SPECIES_TOTODILE"
+        "SPECIES_CROCONAW"
       ]
     },
     {
@@ -4706,10 +4706,10 @@
         10
       ],
       "species": [
-        "SPECIES_MAREEP",
+        "SPECIES_FLAAFFY",
         "SPECIES_GROWLITHE",
-        "SPECIES_SPINARAK",
-        "SPECIES_PAWMI"
+        "SPECIES_ARIADOS",
+        "SPECIES_PAWMO"
       ]
     },
     {
@@ -4727,7 +4727,7 @@
       "species": [
         "SPECIES_ELECTRIKE",
         "SPECIES_BLITZLE",
-        "SPECIES_YAMPER",
+        "SPECIES_BOLTUND",
         "SPECIES_DREEPY"
       ]
     },
@@ -4744,10 +4744,10 @@
         10
       ],
       "species": [
-        "SPECIES_TYMPOLE",
+        "SPECIES_PALPITOAD",
         "SPECIES_BINACLE",
         "SPECIES_CORPHISH",
-        "SPECIES_MUDKIP"
+        "SPECIES_MARSHTOMP"
       ]
     },
     {
@@ -4765,8 +4765,8 @@
       "species": [
         "SPECIES_FINIZEN",
         "SPECIES_SHELLOS_WEST",
-        "SPECIES_BUIZEL",
-        "SPECIES_PIPLUP"
+        "SPECIES_FLOATZEL",
+        "SPECIES_PRINPLUP"
       ]
     },
     {
@@ -4802,7 +4802,7 @@
       ],
       "species": [
         "SPECIES_MURKROW",
-        "SPECIES_HOUNDOUR",
+        "SPECIES_HOUNDOOM",
         "SPECIES_ZORUA",
         "SPECIES_ABSOL"
       ]
@@ -4823,7 +4823,7 @@
         "SPECIES_SPHEAL",
         "SPECIES_CARVANHA",
         "SPECIES_CORPHISH",
-        "SPECIES_OSHAWOTT"
+        "SPECIES_DEWOTT"
       ]
     },
     {
@@ -4840,8 +4840,8 @@
       ],
       "species": [
         "SPECIES_SCRAGGY",
-        "SPECIES_SPINARAK",
-        "SPECIES_STUFFUL",
+        "SPECIES_ARIADOS",
+        "SPECIES_BEWEAR",
         "SPECIES_VULPIX"
       ]
     },
@@ -4859,7 +4859,7 @@
       ],
       "species": [
         "SPECIES_CRABRAWLER",
-        "SPECIES_SPINARAK",
+        "SPECIES_ARIADOS",
         "SPECIES_SINISTEA",
         "SPECIES_HELIOPTILE"
       ]
@@ -4897,9 +4897,9 @@
       ],
       "species": [
         "SPECIES_GROWLITHE",
-        "SPECIES_SPINARAK",
-        "SPECIES_TEDDIURSA",
-        "SPECIES_CHARMANDER"
+        "SPECIES_ARIADOS",
+        "SPECIES_URSARING",
+        "SPECIES_CHARMELEON"
       ]
     },
     {
@@ -4916,9 +4916,9 @@
       ],
       "species": [
         "SPECIES_MISDREAVUS",
-        "SPECIES_HOUNDOUR",
+        "SPECIES_HOUNDOOM",
         "SPECIES_MURKROW",
-        "SPECIES_TEPIG"
+        "SPECIES_PIGNITE"
       ]
     },
     {
@@ -4934,10 +4934,10 @@
         10
       ],
       "species": [
-        "SPECIES_KIRLIA",
+        "SPECIES_GARDEVOIR",
         "SPECIES_FLOETTE_RED",
         "SPECIES_TANGELA",
-        "SPECIES_SNIVY"
+        "SPECIES_SERVINE"
       ]
     },
     {
@@ -4955,8 +4955,8 @@
       "species": [
         "SPECIES_KANGASKHAN",
         "SPECIES_ROTOM",
-        "SPECIES_RATTATA",
-        "SPECIES_FENNEKIN"
+        "SPECIES_RATICATE",
+        "SPECIES_BRAIXEN"
       ]
     },
     {
@@ -4975,7 +4975,7 @@
         "SPECIES_TAUROS",
         "SPECIES_JIGGLYPUFF",
         "SPECIES_SWELLOW",
-        "SPECIES_CHESPIN"
+        "SPECIES_QUILLADIN"
       ]
     },
     {
@@ -4992,7 +4992,7 @@
       ],
       "species": [
         "SPECIES_MORPEKO_FULL_BELLY",
-        "SPECIES_RATTATA",
+        "SPECIES_RATICATE",
         "SPECIES_DUSKULL",
         "SPECIES_BOUFFALANT"
       ]
@@ -5010,10 +5010,10 @@
         10
       ],
       "species": [
-        "SPECIES_HIPPOPOTAS",
+        "SPECIES_HIPPOWDON",
         "SPECIES_TYRUNT",
         "SPECIES_SPIDOPS",
-        "SPECIES_DARUMAKA"
+        "SPECIES_DARMANITAN_STANDARD"
       ]
     },
     {
@@ -5105,7 +5105,7 @@
         10
       ],
       "species": [
-        "SPECIES_MARILL",
+        "SPECIES_AZUMARILL",
         "SPECIES_WUGTRIO",
         "SPECIES_PELIPPER",
         "SPECIES_LAPRAS"
@@ -5163,7 +5163,7 @@
       ],
       "species": [
         "SPECIES_BASCULIN_RED_STRIPED",
-        "SPECIES_PALPITOAD",
+        "SPECIES_SEISMITOAD",
         "SPECIES_SEALEO",
         "SPECIES_LUMINEON"
       ]
@@ -5182,7 +5182,7 @@
       ],
       "species": [
         "SPECIES_LUVDISC",
-        "SPECIES_BUIZEL",
+        "SPECIES_FLOATZEL",
         "SPECIES_TATSUGIRI_CURLY",
         "SPECIES_DONDOZO"
       ]
@@ -5203,7 +5203,7 @@
         "SPECIES_GRANBULL",
         "SPECIES_MAUSHOLD_THREE",
         "SPECIES_LURANTIS",
-        "SPECIES_ELEKID"
+        "SPECIES_ELECTABUZZ"
       ]
     },
     {
@@ -5257,9 +5257,9 @@
         10
       ],
       "species": [
-        "SPECIES_CLAUNCHER",
-        "SPECIES_FINNEON",
-        "SPECIES_TIRTOUGA",
+        "SPECIES_CLAWITZER",
+        "SPECIES_LUMINEON",
+        "SPECIES_CARRACOSTA",
         "SPECIES_MANTYKE"
       ]
     },
@@ -5333,7 +5333,7 @@
         10
       ],
       "species": [
-        "SPECIES_MARILL",
+        "SPECIES_AZUMARILL",
         "SPECIES_PELIPPER",
         "SPECIES_SHARPEDO",
         "SPECIES_LAPRAS"
@@ -5374,7 +5374,7 @@
         "SPECIES_MAGNETON",
         "SPECIES_PILOSWINE",
         "SPECIES_SKARMORY",
-        "SPECIES_LAIRON"
+        "SPECIES_AGGRON"
       ]
     },
     {
@@ -5393,7 +5393,7 @@
         "SPECIES_DUSCLOPS",
         "SPECIES_SNEASEL",
         "SPECIES_FROSLASS",
-        "SPECIES_HAUNTER"
+        "SPECIES_GENGAR"
       ]
     },
     {
@@ -5447,7 +5447,7 @@
         10
       ],
       "species": [
-        "SPECIES_GRAVELER",
+        "SPECIES_GOLEM",
         "SPECIES_SKARMORY",
         "SPECIES_DRAGONAIR",
         "SPECIES_LAIRON"
@@ -5561,7 +5561,7 @@
         10
       ],
       "species": [
-        "SPECIES_MARILL",
+        "SPECIES_AZUMARILL",
         "SPECIES_BRUXISH",
         "SPECIES_ARAQUANID",
         "SPECIES_WHISCASH"
@@ -5583,7 +5583,7 @@
         "SPECIES_FLABEBE_RED",
         "SPECIES_PIKACHU",
         "SPECIES_SQUAWKABILLY_GREEN",
-        "SPECIES_ROWLET"
+        "SPECIES_DARTRIX"
       ]
     },
     {
@@ -5640,7 +5640,7 @@
         "SPECIES_MR_MIME",
         "SPECIES_STEENEE",
         "SPECIES_SHIINOTIC",
-        "SPECIES_GROOKEY"
+        "SPECIES_RILLABOOM"
       ]
     },
     {
@@ -5657,9 +5657,9 @@
       ],
       "species": [
         "SPECIES_AUDINO",
-        "SPECIES_SHROOMISH",
+        "SPECIES_BRELOOM",
         "SPECIES_POLTCHAGEIST",
-        "SPECIES_SANDILE"
+        "SPECIES_KROKOROK"
       ]
     },
     {
@@ -5675,7 +5675,7 @@
         10
       ],
       "species": [
-        "SPECIES_NUMEL",
+        "SPECIES_CAMERUPT",
         "SPECIES_SPEWPA",
         "SPECIES_CLOBBOPUS",
         "SPECIES_THROH"
@@ -5694,8 +5694,8 @@
         10
       ],
       "species": [
-        "SPECIES_PALPITOAD",
-        "SPECIES_SEALEO",
+        "SPECIES_SEISMITOAD",
+        "SPECIES_WALREIN",
         "SPECIES_TENTACRUEL",
         "SPECIES_DONDOZO"
       ]
@@ -5998,7 +5998,7 @@
         10
       ],
       "species": [
-        "SPECIES_WAILMER",
+        "SPECIES_WAILORD",
         "SPECIES_WAILORD",
         "SPECIES_CLAWITZER",
         "SPECIES_BARBARACLE"
@@ -6131,7 +6131,7 @@
         10
       ],
       "species": [
-        "SPECIES_CATERPIE",
+        "SPECIES_METAPOD",
         "SPECIES_WURMPLE",
         "SPECIES_RELLOR",
         "SPECIES_TYROGUE"
@@ -6321,9 +6321,9 @@
         10
       ],
       "species": [
-        "SPECIES_MAGIKARP",
+        "SPECIES_GYARADOS",
         "SPECIES_WIGLETT",
-        "SPECIES_WOOPER",
+        "SPECIES_QUAGSIRE",
         "SPECIES_CORPHISH"
       ]
     },
@@ -6587,7 +6587,7 @@
         10
       ],
       "species": [
-        "SPECIES_CARVANHA",
+        "SPECIES_SHARPEDO",
         "SPECIES_MILOTIC",
         "SPECIES_VELUZA",
         "SPECIES_LANTURN"
@@ -6644,9 +6644,9 @@
         10
       ],
       "species": [
-        "SPECIES_SPHEAL",
-        "SPECIES_BARBOACH",
-        "SPECIES_CORPHISH",
+        "SPECIES_WALREIN",
+        "SPECIES_WHISCASH",
+        "SPECIES_CRAWDAUNT",
         "SPECIES_GYARADOS"
       ]
     },
@@ -6701,8 +6701,8 @@
         10
       ],
       "species": [
-        "SPECIES_BLIPBUG",
-        "SPECIES_TAROUNTULA",
+        "SPECIES_DOTTLER",
+        "SPECIES_SPIDOPS",
         "SPECIES_VENIPEDE",
         "SPECIES_DIGLETT"
       ]
@@ -6777,8 +6777,8 @@
         10
       ],
       "species": [
-        "SPECIES_BLIPBUG",
-        "SPECIES_ROLYCOLY",
+        "SPECIES_DOTTLER",
+        "SPECIES_CARKOL",
         "SPECIES_NYMBLE",
         "SPECIES_RELLOR"
       ]
@@ -6797,7 +6797,7 @@
       ],
       "species": [
         "SPECIES_WOOPER",
-        "SPECIES_LOTAD",
+        "SPECIES_LOMBRE",
         "SPECIES_REMORAID",
         "SPECIES_CHINCHOU"
       ]
@@ -6815,7 +6815,7 @@
         10
       ],
       "species": [
-        "SPECIES_LOTAD",
+        "SPECIES_LOMBRE",
         "SPECIES_SURSKIT",
         "SPECIES_WINGULL",
         "SPECIES_SLOWPOKE"
@@ -6853,7 +6853,7 @@
         10
       ],
       "species": [
-        "SPECIES_CATERPIE",
+        "SPECIES_BUTTERFREE",
         "SPECIES_TYROGUE",
         "SPECIES_PARAS",
         "SPECIES_PHANPY"
@@ -6891,7 +6891,7 @@
         10
       ],
       "species": [
-        "SPECIES_TIRTOUGA",
+        "SPECIES_CARRACOSTA",
         "SPECIES_POLIWHIRL",
         "SPECIES_SEADRA",
         "SPECIES_TOXAPEX"
@@ -6948,8 +6948,8 @@
         10
       ],
       "species": [
-        "SPECIES_PALPITOAD",
-        "SPECIES_SEALEO",
+        "SPECIES_SEISMITOAD",
+        "SPECIES_WALREIN",
         "SPECIES_BARRASKEWDA",
         "SPECIES_DONDOZO"
       ]
@@ -6986,8 +6986,8 @@
         10
       ],
       "species": [
-        "SPECIES_CARVANHA",
-        "SPECIES_BARBOACH",
+        "SPECIES_SHARPEDO",
+        "SPECIES_WHISCASH",
         "SPECIES_BASCULEGION_M",
         "SPECIES_GASTRODON_WEST"
       ]
@@ -7176,8 +7176,8 @@
         10
       ],
       "species": [
-        "SPECIES_SPHEAL",
-        "SPECIES_CORPHISH",
+        "SPECIES_WALREIN",
+        "SPECIES_CRAWDAUNT",
         "SPECIES_LUVDISC",
         "SPECIES_BASCULEGION_M"
       ]
@@ -7214,9 +7214,9 @@
         10
       ],
       "species": [
-        "SPECIES_SHELLOS_WEST",
-        "SPECIES_BUIZEL",
-        "SPECIES_FINNEON",
+        "SPECIES_GASTRODON_WEST",
+        "SPECIES_FLOATZEL",
+        "SPECIES_LUMINEON",
         "SPECIES_MANTYKE"
       ]
     },
@@ -7271,7 +7271,7 @@
         10
       ],
       "species": [
-        "SPECIES_WAILMER",
+        "SPECIES_WAILORD",
         "SPECIES_POLIWHIRL",
         "SPECIES_VELUZA",
         "SPECIES_RELICANTH"
@@ -7290,9 +7290,9 @@
         10
       ],
       "species": [
-        "SPECIES_TRAPINCH",
-        "SPECIES_RATTATA",
-        "SPECIES_JANGMO_O",
+        "SPECIES_VIBRAVA",
+        "SPECIES_RATICATE",
+        "SPECIES_HAKAMO_O",
         "SPECIES_EISCUE_ICE"
       ]
     },
@@ -7309,9 +7309,9 @@
         10
       ],
       "species": [
-        "SPECIES_NACLSTACK",
+        "SPECIES_GARGANACL",
         "SPECIES_TOGEDEMARU",
-        "SPECIES_ARCHEN",
+        "SPECIES_ARCHEOPS",
         "SPECIES_PASSIMIAN"
       ]
     },
@@ -7347,8 +7347,8 @@
         10
       ],
       "species": [
-        "SPECIES_BUIZEL",
-        "SPECIES_FINNEON",
+        "SPECIES_FLOATZEL",
+        "SPECIES_LUMINEON",
         "SPECIES_POLIWHIRL",
         "SPECIES_VELUZA"
       ]
@@ -7368,8 +7368,8 @@
       "species": [
         "SPECIES_LAMPENT",
         "SPECIES_APPLIN",
-        "SPECIES_CUBCHOO",
-        "SPECIES_SNORUNT"
+        "SPECIES_BEARTIC",
+        "SPECIES_GLALIE"
       ]
     },
     {
@@ -7387,7 +7387,7 @@
       "species": [
         "SPECIES_STONJOURNER",
         "SPECIES_AMAURA",
-        "SPECIES_SILICOBRA",
+        "SPECIES_SANDACONDA",
         "SPECIES_GLIGAR"
       ]
     },
@@ -7404,9 +7404,9 @@
         10
       ],
       "species": [
-        "SPECIES_CLAUNCHER",
-        "SPECIES_OMANYTE",
-        "SPECIES_TIRTOUGA",
+        "SPECIES_CLAWITZER",
+        "SPECIES_OMASTAR",
+        "SPECIES_CARRACOSTA",
         "SPECIES_MANTYKE"
       ]
     },
@@ -7423,8 +7423,8 @@
         10
       ],
       "species": [
-        "SPECIES_MARILL",
-        "SPECIES_KABUTO",
+        "SPECIES_AZUMARILL",
+        "SPECIES_KABUTOPS",
         "SPECIES_ARAQUANID",
         "SPECIES_LAPRAS"
       ]
@@ -7442,8 +7442,8 @@
         10
       ],
       "species": [
-        "SPECIES_TINKATINK",
-        "SPECIES_BAGON",
+        "SPECIES_TINKATON",
+        "SPECIES_SHELGON",
         "SPECIES_SNEASEL",
         "SPECIES_DRAGONAIR"
       ]
@@ -7461,10 +7461,10 @@
         10
       ],
       "species": [
-        "SPECIES_CASCOON",
-        "SPECIES_CUFANT",
-        "SPECIES_MUDBRAY",
-        "SPECIES_CARKOL"
+        "SPECIES_DUSTOX",
+        "SPECIES_COPPERAJAH",
+        "SPECIES_MUDSDALE",
+        "SPECIES_COALOSSAL"
       ]
     },
     {
@@ -7480,7 +7480,7 @@
         10
       ],
       "species": [
-        "SPECIES_WAILMER",
+        "SPECIES_WAILORD",
         "SPECIES_PELIPPER",
         "SPECIES_WHISCASH",
         "SPECIES_SHARPEDO"
@@ -7499,7 +7499,7 @@
         10
       ],
       "species": [
-        "SPECIES_PALPITOAD",
+        "SPECIES_SEISMITOAD",
         "SPECIES_SEALEO",
         "SPECIES_CRAWDAUNT",
         "SPECIES_BRUXISH"
@@ -7519,9 +7519,9 @@
       ],
       "species": [
         "SPECIES_NOIBAT",
-        "SPECIES_MAGBY",
+        "SPECIES_MAGMAR",
         "SPECIES_DUSCLOPS",
-        "SPECIES_VANILLITE"
+        "SPECIES_VANILLISH"
       ]
     },
     {
@@ -7537,9 +7537,9 @@
         10
       ],
       "species": [
-        "SPECIES_BELDUM",
+        "SPECIES_METANG",
         "SPECIES_ARCTOZOLT",
-        "SPECIES_LAIRON",
+        "SPECIES_AGGRON",
         "SPECIES_MAGNETON"
       ]
     },
@@ -7557,7 +7557,7 @@
       ],
       "species": [
         "SPECIES_BASCULIN_RED_STRIPED",
-        "SPECIES_PALPITOAD",
+        "SPECIES_SEISMITOAD",
         "SPECIES_LUMINEON",
         "SPECIES_RELICANTH"
       ]
@@ -7594,10 +7594,10 @@
         10
       ],
       "species": [
-        "SPECIES_SHUPPET",
+        "SPECIES_BANETTE",
         "SPECIES_DEINO",
         "SPECIES_PILOSWINE",
-        "SPECIES_SWINUB"
+        "SPECIES_PILOSWINE"
       ]
     },
     {
@@ -7670,7 +7670,7 @@
         10
       ],
       "species": [
-        "SPECIES_DUSKULL",
+        "SPECIES_DUSCLOPS",
         "SPECIES_GOOMY",
         "SPECIES_VANILLISH",
         "SPECIES_BRELOOM"
@@ -7689,8 +7689,8 @@
         10
       ],
       "species": [
-        "SPECIES_KLINK",
-        "SPECIES_TINKATUFF",
+        "SPECIES_KLANG",
+        "SPECIES_TINKATON",
         "SPECIES_GURDURR",
         "SPECIES_KLANG"
       ]
@@ -7708,9 +7708,9 @@
         10
       ],
       "species": [
-        "SPECIES_CARVANHA",
-        "SPECIES_BARBOACH",
-        "SPECIES_CORPHISH",
+        "SPECIES_SHARPEDO",
+        "SPECIES_WHISCASH",
+        "SPECIES_CRAWDAUNT",
         "SPECIES_LAPRAS"
       ]
     }

@@ -8,6 +8,35 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def learnable_moves():
+    return {
+        species: set(moves)
+        for species, moves in json.loads(
+            (ROOT / "src/data/pokemon/all_learnables.json").read_text()
+        ).items()
+    }
+
+
+def validate_party_moves(trainer_id, party, learnables):
+    form_moves = {
+        "ROTOM_HEAT": {"MOVE_OVERHEAT"},
+        "ROTOM_WASH": {"MOVE_HYDRO_PUMP"},
+        "ROTOM_FROST": {"MOVE_BLIZZARD"},
+        "ROTOM_FAN": {"MOVE_AIR_SLASH"},
+        "ROTOM_MOW": {"MOVE_LEAF_STORM"},
+    }
+    for mon in party.strip().split("\n\n"):
+        lines = mon.splitlines()
+        species = lines[0].split(" @ ", 1)[0]
+        key = re.sub(r"[^A-Z0-9]+", "_", species.upper()).strip("_")
+        if key not in learnables:
+            fail(f"{trainer_id} uses unknown learnset species {species}")
+        for move in (line[2:] for line in lines if line.startswith("- ")):
+            move_key = "MOVE_" + re.sub(r"[^A-Z0-9]+", "_", move.upper()).strip("_")
+            if move_key not in learnables[key] and move_key not in form_moves.get(key, set()):
+                fail(f"{trainer_id} {species} cannot learn {move}")
+
+
 def fail(message):
     raise SystemExit(f"Family Remix validation failed: {message}")
 
@@ -33,6 +62,7 @@ def validate_bosses():
     required_ai = ("Basic Trainer", "Try To 2HKO", "Smart Switching", "HP Aware",
                    "PP Stall Prevention", "Assumptions")
     mon_count = 0
+    learnables = learnable_moves()
     expected_healing = {
         "TRAINER_FALKNER_1_HNS": None,
         "TRAINER_BUGSY_1_HNS": "Potion / Potion",
@@ -97,6 +127,7 @@ def validate_bosses():
 
         normal_header, normal_party = normal_block.split("\n\n", 1)
         hard_header, hard_party = block.split("\n\n", 1)
+        validate_party_moves(trainer_id, hard_party, learnables)
         normalize_header = lambda value: "\n".join(
             line for line in value.splitlines()
             if not line.startswith(("AI: ", "Difficulty: "))
@@ -184,6 +215,7 @@ def validate_rockets():
 
     required_ai = ("Basic Trainer", "Try To 2HKO", "Smart Switching", "HP Aware",
                    "PP Stall Prevention", "Assumptions")
+    learnables = learnable_moves()
     for trainer_id, roster in expected.items():
         normal_matches = re.findall(
             rf"^=== {re.escape(trainer_id)} ===\n(.*?)(?=^=== |\Z)", normal, re.M | re.S
@@ -194,6 +226,7 @@ def validate_rockets():
         hard_block = hard_blocks[trainer_id]
         normal_header, normal_party = normal_block.split("\n\n", 1)
         hard_header, hard_party = hard_block.split("\n\n", 1)
+        validate_party_moves(trainer_id, hard_party, learnables)
         normalize_header = lambda value: "\n".join(
             line for line in value.splitlines()
             if not line.startswith(("AI: ", "Difficulty: "))
@@ -449,6 +482,28 @@ def validate_shops():
 
 
 def validate_rival_progression():
+    rival = json.loads((ROOT / "data/spec/rival.json").read_text(encoding="utf-8"))
+    learnables = learnable_moves()
+    learnset_aliases = {"TOXTRICITY": "TOXTRICITY_AMPED"}
+    for category, roster in rival["fight_rosters"]["categories"].items():
+        for mon in roster:
+            if mon["family"] == "saved starter":
+                continue
+            species = {
+                learnset_aliases.get(key, key)
+                for name in (mon["family"], mon["target_final_species"])
+                for key in (re.sub(r"[^A-Z0-9]+", "_", name.upper()).strip("_"),)
+            }
+            unknown = species - learnables.keys()
+            if unknown:
+                fail(f"rival {category} uses unknown learnset species {sorted(unknown)}")
+            family_moves = set().union(*(learnables[name] for name in species))
+            for phase, moves in mon["phase_moves"].items():
+                for move in moves:
+                    move_key = "MOVE_" + re.sub(r"[^A-Z0-9]+", "_", move.upper()).strip("_")
+                    if move_key not in family_moves:
+                        fail(f"rival {category} {mon['family']} cannot learn {move} ({phase})")
+
     text = (ROOT / "src/data/trainers_hns.party").read_text().split(
         "/* ========== Family Remix FINAL hard boss parties ========== */", 1)[0]
     expected = (1, 3, 4, 6, 6, 6, 6)

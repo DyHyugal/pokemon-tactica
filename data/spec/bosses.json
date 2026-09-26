@@ -561,10 +561,10 @@
         "Belly Drum",
         "Waterfall",
         "Drain Punch",
-        "Aqua Jet"
+        "Ice Punch"
       ],
       "role": "Ace / belly-drum cleaner",
-      "notes": "Signature Tartard/Poliwrath."
+      "notes": "Signature Tartard/Poliwrath. Ice Punch replaces the incompatible Aqua Jet while preserving physical coverage."
     },
     {
       "region": "Johto",
@@ -1659,7 +1659,7 @@
       "evs": "HP / Def",
       "moves": [
         "Will-O-Wisp",
-        "Disable",
+        "Taunt",
         "Pain Split",
         "Explosion"
       ],
@@ -2099,12 +2099,12 @@
       "evs": "HP / SpD",
       "moves": [
         "Giga Drain",
-        "Power Gem",
+        "Ancient Power",
         "Earth Power",
         "Recover"
       ],
       "role": "Water answer",
-      "notes": "Kanto level TBD from final post-League curve."
+      "notes": "Kanto level TBD from final post-League curve. Ancient Power replaces the incompatible Power Gem."
     },
     {
       "region": "Kanto",
@@ -2318,13 +2318,13 @@
       "nature": "Timid",
       "evs": "EV:SPE",
       "moves": [
-        "Rising Voltage",
-        "Psychic",
+        "Thunderbolt",
+        "Grass Knot",
         "Focus Blast",
         "Surf"
       ],
       "role": "Ace / Electric Terrain special sweeper",
-      "notes": "Signature Raichu. Repo contains Mega Raichu X/Y and ITEM_RAICHUNITE_X/Y; Y is selected for the special Electric Terrain role."
+      "notes": "Signature Raichu. Repo contains Mega Raichu X/Y and ITEM_RAICHUNITE_X/Y; Y is selected for the special Electric Terrain role. Thunderbolt and Grass Knot replace the incompatible Rising Voltage and Psychic."
     },
     {
       "region": "Kanto",
@@ -2341,12 +2341,12 @@
       "evs": "Atk / Speed",
       "moves": [
         "Thunder Punch",
-        "Close Combat",
+        "Cross Chop",
         "Ice Punch",
         "Rock Slide"
       ],
       "role": "Sheer Force + Life Orb breaker",
-      "notes": "UPDATED for custom Electric/Fighting Electivire: 110 Speed + Sheer Force HA. Three moves gain Sheer Force; Close Combat supplies Fighting STAB."
+      "notes": "UPDATED for custom Electric/Fighting Electivire: 110 Speed + Sheer Force HA. Three moves gain Sheer Force; Cross Chop supplies compatible Fighting STAB."
     },
     {
       "region": "Kanto",
@@ -2870,11 +2870,11 @@
       "moves": [
         "Fire Blast",
         "Solar Beam",
-        "Earth Power",
+        "Substitute",
         "Growth"
       ],
       "role": "Sun sweeper",
-      "notes": "Kanto level TBD from final post-League curve."
+      "notes": "Kanto level TBD from final post-League curve. Substitute replaces the incompatible Earth Power and supports Growth setup."
     },
     {
       "region": "Kanto",
@@ -3177,12 +3177,12 @@
       "evs": "252 Atk / 252 Spe",
       "moves": [
         "Dragon Dance",
-        "Wood Hammer",
+        "Leaf Blade",
         "Dragon Claw",
         "Substitute"
       ],
       "role": "Fast physical setup sweeper",
-      "notes": "Custom physical Sceptile. Use one Dragon Dance when safe; Substitute only when it creates a clear setup window."
+      "notes": "Custom physical Sceptile. Leaf Blade replaces the incompatible Wood Hammer. Use one Dragon Dance when safe; Substitute only when it creates a clear setup window."
     },
     {
       "region": "Johto",
@@ -3199,7 +3199,7 @@
       "evs": "252 Atk / 252 Spe",
       "moves": [
         "Wave Crash",
-        "Dragon Claw",
+        "Scale Shot",
         "Dragon Dance",
         "Flip Turn"
       ],
@@ -3243,7 +3243,7 @@
       "evs": "252 Atk / 252 Spe",
       "moves": [
         "Earthquake",
-        "Dragon Dance",
+        "Swords Dance",
         "Dragon Claw",
         "Iron Head"
       ],
@@ -3309,7 +3309,7 @@
       "evs": "252 Atk / 252 Spe",
       "moves": [
         "Wave Crash",
-        "Dragon Claw",
+        "Scale Shot",
         "Dragon Dance",
         "Flip Turn"
       ],

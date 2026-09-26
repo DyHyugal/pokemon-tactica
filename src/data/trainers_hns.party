@@ -8177,7 +8177,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Belly Drum
 - Waterfall
 - Drain Punch
-- Aqua Jet
+- Ice Punch
 
 === TRAINER_CHUCK_2_HNS ===
 Name: CHUCK
@@ -8519,7 +8519,7 @@ Ability: Storm Drain
 Nature: Calm
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Giga Drain
-- Power Gem
+- Ancient Power
 - Earth Power
 - Recover
 
@@ -8642,8 +8642,8 @@ Level: 72
 Ability: Lightning Rod
 Nature: Timid
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Rising Voltage
-- Psychic
+- Thunderbolt
+- Grass Knot
 - Focus Blast
 - Surf
 
@@ -8653,7 +8653,7 @@ Ability: Sheer Force
 Nature: Jolly
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Thunder Punch
-- Close Combat
+- Cross Chop
 - Ice Punch
 - Rock Slide
 
@@ -8942,7 +8942,7 @@ Nature: Modest
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Fire Blast
 - Solar Beam
-- Earth Power
+- Substitute
 - Growth
 
 Ceruledge @ Clear Amulet
@@ -9688,7 +9688,7 @@ Ability: Chlorophyll
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dragon Dance
-- Wood Hammer
+- Leaf Blade
 - Dragon Claw
 - Substitute
 
@@ -9698,7 +9698,7 @@ Ability: Sniper
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Wave Crash
-- Dragon Claw
+- Scale Shot
 - Dragon Dance
 - Flip Turn
 
@@ -9730,7 +9730,7 @@ Ability: Rough Skin
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
-- Dragon Dance
+- Swords Dance
 - Dragon Claw
 - Iron Head
 
@@ -9760,7 +9760,7 @@ Ability: Sniper
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Wave Crash
-- Dragon Claw
+- Scale Shot
 - Dragon Dance
 - Flip Turn
 
@@ -11365,7 +11365,7 @@ Ability: Levitate
 Nature: Bold
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Will-O-Wisp
-- Disable
+- Taunt
 - Pain Split
 - Explosion
 
@@ -16896,7 +16896,7 @@ EVs: 252 HP / 252 Atk / 4 SpD
 - Belly Drum
 - Waterfall
 - Drain Punch
-- Aqua Jet
+- Ice Punch
 
 === TRAINER_JASMINE_1_HNS ===
 Name: JASMINE
@@ -17507,7 +17507,7 @@ Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 4 HP
 - Dragon Dance
-- Wood Hammer
+- Leaf Blade
 - Dragon Claw
 - Substitute
 
@@ -17518,7 +17518,7 @@ Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 4 HP
 - Wave Crash
-- Dragon Claw
+- Scale Shot
 - Dragon Dance
 - Flip Turn
 
@@ -17574,7 +17574,7 @@ Nature: Calm
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 SpD / 4 Def
 - Giga Drain
-- Power Gem
+- Ancient Power
 - Earth Power
 - Recover
 
@@ -17707,8 +17707,8 @@ Ability: Lightning Rod
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 Spe / 4 HP
-- Rising Voltage
-- Psychic
+- Thunderbolt
+- Grass Knot
 - Focus Blast
 - Surf
 
@@ -17719,7 +17719,7 @@ Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 4 HP
 - Thunder Punch
-- Close Combat
+- Cross Chop
 - Ice Punch
 - Rock Slide
 
@@ -18032,7 +18032,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 Spe / 4 HP
 - Fire Blast
 - Solar Beam
-- Earth Power
+- Substitute
 - Growth
 
 Ceruledge @ Clear Amulet
@@ -18176,7 +18176,7 @@ Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 4 HP
 - Earthquake
-- Dragon Dance
+- Swords Dance
 - Dragon Claw
 - Iron Head
 
@@ -18209,7 +18209,7 @@ Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 4 HP
 - Wave Crash
-- Dragon Claw
+- Scale Shot
 - Dragon Dance
 - Flip Turn
 
@@ -18428,7 +18428,7 @@ Nature: Bold
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 4 SpD
 - Will-O-Wisp
-- Disable
+- Taunt
 - Pain Split
 - Explosion
 
