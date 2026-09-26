@@ -4,6 +4,7 @@ const S=()=>window.TacticaDexSpecies||{};
 const L=()=>window.TacticaLocalization||{moves:{},abilities:{},items:{},species:{}};
 const M=()=>window.TacticaDexMoves||{};
 const A=()=>window.TacticaDexAbilities||{};
+const AFR=()=>window.TacticaAbilityDescriptionsFR||{};
 const LS=()=>window.TacticaDexLearnsets||{};
 const TM=()=>window.TacticaDexTutorMoves||{};
 const lang=document.documentElement.lang==="fr"?"fr":"en";
@@ -238,9 +239,10 @@ function abilitiesHtml(d){
   return '<div class="ability-grid">'+abs.map(({a,i})=>{
     const hidden=i===2;
     const ai=abilityInfo(a);
-    // Ability names are localized from the Tactica FR dictionary. Do not leak
-    // the engine's English-only short description into the French player wiki.
-    const description=lang==="fr"?"":(ai.description||"");
+    // The gameplay effect comes from the Tactica ROM ability entry. French
+    // text is a localized rendering of that effect; fall back to the ROM text
+    // only when no localized short description exists yet.
+    const description=lang==="fr"?(AFR()[a]||ai.description||""):(ai.description||"");
     return '<div class="ability-card"><small>'+(hidden?t.hidden:t.regular)+'</small><strong>'+ai.name+'</strong>'+(description?'<span class="ability-description">'+description+'</span>':'')+'</div>';
   }).join("")+'</div>';
 }
