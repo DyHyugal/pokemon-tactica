@@ -1,108 +1,111 @@
-# Prompt de reprise Codex — Pokémon Tactica V1
+# Reprise Codex — Pokémon Tactica V1
 
-Tu travailles dans le dépôt Pokémon Tactica, **à partir du dernier `integration/v1`** ou d'une branche fonctionnelle créée depuis ce SHA. Lis d'abord `AGENTS.md`, `docs/spec/SOURCE_OF_TRUTH.md`, `docs/spec/PLAYTEST_STATUS.md`, puis tous les autres `docs/spec/*.md` et `data/spec/*.json`. La hiérarchie normative est stricte : `SOURCE_OF_TRUTH.md` arbitre les règles globales ; les documents métier `docs/spec/*.md` portent les décisions détaillées ; `data/spec/*.json` en sont la représentation machine ; le code/runtime généré vient ensuite. Une exception temporaire document -> JSON doit disparaître dans la PR d'implémentation qui régénère les données. Le code importé montre l'état actuel ; les docs HnS sont techniques/upstream. Ne transforme jamais une ancienne habitude HnS, un vieux prompt ou une branche non fusionnée en règle Tactica.
+## Démarrage obligatoire
 
-Ce dépôt a un nouvel historique : lire `docs/spec/MIGRATION.md` pour les branches et SHA de provenance. Une régression peut venir d'un changement de dépôt, branche, build ou ROM réellement lancée. Tenir `docs/spec/FEATURE_STATUS.md` à jour avec **un statut par feature, la preuve, le SHA, le test et la prochaine action**.
+Toujours repartir du dernier `integration/v1` :
 
-## Aparté important — confusion des « blocs 1 à 3 » du 26 septembre
+```bash
+git fetch origin
+git switch integration/v1
+git pull --ff-only origin integration/v1
+git rev-parse HEAD
+```
 
-Une confusion de pilotage s'est produite après le playtest du 25 septembre :
+Puis lire, dans cet ordre :
 
-- les retours owner les plus récents (Summary, UI boutiques/combat, Méga de Mortimer, Mega Ring, ordre CORE → encounters → UI → RC) avaient été rédigés sur la branche / PR #9 `docs/normalize-decisions-2026-09-25`, mais cette PR n'a jamais été fusionnée dans `integration/v1` ;
-- les runs Codex suivants sont repartis de `integration/v1` et ont donc travaillé avec une version plus ancienne des consignes ;
-- la formule « blocs 1 à 3 terminés » a ensuite été utilisée pour désigner **encounters + rival/progression/boss + balance**, alors que le plan owner le plus récent appelait bloc 1 = CORE, bloc 2 = encounters, bloc 3 = UI/UX ;
-- résultat : plusieurs contrôles automatisés étaient réellement verts, mais des retours owner déjà connus n'avaient jamais été implémentés.
+1. `AGENTS.md`
+2. `docs/spec/SOURCE_OF_TRUTH.md`
+3. `docs/spec/FEATURE_STATUS.md`
+4. `docs/spec/PLAYTEST_STATUS.md`
+5. les documents métier réellement concernés
+6. les `data/spec/*.json` concernés
 
-**Règle pour éviter toute récidive :** ne jamais annoncer « bloc N terminé » sans citer le nom fonctionnel du bloc, le SHA intégré, les tests automatiques ET les contrôles ROM encore ouverts. Une branche/PR non fusionnée ne compte jamais comme version testable owner.
+Une branche/PR non fusionnée n’est jamais considérée comme l’état testable owner.
 
-## Protocole obligatoire de version testable
+## Règle documentaire
 
-Le propriétaire ne doit recevoir qu'une build issue du **dernier `integration/v1` fusionné**.
+Les docs actives décrivent uniquement l’état courant. Ne pas conserver plusieurs couches « décision initiale / correction / correction finale ». L’historique est dans Git.
 
-Avant de demander un playtest :
+Hiérarchie : `SOURCE_OF_TRUTH.md` → docs métier → JSON canoniques → runtime généré.
 
-1. fusionner toutes les PR nécessaires au périmètre annoncé ;
-2. attendre la CI Tactica verte sur le SHA d'intégration ;
-3. mettre à jour `docs/spec/PLAYTEST_STATUS.md` avec le SHA exact, ce qui est réellement testable, les points encore non implémentés et la checklist ;
-4. compiler une ROM fraîche : un simple `git pull` ne met **jamais** à jour `pokehns.gba`, car les `*.gba` et `build/` sont ignorés par Git ;
-5. utiliser `make clean && make hns -j4` pour un playtest de référence après une grosse passe ou en cas de doute sur un ancien artefact ;
-6. ne jamais demander au propriétaire de revalider un défaut connu dont la correction n'est pas présente sur ce SHA.
+## Baseline à protéger
 
-La ROM de référence du propriétaire doit donc être reconstruite après le pull. Le testeur doit vérifier `git rev-parse --short HEAD` puis l'heure de génération de `pokehns.gba` avant de lancer mGBA.
+Ne pas recoder sans défaut démontré :
 
-## Décisions owner intégrées à préserver / contrôles ROM restants
+- vitesse native x1/x2/x3/x4 ;
+- audio indépendant ;
+- Shiny Rate ;
+- évolutions solo ;
+- sélection des 30 starters + Évoli ;
+- curseur initial du sélecteur et retour après annulation ;
+- œuf d’Orme distinct du starter principal ;
+- rival fixe par archétype, premier combat niveau 17, progression 1→3→4→6 ;
+- rosters Rival/Rocket courants ;
+- Méga Rival après badge 4 ;
+- Méga Rocket uniquement FINAL ;
+- Archer = Méga-Sharpedo sans Abri préalable ;
+- talents pré-Méga légaux ;
+- Mega Ring après Mortimer ;
+- règle du premier accès réel pour les encounters ;
+- Route 36 à 14–17 ;
+- 405 tables standard synchronisées ;
+- baseline wiki fusionnée via PR #29, y compris Routes/Villes.
 
-### CORE / rival
+## État encounters courant
 
-- Le **premier combat rival** conserve un seul Pokémon, son starter, mais ce Pokémon doit utiliser le niveau de préparation du premier Champion : **niveau 17**. Son stade d'évolution doit être résolu légalement à ce niveau (ex. une espèce évoluant au niveau 16 ne doit pas rester artificiellement au stade de base).
-- Les combats suivants conservent leurs tailles progressives et utilisent le profil de niveau du prochain jalon obligatoire défini par la spec.
-- Corriger le générateur des boss Méga : la forme de base doit avoir un talent légal avant transformation ; la Méga-Gemme est conservée ; le talent Méga vient de la transformation. Méga-Ectoplasma de Mortimer est le cas minimal de régression à couvrir.
-- Mortimer doit remettre le Mega Ring après le badge 4 puis la CT, afin que la Méga joueur soit utilisable immédiatement avant le badge 5.
+- quatre slots `30/30/30/10` ;
+- Scorplane : Route 36 jour, early ;
+- Wattouat : Route 31 jour ;
+- les localisations/wiki doivent être régénérés depuis les JSON, espèces **et** niveaux ;
+- le prochain chantier encounters important est la couverture globale pré-Ligue : remplacer progressivement les doublons inutiles par les espèces encore uniquement post-Ligue, avec cohérence écologique. Ne pas randomiser.
 
-### Sélecteur starter
+## État boss/Méga courant
 
-- À la première ouverture d'une liste d'espèces, le curseur commence **en haut de la liste**, jamais sur `Retour`.
-- Si le joueur ouvre un starter puis annule la confirmation, il revient sur **exactement le Pokémon qu'il venait de sélectionner**, pour toutes les espèces. Le comportement observé avec Élekid qui renvoie sur `Retour` est un bug.
-- `Retour` reste la dernière ligne et ne devient jamais la position initiale par défaut.
-- L'œuf d'Orme ne peut pas redonner exactement le starter principal.
+- exactement une Méga par Champion à partir de Mortimer ;
+- unicité globale Champions / Conseil 4 / Rival / Rocket ;
+- Jeannine = Méga-Kravarech @ Dragalgite ;
+- forme de base légale avant Méga, talent Méga appliqué par la transformation.
 
-### UI / UX ROM
+## Priorités UI V1
 
-- Le Summary reste **À CORRIGER** : auditer d'abord BG/tilemaps/windows et supprimer les superpositions de libellés statiques avec les données dynamiques. Les retouches de couleur seules ne suffisent pas.
-- Si nécessaire, remplacer la page `CONTEST MOVES` par une page IV/EV dédiée ; cette solution est approuvée.
-- Palette custom : noir / rouge / gris, sans grande surface blanche.
-- Menus custom de boutique : **fond rouge, texte noir**, sélection clairement visible sans surlignage blanc dominant.
-- HUD combat : conserver les healthboxes sombres mais harmoniser aussi les panneaux d'action et d'attaques ; aucune grande zone blanc cassé/grise ne doit rester comme ancienne UI.
-- Finaliser les fenêtres PNJ/shop, textes longs, curseurs et autres polish rencontrés pendant une run.
+1. Summary structurel : BG/tilemaps/windows, doublons de texte, page IV/EV ;
+2. HUD combat : supprimer le rectangle blanc à gauche de la barre HP et harmoniser action/attaques ;
+3. boutiques : fond rouge, texte noir, sélection lisible ;
+4. fenêtres custom / polish restant.
 
-### Encounters
+Un validateur statique ne remplace jamais une observation ROM pour ces points.
 
-- Quatre vrais slots par table/méthode, pondérés `30/30/30/10`.
-- **Le niveau d'une zone est déterminé par son premier accès dans la progression de l'histoire, pas par la date de déblocage de Surf/Pêche/Éclate-Roc.** Une méthode débloquée plus tard ouvre ses slots mais ne rehausse pas artificiellement le niveau d'une ancienne zone.
-- Une zone accessible avant Albert doit rester dans la fenêtre du premier cap, soit typiquement `14–17` pour les tables conçues avec une largeur de 3 niveaux, avec les stades d'évolution cohérents à cette plage.
-- Route 36 est le cas témoin obligatoire : elle est accessible avant le badge 1, donc ses tables doivent être `14–17` max. L'actuel `before_blanche / cap 32` de `encounter_access_caps.json` est un **défaut connu à corriger**, pas une règle.
-- Les données canoniques et le moteur doivent être testés **en ROM**, pas seulement par JSON/validator.
-- La couverture, les caps de premier accès, habitats et stades d'évolution restent ceux de `ENCOUNTERS.md` une fois le dataset d'accès régénéré selon cette règle.
+## Wiki
 
-## Ordre de production actuel
+La passe owner de la PR #29 est la baseline. Ne pas restaurer une ancienne version et ne pas refaire le style global.
 
-### Décision owner prioritaire — rosters Rival/Rocket du 26-09
+Les corrections data doivent passer par les sources canoniques puis les générateurs wiki. Le synchroniseur Localisations/Pokédex doit rester idempotent et la recherche HTML doit refléter les espèces canoniques FR/EN.
 
-Avant toute poursuite du bloc rival/Rocket, relire [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Les anciennes compositions de `rival.json`, `rocket_progression.json` et des entrées Rocket de `bosses.json` sont **à régénérer** lorsqu'elles contredisent ce document. Ne pas conserver l'ancien tirage d'un starter parmi cinq : le rival possède désormais un starter fixe par archétype, des équipes Singles finalisées et une Méga déverrouillée après le badge 4. Pour Archer, la FINAL utilise **Méga-Sharpedo**, qui Méga-évolue immédiatement ; ne pas créer de logique Abri tour 1 -> Méga tour 2. Méga-Démolosse reste réservé à Marion.
+## Politique de validation
 
-### Bloc 1 — CORE / gameplay — INTÉGRÉ
-PR #22 fusionnée (`068c3a74`) : rival niveau/stade, rosters Rival/Rocket, talents pré-Méga, Mega Ring et logique starter/œuf sont intégrés et couverts automatiquement. Ne pas les recoder sans défaut démontré ; conserver les témoins ROM pour la candidate.
+Pendant le développement : tests ciblés du domaine + générateurs `--check`.
 
-### Bloc 2 — Encounters / progression — INTÉGRÉ
-PR #23 fusionnée (`96f0b2c8`) : 354 couples map/méthode utilisent le premier accès réel, 405 tables sont synchronisées et Route 36 est 14–17. Les déblocages de méthode ne participent plus au scaling. Ne pas rouvrir ce bloc sans défaut démontré.
+Avant merge vers `integration/v1` :
 
-### Bloc 3 — UI / UX ROM
-Summary en priorité, puis boutiques, HUD/action/moves, fenêtres custom et polish starter. Les contrôles visuels ROM sont obligatoires ; un validateur statique ne suffit pas à déclarer l'UI terminée.
+- validateurs pertinents verts ;
+- synchronisations `--check` vertes ;
+- build/smoke tests si code ou runtime modifié ;
+- CI verte.
 
-### Bloc 4 — Stabilisation / candidate owner
-Réconcilier et fusionner tout ce qui précède, CI verte, build propre, mettre à jour `PLAYTEST_STATUS.md`, puis seulement demander le playtest owner.
+Le playtest owner final n’est pas requis pour merger une correction automatisée propre. Les vérifications ROM restantes sont consignées comme telles.
 
-### Bloc 5 — Wiki / secondaire
-Le wiki reste géré séparément et ne doit pas consommer le chemin critique tant que CORE/encounters/UI ne sont pas une candidate jouable.
+Avant une candidate owner : CI verte sur le SHA exact, `make clean && make hns -j4`, puis checklist ROM de `PLAYTEST_STATUS.md`.
 
-## Validation proportionnée au risque
+## Compte rendu attendu
 
-Ne pas rejouer localement toute la non-régression à chaque petite correction. Pendant le développement : exécuter le validateur et les tests du domaine touché, puis un build incrémental si du code/runtime change. La CI de PR assure le contrôle documentaire, les validateurs, le build et un smoke test pour le code ; une PR docs/wiki ne compile pas la ROM. Après merge sur `integration/v1`, la CI exécute automatiquement la suite complète de régression. `make clean && make hns -j4` et la recette ROM complète sont réservés à une candidate owner, à une grosse passe transversale ou à un doute sur des artefacts anciens.
+Toujours fournir factuellement :
 
-Un test ciblé doit être préféré à une run owner complète : starter -> flow starter ; Summary -> Summary ; boss -> combat concerné. Ne demander une run de progression complète qu'une fois plusieurs blocs intégrés dans une candidate explicite.
+- SHA de départ et SHA final ;
+- branche/PR ;
+- fichiers modifiés ;
+- données/générateurs corrigés ;
+- tests et CI ;
+- synchronisations/idempotence ;
+- contrôles ROM encore non effectués.
 
-## Production par PR
-
-- Une branche de domaine issue du dernier `integration/v1` à la fois.
-- Chaque PR indique fichiers modifiés, différence vis-à-vis de la spec, statuts touchés, tests passés/échoués et contrôles manuels restants.
-- Rebase/réconcilie avant PR ; pas de force push sur `main`.
-- Ne réécris pas vitesse native, audio, shiny rate ou évolutions solo sans défaut démontré.
-- Le rival, Rocket, shops et encounters sont générés depuis leurs sources canoniques ; toute modification doit conserver les contrôles d'idempotence.
-- Ajouter/adapter les validateurs pour rejeter toute réutilisation non autorisée d'une Méga déjà réservée entre Champions, Conseil 4, rival et Rocket.
-- Shiny Only reste post-V1.
-
-## Portes de sortie
-
-Avant une candidate owner : validateurs actualisés, synchronisations `--check`, suite complète d'intégration verte, `make clean && make hns -j4`, puis checklist ROM de `PLAYTEST_STATUS.md`. Pour une PR ordinaire, ne lancer que les tests du domaine modifié et laisser la CI d'intégration rejouer la non-régression globale après merge.
-
-Un build réussi ne prouve pas le rendu UI, les encounters runtime ou le comportement des combats. Une feature nécessitant une observation en jeu reste `PARTIEL` / `À CORRIGER` jusqu'à cette observation.
+Ne jamais déclarer un test mGBA effectué s’il ne l’a pas été.
