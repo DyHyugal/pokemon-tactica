@@ -73,6 +73,7 @@ struct TacticaRivalMon
     u16 finalSpecies;
     enum Move moves[3][MAX_MON_MOVES];
     u16 finalItem;
+    enum Ability ability;
     const u8 *hardEvs;
     u8 nature;
     bool8 isSavedStarter;
@@ -97,6 +98,15 @@ static const struct RivalCounterCategories sRivalCounterCategories[] = {
     [FAMILY_ELECTRIC] = {1, {FAMILY_GROUND}},
     [FAMILY_GROUND] = {3, {FAMILY_WATER, FAMILY_GRASS, FAMILY_ICE}},
     [FAMILY_ICE] = {1, {FAMILY_FIRE}},
+};
+
+static const u16 sRivalFixedStarters[FAMILY_EEVEE] = {
+    [FAMILY_FIRE] = SPECIES_TORCHIC,
+    [FAMILY_WATER] = SPECIES_MUDKIP,
+    [FAMILY_GRASS] = SPECIES_TREECKO,
+    [FAMILY_ELECTRIC] = SPECIES_ELEKID,
+    [FAMILY_GROUND] = SPECIES_DRILBUR,
+    [FAMILY_ICE] = SPECIES_DARUMAKA_GALAR,
 };
 
 static const u16 sCategoryBoosters[] = {
@@ -332,8 +342,7 @@ static void UNUSED SelectRivalStarter(u16 playerSpecies)
         return;
 
     counterCategory = FamilyStarter_GetRivalCounterCategory(playerCategory, Random());
-    u16 rivalSpecies = sMenuSpecies[counterCategory][Random() % ARRAY_COUNT(sMenuSpecies[0])];
-    VarSet(VAR_FAMILY_RIVAL_SPECIES, rivalSpecies);
+    VarSet(VAR_FAMILY_RIVAL_SPECIES, sRivalFixedStarters[counterCategory]);
 }
 
 static void PushChoice(const u8 *text, u16 id)
@@ -668,6 +677,27 @@ static u16 GetTacticaRivalSpeciesAtLevel(u16 species, u16 finalSpecies, u8 level
 }
 #endif
 
+static bool32 TacticaSpeciesHasAbility(u16 species, enum Ability ability)
+{
+    u32 i;
+
+    if (ability == ABILITY_NONE)
+        return FALSE;
+    for (i = 0; i < NUM_ABILITY_SLOTS; i++)
+        if (GetSpeciesAbility(species, i) == ability)
+            return TRUE;
+    return FALSE;
+}
+
+static u16 TacticaRivalFinalItem(u16 item)
+{
+    if (item != ITEM_NONE
+     && GetItemHoldEffect(item) == HOLD_EFFECT_MEGA_STONE
+     && !FlagGet(FLAG_BADGE04_GET))
+        return ITEM_NONE;
+    return item;
+}
+
 bool32 FamilyStarter_ResolveRivalMon(u16 trainerId, u32 slot, struct TrainerMon *mon)
 {
 #if IS_HNS
@@ -683,8 +713,17 @@ bool32 FamilyStarter_ResolveRivalMon(u16 trainerId, u32 slot, struct TrainerMon 
 
     if (fight == 1)
     {
-        mon->species = savedStarter;
-        memset(mon->moves, MOVE_NONE, sizeof(mon->moves));
+        source = &sTacticaRivalMons[category][1];
+        mon->lvl = 17;
+        mon->species = GetTacticaRivalSpeciesAtLevel(source->baseSpecies, source->finalSpecies, mon->lvl, FALSE);
+        mon->heldItem = ITEM_NONE;
+        mon->nature = source->nature;
+        mon->ev = NULL;
+        mon->ability = ABILITY_NONE;
+        if (TacticaSpeciesHasAbility(mon->species, source->ability))
+            mon->ability = source->ability;
+        for (i = 0; i < MAX_MON_MOVES; i++)
+            mon->moves[i] = source->moves[TACTICA_RIVAL_EARLY][i];
         return TRUE;
     }
 
@@ -710,7 +749,10 @@ bool32 FamilyStarter_ResolveRivalMon(u16 trainerId, u32 slot, struct TrainerMon 
         mon->lvl,
         phase == TACTICA_RIVAL_FINAL
     );
-    mon->heldItem = phase == TACTICA_RIVAL_FINAL ? source->finalItem : ITEM_NONE;
+    mon->heldItem = phase == TACTICA_RIVAL_FINAL ? TacticaRivalFinalItem(source->finalItem) : ITEM_NONE;
+    mon->ability = ABILITY_NONE;
+    if (TacticaSpeciesHasAbility(mon->species, source->ability))
+        mon->ability = source->ability;
     mon->nature = source->nature;
     mon->ev = GetTrainerDifficultyLevel(trainerId) == DIFFICULTY_HARD ? source->hardEvs : NULL;
     for (i = 0; i < MAX_MON_MOVES; i++)
