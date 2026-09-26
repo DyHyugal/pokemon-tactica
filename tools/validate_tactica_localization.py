@@ -53,8 +53,8 @@ def validate_title_asset() -> None:
 
 def validate_wiki() -> None:
     languages = {
-        "FR": ("Accueil", "Guide-de-jeu", "Changements", "Pokedex", "Localisations", "Boss-et-Conseils", "Credits-et-Versions"),
-        "EN": ("Home", "Game-Guide", "Changes", "Pokedex", "Locations", "Bosses-and-Tips", "Credits-and-Versions"),
+        "FR": ("Accueil", "Guide-de-jeu", "Changements", "Pokedex", "Localisations", "Boss-et-Conseils", "Credits-et-Versions", "Roadmap"),
+        "EN": ("Home", "Game-Guide", "Changes", "Pokedex", "Locations", "Bosses-and-Tips", "Credits-and-Versions", "Roadmap"),
     }
     link_pattern = re.compile(r"\[[^]]+\]\(([^)#]+)(?:#[^)]+)?\)")
 
@@ -76,15 +76,61 @@ def validate_wiki() -> None:
         require(len(rows) == 463, f"{locations.relative_to(ROOT)} must contain one header and 462 encounter rows")
 
 
+
+def validate_fr_player_copy() -> None:
+    fr_locations = read("docs/FR/Localisations.md")
+    fr_guide = read("docs/FR/Guide-de-jeu.md")
+    fr_changes = read("docs/FR/Changements.md")
+    dex_detail = read("docs/assets/pokedex-detail.js")
+    localization = read("docs/assets/tactica-localization.js")
+
+    english_zone_markers = (
+        "Blackthorn City", "Burned Tower", "Celadon City", "Cerulean Cave",
+        "Cerulean City", "Cherrygrove City", "Cianwood City", "Cinnabar Island",
+        "Dark Cave", "Digletts Cave", "Dragons Den", "Ecruteak City",
+        "Fuchsia City", "Ice Path", "Ilex Forest", "Lake Of Rage", "Mt Moon",
+        "Mt Mortar", "Mt Silver", "National Park", "New Bark Town",
+        "Olivine City", "Pallet Town", "Rock Tunnel", "Ruins Of Alph",
+        "Seafoam Islands", "Slowpoke Well", "Sprout Tower", "Tin Tower",
+        "Union Cave", "Vermilion City", "Victory Road", "Violet City",
+        "Viridian City", "Viridian Forest", "Whirl Islands",
+    )
+    for marker in english_zone_markers:
+        require(marker not in fr_locations, f"FR Localisations still exposes English zone name: {marker}")
+
+    require(
+        "L'assistant d'Orme ne déclenche pas le choix du second starter" in fr_guide,
+        "FR guide still documents Elm's aide as the second-starter trigger",
+    )
+    for heading in ("**Feu**", "**Eau**", "**Plante**", "**Électrik**", "**Sol**", "**Glace**", "**Évoli**"):
+        require(heading in fr_guide, f"FR guide starter grouping missing: {heading}")
+
+    for npc in ("PNJ Objets", "PNJ Capacités / CT", "PNJ Méga-Gemmes"):
+        require(npc in fr_changes, f"FR Changes missing specialist shop description: {npc}")
+
+    require(
+        '''const description=lang==="fr"?"":''' in dex_detail,
+        "FR Pokédex can leak English ability descriptions",
+    )
+    require(
+        '''"dragon's maw":"Dent de Dragon"''' in localization,
+        "FR ability localization missing Dragon's Maw",
+    )
+    require(
+        '''"mind's eye":"Œil Mental"''' in localization,
+        "FR ability localization missing Mind's Eye",
+    )
+
 def main() -> int:
     validate_identity()
     validate_title_asset()
     validate_wiki()
+    validate_fr_player_copy()
     if ERRORS:
         for error in ERRORS:
             print(f"ERROR: {error}", file=sys.stderr)
         return 1
-    print("Tactica localization: identity, title asset and FR/EN wiki structure validated")
+    print("Tactica localization: identity, FR/EN wiki structure and player-facing FR copy validated")
     return 0
 
 
