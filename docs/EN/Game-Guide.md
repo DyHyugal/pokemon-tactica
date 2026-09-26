@@ -1,100 +1,123 @@
 [Home](Home.md) · [Game Guide](Game-Guide.md) · [Changes](Changes.md) · [Pokédex](Pokedex.md) · [Locations](Locations.md) · [Bosses & Tips](Bosses-and-Tips.md) · [Credits](Credits-and-Versions.md) · [Roadmap](Roadmap.md) · **[FR](../FR/Guide-de-jeu.md)**
 
-# Game Guide
+# Game Guide — concise walkthrough
 
-Pokémon Tactica is designed to let players build their own teams without forcing unnecessary grind. The wiki is a **team-preparation reference**: use the Pokédex and Locations to find a family, Changes to understand Tactica-specific edits, and Bosses & Tips to understand the opponent's game plan.
+This page is mainly a **where-do-I-go-next walkthrough**. It follows the main Heart & Soul story flow, adapted to Pokémon Tactica. Optional detours, minor items and wild encounters are intentionally left out: use **Pokédex**, **Locations** and **Bosses & Tips** to build and prepare your team.
 
-## Difficulty: NORMAL and HARD
+> Pokémon, levels, bosses and encounters come from Tactica. The Heart & Soul walkthrough is used only as a reference for story order and locations.
 
-Both difficulties use the **same game content**: the same boss rosters, species, sets, levels and mechanics.
+## Start → Badge 1: Falkner
 
-**NORMAL** keeps less optimized IV/EV scaling and AI. **HARD** adds the intended role-based IV/EV investment and more strategic AI. HARD therefore does not unlock exclusive content; it simply asks for tighter preparation.
+1. **New Bark Town** — configure your options, talk to Professor Elm and choose your Tactica starter.
+2. **Route 29 → Cherrygrove → Route 30** — reach Mr. Pokémon's house and obtain the Mystery Egg / Pokédex.
+3. Return toward **New Bark Town**: the first rival battle triggers on the way. Then return to Elm's Lab.
+4. Head back through **Routes 30 and 31** to **Violet City**.
+5. Clear **Sprout Tower** to finish the city's required progression.
+6. Challenge **Falkner**.
 
-## Useful settings
+**Tactica cap: 17.**
 
-The menu is organized around **Mode / Features / Randomizer / Nuzlocke / Difficulty / Challenges**. Recommended applies the intended defaults; Custom lets you tune them. **B = Save & Exit** saves the settings.
+## Badge 1 → Badge 2: Bugsy
 
-Native speed offers **x1 / x2 / x3 / x4** without speeding up music. Music and SFX/cries use independent volume settings: **MUTE / 20 / 40 / 60 / 80 / 100%**.
+1. After Falkner, follow Elm's aide event at the Pokémon Center: in Tactica this section leads to the **second starter through the Egg system**.
+2. Go south through **Route 32**, cross **Union Cave**, then **Route 33**.
+3. In **Azalea Town**, talk to Kurt and enter **Slowpoke Well** to remove Team Rocket.
+4. Return to the Gym and defeat **Bugsy**.
+5. When leaving Azalea to the west, prepare for the next **rival battle**.
+6. Cross **Ilex Forest** and obtain **Cut** to open the next route.
 
-Shiny Rate ranges from **1/8192 to 1/1**. Shiny Only is planned after V1 and is not part of this release.
+**Tactica cap: 25.**
 
-## Choosing a starter
+## Badge 2 → Badge 3: Whitney
 
-The selector offers 30 starters across six categories, plus Eevee.
+1. Continue through **Route 34** to **Goldenrod City**.
+2. Explore the **Underground** if needed, then visit the **Radio Tower**.
+3. Complete the Radio Tower quiz so Whitney returns to her Gym.
+4. Defeat **Whitney**.
+5. Afterward, visit the **Flower Shop** to obtain the item used on Sudowoodo on Route 36.
 
-| Category | Pokémon |
-|---|---|
-| Fire | Charmander · Torchic · Chimchar · Cyndaquil · Charcadet |
-| Water | Mudkip · Piplup · Froakie · Oshawott · Horsea |
-| Grass | Bulbasaur · Treecko · Snivy · Sprigatito · Grookey |
-| Electric | Elekid · Magnemite · Pawmi · Wattrel · Pichu |
-| Ground | Gligar · Drilbur · Sandile · Golett · Sandygast |
-| Ice | Alolan Vulpix · Snorunt · Swinub · Galarian Darumaka · Vanillite |
+**Tactica cap: 32.**
 
-Eevee is a separate path with its Eeveelutions. The rival receives a category designed to answer the player's choice, then keeps that starter and team identity throughout the adventure.
+## Badge 3 → Badge 4: Morty
 
-After Elm's Egg quest, the player chooses a **second starter** through the same system. The second choice cannot be exactly the same as the primary starter.
+1. Head north through **Route 35**, **National Park**, then **Route 36**.
+2. Use the Goldenrod item on **Sudowoodo**; obtain **Rock Smash** afterward.
+3. Continue through **Route 37** to **Ecruteak City**.
+4. Resolve the Rocket incident at the **Dance Theater** to obtain **Surf**.
+5. Explore the **Burned Tower**: the rival fight and legendary-beast event happen here.
+6. Challenge **Morty**.
+7. In Tactica, after the Badge and TM, Morty also gives the **Mega Ring**. Mega Evolution becomes available immediately, including the full section **between Badge 4 and Badge 5**.
 
-Relevant starter rewards are granted automatically when required by the intended choice: type booster and, where needed, evolution item.
+**Tactica cap: 38.**
 
-## Level Caps and progression
+## Badge 4 → Badge 5: Chuck
 
-The Level Cap follows major battles and **never moves backward**.
+1. Travel west via **Routes 38 and 39** to **Olivine City**.
+2. Climb the **Lighthouse** and talk to Jasmine next to Amphy; she sends you for medicine.
+3. Surf across **Routes 40 and 41** to reach **Cianwood City**.
+4. Obtain the **SecretPotion** from the pharmacy.
+5. Defeat **Chuck**; obtain **Fly** from the intended NPC afterward.
 
-| Milestone | Ace / cap |
-|---|---:|
-| Falkner | 17 |
-| Bugsy | 25 |
-| Whitney | 32 |
-| Morty | 38 |
-| Chuck | 45 |
-| Jasmine | 52 |
-| Pryce | 57 |
-| Clair | 64 |
-| Elite Four | 67 |
-| Champion | 70 |
+**Tactica cap: 45.**
 
-The rival uses the level profile of the **next mandatory boss**, keeping rival battles relevant as preparation rather than leaving them underleveled.
+## Badge 5 → Badge 6: Jasmine
 
-Rocket Executives use the latest relevant Gym/rival milestone **+2**. Consecutive Rocket fights do not chain another +2 from the previous Rocket fight.
+1. Return to the top of the **Olivine Lighthouse** and give Jasmine the SecretPotion.
+2. Once Amphy is healed, Jasmine returns to her Gym.
+3. Defeat **Jasmine**.
 
-## Mega Evolution
+**Tactica cap: 52.**
 
-Morty gives the **Mega Ring** after the **fourth Badge** and his TM, using the standard item-receive sequence. From that point onward the player can Mega Evolve immediately, including the entire section **between Badge 4 and Badge 5**.
+## Badge 6 → Badge 7: Pryce
 
-Playable Mega Stones are available from a dedicated NPC. Boss teams can also use a Mega when their battle plan calls for one.
+1. From Ecruteak, head east through **Route 42** to **Mahogany Town**.
+2. Travel through **Route 43** to the **Lake of Rage** and finish the Red Gyarados / Lance event.
+3. Return to Mahogany and infiltrate the **Rocket Hideout** under the shop.
+4. Finish the hideout, then defeat **Pryce**.
 
-## Encounters and Pokédex
+**Tactica cap: 57.**
 
-Main encounter tables use **four real slots** weighted **30 / 30 / 30 / 10**. Encounter methods remain separate where the engine supports them: grass/ground, Surf, fishing, and so on.
+## Badge 7 → Badge 8: Clair
 
-Distribution aims to make useful families available early enough while respecting habitat and progression. Final evolutions are generally kept for later areas, and wild evolutionary stages should remain coherent with their levels.
+1. After Pryce, return to **Goldenrod City**: Team Rocket has taken over the **Radio Tower**.
+2. Clear the Radio Tower, then the **Underground** section with the rival fight, and finish the Rocket takeover.
+3. Head east again: **Route 44 → Ice Path**. Pick up **Waterfall** while crossing.
+4. Reach **Blackthorn City** and defeat **Clair**.
+5. After the battle, complete **Dragon's Den** to fully validate the eighth Badge.
 
-When building a team:
-- use **Pokédex** to search a species by English or French name;
-- open **Locations** to see area, method, level and rate;
-- check **Changes** if that species was modified in Tactica.
+**Tactica cap: 64.**
 
-## Training NPC
+## First League
 
-The Training NPC removes grind without building the team for you. It covers **EXP up to the cap, IVs, EVs, EV reset, nature, ability and friendship**.
+1. Return to **New Bark Town** for Elm's reward.
+2. Complete the mandatory **Kimono Girls** sequence in Ecruteak and the inherited HnS legendary story sequence that opens the League route.
+3. From New Bark, cross **Route 27 / Tohjo Falls**, then **Route 26**.
+4. Clear **Victory Road**; the rival waits near the end.
+5. Enter the **Indigo Plateau** and defeat the **Elite Four and Champion**.
 
-It is especially useful before major fights: the goal is to let players test a team idea without spending hours reproducing competitive preparation manually.
+**Tactica caps: Elite Four = 67 · Champion = 70.**
 
-## Shops and preparation
+## Kanto → second League
 
-Special shops complement regular Poké Marts without bypassing story items.
+Kanto is more open, but this route gives a clear main progression:
 
-The move/TM NPC exposes the options intended by the build and filters moves by compatibility. The strategic-item shop groups relevant evolution and battle items not already covered by normal progression. A separate NPC sells playable Mega Stones.
+1. After the first League, obtain the **S.S. Ticket** from Elm and sail from **Olivine** to Kanto.
+2. **Vermilion City** — defeat **Lt. Surge**.
+3. Reach **Saffron City** and defeat **Sabrina**.
+4. Continue to **Celadon City** and defeat **Erika**.
+5. Travel down Cycling Road to **Fuchsia City** and defeat **Janine**.
+6. Head toward **Lavender / Power Plant** and complete the **Machine Part** quest.
+7. Return to **Cerulean City**, finish the Rocket sequence, then defeat **Misty**.
+8. Obtain the Radio upgrade in **Lavender**, wake Snorlax near Vermilion and cross **Diglett's Cave**.
+9. Reach **Pewter City** and defeat **Brock**.
+10. Continue through **Route 3 → Mt. Moon** for another rival battle.
+11. Reach **Cinnabar Island / Seafoam Islands** and defeat **Blaine**.
+12. With 15 Badges, speak to **Blue** on Cinnabar, then return to **Viridian City** for the sixteenth Badge.
+13. Return to the **Indigo Plateau**: the rival challenges you before the **second League**, then the Kanto Elite Four is available.
 
-## Reading a boss battle
+## If you are stuck
 
-**Bosses & Tips** lists the team, items, abilities, moves and overall battle plan. The advice explains **what the team is trying to achieve** — weather, terrain, hazards, screens, setup, pivots, Trick Room, and so on — without prescribing a turn-by-turn solution.
-
-When preparing a team, focus on:
-1. the boss's main win condition;
-2. the Pokémon that enable it;
-3. one or two answers your team can keep healthy;
-4. a way to regain tempo after a KO or forced switch.
-
-The wiki is intentionally a preparation tool, not an automatic walkthrough.
+- **A route is blocked?** Go back to your latest Badge and check the immediately following story event above.
+- **A fight is too hard?** Check **Bosses & Tips**, then use **Pokédex** and **Locations** to find answers for your team.
+- **Need to verify a Tactica change?** Use **Changes**: types, stats, abilities, learnsets, QoL and systems are centralized there.
+- **Looking for a Pokémon?** Click its Pokédex card to open its complete ROM-specific entry; the Locations button opens its encounter results directly.
