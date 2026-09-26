@@ -58,9 +58,11 @@ La ROM de référence du propriétaire doit donc être reconstruite après le pu
 ### Encounters
 
 - Quatre vrais slots par table/méthode, pondérés `30/30/30/10`.
+- **Le niveau d'une zone est déterminé par son premier accès dans la progression de l'histoire, pas par la date de déblocage de Surf/Pêche/Éclate-Roc.** Une méthode débloquée plus tard ouvre ses slots mais ne rehausse pas artificiellement le niveau d'une ancienne zone.
+- Une zone accessible avant Albert doit rester dans la fenêtre du premier cap, soit typiquement `14–17` pour les tables conçues avec une largeur de 3 niveaux, avec les stades d'évolution cohérents à cette plage.
+- Route 36 est le cas témoin obligatoire : elle est accessible avant le badge 1, donc ses tables doivent être `14–17` max. L'actuel `before_blanche / cap 32` de `encounter_access_caps.json` est un **défaut connu à corriger**, pas une règle.
 - Les données canoniques et le moteur doivent être testés **en ROM**, pas seulement par JSON/validator.
-- Route 36 est un point de contrôle obligatoire : comparer les slots jour/nuit réellement observés aux données canoniques du SHA testé. Si la ROM affiche encore les anciennes rencontres alors que les JSON sont différents, la candidate est invalide (mauvaise ROM, génération non appliquée ou runtime à diagnostiquer).
-- La couverture, les caps de premier accès, habitats et stades d'évolution restent ceux de `ENCOUNTERS.md` et des JSON.
+- La couverture, les caps de premier accès, habitats et stades d'évolution restent ceux de `ENCOUNTERS.md` une fois le dataset d'accès régénéré selon cette règle.
 
 ## Ordre de production actuel
 
