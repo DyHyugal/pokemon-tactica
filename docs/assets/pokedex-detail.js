@@ -35,8 +35,8 @@ const t=lang==="fr"?{
   locationCols:["Area","Method","Time","Levels"]
 };
 const typeFR={NORMAL:"Normal",FIGHTING:"Combat",FLYING:"Vol",POISON:"Poison",GROUND:"Sol",ROCK:"Roche",BUG:"Insecte",GHOST:"Spectre",STEEL:"Acier",FIRE:"Feu",WATER:"Eau",GRASS:"Plante",ELECTRIC:"Électrik",PSYCHIC:"Psy",ICE:"Glace",DRAGON:"Dragon",DARK:"Ténèbres",FAIRY:"Fée",STELLAR:"Stellaire"};
-const conditionFR={IF_MIN_FRIENDSHIP:"bonheur élevé",IF_GENDER:"genre",IF_TIME:"moment de la journée",IF_NOT_TIME:"hors d’un moment donné",IF_MIN_LEVEL:"niveau minimum",IF_HOLD_ITEM:"objet tenu",IF_KNOWS_MOVE:"capacité connue",IF_KNOWS_MOVE_TYPE:"type de capacité connu",IF_REGION:"région",IF_NOT_REGION:"hors région",IF_ATK_GT_DEF:"Attaque > Défense",IF_ATK_EQ_DEF:"Attaque = Défense",IF_ATK_LT_DEF:"Attaque < Défense"};
-const conditionEN={IF_MIN_FRIENDSHIP:"high friendship",IF_GENDER:"gender",IF_TIME:"time of day",IF_NOT_TIME:"outside a given time",IF_MIN_LEVEL:"minimum level",IF_HOLD_ITEM:"held item",IF_KNOWS_MOVE:"known move",IF_KNOWS_MOVE_TYPE:"known move type",IF_REGION:"region",IF_NOT_REGION:"outside region",IF_ATK_GT_DEF:"Attack > Defense",IF_ATK_EQ_DEF:"Attack = Defense",IF_ATK_LT_DEF:"Attack < Defense"};
+const conditionFR={IF_MIN_FRIENDSHIP:"bonheur élevé",IF_GENDER:"genre",IF_TIME:"moment de la journée",IF_NOT_TIME:"hors d’un moment donné",IF_MIN_LEVEL:"niveau minimum",IF_HOLD_ITEM:"objet tenu",IF_KNOWS_MOVE:"capacité connue",IF_KNOWS_MOVE_TYPE:"type de capacité connu",IF_REGION:"région",IF_NOT_REGION:"hors région",IF_IN_MAPSEC:"dans la zone",IF_IN_MAP:"sur la carte",IF_WEATHER:"météo",IF_SPECIES_IN_PARTY:"espèce dans l’équipe",IF_TYPE_IN_PARTY:"type dans l’équipe",IF_TRADE_PARTNER_SPECIES:"partenaire d’échange",IF_MIN_BEAUTY:"Beauté minimum",IF_MIN_OVERWORLD_STEPS:"pas effectués",IF_CRITICAL_HITS_GE:"coups critiques minimum",IF_RECOIL_DAMAGE_GE:"dégâts de recul minimum",IF_CURRENT_DAMAGE_GE:"dégâts subis minimum",IF_USED_MOVE_X_TIMES:"utilisations d’une capacité",IF_DEFEAT_X_WITH_ITEMS:"adversaires vaincus avec objet",IF_BAG_ITEM_COUNT:"quantité d’objet dans le Sac",IF_PID_MODULO_100_EQ:"condition interne de forme",IF_PID_MODULO_100_GT:"condition interne de forme",IF_PID_UPPER_MODULO_10_GT:"condition interne de forme",IF_PID_UPPER_MODULO_10_LT:"condition interne de forme",IF_ATK_GT_DEF:"Attaque > Défense",IF_ATK_EQ_DEF:"Attaque = Défense",IF_ATK_LT_DEF:"Attaque < Défense"};
+const conditionEN={IF_MIN_FRIENDSHIP:"high friendship",IF_GENDER:"gender",IF_TIME:"time of day",IF_NOT_TIME:"outside a given time",IF_MIN_LEVEL:"minimum level",IF_HOLD_ITEM:"held item",IF_KNOWS_MOVE:"known move",IF_KNOWS_MOVE_TYPE:"known move type",IF_REGION:"region",IF_NOT_REGION:"outside region",IF_IN_MAPSEC:"in area",IF_IN_MAP:"on map",IF_WEATHER:"weather",IF_SPECIES_IN_PARTY:"species in party",IF_TYPE_IN_PARTY:"type in party",IF_TRADE_PARTNER_SPECIES:"trade partner",IF_MIN_BEAUTY:"minimum Beauty",IF_MIN_OVERWORLD_STEPS:"overworld steps",IF_CRITICAL_HITS_GE:"minimum critical hits",IF_RECOIL_DAMAGE_GE:"minimum recoil damage",IF_CURRENT_DAMAGE_GE:"minimum damage taken",IF_USED_MOVE_X_TIMES:"move uses",IF_DEFEAT_X_WITH_ITEMS:"foes defeated with item",IF_BAG_ITEM_COUNT:"item quantity in Bag",IF_PID_MODULO_100_EQ:"internal form condition",IF_PID_MODULO_100_GT:"internal form condition",IF_PID_UPPER_MODULO_10_GT:"internal form condition",IF_PID_UPPER_MODULO_10_LT:"internal form condition",IF_ATK_GT_DEF:"Attack > Defense",IF_ATK_EQ_DEF:"Attack = Defense",IF_ATK_LT_DEF:"Attack < Defense"};
 const norm=v=>(v||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9♀♂]+/gi,"").toLowerCase();
 const title=v=>(v||"").toLowerCase().replace(/(^|[\s-])([a-zà-ÿ])/g,(m,a,b)=>a+b.toUpperCase());
 const humanConst=(v,prefix="")=>title((v||"").replace(prefix,"").replaceAll("_"," "));
@@ -119,6 +119,10 @@ function conditionValue(v){
   if(v.startsWith("ITEM_"))return itemName(v);
   if(v.startsWith("MOVE_"))return moveInfo(v.slice(5)).name;
   if(v.startsWith("TYPE_"))return typeName(v.slice(5));
+  if(v.startsWith("SPECIES_"))return speciesLabel(v);
+  if(v.startsWith("MAPSEC_"))return humanConst(v,"MAPSEC_");
+  if(v.startsWith("MAP_"))return humanConst(v,"MAP_");
+  if(v.startsWith("WEATHER_"))return humanConst(v,"WEATHER_");
   if(v==="MON_MALE")return lang==="fr"?"mâle":"male";
   if(v==="MON_FEMALE")return lang==="fr"?"femelle":"female";
   if(v==="TIME_DAY")return lang==="fr"?"jour":"day";
@@ -167,11 +171,12 @@ function evoHtml(constant){
   return '<div class="evo-nodes">'+nodeHtml+'</div><div class="evo-rules">'+edgeHtml+'</div>';
 }
 function abilitiesHtml(d){
-  const abs=d.abilities||[]; if(!abs.length)return '<p>'+t.none+'</p>';
-  return '<div class="ability-grid">'+abs.map((a,i)=>{
-    const hidden=(abs.length===2?i===1:i===abs.length-1);
+  const abs=(d.abilities||[]).map((a,i)=>({a,i})).filter(x=>x.a);
+  if(!abs.length)return '<p>'+t.none+'</p>';
+  return '<div class="ability-grid">'+abs.map(({a,i})=>{
+    const hidden=i===2;
     const ai=abilityInfo(a);
-    return '<div class="ability-card"><small>'+(hidden?t.hidden:t.regular)+'</small><strong>'+ai.name+'</strong></div>';
+    return '<div class="ability-card"><small>'+(hidden?t.hidden:t.regular)+'</small><strong>'+ai.name+'</strong>'+(lang==="en"&&ai.description?'<span>'+ai.description+'</span>':'')+'</div>';
   }).join("")+'</div>';
 }
 function moveTable(list){
@@ -192,7 +197,13 @@ async function fillLocations(constant,displayName,linkHref){
   box.innerHTML='<p class="muted">'+t.loading+'</p>';
   const doc=await locationDocument(); if(!doc){box.innerHTML='<p>'+t.noLocation+'</p>';return;}
   const d=S()[constant], candidates=[displayName,d?.name||"",speciesLabel(constant)].map(norm).filter(Boolean);
-  const rows=[...doc.querySelectorAll("#loc tbody tr")].filter(r=>candidates.some(c=>norm(r.dataset.search||"").includes(c))).slice(0,10);
+  const rows=[...doc.querySelectorAll("#loc tbody tr")].filter(r=>{
+    const slots=r.children[4]?.textContent||"";
+    return slots.split("·").some(slot=>{
+      const species=norm(slot.replace(/\b\d+%\b/g,"").trim());
+      return candidates.some(candidate=>species===candidate);
+    });
+  }).slice(0,10);
   if(!rows.length){box.innerHTML='<p>'+t.noLocation+'</p><a class="detail-location-link" href="'+linkHref+'">'+t.allLocations+' →</a>';return;}
   box.innerHTML='<div class="location-mini-grid">'+rows.map(r=>{const td=[...r.children];return '<div class="location-mini"><strong>'+td[0].textContent+'</strong><span>'+td[1].textContent+' · '+td[2].textContent+'</span><small>'+td[3].textContent+' · '+td[4].textContent+'</small></div>'}).join("")+'</div><a class="detail-location-link" href="'+linkHref+'">'+t.allLocations+' →</a>';
 }
