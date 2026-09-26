@@ -30,3 +30,10 @@ Le premier travail de Codex est un audit **code contre spec** `DONE / PARTIEL / 
 Une candidate owner n'existe que si toutes les corrections annoncées sont fusionnées dans `integration/v1`, la CI est verte sur le SHA exact, puis une ROM fraîche est reconstruite. **Un simple `git pull` ne met pas à jour `pokehns.gba`**, car les `*.gba` et `build/` sont ignorés par Git.
 
 Validation avant candidate owner : validateurs + synchronisations `--check`, groupes Settings/Audio/Native/Family/Evolution/Level Caps, boss NORMAL/HARD et Rocket, encounters standard/Safari/Headbutt, shops/rival, `make clean && make hns -j4`, puis checklist ROM de [PLAYTEST_STATUS.md](PLAYTEST_STATUS.md). Une vérification manuelle n'est déclarée faite que si elle a réellement eu lieu.
+
+
+## Décision owner 26-09-2026 — Rival et Team Rocket
+
+Les compositions finales et sets du rival et des Exécutifs Rocket sont désormais définis par [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). En cas de contradiction avec `data/spec/rival.json`, `data/spec/rocket_progression.json` ou les entrées Rocket de `data/spec/bosses.json`, **ROSTERS_ROCKET_RIVAL.md prévaut jusqu'à régénération de ces JSON**.
+
+Le rival utilise un starter fixe par archétype, développe progressivement son équipe 1 -> 3 -> 4 -> 6 et n'utilise sa Méga qu'après le badge 4. Les Exécutifs Rocket suivent 3 -> 4 -> 6 et n'utilisent leur Méga qu'en FINAL. Toute équipe météo/terrain du rival possède deux setters, avec exception documentée du Terrain Électrique où seul Wattapik dispose de Créa-Élec parmi les non-légendaires du build et Salarsen assure le second setup manuellement.
