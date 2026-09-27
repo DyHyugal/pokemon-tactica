@@ -786,9 +786,13 @@ void FamilyStarter_GiveEgg(void)
     gSpecialVar_Result = MON_CANT_GIVE;
     if (VarGet(VAR_FAMILY_EGG_SPECIES) != SPECIES_NONE
      || !CheckBagHasItem(ITEM_MYSTERY_EGG, 1)
-     || !IsMenuSpecies(species)
-     || (FlagGet(FLAG_SYS_POKEMON_GET) && species == FamilyStarter_GetPrimarySpecies()))
+     || !IsMenuSpecies(species))
         return;
+    if (FlagGet(FLAG_SYS_POKEMON_GET) && species == FamilyStarter_GetPrimarySpecies())
+    {
+        gSpecialVar_Result = MON_CANT_GIVE_DUPLICATE;
+        return;
+    }
     if (sFamilyStarterPreviewSpecies != species
      || sFamilyStarterPreviewPreference != preference
      || !sFamilyStarterPreviewIsEgg)

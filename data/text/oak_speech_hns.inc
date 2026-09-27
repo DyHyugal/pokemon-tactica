@@ -1,61 +1,62 @@
 gText_Oak_Welcome::
-	.string "Hi! Sorry to keep you waiting!\p"
-	.string "Welcome to the world of POKéMON!\p"
-	.string "My name is OAK.\p"
-	.string "People call me the POKéMON\n"
-	.string "PROFESSOR.\p"
+	.string "Bienvenue dans le monde de\n"
+	.string "POKéMON TACTICA !\p"
+	.string "Je suis le Professeur Chen.\p"
+	.string "Depuis toujours, humains et POKéMON\n"
+	.string "vivent, voyagent et combattent\l"
+	.string "côte à côte.\p"
 	.string "$"
 
 gText_Oak_Pokemon::
-	.string "This is what we call a “POKéMON.”\p"
-	.string "\n"
+	.string "Mais devenir un grand Dresseur\n"
+	.string "demande bien plus que de posséder\l"
+	.string "des POKéMON puissants.\p"
 	.string "$"
 
 gText_Oak_MainSpeech::
-	.string "This world is widely inhabited by\n"
-	.string "creatures known as POKéMON.\p"
-	.string "People and POKéMON live together,\n"
-	.string "by supporting each other.\p"
-	.string "Some people play with POKéMON,\n"
-	.string "some battle with them. \p"
-	.string "But we don't know everything about\n"
-	.string "POKéMON yet. \p"
-	.string "There are still many mysteries\n"
-	.string "to solve. That's why I study\l"
-	.string "POKéMON every day.\p"
+	.string "Il faut apprendre à connaître son\n"
+	.string "équipe, anticiper son adversaire\l"
+	.string "et savoir s'adapter à chaque combat.\p"
+	.string "À Johto, les Dresseurs que tu\n"
+	.string "rencontreras sont prêts à mettre\l"
+	.string "tes choix à l'épreuve.\p"
+	.string "Chaque Champion possède sa propre\n"
+	.string "stratégie, et chaque victoire te\l"
+	.string "demandera de progresser.\p"
+	.string "Ton aventure te mènera à travers\n"
+	.string "Johto… puis bien au-delà,\l"
+	.string "jusqu'à Kanto.\p"
 	.string "$"
 
 gText_Oak_AndYouAre::
-	.string "And you are?$"
+	.string "Mais avant tout… qui es-tu ?$"
 
 gText_Oak_BoyOrGirl::
-	.string "Are you a boy?\n"
-	.string "Or are you a girl?$"
+	.string "Es-tu un garçon ?\n"
+	.string "Ou une fille ?$"
 
 gText_Oak_WhatChallenge::
-	.string "What challenge are you\n"
-	.string "expecting?$"
+	.string "Quel défi recherches-tu ?$"
 
 gText_Oak_ChallengeSelected::
-	.string "That sounds like the right\n"
-	.string "level of challenge to me!$" 
+	.string "Parfait. Ce défi te correspond !$"
 
 gText_Oak_WhatsYourName::
-	.string "And what's your name?$"
+	.string "Et quel est ton nom ?$"
 
 gText_Oak_SoItsPlayer::
-	.string "Oh! So you're {PLAYER}{KUN}?$"
+	.string "Très bien… tu t'appelles {PLAYER} ?$"
 
 gText_Oak_YourePlayer::
-	.string "{PLAYER}{KUN}, are you ready?\p"
-	.string "Your very own adventure is about\n"
-	.string "to unfold.\p"
+	.string "{PLAYER}, construis ton équipe.\p"
+	.string "Découvre de nouvelles possibilités.\p"
+	.string "Et surtout… trouve ta propre façon\n"
+	.string "de combattre.\p"
 	.string "$"
 
 gText_Oak_AreYouReady::
-	.string "You'll face fun times and tough\n"
-	.string "challenges.\p"
-	.string "A world of dreams and adventures\n"
-	.string "with POKéMON awaits! Let's go!\p"
-	.string "I'll be seeing you later!\p"
+	.string "Car ici, une bonne stratégie peut\n"
+	.string "faire toute la différence.\p"
+	.string "Ton aventure dans POKéMON TACTICA\n"
+	.string "est sur le point de commencer !\p"
 	.string "$"
