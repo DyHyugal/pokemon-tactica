@@ -79,6 +79,50 @@ Ne pas recoder sans défaut démontré :
 
 Ce bloc remplace l’ancienne consigne « UI intégrée à confirmer ». Le playtest a été effectué sur une ROM fraîche jusqu’à Mortimer. Les observations ci-dessous sont des résultats runtime réels : **ne pas recoder les points validés** et traiter en priorité les défauts démontrés.
 
+## Ordre d’exécution obligatoire
+
+Ne pas traiter tous les écarts comme ayant la même priorité. L’ordre de reprise est le suivant :
+
+### PRIORITÉ 1 — bloquants / écarts majeurs par rapport au rendu et aux fonctions prévues
+
+À traiter **avant tout le reste**, dans cet ordre logique :
+
+1. **UI/UX réellement visible en ROM**
+   - Menu principal Start encore blanc/crème ;
+   - Summary toujours illisible/superposé ;
+   - HUD combat encore largement blanc + plaque blanche sous les PV ;
+   - boutiques/Centre commercial encore blanches et parfois sans contour complet ;
+   - menu Options : chevauchement du header depuis `B SAVE & EXIT`.
+   
+   Ces écarts sont prioritaires parce que les précédents commits avaient été considérés comme « UI intégrée », alors que le playtest démontre que le résultat prévu n’est pas atteint. Il faut corriger les vrais assets/tilemaps/windows/runtime utilisés, pas seulement satisfaire un validateur statique.
+
+2. **Difficulty absente des Settings**
+   - l’option doit être visible, utilisable et persistante ;
+   - ne pas toucher à Vitesse, Audio ou Shiny Rate, déjà validés.
+
+3. **Méga-Évolution cassée**
+   - Mortimer ne Méga-évolue pas ;
+   - le joueur reçoit bien le Mega Ring mais ne peut pas Méga-évoluer avec une pierre compatible ;
+   - corriger le flux complet boss + joueur avant de considérer la progression post-Mortimer testable.
+
+### PRIORITÉ 2 — divergences gameplay/progression confirmées
+
+À traiter après les trois blocs ci-dessus :
+
+- scaling/progression du Rival après Hector et entre Blanche/Mortimer ;
+- Blanche encore avec Teddiursa niv.29 au lieu de l’évolution légale attendue ;
+- texte de refus du second starter déjà possédé.
+
+### PRIORITÉ 3 — secondaires / polish
+
+À faire **après** les priorités 1 et 2 :
+
+- ajustements IA ciblés (Mimiqui, Provoc de Cornèbre, Téraclope) ;
+- corrections wiki/documentaires, dont Élektek → Élekable ;
+- autres petits écarts non bloquants.
+
+Ne pas consommer le gros du temps de reprise sur l’IA ou le wiki tant que **UI + Difficulty + Méga** ne sont pas corrigés et validés par les tests pertinents.
+
 ## 1. Réglages
 
 Validé en ROM :
