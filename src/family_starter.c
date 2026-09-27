@@ -73,6 +73,7 @@ struct TacticaRivalMon
     u16 finalSpecies;
     enum Move moves[3][MAX_MON_MOVES];
     u16 finalItem;
+    enum Ability ability;
     const u8 *hardEvs;
     u8 nature;
     bool8 isSavedStarter;
@@ -696,6 +697,16 @@ static u16 GetTacticaRivalSpeciesAtLevel(u16 species, u16 finalSpecies, u8 level
     }
     return species;
 }
+
+static enum Ability GetTacticaRivalLegalAbility(u16 species, enum Ability preferred)
+{
+    u32 i;
+
+    for (i = 0; i < ARRAY_COUNT(gSpeciesInfo[species].abilities); i++)
+        if (gSpeciesInfo[species].abilities[i] == preferred)
+            return preferred;
+    return ABILITY_NONE;
+}
 #endif
 
 bool32 FamilyStarter_ResolveRivalMon(u16 trainerId, u32 slot, struct TrainerMon *mon)
@@ -714,6 +725,7 @@ bool32 FamilyStarter_ResolveRivalMon(u16 trainerId, u32 slot, struct TrainerMon 
     if (fight == 1)
     {
         mon->species = GetTacticaRivalSpeciesAtLevel(savedStarter, SPECIES_NONE, mon->lvl, FALSE);
+        mon->ability = GetTacticaRivalLegalAbility(mon->species, sTacticaRivalStarterAbilities[category]);
         memset(mon->moves, MOVE_NONE, sizeof(mon->moves));
         return TRUE;
     }
@@ -724,6 +736,7 @@ bool32 FamilyStarter_ResolveRivalMon(u16 trainerId, u32 slot, struct TrainerMon 
     {
         mon->species = GetTacticaRivalSpeciesAtLevel(savedStarter, SPECIES_NONE, mon->lvl, phase == TACTICA_RIVAL_FINAL);
         mon->heldItem = phase == TACTICA_RIVAL_FINAL ? sTacticaRivalStarterItems[category] : ITEM_NONE;
+        mon->ability = GetTacticaRivalLegalAbility(mon->species, sTacticaRivalStarterAbilities[category]);
         mon->nature = gSpeciesInfo[mon->species].baseAttack >= gSpeciesInfo[mon->species].baseSpAttack
             ? NATURE_JOLLY : NATURE_TIMID;
         mon->ev = GetTrainerDifficultyLevel(trainerId) == DIFFICULTY_HARD
@@ -741,6 +754,7 @@ bool32 FamilyStarter_ResolveRivalMon(u16 trainerId, u32 slot, struct TrainerMon 
         phase == TACTICA_RIVAL_FINAL
     );
     mon->heldItem = phase == TACTICA_RIVAL_FINAL ? source->finalItem : ITEM_NONE;
+    mon->ability = GetTacticaRivalLegalAbility(mon->species, source->ability);
     mon->nature = source->nature;
     mon->ev = GetTrainerDifficultyLevel(trainerId) == DIFFICULTY_HARD ? source->hardEvs : NULL;
     for (i = 0; i < MAX_MON_MOVES; i++)

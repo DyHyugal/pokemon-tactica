@@ -191,6 +191,14 @@ expected_rival_finals = {
     "ground": ["Hippowdon", "saved starter", "Tyranitar", "Garchomp", "Gliscor", "Corviknight"],
     "ice": ["Vanilluxe", "saved starter", "Aurorus", "Sandslash-Alola", "Arctovish", "Baxcalibur"],
 }
+expected_rival_abilities = {
+    "fire": ["Drought", "Blaze", "Chlorophyll", "Drought", "Chlorophyll", "Protosynthesis"],
+    "water": ["Drizzle", "Torrent", "Swift Swim", "Drizzle", "Swift Swim", "Strong Jaw"],
+    "grass": ["Grassy Surge", "Chlorophyll", "Unburden", "Iron Barbs", "Good as Gold", "Seed Sower"],
+    "electric": ["Electric Surge", "Sheer Force", "Surge Surfer", "Punk Rock", "Quark Drive", "Lightning Rod"],
+    "ground": ["Sand Stream", "Sand Rush", "Sand Stream", "Rough Skin", "Poison Heal", "Mirror Armor"],
+    "ice": ["Snow Warning", "Gorilla Tactics", "Snow Warning", "Slush Rush", "Slush Rush", "Thermal Exchange"],
+}
 mega_stones = {"Blazikenite", "Swampertite", "Sceptilite", "Manectite", "Tyranitarite", "Baxcalibrite"}
 for category, party in rosters["categories"].items():
     require(len(party) == 6 and party[1]["species_source"] == "VAR_FAMILY_RIVAL_SPECIES",
@@ -200,6 +208,8 @@ for category, party in rosters["categories"].items():
     require(len(items) == len(set(items)), f"{category}: duplicate rival items")
     require([row.get("target_final_species", row["family"]) for row in party] ==
             expected_rival_finals[category], f"{category}: owner final roster")
+    require([row.get("ability") for row in party] == expected_rival_abilities[category],
+            f"{category}: canonical rival abilities")
     require(len(set(items) & mega_stones) == 1, f"{category}: exactly one final Mega")
     rules = rival["archetype_rules"][category]
     require(len(rules["setters"]) == 2, f"{category}: two setters")
@@ -240,6 +250,12 @@ teams = read("bosses.json")["teams"]
 bosses = collections.defaultdict(list)
 for row in teams:
     bosses[(row["region"], row["category"], row["boss"])].append(row)
+for row in (row for row in teams if row["species"] == "Infernape"):
+    require("Acrobatics" in row["moves"] and "Aerial Ace" not in row["moves"],
+            f"{row['boss']}: Infernape must use Acrobatics")
+altaria = next(row for row in teams if row["species"] == "Mega Altaria")
+require("Return" in altaria["moves"] and altaria.get("friendship") == 255,
+        "Mega Altaria must have maximum friendship for Return")
 rocket = read("rocket_progression.json")
 require(set(rocket["rosters"]) == {"Proton", "Petrel", "Ariana", "Archer"},
         "four Rocket executive progressions")

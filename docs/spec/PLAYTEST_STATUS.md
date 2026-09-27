@@ -26,6 +26,7 @@ Les points suivants ne doivent pas être recodés simplement parce qu’une obse
 - curseur initial et retour après annulation — garde-fous automatiques ;
 - premier rival niveau 17 et stade légal ;
 - rosters Rival/Rocket et progression ;
+- talents canoniques du Rival appliqués lorsqu’ils sont légaux pour la forme envoyée ;
 - talents pré-Méga légaux ;
 - Mega Ring placé après Mortimer ;
 - premier accès réel pour les encounters ;
@@ -39,6 +40,8 @@ Les points suivants ne doivent pas être recodés simplement parce qu’une obse
 - courbe Kanto 75 → 80 → 85 → 90 → 95 → 100 et groupe central partagé ;
 - match retour du Maître niveau 100 : source canonique/runtime/objets uniques ;
 - Boss & Conseils généré depuis les sources canoniques ; cartes et sprites du Guide générés ;
+- Boss & Conseils : cartes repliables, sprites de dresseurs/Pokémon et talents du Rival générés ;
+- Simiabraz de Chuck/Aldo avec Acrobatie et Méga-Altaria à bonheur maximal pour Retour ;
 - Localisations/Pokédex dérivés des encounters canoniques.
 
 ## Témoins ROM encore utiles
@@ -60,6 +63,7 @@ Les points suivants ne doivent pas être recodés simplement parce qu’une obse
 
 - premier rival : un Pokémon, niveau 17, stade légal ;
 - progression des tailles Rival/Rocket ;
+- vérifier en combat que les talents attendus du Rival se déclenchent selon les archétypes ;
 - Mortimer : Méga réellement déclenchée sans assert ;
 - réception du Mega Ring après badge 4 puis utilisation joueur avant badge 5 ;
 - Jeannine : Aéromite reste l’ace ; Kravarech du slot 3 entre avec un talent de base légal puis Méga-évolue en Adaptabilité.

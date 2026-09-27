@@ -451,7 +451,7 @@
         "Close Combat",
         "Flare Blitz",
         "Mach Punch",
-        "Aerial Ace"
+        "Acrobatics"
       ],
       "role": "Hyper offense breaker",
       "notes": "CORRECTED: not a suicide lead."
@@ -937,6 +937,7 @@
         "Earthquake",
         "Roost"
       ],
+      "friendship": 255,
       "role": "Bulky setup sweeper",
       "notes": null
     },
@@ -1243,7 +1244,7 @@
         "Close Combat",
         "Flare Blitz",
         "Mach Punch",
-        "Aerial Ace"
+        "Acrobatics"
       ],
       "role": "Hyper offense breaker",
       "notes": "CORRECTED: not a suicide lead."

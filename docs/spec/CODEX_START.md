@@ -41,6 +41,7 @@ Ne pas recoder sans défaut démontré :
 - œuf d’Orme distinct du starter principal ;
 - rival fixe par archétype, premier combat niveau 17, progression 1→3→4→6 ;
 - rosters Rival/Rocket courants ;
+- talents canoniques du Rival générés depuis `rival.json` et appliqués lorsqu’ils sont légaux pour la forme envoyée ;
 - Méga Rival après badge 4 ;
 - Méga Rocket uniquement FINAL ;
 - Archer = Méga-Sharpedo sans Abri préalable ;
@@ -65,6 +66,7 @@ Ne pas recoder sans défaut démontré :
 - unicité globale Champions / Conseil 4 / Rival / Rocket ;
 - Jeannine : Aéromite reste l’ace ; Méga-Kravarech @ Dragalgite remplace Gaulet ;
 - forme de base légale avant Méga, talent Méga appliqué par la transformation.
+- Simiabraz utilise Acrobatie chez Chuck et Aldo ; Méga-Altaria possède le bonheur runtime maximal pour Retour, sans exposer cette valeur dans le wiki.
 
 ## Progression Kanto courante
 
@@ -87,6 +89,8 @@ Un validateur statique ne remplace jamais une observation ROM pour ces points.
 La passe owner de la PR #29 est la baseline. Ne pas restaurer une ancienne version et ne pas refaire le style global.
 
 Les corrections data doivent passer par les sources canoniques puis les générateurs wiki. Boss & Conseils se régénère avec `tools/sync_tactica_boss_wiki.py` et les images locales avec `tools/sync_tactica_wiki_assets.py`. Le synchroniseur Localisations/Pokédex doit rester idempotent et la recherche HTML doit refléter les espèces canoniques FR/EN.
+
+Boss & Conseils conserve ses cartes repliables, ses sprites de dresseurs/Pokémon et les talents du Rival issus de la source canonique. La page Changements utilise deux colonnes indépendantes pour éviter les grands vides provoqués par la hauteur de la carte des starters.
 
 ## Politique de validation
 

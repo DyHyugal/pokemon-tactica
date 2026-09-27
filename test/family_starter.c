@@ -387,11 +387,13 @@ TEST("Family starter: saved rival category resolves every authored party phase")
     mon.lvl = 17;
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_1_HNS, 0, &mon));
     EXPECT_EQ(mon.species, SPECIES_COMBUSKEN);
+    EXPECT_EQ(mon.ability, ABILITY_BLAZE);
     EXPECT_EQ(mon.moves[0], MOVE_NONE);
 
     mon = (struct TrainerMon){.lvl = 15};
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_2_HNS, 0, &mon));
     EXPECT_EQ(mon.species, SPECIES_TORKOAL);
+    EXPECT_EQ(mon.ability, ABILITY_DROUGHT);
     EXPECT_EQ(mon.moves[0], MOVE_EMBER);
     EXPECT_EQ(mon.heldItem, ITEM_NONE);
     EXPECT_EQ(mon.ev, NULL);
@@ -404,6 +406,7 @@ TEST("Family starter: saved rival category resolves every authored party phase")
     mon = (struct TrainerMon){.lvl = 24};
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_3_HNS, 2, &mon));
     EXPECT_EQ(mon.species, SPECIES_IVYSAUR);
+    EXPECT_EQ(mon.ability, ABILITY_CHLOROPHYLL);
     EXPECT_EQ(mon.moves[0], MOVE_MEGA_DRAIN);
 
     mon = (struct TrainerMon){.lvl = 24};
@@ -416,6 +419,7 @@ TEST("Family starter: saved rival category resolves every authored party phase")
     mon = (struct TrainerMon){.lvl = 68};
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_7_HNS, 5, &mon));
     EXPECT_EQ(mon.species, SPECIES_GREAT_TUSK);
+    EXPECT_EQ(mon.ability, ABILITY_PROTOSYNTHESIS);
     EXPECT_EQ(mon.moves[0], MOVE_HEADLONG_RUSH);
     EXPECT_EQ(mon.heldItem, ITEM_ASSAULT_VEST);
 
@@ -431,14 +435,17 @@ TEST("Family starter: saved rival category resolves every authored party phase")
     mon = (struct TrainerMon){.lvl = 39};
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_4_HNS, 3, &mon));
     EXPECT_EQ(mon.species, SPECIES_POLITOED);
+    EXPECT_EQ(mon.ability, ABILITY_DRIZZLE);
 
     VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_ELEKID);
     mon = (struct TrainerMon){.lvl = 18};
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_2_HNS, 1, &mon));
     EXPECT_EQ(mon.species, SPECIES_ELEKID);
+    EXPECT_EQ(mon.ability, ABILITY_SHEER_FORCE);
     mon.lvl = 40;
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_4_HNS, 1, &mon));
     EXPECT_EQ(mon.species, SPECIES_ELECTIVIRE);
+    EXPECT_EQ(mon.ability, ABILITY_SHEER_FORCE);
     EXPECT_EQ(mon.heldItem, ITEM_EXPERT_BELT);
 
     EXPECT(!FamilyStarter_ResolveRivalMon(TRAINER_YOUNGSTER_CALVIN, 0, &mon));

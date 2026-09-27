@@ -49,7 +49,7 @@ Cette page est générée depuis les équipes canoniques du jeu. Elle permet de 
 
 | Pokémon | Niv. | Objet | Talent | Capacités |
 |---|---:|---|---|---|
-| Simiabraz | 42 | Orbe Vie | Poing de Fer | Close Combat · Boutefeu · Mach Punch · Aéropique |
+| Simiabraz | 42 | Orbe Vie | Poing de Fer | Close Combat · Boutefeu · Mach Punch · Acrobatie |
 | Bétochef | 42 | Orbe Flamme | Cran | Vampi-Poing · Mach Punch · Façade · Sabotage |
 | Brutalibré | 42 | Herbe Blanche | Délestage | Danse Lames · Acrobatie · Close Combat · Encore |
 | Lucario | 42 | Bandeau Muscle | Attention | Danse Lames · Close Combat · Vitesse Extrême · Mâchouille |
@@ -115,7 +115,7 @@ Cette page est générée depuis les équipes canoniques du jeu. Elle permet de 
 
 | Pokémon | Niv. | Objet | Talent | Capacités |
 |---|---:|---|---|---|
-| Simiabraz | 65 | Orbe Vie | Poing de Fer | Close Combat · Boutefeu · Mach Punch · Aéropique |
+| Simiabraz | 65 | Orbe Vie | Poing de Fer | Close Combat · Boutefeu · Mach Punch · Acrobatie |
 | Mackogneur | 67 | Veste de Combat | Annule Garde | Dynamo-Poing · Lame de Roc · Poing Glace · Sabotage |
 | Bétochef | 65 | Orbe Flamme | Cran | Vampi-Poing · Mach Punch · Façade · Sabotage |
 | Ékaïser | 65 | Spray Gorge | Anti-Bruit | Vibrécaille · Close Combat · Luminocanon · Lance-Flammes |
@@ -200,67 +200,67 @@ Le rival conserve un starter fixe selon son archétype et progresse de 1 à 3, 4
 
 | Pokémon | Niv. | Objet | Talent | Capacités |
 |---|---:|---|---|---|
-| Chartor | Dynamique | Grosses Bottes | — | Piège de Roc · Tour Rapide · Ébullilave · Bâillement |
-| Méga-Braségali | Dynamique | Braségalite | — | level-legal moves |
-| Florizarre | Dynamique | Orbe Vie | — | Croissance · Giga-Sangsue · Bombe Beurk · Telluriforce |
-| Feunard | Dynamique | Roche Chaude | — | Machination · Lance-Flammes · Lance-Soleil · Vibrobscur |
-| Lilligant-Hisui | Dynamique | Ceinture Pro | — | Danse Victoire · Lame Feuille · Close Combat · Cryo-Pirouette |
-| Fort-Ivoire | Dynamique | Veste de Combat | — | Assaut Frontal · Close Combat · Sabotage · Tête de Fer |
+| Chartor | Dynamique | Grosses Bottes | Sécheresse | Piège de Roc · Tour Rapide · Ébullilave · Bâillement |
+| Méga-Braségali | Dynamique | Braségalite | Turbo | level-legal moves |
+| Florizarre | Dynamique | Orbe Vie | Chlorophylle | Croissance · Giga-Sangsue · Bombe Beurk · Telluriforce |
+| Feunard | Dynamique | Roche Chaude | Sécheresse | Machination · Lance-Flammes · Lance-Soleil · Vibrobscur |
+| Lilligant-Hisui | Dynamique | Ceinture Pro | Chlorophylle | Danse Victoire · Lame Feuille · Close Combat · Cryo-Pirouette |
+| Fort-Ivoire | Dynamique | Veste de Combat | Paléosynthèse | Assaut Frontal · Close Combat · Sabotage · Tête de Fer |
 
 ### Archétype Eau — équipe progressive
 
 | Pokémon | Niv. | Objet | Talent | Capacités |
 |---|---:|---|---|---|
-| Bekipan | Dynamique | Roche Humide | — | Vent Violent · Surf · Demi-Tour · Atterrissage |
-| Méga-Laggron | Dynamique | Laggronite | — | level-legal moves |
-| Hyporoi | Dynamique | Orbe Vie | — | Surf · Draco-Choc · Laser Glace · Vent Violent |
-| Tarpaud | Dynamique | Restes | — | Ébullition · Encore · Requiem · Laser Glace |
-| Hastacuda | Dynamique | Bandeau Choix | — | Aqua-Brèche · Close Combat · Psycho-Croc · Eau Revoir |
-| Hydragon | Dynamique | Mouchoir Choix | — | Branchicrok · Mâchouille · Psycho-Croc · Crocs Givre |
+| Bekipan | Dynamique | Roche Humide | Crachin | Vent Violent · Surf · Demi-Tour · Atterrissage |
+| Méga-Laggron | Dynamique | Laggronite | Glissade | level-legal moves |
+| Hyporoi | Dynamique | Orbe Vie | Glissade | Surf · Draco-Choc · Laser Glace · Vent Violent |
+| Tarpaud | Dynamique | Restes | Crachin | Ébullition · Encore · Requiem · Laser Glace |
+| Hastacuda | Dynamique | Bandeau Choix | Glissade | Aqua-Brèche · Close Combat · Psycho-Croc · Eau Revoir |
+| Hydragon | Dynamique | Mouchoir Choix | Prognathe | Branchicrok · Mâchouille · Psycho-Croc · Crocs Givre |
 
 ### Archétype Plante — équipe progressive
 
 | Pokémon | Niv. | Objet | Talent | Capacités |
 |---|---:|---|---|---|
-| Gorythmic | Dynamique | Champ’Duit | — | Gliss’Herbe · Martobois · Sabotage · Demi-Tour |
-| Méga-Jungko | Dynamique | Jungkite | — | level-legal moves |
-| Brutalibré | Dynamique | Graine Herbe | — | Danse Lames · Acrobatie · Close Combat · Encore |
-| Noacier | Dynamique | Restes | — | Piège de Roc · Vampigraine · Mégafouet · Gyroballe |
-| Gromago | Dynamique | Ballon | — | Machination · Ruée d'Or · Ball’Ombre · Soin |
-| Arboliva | Dynamique | Baie Sitrus | — | Giga-Sangsue · Mégaphone · Telluriforce · Vole-Force |
+| Gorythmic | Dynamique | Champ’Duit | Créa-Herbe | Gliss’Herbe · Martobois · Sabotage · Demi-Tour |
+| Méga-Jungko | Dynamique | Jungkite | Chlorophylle | level-legal moves |
+| Brutalibré | Dynamique | Graine Herbe | Délestage | Danse Lames · Acrobatie · Close Combat · Encore |
+| Noacier | Dynamique | Restes | Épine de Fer | Piège de Roc · Vampigraine · Mégafouet · Gyroballe |
+| Gromago | Dynamique | Ballon | Corps en Or | Machination · Ruée d'Or · Ball’Ombre · Soin |
+| Arboliva | Dynamique | Baie Sitrus | Semencier | Giga-Sangsue · Mégaphone · Telluriforce · Vole-Force |
 
 ### Archétype Électrik — équipe progressive
 
 | Pokémon | Niv. | Objet | Talent | Capacités |
 |---|---:|---|---|---|
-| Wattapik | Dynamique | Champ’Duit | — | Picots · Soin · Coup d’Jus · Souvenir |
-| Élekid | Dynamique | Ceinture Pro | — | level-legal moves |
-| Raichu-Alola | Dynamique | Orbe Vie | — | Machination · Tonnerre · Psyko · Surf |
-| Salarsen | Dynamique | Spray Gorge | — | Champ Électrifié · Overdrive · Bang Sonique · Bombe Beurk |
-| Paume-de-Fer | Dynamique | Veste de Combat | — | Vampi-Poing · Éclair Fou · Poing Glace · Change Éclair |
-| Méga-Élecsprint | Dynamique | Élecsprintite | — | Tonnerre · Surchauffe · Change Éclair · Rayon Signal |
+| Wattapik | Dynamique | Champ’Duit | Créa-Élec | Picots · Soin · Coup d’Jus · Souvenir |
+| Élekid | Dynamique | Ceinture Pro | Sans Limite | level-legal moves |
+| Raichu-Alola | Dynamique | Orbe Vie | Surf Caudal | Machination · Tonnerre · Psyko · Surf |
+| Salarsen | Dynamique | Spray Gorge | Punk Rock | Champ Électrifié · Overdrive · Bang Sonique · Bombe Beurk |
+| Paume-de-Fer | Dynamique | Veste de Combat | Charge Quantique | Vampi-Poing · Éclair Fou · Poing Glace · Change Éclair |
+| Méga-Élecsprint | Dynamique | Élecsprintite | Intimidation | Tonnerre · Surchauffe · Change Éclair · Rayon Signal |
 
 ### Archétype Sol — équipe progressive
 
 | Pokémon | Niv. | Objet | Talent | Capacités |
 |---|---:|---|---|---|
-| Hippodocus | Dynamique | Roche Lisse | — | Piège de Roc · Séisme · Paresse · Cyclone |
-| Rototaupe | Dynamique | Orbe Vie | — | level-legal moves |
-| Méga-Tyranocif | Dynamique | Tyranocivite | — | Danse Draco · Mâchouille · Éboulement · Poing Glace |
-| Carchacrok | Dynamique | Baie Nanone | — | Danse Lames · Séisme · Draco-Griffe · Tête de Fer |
-| Scorvol | Dynamique | Orbe Toxique | — | Séisme · Sabotage · Toxik · Atterrissage |
-| Corvaillus | Dynamique | Restes | — | Mur de Fer · Big Splash · Rapace · Atterrissage |
+| Hippodocus | Dynamique | Roche Lisse | Sable Volant | Piège de Roc · Séisme · Paresse · Cyclone |
+| Rototaupe | Dynamique | Orbe Vie | Baigne Sable | level-legal moves |
+| Méga-Tyranocif | Dynamique | Tyranocivite | Sable Volant | Danse Draco · Mâchouille · Éboulement · Poing Glace |
+| Carchacrok | Dynamique | Baie Nanone | Peau Dure | Danse Lames · Séisme · Draco-Griffe · Tête de Fer |
+| Scorvol | Dynamique | Orbe Toxique | Soin Poison | Séisme · Sabotage · Toxik · Atterrissage |
+| Corvaillus | Dynamique | Restes | Armure Miroir | Mur de Fer · Big Splash · Rapace · Atterrissage |
 
 ### Archétype Glace — équipe progressive
 
 | Pokémon | Niv. | Objet | Talent | Capacités |
 |---|---:|---|---|---|
-| Sorbouboul | Dynamique | Roche Glace | — | Blizzard · Lyophilisation · Luminocanon · Provoc |
-| Darumaka-Galar | Dynamique | Bandeau Choix | — | level-legal moves |
-| Dragmara | Dynamique | Lunettes Sages | — | Blizzard · Lyophilisation · Telluriforce · Tonnerre |
-| Sandslash-Alola | Dynamique | Orbe Vie | — | Danse Lames · Chute Glace · Tête de Fer · Séisme |
-| Hydragla | Dynamique | Lumargile | — | Chute Glace · Voile Aurore · Branchicrok · Éboulement |
-| Méga-Glaivodo | Dynamique | Baxcalibrite | — | Danse Draco · Charge Glaive · Chute Glace · Séisme |
+| Sorbouboul | Dynamique | Roche Glace | Alerte Neige | Blizzard · Lyophilisation · Luminocanon · Provoc |
+| Darumaka-Galar | Dynamique | Bandeau Choix | Entêtement | level-legal moves |
+| Dragmara | Dynamique | Lunettes Sages | Alerte Neige | Blizzard · Lyophilisation · Telluriforce · Tonnerre |
+| Sandslash-Alola | Dynamique | Orbe Vie | Chasse-Neige | Danse Lames · Chute Glace · Tête de Fer · Séisme |
+| Hydragla | Dynamique | Lumargile | Chasse-Neige | Chute Glace · Voile Aurore · Branchicrok · Éboulement |
+| Méga-Glaivodo | Dynamique | Baxcalibrite | Thermodynamique | Danse Draco · Charge Glaive · Chute Glace · Séisme |
 
 ## Kanto
 

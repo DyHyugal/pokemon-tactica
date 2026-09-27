@@ -177,7 +177,8 @@
           },
           "final_item": "Heavy-Duty Boots",
           "nature": "Bold",
-          "hard_evs": "252 HP / 252 Def / 4 SpD"
+          "hard_evs": "252 HP / 252 Def / 4 SpD",
+          "ability": "Drought"
         },
         {
           "family": "saved starter",
@@ -187,7 +188,9 @@
           "final_item": "Blazikenite",
           "mega_species": "Mega Blaziken",
           "nature": "Jolly",
-          "hard_evs": "252 Atk / 252 Spe / 4 HP"
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "ability": "Blaze",
+          "mega_ability": "Speed Boost"
         },
         {
           "family": "Bulbasaur",
@@ -215,7 +218,8 @@
           },
           "final_item": "Life Orb",
           "nature": "Modest",
-          "hard_evs": "252 SpA / 252 Spe / 4 HP"
+          "hard_evs": "252 SpA / 252 Spe / 4 HP",
+          "ability": "Chlorophyll"
         },
         {
           "family": "Vulpix",
@@ -243,7 +247,8 @@
           },
           "final_item": "Heat Rock",
           "nature": "Timid",
-          "hard_evs": "252 SpA / 252 Spe / 4 HP"
+          "hard_evs": "252 SpA / 252 Spe / 4 HP",
+          "ability": "Drought"
         },
         {
           "family": "Lilligant-Hisui",
@@ -271,7 +276,8 @@
           },
           "final_item": "Expert Belt",
           "nature": "Jolly",
-          "hard_evs": "252 Atk / 252 Spe / 4 HP"
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "ability": "Chlorophyll"
         },
         {
           "family": "Great Tusk",
@@ -299,7 +305,8 @@
           },
           "final_item": "Assault Vest",
           "nature": "Adamant",
-          "hard_evs": "252 Atk / 252 HP / 4 SpD"
+          "hard_evs": "252 Atk / 252 HP / 4 SpD",
+          "ability": "Protosynthesis"
         }
       ],
       "water": [
@@ -329,7 +336,8 @@
           },
           "final_item": "Damp Rock",
           "nature": "Timid",
-          "hard_evs": "252 SpA / 252 Spe / 4 HP"
+          "hard_evs": "252 SpA / 252 Spe / 4 HP",
+          "ability": "Drizzle"
         },
         {
           "family": "saved starter",
@@ -339,7 +347,9 @@
           "final_item": "Swampertite",
           "mega_species": "Mega Swampert",
           "nature": "Adamant",
-          "hard_evs": "252 Atk / 252 Spe / 4 HP"
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "ability": "Torrent",
+          "mega_ability": "Swift Swim"
         },
         {
           "family": "Horsea",
@@ -367,7 +377,8 @@
           },
           "final_item": "Life Orb",
           "nature": "Modest",
-          "hard_evs": "252 SpA / 252 Spe / 4 HP"
+          "hard_evs": "252 SpA / 252 Spe / 4 HP",
+          "ability": "Swift Swim"
         },
         {
           "family": "Poliwag",
@@ -395,7 +406,8 @@
           },
           "final_item": "Leftovers",
           "nature": "Bold",
-          "hard_evs": "252 HP / 252 Def / 4 SpD"
+          "hard_evs": "252 HP / 252 Def / 4 SpD",
+          "ability": "Drizzle"
         },
         {
           "family": "Arrokuda",
@@ -423,7 +435,8 @@
           },
           "final_item": "Choice Band",
           "nature": "Jolly",
-          "hard_evs": "252 Atk / 252 Spe / 4 HP"
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "ability": "Swift Swim"
         },
         {
           "family": "Dracovish",
@@ -451,7 +464,8 @@
           },
           "final_item": "Choice Scarf",
           "nature": "Jolly",
-          "hard_evs": "252 Atk / 252 Spe / 4 HP"
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "ability": "Strong Jaw"
         }
       ],
       "grass": [
@@ -481,7 +495,8 @@
           },
           "final_item": "Terrain Extender",
           "nature": "Adamant",
-          "hard_evs": "252 Atk / 252 Spe / 4 HP"
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "ability": "Grassy Surge"
         },
         {
           "family": "saved starter",
@@ -491,7 +506,9 @@
           "final_item": "Sceptilite",
           "mega_species": "Mega Sceptile",
           "nature": "Jolly",
-          "hard_evs": "252 Atk / 252 Spe / 4 HP"
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "ability": "Chlorophyll",
+          "mega_ability": "Chlorophyll"
         },
         {
           "family": "Hawlucha",
@@ -519,7 +536,8 @@
           },
           "final_item": "Grassy Seed",
           "nature": "Jolly",
-          "hard_evs": "252 Atk / 252 Spe / 4 HP"
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "ability": "Unburden"
         },
         {
           "family": "Ferroseed",
@@ -547,7 +565,8 @@
           },
           "final_item": "Leftovers",
           "nature": "Relaxed",
-          "hard_evs": "252 HP / 252 Def / 4 SpD"
+          "hard_evs": "252 HP / 252 Def / 4 SpD",
+          "ability": "Iron Barbs"
         },
         {
           "family": "Gholdengo",
@@ -575,7 +594,8 @@
           },
           "final_item": "Air Balloon",
           "nature": "Timid",
-          "hard_evs": "252 SpA / 252 Spe / 4 HP"
+          "hard_evs": "252 SpA / 252 Spe / 4 HP",
+          "ability": "Good as Gold"
         },
         {
           "family": "Arboliva",
@@ -603,7 +623,8 @@
           },
           "final_item": "Sitrus Berry",
           "nature": "Modest",
-          "hard_evs": "252 HP / 252 SpA / 4 SpD"
+          "hard_evs": "252 HP / 252 SpA / 4 SpD",
+          "ability": "Seed Sower"
         }
       ],
       "electric": [
@@ -633,7 +654,8 @@
           },
           "final_item": "Terrain Extender",
           "nature": "Bold",
-          "hard_evs": "252 HP / 252 Def / 4 SpD"
+          "hard_evs": "252 HP / 252 Def / 4 SpD",
+          "ability": "Electric Surge"
         },
         {
           "family": "saved starter",
@@ -643,7 +665,8 @@
           "final_item": "Expert Belt",
           "mega_species": null,
           "nature": "Jolly",
-          "hard_evs": "252 Atk / 252 Spe / 4 HP"
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "ability": "Sheer Force"
         },
         {
           "family": "Raichu-Alola",
@@ -671,7 +694,8 @@
           },
           "final_item": "Life Orb",
           "nature": "Timid",
-          "hard_evs": "252 SpA / 252 Spe / 4 HP"
+          "hard_evs": "252 SpA / 252 Spe / 4 HP",
+          "ability": "Surge Surfer"
         },
         {
           "family": "Toxel",
@@ -699,7 +723,8 @@
           },
           "final_item": "Throat Spray",
           "nature": "Modest",
-          "hard_evs": "252 SpA / 252 Spe / 4 HP"
+          "hard_evs": "252 SpA / 252 Spe / 4 HP",
+          "ability": "Punk Rock"
         },
         {
           "family": "Iron Hands",
@@ -727,7 +752,8 @@
           },
           "final_item": "Assault Vest",
           "nature": "Adamant",
-          "hard_evs": "252 HP / 252 Atk / 4 SpD"
+          "hard_evs": "252 HP / 252 Atk / 4 SpD",
+          "ability": "Quark Drive"
         },
         {
           "family": "Manectric",
@@ -755,7 +781,9 @@
           },
           "final_item": "Manectite",
           "nature": "Timid",
-          "hard_evs": "252 SpA / 252 Spe / 4 HP"
+          "hard_evs": "252 SpA / 252 Spe / 4 HP",
+          "ability": "Lightning Rod",
+          "mega_ability": "Intimidate"
         }
       ],
       "ground": [
@@ -785,7 +813,8 @@
           },
           "final_item": "Smooth Rock",
           "nature": "Impish",
-          "hard_evs": "252 HP / 252 Def / 4 SpD"
+          "hard_evs": "252 HP / 252 Def / 4 SpD",
+          "ability": "Sand Stream"
         },
         {
           "family": "saved starter",
@@ -795,7 +824,8 @@
           "final_item": "Life Orb",
           "mega_species": null,
           "nature": "Jolly",
-          "hard_evs": "252 Atk / 252 Spe / 4 HP"
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "ability": "Sand Rush"
         },
         {
           "family": "Larvitar",
@@ -823,7 +853,9 @@
           },
           "final_item": "Tyranitarite",
           "nature": "Jolly",
-          "hard_evs": "252 Atk / 252 Spe / 4 HP"
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "ability": "Sand Stream",
+          "mega_ability": "Sand Stream"
         },
         {
           "family": "Gible",
@@ -851,7 +883,8 @@
           },
           "final_item": "Yache Berry",
           "nature": "Jolly",
-          "hard_evs": "252 Atk / 252 Spe / 4 HP"
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "ability": "Rough Skin"
         },
         {
           "family": "Gligar",
@@ -879,7 +912,8 @@
           },
           "final_item": "Toxic Orb",
           "nature": "Impish",
-          "hard_evs": "252 HP / 252 Def / 4 SpD"
+          "hard_evs": "252 HP / 252 Def / 4 SpD",
+          "ability": "Poison Heal"
         },
         {
           "family": "Corviknight",
@@ -907,7 +941,8 @@
           },
           "final_item": "Leftovers",
           "nature": "Impish",
-          "hard_evs": "252 HP / 252 Def / 4 SpD"
+          "hard_evs": "252 HP / 252 Def / 4 SpD",
+          "ability": "Mirror Armor"
         }
       ],
       "ice": [
@@ -937,7 +972,8 @@
           },
           "final_item": "Icy Rock",
           "nature": "Timid",
-          "hard_evs": "252 SpA / 252 Spe / 4 HP"
+          "hard_evs": "252 SpA / 252 Spe / 4 HP",
+          "ability": "Snow Warning"
         },
         {
           "family": "saved starter",
@@ -947,7 +983,8 @@
           "final_item": "Choice Band",
           "mega_species": null,
           "nature": "Jolly",
-          "hard_evs": "252 Atk / 252 Spe / 4 HP"
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "ability": "Gorilla Tactics"
         },
         {
           "family": "Amaura",
@@ -975,7 +1012,8 @@
           },
           "final_item": "Wise Glasses",
           "nature": "Modest",
-          "hard_evs": "252 HP / 252 SpA / 4 SpD"
+          "hard_evs": "252 HP / 252 SpA / 4 SpD",
+          "ability": "Snow Warning"
         },
         {
           "family": "Sandshrew-Alola",
@@ -1003,7 +1041,8 @@
           },
           "final_item": "Life Orb",
           "nature": "Jolly",
-          "hard_evs": "252 Atk / 252 Spe / 4 HP"
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "ability": "Slush Rush"
         },
         {
           "family": "Arctovish",
@@ -1031,7 +1070,8 @@
           },
           "final_item": "Light Clay",
           "nature": "Adamant",
-          "hard_evs": "252 Atk / 252 Spe / 4 HP"
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "ability": "Slush Rush"
         },
         {
           "family": "Baxcalibur",
@@ -1059,7 +1099,9 @@
           },
           "final_item": "Baxcalibrite",
           "nature": "Jolly",
-          "hard_evs": "252 Atk / 252 Spe / 4 HP"
+          "hard_evs": "252 Atk / 252 Spe / 4 HP",
+          "ability": "Thermal Exchange",
+          "mega_ability": "Thermal Exchange"
         }
       ]
     }
