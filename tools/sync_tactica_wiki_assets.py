@@ -20,7 +20,7 @@ def write_or_check(path: Path, image: Image.Image, check: bool) -> None:
         if not path.exists():
             raise SystemExit(f"Wiki asset is stale; run tools/sync_tactica_wiki_assets.py: {path}")
         with Image.open(path) as current:
-            if current.mode != image.mode or current.size != image.size or current.tobytes() != image.tobytes():
+            if current.size != image.size or current.convert("RGBA").tobytes() != image.convert("RGBA").tobytes():
                 raise SystemExit(f"Wiki asset is stale; run tools/sync_tactica_wiki_assets.py: {path}")
     else:
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -38,6 +38,29 @@ def transparent_frame(path: Path, size: tuple[int, int] = (64, 64)) -> Image.Ima
         rgba.putalpha(alpha)
         return rgba
     return frame.convert("RGBA")
+
+
+TRAINER_ASSETS = (
+    "archer_hns.png", "ariana_hns.png", "champion_lance_hns.png",
+    "elite_four_bruno_hns.png", "elite_four_karen_hns.png", "elite_four_koga_hns.png",
+    "elite_four_will_hns.png", "leader_blaine_hns.png", "leader_blue_hns.png",
+    "leader_brock_hns.png", "leader_bugsy_hns.png", "leader_chuck_hns.png",
+    "leader_clair_hns.png", "leader_erika_hns.png", "leader_falkner_hns.png",
+    "leader_janine_hns.png", "leader_jasmine_hns.png", "leader_misty_hns.png",
+    "leader_morty_hns.png", "leader_pryce_hns.png", "leader_sabrina_hns.png",
+    "leader_surge_hns.png", "leader_whitney_hns.png", "petrel_hns.png",
+    "proton_hns.png", "silver_hns.png",
+)
+
+
+def transparent_indexed_frame(path: Path, size: tuple[int, int] = (64, 64)) -> Image.Image:
+    """Preserve indexed trainer art while making engine palette index 0 transparent."""
+    source = Image.open(path)
+    frame = source.crop((0, 0, *size))
+    if frame.mode == "P":
+        frame.info["transparency"] = 0
+        return frame
+    return transparent_frame(path, size)
 
 
 def region_map(name: str) -> Image.Image:
@@ -91,6 +114,14 @@ def synchronize(check: bool) -> None:
         source = ROOT / "graphics" / "pokemon" / "charizard" / form / "front.png"
         output = ASSETS / f"mega-charizard-{form[-1]}.png"
         write_or_check(output, transparent_frame(source), check)
+
+    trainer_source = ROOT / "graphics" / "trainers" / "front_pics"
+    for filename in TRAINER_ASSETS:
+        write_or_check(
+            ASSETS / "trainers" / filename,
+            transparent_indexed_frame(trainer_source / filename),
+            check,
+        )
 
 
 if __name__ == "__main__":
