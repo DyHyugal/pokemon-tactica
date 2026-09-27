@@ -122,9 +122,10 @@ Ne pas traiter tous les écarts comme ayant la même priorité. L’ordre de rep
 - ajustements IA ciblés (Mimiqui, Provoc de Cornèbre, Téraclope) ;
 - autres petits écarts non bloquants.
 
-Les deux retours wiki suivants sont désormais traités par la baseline wiki dédiée et **ne doivent pas être repris** :
-- Élektek → Élekable : une seule méthode joueur affichée, Électriseur utilisable à partir du niveau 36 (runtime déjà validé) ;
+Le retour wiki suivant est désormais traité par la baseline wiki dédiée et **ne doit pas être repris** :
 - portraits dresseurs Boss & Conseils : transparence de l’index palette 0 générée explicitement pour le navigateur, sans fond coloré.
+
+L’ancien point « Élektek → Élekable via Électriseur niveau 36 » est **rouvert par la nouvelle règle d’évolution** et doit être migré vers Électriseur tenu + Fil Liaison conformément à `EVOLUTIONS.md`.
 
 Ne pas consommer le gros du temps de reprise sur l’IA ou le wiki tant que **UI + Difficulty + Méga** ne sont pas corrigés et validés par les tests pertinents.
 
