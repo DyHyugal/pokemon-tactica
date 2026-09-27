@@ -159,9 +159,9 @@ Les sources suivantes ont reçu au moins une contrainte `IF_MIN_LEVEL` sur une �
 
 Ces seuils ne doivent pas être conservés par défaut. La méthode officielle 9G de chaque lignée doit être restaurée, sauf si elle tombe dans les règles Fil Liaison de ce document.
 
-### 4.3 Routes d'échange déjà touchées par cette passe
+### 4.3 Routes d'échange touchées par cette passe
 
-Les sources suivantes appartiennent réellement au périmètre des évolutions par échange et doivent être migrées vers la nouvelle règle Fil Liaison, au lieu de conserver les seuils 16/30/36 :
+Les sources suivantes appartiennent réellement au périmètre des évolutions par échange. Elles sont désormais migrées vers la règle Fil Liaison dans le runtime Tactica, au lieu des anciens seuils/raccourcis HnS :
 
 - `BOLDORE`
 - `CLAMPERL`
@@ -182,7 +182,7 @@ Les sources suivantes appartiennent réellement au périmètre des évolutions p
 - `SPRITZEE`
 - `SWIRLIX`
 
-Cette liste ne constitue pas à elle seule la liste exhaustive de toutes les évolutions par échange du Pokédex ; elle correspond aux sources impactées par la passe HnS auditée.
+Cette liste correspond aux sources impactées par la passe HnS auditée. La migration runtime couvre également les autres évolutions par échange actives du Pokédex Tactica ; un test global interdit désormais toute route `EVO_TRADE` résiduelle.
 
 ## 5. Autres incohérences identifiées pendant l'audit
 
