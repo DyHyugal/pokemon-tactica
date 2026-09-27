@@ -1,8 +1,8 @@
-[Accueil](Accueil.md) · [Guide de jeu](Guide-de-jeu.md) · [Changements](Changements.md) · [Pokédex](Pokedex.md) · [Localisations](Localisations.md) · [Boss & Conseils](Boss-et-Conseils.md) · [Crédits](Credits-et-Versions.md) · [Roadmap](Roadmap.md) · **[EN](../EN/Pokedex.md)**
+[Accueil](Accueil.md) · [Guide](Guide-de-jeu.md) · [Changements](Changements.md) · [Pokédex](Pokedex.md) · [Localisations](Localisations.md) · [Routes et Villes](Routes-et-Villes.html) · [Boss & Conseils](Boss-et-Conseils.md) · [Crédits](Credits-et-Versions.md) · [Roadmap](Roadmap.md) · **[EN](../EN/Pokedex.md)**
 
 # Pokédex
 
-Recherche principale en **français**, avec les noms anglais acceptés comme alias sur le site. Les localisations restent dans une page séparée afin de garder le Pokédex lisible.
+Recherche principale en **français**, avec les noms anglais acceptés comme alias sur le site. Sur la version HTML, cliquer sur une carte ouvre la fiche ROM complète : statistiques, talents, lignée et conditions d’évolution, capacités et localisations. Le bouton **Voir les localisations** reste le seul raccourci direct vers la page des rencontres.
 
 | Pokémon | Tables |
 |---|---:|

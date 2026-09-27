@@ -130,13 +130,14 @@ Après une modification encounters/wiki :
 1. corriger la source canonique ;
 2. régénérer runtime si nécessaire ;
 3. lancer `tools/sync_tactica_localization.py` ;
-4. lancer son `--check` ;
-5. lancer `tools/validate_tactica_localization.py` ;
-6. contrôler visuellement uniquement les pages réellement touchées.
+4. si les évolutions sont concernées, lancer `tools/sync_tactica_species_evolutions.py` ;
+5. lancer les modes `--check` concernés ;
+6. lancer `tools/validate_tactica_localization.py` ;
+7. contrôler visuellement uniquement les pages réellement touchées.
 
 Une passe éditoriale wiki n’autorise pas à réintroduire des données gameplay anciennes.
 
-Après la migration des évolutions, le Pokédex doit être régénéré depuis les sources corrigées. Tant que cette migration n’est pas terminée, les anciennes méthodes d’évolution affichées ne constituent pas une source de vérité et ne doivent pas être recopiées dans le runtime.
+La migration des évolutions est terminée. Les champs d’évolution du Pokédex sont régénérés depuis `src/data/pokemon/species_info` par `tools/sync_tactica_species_evolutions.py`. Son mode `--check` est obligatoire en CI ; les fichiers `tactica-species-*.js` ne doivent pas être corrigés manuellement.
 
 ## Données de boss et assets du Guide
 

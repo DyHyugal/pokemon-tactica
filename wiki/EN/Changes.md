@@ -1,4 +1,4 @@
-[Home](Home.md) · [Game Guide](Game-Guide.md) · [Changes](Changes.md) · [Pokédex](Pokedex.md) · [Locations](Locations.md) · [Bosses & Tips](Bosses-and-Tips.md) · [Credits](Credits-and-Versions.md) · [Roadmap](Roadmap.md) · **[FR](../FR/Changements.md)**
+[Home](Home.md) · [Guide](Game-Guide.md) · [Changes](Changes.md) · [Pokédex](Pokedex.md) · [Locations](Locations.md) · [Routes & Cities](Routes-and-Cities.md) · [Bosses & Tips](Bosses-and-Tips.md) · [Credits](Credits-and-Versions.md) · [Roadmap](Roadmap.md) · **[FR](../FR/Changements.md)**
 
 # Changes
 
@@ -51,6 +51,12 @@ The Training NPC covers **EXP up to the cap, IVs, EVs, EV reset, nature, ability
 ### Mega Evolution
 
 Morty gives the **Mega Ring** after Badge 4 and his TM, so the player can Mega Evolve immediately throughout the section between Badges 4 and 5. Boss Mega users must start from a legal base form and legal base ability; the Mega ability is obtained through the transformation itself.
+
+### Evolutions
+
+Tactica keeps the **official Generation IX methods** whenever the ROM can reproduce them. Trade evolutions now use the **Linking Cord**; when the official trade requires a held item, that item must be held before using the Linking Cord. The few mechanics that cannot be reproduced cleanly also use the Linking Cord. Old artificial level gates and HnS shortcut items have been removed.
+
+The **Pokédex** displays the evolution conditions actually compiled in Tactica and regenerates them from runtime data.
 
 ## Modified Pokémon — 26 entries
 

@@ -10,6 +10,7 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | `[PARTIEL]` | Une partie importante est intégrée mais un contrôle runtime/ROM ou un sous-contrat reste ouvert. |
 | `[À CORRIGER]` | Écart concret connu entre l’état actuel et le contrat. |
 | `[À FAIRE]` | Fonction V1 requise non commencée. |
+| `[À TESTER]` | Implémenté, mais la décision de correction dépend d’un premier vrai playtest sur la candidate courante. |
 | `[HORS V1]` | Reporté après V1. |
 
 ## État courant
@@ -19,12 +20,13 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | Vitesse native x1–x4 | `[DONE]` | Tests natifs existants ; ne pas réécrire sans défaut démontré. |
 | Audio indépendant / preset | `[DONE]` | Tests audio existants ; contrôle auditif final uniquement. |
 | Shiny Rate | `[DONE]` | Menu et persistance couverts. |
+| Difficulty / HARD | `[PARTIEL]` | Runtime et écran de configuration intégrés ; visibilité et persistance restent à revalider dans une ROM fraîche avant toute nouvelle correction. |
 | Shiny Only | `[HORS V1]` | À reprendre après stabilisation V1. |
 | 30 starters + Évoli | `[DONE]` | Logique cœur intégrée. |
 | Sélecteur — curseur initial / annulation | `[PARTIEL]` | Correction intégrée automatiquement ; comportement visuel à revalider en ROM fraîche. |
-| Œuf d’Orme / second starter distinct | `[PARTIEL]` | Garde-fou intégré ; flow à revalider en ROM. |
+| Œuf d’Orme / second starter distinct | `[DONE]` | Garde-fou intégré et flow déjà validé ; PR #48 ajoute le message dédié en cas de doublon sans réécrire le flow. Relecture visuelle du texte sur la prochaine candidate uniquement. |
 | Évolutions — conformité 9G / Fil Liaison | `[DONE]` | Runtime migré, mécaniques impossibles traitées, validateur générique intégré à la CI et assets d’évolution du Pokédex régénérés depuis les sources runtime. |
-| Rival — starter fixe / niveau 17 / 1→3→4→6 | `[PARTIEL]` | JSON/runtime/validateurs intégrés, talents canoniques déterministes lorsqu’ils sont légaux pour la forme envoyée ; combats ROM à observer. |
+| Rival — starter fixe / progression réelle | `[À CORRIGER]` | Le contrat owner est 1 Pokémon au premier duel, 4 après Hector puis 6 à la Tour Cendrée. `integration/v1` contient encore `after_badge_1: 3` dans `rival.json` et les anciens niveaux 15/16/18 puis 22/23/22/24 dans `trainers_hns.party`. Le correctif de progression doit être réintégré avant la prochaine candidate. |
 | Rocket — 3→4→6 / Méga FINAL | `[PARTIEL]` | JSON/runtime/validateurs intégrés ; combats ROM à observer. |
 | Archer = Méga-Sharpedo immédiat | `[PARTIEL]` | Set et garde-fou automatisés ; transformation à observer en ROM. |
 | Mega Ring après Mortimer | `[PARTIEL]` | Ordre scripté et validé ; réception/utilisation à confirmer en ROM. |
@@ -42,7 +44,7 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | Couverture globale pré-Ligue | `[DONE]` | Dataset standard : 479 espèces utilisées et 479 disponibles avant/à la Ligue ; 0 espèce utilisée reste uniquement post-Ligue. 72 slots ont été remplacés sur 43 tables ; 125 espèces restent dupliquées avant Ligue, ce qui est acceptable puisque la couverture est assurée. |
 | Headbutt | `[DONE]` | 4 tables dédiées. |
 | Safari | `[DONE]` | 53 pools. |
-| Wiki joueur FR/EN | `[DONE]` | Baseline visuelle/structurelle validée : Accueil, Guide, cartes/sprites, Roadmap, Changements et Boss & Conseils. Ne pas refaire le style global. |
+| Wiki joueur FR/EN | `[DONE]` | Site HTML : Accueil remake 2G, Guide illustré, Kanto développé, Routes/Villes, navigation FR/EN et fiches Pokédex détaillées intégrés. Les sources Markdown sont maintenues en miroir ; ne pas refaire le style global. |
 | Pokédex — méthodes d’évolution | `[DONE]` | Les champs `evolutions` de `tactica-species-*.js` sont générés depuis le runtime par `sync_tactica_species_evolutions.py` et protégés par `--check` en CI. |
 | Sync Localisations — niveaux | `[DONE]` | Générateur canonique. |
 | Sync Localisations — espèces / recherche | `[DONE]` | Générateur étendu aux espèces et `data-search`; synchronisations `--check` et CI Tactica vertes sur le HEAD de la PR de nettoyage. |
@@ -53,6 +55,9 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | Assistant d’entraînement | `[DONE]` | Tests dédiés existants. |
 | Boutiques objets/moves/Méga-Gemmes — contenu | `[PARTIEL]` | Catalogues/runtime présents ; parcours d’achat ROM à revalider. |
 | Balance 26 espèces / 16 learnsets | `[DONE]` | Source canonique + validateur dédié ; Draco-Griffe est légal pour Hydragon au match retour. |
+| Intro Chen / HARD / Recommended | `[DONE]` | PR #48 : speech vanilla remplacé par l’intro Tactica, avertissements HARD/Recommended/Custom clarifiés. |
+| IA HARD | `[À TESTER]` | Aucun correctif à faire avant le premier vrai playtest HARD de la version courante. Les anciens cas Mimiqui/Cornèbre/Téraclope sont seulement des témoins à surveiller. |
+| Écran titre — centrage « Pokémon Tactica » | `[À CORRIGER]` | Défaut visuel connu mais non prioritaire ; ne doit pas bloquer la prochaine candidate. |
 
 ## Règle de merge
 
@@ -62,7 +67,7 @@ Ne jamais transformer « non testé manuellement » en « non implémenté », e
 
 ## Prochain ordre de travail
 
-1. valider la branche par les tests ciblés, le build et la CI ;
-2. fusionner dans `integration/v1` ;
-3. reconstruire une ROM candidate propre ;
-4. effectuer le playthrough owner complet et consigner les défauts observés.
+1. réintégrer le correctif de progression Rival encore absent de `integration/v1` ;
+2. garder le centrage du titre en non-prioritaire ;
+3. reconstruire une ROM candidate propre depuis le SHA final ;
+4. effectuer le playthrough owner complet ; l’IA HARD est à tester avant toute correction.
