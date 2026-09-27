@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import argparse
-import io
 import json
 import struct
 from pathlib import Path
@@ -16,19 +15,16 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "docs" / "assets"
 
 
-def png_bytes(image: Image.Image) -> bytes:
-    output = io.BytesIO()
-    image.save(output, "PNG", optimize=False)
-    return output.getvalue()
-
-
-def write_or_check(path: Path, content: bytes, check: bool) -> None:
+def write_or_check(path: Path, image: Image.Image, check: bool) -> None:
     if check:
-        if not path.exists() or path.read_bytes() != content:
+        if not path.exists():
             raise SystemExit(f"Wiki asset is stale; run tools/sync_tactica_wiki_assets.py: {path}")
+        with Image.open(path) as current:
+            if current.mode != image.mode or current.size != image.size or current.tobytes() != image.tobytes():
+                raise SystemExit(f"Wiki asset is stale; run tools/sync_tactica_wiki_assets.py: {path}")
     else:
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(content)
+        image.save(path, "PNG", optimize=False)
 
 
 def transparent_frame(path: Path, size: tuple[int, int] = (64, 64)) -> Image.Image:
@@ -81,7 +77,7 @@ def species_source(species: str) -> Path:
 
 def synchronize(check: bool) -> None:
     for region in ("johto", "kanto"):
-        write_or_check(ASSETS / f"guide-{region}.png", png_bytes(region_map(region)), check)
+        write_or_check(ASSETS / f"guide-{region}.png", region_map(region), check)
 
     starters = json.loads((ROOT / "data" / "spec" / "starters.json").read_text(encoding="utf-8"))
     species = [entry for group in starters["categories"].values() for entry in group["species"]]
@@ -89,12 +85,12 @@ def synchronize(check: bool) -> None:
     for entry in species:
         slug = entry.removeprefix("SPECIES_").lower().replace("_", "-")
         image = transparent_frame(species_source(entry))
-        write_or_check(ASSETS / "starters" / f"{slug}.png", png_bytes(image), check)
+        write_or_check(ASSETS / "starters" / f"{slug}.png", image, check)
 
     for form in ("mega_x", "mega_y"):
         source = ROOT / "graphics" / "pokemon" / "charizard" / form / "front.png"
         output = ASSETS / f"mega-charizard-{form[-1]}.png"
-        write_or_check(output, png_bytes(transparent_frame(source)), check)
+        write_or_check(output, transparent_frame(source), check)
 
 
 if __name__ == "__main__":
