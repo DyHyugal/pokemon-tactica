@@ -67,7 +67,7 @@ TEST("Evolution requirements: Eevee uses current friendship and move conditions"
 {
     struct Pokemon mon;
     bool32 canStopEvo = TRUE;
-    u8 friendship = FRIENDSHIP_EVO_THRESHOLD;
+    u8 friendship = (P_FRIENDSHIP_EVO_THRESHOLD >= GEN_8) ? 160 : 220;
     u16 previousHour = SetTimeOfDay(DAY_HOUR_BEGIN);
     u32 i;
 
