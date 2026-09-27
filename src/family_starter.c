@@ -148,11 +148,11 @@ static const struct FamilyStarterEvolution sStarterEvolutions[] = {
     {SPECIES_EEVEE, SPECIES_VAPOREON, ITEM_WATER_STONE},
     {SPECIES_EEVEE, SPECIES_JOLTEON, ITEM_THUNDER_STONE},
     {SPECIES_EEVEE, SPECIES_FLAREON, ITEM_FIRE_STONE},
-    {SPECIES_EEVEE, SPECIES_ESPEON, ITEM_DAWN_STONE},
-    {SPECIES_EEVEE, SPECIES_UMBREON, ITEM_DUSK_STONE},
+    {SPECIES_EEVEE, SPECIES_ESPEON, ITEM_NONE},
+    {SPECIES_EEVEE, SPECIES_UMBREON, ITEM_NONE},
     {SPECIES_EEVEE, SPECIES_LEAFEON, ITEM_LEAF_STONE},
     {SPECIES_EEVEE, SPECIES_GLACEON, ITEM_ICE_STONE},
-    {SPECIES_EEVEE, SPECIES_SYLVEON, ITEM_SHINY_STONE},
+    {SPECIES_EEVEE, SPECIES_SYLVEON, ITEM_NONE},
     {SPECIES_CHARCADET, SPECIES_ARMAROUGE, ITEM_AUSPICIOUS_ARMOR},
     {SPECIES_CHARCADET, SPECIES_CERULEDGE, ITEM_MALICIOUS_ARMOR},
     {SPECIES_SNORUNT, SPECIES_GLALIE, ITEM_NONE},
@@ -503,8 +503,8 @@ static void UNUSED QueueStarterRewards(u16 species, u16 preference)
 
     if (species == SPECIES_EEVEE)
     {
-        // Eevee intentionally receives three rewards:
-        // Normal STAB booster + planned Eeveelution STAB booster + evolution stone.
+        // Eevee receives its Normal STAB booster, the planned Eeveelution booster,
+        // and an evolution item only when the official method actually uses one.
         QueuePendingItem(ITEM_SILK_SCARF);
         QueuePendingItem(GetEeveeTypeBooster(preference));
         QueuePendingItem(GetEvolutionItem(species, preference));

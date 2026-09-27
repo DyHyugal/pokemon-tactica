@@ -80,11 +80,9 @@
         "ITEM_CHARCOAL"
       ],
       "ESPEON": [
-        "ITEM_DAWN_STONE",
         "ITEM_TWISTED_SPOON"
       ],
       "UMBREON": [
-        "ITEM_DUSK_STONE",
         "ITEM_BLACK_GLASSES"
       ],
       "LEAFEON": [
@@ -96,7 +94,6 @@
         "ITEM_NEVER_MELT_ICE"
       ],
       "SYLVEON": [
-        "ITEM_SHINY_STONE",
         "ITEM_FAIRY_FEATHER"
       ]
     }
