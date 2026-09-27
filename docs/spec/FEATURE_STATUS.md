@@ -26,7 +26,7 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | Sélecteur — curseur initial / annulation | `[PARTIEL]` | Correction intégrée automatiquement ; comportement visuel à revalider en ROM fraîche. |
 | Œuf d’Orme / second starter distinct | `[DONE]` | Garde-fou intégré et flow déjà validé ; PR #48 ajoute le message dédié en cas de doublon sans réécrire le flow. Relecture visuelle du texte sur la prochaine candidate uniquement. |
 | Évolutions — conformité 9G / Fil Liaison | `[DONE]` | Runtime migré, mécaniques impossibles traitées, validateur générique intégré à la CI et assets d’évolution du Pokédex régénérés depuis les sources runtime. |
-| Rival — starter fixe / progression réelle | `[À CORRIGER]` | Le contrat owner est 1 Pokémon au premier duel, 4 après Hector puis 6 à la Tour Cendrée. `integration/v1` contient encore `after_badge_1: 3` dans `rival.json` et les anciens niveaux 15/16/18 puis 22/23/22/24 dans `trainers_hns.party`. Le correctif de progression doit être réintégré avant la prochaine candidate. |
+| Rival — starter fixe / progression réelle | `[PARTIEL]` | Les 7 combats sont synchronisés depuis `rival.json` sur le prochain cap majeur : 17, 29–32, 35–38, 61–64, 65–67, 95 et 95. Tailles réelles 1→4→6, Méga dès le combat 4 ; observation ROM encore utile. |
 | Rocket — 3→4→6 / Méga FINAL | `[PARTIEL]` | JSON/runtime/validateurs intégrés ; combats ROM à observer. |
 | Archer = Méga-Sharpedo immédiat | `[PARTIEL]` | Set et garde-fou automatisés ; transformation à observer en ROM. |
 | Mega Ring après Mortimer | `[PARTIEL]` | Ordre scripté et validé ; réception/utilisation à confirmer en ROM. |
@@ -67,7 +67,6 @@ Ne jamais transformer « non testé manuellement » en « non implémenté », e
 
 ## Prochain ordre de travail
 
-1. réintégrer le correctif de progression Rival encore absent de `integration/v1` ;
-2. garder le centrage du titre en non-prioritaire ;
-3. reconstruire une ROM candidate propre depuis le SHA final ;
-4. effectuer le playthrough owner complet ; l’IA HARD est à tester avant toute correction.
+1. garder le centrage du titre en non-prioritaire ;
+2. reconstruire une ROM candidate propre depuis le SHA final ;
+3. effectuer le playthrough owner complet ; l’IA HARD est à tester avant toute correction.

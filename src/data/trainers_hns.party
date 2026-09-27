@@ -9865,7 +9865,7 @@ Mugshot: Dark Red
 Items: Potion
 
 Zubat
-Level: 15
+Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Absorb
 - Supersonic
@@ -9873,7 +9873,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Astonish
 
 Larvitar
-Level: 16
+Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bite
 - Rock Throw
@@ -9881,12 +9881,20 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Sandstorm
 
 Bayleef
-Level: 18
+Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Razor Leaf
 - Reflect
 - Poison Powder
 - Tackle
+
+Remoraid
+Level: 30
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Aurora Beam
+- Psybeam
+- Lock On
 
 === TRAINER_RIVAL_CHIKORITA_3_HNS ===
 Name: {B_RIVAL_NAME}
@@ -9900,7 +9908,7 @@ Mugshot: Dark Red
 Items: Super Potion
 
 Larvitar
-Level: 22
+Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bite
 - Rock Throw
@@ -9908,7 +9916,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Sandstorm
 
 Remoraid
-Level: 23
+Level: 38
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bubble Beam
 - Aurora Beam
@@ -9916,7 +9924,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Lock On
 
 Golbat
-Level: 22
+Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bite
 - Confuse Ray
@@ -9924,12 +9932,28 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Air Cutter
 
 Bayleef
-Level: 24
+Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Mega Drain
 - Magical Leaf
 - Tackle
 - Leech Seed
+
+Houndoom
+Level: 36
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Flamethrower
+- Iron Tail
+- Bite
+- Nasty Plot
+
+Ursaring
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Slash
+- Faint Attack
+- Rock Smash
+- Rest
 
 === TRAINER_RIVAL_CHIKORITA_4_HNS ===
 Name: {B_RIVAL_NAME}
@@ -9943,7 +9967,7 @@ Mugshot: Dark Red
 Items: Hyper Potion
 
 Pupitar
-Level: 39
+Level: 61
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Thrash
 - Rock Slide
@@ -9951,7 +9975,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Bite
 
 Houndoom
-Level: 39
+Level: 64
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Flamethrower
 - Iron Tail
@@ -9959,7 +9983,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Nasty Plot
 
 Octillery
-Level: 38
+Level: 63
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Octazooka
 - Psybeam
@@ -9967,7 +9991,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Signal Beam
 
 Golbat
-Level: 39
+Level: 62
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Poison Fang
 - Double Team
@@ -9975,7 +9999,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Air Cutter
 
 Ursaring
-Level: 38
+Level: 62
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Slash
 - Faint Attack
@@ -9983,7 +10007,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Rest
 
 Meganium
-Level: 40
+Level: 61
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Synthesis
 - Magical Leaf
@@ -10002,7 +10026,7 @@ Mugshot: Dark Red
 Items: Hyper Potion
 
 Ursaring @ Chesto Berry
-Level: 45
+Level: 65
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Slash
 - Faint Attack
@@ -10010,7 +10034,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Rest
 
 Golbat
-Level: 45
+Level: 67
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Venoshock
 - Aerial Ace
@@ -10018,7 +10042,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Confuse Ray
 
 Octillery @ Quick Claw
-Level: 46
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Surf
 - Ice Beam
@@ -10026,7 +10050,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Signal Beam
 
 Houndoom
-Level: 46
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Flamethrower
 - Iron Tail
@@ -10034,7 +10058,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Sunny Day
 
 Meganium @ Miracle Seed
-Level: 47
+Level: 65
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Play Rough
 - Petal Dance
@@ -10042,7 +10066,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Poison Powder
 
 Tyranitar
-Level: 48
+Level: 65
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Crunch
 - Earthquake
@@ -10061,7 +10085,7 @@ Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
 Ursaluna Bloodmoon @ Chesto Berry
-Level: 64
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hammer Arm
 - Moonblast
@@ -10069,7 +10093,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rest
 
 Crobat @ Leftovers
-Level: 64
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Air Slash
 - Venoshock
@@ -10077,7 +10101,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Facade
 
 Octillery @ Never Melt Ice
-Level: 64
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
 - Ice Beam
@@ -10085,7 +10109,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Signal Beam
 
 Houndoom @ Charcoal
-Level: 64
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fire Blast
 - Iron Tail
@@ -10093,7 +10117,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sunny Day
 
 Meganium @ Miracle Seed
-Level: 64
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Synthesis
 - MoonBlast
@@ -10101,7 +10125,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Body Slam
 
 Tyranitar @ Quick Claw
-Level: 64
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Crunch
 - Earthquake
@@ -10120,7 +10144,7 @@ Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
 Ursaluna Bloodmoon @ Chesto Berry
-Level: 68
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hammer Arm
 - Moonblast
@@ -10128,7 +10152,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rest
 
 Crobat @ Leftovers
-Level: 68
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Air Slash
 - Venoshock
@@ -10136,7 +10160,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Facade
 
 Octillery @ Never Melt Ice
-Level: 68
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
 - Ice Beam
@@ -10144,7 +10168,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Signal Beam
 
 Houndoom @ Charcoal
-Level: 68
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fire Blast
 - Iron Tail
@@ -10152,7 +10176,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sunny Day
 
 Meganium @ Miracle Seed
-Level: 68
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Reflect
 - Giga Drain
@@ -10160,7 +10184,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Body Slam
 
 Tyranitar @ Quick Claw
-Level: 68
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Crunch
 - Earthquake
@@ -10193,7 +10217,7 @@ Mugshot: Dark Red
 Items: Potion
 
 Zubat
-Level: 15
+Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Absorb
 - Supersonic
@@ -10201,7 +10225,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Astonish
 
 Larvitar
-Level: 16
+Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bite
 - Rock Throw
@@ -10209,12 +10233,20 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Sandstorm
 
 Quilava
-Level: 18
+Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Leer
 - Smokescreen
 - Ember
 - Tackle
+
+Weepinbell
+Level: 30
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Razor Leaf
+- Growth
+- Sleep Powder
+- Stun Spore
 
 === TRAINER_RIVAL_CYNDAQUIL_3_HNS ===
 Name: {B_RIVAL_NAME}
@@ -10228,7 +10260,7 @@ Mugshot: Dark Red
 Items: Super Potion
 
 Larvitar
-Level: 22
+Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bite
 - Rock Throw
@@ -10236,7 +10268,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Sandstorm
 
 Weepinbell
-Level: 23
+Level: 38
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Razor Leaf
 - Growth
@@ -10244,7 +10276,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Stun Spore
 
 Golbat
-Level: 22
+Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bite
 - Confuse Ray
@@ -10252,12 +10284,28 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Air Cutter
 
 Quilava
-Level: 24
+Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Flame Wheel
 - Dig
 - Quick Attack
 - Smokescreen
+
+Octillery
+Level: 36
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Octazooka
+- Psybeam
+- Aurora Beam
+- Signal Beam
+
+Ursaring
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Slash
+- Faint Attack
+- Rock Smash
+- Rest
 
 === TRAINER_RIVAL_CYNDAQUIL_4_HNS ===
 Name: {B_RIVAL_NAME}
@@ -10271,7 +10319,7 @@ Mugshot: Dark Red
 Items: Super Potion
 
 Pupitar
-Level: 39
+Level: 61
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Thrash
 - Rock Slide
@@ -10279,7 +10327,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Bite
 
 Victreebel
-Level: 39
+Level: 64
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Sludge
 - Razor Leaf
@@ -10287,7 +10335,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Growth
 
 Octillery
-Level: 38
+Level: 63
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Octazooka
 - Psybeam
@@ -10295,7 +10343,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Signal Beam
 
 Golbat
-Level: 39
+Level: 62
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Poison Fang
 - Double Team
@@ -10303,7 +10351,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Air Cutter
 
 Ursaring
-Level: 38
+Level: 62
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Slash
 - Faint Attack
@@ -10311,7 +10359,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Rest
 
 Typhlosion
-Level: 40
+Level: 61
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Thunder Punch
 - Flamethrower
@@ -10330,7 +10378,7 @@ Mugshot: Dark Red
 Items: Hyper Potion
 
 Ursaring @ Chesto Berry
-Level: 45
+Level: 65
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Slash
 - Faint Attack
@@ -10338,7 +10386,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Rest
 
 Golbat
-Level: 45
+Level: 67
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Venoshock
 - Aerial Ace
@@ -10346,7 +10394,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Confuse Ray
 
 Octillery @ Quick Claw
-Level: 46
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Surf
 - Ice Beam
@@ -10354,7 +10402,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Signal Beam
 
 Victreebel
-Level: 46
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Sludge Bomb
 - Giga Drain
@@ -10362,7 +10410,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Growth
 
 Typhlosion @ Charcoal
-Level: 47
+Level: 65
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Flamethrower
 - Quick Attack
@@ -10370,7 +10418,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Thunder Punch
 
 Tyranitar
-Level: 48
+Level: 65
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Crunch
 - Earthquake
@@ -10389,7 +10437,7 @@ Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
 Ursaluna Bloodmoon @ Chesto Berry
-Level: 64
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hammer Arm
 - Moonblast
@@ -10397,7 +10445,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rest
 
 Crobat @ Leftovers
-Level: 64
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Air Slash
 - Venoshock
@@ -10405,7 +10453,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Facade
 
 Octillery @ Never Melt Ice
-Level: 64
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
 - Ice Beam
@@ -10413,7 +10461,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Signal Beam
 
 Victreebel @ Scope Lens
-Level: 64
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sludge Bomb
 - Razor Leaf
@@ -10421,7 +10469,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Growth
 
 Typhlosion @ Charcoal
-Level: 64
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fire Blast
 - Earthquake
@@ -10429,7 +10477,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder Punch
 
 Tyranitar @ Quick Claw
-Level: 64
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Crunch
 - Earthquake
@@ -10448,7 +10496,7 @@ Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
 Ursaluna Bloodmoon @ Chesto Berry
-Level: 68
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hammer Arm
 - Moonblast
@@ -10456,7 +10504,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rest
 
 Crobat @ Leftovers
-Level: 68
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Air Slash
 - Venoshock
@@ -10464,7 +10512,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Facade
 
 Octillery @ Never Melt Ice
-Level: 68
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
 - Ice Beam
@@ -10472,7 +10520,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Signal Beam
 
 Victreebel @ Scope Lens
-Level: 68
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Leaf Blade
 - Sludge Bomb
@@ -10480,7 +10528,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Growth
 
 Typhlosion @ Charcoal
-Level: 68
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fire Blast
 - Earthquake
@@ -10488,7 +10536,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder Punch
 
 Tyranitar @ Quick Claw
-Level: 68
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Crunch
 - Earthquake
@@ -10521,7 +10569,7 @@ Mugshot: Dark Red
 Items: Potion
 
 Zubat
-Level: 15
+Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Absorb
 - Supersonic
@@ -10529,7 +10577,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Astonish
 
 Larvitar
-Level: 16
+Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bite
 - Rock Throw
@@ -10537,12 +10585,20 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Sandstorm
 
 Croconaw
-Level: 18
+Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Scratch
 - Rage
 - Bubble Beam
 - Leer
+
+Houndour
+Level: 30
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Ember
+- Bite
+- Smog
+- Roar
 
 === TRAINER_RIVAL_TOTODILE_3_HNS ===
 Name: {B_RIVAL_NAME}
@@ -10556,7 +10612,7 @@ Mugshot: Dark Red
 Items: Super Potion
 
 Larvitar
-Level: 22
+Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bite
 - Rock Throw
@@ -10564,7 +10620,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Sandstorm
 
 Houndour
-Level: 23
+Level: 38
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Ember
 - Bite
@@ -10572,7 +10628,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Roar
 
 Golbat
-Level: 22
+Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bite
 - Confuse Ray
@@ -10580,12 +10636,28 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Air Cutter
 
 Croconaw
-Level: 24
+Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bite
 - Ice Punch
 - Bubble Beam
 - Mud Slap
+
+Victreebel
+Level: 36
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Sludge
+- Razor Leaf
+- Sleep Powder
+- Growth
+
+Ursaring
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Slash
+- Faint Attack
+- Rock Smash
+- Rest
 
 === TRAINER_RIVAL_TOTODILE_4_HNS ===
 Name: {B_RIVAL_NAME}
@@ -10599,7 +10671,7 @@ Mugshot: Dark Red
 Items: Super Potion
 
 Pupitar
-Level: 39
+Level: 61
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Thrash
 - Rock Slide
@@ -10607,7 +10679,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Bite
 
 Victreebel
-Level: 39
+Level: 64
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Sludge
 - Razor Leaf
@@ -10615,7 +10687,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Growth
 
 Houndoom
-Level: 38
+Level: 63
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Flamethrower
 - Iron Tail
@@ -10623,7 +10695,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Nasty Plot
 
 Golbat
-Level: 39
+Level: 62
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Poison Fang
 - Double Team
@@ -10631,7 +10703,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Air Cutter
 
 Ursaring
-Level: 38
+Level: 62
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Slash
 - Faint Attack
@@ -10639,7 +10711,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Rest
 
 Feraligatr
-Level: 40
+Level: 61
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Ice Punch
 - Surf
@@ -10658,7 +10730,7 @@ Mugshot: Dark Red
 Items: Hyper Potion
 
 Ursaring @ Chesto Berry
-Level: 45
+Level: 65
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Slash
 - Faint Attack
@@ -10666,7 +10738,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Rest
 
 Golbat
-Level: 45
+Level: 67
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Venoshock
 - Aerial Ace
@@ -10674,7 +10746,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Confuse Ray
 
 Victreebel @ Quick Claw
-Level: 46
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Sludge Bomb
 - Giga Drain
@@ -10682,7 +10754,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Growth
 
 Houndoom
-Level: 46
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Flamethrower
 - Iron Tail
@@ -10690,7 +10762,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Double Team
 
 Feraligatr @ Mystic Water
-Level: 47
+Level: 65
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Ice Punch
 - Surf
@@ -10698,7 +10770,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Bite
 
 Tyranitar
-Level: 48
+Level: 65
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Crunch
 - Earthquake
@@ -10717,7 +10789,7 @@ Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
 Ursaluna Bloodmoon @ Chesto Berry
-Level: 64
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hammer Arm
 - Moonblast
@@ -10725,7 +10797,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rest
 
 Crobat @ Leftovers
-Level: 64
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Air Slash
 - Venoshock
@@ -10733,7 +10805,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Facade
 
 Victreebel @ Scope Lens
-Level: 64
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sludge Bomb
 - Razor Leaf
@@ -10741,7 +10813,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Growth
 
 Houndoom @ Charcoal
-Level: 64
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fire Blast
 - Iron Tail
@@ -10749,7 +10821,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Double Team
 
 Feraligatr @ Mystic Water
-Level: 64
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Beam
 - Surf
@@ -10757,7 +10829,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
 
 Tyranitar @ Quick Claw
-Level: 64
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Crunch
 - Earthquake
@@ -10776,7 +10848,7 @@ Mugshot: Dark Red
 Items: Full Restore / Full Restore
 
 Ursaluna Bloodmoon @ Chesto Berry
-Level: 68
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hammer Arm
 - Moonblast
@@ -10784,7 +10856,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rest
 
 Crobat @ Leftovers
-Level: 68
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Air Slash
 - Venoshock
@@ -10792,7 +10864,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Facade
 
 Victreebel @ Scope Lens
-Level: 68
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Leaf Blade
 - Sludge Bomb
@@ -10800,7 +10872,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Growth
 
 Houndoom @ Charcoal
-Level: 68
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fire Blast
 - Iron Tail
@@ -10808,7 +10880,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Double Team
 
 Feraligatr @ Mystic Water
-Level: 68
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Beam
 - Surf
@@ -10816,7 +10888,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
 
 Tyranitar @ Quick Claw
-Level: 68
+Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Crunch
 - Earthquake

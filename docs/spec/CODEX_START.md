@@ -111,44 +111,22 @@ Ne pas rouvrir ce bloc sans régression démontrée.
 
 Rocket reste intégré côté sources/runtime et doit surtout être observé dans la prochaine ROM candidate.
 
-Le **Rival reste à corriger avant la prochaine candidate** :
+Le correctif de progression **Rival est intégré** :
 
-- contrat owner : 1 Pokémon au premier duel, 4 après Hector, 6 à la Tour Cendrée ;
-- attendu après Hector : niveaux 29–32 ;
-- attendu Tour Cendrée : niveaux 35–38 ;
-- `integration/v1` contient encore `after_badge_1: 3` dans `data/spec/rival.json` ;
-- `src/data/trainers_hns.party` contient encore les anciens niveaux 15/16/18 au combat 2 et 22/23/22/24 au combat 3.
-
-Ne pas déclarer ce bloc terminé tant que source canonique, runtime/générateur, tests et CI ne sont pas réalignés.
-
-### Introduction / second starter
-
-PR #48 fusionnée.
-
-État courant :
-
-- speech vanilla de Chen remplacé par l'introduction Pokémon Tactica validée ;
-- avertissement HARD clarifié ;
-- RECOMMENDED / CUSTOM clarifiés ;
-- refus du second starter identique au starter principal possède désormais son message dédié ;
-- le flow de sélection du second starter reste inchangé.
-
-Ne pas réécrire ce bloc sans défaut observé en ROM.
-
-## Priorités actuelles
-
-### PRIORITÉ 1 — corriger la progression Rival
-
-Avant toute nouvelle ROM candidate, réintégrer proprement le contrat owner Rival :
-
+- premier duel : 1 Pokémon niveau 17 ;
 - aucun combat scénario après le badge 1 ;
 - après Hector : 4 Pokémon, niveaux 29–32 ;
 - Tour Cendrée : 6 Pokémon, niveaux 35–38 ;
-- aligner les combats suivants sur les jalons réellement joués ;
-- corriger source canonique + runtime/génération + tests ;
-- CI verte avant merge.
+- combats suivants : 61–64, 65–67, puis 95/95 ;
+- source canonique, parties runtime, générateur, caps et validateurs sont synchronisés.
 
-Ne pas profiter de ce bloc pour modifier l’IA ou refaire les rosters sans défaut démontré.
+Le bloc reste `[PARTIEL]` tant que les combats n'ont pas été observés dans une ROM candidate fraîche.
+
+## Priorités actuelles
+
+### BLOC TERMINÉ — progression Rival
+
+La progression Rival a été réintégrée sans reprendre les autres changements de l'ancienne branche Codex. Ne pas rouvrir ce bloc sans défaut démontré par les tests ou le playtest ROM.
 
 ### PRIORITÉ 2 — ROM candidate propre
 
