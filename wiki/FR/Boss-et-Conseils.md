@@ -30,7 +30,7 @@ Cette page est générée depuis les équipes canoniques du jeu. Elle permet de 
 | Évoli | 29 | — | Adaptabilité | Reflet · Relais · Clonage · Vœu |
 | Porygon2 | 29 | Évoluroc | Télécharge | Tonnerre · Laser Glace · Soin · Triplattaque |
 | Capidextre | 29 | — | Technicien | Bluff · Coup Double · Sabotage · Aéropique |
-| Ursaring | 29 | Orbe Flamme | Cran | Façade · Séisme · Close Combat · Mâchouille |
+| Ursaring | 30 | Orbe Flamme | Cran | Façade · Séisme · Close Combat · Mâchouille |
 | Famignol | 29 | Loupe | Technicien | Prolifération · Morsure · Encore · Demi-Tour |
 | Écrémeuh | 32 | — | Querelleur | Plaquage · Lait à Boire · Psykoud’Boul · Roulade |
 

@@ -90,7 +90,6 @@ MEGA_BASE_ABILITIES = {
 # pre-evolution blocks retain a compatible ability and set while the canonical
 # held-item assignment still applies.
 LEGAL_PRE_EVOLUTIONS = {
-    ("Ursaring", 29): "Teddiursa",
     ("Hydreigon", 61): "Zweilous",
 }
 

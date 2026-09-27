@@ -180,6 +180,20 @@ def validate_bosses():
             fail(f"owner-locked boss datum is missing: {value}")
 
     hard_by_trainer = dict(blocks)
+    whitney_hard = hard_by_trainer["TRAINER_WHITNEY_1_HNS"]
+    whitney_normal_matches = re.findall(
+        r"^=== TRAINER_WHITNEY_1_HNS ===\n(.*?)(?=^=== |\Z)",
+        normal,
+        re.M | re.S,
+    )
+    if len(whitney_normal_matches) != 1:
+        fail("Whitney NORMAL roster is missing or duplicated")
+    whitney_expected = "Ursaring @ Flame Orb\nLevel: 30\nAbility: Guts"
+    if whitney_expected not in whitney_hard or whitney_expected not in whitney_normal_matches[0]:
+        fail("Whitney must use level 30 Ursaring with Guts in NORMAL and HARD")
+    if "Teddiursa" in whitney_hard or "Teddiursa" in whitney_normal_matches[0]:
+        fail("Whitney still contains the obsolete Teddiursa fallback")
+
     jasmine = hard_by_trainer["TRAINER_JASMINE_1_HNS"]
     jasmine_ace = (
         "Aggron @ Aggronite", "Ability: Sturdy", "Nature: Careful",

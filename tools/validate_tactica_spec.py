@@ -309,6 +309,11 @@ for name, expected in early_items.items():
     actual = {row["species"]: row["item"] for row in roster if row["item"] is not None}
     require(actual == expected, f"{name} early held items: {actual}")
 
+blanche = next(v for k, v in bosses.items() if k[2] == "Blanche")
+blanche_ursaring = next((row for row in blanche if row["species"] == "Ursaring"), None)
+require(blanche_ursaring is not None and blanche_ursaring["level"] == 30,
+        "Blanche must use Ursaring at its legal level 30")
+
 required_items = {
     ("Jasmine", "Corviknight"): "Leftovers", ("Jasmine", "Archaludon"): "Sitrus Berry",
     ("Clément", "Xatu"): "Life Orb", ("Clément", "Gallade"): "Expert Belt",

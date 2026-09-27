@@ -30,7 +30,7 @@ This page is generated from the game's canonical teams. Use it to prepare for ma
 | Eevee | 29 | — | Adaptability | Double Team · Baton Pass · Substitute · Wish |
 | Porygon2 | 29 | Eviolite | Download | Thunderbolt · Ice Beam · Recover · Tri Attack |
 | Ambipom | 29 | — | Technician | Fake Out · Double Hit · Knock Off · Aerial Ace |
-| Ursaring | 29 | Flame Orb | Guts | Facade · Earthquake · Close Combat · Crunch |
+| Ursaring | 30 | Flame Orb | Guts | Facade · Earthquake · Close Combat · Crunch |
 | Maushold | 29 | Wide Lens | Technician | Population Bomb · Bite · Encore · U-turn |
 | Miltank | 32 | — | Scrappy | Body Slam · Milk Drink · Zen Headbutt · Rollout |
 
