@@ -29,7 +29,24 @@ static u32 GetTestBossLevel(u16 trainerId, bool8 useLowestLevel)
     case TRAINER_MORTY_1_HNS:
         return useLowestLevel ? 35 : 38;
     case TRAINER_LTSURGE_HNS:
-        return useLowestLevel ? 72 : 74;
+        return 75;
+    case TRAINER_SABRINA_HNS:
+    case TRAINER_ERIKA_HNS:
+    case TRAINER_JANINE_HNS:
+        return 80;
+    case TRAINER_MISTY_HNS:
+        return 85;
+    case TRAINER_BROCK_HNS:
+        return 90;
+    case TRAINER_BLAINE_HNS:
+        return 95;
+    case TRAINER_BLUE_HNS:
+    case TRAINER_WILL_2_HNS:
+    case TRAINER_KOGA_2_HNS:
+    case TRAINER_BRUNO_2_HNS:
+    case TRAINER_KAREN_2_HNS:
+    case TRAINER_LANCE_2_HNS:
+        return 100;
     case TRAINER_RED_HNS:
         return useLowestLevel ? 77 : 93;
     default:
@@ -126,13 +143,39 @@ TEST("Level cap: league transitions use Kanto, Red, then the engine maximum")
 {
     SetLevelCapMode(1);
     FlagSet(FLAG_IS_CHAMPION);
-    EXPECT_EQ(GetCurrentLevelCap(), 74);
+    EXPECT_EQ(GetCurrentLevelCap(), 75);
 
     FlagSet(FLAG_IS_KANTO_CHAMPION);
     EXPECT_EQ(GetCurrentLevelCap(), 93);
 
     FlagSet(FLAG_DEFEATED_RED);
     EXPECT_EQ(GetCurrentLevelCap(), MAX_LEVEL);
+}
+
+TEST("Level cap: Kanto scales by five and parallel central Gyms share level 80")
+{
+    SetLevelCapMode(1);
+    FlagSet(FLAG_IS_CHAMPION);
+    EXPECT_EQ(GetCurrentLevelCap(), 75);
+
+    FlagSet(FLAG_DEFEATED_VERMILION_GYM);
+    EXPECT_EQ(GetCurrentLevelCap(), 80);
+
+    SetTrainerFlag(TRAINER_SABRINA_HNS);
+    SetTrainerFlag(TRAINER_ERIKA_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 80);
+
+    SetTrainerFlag(TRAINER_JANINE_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 85);
+
+    FlagSet(FLAG_DEFEATED_CERULEAN_GYM);
+    EXPECT_EQ(GetCurrentLevelCap(), 90);
+
+    FlagSet(FLAG_DEFEATED_PEWTER_GYM);
+    EXPECT_EQ(GetCurrentLevelCap(), 95);
+
+    FlagSet(FLAG_DEFEATED_CINNABAR_ISLAND_GYM);
+    EXPECT_EQ(GetCurrentLevelCap(), 100);
 }
 
 TEST("Level cap: EXP Training reads the live boss cap")

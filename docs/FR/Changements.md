@@ -22,7 +22,7 @@ Cette page regroupe les changements de gameplay propres à Pokémon Tactica. Ell
 
 ### Difficulté et Level Caps
 
-NORMAL et HARD conservent les mêmes Pokémon, équipes, sets, niveaux et mécaniques. HARD ajoute surtout une préparation IV/EV plus poussée et une IA plus exigeante. Le Level Cap suit le prochain combat majeur et ne redescend jamais : Albert 17, Hector 25, Blanche 32, Mortimer 38, Chuck 45, Jasmine 52, Frédo 57, Sandra 64, Conseil 4 67, Maître 70.
+NORMAL et HARD conservent les mêmes Pokémon, équipes, sets, niveaux et mécaniques. HARD ajoute surtout une préparation IV/EV optimisée et une IA plus exigeante. Le Level Cap suit le prochain combat majeur et ne redescend jamais : Albert 17, Hector 25, Blanche 32, Mortimer 38, Chuck 45, Jasmine 52, Frédo 57, Sandra 64, Conseil 4 67, Maître 70. À Kanto, Major Bob est niveau 75 ; Morgane, Erika et Jeannine partagent le palier 80 ; Ondine est niveau 85, Pierre 90, Auguste 95, puis Blue et la deuxième Ligue 100.
 
 ### Starters et œuf d'Orme
 
@@ -83,7 +83,7 @@ Le **Méga-Anneau** est remis par Mortimer après le badge 4 et sa CT. Le joueur
 | Minotaupe | Sol / Acier | Vitesse: 88 → 100 |
 | Hydragon | Eau / Dragon | Attaque: 90 → 100; Vitesse: 75 → 95 |
 
-## Learnsets — 15 changements
+## Learnsets — 16 changements
 
 | Pokémon | Changement |
 |---|---|
@@ -96,6 +96,7 @@ Le **Méga-Anneau** est remis par Mortimer après le badge 4 et sa CT. Le joueur
 | Hyporoi | Aqua-Brèche (évolution) |
 | Hyporoi | Draco-Charge (niv. 52) |
 | Amphinobi | Extrasenseur → Vibrobscur (niv. 49) |
+| Hydragon | Draco-Griffe (compatibilité ajoutée) |
 | Tranchodon | Coupe Psycho (évolution) |
 | Jungko | Martobois (niv. 52) |
 | Hyporoi | Aquatacle (niv. 45) |

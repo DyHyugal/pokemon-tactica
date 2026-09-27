@@ -95,8 +95,8 @@ def validate_species(spec: dict) -> None:
 
 def validate_learnsets(spec: dict) -> None:
     changes = spec["learnset_changes"]
-    if len(changes) != 15:
-        fail(f"expected 15 learnset changes, got {len(changes)}")
+    if len(changes) != 16:
+        fail(f"expected 16 learnset changes, got {len(changes)}")
 
     config = CONFIG_PATH.read_text(encoding="utf-8")
     generation = re.search(r"^#define P_LVL_UP_LEARNSETS\s+GEN_(\d+)", config, re.M)
@@ -108,6 +108,12 @@ def validate_learnsets(spec: dict) -> None:
     blocks: dict[str, str] = {}
     for row in changes:
         name = row["learnset"]
+        if row["source_file"] == "src/data/pokemon/teachable_learnsets.h":
+            learnables = json.loads((ROOT / "src/data/pokemon/all_learnables.json").read_text(encoding="utf-8"))
+            species = row["species"].removeprefix("SPECIES_")
+            if learnables.get(species, []).count(row["move"]) != 1:
+                fail(f"{name} must contain exactly one {row['move']}")
+            continue
         if name not in blocks:
             match = re.search(
                 rf"static const struct LevelUpMove {re.escape(name)}\[\]\s*=\s*\{{(.*?)\n\}};",
@@ -132,7 +138,7 @@ def main() -> None:
     spec = json.loads(SPEC_PATH.read_text(encoding="utf-8"))
     validate_species(spec)
     validate_learnsets(spec)
-    print("Tactica balance validation passed: 26 species and 15 active learnset changes")
+    print("Tactica balance validation passed: 26 species and 16 active learnset changes")
 
 
 if __name__ == "__main__":

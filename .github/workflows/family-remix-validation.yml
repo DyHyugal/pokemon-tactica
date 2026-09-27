@@ -67,7 +67,7 @@ jobs:
         if: steps.scope.outputs.docs_only != 'true' || steps.scope.outputs.full == 'true'
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends binutils-arm-none-eabi gcc-arm-none-eabi libnewlib-arm-none-eabi libpng-dev python3
+          sudo apt-get install -y --no-install-recommends binutils-arm-none-eabi gcc-arm-none-eabi libnewlib-arm-none-eabi libpng-dev python3 python3-pil
 
       - name: Validate Tactica engine data
         if: steps.scope.outputs.docs_only != 'true' || steps.scope.outputs.full == 'true'
@@ -79,6 +79,8 @@ jobs:
           python3 tools/sync_tactica_encounter_access.py --check
           python3 tools/sync_tactica_encounters.py --check
           python3 tools/sync_tactica_localization.py --check
+          python3 tools/sync_tactica_boss_wiki.py --check
+          python3 tools/sync_tactica_wiki_assets.py --check
           python3 tools/sync_tactica_bosses.py --check
           python3 tools/generate_tactica_rival.py --check
           python3 tools/sync_tactica_mega_shop.py --check

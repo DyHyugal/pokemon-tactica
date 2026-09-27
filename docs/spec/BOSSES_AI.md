@@ -17,3 +17,7 @@ Les Méga des boss majeurs doivent être uniques ; en cas de doublon, le personn
 ## Points du dataset corrigés
 
 Voltali du Maître en rematch : Modeste, Vive-Attaque + Change Éclair, rôle spécial. Hyporoi garde Lentilscope. Corboss avec Orbe Vie là où le roster l'attribue. Magnézone spécial : Rayon Signal au lieu de Big Splash. Noadkoko spécial : Pouvoir Antique au lieu de Poudre Dodo. Rocket prend le dernier cap champion/rival +2, **jamais** le Rocket précédent +2.
+
+## Match retour du Maître
+
+Au niveau 100 : Voltali conserve son set ; Méga-Dracaufeu X reprend le set du premier match ; Hydragon est Rigide, Prognathe, Mouchoir Choix, DPS physique, avec Branchicrok / Psycho-Croc / Mâchouille / Draco-Griffe ; Miascarade conserve son set avec Bandeau Choix ; Exagide est Rigide, DPS physique, Restes, avec Danse Lames / Tête de Fer / Ombre Portée / Bouclier Royal ; Carchacrok conserve les capacités, talent, nature et EV du premier match avec Orbe Vie afin de préserver l’unicité des objets.

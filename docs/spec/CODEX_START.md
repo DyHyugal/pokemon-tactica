@@ -66,6 +66,13 @@ Ne pas recoder sans défaut démontré :
 - Jeannine : Aéromite reste l’ace ; Méga-Kravarech @ Dragalgite remplace Gaulet ;
 - forme de base légale avant Méga, talent Méga appliqué par la transformation.
 
+## Progression Kanto courante
+
+- Major Bob 75 ; Morgane, Erika et Jeannine 80 ; Ondine 85 ; Pierre 90 ; Auguste 95 ; Blue 100.
+- Deuxième Ligue et match retour du Maître : niveau 100.
+- Rival : logique de niveau inchangée.
+- Match retour du Maître : Voltali, Méga-Dracaufeu X, Hydragon, Miascarade, Exagide, Carchacrok.
+
 ## Priorités UI V1
 
 1. vérifier en ROM fraîche le Summary structurel déjà intégré ;
@@ -79,7 +86,7 @@ Un validateur statique ne remplace jamais une observation ROM pour ces points.
 
 La passe owner de la PR #29 est la baseline. Ne pas restaurer une ancienne version et ne pas refaire le style global.
 
-Les corrections data doivent passer par les sources canoniques puis les générateurs wiki. Le synchroniseur Localisations/Pokédex doit rester idempotent et la recherche HTML doit refléter les espèces canoniques FR/EN.
+Les corrections data doivent passer par les sources canoniques puis les générateurs wiki. Boss & Conseils se régénère avec `tools/sync_tactica_boss_wiki.py` et les images locales avec `tools/sync_tactica_wiki_assets.py`. Le synchroniseur Localisations/Pokédex doit rester idempotent et la recherche HTML doit refléter les espèces canoniques FR/EN.
 
 ## Politique de validation
 

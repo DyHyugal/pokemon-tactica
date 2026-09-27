@@ -230,7 +230,7 @@ require(learnable("Aurorus", "Thunderbolt"),
 
 balance = read("pokemon_balance.json")
 require(len(balance["species_changes"]) == 26, "expected 26 custom species entries")
-require(len(balance["learnset_changes"]) == 15, "expected 15 custom learnsets")
+require(len(balance["learnset_changes"]) == 16, "expected 16 custom learnsets")
 stats = {x["species"]: x["after"] for x in balance["species_changes"]}
 require(stats["SPECIES_CHARIZARD"]["atk"] == 110, "Charizard Atk 110")
 require(stats["SPECIES_CHARIZARD_MEGA_X"]["atk"] == 156, "Mega Charizard X Atk 156")
@@ -317,13 +317,49 @@ for (region, category, boss), roster in bosses.items():
     require(len(items) == len(set(items)), f"duplicate held item in {region}/{category}/{boss}")
     for row in roster:
         if row["species"].startswith("Mega "):
-            megas[row["species"]].add((region, category, boss))
+            # The owner explicitly keeps the Champion's Mega Charizard X for
+            # the Kanto rematch. Treat both Champion battles as one identity.
+            identity = ("Champion", boss) if category in {"Champion", "Champion Rematch"} else (region, category, boss)
+            megas[row["species"]].add(identity)
 for category, rules in rival["archetype_rules"].items():
     mega = rules.get("mega_species")
     if mega:
         megas[mega].add(("Johto", "Rival", category))
 require(all(len(users) == 1 for users in megas.values()),
         f"duplicate boss mega: {dict((m, list(u)) for m, u in megas.items() if len(u)>1)}")
+
+kanto_levels = {
+    "Major Bob": 75,
+    "Morgane": 80,
+    "Erika": 80,
+    "Jeannine": 80,
+    "Ondine": 85,
+    "Pierre": 90,
+    "Auguste": 95,
+    "Blue": 100,
+}
+for boss, level in kanto_levels.items():
+    roster = bosses[("Kanto", "Gym", boss)]
+    require({row["level"] for row in roster} == {level},
+            f"{boss}: expected fixed Kanto level {level}")
+
+champion_rematch = bosses[("Kanto", "Champion Rematch", "Maître")]
+expected_rematch = ["Jolteon", "Mega Charizard X", "Dracovish", "Meowscarada", "Aegislash", "Garchomp"]
+require([row["species"] for row in champion_rematch] == expected_rematch,
+        "Champion rematch owner roster")
+require({row["level"] for row in champion_rematch} == {100},
+        "Champion rematch must be level 100")
+for row in champion_rematch:
+    for move in row["moves"]:
+        learnset_species = row["species"].removeprefix("Mega ")
+        if learnset_species.startswith("Charizard "):
+            learnset_species = "Charizard"
+        require(learnable(learnset_species, move),
+                f"Champion rematch/{row['species']}: {move} unavailable in build")
+require(next(row for row in champion_rematch if row["species"] == "Dracovish")["item"] == "Choice Scarf",
+        "Champion rematch Dracovish Choice Scarf")
+require(next(row for row in champion_rematch if row["species"] == "Meowscarada")["item"] == "Choice Band",
+        "Champion rematch Meowscarada Choice Band")
 
 required_mega_gyms = {
     "Mortimer", "Chuck", "Jasmine", "Frédo", "Sandra",

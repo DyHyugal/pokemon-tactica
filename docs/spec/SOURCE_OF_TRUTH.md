@@ -1,6 +1,6 @@
 # Pokémon Tactica — source de vérité V1
 
-État : décisions produit courantes au 26 septembre 2026.
+État : décisions produit courantes au 27 septembre 2026.
 
 La hiérarchie normative est stricte :
 
@@ -58,6 +58,14 @@ La source détaillée est [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Le
 - Archer utilise Méga-Sharpedo et Méga-évolue immédiatement ; aucun plan Abri → Méga retardée.
 - Méga-Démolosse reste réservé à Marion.
 
+
+### Progression Kanto et deuxième Ligue
+
+- La courbe part du Maître de la première Ligue, niveau 70, puis monte par paliers de cinq jusqu’au niveau 100.
+- Major Bob est niveau 75. Morgane, Erika et Jeannine, accessibles dans le même mouvement, partagent le niveau et le cap 80. Ondine est niveau 85, Pierre 90, Auguste 95, Blue 100.
+- La deuxième Ligue et le match retour du Maître sont niveau 100. Le rival conserve sa logique existante.
+- Le match retour du Maître utilise Voltali, Méga-Dracaufeu X, Hydragon, Miascarade, Exagide et Carchacrok. Les objets restent uniques au sein de l’équipe.
+
 ### Starters et systèmes protégés
 
 - Le joueur choisit parmi 30 starters répartis en six catégories, plus Évoli.
@@ -69,7 +77,7 @@ La source détaillée est [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Le
 ### Boutiques et balance
 
 - Les boutiques spécialisées couvrent moves/CT compatibles, objets stratégiques et Méga-Gemmes sans contourner les objets de scénario.
-- Les 26 espèces modifiées et les 15 changements de learnset de `pokemon_balance.json` sont le contrat de balance courant.
+- Les 26 espèces modifiées et les 16 changements de learnset de `pokemon_balance.json` sont le contrat de balance courant. Hydragon reçoit Draco-Griffe afin que le set du match retour du Maître soit légal dans ce build.
 
 ### UI / UX ROM
 
@@ -87,7 +95,9 @@ La baseline actuelle inclut la passe owner fusionnée par la PR #29. Elle est pr
 - Navigation FR/EN : Accueil/Home, Guide, Changements/Changes, Pokédex, Localisations/Locations, Routes et Villes/Routes & Cities, Boss & Conseils/Tips, Crédits, Roadmap.
 - Routes/Villes est intégré et ne doit pas être retiré au nom d’une ancienne consigne.
 - Les pages Localisations et les compteurs Pokédex sont dérivés des sources canoniques par `tools/sync_tactica_localization.py`.
-- Les données de jeu ne doivent pas être recopiées manuellement dans le wiki lorsqu’elles peuvent être régénérées.
+- Les données de jeu ne doivent pas être recopiées manuellement dans le wiki lorsqu’elles peuvent être régénérées. La page Boss & Conseils est générée depuis `bosses.json`, `rival.json` et `rocket_progression.json`.
+- Les cartes du Guide et les sprites locaux sont reconstruits depuis les assets moteur ; les galeries utilisent une seule frame transparente par Pokémon.
+- Le Guide privilégie des paragraphes narratifs et ouvre la galerie des starters par défaut. La Roadmap décrit l’état courant de validation V1.
 
 ## Validation et merge V1
 

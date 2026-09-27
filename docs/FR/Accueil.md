@@ -2,7 +2,7 @@
 
 # Accueil
 
-**Redécouvrez Johto et Kanto à travers Pokémon Tactica.** Les Pokémon ont changé d'habitat, certaines espèces ont été renforcées ou retravaillées, les combats majeurs ont été repensés autour de vraies stratégies et de nombreux ajustements rendent la progression plus fluide sans supprimer le challenge.
+**Les routes de Johto s’ouvrent à nouveau, et une épopée renouvelée vous attend jusqu’aux confins de Kanto.** Les Pokémon ont changé d'habitat, certaines espèces ont été renforcées ou retravaillées, les combats majeurs ont été repensés autour de vraies stratégies et de nombreux ajustements rendent la progression plus fluide sans supprimer le challenge.
 
 Tactica conserve l'aventure et l'identité de Heart & Soul, mais transforme la façon de construire son équipe : plus de familles accessibles, Level Caps, rival thématique, boss stratégiques, Méga-Évolution, outils d'entraînement et qualité de vie pensée pour tester des équipes sans grind inutile.
 

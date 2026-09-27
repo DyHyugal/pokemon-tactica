@@ -83,7 +83,7 @@ Morty gives the **Mega Ring** after Badge 4 and his TM, so the player can Mega E
 | Excadrill | Ground / Steel | Speed: 88 → 100 |
 | Hydragon | Water / Dragon | Attack: 90 → 100; Speed: 75 → 95 |
 
-## Learnsets — 15 changes
+## Learnsets — 16 changes
 
 | Pokémon | Change |
 |---|---|
@@ -96,6 +96,7 @@ Morty gives the **Mega Ring** after Badge 4 and his TM, so the player can Mega E
 | Kingdra | Liquidation (evolution) |
 | Kingdra | Dragon Rush (Lv. 52) |
 | Greninja | Extrasensory → Dark Pulse (Lv. 49) |
+| Dracovish | Dragon Claw (compatibility added) |
 | Haxorus | Psycho Cut (evolution) |
 | Sceptile | Wood Hammer (Lv. 52) |
 | Kingdra | Wave Crash (Lv. 45) |
