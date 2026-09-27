@@ -143,6 +143,18 @@ TEST("Level cap: later rival fights follow the next major boss")
     EXPECT_EQ(GetTestBossLevel(TRAINER_RIVAL_CYNDAQUIL_6_HNS, FALSE), 95);
 }
 
+TEST("Level cap: Rocket encounters follow actual story stages")
+{
+    SetLevelCapMode(1);
+    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_PROTON_1_HNS), 19);
+    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_PETREL_1_HNS), 40);
+    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_ARIANA_1_HNS), 40);
+    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_PETREL_2_HNS), 40);
+    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_PROTON_2_HNS), 66);
+    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_ARIANA_2_HNS), 66);
+    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_ARCHER_HNS), 66);
+}
+
 TEST("Level cap: Rocket parties use legal evolution stages at their resolved level")
 {
     EXPECT_EQ(GetFamilyRocketLegalSpecies(SPECIES_CROBAT, 19), SPECIES_ZUBAT);

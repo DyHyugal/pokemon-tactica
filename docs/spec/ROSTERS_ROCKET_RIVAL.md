@@ -454,6 +454,8 @@ Les thèmes Rocket n'imposent pas deux setters météo/terrain lorsqu'ils ne rep
 
 Les Méga n'apparaissent que dans la version FINAL.
 
+Les phases sont appliquées aux rencontres qui existent réellement : Proton utilise EARLY puis FINAL, Petrel et Ariana MID puis FINAL, Archer FINAL uniquement. Les niveaux sont dynamiques et valent le dernier jalon Champion/Rival pertinent +2 ; le système ne suppose pas que chaque Exécutif soit combattu trois fois.
+
 ---
 
 ## Proton — Poison offense / hazards

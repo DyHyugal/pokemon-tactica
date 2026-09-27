@@ -45,6 +45,7 @@ Les points suivants sont intégrés et protégés automatiquement. Une observati
 - absence d’anciens `EVO_TRADE` actifs ;
 - Pokédex évolution régénéré depuis le runtime et protégé par `sync_tactica_species_evolutions.py --check` ;
 - rosters Rocket et règles Méga ;
+- caps Rival synchronisés sur le prochain jalon majeur et niveaux Rocket calculés sur le dernier jalon pertinent +2 ;
 - talents canoniques du Rival lorsqu’ils sont légaux pour la forme envoyée ;
 - Mega Ring placé après Mortimer ;
 - premier accès réel des encounters ;
@@ -93,6 +94,15 @@ Le Pokédex n’est plus une source manuelle pour ces méthodes : ses champs d�
 - sélection utilisable ;
 - persistance après sauvegarde/rechargement ;
 - ne pas toucher à Vitesse, Audio ou Shiny Rate sans défaut reproduit.
+
+### Rival / Rocket
+
+- premier rival : un Pokémon, niveau 17, stade légal ;
+- après Hector : 4 Pokémon, plage 29–32 ;
+- Tour Cendrée : 6 Pokémon, plage 35–38 ;
+- Tour Radio : 61–64 ; Route Victoire : 65–67 ; Mont Sélénite/Plateau : 95 ;
+- Rocket : Proton 3→6, Petrel/Ariana 4→6, Archer 6 ; niveaux dynamiques +2 selon les jalons réels ;
+- vérifier en combat que les talents attendus du Rival se déclenchent selon les archétypes.
 
 ### Méga
 

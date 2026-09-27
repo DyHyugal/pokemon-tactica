@@ -27,7 +27,7 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | Œuf d’Orme / second starter distinct | `[DONE]` | Garde-fou intégré et flow déjà validé ; PR #48 ajoute le message dédié en cas de doublon sans réécrire le flow. Relecture visuelle du texte sur la prochaine candidate uniquement. |
 | Évolutions — conformité 9G / Fil Liaison | `[DONE]` | Runtime migré, mécaniques impossibles traitées, validateur générique intégré à la CI et assets d’évolution du Pokédex régénérés depuis les sources runtime. |
 | Rival — starter fixe / progression réelle | `[PARTIEL]` | Les 7 combats sont synchronisés depuis `rival.json` sur le prochain cap majeur : 17, 29–32, 35–38, 61–64, 65–67, 95 et 95. Tailles réelles 1→4→6, Méga dès le combat 4 ; observation ROM encore utile. |
-| Rocket — 3→4→6 / Méga FINAL | `[PARTIEL]` | JSON/runtime/validateurs intégrés ; combats ROM à observer. |
+| Rocket — phases scénario / Méga FINAL | `[PARTIEL]` | Les sept combats réels sont protégés : Proton 3→6, Petrel/Ariana 4→6, Archer 6 ; niveaux dynamiques dernier jalon +2 et Méga FINAL. Combats ROM à observer. |
 | Archer = Méga-Sharpedo immédiat | `[PARTIEL]` | Set et garde-fou automatisés ; transformation à observer en ROM. |
 | Mega Ring après Mortimer | `[PARTIEL]` | Ordre scripté et validé ; réception/utilisation à confirmer en ROM. |
 | Méga uniques globalement | `[PARTIEL]` | Unicité automatisée ; transformations boss à observer en ROM. |
