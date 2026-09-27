@@ -109,24 +109,17 @@ Ne pas rouvrir ce bloc sans régression démontrée.
 
 ### Rival / Rocket
 
-La progression et les niveaux ont été corrigés côté sources/runtime/générateurs.
+Rocket reste intégré côté sources/runtime et doit surtout être observé dans la prochaine ROM candidate.
 
-Rival :
+Le **Rival reste à corriger avant la prochaine candidate** :
 
-- premier duel : 1 Pokémon, niveau 17 ;
-- après Hector : 4 Pokémon, plage 29–32 ;
-- Tour Cendrée : 6 Pokémon, plage 35–38 ;
-- Tour Radio : 61–64 ;
-- Route Victoire : 65–67 ;
-- Mont Sélénite / Plateau : niveau 95 ;
-- Méga à partir du combat 4, après badge 4.
+- contrat owner : 1 Pokémon au premier duel, 4 après Hector, 6 à la Tour Cendrée ;
+- attendu après Hector : niveaux 29–32 ;
+- attendu Tour Cendrée : niveaux 35–38 ;
+- `integration/v1` contient encore `after_badge_1: 3` dans `data/spec/rival.json` ;
+- `src/data/trainers_hns.party` contient encore les anciens niveaux 15/16/18 au combat 2 et 22/23/22/24 au combat 3.
 
-Rocket :
-
-- progression des effectifs et niveaux dynamiques issue des jalons réels ;
-- Méga uniquement dans les phases finales prévues.
-
-Ces combats restent à observer dans la prochaine ROM candidate.
+Ne pas déclarer ce bloc terminé tant que source canonique, runtime/générateur, tests et CI ne sont pas réalignés.
 
 ### Introduction / second starter
 
@@ -144,16 +137,18 @@ Ne pas réécrire ce bloc sans défaut observé en ROM.
 
 ## Priorités actuelles
 
-### PRIORITÉ 1 — stabilisation avant candidate
+### PRIORITÉ 1 — corriger la progression Rival
 
-Aucun nouveau chantier gameplay prioritaire n'est ouvert après la PR #48.
+Avant toute nouvelle ROM candidate, réintégrer proprement le contrat owner Rival :
 
-Avant de créer la prochaine ROM candidate :
+- aucun combat scénario après le badge 1 ;
+- après Hector : 4 Pokémon, niveaux 29–32 ;
+- Tour Cendrée : 6 Pokémon, niveaux 35–38 ;
+- aligner les combats suivants sur les jalons réellement joués ;
+- corriger source canonique + runtime/génération + tests ;
+- CI verte avant merge.
 
-- conserver `integration/v1` comme seule base ;
-- vérifier que la CI est verte sur le SHA final ;
-- ne pas ajouter de refonte ou d'audit hors scope ;
-- ne pas rouvrir un bloc terminé uniquement parce qu'il reste à tester manuellement.
+Ne pas profiter de ce bloc pour modifier l’IA ou refaire les rosters sans défaut démontré.
 
 ### PRIORITÉ 2 — ROM candidate propre
 
