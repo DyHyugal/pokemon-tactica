@@ -1,8 +1,8 @@
-[Home](Home.md) · [Game Guide](Game-Guide.md) · [Changes](Changes.md) · [Pokédex](Pokedex.md) · [Locations](Locations.md) · [Bosses & Tips](Bosses-and-Tips.md) · [Credits](Credits-and-Versions.md) · [Roadmap](Roadmap.md) · **[FR](../FR/Pokedex.md)**
+[Home](Home.md) · [Guide](Game-Guide.md) · [Changes](Changes.md) · [Pokédex](Pokedex.md) · [Locations](Locations.md) · [Routes & Cities](Routes-and-Cities.html) · [Bosses & Tips](Bosses-and-Tips.md) · [Credits](Credits-and-Versions.md) · [Roadmap](Roadmap.md) · **[FR](../FR/Pokedex.md)**
 
 # Pokédex
 
-Primary search uses **English** names, with French names accepted as aliases on the static site. Locations stay on a separate page so the Pokédex remains easy to browse.
+Primary search uses **English** names, with French names accepted as aliases on the static site. On the HTML version, clicking a card opens the complete ROM-specific entry: stats, abilities, evolution line and conditions, moves and locations. The **See all locations** link remains the only direct shortcut to encounter results.
 
 | Pokémon | Tables |
 |---|---:|
