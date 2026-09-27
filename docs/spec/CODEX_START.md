@@ -90,6 +90,7 @@ L’ordre de reprise obligatoire est :
 
 Traiter et valider entièrement ce bloc avant de passer à Difficulty :
 
+- Écran titre avant sélection de partie / New Game : le titre « Pokémon Tactica » n’est pas correctement centré sur l’image ;
 - Menu principal Start encore blanc/crème ;
 - Summary toujours illisible/superposé ;
 - HUD combat encore largement blanc + plaque blanche sous les PV ;
@@ -159,6 +160,7 @@ La direction reste : **noir / rouge / gris, sans grandes surfaces blanches**.
 
 Défauts observés :
 
+- **Écran titre avant sélection de partie / New Game** : le titre « Pokémon Tactica » n’est pas correctement centré sur l’image ; corriger uniquement son positionnement sans refaire l’écran titre ;
 - **Menu principal Start** : grandes surfaces blanc/crème toujours présentes ;
 - **Summary** : toujours très illisible/superposé. La précédente modification n’a pas constitué la recomposition structurelle BG/tilemaps/windows attendue ;
 - **HUD combat** : plaque blanche toujours visible sous les PV joueur ; panneaux Attaque/Sac/Équipe/Fuite encore très blancs et incohérents avec la charte ;
