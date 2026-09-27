@@ -6240,7 +6240,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #else
         .formSpeciesIdTable = sYamaskFormSpeciesIdTable,
 #endif
-        .evolutions = EVOLUTION({EVO_SCRIPT_TRIGGER, 0, SPECIES_RUNERIGUS, CONDITIONS({IF_CURRENT_DAMAGE_GE, 49})}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_LINKING_CORD, SPECIES_RUNERIGUS}),
     },
 
     [SPECIES_RUNERIGUS] =
