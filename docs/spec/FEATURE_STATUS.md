@@ -19,6 +19,7 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | Vitesse native x1–x4 | `[DONE]` | Tests natifs existants ; ne pas réécrire sans défaut démontré. |
 | Audio indépendant / preset | `[DONE]` | Tests audio existants ; contrôle auditif final uniquement. |
 | Shiny Rate | `[DONE]` | Menu et persistance couverts. |
+| Difficulté NORMAL/HARD | `[DONE]` | Option restaurée dans Settings, HARD par défaut, persistance reliée au runtime et 5 tests Settings verts. |
 | Shiny Only | `[HORS V1]` | À reprendre après stabilisation V1. |
 | 30 starters + Évoli | `[DONE]` | Logique cœur intégrée. |
 | Sélecteur — curseur initial / annulation | `[PARTIEL]` | Correction intégrée automatiquement ; comportement visuel à revalider en ROM fraîche. |
@@ -27,7 +28,8 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | Rival — starter fixe / niveau 17 / 1→3→4→6 | `[PARTIEL]` | JSON/runtime/validateurs intégrés, talents canoniques déterministes lorsqu’ils sont légaux pour la forme envoyée ; combats ROM à observer. |
 | Rocket — 3→4→6 / Méga FINAL | `[PARTIEL]` | JSON/runtime/validateurs intégrés ; combats ROM à observer. |
 | Archer = Méga-Sharpedo immédiat | `[PARTIEL]` | Set et garde-fou automatisés ; transformation à observer en ROM. |
-| Mega Ring après Mortimer | `[PARTIEL]` | Ordre scripté et validé ; réception/utilisation à confirmer en ROM. |
+| Mega Ring après Mortimer / Méga joueur | `[DONE]` | Anneau remis après le badge 4 ; START libéré pour la commande Méga, SELECT ouvre l’aide des attaques ; garde-fou automatisé. Observation ROM de confort conservée. |
+| Méga-Ectoplasma de Mortimer | `[DONE]` | Équipes NORMAL/HARD équipées de l’Ectoplasmite ; test de combat : Corps Maudit → Méga-Ectoplasma → Marque Ombre. |
 | Méga uniques globalement | `[PARTIEL]` | Unicité automatisée ; transformations boss à observer en ROM. |
 | Une Méga par Champion dès Mortimer | `[PARTIEL]` | Validateur exige exactement une Méga pour chaque Champion concerné. |
 | Progression Kanto +5 | `[DONE]` | Major Bob 75 ; groupe Morgane/Erika/Jeannine 80 ; Ondine 85 ; Pierre 90 ; Auguste 95 ; Blue et deuxième Ligue 100. Test natif dédié. |
@@ -50,6 +52,8 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | Summary ROM | `[PARTIEL]` | Recomposition structurelle intégrée et protégée par le validateur UI ; rendu réel à confirmer dans une ROM fraîche. |
 | HUD combat | `[PARTIEL]` | Plaque blanche résiduelle de la barre PV supprimée dans l’asset et protégée par le validateur UI ; panneaux/rendu final à confirmer en ROM. |
 | UI boutiques | `[PARTIEL]` | Charte rouge/noir intégrée dans le runtime shop et protégée par le validateur UI ; lisibilité/sélection à confirmer en ROM. |
+| Menu principal Start | `[PARTIEL]` | Palette runtime corrigée vers la charte sombre ; rendu réel à confirmer dans une ROM fraîche. |
+| Menu Options / header | `[PARTIEL]` | Navigation et `B SAVE & EXIT` séparés sur deux lignes ; rendu réel à confirmer dans une ROM fraîche. |
 | Assistant d’entraînement | `[DONE]` | Tests dédiés existants. |
 | Boutiques objets/moves/Méga-Gemmes — contenu | `[PARTIEL]` | Catalogues/runtime présents ; parcours d’achat ROM à revalider. |
 | Balance 26 espèces / 16 learnsets | `[DONE]` | Source canonique + validateur dédié ; Draco-Griffe est légal pour Hydragon au match retour. |
@@ -62,7 +66,7 @@ Ne jamais transformer « non testé manuellement » en « non implémenté », e
 
 ## Prochain ordre de travail
 
-1. valider la branche par les tests ciblés, le build et la CI ;
-2. fusionner dans `integration/v1` ;
+1. intégrer les correctifs UI/Difficulty/Méga après CI verte ;
+2. reprendre l’audit des évolutions selon `EVOLUTIONS.md` et les résultats owner à venir ;
 3. reconstruire une ROM candidate propre ;
 4. effectuer le playthrough owner complet et consigner les défauts observés.

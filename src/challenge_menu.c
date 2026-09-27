@@ -27,6 +27,7 @@
 #include "overworld.h"
 #include "script.h"
 #include "challenge_menu.h"
+#include "difficulty.h"
 
 
 // =============================================================================
@@ -65,6 +66,7 @@ enum {
 };
 
 enum {
+    ITEM_FEATURES_BATTLE_DIFFICULTY,
     ITEM_FEATURES_RTC_TYPE,
     ITEM_FEATURES_SHINY_CHANCE,
     ITEM_FEATURES_SHINY_COLOR,
@@ -667,6 +669,17 @@ static const u8 *const sDesc_FeaturesNext[] = {
 };
 
 static const struct ChallengeMenuItem sTabItems_Features[] = {
+    [ITEM_FEATURES_BATTLE_DIFFICULTY] = {
+        .name         = COMPOUND_STRING("BATTLE DIFFICULTY"),
+        .descriptions = (const u8 *const[]) {
+            COMPOUND_STRING("NORMAL uses the standard boss teams."),
+            COMPOUND_STRING("HARD uses optimized boss teams."),
+        },
+        .numChoices   = 2,
+        .choiceNames  = (const u8 *const[]) {
+            COMPOUND_STRING("NORMAL"), COMPOUND_STRING("HARD"),
+        },
+    },
     [ITEM_FEATURES_RTC_TYPE] = {
         .name         = COMPOUND_STRING("CLOCK TYPE"),
         .descriptions = sDesc_RtcType,
@@ -1375,6 +1388,7 @@ static bool8 CheckConditions(u8 tab, u8 itemIndex)
 
 static void ApplyRecommendedPresets(void)
 {
+    *GetSelectionPtr(TAB_FEATURES, ITEM_FEATURES_BATTLE_DIFFICULTY) = 1; // HARD
     // When RECOMMENDED is selected, force all mode options to their "on/new" values
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_MODERN_MOVES)       = 1; // ON
     *GetSelectionPtr(TAB_MODE, ITEM_MODE_SYNCHRONIZE)        = 1; // NEW
@@ -1668,18 +1682,18 @@ static void DrawTopBar(void)
 
     FillWindowPixelBuffer(WIN_TOPBAR, PIXEL_FILL(15));
 
-    AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 120 - width, 1, color, 0, tabName);
+    AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 120 - width, 0, color, 0, tabName);
 
     if (sMenu->currentTab > 0)
-        AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 5, 1, color, 0, sText_TopBar_Left);
+        AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 5, 0, color, 0, sText_TopBar_Left);
     if (sMenu->currentTab < TAB_COUNT - 1)
-        AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, right, 1, color, 0, sText_TopBar_Right);
+        AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, right, 0, color, 0, sText_TopBar_Right);
     else if (sMenu->currentTab == TAB_COUNT - 1)
-        AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, right, 1, color, 0, sText_TopBar_Save);
-    {
-        int saveExitX = (120 + width + right) / 2 - GetStringWidth(FONT_SMALL, sText_TopBar_Cancel, 0) / 2;
-        AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, saveExitX, 1, color, 0, sText_TopBar_Cancel);
-    }
+        AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, right, 0, color, 0, sText_TopBar_Save);
+
+    AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL,
+        120 - GetStringWidth(FONT_SMALL, sText_TopBar_Cancel, 0) / 2,
+        9, color, 0, sText_TopBar_Cancel);
 
     PutWindowTilemap(WIN_TOPBAR);
     CopyWindowToVram(WIN_TOPBAR, COPYWIN_FULL);
@@ -2019,6 +2033,8 @@ static void Task_ConfirmSaveYes(u8 taskId)
     cs->genOneRecharge             = *GetSelectionPtr(TAB_MODE, ITEM_MODE_GEN_ONE_RECHARGE);
 
     // Features tab
+    cs->tx_Features_LimitDifficulty = *GetSelectionPtr(TAB_FEATURES, ITEM_FEATURES_BATTLE_DIFFICULTY);
+    SetCurrentDifficultyLevel(cs->tx_Features_LimitDifficulty ? DIFFICULTY_HARD : DIFFICULTY_NORMAL);
     SetNativeGameSpeed(*GetSelectionPtr(TAB_FEATURES, ITEM_FEATURES_GAME_SPEED) + 1);
     cs->tx_Features_RTCType        = *GetSelectionPtr(TAB_FEATURES, ITEM_FEATURES_RTC_TYPE);
     cs->tx_Features_ShinyChance    = *GetSelectionPtr(TAB_FEATURES, ITEM_FEATURES_SHINY_CHANCE);
@@ -2259,6 +2275,7 @@ void CB2_InitChallengeMenu(void)
                 *GetSelectionPtr(TAB_MODE, ITEM_MODE_GAMEMODE) = 1; // CUSTOM
 
             // Features tab
+            *GetSelectionPtr(TAB_FEATURES, ITEM_FEATURES_BATTLE_DIFFICULTY) = cs->tx_Features_LimitDifficulty;
             *GetSelectionPtr(TAB_FEATURES, ITEM_FEATURES_GAME_SPEED) = GetNativeGameSpeed() - 1;
             *GetSelectionPtr(TAB_FEATURES, ITEM_FEATURES_RTC_TYPE)     = cs->tx_Features_RTCType;
             *GetSelectionPtr(TAB_FEATURES, ITEM_FEATURES_SHINY_CHANCE) = cs->tx_Features_ShinyChance;

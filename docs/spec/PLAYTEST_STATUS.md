@@ -23,6 +23,7 @@ Les points suivants ne doivent pas être recodés simplement parce qu’une obse
 - vitesse native x1/x2/x3/x4 ;
 - audio indépendant ;
 - Shiny Rate ;
+- difficulté NORMAL/HARD : option Settings, HARD par défaut et persistance runtime ;
 - starter/œuf — logique cœur ;
 - curseur initial et retour après annulation — garde-fous automatiques ;
 - premier rival niveau 17 et stade légal ;
@@ -30,6 +31,8 @@ Les points suivants ne doivent pas être recodés simplement parce qu’une obse
 - talents canoniques du Rival appliqués lorsqu’ils sont légaux pour la forme envoyée ;
 - talents pré-Méga légaux ;
 - Mega Ring placé après Mortimer ;
+- commande Méga joueur sur START, aide des attaques sur SELECT ;
+- Mortimer NORMAL/HARD : Ectoplasmite, transformation Méga et talent Corps Maudit → Marque Ombre couverts par un test de combat ;
 - premier accès réel pour les encounters ;
 - Route 36 à 14–17 ;
 - Scorplane Route 34 jour après badge 2 ;

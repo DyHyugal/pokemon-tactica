@@ -88,35 +88,15 @@ L’ordre de reprise obligatoire est :
 
 ### PRIORITÉ 1 — UI/UX réellement visible en ROM
 
-Traiter et valider entièrement ce bloc avant de passer à Difficulty :
-
-- Menu principal Start encore blanc/crème ;
-- Summary toujours illisible/superposé ;
-- HUD combat encore largement blanc + plaque blanche sous les PV ;
-- boutiques/Centre commercial encore blanches et parfois sans contour complet ;
-- menu Options : chevauchement du header depuis `B SAVE & EXIT`.
-
-Corriger les vrais assets/tilemaps/windows/runtime utilisés, pas seulement satisfaire un validateur statique. Le bloc UI/UX n’est considéré terminé qu’après correction des défauts identifiés, tests pertinents et mise à jour des statuts.
+Les assets, tilemaps, fenêtres et chemins runtime ont été corrigés pour le menu Start, le Summary, le HUD, les boutiques et l’en-tête Options. Le validateur cible désormais les surfaces réellement compilées et le générateur du Summary est idempotent. Le contrôle restant est l’observation d’une ROM fraîche ; il est consigné comme contrôle ROM et ne justifie pas de réécrire le bloc sans défaut observé.
 
 ### PRIORITÉ 2 — Difficulty
 
-Traiter et valider entièrement ce bloc après UI/UX :
-
-- l’option doit être visible, utilisable et persistante ;
-- ne pas toucher à Vitesse, Audio ou Shiny Rate, déjà validés.
-
-Ne pas commencer le bloc Méga tant que Difficulty n’est pas terminé.
+L’option NORMAL/HARD est visible dans Settings, persistée dans la sauvegarde et reliée à la variable de difficulté du moteur. HARD est le choix recommandé par défaut. Les tests Settings protègent ce comportement. Ne pas modifier Vitesse, Audio ou Shiny Rate sans défaut démontré.
 
 ### PRIORITÉ 3 — Méga-Évolution
 
-Traiter le système Méga **end-to-end dans un seul chantier**, puis le valider avant de passer aux évolutions :
-
-- Mortimer doit réellement Méga-évoluer ;
-- le joueur doit pouvoir Méga-évoluer après obtention du Mega Ring avec une pierre compatible ;
-- vérifier activation boss, flag/variable du Mega Ring, disponibilité joueur, bouton/HUD, objet tenu, transformation et talents pré/post-Méga ;
-- ajouter les non-régressions nécessaires.
-
-Ne pas corriger une moitié du flux Méga puis reporter le reste à plus tard.
+Le flux est protégé de bout en bout : le Mega Ring est remis après le badge 4, START active la commande Méga et SELECT ouvre l’aide des attaques, les équipes NORMAL/HARD de Mortimer utilisent Ectoplasma @ Ectoplasmite avec Corps Maudit, et le test de combat vérifie la transformation ainsi que Marque Ombre. Le contrôle ROM joueur/boss reste utile mais n’est plus un défaut automatisé ouvert.
 
 ### PRIORITÉ 4 — Évolutions
 
@@ -149,19 +129,19 @@ L’ancien point « Élektek → Élekable via Électriseur niveau 36 » reste o
 
 Ne pas consommer du temps sur un bloc de priorité inférieure tant que le bloc prioritaire en cours n’est pas terminé et validé.
 
-## 1. UI/UX — défauts confirmés en ROM
+## 1. UI/UX — état attendu courant
 
 La direction reste : **noir / rouge / gris, sans grandes surfaces blanches**.
 
-Défauts observés :
+État implémenté :
 
-- **Menu principal Start** : grandes surfaces blanc/crème toujours présentes ;
-- **Summary** : toujours très illisible/superposé. La précédente modification n’a pas constitué la recomposition structurelle BG/tilemaps/windows attendue ;
-- **HUD combat** : plaque blanche toujours visible sous les PV joueur ; panneaux Attaque/Sac/Équipe/Fuite encore très blancs et incohérents avec la charte ;
-- **Boutiques / Centre commercial** : UI pratiquement inchangée, grands fonds blancs ; certains menus ont un contour incomplet/manquant ;
-- **Menu Options** : depuis l’ajout de `B SAVE & EXIT`, le header se chevauche avec la navigation `L PREVIOUS / FEATURES… / R NEXT`. Recomposer l’en-tête afin que toutes les indications restent lisibles simultanément.
+- **Menu principal Start** : palette standard sombre/rouge chargée sans corrompre les tilemaps du terrain ;
+- **Summary** : fonds et tilemaps recomposés, grandes surfaces claires retirées, libellés fixes dupliqués supprimés et page IV/EV conservée ;
+- **HUD combat** : plaque blanche résiduelle retirée, panneaux et barres protégés par le validateur ;
+- **Boutiques / Centre commercial** : fond rouge, texte noir, palette et contour complet chargés dans les deux flux runtime ;
+- **Menu Options** : navigation sur la première ligne et `B SAVE & EXIT` centré sur la seconde.
 
-Le validateur UI actuel donne de faux positifs : il vérifie surtout la présence de constantes/assets ciblés mais ne garantit pas le rendu final. Le renforcer sur les vrais assets/tilemaps/windows/runtime concernés. Un contrôle statique ne remplace pas l’observation ROM.
+Le validateur cible les assets compilés et les chemins runtime concernés. L’observation d’une ROM fraîche reste nécessaire pour juger la lisibilité finale.
 
 ## 2. Difficulty
 
@@ -171,36 +151,16 @@ Validé en ROM :
 - audio : OK ;
 - Shiny Rate : OK.
 
-À corriger :
+La difficulté NORMAL/HARD est présente dans Settings. Le choix est sauvegardé, rechargé et appliqué au moteur ; le preset recommandé et une nouvelle partie démarrent en HARD. Les tests Settings sont la non-régression canonique.
 
-- l’option **Difficulty est absente du menu Settings**. Restaurer l’entrée de difficulté et vérifier sa persistance. Ne pas modifier les trois réglages déjà validés.
+## 3. Méga-Évolution — état attendu courant
 
-## 3. Méga-Évolution — blocage prioritaire
-
-Défauts confirmés en ROM :
-
-- **Mortimer : Ectoplasma n’a pas Méga-évolué** ;
-- après victoire, le **Mega Ring est bien reçu** ;
-- pourtant le joueur **ne peut toujours pas Méga-évoluer** : Dracaufeu tient bien sa Méga-Gemme, mais aucune option/commande Méga n’apparaît dans le HUD ;
-- aucun crash.
-
-Diagnostiquer le système end-to-end :
-
-- condition d’activation boss ;
-- flag/variable du Mega Ring ;
-- disponibilité joueur ;
-- bouton/HUD ;
-- objet tenu compatible ;
-- déclenchement effectif en combat ;
-- forme/talent avant et après Méga.
-
-Ajouter des tests démontrant au minimum :
-
-1. aucune Méga joueur avant Mega Ring ;
-2. Mega Ring débloqué après Mortimer ;
-3. Pokémon + pierre compatible → Méga disponible ;
-4. Mortimer déclenche réellement Méga-Ectoplasma ;
-5. talent pré-Méga puis talent Méga correct.
+- le joueur doit posséder le Mega Ring et une pierre compatible ;
+- le Mega Ring est remis après le badge 4 ;
+- START sélectionne la Méga-Évolution, tandis que SELECT ouvre l’aide des attaques ;
+- les équipes NORMAL et HARD de Mortimer utilisent Ectoplasma @ Ectoplasmite avec Corps Maudit ;
+- la transformation produit Méga-Ectoplasma avec Marque Ombre ;
+- un test de combat dédié et `tools/validate_tactica_mega.py` protègent ce flux.
 
 ## 4. Évolutions — migration canonique obligatoire
 
@@ -315,21 +275,26 @@ Préférer une amélioration générique de la fonction de scoring IA lorsqu’e
 - PNJ objets/capacités du **Centre Commercial de Doublonville** : fonctionnels. Ne pas supposer qu’ils doivent exister dans chaque Poké Mart si la source de vérité/wiki les place uniquement ici ;
 - Greninja possède bien une Méga-Gemme ; **ne pas lancer maintenant un inventaire complet des Méga**, ce sera une passe dédiée ultérieure ;
 - Mortimer : équipe globalement correcte, IA plutôt propre, aucun crash ;
-- Mega Ring reçu après Mortimer : OK, mais utilisation de la Méga joueur cassée comme décrit plus haut.
+- Mega Ring reçu après Mortimer : OK. La commande joueur utilise START ; l’aide des attaques a été déplacée sur SELECT afin de ne plus intercepter cette entrée.
 
-## 10. Documentation/statuts à mettre à jour pendant le correctif
+## 10. Statuts courants après correctif automatisé
 
-À partir de ce playtest réel :
+Les défauts UI observés ont été corrigés dans les assets et chemins runtime. Ils restent `[PARTIEL]` jusqu’à l’observation d’une ROM fraîche :
 
-- **Summary ROM** → `[À CORRIGER]` ;
-- **HUD combat** → `[À CORRIGER]` ;
-- **Menu principal Start** → ajouter explicitement comme `[À CORRIGER]` si absent du registre ;
-- **Menu Options / header** → `[À CORRIGER]` ;
-- **UI boutiques** → `[À CORRIGER]` ;
+- **Summary ROM** ;
+- **HUD combat** ;
+- **Menu principal Start** ;
+- **Menu Options / header** ;
+- **UI boutiques**.
+
+Les blocs suivants sont validés automatiquement :
+
+- difficulté NORMAL/HARD, valeur par défaut et persistance ;
+- Mega Ring après Mortimer, disponibilité de la commande joueur et transformation de l’Ectoplasma de Mortimer.
+
+Le défaut suivant reste ouvert après le bloc Évolutions :
+
 - Rival progression/scaling → `[À CORRIGER]` tant que le défaut runtime n’est pas corrigé ;
-- Méga boss/joueur → `[À CORRIGER]` tant que Mortimer et le joueur ne déclenchent pas réellement la Méga.
-
-Ne pas laisser ces points sous la formulation « intégré, rendu à confirmer » : le rendu/runtime a maintenant été observé et a échoué.
 
 ## Wiki
 

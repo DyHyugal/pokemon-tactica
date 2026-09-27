@@ -77,6 +77,7 @@ jobs:
           python3 tools/validate_tactica_evolutions.py
           python3 tools/validate_family_remix.py
           python3 tools/validate_tactica_balance.py
+          python3 tools/validate_tactica_mega.py
           python3 tools/sync_tactica_encounter_access.py --check
           python3 tools/sync_tactica_encounters.py --check
           python3 tools/sync_tactica_localization.py --check
@@ -111,6 +112,7 @@ jobs:
           make check BUILD=hns TESTS=Settings -j2
           make check BUILD=hns TESTS=Native -j2
           make check BUILD=hns TESTS=Family -j2
+          make check BUILD=hns TESTS='Morty-style Gengar Mega Evolution*' -j2
 
       - name: PR smoke tests
         if: github.event_name == 'pull_request' && steps.scope.outputs.docs_only != 'true' && steps.scope.outputs.full != 'true'
@@ -120,3 +122,4 @@ jobs:
           # automatically after merge on integration/v1.
           make check BUILD=hns TESTS=Settings -j2
           make check BUILD=hns TESTS=Family -j2
+          make check BUILD=hns TESTS='Morty-style Gengar Mega Evolution*' -j2

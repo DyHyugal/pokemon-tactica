@@ -1,5 +1,6 @@
 #include "global.h"
 #include "challenge_menu.h"
+#include "difficulty.h"
 #include "load_save.h"
 #include "main.h"
 #include "new_game.h"
@@ -50,6 +51,10 @@ TEST("Settings recommended: competitive IVs and scaled Trainer EVs are enabled")
     EXPECT_EQ((u32)gSaveblock3.challengeSettings.tx_Challenges_TrainerScalingIVs, 2);
     EXPECT_EQ((u32)gSaveblock3.challengeSettings.tx_Challenges_TrainerScalingEVs, 1);
     EXPECT_EQ((u32)gSaveblock3.challengeSettings.tx_Challenges_NoEVs, 0);
+    EXPECT_EQ((u32)gSaveblock3.challengeSettings.tx_Features_LimitDifficulty, 1);
+    SetCurrentDifficultyLevel(gSaveblock3.challengeSettings.tx_Features_LimitDifficulty
+        ? DIFFICULTY_HARD : DIFFICULTY_NORMAL);
+    EXPECT_EQ(GetCurrentDifficultyLevel(), DIFFICULTY_HARD);
     EXPECT_EQ(GetCurrentTrainerIVs(), MAX_PER_STAT_IVS);
 
     CreateRandomMon(&mon, SPECIES_BULBASAUR, 5);
