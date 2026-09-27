@@ -23,7 +23,7 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | 30 starters + Évoli | `[DONE]` | Logique cœur intégrée. |
 | Sélecteur — curseur initial / annulation | `[PARTIEL]` | Correction intégrée automatiquement ; comportement visuel à revalider en ROM fraîche. |
 | Œuf d’Orme / second starter distinct | `[PARTIEL]` | Garde-fou intégré ; flow à revalider en ROM. |
-| Évolutions — conformité 9G / Fil Liaison | `[PARTIEL]` | Runtime migré : méthodes non-échange, échanges et cinq mécaniques impossibles validées sont alignés avec `EVOLUTIONS.md`. Restent le renforcement final des validateurs et la régénération wiki/Pokédex. |
+| Évolutions — conformité 9G / Fil Liaison | `[PARTIEL]` | Runtime migré et validateur générique intégré à la CI : `EVO_TRADE`, seuils artificiels, Fil Liaison hors contrat et objets d’échange directs sont bloqués. Reste la régénération wiki/Pokédex depuis le runtime final. |
 | Rival — starter fixe / niveau 17 / 1→3→4→6 | `[PARTIEL]` | JSON/runtime/validateurs intégrés, talents canoniques déterministes lorsqu’ils sont légaux pour la forme envoyée ; combats ROM à observer. |
 | Rocket — 3→4→6 / Méga FINAL | `[PARTIEL]` | JSON/runtime/validateurs intégrés ; combats ROM à observer. |
 | Archer = Méga-Sharpedo immédiat | `[PARTIEL]` | Set et garde-fou automatisés ; transformation à observer en ROM. |
