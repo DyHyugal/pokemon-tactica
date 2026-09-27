@@ -157,19 +157,28 @@ TEST("Family starter: Eevee egg stores its existing stone evolution preference")
     EXPECT(CheckBagHasItem(ITEM_WATER_STONE, 1));
 }
 
-TEST("Family starter: Sylveon plan uses Fairy Feather as its type booster")
+TEST("Family starter: non-stone Eeveelution plans only grant their type booster")
 {
-    InitFamilyTest();
-    gSpecialVar_0x8005 = SPECIES_EEVEE;
-    gSpecialVar_0x8006 = SPECIES_SYLVEON;
-    FamilyStarter_GiveEgg();
-    EXPECT_EQ(gSpecialVar_Result, MON_GIVEN_TO_PARTY);
-    EXPECT(CheckBagHasItem(ITEM_SILK_SCARF, 1));
-    EXPECT(CheckBagHasItem(ITEM_FAIRY_FEATHER, 1));
-    EXPECT(CheckBagHasItem(ITEM_SHINY_STONE, 1));
+    static const u16 targets[] = {SPECIES_ESPEON, SPECIES_UMBREON, SPECIES_SYLVEON};
+    static const u16 boosters[] = {ITEM_TWISTED_SPOON, ITEM_BLACK_GLASSES, ITEM_FAIRY_FEATHER};
+    u32 i;
+
+    for (i = 0; i < ARRAY_COUNT(targets); i++)
+    {
+        InitFamilyTest();
+        gSpecialVar_0x8005 = SPECIES_EEVEE;
+        gSpecialVar_0x8006 = targets[i];
+        FamilyStarter_GiveEgg();
+        EXPECT_EQ(gSpecialVar_Result, MON_GIVEN_TO_PARTY);
+        EXPECT(CheckBagHasItem(ITEM_SILK_SCARF, 1));
+        EXPECT(CheckBagHasItem(boosters[i], 1));
+        EXPECT(!CheckBagHasItem(ITEM_DAWN_STONE, 1));
+        EXPECT(!CheckBagHasItem(ITEM_DUSK_STONE, 1));
+        EXPECT(!CheckBagHasItem(ITEM_SHINY_STONE, 1));
+    }
 }
 
-TEST("Family starter: Charcadet branch grants its selected stone")
+TEST("Family starter: Charcadet branch grants its selected armor")
 {
     InitFamilyTest();
     gSpecialVar_0x8006 = SPECIES_ARMAROUGE;
