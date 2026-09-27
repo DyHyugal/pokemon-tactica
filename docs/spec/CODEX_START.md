@@ -126,14 +126,13 @@ Une fois le bloc Méga entièrement terminé, poursuivre la migration canonique 
 
 - PR #41 : suppression des seuils `IF_MIN_LEVEL` artificiels sur les routes concernées ;
 - PR #42 : restauration des méthodes officielles non-échange, nettoyage des raccourcis HnS, Évoli et plusieurs cas spéciaux ;
+- migration Fil Liaison : toutes les évolutions par échange ont été converties vers Fil Liaison, avec objet officiel tenu lorsque requis ; les routes `EVO_TRADE` et remplacements HnS associés ne font plus partie du runtime Tactica ;
 - PR #40 : correctifs de légalité boss déjà fusionnés, notamment Blanche/Ursaring et Mortimer/Ossatueur d’Alola.
 
 Travail restant principal :
 
-- implémenter **Fil Liaison** pour les évolutions par échange ;
-- échange + objet tenu = objet officiel tenu + Fil Liaison ;
 - auditer les mécaniques officielles impossibles à reproduire proprement et les convertir vers Fil Liaison uniquement lorsqu’elles sont validées comme impossibles ;
-- adapter validateurs/tests ;
+- compléter les validateurs/tests pour ces cas atypiques ;
 - mettre à jour la documentation puis régénérer le wiki depuis le runtime corrigé.
 
 ### PRIORITÉS SUIVANTES — seulement après les quatre blocs ci-dessus
@@ -232,20 +231,21 @@ Audit déjà établi :
 - **102** routes hors échange, touchant **67 Pokémon sources**, ont reçu un seuil artificiel ;
 - plusieurs raccourcis d’objet non officiels ont également été identifiés (Scalpereur, Verpom, Pomdramour, Théffroi, Poltchageist, Crèmy, Duralugon, Wushours, Charbambin, Tutafeh-Galar, etc.).
 
-État actuel après PR #41 et #42 :
+État actuel :
 
 - suppression des seuils `IF_MIN_LEVEL` artificiels : traitée ;
 - restauration des méthodes officielles non-échange et suppression des principaux raccourcis HnS : traitée ;
-- Évoli et plusieurs cas spéciaux non-échange : traités.
+- Évoli et plusieurs cas spéciaux non-échange : traités ;
+- échanges simples : migrés vers **Fil Liaison** ;
+- échanges + objet : migrés vers **objet officiel tenu + Fil Liaison** ;
+- aucune route `EVO_TRADE` ne doit subsister dans le runtime Tactica.
 
 Ordre de correction restant :
 
-1. implémenter Fil Liaison pour les évolutions par échange simple ;
-2. implémenter objet officiel tenu + Fil Liaison pour les évolutions par échange avec objet ;
-3. auditer les mécaniques officielles impossibles à reproduire proprement et n’utiliser Fil Liaison que pour ces cas validés ;
-4. ajouter des tests génériques et adapter les validateurs ;
-5. mettre à jour les documents de statut ;
-6. régénérer le wiki depuis les sources runtime corrigées.
+1. auditer les mécaniques officielles impossibles à reproduire proprement et n’utiliser Fil Liaison que pour ces cas validés ;
+2. compléter les tests génériques et les validateurs pour les cas atypiques ;
+3. mettre à jour les documents de statut ;
+4. régénérer le wiki depuis les sources runtime corrigées.
 
 Ne pas considérer le wiki actuel comme source de vérité pendant cette migration : il doit refléter le runtime corrigé, pas l’inverse.
 
