@@ -117,6 +117,17 @@ La contrainte HnS de niveau minimum 36 doit disparaître.
 
 La contrainte HnS de niveau minimum 36 doit disparaître.
 
+### Évoli et `data/spec/starters.json`
+
+Les préférences d’Évoli présentes dans `data/spec/starters.json` proviennent de l’ancienne implémentation et peuvent encore fournir des pierres de raccourci à certaines évolitions.
+
+**Ces préférences ne sont plus normatives pour la méthode d’évolution.** Évoli suit la même règle que toutes les autres espèces :
+
+- conserver la méthode officielle 9G lorsqu’elle est réalisable ;
+- n’utiliser Fil Liaison que si une mécanique tombe réellement dans la règle 2.3 ;
+- supprimer lors de la migration les pierres/raccourcis qui contredisent la méthode officielle ;
+- adapter ensuite les objets remis par le sélecteur starter/œuf afin qu’ils restent utiles et cohérents, sans redéfinir la méthode d’évolution.
+
 ## 4. Résultats de l'audit HnS / Tactica
 
 ### 4.1 Origine principale de la dérive

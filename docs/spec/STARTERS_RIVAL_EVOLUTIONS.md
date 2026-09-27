@@ -1,6 +1,18 @@
 # Starters, rival et évolutions
 
-`data/spec/starters.json` énumère les 30 starters et Évoli, les boosters de type et les objets supplémentaires. Le même sélecteur sert au starter initial et à l'œuf d'Orme. Évoli reçoit une préférence d'évolution et les objets prévus ; vérifier la livraison même si le sac est plein. Les évolutions sans échange restent celles de l'implémentation testée.
+`data/spec/starters.json` énumère les 30 starters et Évoli, les boosters de type et les objets supplémentaires. Le même sélecteur sert au starter initial et à l'œuf d'Orme. Évoli reçoit encore des préférences et objets issus de l’ancienne implémentation ; vérifier la livraison même si le sac est plein, mais **ces objets ne définissent plus la méthode d’évolution**.
+
+Les méthodes d’évolution sont exclusivement définies par [EVOLUTIONS.md](EVOLUTIONS.md). Toute préférence de `starters.json` qui contredit la méthode officielle 9G ou la règle Fil Liaison est une donnée à migrer, pas une exception au contrat.
+
+## Évolutions des starters
+
+- appliquer [EVOLUTIONS.md](EVOLUTIONS.md) comme à n’importe quelle autre espèce ;
+- une méthode officielle réalisable reste officielle ;
+- échange simple → Fil Liaison ;
+- échange + objet → objet officiel tenu + Fil Liaison ;
+- mécanique réellement impossible dans Tactica → Fil Liaison ;
+- les anciennes pierres de raccourci, minimums de niveau et préférences Évoli héritées ne sont pas normatives ;
+- le type secondaire ou la balance custom d’un starter ne change pas sa méthode d’évolution sans décision owner explicite.
 
 ## UX du sélecteur
 

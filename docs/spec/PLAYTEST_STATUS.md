@@ -12,6 +12,8 @@
 
 Le commit de documentation qui enregistre cette candidate ne modifie ni le gameplay ni la ROM : le SHA de référence du binaire reste `31fe7d7c9d33dcc757fede543db249651f7dc53f`.
 
+**Cette candidate précède le nouveau contrat d’évolution de `EVOLUTIONS.md` et ne valide donc pas la conformité 9G / Fil Liaison.**
+
 Les contrôles mGBA de l'ancienne candidate ne couvrent pas ce bloc et ne sont pas reportés comme effectués.
 
 ## Ce qui est déjà couvert automatiquement
@@ -21,7 +23,6 @@ Les points suivants ne doivent pas être recodés simplement parce qu’une obse
 - vitesse native x1/x2/x3/x4 ;
 - audio indépendant ;
 - Shiny Rate ;
-- évolutions solo ;
 - starter/œuf — logique cœur ;
 - curseur initial et retour après annulation — garde-fous automatiques ;
 - premier rival niveau 17 et stade légal ;
@@ -43,6 +44,25 @@ Les points suivants ne doivent pas être recodés simplement parce qu’une obse
 - Boss & Conseils : cartes repliables, sprites de dresseurs/Pokémon et talents du Rival générés ;
 - Simiabraz de Chuck/Aldo avec Acrobatie et Méga-Altaria à bonheur maximal pour Retour ;
 - Localisations/Pokédex dérivés des encounters canoniques.
+
+## Évolutions — validation à refaire après migration
+
+Les observations et tests historiques sur les « évolutions solo » prouvent uniquement que l’ancienne implémentation HnS fonctionnait techniquement. Ils ne valident plus la cible produit.
+
+Après implémentation de [EVOLUTIONS.md](EVOLUTIONS.md), couvrir au minimum :
+
+- échange simple → Fil Liaison ;
+- échange + objet → objet officiel tenu + Fil Liaison ;
+- mécanique impossible validée → Fil Liaison ;
+- évolution par pierre officielle → aucune contrainte de niveau ajoutée ;
+- Élektek → Élekable = Électriseur tenu + Fil Liaison ;
+- Rhinoféros → Rhinastoc = Protecteur tenu + Fil Liaison ;
+- Téraclope → Noctunoir = Tissu Fauche tenu + Fil Liaison ;
+- Mélancolux → Lugulabre = Pierre Nuit uniquement ;
+- Lampéroie → Ohmassacre = Pierre Foudre uniquement ;
+- Pokédex/wiki régénéré et identique au runtime réellement compilé.
+
+Aucun de ces contrôles ne doit être marqué effectué avant la migration runtime.
 
 ## Témoins ROM encore utiles
 

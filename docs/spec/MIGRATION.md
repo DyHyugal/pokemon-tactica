@@ -14,7 +14,7 @@ Le dépôt de travail est désormais `https://github.com/DyHyugal/pokemon-tactic
 
 La migration a conservé les sources techniques et les crédits, mais a remplacé treize anciens documents produit contradictoires par la spec Tactica. **L'historique Git de l'ancien dépôt n'a pas été recopié** : des SHA de commits différents entre ancien et nouveau dépôts ne prouvent ni régression ni modification du code. Le changement de dépôt, de branche de référence, de documentation, de configuration ou d'environnement de build peut faire apparaître un défaut sur une fonction antérieurement validée. Un test ancien ne vaut pas validation dans le nouveau dépôt.
 
-Si l'audio, la vitesse native, le taux shiny, le starter/œuf ou les évolutions solo échouent désormais :
+Si l'audio, la vitesse native, le taux shiny ou le starter/œuf échouent désormais :
 
 1. Relever le SHA Tactica, la branche, l'état Git, le build et les étapes de reproduction ; confirmer le même scénario de test et distinguer code, données, configuration, assets et environnement.
 2. Comparer **les fichiers de la fonction concernée** avec l'ancienne production `work/native-speed-starter-egg` @ `e5c7191d66a798b3081fd81f95e9155086772c15`, depuis un checkout/archive distinct de `DyHyugal/johto-family-remix`. Le handoff `4c976ce` inclut d'autres travaux : ne pas le prendre pour la seule référence de production de ces fonctions.
@@ -22,6 +22,18 @@ Si l'audio, la vitesse native, le taux shiny, le starter/œuf ou les évolutions
 4. Documenter les preuves dans `FEATURE_STATUS.md`, taguer la feature `[À CORRIGER]` si le défaut est confirmé et corriger le périmètre minimal sur une branche dédiée. Préserver les autres fonctions validées ; ne pas refondre le moteur audio/vitesse faute de preuve.
 
 Une feature redevient `[DONE]` après correction intégrée et contrôles post-migration documentés. La spec produit prévaut pour tout écart fonctionnel voulu par Tactica.
+
+## Exception connue — évolutions HnS
+
+Les évolutions ne suivent plus la logique de restauration à l’identique depuis `e5c7191`. L’audit a établi que la production HnS contient elle-même une dérive de conception :
+
+- le commit HnS `b7ea13f0ff0088edb8382c2e012e9e511119d6be` (`Gate item evolutions by family stage`) a ajouté des seuils `IF_MIN_LEVEL` massifs ;
+- 125 routes ont reçu un seuil ; 102 routes hors échange, réparties sur 67 Pokémon sources, sont hors du périmètre souhaité ;
+- plusieurs raccourcis d’objet non officiels ont aussi été hérités.
+
+Pour ce domaine, l’ancienne production est une **preuve de provenance**, pas la cible fonctionnelle. La cible est [EVOLUTIONS.md](EVOLUTIONS.md) : officiel 9G quand réalisable, Fil Liaison pour échange simple, objet officiel tenu + Fil Liaison pour échange avec objet, Fil Liaison pour mécanique réellement impossible dans Tactica.
+
+Ne jamais « corriger une régression » d’évolution en restaurant aveuglément le comportement HnS audité comme erroné.
 
 ## Séquence de migration (historique)
 

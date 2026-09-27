@@ -6,9 +6,21 @@
 - Volumes musique et effets indépendants ; comportement du preset Recommended et leur sauvegarde.
 - Menu Shiny Rate **exactement tel qu'il existe dans le build testé** : choix originels et ajouts validés. Relever ses valeurs dans le code, sans les redéfinir ici ni lui substituer la liste d'un ancien cahier des charges.
 - Sélecteur starter commun et œuf d'Orme : choix, annulation, doublons interdits, équipe/PC pleins et file de récompenses.
-- Évolutions sans échange et leurs minimums de niveau déjà testés.
+Les anciennes évolutions solo HnS et leurs minimums de niveau **ne font plus partie de cette liste protégée** : l’audit a démontré qu’elles contredisent le nouveau contrat.
 
-Un défaut observé se corrige au plus près du code fautif, avec test ciblé. Aucun remaniement du moteur audio ou de vitesse n'est demandé.
+Un défaut observé sur les systèmes réellement validés ci-dessus se corrige au plus près du code fautif, avec test ciblé. Aucun remaniement du moteur audio ou de vitesse n'est demandé.
+
+## Évolutions
+
+La cible unique est [EVOLUTIONS.md](EVOLUTIONS.md) :
+
+- méthode officielle 9G lorsqu’elle est réalisable ;
+- échange simple → Fil Liaison ;
+- échange + objet → objet officiel tenu + Fil Liaison ;
+- mécanique impossible à reproduire proprement → Fil Liaison ;
+- aucun seuil `IF_MIN_LEVEL` ou objet de substitution maison sans décision owner explicite.
+
+Le runtime actuel est **à corriger** sur ce domaine ; un ancien test vert ne doit jamais être utilisé pour restaurer une règle HnS devenue obsolète.
 
 ## Réglages et entraînement
 

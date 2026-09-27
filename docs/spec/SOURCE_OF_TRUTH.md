@@ -11,6 +11,8 @@ La hiérarchie normative est stricte :
 
 Les documents actifs décrivent uniquement l’état attendu actuel. L’historique appartient à Git et, lorsqu’il est utile à la migration, à `MIGRATION.md`.
 
+Pour toute méthode d’évolution, **`docs/spec/EVOLUTIONS.md` est le document métier normatif**. Les anciennes règles HnS, les données générées et le wiki ne priment jamais sur ce contrat.
+
 ## Périmètre
 
 Pokémon Tactica est un remake/fork jouable de la 2G basé sur HnS, centré sur les combats stratégiques, la composition d’équipe et une progression avec peu de grind. Le code HnS peut être modifié lorsqu’il empêche un comportement Tactica approuvé. Les crédits, licences et identifiants techniques nécessaires au build sont conservés.
@@ -31,6 +33,18 @@ Pokémon Tactica est un remake/fork jouable de la 2G basé sur HnS, centré sur 
 - La couverture globale pré-Ligue est un chantier de rééquilibrage dédié : ne pas randomiser les tables pour faire monter artificiellement un compteur.
 
 Détail : [ENCOUNTERS.md](ENCOUNTERS.md).
+
+### Évolutions
+
+- Référence fonctionnelle : méthode officielle la plus récente applicable en **9G**, vérifiée via Poképédia.
+- Évolution par échange simple → **utilisation du Fil Liaison**.
+- Évolution par échange + objet → **objet officiel tenu par le Pokémon + utilisation du Fil Liaison**.
+- Mécanique officielle impossible à reproduire proprement dans Tactica → **utilisation du Fil Liaison**.
+- Toute méthode officielle réalisable autrement reste inchangée : ne pas inventer de seuil de niveau, pierre, objet ou condition de substitution.
+- Les seuils `IF_MIN_LEVEL` et raccourcis d’objet hérités de HnS ne sont pas protégés lorsqu’ils contredisent cette règle.
+- Le runtime et le Pokédex actuels sont connus comme **à migrer** sur ce contrat ; corriger les sources puis régénérer le wiki.
+
+Détail et audit : [EVOLUTIONS.md](EVOLUTIONS.md).
 
 ### Difficulté et boss
 
@@ -73,7 +87,8 @@ La source détaillée est [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Le
 - Le joueur choisit parmi 30 starters répartis en six catégories, plus Évoli.
 - L’œuf d’Orme fournit un second choix distinct du starter principal.
 - Le sélecteur ouvre en haut de liste et revient sur le Pokémon annulé ; `Retour` reste la dernière ligne.
-- Vitesse native x1/x2/x3/x4, audio indépendant, Shiny Rate, évolutions solo et cœur du flow starter/œuf sont protégés contre les réécritures sans défaut démontré.
+- Vitesse native x1/x2/x3/x4, audio indépendant, Shiny Rate et cœur du flow starter/œuf sont protégés contre les réécritures sans défaut démontré.
+- Le principe d’un jeu entièrement jouable en solo reste protégé, mais **les anciennes méthodes d’évolution solo HnS ne le sont plus** : elles doivent être migrées vers [EVOLUTIONS.md](EVOLUTIONS.md).
 - `Shiny Only` reste post-V1.
 
 ### Boutiques et balance

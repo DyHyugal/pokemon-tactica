@@ -61,7 +61,7 @@ Le Pokédex est une référence strictement liée à la ROM Tactica.
 Chaque fiche doit pouvoir exposer :
 
 - lignée évolutive ;
-- conditions d’évolution réellement compilées ;
+- conditions d’évolution réellement compilées et conformes à `docs/spec/EVOLUTIONS.md` ;
 - statistiques de base ;
 - type(s) ;
 - talents disponibles ;
@@ -74,7 +74,7 @@ Le lien **Voir les localisations / See locations** reste dédié à la page Loca
 
 Cliquer sur le reste de la carte ouvre la fiche détaillée dans la page, avec une UX compatible mobile.
 
-Ne pas importer d’informations anime/cartes/autres jeux. Les wikis externes servent uniquement de référence ergonomique.
+Ne pas importer d’informations anime/cartes/autres jeux. Pour les évolutions, Poképédia sert aussi de référence fonctionnelle 9G conformément à `EVOLUTIONS.md` ; cela n’autorise pas à recopier des données sans rapport avec la ROM Tactica.
 
 Les compteurs de tables affichés sur les cartes et dans les tableaux Pokédex sont générés depuis les rencontres actuelles ; un Pokémon non rencontré directement peut donc afficher `0`.
 
@@ -102,7 +102,7 @@ Elle doit notamment couvrir :
 - vitesse/audio/shiny ;
 - Pokémon et learnsets modifiés ;
 - encounters ;
-- évolutions solo ;
+- évolutions adaptées au solo selon `EVOLUTIONS.md` : Fil Liaison pour échanges et mécaniques impossibles, méthodes officielles conservées ailleurs ;
 - les trois PNJ de boutique ;
 - Méga-Évolution ;
 - refonte UI.
@@ -135,6 +135,8 @@ Après une modification encounters/wiki :
 6. contrôler visuellement uniquement les pages réellement touchées.
 
 Une passe éditoriale wiki n’autorise pas à réintroduire des données gameplay anciennes.
+
+Après la migration des évolutions, le Pokédex doit être régénéré depuis les sources corrigées. Tant que cette migration n’est pas terminée, les anciennes méthodes d’évolution affichées ne constituent pas une source de vérité et ne doivent pas être recopiées dans le runtime.
 
 ## Données de boss et assets du Guide
 
