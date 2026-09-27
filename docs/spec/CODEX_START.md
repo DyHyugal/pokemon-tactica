@@ -82,66 +82,75 @@ Ce bloc remplace l’ancienne consigne « UI intégrée à confirmer ». Le play
 
 ## Ordre d’exécution obligatoire
 
-Ne pas traiter tous les écarts comme ayant la même priorité. L’ordre de reprise est le suivant :
+Traiter les chantiers **séquentiellement et jusqu’au bout**. Ne pas commencer un bloc, partir sur un autre sujet, puis revenir au premier plus tard.
 
-### PRIORITÉ 1 — bloquants / écarts majeurs par rapport au rendu et aux fonctions prévues
+L’ordre de reprise obligatoire est :
 
-À traiter **avant tout le reste**, dans cet ordre logique :
+### PRIORITÉ 1 — UI/UX réellement visible en ROM
 
-1. **UI/UX réellement visible en ROM**
-   - Menu principal Start encore blanc/crème ;
-   - Summary toujours illisible/superposé ;
-   - HUD combat encore largement blanc + plaque blanche sous les PV ;
-   - boutiques/Centre commercial encore blanches et parfois sans contour complet ;
-   - menu Options : chevauchement du header depuis `B SAVE & EXIT`.
-   
-   Ces écarts sont prioritaires parce que les précédents commits avaient été considérés comme « UI intégrée », alors que le playtest démontre que le résultat prévu n’est pas atteint. Il faut corriger les vrais assets/tilemaps/windows/runtime utilisés, pas seulement satisfaire un validateur statique.
+Traiter et valider entièrement ce bloc avant de passer à Difficulty :
 
-2. **Difficulty absente des Settings**
-   - l’option doit être visible, utilisable et persistante ;
-   - ne pas toucher à Vitesse, Audio ou Shiny Rate, déjà validés.
+- Menu principal Start encore blanc/crème ;
+- Summary toujours illisible/superposé ;
+- HUD combat encore largement blanc + plaque blanche sous les PV ;
+- boutiques/Centre commercial encore blanches et parfois sans contour complet ;
+- menu Options : chevauchement du header depuis `B SAVE & EXIT`.
 
-3. **Méga-Évolution cassée**
-   - Mortimer ne Méga-évolue pas ;
-   - le joueur reçoit bien le Mega Ring mais ne peut pas Méga-évoluer avec une pierre compatible ;
-   - corriger le flux complet boss + joueur avant de considérer la progression post-Mortimer testable.
+Corriger les vrais assets/tilemaps/windows/runtime utilisés, pas seulement satisfaire un validateur statique. Le bloc UI/UX n’est considéré terminé qu’après correction des défauts identifiés, tests pertinents et mise à jour des statuts.
 
-### PRIORITÉ 2 — divergences gameplay/progression confirmées
+### PRIORITÉ 2 — Difficulty
 
-À traiter après les trois blocs ci-dessus :
+Traiter et valider entièrement ce bloc après UI/UX :
 
-- scaling/progression du Rival après Hector et entre Blanche/Mortimer ;
-- Blanche encore avec Teddiursa niv.29 au lieu de l’évolution légale attendue ;
+- l’option doit être visible, utilisable et persistante ;
+- ne pas toucher à Vitesse, Audio ou Shiny Rate, déjà validés.
+
+Ne pas commencer le bloc Méga tant que Difficulty n’est pas terminé.
+
+### PRIORITÉ 3 — Méga-Évolution
+
+Traiter le système Méga **end-to-end dans un seul chantier**, puis le valider avant de passer aux évolutions :
+
+- Mortimer doit réellement Méga-évoluer ;
+- le joueur doit pouvoir Méga-évoluer après obtention du Mega Ring avec une pierre compatible ;
+- vérifier activation boss, flag/variable du Mega Ring, disponibilité joueur, bouton/HUD, objet tenu, transformation et talents pré/post-Méga ;
+- ajouter les non-régressions nécessaires.
+
+Ne pas corriger une moitié du flux Méga puis reporter le reste à plus tard.
+
+### PRIORITÉ 4 — Évolutions
+
+Une fois le bloc Méga entièrement terminé, poursuivre la migration canonique définie par `docs/spec/EVOLUTIONS.md`.
+
+État déjà fusionné à protéger :
+
+- PR #41 : suppression des seuils `IF_MIN_LEVEL` artificiels sur les routes concernées ;
+- PR #42 : restauration des méthodes officielles non-échange, nettoyage des raccourcis HnS, Évoli et plusieurs cas spéciaux ;
+- PR #40 : correctifs de légalité boss déjà fusionnés, notamment Blanche/Ursaring et Mortimer/Ossatueur d’Alola.
+
+Travail restant principal :
+
+- implémenter **Fil Liaison** pour les évolutions par échange ;
+- échange + objet tenu = objet officiel tenu + Fil Liaison ;
+- auditer les mécaniques officielles impossibles à reproduire proprement et les convertir vers Fil Liaison uniquement lorsqu’elles sont validées comme impossibles ;
+- adapter validateurs/tests ;
+- mettre à jour la documentation puis régénérer le wiki depuis le runtime corrigé.
+
+### PRIORITÉS SUIVANTES — seulement après les quatre blocs ci-dessus
+
+- scaling/progression du Rival ;
 - texte de refus du second starter déjà possédé ;
-- **migration globale des évolutions selon `docs/spec/EVOLUTIONS.md`** : retirer les seuils/objets HnS non officiels, restaurer les méthodes 9G réalisables et convertir les échanges vers Fil Liaison.
-
-### PRIORITÉ 3 — secondaires / polish
-
-À faire **après** les priorités 1 et 2 :
-
 - ajustements IA ciblés (Mimiqui, Provoc de Cornèbre, Téraclope) ;
-- autres petits écarts non bloquants.
+- autres écarts non bloquants.
 
-Le retour wiki suivant est désormais traité par la baseline wiki dédiée et **ne doit pas être repris** :
+Le retour wiki suivant est déjà traité par la baseline wiki dédiée et **ne doit pas être repris** :
 - portraits dresseurs Boss & Conseils : transparence de l’index palette 0 générée explicitement pour le navigateur, sans fond coloré.
 
-L’ancien point « Élektek → Élekable via Électriseur niveau 36 » est **rouvert par la nouvelle règle d’évolution** et doit être migré vers Électriseur tenu + Fil Liaison conformément à `EVOLUTIONS.md`.
+L’ancien point « Élektek → Élekable via Électriseur niveau 36 » reste obsolète. La cible est **Électriseur tenu + Fil Liaison** conformément à `EVOLUTIONS.md`.
 
-Ne pas consommer le gros du temps de reprise sur l’IA ou le wiki tant que **UI + Difficulty + Méga** ne sont pas corrigés et validés par les tests pertinents.
+Ne pas consommer du temps sur un bloc de priorité inférieure tant que le bloc prioritaire en cours n’est pas terminé et validé.
 
-## 1. Réglages
-
-Validé en ROM :
-
-- vitesse x1/x2/x3/x4 : OK ;
-- audio : OK ;
-- Shiny Rate : OK.
-
-À corriger :
-
-- l’option **Difficulty est absente du menu Settings**. Restaurer l’entrée de difficulté et vérifier sa persistance. Ne pas modifier les trois réglages déjà validés.
-
-## 2. UI/UX — défauts confirmés en ROM
+## 1. UI/UX — défauts confirmés en ROM
 
 La direction reste : **noir / rouge / gris, sans grandes surfaces blanches**.
 
@@ -155,47 +164,46 @@ Défauts observés :
 
 Le validateur UI actuel donne de faux positifs : il vérifie surtout la présence de constantes/assets ciblés mais ne garantit pas le rendu final. Le renforcer sur les vrais assets/tilemaps/windows/runtime concernés. Un contrôle statique ne remplace pas l’observation ROM.
 
-## 3. Œuf / second starter
+## 2. Difficulty
 
 Validé en ROM :
 
-- impossible de reprendre exactement le starter principal ;
-- réception correcte ;
-- flow conforme à la décision précédente.
-
-À corriger uniquement :
-
-- reformuler le dialogue lorsqu’une espèce déjà possédée est reconnue. Intention souhaitée :  
-  **« Tu as bien reconnu l’espèce, mais tu la possèdes déjà. Essaie d’en choisir une différente ! »**
-- conserver le flow actuel ; ne pas le réécrire.
-
-## 4. Rival — progression/niveaux faux après Hector
-
-Validé :
-
-- avec Salamèche joueur, premier Rival Eau = **Flobio niv.17**, conforme ;
-- sets observés cohérents.
+- vitesse x1/x2/x3/x4 : OK ;
+- audio : OK ;
+- Shiny Rate : OK.
 
 À corriger :
 
-- après Hector, le combat observé utilise bien **Goélise / Flobio / Hypotrempe**, mais niveaux **15 / 16 / 18** : incorrect ;
-- entre Blanche et Mortimer, le Rival n’a encore que **4 Pokémon** et reste basé sur les niveaux d’Hector : incorrect ;
-- vérifier les événements réels avant de modifier la progression : il ne semble pas y avoir de combat Rival juste après le badge 1 ;
-- corriger la logique générale de scaling/progression afin que les combats Rival réellement déclenchés utilisent le nombre de Pokémon et les niveaux attendus au point réel de progression, en cohérence avec le cap/prochain boss ;
-- corriger source canonique + générateur/runtime + tests, sans hardcoder uniquement les deux combats observés.
+- l’option **Difficulty est absente du menu Settings**. Restaurer l’entrée de difficulté et vérifier sa persistance. Ne pas modifier les trois réglages déjà validés.
 
-## 5. Blanche
+## 3. Méga-Évolution — blocage prioritaire
 
-Défaut confirmé :
+Défauts confirmés en ROM :
 
-- Blanche utilise encore **Teddiursa niv.29**.
+- **Mortimer : Ectoplasma n’a pas Méga-évolué** ;
+- après victoire, le **Mega Ring est bien reçu** ;
+- pourtant le joueur **ne peut toujours pas Méga-évoluer** : Dracaufeu tient bien sa Méga-Gemme, mais aucune option/commande Méga n’apparaît dans le HUD ;
+- aucun crash.
 
-Attendu :
+Diagnostiquer le système end-to-end :
 
-- utiliser **Ursaring à partir du niveau légal d’évolution**, donc niveau 30 minimum dans ce combat ;
-- aligner source canonique, runtime, wiki et tests.
+- condition d’activation boss ;
+- flag/variable du Mega Ring ;
+- disponibilité joueur ;
+- bouton/HUD ;
+- objet tenu compatible ;
+- déclenchement effectif en combat ;
+- forme/talent avant et après Méga.
 
-## 6. Évolutions — migration canonique obligatoire
+Ajouter des tests démontrant au minimum :
+
+1. aucune Méga joueur avant Mega Ring ;
+2. Mega Ring débloqué après Mortimer ;
+3. Pokémon + pierre compatible → Méga disponible ;
+4. Mortimer déclenche réellement Méga-Ectoplasma ;
+5. talent pré-Méga puis talent Méga correct.
+
+## 4. Évolutions — migration canonique obligatoire
 
 La validation historique « Élektek → Élekable via Électriseur utilisable au niveau 36 » est **obsolète** et ne protège plus ce runtime.
 
@@ -224,43 +232,62 @@ Audit déjà établi :
 - **102** routes hors échange, touchant **67 Pokémon sources**, ont reçu un seuil artificiel ;
 - plusieurs raccourcis d’objet non officiels ont également été identifiés (Scalpereur, Verpom, Pomdramour, Théffroi, Poltchageist, Crèmy, Duralugon, Wushours, Charbambin, Tutafeh-Galar, etc.).
 
-Ordre de correction :
+État actuel après PR #41 et #42 :
 
-1. comparer chaque route active avec `EVOLUTIONS.md` / méthode officielle 9G ;
-2. supprimer les `IF_MIN_LEVEL` artificiels ;
-3. supprimer les objets/méthodes de substitution HnS non validés ;
-4. implémenter Fil Liaison pour les trois catégories prévues ;
-5. ajouter des tests génériques, pas des exceptions silencieuses par espèce ;
+- suppression des seuils `IF_MIN_LEVEL` artificiels : traitée ;
+- restauration des méthodes officielles non-échange et suppression des principaux raccourcis HnS : traitée ;
+- Évoli et plusieurs cas spéciaux non-échange : traités.
+
+Ordre de correction restant :
+
+1. implémenter Fil Liaison pour les évolutions par échange simple ;
+2. implémenter objet officiel tenu + Fil Liaison pour les évolutions par échange avec objet ;
+3. auditer les mécaniques officielles impossibles à reproduire proprement et n’utiliser Fil Liaison que pour ces cas validés ;
+4. ajouter des tests génériques et adapter les validateurs ;
+5. mettre à jour les documents de statut ;
 6. régénérer le wiki depuis les sources runtime corrigées.
 
 Ne pas considérer le wiki actuel comme source de vérité pendant cette migration : il doit refléter le runtime corrigé, pas l’inverse.
 
-## 7. Méga-Évolution — blocage prioritaire
+## 5. Œuf / second starter
 
-Défauts confirmés en ROM :
+Validé en ROM :
 
-- **Mortimer : Ectoplasma n’a pas Méga-évolué** ;
-- après victoire, le **Mega Ring est bien reçu** ;
-- pourtant le joueur **ne peut toujours pas Méga-évoluer** : Dracaufeu tient bien sa Méga-Gemme, mais aucune option/commande Méga n’apparaît dans le HUD ;
-- aucun crash.
+- impossible de reprendre exactement le starter principal ;
+- réception correcte ;
+- flow conforme à la décision précédente.
 
-Diagnostiquer le système end-to-end :
+À corriger uniquement :
 
-- condition d’activation boss ;
-- flag/variable du Mega Ring ;
-- disponibilité joueur ;
-- bouton/HUD ;
-- objet tenu compatible ;
-- déclenchement effectif en combat ;
-- forme/talent avant et après Méga.
+- reformuler le dialogue lorsqu’une espèce déjà possédée est reconnue. Intention souhaitée :  
+  **« Tu as bien reconnu l’espèce, mais tu la possèdes déjà. Essaie d’en choisir une différente ! »**
+- conserver le flow actuel ; ne pas le réécrire.
 
-Ajouter des tests démontrant au minimum :
+## 6. Rival — progression/niveaux faux après Hector
 
-1. aucune Méga joueur avant Mega Ring ;
-2. Mega Ring débloqué après Mortimer ;
-3. Pokémon + pierre compatible → Méga disponible ;
-4. Mortimer déclenche réellement Méga-Ectoplasma ;
-5. talent pré-Méga puis talent Méga correct.
+Validé :
+
+- avec Salamèche joueur, premier Rival Eau = **Flobio niv.17**, conforme ;
+- sets observés cohérents.
+
+À corriger :
+
+- après Hector, le combat observé utilise bien **Goélise / Flobio / Hypotrempe**, mais niveaux **15 / 16 / 18** : incorrect ;
+- entre Blanche et Mortimer, le Rival n’a encore que **4 Pokémon** et reste basé sur les niveaux d’Hector : incorrect ;
+- vérifier les événements réels avant de modifier la progression : il ne semble pas y avoir de combat Rival juste après le badge 1 ;
+- corriger la logique générale de scaling/progression afin que les combats Rival réellement déclenchés utilisent le nombre de Pokémon et les niveaux attendus au point réel de progression, en cohérence avec le cap/prochain boss ;
+- corriger source canonique + générateur/runtime + tests, sans hardcoder uniquement les deux combats observés.
+
+## 7. Blanche — corrigé, ne pas reprendre
+
+Défaut confirmé :
+
+- Blanche utilise encore **Teddiursa niv.29**.
+
+Attendu :
+
+- utiliser **Ursaring à partir du niveau légal d’évolution**, donc niveau 30 minimum dans ce combat ;
+- aligner source canonique, runtime, wiki et tests.
 
 ## 8. IA — conserver la base, améliorer quelques décisions
 
