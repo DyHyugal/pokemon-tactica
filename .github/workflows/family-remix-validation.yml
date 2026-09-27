@@ -74,6 +74,7 @@ jobs:
         run: |
           python3 tools/validate_tactica_spec.py
           python3 tools/validate_tactica_encounter_evolutions.py
+          python3 tools/validate_tactica_evolutions.py
           python3 tools/validate_family_remix.py
           python3 tools/validate_tactica_balance.py
           python3 tools/sync_tactica_encounter_access.py --check

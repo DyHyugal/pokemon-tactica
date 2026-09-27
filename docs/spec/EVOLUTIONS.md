@@ -292,4 +292,5 @@ Ce document décrit la **cible**. Il ne signifie pas que les évolutions actuell
 - échanges simples : Fil Liaison ;
 - échanges + objet : objet officiel tenu + Fil Liaison ;
 - mécaniques impossibles validées : Fil Liaison pour Sépiatop, Dofin, Tutafeh-Galar, Ursaring et Meltan ;
-- prochaine étape : renforcer les validateurs génériques puis régénérer le Pokédex/wiki depuis le runtime finalisé.
+- validateur générique intégré : routes `EVO_TRADE`, `IF_MIN_LEVEL` artificiels sur `EVO_ITEM`, Fil Liaison non autorisé et objets d’échange utilisables directement sont refusés par la CI ;
+- prochaine étape : régénérer le Pokédex/wiki depuis le runtime finalisé et vérifier l’idempotence.

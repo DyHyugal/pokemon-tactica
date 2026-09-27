@@ -132,7 +132,7 @@ Une fois le bloc Méga entièrement terminé, poursuivre la migration canonique 
 Travail restant principal :
 
 - audit des mécaniques impossibles : **traité** pour Sépiatop, Dofin, Tutafeh-Galar, Ursaring et Meltan, convertis vers Fil Liaison ;
-- compléter les validateurs génériques pour verrouiller la conformité globale ;
+- validateur générique de conformité évolution : **traité** ; il interdit les routes `EVO_TRADE`, les `IF_MIN_LEVEL` artificiels sur `EVO_ITEM`, les Fil Liaison hors liste canonique et les objets d'échange utilisables directement ;
 - régénérer le wiki/Pokédex depuis le runtime corrigé.
 
 ### PRIORITÉS SUIVANTES — seulement après les quatre blocs ci-dessus
@@ -242,9 +242,9 @@ Audit déjà établi :
 
 Ordre de correction restant :
 
-1. compléter les validateurs génériques de conformité évolution ;
-2. mettre à jour les documents de statut finaux ;
-3. régénérer le wiki depuis les sources runtime corrigées.
+1. mettre à jour les documents de statut finaux ;
+2. régénérer le wiki/Pokédex depuis les sources runtime corrigées ;
+3. vérifier l'idempotence des générateurs et la CI sur le SHA final.
 
 Ne pas considérer le wiki actuel comme source de vérité pendant cette migration : il doit refléter le runtime corrigé, pas l’inverse.
 
