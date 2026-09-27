@@ -11,36 +11,16 @@ static void InitEvolutionMon(struct Pokemon *mon, u16 species, u8 level, u8 gend
     CreateMon(mon, species, level, personality, OTID_STRUCT_PLAYER_ID);
 }
 
-TEST("Evolution requirements: item evolutions reject levels below their family threshold")
+TEST("Evolution requirements: item evolutions have no artificial family-stage minimum")
 {
     struct Pokemon mon;
     bool32 canStopEvo = TRUE;
-    u16 previousHour = SetTimeOfDay(DAY_HOUR_BEGIN);
 
-    InitEvolutionMon(&mon, SPECIES_HAPPINY, 15, MON_FEMALE);
-    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_OVAL_STONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
-    InitEvolutionMon(&mon, SPECIES_VULPIX_ALOLA, 29, MON_FEMALE);
-    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_ICE_STONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
-    InitEvolutionMon(&mon, SPECIES_ELECTABUZZ, 35, MON_MALE);
-    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_ELECTIRIZER, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
-
-    SetTimeOfDay(previousHour);
-}
-
-TEST("Evolution requirements: item evolutions work at levels 16, 30, and 36")
-{
-    struct Pokemon mon;
-    bool32 canStopEvo = TRUE;
-    u16 previousHour = SetTimeOfDay(DAY_HOUR_BEGIN);
-
-    InitEvolutionMon(&mon, SPECIES_HAPPINY, 16, MON_FEMALE);
-    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_OVAL_STONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_CHANSEY);
-    InitEvolutionMon(&mon, SPECIES_VULPIX_ALOLA, 30, MON_FEMALE);
+    InitEvolutionMon(&mon, SPECIES_VULPIX_ALOLA, 1, MON_FEMALE);
     EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_ICE_STONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_NINETALES_ALOLA);
-    InitEvolutionMon(&mon, SPECIES_ELECTABUZZ, 36, MON_MALE);
-    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_ELECTIRIZER, NULL, &canStopEvo, CHECK_EVO), SPECIES_ELECTIVIRE);
 
-    SetTimeOfDay(previousHour);
+    InitEvolutionMon(&mon, SPECIES_EELEKTRIK, 1, MON_MALE);
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_THUNDER_STONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_EELEKTROSS);
 }
 
 TEST("Evolution requirements: branched item evolutions keep the selected branch")
