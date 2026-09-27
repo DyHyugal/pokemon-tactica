@@ -8127,7 +8127,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Close Combat
 - Flare Blitz
 - Mach Punch
-- Aerial Ace
+- Acrobatics
 
 Conkeldurr @ Flame Orb
 Level: 42
@@ -8397,6 +8397,7 @@ Level: 61
 Ability: Natural Cure
 Nature: Adamant
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Happiness: 255
 - Dragon Dance
 - Return
 - Earthquake
@@ -9257,7 +9258,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Close Combat
 - Flare Blitz
 - Mach Punch
-- Aerial Ace
+- Acrobatics
 
 Machamp @ Assault Vest
 Level: 67
@@ -16841,7 +16842,7 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Close Combat
 - Flare Blitz
 - Mach Punch
-- Aerial Ace
+- Acrobatics
 
 Conkeldurr @ Flame Orb
 Level: 42
@@ -17116,6 +17117,7 @@ Ability: Natural Cure
 Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 4 HP
+Happiness: 255
 - Dragon Dance
 - Return
 - Earthquake
@@ -17309,7 +17311,7 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Close Combat
 - Flare Blitz
 - Mach Punch
-- Aerial Ace
+- Acrobatics
 
 Machamp @ Assault Vest
 Level: 67

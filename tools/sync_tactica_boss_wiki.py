@@ -6,6 +6,8 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import re
+import unicodedata
 from collections import OrderedDict
 from pathlib import Path
 
@@ -28,6 +30,21 @@ BOSS_FR = {
 }
 
 ARCHETYPE_FR = {"fire": "Feu", "water": "Eau", "grass": "Plante", "electric": "Électrik", "ground": "Sol", "ice": "Glace"}
+
+TRAINER_SPRITES = {
+    "Albert": "leader_falkner_hns.png", "Hector": "leader_bugsy_hns.png",
+    "Blanche": "leader_whitney_hns.png", "Mortimer": "leader_morty_hns.png",
+    "Chuck": "leader_chuck_hns.png", "Jasmine": "leader_jasmine_hns.png",
+    "Frédo": "leader_pryce_hns.png", "Sandra": "leader_clair_hns.png",
+    "Clément": "elite_four_will_hns.png", "Koga": "elite_four_koga_hns.png",
+    "Aldo": "elite_four_bruno_hns.png", "Marion": "elite_four_karen_hns.png",
+    "Proton": "proton_hns.png", "Petrel": "petrel_hns.png", "Ariana": "ariana_hns.png",
+    "Archer": "archer_hns.png", "Pierre": "leader_brock_hns.png",
+    "Ondine": "leader_misty_hns.png", "Major Bob": "leader_surge_hns.png",
+    "Erika": "leader_erika_hns.png", "Morgane": "leader_sabrina_hns.png",
+    "Jeannine": "leader_janine_hns.png", "Auguste": "leader_blaine_hns.png",
+    "Blue": "leader_blue_hns.png", "Maître": "champion_lance_hns.png",
+}
 
 SPECIES_FR = {
     "Alolan Muk": "Grotadmorv d’Alola",
@@ -99,9 +116,10 @@ def rival_groups() -> OrderedDict[tuple[str, str, str], list[dict]]:
                 moves = member["phase_moves"]["final"]
             if member.get("final_item", "").endswith("ite") and member.get("final_item") != "Eviolite":
                 species = archetype_mega
+            ability = member.get("mega_ability") if species == archetype_mega else member.get("ability")
             rows.append({
                 "slot": slot, "species": species, "level": None,
-                "item": member.get("final_item"), "ability": "—",
+                "item": member.get("final_item"), "ability": ability,
                 "moves": moves, "role": member["role"], "theme": archetype,
             })
         groups[("Rival", "Rival", archetype)] = rows
@@ -163,6 +181,32 @@ def row_values(row: dict, loc: dict, lang: str, dynamic: str) -> list[str]:
     ]
 
 
+def pokemon_sprite(species: str) -> str:
+    local = {
+        "Mega Charizard X": "../assets/mega-charizard-x.png",
+        "Mega Charizard Y": "../assets/mega-charizard-y.png",
+    }
+    if species in local:
+        return local[species]
+    name = species.split(" (", 1)[0]
+    suffixes = (("Alolan ", "-alola"), ("Galarian ", "-galar"), ("Hisuian ", "-hisui"))
+    for prefix, suffix in suffixes:
+        if name.startswith(prefix):
+            name = name.removeprefix(prefix) + suffix
+    if name.startswith("Mega "):
+        bits = name.removeprefix("Mega ").split()
+        name = bits[0] + "-mega" + (("-" + "-".join(bits[1:])) if len(bits) > 1 else "")
+    normalized = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().lower()
+    slug = re.sub(r"[^a-z0-9]+", "-", normalized).strip("-")
+    return f"https://play.pokemonshowdown.com/sprites/gen5/{slug}.png"
+
+
+def trainer_sprite(key: tuple) -> str:
+    boss = key[2]
+    sprite = "silver_hns.png" if key[1] == "Rival" else TRAINER_SPRITES[boss]
+    return f"../assets/trainers/{sprite}"
+
+
 def render_markdown(lang: str, groups: OrderedDict, rivals: OrderedDict, loc: dict) -> str:
     t = labels(lang)
     if lang == "fr":
@@ -198,11 +242,14 @@ def render_html(lang: str, groups: OrderedDict, rivals: OrderedDict, loc: dict) 
         for key, rows in entries:
             theme = (("équipe progressive" if lang == "fr" else "progressive team")
                      if key[1] == "Rival" else rows[0].get("theme") or key[1])
-            parts.append(f'<section class="boss-card"><h3>{html.escape(display_boss(key, lang))} — {html.escape(str(theme))}</h3><div class="table-wrap"><table><thead><tr><th>{t["pokemon"]}</th><th>{t["level"]}</th><th>{t["item"]}</th><th>{t["ability"]}</th><th>{t["moves"]}</th></tr></thead><tbody>')
+            boss_name = display_boss(key, lang)
+            parts.append(f'<details class="boss-card"><summary><span class="trainer-head"><img class="trainer-sprite" loading="lazy" src="{trainer_sprite(key)}" alt="{html.escape(boss_name)}"><span><strong>{html.escape(boss_name)}</strong><small>{html.escape(str(theme))}</small></span></span></summary><div class="table-wrap"><table><thead><tr><th>{t["pokemon"]}</th><th>{t["level"]}</th><th>{t["item"]}</th><th>{t["ability"]}</th><th>{t["moves"]}</th></tr></thead><tbody>')
             for row in rows:
-                cells = "".join(f"<td>{html.escape(value)}</td>" for value in row_values(row, loc, lang, t["dynamic"]))
+                values = row_values(row, loc, lang, t["dynamic"])
+                pokemon = f'<span class="poke-name"><img class="poke-sprite" loading="lazy" src="{pokemon_sprite(row["species"])}" alt="{html.escape(values[0])}" onerror="this.style.display=\'none\'"><strong>{html.escape(values[0])}</strong></span>'
+                cells = "<td>" + pokemon + "</td>" + "".join(f"<td>{html.escape(value)}</td>" for value in values[1:])
                 parts.append(f"<tr>{cells}</tr>")
-            parts.append("</tbody></table></div></section>")
+            parts.append("</tbody></table></div></details>")
     parts.append(f'<div class="footer">Pokémon Tactica — {html.escape(t["title"])}</div></main></body></html>\n')
     return "".join(parts)
 

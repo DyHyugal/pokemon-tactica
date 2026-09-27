@@ -19,6 +19,7 @@ Règles communes :
 - la Méga du rival n'est utilisable qu'après obtention du badge 4 par le joueur ;
 - les Méga Rocket n'apparaissent que dans leur équipe FINAL ;
 - toute Méga doit avoir une forme de base avec talent légal avant transformation ;
+- chaque membre du Rival possède un talent canonique explicite dans `data/spec/rival.json` ; le runtime ne l’applique que s’il est légal pour la forme réellement envoyée, tandis que le wiki affiche le talent de la forme finale ou Méga ;
 - l'IA ne doit pas utiliser Tour Rapide s'il n'y a aucun hazard côté utilisateur du move.
 
 ---

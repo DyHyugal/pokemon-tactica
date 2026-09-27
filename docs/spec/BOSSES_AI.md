@@ -14,6 +14,8 @@ Frédo : Feunard d'Alola, Momartik, Blizzaroi, Glaivodo, Galvagla, Cochignon. Fe
 
 Les Méga des boss majeurs doivent être uniques ; en cas de doublon, le personnage le plus lié au Pokémon garde sa Méga. L'autre reçoit une Méga disponible et cohérente avec son type, climat, terrain et vitesse. Le set de Jasmine doit partir d'un **vrai set de Méga-Galeking**, pas d'un Galeking normal renommé. Candidat de référence : Aggronite, Malédiction, Tacle Lourd, Repos, Blabla Dodo, nature Prudente, EV 252 PV / 4 Déf / 252 Déf. Spé, talent après Méga selon le build. Ce set est un set de Méga-Galeking documenté ; aucun prétendu set critique populaire n'a été identifié. Vérifier les noms, capacités, talent et objet dans le moteur avant de le figer.
 
+Les Simiabraz de Chuck et d’Aldo utilisent Acrobatie. Méga-Altaria garde Retour et reçoit le bonheur maximal dans les données d’équipe afin d’en garantir la puissance maximale en combat. Cette valeur interne n’a pas à être exposée dans le wiki joueur.
+
 ## Points du dataset corrigés
 
 Voltali du Maître en rematch : Modeste, Vive-Attaque + Change Éclair, rôle spécial. Hyporoi garde Lentilscope. Corboss avec Orbe Vie là où le roster l'attribue. Magnézone spécial : Rayon Signal au lieu de Big Splash. Noadkoko spécial : Pouvoir Antique au lieu de Poudre Dodo. Rocket prend le dernier cap champion/rival +2, **jamais** le Rocket précédent +2.

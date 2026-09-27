@@ -49,7 +49,7 @@ This page is generated from the game's canonical teams. Use it to prepare for ma
 
 | Pokémon | Lv. | Item | Ability | Moves |
 |---|---:|---|---|---|
-| Infernape | 42 | Life Orb | Iron Fist | Close Combat · Flare Blitz · Mach Punch · Aerial Ace |
+| Infernape | 42 | Life Orb | Iron Fist | Close Combat · Flare Blitz · Mach Punch · Acrobatics |
 | Conkeldurr | 42 | Flame Orb | Guts | Drain Punch · Mach Punch · Facade · Knock Off |
 | Hawlucha | 42 | White Herb | Unburden | Swords Dance · Acrobatics · Close Combat · Encore |
 | Lucario | 42 | Muscle Band | Inner Focus | Swords Dance · Close Combat · Extreme Speed · Crunch |
@@ -115,7 +115,7 @@ This page is generated from the game's canonical teams. Use it to prepare for ma
 
 | Pokémon | Lv. | Item | Ability | Moves |
 |---|---:|---|---|---|
-| Infernape | 65 | Life Orb | Iron Fist | Close Combat · Flare Blitz · Mach Punch · Aerial Ace |
+| Infernape | 65 | Life Orb | Iron Fist | Close Combat · Flare Blitz · Mach Punch · Acrobatics |
 | Machamp | 67 | Assault Vest | No Guard | Dynamic Punch · Stone Edge · Ice Punch · Knock Off |
 | Conkeldurr | 65 | Flame Orb | Guts | Drain Punch · Mach Punch · Facade · Knock Off |
 | Kommo-o | 65 | Throat Spray | Soundproof | Clanging Scales · Close Combat · Flash Cannon · Flamethrower |
@@ -200,67 +200,67 @@ The rival keeps a fixed starter for each archetype and grows from 1 to 3, 4 and 
 
 | Pokémon | Lv. | Item | Ability | Moves |
 |---|---:|---|---|---|
-| Torkoal | Dynamic | Heavy-Duty Boots | — | Stealth Rock · Rapid Spin · Lava Plume · Yawn |
-| Mega Blaziken | Dynamic | Blazikenite | — | level-legal moves |
-| Venusaur | Dynamic | Life Orb | — | Growth · Giga Drain · Sludge Bomb · Earth Power |
-| Ninetales | Dynamic | Heat Rock | — | Nasty Plot · Flamethrower · Solar Beam · Dark Pulse |
-| Lilligant-Hisui | Dynamic | Expert Belt | — | Victory Dance · Leaf Blade · Close Combat · Ice Spinner |
-| Great Tusk | Dynamic | Assault Vest | — | Headlong Rush · Close Combat · Knock Off · Iron Head |
+| Torkoal | Dynamic | Heavy-Duty Boots | Drought | Stealth Rock · Rapid Spin · Lava Plume · Yawn |
+| Mega Blaziken | Dynamic | Blazikenite | Speed Boost | level-legal moves |
+| Venusaur | Dynamic | Life Orb | Chlorophyll | Growth · Giga Drain · Sludge Bomb · Earth Power |
+| Ninetales | Dynamic | Heat Rock | Drought | Nasty Plot · Flamethrower · Solar Beam · Dark Pulse |
+| Lilligant-Hisui | Dynamic | Expert Belt | Chlorophyll | Victory Dance · Leaf Blade · Close Combat · Ice Spinner |
+| Great Tusk | Dynamic | Assault Vest | Protosynthesis | Headlong Rush · Close Combat · Knock Off · Iron Head |
 
 ### Water archetype — progressive team
 
 | Pokémon | Lv. | Item | Ability | Moves |
 |---|---:|---|---|---|
-| Pelipper | Dynamic | Damp Rock | — | Hurricane · Surf · U-turn · Roost |
-| Mega Swampert | Dynamic | Swampertite | — | level-legal moves |
-| Kingdra | Dynamic | Life Orb | — | Surf · Dragon Pulse · Ice Beam · Hurricane |
-| Politoed | Dynamic | Leftovers | — | Scald · Encore · Perish Song · Ice Beam |
-| Barraskewda | Dynamic | Choice Band | — | Liquidation · Close Combat · Psychic Fangs · Flip Turn |
-| Dracovish | Dynamic | Choice Scarf | — | Fishious Rend · Crunch · Psychic Fangs · Ice Fang |
+| Pelipper | Dynamic | Damp Rock | Drizzle | Hurricane · Surf · U-turn · Roost |
+| Mega Swampert | Dynamic | Swampertite | Swift Swim | level-legal moves |
+| Kingdra | Dynamic | Life Orb | Swift Swim | Surf · Dragon Pulse · Ice Beam · Hurricane |
+| Politoed | Dynamic | Leftovers | Drizzle | Scald · Encore · Perish Song · Ice Beam |
+| Barraskewda | Dynamic | Choice Band | Swift Swim | Liquidation · Close Combat · Psychic Fangs · Flip Turn |
+| Dracovish | Dynamic | Choice Scarf | Strong Jaw | Fishious Rend · Crunch · Psychic Fangs · Ice Fang |
 
 ### Grass archetype — progressive team
 
 | Pokémon | Lv. | Item | Ability | Moves |
 |---|---:|---|---|---|
-| Rillaboom | Dynamic | Terrain Extender | — | Grassy Glide · Wood Hammer · Knock Off · U-turn |
-| Mega Sceptile | Dynamic | Sceptilite | — | level-legal moves |
-| Hawlucha | Dynamic | Grassy Seed | — | Swords Dance · Acrobatics · Close Combat · Encore |
-| Ferrothorn | Dynamic | Leftovers | — | Stealth Rock · Leech Seed · Power Whip · Gyro Ball |
-| Gholdengo | Dynamic | Air Balloon | — | Nasty Plot · Make It Rain · Shadow Ball · Recover |
-| Arboliva | Dynamic | Sitrus Berry | — | Giga Drain · Hyper Voice · Earth Power · Strength Sap |
+| Rillaboom | Dynamic | Terrain Extender | Grassy Surge | Grassy Glide · Wood Hammer · Knock Off · U-turn |
+| Mega Sceptile | Dynamic | Sceptilite | Chlorophyll | level-legal moves |
+| Hawlucha | Dynamic | Grassy Seed | Unburden | Swords Dance · Acrobatics · Close Combat · Encore |
+| Ferrothorn | Dynamic | Leftovers | Iron Barbs | Stealth Rock · Leech Seed · Power Whip · Gyro Ball |
+| Gholdengo | Dynamic | Air Balloon | Good as Gold | Nasty Plot · Make It Rain · Shadow Ball · Recover |
+| Arboliva | Dynamic | Sitrus Berry | Seed Sower | Giga Drain · Hyper Voice · Earth Power · Strength Sap |
 
 ### Electric archetype — progressive team
 
 | Pokémon | Lv. | Item | Ability | Moves |
 |---|---:|---|---|---|
-| Pincurchin | Dynamic | Terrain Extender | — | Spikes · Recover · Discharge · Memento |
-| Elekid | Dynamic | Expert Belt | — | level-legal moves |
-| Raichu-Alola | Dynamic | Life Orb | — | Nasty Plot · Thunderbolt · Psychic · Surf |
-| Toxtricity | Dynamic | Throat Spray | — | Electric Terrain · Overdrive · Boomburst · Sludge Bomb |
-| Iron Hands | Dynamic | Assault Vest | — | Drain Punch · Wild Charge · Ice Punch · Volt Switch |
-| Mega Manectric | Dynamic | Manectite | — | Thunderbolt · Overheat · Volt Switch · Signal Beam |
+| Pincurchin | Dynamic | Terrain Extender | Electric Surge | Spikes · Recover · Discharge · Memento |
+| Elekid | Dynamic | Expert Belt | Sheer Force | level-legal moves |
+| Raichu-Alola | Dynamic | Life Orb | Surge Surfer | Nasty Plot · Thunderbolt · Psychic · Surf |
+| Toxtricity | Dynamic | Throat Spray | Punk Rock | Electric Terrain · Overdrive · Boomburst · Sludge Bomb |
+| Iron Hands | Dynamic | Assault Vest | Quark Drive | Drain Punch · Wild Charge · Ice Punch · Volt Switch |
+| Mega Manectric | Dynamic | Manectite | Intimidate | Thunderbolt · Overheat · Volt Switch · Signal Beam |
 
 ### Ground archetype — progressive team
 
 | Pokémon | Lv. | Item | Ability | Moves |
 |---|---:|---|---|---|
-| Hippowdon | Dynamic | Smooth Rock | — | Stealth Rock · Earthquake · Slack Off · Whirlwind |
-| Drilbur | Dynamic | Life Orb | — | level-legal moves |
-| Mega Tyranitar | Dynamic | Tyranitarite | — | Dragon Dance · Crunch · Rock Slide · Ice Punch |
-| Garchomp | Dynamic | Yache Berry | — | Swords Dance · Earthquake · Dragon Claw · Iron Head |
-| Gliscor | Dynamic | Toxic Orb | — | Earthquake · Knock Off · Toxic · Roost |
-| Corviknight | Dynamic | Leftovers | — | Iron Defense · Body Press · Brave Bird · Roost |
+| Hippowdon | Dynamic | Smooth Rock | Sand Stream | Stealth Rock · Earthquake · Slack Off · Whirlwind |
+| Drilbur | Dynamic | Life Orb | Sand Rush | level-legal moves |
+| Mega Tyranitar | Dynamic | Tyranitarite | Sand Stream | Dragon Dance · Crunch · Rock Slide · Ice Punch |
+| Garchomp | Dynamic | Yache Berry | Rough Skin | Swords Dance · Earthquake · Dragon Claw · Iron Head |
+| Gliscor | Dynamic | Toxic Orb | Poison Heal | Earthquake · Knock Off · Toxic · Roost |
+| Corviknight | Dynamic | Leftovers | Mirror Armor | Iron Defense · Body Press · Brave Bird · Roost |
 
 ### Ice archetype — progressive team
 
 | Pokémon | Lv. | Item | Ability | Moves |
 |---|---:|---|---|---|
-| Vanilluxe | Dynamic | Icy Rock | — | Blizzard · Freeze-Dry · Flash Cannon · Taunt |
-| Darumaka-Galar | Dynamic | Choice Band | — | level-legal moves |
-| Aurorus | Dynamic | Wise Glasses | — | Blizzard · Freeze-Dry · Earth Power · Thunderbolt |
-| Sandslash-Alola | Dynamic | Life Orb | — | Swords Dance · Icicle Crash · Iron Head · Earthquake |
-| Arctovish | Dynamic | Light Clay | — | Icicle Crash · Aurora Veil · Fishious Rend · Rock Slide |
-| Mega Baxcalibur | Dynamic | Baxcalibrite | — | Dragon Dance · Glaive Rush · Icicle Crash · Earthquake |
+| Vanilluxe | Dynamic | Icy Rock | Snow Warning | Blizzard · Freeze-Dry · Flash Cannon · Taunt |
+| Darumaka-Galar | Dynamic | Choice Band | Gorilla Tactics | level-legal moves |
+| Aurorus | Dynamic | Wise Glasses | Snow Warning | Blizzard · Freeze-Dry · Earth Power · Thunderbolt |
+| Sandslash-Alola | Dynamic | Life Orb | Slush Rush | Swords Dance · Icicle Crash · Iron Head · Earthquake |
+| Arctovish | Dynamic | Light Clay | Slush Rush | Icicle Crash · Aurora Veil · Fishious Rend · Rock Slide |
+| Mega Baxcalibur | Dynamic | Baxcalibrite | Thermal Exchange | Dragon Dance · Glaive Rush · Icicle Crash · Earthquake |
 
 ## Kanto
 

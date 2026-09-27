@@ -127,7 +127,7 @@ def parse_mon(block: str) -> dict:
     first = lines[0]
     species, item = (first.split(" @ ", 1) + [None])[:2] if " @ " in first else (first, None)
     fields = {}
-    for key in ("Level", "Ability", "Nature", "IVs", "EVs"):
+    for key in ("Level", "Ability", "Nature", "IVs", "EVs", "Happiness"):
         fields[key] = next((line.split(": ", 1)[1] for line in lines if line.startswith(f"{key}: ")), None)
     fields.update(species=species, item=item, moves=[line[2:] for line in lines if line.startswith("- ")])
     return fields
@@ -164,6 +164,8 @@ def render_mon(canonical: dict, current: dict, hard: bool) -> str:
         if evs is None:
             raise ValueError(f"No HARD EV mapping for {canonical['boss']} slot {canonical['slot']}: {canonical['evs']}")
         lines.append(f"EVs: {evs}")
+    if canonical.get("friendship") is not None:
+        lines.append(f"Happiness: {canonical['friendship']}")
     lines.extend(f"- {move}" for move in moves)
     return "\n".join(lines)
 

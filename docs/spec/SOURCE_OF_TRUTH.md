@@ -48,12 +48,14 @@ Détail : [ENCOUNTERS.md](ENCOUNTERS.md).
 - La forme de base doit entrer avec un talent légal ; le talent de Méga vient de la transformation.
 - Mortimer remet le Mega Ring après le badge 4 puis la CT.
 - Jeannine conserve Aéromite comme ace et Pokémon de prédilection. Méga-Kravarech @ Dragalgite remplace Gaulet au slot 3 ; Kravarech entre avec un talent de base légal et reçoit Adaptabilité à la transformation.
+- Les Simiabraz de Chuck et d’Aldo utilisent Acrobatie. Méga-Altaria possède le bonheur maximal dans les données runtime afin que Retour atteigne sa puissance maximale ; cette donnée technique n’est pas affichée dans le wiki joueur.
 
 ### Rival et Team Rocket
 
 La source détaillée est [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Les JSON `rival.json`, `rocket_progression.json` et `bosses.json` doivent rester synchronisés avec ce document.
 
 - Le rival possède un starter fixe par archétype, une progression d’équipe `1 → 3 → 4 → 6` et sa Méga seulement après le badge 4.
+- Chaque membre du Rival possède un talent canonique. Le runtime l’applique lorsqu’il est légal pour la forme réellement envoyée et conserve le talent de Méga pour la transformation.
 - Les Exécutifs Rocket suivent `3 → 4 → 6` et n’utilisent une Méga qu’en FINAL.
 - Archer utilise Méga-Sharpedo et Méga-évolue immédiatement ; aucun plan Abri → Méga retardée.
 - Méga-Démolosse reste réservé à Marion.
@@ -96,6 +98,7 @@ La baseline actuelle inclut la passe owner fusionnée par la PR #29. Elle est pr
 - Routes/Villes est intégré et ne doit pas être retiré au nom d’une ancienne consigne.
 - Les pages Localisations et les compteurs Pokédex sont dérivés des sources canoniques par `tools/sync_tactica_localization.py`.
 - Les données de jeu ne doivent pas être recopiées manuellement dans le wiki lorsqu’elles peuvent être régénérées. La page Boss & Conseils est générée depuis `bosses.json`, `rival.json` et `rocket_progression.json`.
+- Boss & Conseils présente chaque équipe dans une carte repliable avec sprites de dresseur et de Pokémon ; les talents du Rival proviennent de `rival.json`.
 - Les cartes du Guide et les sprites locaux sont reconstruits depuis les assets moteur ; les galeries utilisent une seule frame transparente par Pokémon.
 - Le Guide privilégie des paragraphes narratifs et ouvre la galerie des starters par défaut. La Roadmap décrit l’état courant de validation V1.
 
