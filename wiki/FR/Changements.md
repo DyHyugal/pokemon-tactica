@@ -1,4 +1,4 @@
-[Accueil](Accueil.md) · [Guide de jeu](Guide-de-jeu.md) · [Changements](Changements.md) · [Pokédex](Pokedex.md) · [Localisations](Localisations.md) · [Boss & Conseils](Boss-et-Conseils.md) · [Crédits](Credits-et-Versions.md) · [Roadmap](Roadmap.md) · **[EN](../EN/Changes.md)**
+[Accueil](Accueil.md) · [Guide](Guide-de-jeu.md) · [Changements](Changements.md) · [Pokédex](Pokedex.md) · [Localisations](Localisations.md) · [Routes et Villes](Routes-et-Villes.md) · [Boss & Conseils](Boss-et-Conseils.md) · [Crédits](Credits-et-Versions.md) · [Roadmap](Roadmap.md) · **[EN](../EN/Changes.md)**
 
 # Changements
 
@@ -51,6 +51,12 @@ L'assistant d'entraînement couvre **EXP jusqu'au cap, IV, EV, reset EV, nature,
 ### Méga-Évolution
 
 Le **Méga-Anneau** est remis par Mortimer après le badge 4 et sa CT. Le joueur peut donc Méga-Évoluer immédiatement dans toute la portion entre les badges 4 et 5. Les boss qui utilisent une Méga doivent commencer avec une forme de base et un talent légaux ; le talent de la Méga vient de la transformation elle-même.
+
+### Évolutions
+
+Tactica conserve les **méthodes officielles 9G** lorsqu’elles sont réalisables dans la ROM. Les évolutions par échange utilisent désormais le **Fil Liaison** ; lorsqu’un échange officiel exige un objet, le Pokémon doit tenir cet objet avant l’utilisation du Fil Liaison. Les quelques mécaniques impossibles à reproduire proprement utilisent également le Fil Liaison. Les anciens seuils de niveau artificiels et raccourcis HnS ont été retirés.
+
+Les fiches du **Pokédex** affichent directement les conditions réellement compilées dans Tactica et sont régénérées depuis le runtime.
 
 ## Pokémon modifiés — 26 entrées
 
