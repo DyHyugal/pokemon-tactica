@@ -194,6 +194,28 @@ def validate_bosses():
     if "Teddiursa" in whitney_hard or "Teddiursa" in whitney_normal_matches[0]:
         fail("Whitney still contains the obsolete Teddiursa fallback")
 
+    morty_hard = hard_by_trainer["TRAINER_MORTY_1_HNS"]
+    morty_normal_matches = re.findall(
+        r"^=== TRAINER_MORTY_1_HNS ===\n(.*?)(?=^=== |\Z)",
+        normal,
+        re.M | re.S,
+    )
+    if len(morty_normal_matches) != 1:
+        fail("Morty NORMAL roster is missing or duplicated")
+    morty_expected = (
+        "Marowak-Alola @ Choice Band\n"
+        "Level: 35\n"
+        "Ability: Rock Head\n"
+        "Nature: Adamant"
+    )
+    morty_moves = ("- Earthquake", "- Flare Blitz", "- Shadow Bone", "- Thunder Punch")
+    if morty_expected not in morty_hard or morty_expected not in morty_normal_matches[0]:
+        fail("Morty must use level 35 Choice Band Alolan Marowak with Rock Head in NORMAL and HARD")
+    if any(move not in morty_hard or move not in morty_normal_matches[0] for move in morty_moves):
+        fail("Morty Alolan Marowak canonical moves are missing")
+    if "Chandelure" in morty_hard or "Chandelure" in morty_normal_matches[0]:
+        fail("Morty still contains the obsolete Chandelure slot")
+
     jasmine = hard_by_trainer["TRAINER_JASMINE_1_HNS"]
     jasmine_ace = (
         "Aggron @ Aggronite", "Ability: Sturdy", "Nature: Careful",

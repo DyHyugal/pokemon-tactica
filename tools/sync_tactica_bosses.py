@@ -51,6 +51,7 @@ ROCKET_TRAINERS = {
 
 SPECIES_ALIASES = {
     "Alolan Ninetales": "Ninetales-Alola",
+    "Alolan Marowak": "Marowak-Alola",
     "Arctozolt (Galvagla)": "Arctozolt",
     "Galarian Weezing": "Weezing-Galar",
     "Galarian Slowking": "Slowking-Galar",

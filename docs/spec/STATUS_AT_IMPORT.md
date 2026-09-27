@@ -1,5 +1,7 @@
 # État initial à vérifier par Codex
 
+> **Snapshot historique uniquement.** La ligne « évolutions solo » décrit l’état importé et ne constitue plus une règle active. Le contrat courant est `EVOLUTIONS.md`, qui supersède explicitement l’ancienne implémentation HnS.
+
 | Domaine | Preuve d'import | État attendu à l'audit |
 |---|---|---|
 | Audio, vitesse x1–x4, Shiny Rate, starter/œuf, évolutions solo | Production @ `e5c7191` et tests antérieurs | Implémentés et protégés ; confirmer non-régression |

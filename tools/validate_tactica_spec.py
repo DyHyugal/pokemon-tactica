@@ -29,6 +29,7 @@ def require(test, message):
 
 SPECIES_CONSTANT_ALIASES = {
     "Alolan Ninetales": "SPECIES_NINETALES_ALOLA",
+    "Alolan Marowak": "SPECIES_MAROWAK_ALOLA",
     "Arctozolt (Galvagla)": "SPECIES_ARCTOZOLT",
     "Galarian Weezing": "SPECIES_WEEZING_GALAR",
     "Galarian Slowking": "SPECIES_SLOWKING_GALAR",
@@ -69,9 +70,9 @@ def minimum_evolution_levels():
                     minimum = max(minimum, int(evo["param"]))
                 except ValueError:
                     pass
-            for condition in evo.get("conditions", []):
-                if len(condition) >= 2 and condition[0] == "IF_MIN_LEVEL":
-                    minimum = max(minimum, int(condition[1]))
+            # Only fixed level-based methods constrain boss legality.
+            # Historical HnS IF_MIN_LEVEL gates on item evolutions are obsolete
+            # under docs/spec/EVOLUTIONS.md and must not define legality.
             incoming[evo["target"]].append((minimum, source, evo["method"]))
     return {target: min(routes, key=lambda route: route[0]) for target, routes in incoming.items()}
 
@@ -377,6 +378,20 @@ blanche = next(v for k, v in bosses.items() if k[2] == "Blanche")
 blanche_ursaring = next((row for row in blanche if row["species"] == "Ursaring"), None)
 require(blanche_ursaring is not None and blanche_ursaring["level"] == 30,
         "Blanche must use Ursaring at its legal level 30")
+
+mortimer = bosses[("Johto", "Gym", "Mortimer")]
+mortimer_marowak = next((row for row in mortimer if row["species"] == "Alolan Marowak"), None)
+require(mortimer_marowak is not None, "Mortimer must use Alolan Marowak instead of Chandelure")
+require(
+    mortimer_marowak["level"] == 35
+    and mortimer_marowak["item"] == "Choice Band"
+    and mortimer_marowak["ability"] == "Rock Head"
+    and mortimer_marowak["nature"] == "Adamant"
+    and mortimer_marowak["moves"] == ["Earthquake", "Flare Blitz", "Shadow Bone", "Thunder Punch"],
+    "Mortimer Alolan Marowak canonical physical breaker set changed",
+)
+require(all(row["species"] != "Chandelure" for row in mortimer),
+        "Mortimer still contains obsolete Chandelure")
 
 required_items = {
     ("Jasmine", "Corviknight"): "Leftovers", ("Jasmine", "Archaludon"): "Sitrus Berry",

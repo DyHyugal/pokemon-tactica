@@ -41,7 +41,7 @@ This page is generated from the game's canonical teams. Use it to prepare for ma
 | Sableye | 35 | Leftovers | Prankster | Will-O-Wisp · Taunt · Recover · Knock Off |
 | Dusclops | 37 | Eviolite | Pressure | Will-O-Wisp · Night Shade · Pain Split · Haze |
 | Mimikyu | 35 | Lum Berry | Disguise | Swords Dance · Play Rough · Shadow Sneak · Drain Punch |
-| Chandelure | 35 | Choice Specs | Flash Fire | Shadow Ball · Fire Blast · Energy Ball · Psychic |
+| Alolan Marowak | 35 | Choice Band | Rock Head | Earthquake · Flare Blitz · Shadow Bone · Thunder Punch |
 | Annihilape | 35 | Chesto Berry | Defiant | Bulk Up · Rage Fist · Drain Punch · Rest |
 | Mega Gengar | 38 | Gengarite | Shadow Tag | Shadow Ball · Sludge Bomb · Focus Blast · Disable |
 

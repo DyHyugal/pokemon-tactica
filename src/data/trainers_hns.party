@@ -7550,15 +7550,15 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Shadow Sneak
 - Drain Punch
 
-Chandelure @ Choice Specs
+Marowak-Alola @ Choice Band
 Level: 35
-Ability: Flash Fire
-Nature: Modest
+Ability: Rock Head
+Nature: Adamant
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Shadow Ball
-- Fire Blast
-- Energy Ball
-- Psychic
+- Earthquake
+- Flare Blitz
+- Shadow Bone
+- Thunder Punch
 
 Annihilape @ Chesto Berry
 Level: 35
@@ -16788,16 +16788,16 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Shadow Sneak
 - Drain Punch
 
-Chandelure @ Choice Specs
+Marowak-Alola @ Choice Band
 Level: 35
-Ability: Flash Fire
-Nature: Modest
+Ability: Rock Head
+Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 SpA / 252 Spe / 4 HP
-- Shadow Ball
-- Fire Blast
-- Energy Ball
-- Psychic
+EVs: 252 Atk / 252 Spe / 4 HP
+- Earthquake
+- Flare Blitz
+- Shadow Bone
+- Thunder Punch
 
 Annihilape @ Chesto Berry
 Level: 35

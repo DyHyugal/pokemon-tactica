@@ -41,7 +41,7 @@ Cette page est générée depuis les équipes canoniques du jeu. Elle permet de 
 | Ténéfix | 35 | Restes | Farceur | Feu Follet · Provoc · Soin · Sabotage |
 | Téraclope | 37 | Évoluroc | Pression | Feu Follet · Ombre Nocturne · Balance · Buée Noire |
 | Mimiqui | 35 | Baie Prine | Fantômasque | Danse Lames · Câlinerie · Ombre Portée · Vampi-Poing |
-| Lugulabre | 35 | Lunettes Choix | Torche | Ball’Ombre · Déflagration · Éco-Sphère · Psyko |
+| Ossatueur d’Alola | 35 | Bandeau Choix | Tête de Roc | Séisme · Boutefeu · Os Ombre · Poing Éclair |
 | Courrousinge | 35 | Baie Maron | Acharné | Gonflette · Poing de Colère · Vampi-Poing · Repos |
 | Méga-Ectoplasma | 38 | Ectoplasmite | Marque Ombre | Ball’Ombre · Bombe Beurk · Exploforce · Entrave |
 

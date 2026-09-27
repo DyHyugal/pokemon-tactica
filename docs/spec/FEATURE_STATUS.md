@@ -23,7 +23,7 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | 30 starters + Évoli | `[DONE]` | Logique cœur intégrée. |
 | Sélecteur — curseur initial / annulation | `[PARTIEL]` | Correction intégrée automatiquement ; comportement visuel à revalider en ROM fraîche. |
 | Œuf d’Orme / second starter distinct | `[PARTIEL]` | Garde-fou intégré ; flow à revalider en ROM. |
-| Évolutions sans échange | `[DONE]` | Tests dédiés existants. |
+| Évolutions — conformité 9G / Fil Liaison | `[À CORRIGER]` | Audit consigné dans `EVOLUTIONS.md` : anciennes routes HnS non conformes encore présentes dans le runtime. Migration runtime + tests + régénération wiki requises. Les anciens tests prouvent seulement le comportement historique, pas le nouveau contrat. |
 | Rival — starter fixe / niveau 17 / 1→3→4→6 | `[PARTIEL]` | JSON/runtime/validateurs intégrés, talents canoniques déterministes lorsqu’ils sont légaux pour la forme envoyée ; combats ROM à observer. |
 | Rocket — 3→4→6 / Méga FINAL | `[PARTIEL]` | JSON/runtime/validateurs intégrés ; combats ROM à observer. |
 | Archer = Méga-Sharpedo immédiat | `[PARTIEL]` | Set et garde-fou automatisés ; transformation à observer en ROM. |
@@ -42,7 +42,8 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | Couverture globale pré-Ligue | `[DONE]` | Dataset standard : 479 espèces utilisées et 479 disponibles avant/à la Ligue ; 0 espèce utilisée reste uniquement post-Ligue. 72 slots ont été remplacés sur 43 tables ; 125 espèces restent dupliquées avant Ligue, ce qui est acceptable puisque la couverture est assurée. |
 | Headbutt | `[DONE]` | 4 tables dédiées. |
 | Safari | `[DONE]` | 53 pools. |
-| Wiki joueur FR/EN | `[DONE]` | Accueil au ton épique, Guide narratif avec galerie ouverte, cartes/sprites propres et Roadmap V1 courante. Les cartes Changements occupent leurs deux colonnes sans vide de grille. Boss & Conseils est généré depuis les sources canoniques, sépare Johto, Rocket, Rival, Kanto et deuxième Ligue, et restaure les cartes repliables, sprites et talents du Rival. |
+| Wiki joueur FR/EN | `[DONE]` | Baseline visuelle/structurelle validée : Accueil, Guide, cartes/sprites, Roadmap, Changements et Boss & Conseils. Ne pas refaire le style global. |
+| Pokédex — méthodes d’évolution | `[À CORRIGER]` | Le wiki reflète encore des méthodes HnS obsolètes. Corriger d’abord le runtime selon `EVOLUTIONS.md`, puis régénérer les données Pokédex ; ne pas corriger les JS générés à la main. |
 | Sync Localisations — niveaux | `[DONE]` | Générateur canonique. |
 | Sync Localisations — espèces / recherche | `[DONE]` | Générateur étendu aux espèces et `data-search`; synchronisations `--check` et CI Tactica vertes sur le HEAD de la PR de nettoyage. |
 | Compteurs Pokédex | `[DONE]` | Recalculés depuis les tables standard + pools spéciaux visibles ; synchronisation idempotente confirmée par la CI Tactica. |
