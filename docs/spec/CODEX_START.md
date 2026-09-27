@@ -65,7 +65,7 @@ Ne pas recoder sans défaut démontré :
 - exactement une Méga par Champion à partir de Mortimer ;
 - unicité globale Champions / Conseil 4 / Rival / Rocket ;
 - Jeannine : Aéromite reste l’ace ; Méga-Kravarech @ Dragalgite remplace Gaulet ;
-- forme de base légale avant Méga, talent Méga appliqué par la transformation.
+- forme de base légale avant Méga, talent Méga appliqué par la transformation ;
 - Simiabraz utilise Acrobatie chez Chuck et Aldo ; Méga-Altaria possède le bonheur runtime maximal pour Retour, sans exposer cette valeur dans le wiki.
 
 ## Progression Kanto courante
@@ -75,14 +75,211 @@ Ne pas recoder sans défaut démontré :
 - Rival : logique de niveau inchangée.
 - Match retour du Maître : Voltali, Méga-Dracaufeu X, Hydragon, Miascarade, Exagide, Carchacrok.
 
-## Priorités UI V1
+# Reprise prioritaire — playtest owner jusqu’à Mortimer / badge 4
 
-1. vérifier en ROM fraîche le Summary structurel déjà intégré ;
-2. vérifier en ROM le HUD combat, dont la suppression de la plaque blanche à gauche de la barre HP ;
-3. vérifier en ROM les boutiques rouge/noir et la lisibilité de la sélection ;
-4. fenêtres custom / polish restant.
+Ce bloc remplace l’ancienne consigne « UI intégrée à confirmer ». Le playtest a été effectué sur une ROM fraîche jusqu’à Mortimer. Les observations ci-dessous sont des résultats runtime réels : **ne pas recoder les points validés** et traiter en priorité les défauts démontrés.
 
-Un validateur statique ne remplace jamais une observation ROM pour ces points.
+## Ordre d’exécution obligatoire
+
+Ne pas traiter tous les écarts comme ayant la même priorité. L’ordre de reprise est le suivant :
+
+### PRIORITÉ 1 — bloquants / écarts majeurs par rapport au rendu et aux fonctions prévues
+
+À traiter **avant tout le reste**, dans cet ordre logique :
+
+1. **UI/UX réellement visible en ROM**
+   - Menu principal Start encore blanc/crème ;
+   - Summary toujours illisible/superposé ;
+   - HUD combat encore largement blanc + plaque blanche sous les PV ;
+   - boutiques/Centre commercial encore blanches et parfois sans contour complet ;
+   - menu Options : chevauchement du header depuis `B SAVE & EXIT`.
+   
+   Ces écarts sont prioritaires parce que les précédents commits avaient été considérés comme « UI intégrée », alors que le playtest démontre que le résultat prévu n’est pas atteint. Il faut corriger les vrais assets/tilemaps/windows/runtime utilisés, pas seulement satisfaire un validateur statique.
+
+2. **Difficulty absente des Settings**
+   - l’option doit être visible, utilisable et persistante ;
+   - ne pas toucher à Vitesse, Audio ou Shiny Rate, déjà validés.
+
+3. **Méga-Évolution cassée**
+   - Mortimer ne Méga-évolue pas ;
+   - le joueur reçoit bien le Mega Ring mais ne peut pas Méga-évoluer avec une pierre compatible ;
+   - corriger le flux complet boss + joueur avant de considérer la progression post-Mortimer testable.
+
+### PRIORITÉ 2 — divergences gameplay/progression confirmées
+
+À traiter après les trois blocs ci-dessus :
+
+- scaling/progression du Rival après Hector et entre Blanche/Mortimer ;
+- Blanche encore avec Teddiursa niv.29 au lieu de l’évolution légale attendue ;
+- texte de refus du second starter déjà possédé.
+
+### PRIORITÉ 3 — secondaires / polish
+
+À faire **après** les priorités 1 et 2 :
+
+- ajustements IA ciblés (Mimiqui, Provoc de Cornèbre, Téraclope) ;
+- corrections wiki/documentaires, dont Élektek → Élekable ;
+- autres petits écarts non bloquants.
+
+Ne pas consommer le gros du temps de reprise sur l’IA ou le wiki tant que **UI + Difficulty + Méga** ne sont pas corrigés et validés par les tests pertinents.
+
+## 1. Réglages
+
+Validé en ROM :
+
+- vitesse x1/x2/x3/x4 : OK ;
+- audio : OK ;
+- Shiny Rate : OK.
+
+À corriger :
+
+- l’option **Difficulty est absente du menu Settings**. Restaurer l’entrée de difficulté et vérifier sa persistance. Ne pas modifier les trois réglages déjà validés.
+
+## 2. UI/UX — défauts confirmés en ROM
+
+La direction reste : **noir / rouge / gris, sans grandes surfaces blanches**.
+
+Défauts observés :
+
+- **Menu principal Start** : grandes surfaces blanc/crème toujours présentes ;
+- **Summary** : toujours très illisible/superposé. La précédente modification n’a pas constitué la recomposition structurelle BG/tilemaps/windows attendue ;
+- **HUD combat** : plaque blanche toujours visible sous les PV joueur ; panneaux Attaque/Sac/Équipe/Fuite encore très blancs et incohérents avec la charte ;
+- **Boutiques / Centre commercial** : UI pratiquement inchangée, grands fonds blancs ; certains menus ont un contour incomplet/manquant ;
+- **Menu Options** : depuis l’ajout de `B SAVE & EXIT`, le header se chevauche avec la navigation `L PREVIOUS / FEATURES… / R NEXT`. Recomposer l’en-tête afin que toutes les indications restent lisibles simultanément.
+
+Le validateur UI actuel donne de faux positifs : il vérifie surtout la présence de constantes/assets ciblés mais ne garantit pas le rendu final. Le renforcer sur les vrais assets/tilemaps/windows/runtime concernés. Un contrôle statique ne remplace pas l’observation ROM.
+
+## 3. Œuf / second starter
+
+Validé en ROM :
+
+- impossible de reprendre exactement le starter principal ;
+- réception correcte ;
+- flow conforme à la décision précédente.
+
+À corriger uniquement :
+
+- reformuler le dialogue lorsqu’une espèce déjà possédée est reconnue. Intention souhaitée :  
+  **« Tu as bien reconnu l’espèce, mais tu la possèdes déjà. Essaie d’en choisir une différente ! »**
+- conserver le flow actuel ; ne pas le réécrire.
+
+## 4. Rival — progression/niveaux faux après Hector
+
+Validé :
+
+- avec Salamèche joueur, premier Rival Eau = **Flobio niv.17**, conforme ;
+- sets observés cohérents.
+
+À corriger :
+
+- après Hector, le combat observé utilise bien **Goélise / Flobio / Hypotrempe**, mais niveaux **15 / 16 / 18** : incorrect ;
+- entre Blanche et Mortimer, le Rival n’a encore que **4 Pokémon** et reste basé sur les niveaux d’Hector : incorrect ;
+- vérifier les événements réels avant de modifier la progression : il ne semble pas y avoir de combat Rival juste après le badge 1 ;
+- corriger la logique générale de scaling/progression afin que les combats Rival réellement déclenchés utilisent le nombre de Pokémon et les niveaux attendus au point réel de progression, en cohérence avec le cap/prochain boss ;
+- corriger source canonique + générateur/runtime + tests, sans hardcoder uniquement les deux combats observés.
+
+## 5. Blanche
+
+Défaut confirmé :
+
+- Blanche utilise encore **Teddiursa niv.29**.
+
+Attendu :
+
+- utiliser **Ursaring à partir du niveau légal d’évolution**, donc niveau 30 minimum dans ce combat ;
+- aligner source canonique, runtime, wiki et tests.
+
+## 6. Élektek → Élekable — runtime validé, wiki uniquement à corriger
+
+Important : **ne pas modifier le runtime de cette évolution**.
+
+Validé en ROM :
+
+- Élekid → Élektek au niveau 30 : OK ;
+- Élektek niveau 36 : l’**Électriseur est directement utilisable** et fait évoluer correctement en Élekable : OK.
+
+Défaut uniquement documentaire :
+
+- le wiki affiche actuellement **deux méthodes contradictoires** pour Élektek → Élekable :
+  1. une ligne legacy « condition d’évolution Tactica / ancien échange / objet tenu » ;
+  2. la bonne règle « utiliser Électriseur, niveau minimum 36 ».
+
+À faire :
+
+- supprimer la méthode legacy/objet tenu du wiki ;
+- conserver une seule règle : **utiliser l’Électriseur sur Élektek à partir du niveau 36 (`>= 36`)** ;
+- aligner FR/EN et toutes les pages/générateurs concernés ;
+- ajouter un garde-fou documentaire/générateur si pertinent pour éviter le retour de la ligne contradictoire.
+
+## 7. Méga-Évolution — blocage prioritaire
+
+Défauts confirmés en ROM :
+
+- **Mortimer : Ectoplasma n’a pas Méga-évolué** ;
+- après victoire, le **Mega Ring est bien reçu** ;
+- pourtant le joueur **ne peut toujours pas Méga-évoluer** : Dracaufeu tient bien sa Méga-Gemme, mais aucune option/commande Méga n’apparaît dans le HUD ;
+- aucun crash.
+
+Diagnostiquer le système end-to-end :
+
+- condition d’activation boss ;
+- flag/variable du Mega Ring ;
+- disponibilité joueur ;
+- bouton/HUD ;
+- objet tenu compatible ;
+- déclenchement effectif en combat ;
+- forme/talent avant et après Méga.
+
+Ajouter des tests démontrant au minimum :
+
+1. aucune Méga joueur avant Mega Ring ;
+2. Mega Ring débloqué après Mortimer ;
+3. Pokémon + pierre compatible → Méga disponible ;
+4. Mortimer déclenche réellement Méga-Ectoplasma ;
+5. talent pré-Méga puis talent Méga correct.
+
+## 8. IA — conserver la base, améliorer quelques décisions
+
+L’IA est globalement jugée correcte. Ne pas la réécrire entièrement.
+
+Cas observés à améliorer :
+
+- **Mimiqui** : après Disguise cassé et avec gros boost d’Attaque (+2/+4), s’il peut KO avec **Ombre Portée**, la priorité doit être fortement favorisée au lieu d’un move inférieur qui le laisse se faire dépasser ;
+- **Cornèbre d’Albert** : a utilisé Provoc contre un Pokémon Électrik offensif sans cible évidente pour Provoc. Améliorer l’évaluation de Provoc afin d’éviter son usage lorsqu’aucune action pertinente n’est réellement bloquable ;
+- **Téraclope** : comportement trop passif ; n’a quasiment pas cherché à brûler/contrôler. Auditer set + décision IA. Ne pas remplacer automatiquement Ténèbres par Ball’Ombre sans comparer dégâts/statistiques/légalité.
+
+Préférer une amélioration générique de la fonction de scoring IA lorsqu’elle résout proprement le cas, plutôt qu’un script spécial par Pokémon.
+
+## 9. Points validés en ROM — à consigner, ne pas recoder
+
+- starter + UX du sélecteur : OK ;
+- Stalgamin femelle → Momartik lorsque cette évolution est choisie : OK ;
+- œuf / deuxième starter distinct + réception : OK ;
+- Route 31 : encounters conformes ; Tarsal cohérent avec le slot rare 10 % ;
+- Albert : équipe/niveaux conformes ; Cornèbre @ Ceinture Force ; Vent Arrière + Demi-Tour observés ; aucun soin utilisé ;
+- PNJ Eau Fraîche de l’arène d’Hector : OK ;
+- Proton EARLY : équipe correcte et comportement cohérent, notamment Tadmorv-A utilisant Entrave intelligemment ;
+- Hector : Pomdepik joue bien suicide lead PDR → Picots ; Insécateur suffisamment tanky pour être cohérent avec Évoluroc ; soins <= 2 ;
+- Route 34 : composition/niveaux conformes, Scorplane au bon endroit ;
+- Route 36 : composition/niveaux conformes ;
+- PNJ objets/capacités du **Centre Commercial de Doublonville** : fonctionnels. Ne pas supposer qu’ils doivent exister dans chaque Poké Mart si la source de vérité/wiki les place uniquement ici ;
+- Greninja possède bien une Méga-Gemme ; **ne pas lancer maintenant un inventaire complet des Méga**, ce sera une passe dédiée ultérieure ;
+- Mortimer : équipe globalement correcte, IA plutôt propre, aucun crash ;
+- Mega Ring reçu après Mortimer : OK, mais utilisation de la Méga joueur cassée comme décrit plus haut.
+
+## 10. Documentation/statuts à mettre à jour pendant le correctif
+
+À partir de ce playtest réel :
+
+- **Summary ROM** → `[À CORRIGER]` ;
+- **HUD combat** → `[À CORRIGER]` ;
+- **Menu principal Start** → ajouter explicitement comme `[À CORRIGER]` si absent du registre ;
+- **Menu Options / header** → `[À CORRIGER]` ;
+- **UI boutiques** → `[À CORRIGER]` ;
+- Rival progression/scaling → `[À CORRIGER]` tant que le défaut runtime n’est pas corrigé ;
+- Méga boss/joueur → `[À CORRIGER]` tant que Mortimer et le joueur ne déclenchent pas réellement la Méga.
+
+Ne pas laisser ces points sous la formulation « intégré, rendu à confirmer » : le rendu/runtime a maintenant été observé et a échoué.
 
 ## Wiki
 
@@ -91,6 +288,8 @@ La passe owner de la PR #29 est la baseline. Ne pas restaurer une ancienne versi
 Les corrections data doivent passer par les sources canoniques puis les générateurs wiki. Boss & Conseils se régénère avec `tools/sync_tactica_boss_wiki.py` et les images locales avec `tools/sync_tactica_wiki_assets.py`. Le synchroniseur Localisations/Pokédex doit rester idempotent et la recherche HTML doit refléter les espèces canoniques FR/EN.
 
 Boss & Conseils conserve ses cartes repliables, ses sprites de dresseurs/Pokémon et les talents du Rival issus de la source canonique. La page Changements utilise deux colonnes indépendantes pour éviter les grands vides provoqués par la hauteur de la carte des starters.
+
+Pour Élektek → Élekable, le runtime est déjà validé : corriger **uniquement** la contradiction documentaire et la source/générateur qui la produit.
 
 ## Politique de validation
 
@@ -105,6 +304,16 @@ Avant merge vers `integration/v1` :
 
 Le playtest owner final n’est pas requis pour merger une correction automatisée propre. Les vérifications ROM restantes sont consignées comme telles.
 
+Pour cette reprise précise :
+
+- corriger les sources canoniques avant les fichiers générés ;
+- ajouter des non-régressions ciblées pour Rival scaling/progression, Méga et documentation évolution ;
+- pour l’UI, ne pas considérer le validateur statique comme preuve de réussite visuelle ;
+- régénérer ce qui doit l’être ;
+- build HnS propre ;
+- tests ciblés + CI ;
+- branche dédiée + PR vers `integration/v1`.
+
 Avant une candidate owner : CI verte sur le SHA exact, `make clean && make hns -j4`, puis checklist ROM de `PLAYTEST_STATUS.md`.
 
 ## Compte rendu attendu
@@ -114,6 +323,7 @@ Toujours fournir factuellement :
 - SHA de départ et SHA final ;
 - branche/PR ;
 - fichiers modifiés ;
+- causes trouvées ;
 - données/générateurs corrigés ;
 - tests et CI ;
 - synchronisations/idempotence ;
