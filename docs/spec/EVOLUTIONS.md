@@ -72,11 +72,15 @@ Aucun seuil de niveau artificiel ne doit être ajouté.
 
 Cette catégorie sert uniquement aux mécaniques qui ne peuvent pas être reproduites proprement dans le moteur ou l'expérience Tactica.
 
-Exemples explicitement validés par l'owner :
+Cas validés après audit technique :
 
-- Sépiatop -> Sépiatroce ;
-- Superdofin / la lignée de Dofin lorsque la condition multijoueur officielle n'est pas disponible ;
-- autres cas équivalents identifiés lors de l'audit technique.
+- Sépiatop -> Sépiatroce : orientation de la console non disponible ;
+- Dofin -> Superdofin : Club Union non disponible ;
+- Tutafeh de Galar -> Tutétékri : condition de dégâts + passage sous un lieu spécifique non reproductible sans inventer un substitut ;
+- Ursaring -> Ursaking : pleine lune non représentée par le moteur ; l'ancien raccourci « Bloc de Tourbe + nuit » était une approximation HnS ;
+- Meltan -> Melmetal : évolution externe à Pokémon GO via Bonbons Meltan.
+
+Ces cinq cas utilisent **Fil Liaison**. Les autres mécaniques atypiques déjà supportées proprement par le moteur restent officielles (pas de suivi, coups critiques, dégâts de recul, compteur d'utilisation de capacité, spin de Crèmy, etc.).
 
 Il ne faut pas inventer une pierre, un niveau, un objet détourné ou une condition arbitraire pour ces cas.
 
@@ -228,9 +232,9 @@ Des raccourcis Pierre Feu / Pierre Nuit ont été ajoutés. Les armures officiel
 
 ### Tutafeh de Galar -> Tutétékri
 
-Une route Bloc de Tourbe a été ajoutée alors qu'elle n'appartient pas à la mécanique officielle de cette lignée.
+La mécanique officielle exige une perte d'au moins 49 PV puis le passage sous un lieu spécifique. Tactica ne reproduit pas ce contexte sans substitut arbitraire.
 
-Si la mécanique officielle n'est pas reproduisible proprement dans Tactica, ce cas doit utiliser **Fil Liaison** conformément à la règle 2.3, et non un objet arbitraire.
+**Décision runtime : Fil Liaison.**
 
 ### Ursaking Lune Vermeille
 
@@ -280,3 +284,12 @@ Ce document décrit la **cible**. Il ne signifie pas que les évolutions actuell
 - la règle Fil Liaison est validée par l'owner ;
 - les corrections runtime restent à appliquer ;
 - les données générées et le wiki devront être régénérés après correction du code.
+
+
+## 8. État de migration au 27 septembre 2026
+
+- méthodes non-échange réalisables : restaurées ;
+- échanges simples : Fil Liaison ;
+- échanges + objet : objet officiel tenu + Fil Liaison ;
+- mécaniques impossibles validées : Fil Liaison pour Sépiatop, Dofin, Tutafeh-Galar, Ursaring et Meltan ;
+- prochaine étape : renforcer les validateurs génériques puis régénérer le Pokédex/wiki depuis le runtime finalisé.

@@ -131,9 +131,9 @@ Une fois le bloc Méga entièrement terminé, poursuivre la migration canonique 
 
 Travail restant principal :
 
-- auditer les mécaniques officielles impossibles à reproduire proprement et les convertir vers Fil Liaison uniquement lorsqu’elles sont validées comme impossibles ;
-- compléter les validateurs/tests pour ces cas atypiques ;
-- mettre à jour la documentation puis régénérer le wiki depuis le runtime corrigé.
+- audit des mécaniques impossibles : **traité** pour Sépiatop, Dofin, Tutafeh-Galar, Ursaring et Meltan, convertis vers Fil Liaison ;
+- compléter les validateurs génériques pour verrouiller la conformité globale ;
+- régénérer le wiki/Pokédex depuis le runtime corrigé.
 
 ### PRIORITÉS SUIVANTES — seulement après les quatre blocs ci-dessus
 
@@ -242,10 +242,9 @@ Audit déjà établi :
 
 Ordre de correction restant :
 
-1. auditer les mécaniques officielles impossibles à reproduire proprement et n’utiliser Fil Liaison que pour ces cas validés ;
-2. compléter les tests génériques et les validateurs pour les cas atypiques ;
-3. mettre à jour les documents de statut ;
-4. régénérer le wiki depuis les sources runtime corrigées.
+1. compléter les validateurs génériques de conformité évolution ;
+2. mettre à jour les documents de statut finaux ;
+3. régénérer le wiki depuis les sources runtime corrigées.
 
 Ne pas considérer le wiki actuel comme source de vérité pendant cette migration : il doit refléter le runtime corrigé, pas l’inverse.
 
