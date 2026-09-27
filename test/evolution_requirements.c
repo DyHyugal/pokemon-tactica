@@ -171,6 +171,63 @@ TEST("Evolution requirements: all canonical trade families use Linking Cord")
     }
 }
 
+
+struct ImpossibleEvolutionCase
+{
+    u16 source;
+    u16 target;
+};
+
+static const struct ImpossibleEvolutionCase sImpossibleEvolutionCases[] =
+{
+    {SPECIES_INKAY, SPECIES_MALAMAR},
+    {SPECIES_FINIZEN, SPECIES_PALAFIN_ZERO},
+    {SPECIES_YAMASK_GALAR, SPECIES_RUNERIGUS},
+    {SPECIES_URSARING, SPECIES_URSALUNA},
+    {SPECIES_MELTAN, SPECIES_MELMETAL},
+};
+
+TEST("Evolution requirements: unsupported official mechanics use Linking Cord")
+{
+    u32 i;
+
+    for (i = 0; i < ARRAY_COUNT(sImpossibleEvolutionCases); i++)
+    {
+        const struct ImpossibleEvolutionCase *testCase = &sImpossibleEvolutionCases[i];
+        struct Pokemon mon;
+        bool32 canStopEvo = TRUE;
+
+        InitEvolutionMon(&mon, testCase->source, 60, MON_MALE);
+        EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
+        EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_LINKING_CORD, NULL, &canStopEvo, CHECK_EVO), testCase->target);
+    }
+}
+
+TEST("Evolution requirements: supported atypical mechanics remain native")
+{
+    const struct Evolution *evos;
+
+    evos = GetSpeciesEvolutions(SPECIES_FARFETCHD_GALAR);
+    EXPECT_EQ(evos[0].method, EVO_BATTLE_END);
+    EXPECT_EQ(evos[0].targetSpecies, SPECIES_SIRFETCHD);
+
+    evos = GetSpeciesEvolutions(SPECIES_PAWMO);
+    EXPECT_EQ(evos[0].method, EVO_LEVEL);
+    EXPECT_EQ(evos[0].targetSpecies, SPECIES_PAWMOT);
+
+    evos = GetSpeciesEvolutions(SPECIES_BRAMBLIN);
+    EXPECT_EQ(evos[0].method, EVO_LEVEL);
+    EXPECT_EQ(evos[0].targetSpecies, SPECIES_BRAMBLEGHAST);
+
+    evos = GetSpeciesEvolutions(SPECIES_RELLOR);
+    EXPECT_EQ(evos[0].method, EVO_LEVEL);
+    EXPECT_EQ(evos[0].targetSpecies, SPECIES_RABSCA);
+
+    evos = GetSpeciesEvolutions(SPECIES_PRIMEAPE);
+    EXPECT_EQ(evos[0].method, EVO_LEVEL);
+    EXPECT_EQ(evos[0].targetSpecies, SPECIES_ANNIHILAPE);
+}
+
 TEST("Evolution requirements: existing level evolutions still work")
 {
     struct Pokemon mon;
