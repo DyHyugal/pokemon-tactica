@@ -218,8 +218,13 @@ function evoText(ev){
   return cond.length?base+" · "+cond.join(" · "):base;
 }
 function componentEdges(start){
-  const edges=[];
-  for(const [src,d] of Object.entries(S()))for(const ev of d.evolutions||[])if(S()[ev.target])edges.push({src,...ev});
+  const allEdges=[];
+  for(const [src,d] of Object.entries(S()))for(const ev of d.evolutions||[])if(S()[ev.target])allEdges.push({src,...ev});
+  // The ROM may keep the original trade rule alongside Tactica's solo replacement.
+  // Player-facing wiki pages must show the usable Tactica route only when both lead
+  // from the same species to the same evolution.
+  const modernPairs=new Set(allEdges.filter(e=>e.method!=="EVO_TRADE").map(e=>e.src+"=>"+e.target));
+  const edges=allEdges.filter(e=>e.method!=="EVO_TRADE"||!modernPairs.has(e.src+"=>"+e.target));
   const seen=new Set([start]);let changed=true;
   while(changed){changed=false;for(const e of edges){if(seen.has(e.src)&&!seen.has(e.target)){seen.add(e.target);changed=true}if(seen.has(e.target)&&!seen.has(e.src)){seen.add(e.src);changed=true}}}
   return edges.filter(e=>seen.has(e.src)&&seen.has(e.target));

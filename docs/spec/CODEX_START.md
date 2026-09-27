@@ -118,8 +118,11 @@ Ne pas traiter tous les écarts comme ayant la même priorité. L’ordre de rep
 À faire **après** les priorités 1 et 2 :
 
 - ajustements IA ciblés (Mimiqui, Provoc de Cornèbre, Téraclope) ;
-- corrections wiki/documentaires, dont Élektek → Élekable ;
 - autres petits écarts non bloquants.
+
+Les deux retours wiki suivants sont désormais traités par la baseline wiki dédiée et **ne doivent pas être repris** :
+- Élektek → Élekable : une seule méthode joueur affichée, Électriseur utilisable à partir du niveau 36 (runtime déjà validé) ;
+- portraits dresseurs Boss & Conseils : transparence de l’index palette 0 générée explicitement pour le navigateur, sans fond coloré.
 
 Ne pas consommer le gros du temps de reprise sur l’IA ou le wiki tant que **UI + Difficulty + Méga** ne sont pas corrigés et validés par les tests pertinents.
 
@@ -189,7 +192,7 @@ Attendu :
 - utiliser **Ursaring à partir du niveau légal d’évolution**, donc niveau 30 minimum dans ce combat ;
 - aligner source canonique, runtime, wiki et tests.
 
-## 6. Élektek → Élekable — runtime validé, wiki uniquement à corriger
+## 6. Élektek → Élekable — runtime et wiki validés
 
 Important : **ne pas modifier le runtime de cette évolution**.
 
@@ -198,18 +201,11 @@ Validé en ROM :
 - Élekid → Élektek au niveau 30 : OK ;
 - Élektek niveau 36 : l’**Électriseur est directement utilisable** et fait évoluer correctement en Élekable : OK.
 
-Défaut uniquement documentaire :
+Wiki corrigé dans la baseline :
 
-- le wiki affiche actuellement **deux méthodes contradictoires** pour Élektek → Élekable :
-  1. une ligne legacy « condition d’évolution Tactica / ancien échange / objet tenu » ;
-  2. la bonne règle « utiliser Électriseur, niveau minimum 36 ».
-
-À faire :
-
-- supprimer la méthode legacy/objet tenu du wiki ;
-- conserver une seule règle : **utiliser l’Électriseur sur Élektek à partir du niveau 36 (`>= 36`)** ;
-- aligner FR/EN et toutes les pages/générateurs concernés ;
-- ajouter un garde-fou documentaire/générateur si pertinent pour éviter le retour de la ligne contradictoire.
+- le rendu Pokédex masque la route legacy `EVO_TRADE` lorsqu’une route Tactica non-échange mène du même Pokémon vers la même évolution ;
+- pour Élektek → Élekable, une seule règle joueur reste affichée : **utiliser l’Électriseur à partir du niveau 36 (`>= 36`)** ;
+- cette correction est purement documentaire : **ne pas modifier le runtime d’évolution**.
 
 ## 7. Méga-Évolution — blocage prioritaire
 
@@ -289,7 +285,7 @@ Les corrections data doivent passer par les sources canoniques puis les généra
 
 Boss & Conseils conserve ses cartes repliables, ses sprites de dresseurs/Pokémon et les talents du Rival issus de la source canonique. La page Changements utilise deux colonnes indépendantes pour éviter les grands vides provoqués par la hauteur de la carte des starters.
 
-Pour Élektek → Élekable, le runtime est déjà validé : corriger **uniquement** la contradiction documentaire et la source/générateur qui la produit.
+Pour Élektek → Élekable, runtime et rendu wiki sont désormais alignés : **ne pas reprendre ce point sans nouvelle régression observée**. Les portraits locaux des dresseurs sont également générés avec transparence explicite de l’index palette 0.
 
 ## Politique de validation
 
