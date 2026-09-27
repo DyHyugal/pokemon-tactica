@@ -23,7 +23,7 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | 30 starters + Évoli | `[DONE]` | Logique cœur intégrée. |
 | Sélecteur — curseur initial / annulation | `[PARTIEL]` | Correction intégrée automatiquement ; comportement visuel à revalider en ROM fraîche. |
 | Œuf d’Orme / second starter distinct | `[PARTIEL]` | Garde-fou intégré ; flow à revalider en ROM. |
-| Évolutions — conformité 9G / Fil Liaison | `[PARTIEL]` | Runtime migré et validateur générique intégré à la CI : `EVO_TRADE`, seuils artificiels, Fil Liaison hors contrat et objets d’échange directs sont bloqués. Reste la régénération wiki/Pokédex depuis le runtime final. |
+| Évolutions — conformité 9G / Fil Liaison | `[DONE]` | Runtime migré, mécaniques impossibles traitées, validateur générique intégré à la CI et assets d’évolution du Pokédex régénérés depuis les sources runtime. |
 | Rival — starter fixe / niveau 17 / 1→3→4→6 | `[PARTIEL]` | JSON/runtime/validateurs intégrés, talents canoniques déterministes lorsqu’ils sont légaux pour la forme envoyée ; combats ROM à observer. |
 | Rocket — 3→4→6 / Méga FINAL | `[PARTIEL]` | JSON/runtime/validateurs intégrés ; combats ROM à observer. |
 | Archer = Méga-Sharpedo immédiat | `[PARTIEL]` | Set et garde-fou automatisés ; transformation à observer en ROM. |
@@ -43,7 +43,7 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | Headbutt | `[DONE]` | 4 tables dédiées. |
 | Safari | `[DONE]` | 53 pools. |
 | Wiki joueur FR/EN | `[DONE]` | Baseline visuelle/structurelle validée : Accueil, Guide, cartes/sprites, Roadmap, Changements et Boss & Conseils. Ne pas refaire le style global. |
-| Pokédex — méthodes d’évolution | `[À CORRIGER]` | Le wiki reflète encore des méthodes HnS obsolètes. Corriger d’abord le runtime selon `EVOLUTIONS.md`, puis régénérer les données Pokédex ; ne pas corriger les JS générés à la main. |
+| Pokédex — méthodes d’évolution | `[DONE]` | Les champs `evolutions` de `tactica-species-*.js` sont générés depuis le runtime par `sync_tactica_species_evolutions.py` et protégés par `--check` en CI. |
 | Sync Localisations — niveaux | `[DONE]` | Générateur canonique. |
 | Sync Localisations — espèces / recherche | `[DONE]` | Générateur étendu aux espèces et `data-search`; synchronisations `--check` et CI Tactica vertes sur le HEAD de la PR de nettoyage. |
 | Compteurs Pokédex | `[DONE]` | Recalculés depuis les tables standard + pools spéciaux visibles ; synchronisation idempotente confirmée par la CI Tactica. |

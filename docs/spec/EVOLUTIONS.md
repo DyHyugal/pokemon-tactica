@@ -293,4 +293,6 @@ Ce document décrit la **cible**. Il ne signifie pas que les évolutions actuell
 - échanges + objet : objet officiel tenu + Fil Liaison ;
 - mécaniques impossibles validées : Fil Liaison pour Sépiatop, Dofin, Tutafeh-Galar, Ursaring et Meltan ;
 - validateur générique intégré : routes `EVO_TRADE`, `IF_MIN_LEVEL` artificiels sur `EVO_ITEM`, Fil Liaison non autorisé et objets d’échange utilisables directement sont refusés par la CI ;
-- prochaine étape : régénérer le Pokédex/wiki depuis le runtime finalisé et vérifier l’idempotence.
+- Pokédex/wiki régénéré depuis le runtime via `tools/sync_tactica_species_evolutions.py` ; le `--check` CI garantit l’idempotence et empêche le retour de données d’évolution obsolètes.
+
+**Migration évolution V1 terminée.**

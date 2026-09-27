@@ -79,6 +79,7 @@ jobs:
           python3 tools/validate_tactica_balance.py
           python3 tools/sync_tactica_encounter_access.py --check
           python3 tools/sync_tactica_encounters.py --check
+          python3 tools/sync_tactica_species_evolutions.py --check
           python3 tools/sync_tactica_localization.py --check
           python3 tools/sync_tactica_boss_wiki.py --check
           python3 tools/sync_tactica_wiki_assets.py --check
