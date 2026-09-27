@@ -12,7 +12,7 @@ Cette page est générée depuis les équipes canoniques du jeu. Elle permet de 
 |---|---:|---|---|---|
 | Cornèbre | 14 | Ceinture Force | Farceur | Vent Arrière · Provoc · Cru-Ailes · Demi-Tour |
 | Scorplane | 14 | — | Vaccin | Aéropique · Piétisol · Sabotage · Atterrissage |
-| Roucoups | 17 | — | Cœur de Coq | Aéropique · Vive-Attaque · Atterrissage · Rengorgement |
+| Roucoups | 18 | — | Cœur de Coq | Aéropique · Vive-Attaque · Atterrissage · Rengorgement |
 
 ### Hector — Bug / hazards
 
@@ -30,7 +30,7 @@ Cette page est générée depuis les équipes canoniques du jeu. Elle permet de 
 | Évoli | 29 | — | Adaptabilité | Reflet · Relais · Clonage · Vœu |
 | Porygon2 | 29 | Évoluroc | Télécharge | Tonnerre · Laser Glace · Soin · Triplattaque |
 | Capidextre | 29 | — | Technicien | Bluff · Coup Double · Sabotage · Aéropique |
-| Ursaring | 29 | Orbe Flamme | Cran | Façade · Séisme · Close Combat · Mâchouille |
+| Ursaring | 30 | Orbe Flamme | Cran | Façade · Séisme · Close Combat · Mâchouille |
 | Famignol | 29 | Loupe | Technicien | Prolifération · Morsure · Encore · Demi-Tour |
 | Écrémeuh | 32 | — | Querelleur | Plaquage · Lait à Boire · Psykoud’Boul · Roulade |
 
@@ -39,9 +39,9 @@ Cette page est générée depuis les équipes canoniques du jeu. Elle permet de 
 | Pokémon | Niv. | Objet | Talent | Capacités |
 |---|---:|---|---|---|
 | Ténéfix | 35 | Restes | Farceur | Feu Follet · Provoc · Soin · Sabotage |
-| Téraclope | 35 | Évoluroc | Pression | Feu Follet · Ombre Nocturne · Balance · Buée Noire |
+| Téraclope | 37 | Évoluroc | Pression | Feu Follet · Ombre Nocturne · Balance · Buée Noire |
 | Mimiqui | 35 | Baie Prine | Fantômasque | Danse Lames · Câlinerie · Ombre Portée · Vampi-Poing |
-| Lugulabre | 35 | Lunettes Choix | Torche | Ball’Ombre · Déflagration · Éco-Sphère · Psyko |
+| Ossatueur d’Alola | 35 | Bandeau Choix | Tête de Roc | Séisme · Boutefeu · Os Ombre · Poing Éclair |
 | Courrousinge | 35 | Baie Maron | Acharné | Gonflette · Poing de Colère · Vampi-Poing · Repos |
 | Méga-Ectoplasma | 38 | Ectoplasmite | Marque Ombre | Ball’Ombre · Bombe Beurk · Exploforce · Entrave |
 
@@ -85,7 +85,7 @@ Cette page est générée depuis les équipes canoniques du jeu. Elle permet de 
 | Draco | 61 | Évoluroc | Mue | Cage Éclair · Draco-Queue · Repos · Mur Lumière |
 | Kravarech | 61 | Boue Noire | Adaptabilité | Bombe Beurk · Draco-Choc · Hydrocanon · Tonnerre |
 | Lanssorien | 61 | Orbe Vie | Infiltration | Draco-Flèches · Hantise · Demi-Tour · Lance-Flammes |
-| Trioxhydre | 61 | Lunettes Choix | Lévitation | Draco-Choc · Vibrobscur · Lance-Flammes · Telluriforce |
+| Trioxhydre | 64 | Lunettes Choix | Lévitation | Draco-Choc · Vibrobscur · Lance-Flammes · Telluriforce |
 | Méga-Altaria | 61 | Altarite | Peau Féérique | Danse Draco · Retour · Séisme · Atterrissage |
 | Hyporoi | 64 | Lentilscope | Sniper | Puissance · Draco-Choc · Hydrocanon · Laser Glace |
 

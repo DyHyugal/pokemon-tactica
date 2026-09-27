@@ -49,6 +49,7 @@ TRAINER_SPRITES = {
 SPECIES_FR = {
     "Alolan Muk": "Grotadmorv d’Alola",
     "Alolan Ninetales": "Feunard d’Alola",
+    "Alolan Marowak": "Ossatueur d’Alola",
     "Arctozolt (Galvagla)": "Galvagla",
     "Galarian Slowking": "Roigada de Galar",
     "Galarian Weezing": "Smogogo de Galar",

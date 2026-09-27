@@ -12,7 +12,7 @@ This page is generated from the game's canonical teams. Use it to prepare for ma
 |---|---:|---|---|---|
 | Murkrow | 14 | Focus Sash | Prankster | Tailwind · Taunt · Wing Attack · U-turn |
 | Gligar | 14 | — | Immunity | Aerial Ace · Bulldoze · Knock Off · Roost |
-| Pidgeotto | 17 | — | Big Pecks | Aerial Ace · Quick Attack · Roost · Work Up |
+| Pidgeotto | 18 | — | Big Pecks | Aerial Ace · Quick Attack · Roost · Work Up |
 
 ### Bugsy — Bug / hazards
 
@@ -30,7 +30,7 @@ This page is generated from the game's canonical teams. Use it to prepare for ma
 | Eevee | 29 | — | Adaptability | Double Team · Baton Pass · Substitute · Wish |
 | Porygon2 | 29 | Eviolite | Download | Thunderbolt · Ice Beam · Recover · Tri Attack |
 | Ambipom | 29 | — | Technician | Fake Out · Double Hit · Knock Off · Aerial Ace |
-| Ursaring | 29 | Flame Orb | Guts | Facade · Earthquake · Close Combat · Crunch |
+| Ursaring | 30 | Flame Orb | Guts | Facade · Earthquake · Close Combat · Crunch |
 | Maushold | 29 | Wide Lens | Technician | Population Bomb · Bite · Encore · U-turn |
 | Miltank | 32 | — | Scrappy | Body Slam · Milk Drink · Zen Headbutt · Rollout |
 
@@ -39,9 +39,9 @@ This page is generated from the game's canonical teams. Use it to prepare for ma
 | Pokémon | Lv. | Item | Ability | Moves |
 |---|---:|---|---|---|
 | Sableye | 35 | Leftovers | Prankster | Will-O-Wisp · Taunt · Recover · Knock Off |
-| Dusclops | 35 | Eviolite | Pressure | Will-O-Wisp · Night Shade · Pain Split · Haze |
+| Dusclops | 37 | Eviolite | Pressure | Will-O-Wisp · Night Shade · Pain Split · Haze |
 | Mimikyu | 35 | Lum Berry | Disguise | Swords Dance · Play Rough · Shadow Sneak · Drain Punch |
-| Chandelure | 35 | Choice Specs | Flash Fire | Shadow Ball · Fire Blast · Energy Ball · Psychic |
+| Alolan Marowak | 35 | Choice Band | Rock Head | Earthquake · Flare Blitz · Shadow Bone · Thunder Punch |
 | Annihilape | 35 | Chesto Berry | Defiant | Bulk Up · Rage Fist · Drain Punch · Rest |
 | Mega Gengar | 38 | Gengarite | Shadow Tag | Shadow Ball · Sludge Bomb · Focus Blast · Disable |
 
@@ -85,7 +85,7 @@ This page is generated from the game's canonical teams. Use it to prepare for ma
 | Dragonair | 61 | Eviolite | Shed Skin | Thunder Wave · Dragon Tail · Rest · Light Screen |
 | Dragalge | 61 | Black Sludge | Adaptability | Sludge Bomb · Dragon Pulse · Hydro Pump · Thunderbolt |
 | Dragapult | 61 | Life Orb | Infiltrator | Dragon Darts · Phantom Force · U-turn · Flamethrower |
-| Hydreigon | 61 | Choice Specs | Levitate | Dragon Pulse · Dark Pulse · Flamethrower · Earth Power |
+| Hydreigon | 64 | Choice Specs | Levitate | Dragon Pulse · Dark Pulse · Flamethrower · Earth Power |
 | Mega Altaria | 61 | Altarianite | Pixilate | Dragon Dance · Return · Earthquake · Roost |
 | Kingdra | 64 | Scope Lens | Sniper | Focus Energy · Dragon Pulse · Hydro Pump · Ice Beam |
 

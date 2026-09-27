@@ -51,6 +51,7 @@ ROCKET_TRAINERS = {
 
 SPECIES_ALIASES = {
     "Alolan Ninetales": "Ninetales-Alola",
+    "Alolan Marowak": "Marowak-Alola",
     "Arctozolt (Galvagla)": "Arctozolt",
     "Galarian Weezing": "Weezing-Galar",
     "Galarian Slowking": "Slowking-Galar",
@@ -84,14 +85,6 @@ MEGA_BASE_ABILITIES = {
     "Mega Charizard Y": "Solar Power",
     "Mega Pidgeot": "Big Pecks",
     "Mega Charizard X": "Blaze",
-}
-
-# These final forms are not legal at the authored level. Their current
-# pre-evolution blocks retain a compatible ability and set while the canonical
-# held-item assignment still applies.
-LEGAL_PRE_EVOLUTIONS = {
-    ("Ursaring", 29): "Teddiursa",
-    ("Hydreigon", 61): "Zweilous",
 }
 
 EV_SPREADS = {
@@ -136,16 +129,6 @@ def parse_mon(block: str) -> dict:
 def render_mon(canonical: dict, current: dict, hard: bool) -> str:
     level = canonical["level"] if canonical["level"] is not None else int(current["Level"])
     desired_species = engine_species(canonical["species"])
-    legal_species = LEGAL_PRE_EVOLUTIONS.get((desired_species, level))
-    if legal_species is not None:
-        if current["species"] != legal_species:
-            raise ValueError(f"Expected legal {legal_species} fallback, found {current['species']}")
-        return "\n".join(
-            [current["species"] + (f" @ {canonical['item']}" if canonical["item"] else "")]
-            + [f"{key}: {current[key]}" for key in ("Level", "Ability", "Nature", "IVs", "EVs") if current[key]]
-            + [f"- {move}" for move in current["moves"]]
-        )
-
     first = desired_species + (f" @ {canonical['item']}" if canonical["item"] else "")
     moves = [
         "Hidden Power" if move == "Hidden Power Ice" else move
