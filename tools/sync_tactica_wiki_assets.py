@@ -36,8 +36,8 @@ def transparent_frame(path: Path, size: tuple[int, int] = (64, 64)) -> Image.Ima
     frame = source.crop((0, 0, *size))
     if frame.mode == "P":
         alpha = Image.new("L", frame.size, 255)
-    pixels = frame.get_flattened_data() if hasattr(frame, "get_flattened_data") else frame.getdata()
-    alpha.putdata([0 if pixel == 0 else 255 for pixel in pixels])
+        pixels = frame.get_flattened_data() if hasattr(frame, "get_flattened_data") else frame.getdata()
+        alpha.putdata([0 if pixel == 0 else 255 for pixel in pixels])
         rgba = frame.convert("RGBA")
         rgba.putalpha(alpha)
         return rgba
