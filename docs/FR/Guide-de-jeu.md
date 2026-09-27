@@ -1,10 +1,12 @@
-[Accueil](Accueil.md) · [Guide de jeu](Guide-de-jeu.md) · [Changements](Changements.md) · [Pokédex](Pokedex.md) · [Localisations](Localisations.md) · [Boss & Conseils](Boss-et-Conseils.md) · [Crédits](Credits-et-Versions.md) · [Roadmap](Roadmap.md) · **[EN](../EN/Game-Guide.md)**
+[Accueil](Accueil.md) · [Guide](Guide-de-jeu.md) · [Changements](Changements.md) · [Pokédex](Pokedex.md) · [Localisations](Localisations.md) · [Routes et Villes](Routes-et-Villes.html) · [Boss & Conseils](Boss-et-Conseils.md) · [Crédits](Credits-et-Versions.md) · [Roadmap](Roadmap.md) · **[EN](../EN/Game-Guide.md)**
 
-# Guide de jeu — soluce condensée
+# Guide — soluce condensée
 
 Cette page sert surtout de **soluce si tu ne sais plus où aller**. Elle suit l'enchaînement principal de Heart & Soul, adapté à Pokémon Tactica. Les détours facultatifs, objets secondaires et rencontres sauvages ne sont pas détaillés ici : utilise **Pokédex**, **Localisations** et **Boss & Conseils** pour préparer ton équipe.
 
 > Les données de Pokémon, niveaux, boss et rencontres viennent de Tactica. Le walkthrough Heart & Soul sert uniquement de repère pour l'ordre narratif et les lieux.
+
+![Carte de Johto dans Pokémon Tactica](../assets/guide-johto.png)
 
 
 ## Starters Tactica
@@ -86,14 +88,8 @@ Retourne à **Bourg Geon** pour la récompense d'Orme. Termine la séquence obli
 
 ## Kanto → deuxième Ligue
 
+![Carte de Kanto dans Pokémon Tactica](../assets/guide-kanto.png)
+
 La progression de Kanto s’ouvre après la première Ligue. Major Bob fixe le premier cap à **75**. Morgane, Erika et Jeannine sont ensuite accessibles dans un même mouvement et partagent le cap **80** ; Ondine suit à **85**, Pierre à **90**, Auguste à **95**, puis Blue et la deuxième Ligue culminent à **100**. Le rival conserve sa propre logique de niveau.
 
 Après la première Ligue, récupère le **Passe Bateau** auprès d'Orme et pars d'**Oliville** vers Kanto. **Carmin sur Mer** — commence par **Major Bob**. Passe par **Safrania** et fais l'Arène de **Morgane**. Continue vers **Céladopole** et bats **Erika**. Descends par la piste cyclable jusqu'à **Parmanie** et bats **Jeannine**. Remonte vers **Lavanville / Centrale** et termine la quête de la **Pièce Machine**. Reviens à **Azuria**, poursuis la Team Rocket, puis bats **Ondine**. Récupère l'amélioration Radio à **Lavanville**, réveille Ronflex près de Carmin et traverse la **Cave Taupiqueur**. Va à **Argenta** et bats **Pierre**. Continue par **Route 3 → Mont Sélénite** : un nouveau combat rival t'y attend. Rejoins **Cramois'Île / Îles Écume** et bats **Auguste**. Avec 15 badges, parle à **Blue** à Cramois'Île, puis retourne à **Jadielle** pour le seizième badge. Retourne au **Plateau Indigo** : le rival t'affronte avant la **deuxième Ligue**, puis tu peux défier le Conseil 4 de Kanto.
-
-
-## Si tu es bloqué
-
-- **Une route est barrée ?** Reviens au dernier badge et vérifie l'événement narratif immédiatement associé dans cette page.
-- **Un combat est trop dur ?** Consulte **Boss & Conseils**, puis cherche tes réponses dans **Pokédex** et **Localisations**.
-- **Tu veux vérifier un changement Tactica ?** Utilise **Changements** : types, stats, talents, learnsets, QoL et systèmes y sont centralisés.
-- **Tu cherches un Pokémon précis ?** Clique sa carte dans **Pokédex** pour ouvrir sa fiche ROM complète ; le bouton Localisations mène directement aux zones de rencontre.
