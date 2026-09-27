@@ -92,7 +92,86 @@ TEST("Evolution requirements: Eevee uses current friendship and move conditions"
     SetTimeOfDay(previousHour);
 }
 
-TEST("Evolution requirements: existing level and trade replacement evolutions still work")
+
+struct LinkingCordEvolutionCase
+{
+    u16 source;
+    u16 target;
+    u16 heldItem;
+};
+
+static const struct LinkingCordEvolutionCase sLinkingCordEvolutionCases[] =
+{
+    {SPECIES_POLIWHIRL, SPECIES_POLITOED, ITEM_KINGS_ROCK},
+    {SPECIES_KADABRA, SPECIES_ALAKAZAM, ITEM_NONE},
+    {SPECIES_MACHOKE, SPECIES_MACHAMP, ITEM_NONE},
+    {SPECIES_GRAVELER, SPECIES_GOLEM, ITEM_NONE},
+    {SPECIES_GRAVELER_ALOLA, SPECIES_GOLEM_ALOLA, ITEM_NONE},
+    {SPECIES_SLOWPOKE, SPECIES_SLOWKING, ITEM_KINGS_ROCK},
+    {SPECIES_HAUNTER, SPECIES_GENGAR, ITEM_NONE},
+    {SPECIES_ONIX, SPECIES_STEELIX, ITEM_METAL_COAT},
+    {SPECIES_RHYDON, SPECIES_RHYPERIOR, ITEM_PROTECTOR},
+    {SPECIES_SEADRA, SPECIES_KINGDRA, ITEM_DRAGON_SCALE},
+    {SPECIES_SCYTHER, SPECIES_SCIZOR, ITEM_METAL_COAT},
+    {SPECIES_ELECTABUZZ, SPECIES_ELECTIVIRE, ITEM_ELECTIRIZER},
+    {SPECIES_MAGMAR, SPECIES_MAGMORTAR, ITEM_MAGMARIZER},
+    {SPECIES_PORYGON, SPECIES_PORYGON2, ITEM_UPGRADE},
+    {SPECIES_PORYGON2, SPECIES_PORYGON_Z, ITEM_DUBIOUS_DISC},
+    {SPECIES_FEEBAS, SPECIES_MILOTIC, ITEM_PRISM_SCALE},
+    {SPECIES_DUSCLOPS, SPECIES_DUSKNOIR, ITEM_REAPER_CLOTH},
+    {SPECIES_CLAMPERL, SPECIES_HUNTAIL, ITEM_DEEP_SEA_TOOTH},
+    {SPECIES_CLAMPERL, SPECIES_GOREBYSS, ITEM_DEEP_SEA_SCALE},
+    {SPECIES_BOLDORE, SPECIES_GIGALITH, ITEM_NONE},
+    {SPECIES_GURDURR, SPECIES_CONKELDURR, ITEM_NONE},
+    {SPECIES_KARRABLAST, SPECIES_ESCAVALIER, ITEM_NONE},
+    {SPECIES_SHELMET, SPECIES_ACCELGOR, ITEM_NONE},
+    {SPECIES_SPRITZEE, SPECIES_AROMATISSE, ITEM_SACHET},
+    {SPECIES_SWIRLIX, SPECIES_SLURPUFF, ITEM_WHIPPED_DREAM},
+    {SPECIES_PHANTUMP, SPECIES_TREVENANT, ITEM_NONE},
+    {SPECIES_PUMPKABOO_AVERAGE, SPECIES_GOURGEIST_AVERAGE, ITEM_NONE},
+    {SPECIES_PUMPKABOO_SMALL, SPECIES_GOURGEIST_SMALL, ITEM_NONE},
+    {SPECIES_PUMPKABOO_LARGE, SPECIES_GOURGEIST_LARGE, ITEM_NONE},
+    {SPECIES_PUMPKABOO_SUPER, SPECIES_GOURGEIST_SUPER, ITEM_NONE},
+};
+
+TEST("Evolution requirements: Tactica exposes no legacy trade evolution routes")
+{
+    u32 species;
+    for (species = 1; species < NUM_SPECIES; species++)
+    {
+        const struct Evolution *evos = GetSpeciesEvolutions(species);
+        u32 i;
+
+        for (i = 0; evos[i].method != EVOLUTIONS_END; i++)
+            EXPECT_NE(evos[i].method, EVO_TRADE);
+    }
+}
+
+TEST("Evolution requirements: all canonical trade families use Linking Cord")
+{
+    u32 i;
+
+    for (i = 0; i < ARRAY_COUNT(sLinkingCordEvolutionCases); i++)
+    {
+        const struct LinkingCordEvolutionCase *testCase = &sLinkingCordEvolutionCases[i];
+        struct Pokemon mon;
+        bool32 canStopEvo = TRUE;
+        u16 heldItem = testCase->heldItem;
+
+        InitEvolutionMon(&mon, testCase->source, 50, MON_MALE);
+
+        if (heldItem != ITEM_NONE)
+        {
+            EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_LINKING_CORD, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
+            SetMonData(&mon, MON_DATA_HELD_ITEM, &heldItem);
+            EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, heldItem, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
+        }
+
+        EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_LINKING_CORD, NULL, &canStopEvo, CHECK_EVO), testCase->target);
+    }
+}
+
+TEST("Evolution requirements: existing level evolutions still work")
 {
     struct Pokemon mon;
     bool32 canStopEvo = TRUE;
@@ -102,9 +181,5 @@ TEST("Evolution requirements: existing level and trade replacement evolutions st
     InitEvolutionMon(&mon, SPECIES_BULBASAUR, 16, MON_MALE);
     EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_IVYSAUR);
 
-    InitEvolutionMon(&mon, SPECIES_KADABRA, 41, MON_MALE);
-    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
-    InitEvolutionMon(&mon, SPECIES_KADABRA, 42, MON_MALE);
-    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_ALAKAZAM);
 }
 #endif
