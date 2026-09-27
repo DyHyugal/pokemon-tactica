@@ -34,7 +34,27 @@ TEST("Evolution requirements: branched item evolutions keep the selected branch"
 
     InitEvolutionMon(&mon, SPECIES_SNORUNT, 30, MON_FEMALE);
     EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_DAWN_STONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_FROSLASS);
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
+
+    InitEvolutionMon(&mon, SPECIES_SNORUNT, 42, MON_MALE);
     EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_GLALIE);
+}
+
+TEST("Evolution requirements: HnS shortcut items do not replace canonical methods")
+{
+    struct Pokemon mon;
+    bool32 canStopEvo = TRUE;
+
+    InitEvolutionMon(&mon, SPECIES_CHARCADET, 30, MON_MALE);
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_FIRE_STONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_DUSK_STONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
+
+    InitEvolutionMon(&mon, SPECIES_BISHARP, 60, MON_MALE);
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_KINGS_ROCK, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
+
+    InitEvolutionMon(&mon, SPECIES_APPLIN, 30, MON_MALE);
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_LEAF_STONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_SUN_STONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
 }
 
 TEST("Evolution requirements: existing level and trade replacement evolutions still work")
