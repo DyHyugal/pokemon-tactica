@@ -234,7 +234,7 @@ The rival keeps a fixed starter for each archetype and grows from 1 to 3, 4 and 
 | Pokémon | Lv. | Item | Ability | Moves |
 |---|---:|---|---|---|
 | Pincurchin | Dynamic | Terrain Extender | Electric Surge | Spikes · Recover · Discharge · Memento |
-| Elekid | Dynamic | Expert Belt | Sheer Force | level-legal moves |
+| Electivire | Dynamic | Expert Belt | Sheer Force | level-legal moves |
 | Raichu-Alola | Dynamic | Life Orb | Surge Surfer | Nasty Plot · Thunderbolt · Psychic · Surf |
 | Toxtricity | Dynamic | Throat Spray | Punk Rock | Electric Terrain · Overdrive · Boomburst · Sludge Bomb |
 | Iron Hands | Dynamic | Assault Vest | Quark Drive | Drain Punch · Wild Charge · Ice Punch · Volt Switch |
@@ -245,7 +245,7 @@ The rival keeps a fixed starter for each archetype and grows from 1 to 3, 4 and 
 | Pokémon | Lv. | Item | Ability | Moves |
 |---|---:|---|---|---|
 | Hippowdon | Dynamic | Smooth Rock | Sand Stream | Stealth Rock · Earthquake · Slack Off · Whirlwind |
-| Drilbur | Dynamic | Life Orb | Sand Rush | level-legal moves |
+| Excadrill | Dynamic | Life Orb | Sand Rush | level-legal moves |
 | Mega Tyranitar | Dynamic | Tyranitarite | Sand Stream | Dragon Dance · Crunch · Rock Slide · Ice Punch |
 | Garchomp | Dynamic | Yache Berry | Rough Skin | Swords Dance · Earthquake · Dragon Claw · Iron Head |
 | Gliscor | Dynamic | Toxic Orb | Poison Heal | Earthquake · Knock Off · Toxic · Roost |
@@ -256,7 +256,7 @@ The rival keeps a fixed starter for each archetype and grows from 1 to 3, 4 and 
 | Pokémon | Lv. | Item | Ability | Moves |
 |---|---:|---|---|---|
 | Vanilluxe | Dynamic | Icy Rock | Snow Warning | Blizzard · Freeze-Dry · Flash Cannon · Taunt |
-| Darumaka-Galar | Dynamic | Choice Band | Gorilla Tactics | level-legal moves |
+| Darmanitan-Galar | Dynamic | Choice Band | Gorilla Tactics | level-legal moves |
 | Aurorus | Dynamic | Wise Glasses | Snow Warning | Blizzard · Freeze-Dry · Earth Power · Thunderbolt |
 | Sandslash-Alola | Dynamic | Life Orb | Slush Rush | Swords Dance · Icicle Crash · Iron Head · Earthquake |
 | Arctovish | Dynamic | Light Clay | Slush Rush | Icicle Crash · Aurora Veil · Fishious Rend · Rock Slide |
