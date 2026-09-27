@@ -42,7 +42,7 @@ Détail : [ENCOUNTERS.md](ENCOUNTERS.md).
 - Mécanique officielle impossible à reproduire proprement dans Tactica → **utilisation du Fil Liaison**.
 - Toute méthode officielle réalisable autrement reste inchangée : ne pas inventer de seuil de niveau, pierre, objet ou condition de substitution.
 - Les seuils `IF_MIN_LEVEL` et raccourcis d’objet hérités de HnS ne sont pas protégés lorsqu’ils contredisent cette règle.
-- Le runtime et le Pokédex actuels sont connus comme **à migrer** sur ce contrat ; corriger les sources puis régénérer le wiki.
+- La migration runtime est terminée : les échanges utilisent le Fil Liaison selon ce contrat, les méthodes officielles réalisables ont été restaurées et les champs d’évolution du Pokédex sont régénérés depuis le runtime par `tools/sync_tactica_species_evolutions.py`. Son mode `--check` est obligatoire en CI.
 
 Détail et audit : [EVOLUTIONS.md](EVOLUTIONS.md).
 
@@ -68,7 +68,7 @@ Détail et audit : [EVOLUTIONS.md](EVOLUTIONS.md).
 
 La source détaillée est [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Les JSON `rival.json`, `rocket_progression.json` et `bosses.json` doivent rester synchronisés avec ce document.
 
-- Le rival possède un starter fixe par archétype, une progression d’équipe `1 → 3 → 4 → 6` et sa Méga seulement après le badge 4.
+- Le rival possède un starter fixe par archétype. Il n’existe pas de combat scénario après le badge 1 : la progression cible est **1 Pokémon au premier duel, 4 après Hector, puis 6 à partir de la Tour Cendrée**. Sa Méga n’apparaît qu’à partir du combat suivant le badge 4.
 - Chaque membre du Rival possède un talent canonique. Le runtime l’applique lorsqu’il est légal pour la forme réellement envoyée et conserve le talent de Méga pour la transformation.
 - Les Exécutifs Rocket suivent `3 → 4 → 6` et n’utilisent une Méga qu’en FINAL.
 - Archer utilise Méga-Sharpedo et Méga-évolue immédiatement ; aucun plan Abri → Méga retardée.
@@ -88,7 +88,7 @@ La source détaillée est [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Le
 - L’œuf d’Orme fournit un second choix distinct du starter principal.
 - Le sélecteur ouvre en haut de liste et revient sur le Pokémon annulé ; `Retour` reste la dernière ligne.
 - Vitesse native x1/x2/x3/x4, audio indépendant, Shiny Rate et cœur du flow starter/œuf sont protégés contre les réécritures sans défaut démontré.
-- Le principe d’un jeu entièrement jouable en solo reste protégé, mais **les anciennes méthodes d’évolution solo HnS ne le sont plus** : elles doivent être migrées vers [EVOLUTIONS.md](EVOLUTIONS.md).
+- Le principe d’un jeu entièrement jouable en solo reste protégé. La migration des anciennes méthodes d’évolution HnS vers [EVOLUTIONS.md](EVOLUTIONS.md) est terminée ; ne pas réintroduire les anciennes adaptations.
 - `Shiny Only` reste post-V1.
 
 ### Boutiques et balance
@@ -112,6 +112,7 @@ La baseline actuelle inclut la passe owner fusionnée par la PR #29. Elle est pr
 - Navigation FR/EN : Accueil/Home, Guide, Changements/Changes, Pokédex, Localisations/Locations, Routes et Villes/Routes & Cities, Boss & Conseils/Tips, Crédits, Roadmap.
 - Routes/Villes est intégré et ne doit pas être retiré au nom d’une ancienne consigne.
 - Les pages Localisations et les compteurs Pokédex sont dérivés des sources canoniques par `tools/sync_tactica_localization.py`.
+- Les conditions d’évolution affichées dans les fiches Pokédex sont dérivées du runtime par `tools/sync_tactica_species_evolutions.py`.
 - Les données de jeu ne doivent pas être recopiées manuellement dans le wiki lorsqu’elles peuvent être régénérées. La page Boss & Conseils est générée depuis `bosses.json`, `rival.json` et `rocket_progression.json`.
 - Boss & Conseils présente chaque équipe dans une carte repliable avec sprites de dresseur et de Pokémon ; les talents du Rival proviennent de `rival.json`.
 - Les cartes du Guide et les sprites locaux sont reconstruits depuis les assets moteur ; les galeries utilisent une seule frame transparente par Pokémon.
