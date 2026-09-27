@@ -17,8 +17,9 @@ Puis lire, dans cet ordre :
 2. `docs/spec/SOURCE_OF_TRUTH.md`
 3. `docs/spec/FEATURE_STATUS.md`
 4. `docs/spec/PLAYTEST_STATUS.md`
-5. les documents métier réellement concernés
-6. les `data/spec/*.json` concernés
+5. `docs/spec/EVOLUTIONS.md` dès qu'un sujet touche une évolution, un objet d'évolution, une forme ou le wiki Pokédex
+6. les autres documents métier réellement concernés
+7. les `data/spec/*.json` concernés
 
 Une branche/PR non fusionnée n’est jamais considérée comme l’état testable owner.
 
@@ -35,7 +36,7 @@ Ne pas recoder sans défaut démontré :
 - vitesse native x1/x2/x3/x4 ;
 - audio indépendant ;
 - Shiny Rate ;
-- évolutions solo ;
+- système d'évolution solo, sous réserve de la migration canonique imposée par `docs/spec/EVOLUTIONS.md` ; les anciennes adaptations HnS contradictoires ne sont pas protégées ;
 - sélection des 30 starters + Évoli ;
 - curseur initial du sélecteur et retour après annulation ;
 - œuf d’Orme distinct du starter principal ;
@@ -111,7 +112,8 @@ Ne pas traiter tous les écarts comme ayant la même priorité. L’ordre de rep
 
 - scaling/progression du Rival après Hector et entre Blanche/Mortimer ;
 - Blanche encore avec Teddiursa niv.29 au lieu de l’évolution légale attendue ;
-- texte de refus du second starter déjà possédé.
+- texte de refus du second starter déjà possédé ;
+- **migration globale des évolutions selon `docs/spec/EVOLUTIONS.md`** : retirer les seuils/objets HnS non officiels, restaurer les méthodes 9G réalisables et convertir les échanges vers Fil Liaison.
 
 ### PRIORITÉ 3 — secondaires / polish
 
@@ -192,20 +194,45 @@ Attendu :
 - utiliser **Ursaring à partir du niveau légal d’évolution**, donc niveau 30 minimum dans ce combat ;
 - aligner source canonique, runtime, wiki et tests.
 
-## 6. Élektek → Élekable — runtime et wiki validés
+## 6. Évolutions — migration canonique obligatoire
 
-Important : **ne pas modifier le runtime de cette évolution**.
+La validation historique « Élektek → Élekable via Électriseur utilisable au niveau 36 » est **obsolète** et ne protège plus ce runtime.
 
-Validé en ROM :
+La source normative est désormais `docs/spec/EVOLUTIONS.md`, basée sur les méthodes officielles 9G documentées par Poképédia.
 
-- Élekid → Élektek au niveau 30 : OK ;
-- Élektek niveau 36 : l’**Électriseur est directement utilisable** et fait évoluer correctement en Élekable : OK.
+Règle Tactica :
 
-Wiki corrigé dans la baseline :
+- **échange simple** → utiliser **Fil Liaison** ;
+- **échange + objet tenu** → le Pokémon tient l’objet officiel puis le joueur utilise **Fil Liaison** ;
+- **mécanique officielle impossible à reproduire proprement** (ex. Sépiatop, Dofin/Superdofin et cas équivalents validés) → **Fil Liaison** ;
+- toute évolution officielle réalisable autrement reste **inchangée** : pas de niveau minimum, pierre ou objet de substitution inventé.
 
-- le rendu Pokédex masque la route legacy `EVO_TRADE` lorsqu’une route Tactica non-échange mène du même Pokémon vers la même évolution ;
-- pour Élektek → Élekable, une seule règle joueur reste affichée : **utiliser l’Électriseur à partir du niveau 36 (`>= 36`)** ;
-- cette correction est purement documentaire : **ne pas modifier le runtime d’évolution**.
+Conséquences déjà validées :
+
+- Élektek → Élekable = **Électriseur tenu + Fil Liaison** ;
+- Rhinoféros → Rhinastoc = **Protecteur tenu + Fil Liaison** ;
+- Téraclope → Noctunoir = **Tissu Fauche tenu + Fil Liaison** ;
+- Mélancolux → Lugulabre = **Pierre Nuit uniquement** ;
+- Lampéroie → Ohmassacre = **Pierre Foudre uniquement** ;
+- Scalproie → Scalpereur doit revenir à la mécanique officielle 9G si elle est techniquement réalisable ; la route Roche Royale est une adaptation HnS à supprimer.
+
+Audit déjà établi :
+
+- le commit HnS `b7ea13f0ff0088edb8382c2e012e9e511119d6be` a ajouté **125 routes** avec `IF_MIN_LEVEL` ;
+- **23** seulement appartiennent réellement au périmètre des évolutions par échange ;
+- **102** routes hors échange, touchant **67 Pokémon sources**, ont reçu un seuil artificiel ;
+- plusieurs raccourcis d’objet non officiels ont également été identifiés (Scalpereur, Verpom, Pomdramour, Théffroi, Poltchageist, Crèmy, Duralugon, Wushours, Charbambin, Tutafeh-Galar, etc.).
+
+Ordre de correction :
+
+1. comparer chaque route active avec `EVOLUTIONS.md` / méthode officielle 9G ;
+2. supprimer les `IF_MIN_LEVEL` artificiels ;
+3. supprimer les objets/méthodes de substitution HnS non validés ;
+4. implémenter Fil Liaison pour les trois catégories prévues ;
+5. ajouter des tests génériques, pas des exceptions silencieuses par espèce ;
+6. régénérer le wiki depuis les sources runtime corrigées.
+
+Ne pas considérer le wiki actuel comme source de vérité pendant cette migration : il doit refléter le runtime corrigé, pas l’inverse.
 
 ## 7. Méga-Évolution — blocage prioritaire
 
@@ -285,7 +312,7 @@ Les corrections data doivent passer par les sources canoniques puis les généra
 
 Boss & Conseils conserve ses cartes repliables, ses sprites de dresseurs/Pokémon et les talents du Rival issus de la source canonique. La page Changements utilise deux colonnes indépendantes pour éviter les grands vides provoqués par la hauteur de la carte des starters.
 
-Pour Élektek → Élekable, runtime et rendu wiki sont désormais alignés : **ne pas reprendre ce point sans nouvelle régression observée**. Les portraits locaux des dresseurs sont également générés avec transparence explicite de l’index palette 0.
+Les anciennes règles wiki d’évolution (notamment Élektek → Élekable via Électriseur niveau 36) sont **obsolètes** lorsqu’elles contredisent `docs/spec/EVOLUTIONS.md`. Corriger d’abord les sources runtime, puis régénérer le Pokédex/wiki. Les portraits locaux des dresseurs restent générés avec transparence explicite de l’index palette 0.
 
 ## Politique de validation
 
@@ -303,7 +330,7 @@ Le playtest owner final n’est pas requis pour merger une correction automatis�
 Pour cette reprise précise :
 
 - corriger les sources canoniques avant les fichiers générés ;
-- ajouter des non-régressions ciblées pour Rival scaling/progression, Méga et documentation évolution ;
+- ajouter des non-régressions ciblées pour Rival scaling/progression, Méga et **mécanique d’évolution Fil Liaison / conformité à `EVOLUTIONS.md`** ;
 - pour l’UI, ne pas considérer le validateur statique comme preuve de réussite visuelle ;
 - régénérer ce qui doit l’être ;
 - build HnS propre ;
