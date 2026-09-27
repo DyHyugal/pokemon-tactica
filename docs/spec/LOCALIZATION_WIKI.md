@@ -135,3 +135,7 @@ Après une modification encounters/wiki :
 6. contrôler visuellement uniquement les pages réellement touchées.
 
 Une passe éditoriale wiki n’autorise pas à réintroduire des données gameplay anciennes.
+
+## Données de boss et assets du Guide
+
+`tools/sync_tactica_boss_wiki.py` génère les pages Boss FR/EN depuis `bosses.json` et `rival.json` ; Rocket vient des groupes canoniques déjà réconciliés avec `rocket_progression.json`. `tools/sync_tactica_wiki_assets.py` assemble les cartes régionales depuis leurs tilemaps et exporte une seule frame transparente pour les starters et Méga-Dracaufeu. Les deux scripts doivent être idempotents et exécutés avec `--check` en CI.

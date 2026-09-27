@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "Pokémon Tactica",
-  "source": "Custom_Pokemon_v4 plus owner Charizard correction 2026-09-24",
+  "source": "Current owner decisions through 2026-09-27",
   "species_changes": [
     {
       "species": "SPECIES_MAROWAK_ALOLA",
@@ -792,6 +792,15 @@
       "level": 56,
       "move": "MOVE_FLIP_TURN",
       "notes": "French 'Eau Revoir' = Flip Turn; pivot option for Champion team."
+    },
+    {
+      "species": "SPECIES_DRACOVISH",
+      "learnset": "sDracovishTeachableLearnset",
+      "source_file": "src/data/pokemon/teachable_learnsets.h",
+      "operation": "add_if_missing",
+      "level": null,
+      "move": "MOVE_DRAGON_CLAW",
+      "notes": "Champion rematch requirement: Dracovish receives legal Dragon Claw access in this build."
     }
   ],
   "kingdra_move_clarification": {

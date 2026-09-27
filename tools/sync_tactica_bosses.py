@@ -84,7 +84,6 @@ MEGA_BASE_ABILITIES = {
     "Mega Charizard Y": "Solar Power",
     "Mega Pidgeot": "Big Pecks",
     "Mega Charizard X": "Blaze",
-    "Mega Metagross": "Clear Body",
 }
 
 # These final forms are not legal at the authored level. Their current
@@ -101,6 +100,7 @@ EV_SPREADS = {
     "252 SpA / 252 Spe": "252 SpA / 252 Spe / 4 HP",
     "Atk / Speed": "252 Atk / 252 Spe / 4 HP",
     "252 Atk / 252 Spe": "252 Atk / 252 Spe / 4 HP",
+    "252 HP / 252 Atk": "252 HP / 252 Atk / 4 SpD",
     "Atk / HP": "252 HP / 252 Atk / 4 SpD",
     "HP / Atk": "252 HP / 252 Atk / 4 SpD",
     "SpA / HP": "252 HP / 252 SpA / 4 SpD",

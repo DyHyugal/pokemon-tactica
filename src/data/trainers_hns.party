@@ -8484,7 +8484,7 @@ Items: Full Restore / Full Restore
 Difficulty: Normal
 
 Hippowdon @ Smooth Rock
-Level: 84
+Level: 90
 Ability: Sand Stream
 Nature: Impish
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8494,7 +8494,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Whirlwind
 
 Excadrill @ Life Orb
-Level: 84
+Level: 90
 Ability: Sand Rush
 Nature: Jolly
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8504,7 +8504,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Rock Slide
 
 Garganacl @ Leftovers
-Level: 84
+Level: 90
 Ability: Purifying Salt
 Nature: Careful
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8514,7 +8514,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Body Press
 
 Cradily @ Sitrus Berry
-Level: 84
+Level: 90
 Ability: Storm Drain
 Nature: Calm
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8524,7 +8524,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Recover
 
 Rhyperior @ Weakness Policy
-Level: 84
+Level: 90
 Ability: Solid Rock
 Nature: Adamant
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8534,7 +8534,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Megahorn
 
 Steelix @ Steelixite
-Level: 86
+Level: 90
 Ability: Sturdy
 Nature: Adamant
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8556,7 +8556,7 @@ Items: Full Restore / Full Restore
 Difficulty: Normal
 
 Pelipper @ Damp Rock
-Level: 76
+Level: 85
 Ability: Drizzle
 Nature: Bold
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8566,7 +8566,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Roost
 
 Starmie @ Starminite
-Level: 78
+Level: 85
 Ability: Analytic
 Nature: Timid
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8576,7 +8576,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Thunder
 
 Barraskewda @ Choice Band
-Level: 76
+Level: 85
 Ability: Swift Swim
 Nature: Adamant
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8586,7 +8586,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Flip Turn
 
 Kingdra @ Choice Specs
-Level: 76
+Level: 85
 Ability: Swift Swim
 Nature: Modest
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8596,7 +8596,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Ice Beam
 
 Rotom-Wash @ Leftovers
-Level: 76
+Level: 85
 Ability: Levitate
 Nature: Bold
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8606,7 +8606,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Will-O-Wisp
 
 Gyarados @ Lum Berry
-Level: 76
+Level: 85
 Ability: Intimidate
 Nature: Jolly
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8628,7 +8628,7 @@ Mugshot: Yellow
 Difficulty: Normal
 
 Pincurchin @ Terrain Extender
-Level: 72
+Level: 75
 Ability: Electric Surge
 Nature: Relaxed
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8638,7 +8638,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Memento
 
 Raichu @ Raichunite Y
-Level: 72
+Level: 75
 Ability: Lightning Rod
 Nature: Timid
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8648,7 +8648,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Surf
 
 Electivire @ Life Orb
-Level: 72
+Level: 75
 Ability: Sheer Force
 Nature: Jolly
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8658,7 +8658,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Rock Slide
 
 Magnezone @ Choice Specs
-Level: 74
+Level: 75
 Ability: Analytic
 Nature: Modest
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8668,7 +8668,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Signal Beam
 
 Iron Hands @ Electric Seed
-Level: 72
+Level: 75
 Ability: Quark Drive
 Nature: Adamant
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8678,7 +8678,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Swords Dance
 
 Manectric @ Expert Belt
-Level: 72
+Level: 75
 Ability: Intimidate
 Nature: Timid
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8700,7 +8700,7 @@ Items: Full Restore / Full Restore
 Difficulty: Normal
 
 Rillaboom @ Terrain Extender
-Level: 74
+Level: 80
 Ability: Grassy Surge
 Nature: Adamant
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8710,7 +8710,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Knock Off
 
 Whimsicott @ Light Clay
-Level: 76
+Level: 80
 Ability: Prankster
 Nature: Timid
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8720,7 +8720,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Memento
 
 Serperior @ Leftovers
-Level: 74
+Level: 80
 Ability: Contrary
 Nature: Timid
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8730,7 +8730,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Substitute
 
 Ferrothorn @ Rocky Helmet
-Level: 74
+Level: 80
 Ability: Iron Barbs
 Nature: Relaxed
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8740,7 +8740,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Protect
 
 Vileplume @ Black Sludge
-Level: 74
+Level: 80
 Ability: Effect Spore
 Nature: Bold
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8750,7 +8750,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Moonblast
 
 Venusaur @ Venusaurite
-Level: 74
+Level: 80
 Ability: Chlorophyll
 Nature: Modest
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8772,7 +8772,7 @@ Items: Full Restore / Full Restore
 Difficulty: Normal
 
 Hatterene @ Mental Herb
-Level: 82
+Level: 80
 Ability: Magic Bounce
 Nature: Quiet
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8782,7 +8782,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Mystical Fire
 
 Bronzong @ Leftovers
-Level: 82
+Level: 80
 Ability: Levitate
 Nature: Sassy
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8792,7 +8792,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Explosion
 
 Slowking-Galar @ Assault Vest
-Level: 82
+Level: 80
 Ability: Regenerator
 Nature: Quiet
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8802,7 +8802,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Ice Beam
 
 Reuniclus @ Life Orb
-Level: 82
+Level: 80
 Ability: Magic Guard
 Nature: Quiet
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8812,7 +8812,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Recover
 
 Metagross @ Weakness Policy
-Level: 82
+Level: 80
 Ability: Clear Body
 Nature: Brave
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8822,7 +8822,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Ice Punch
 
 Alakazam @ Alakazite
-Level: 84
+Level: 80
 Ability: Magic Guard
 Nature: Timid
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8884,7 +8884,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Haze
 
 Muk-Alola @ Assault Vest
-Level: 82
+Level: 80
 Ability: Poison Touch
 Nature: Careful
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8916,7 +8916,7 @@ Items: Full Restore / Full Restore
 Difficulty: Normal
 
 Torkoal @ Heat Rock
-Level: 86
+Level: 95
 Ability: Drought
 Nature: Bold
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8926,7 +8926,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Yawn
 
 Ninetales @ Leftovers
-Level: 88
+Level: 95
 Ability: Drought
 Nature: Timid
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8936,7 +8936,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Encore
 
 Scovillain @ Life Orb
-Level: 86
+Level: 95
 Ability: Chlorophyll
 Nature: Modest
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8946,7 +8946,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Growth
 
 Ceruledge @ Clear Amulet
-Level: 86
+Level: 95
 Ability: Flash Fire
 Nature: Jolly
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8956,7 +8956,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Close Combat
 
 Volcarona @ Heavy-Duty Boots
-Level: 86
+Level: 95
 Ability: Flame Body
 Nature: Timid
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8966,7 +8966,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Giga Drain
 
 Charizard @ Charizardite Y
-Level: 86
+Level: 95
 Ability: Solar Power
 Nature: Timid
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8988,7 +8988,7 @@ Items: Full Restore / Full Restore
 Difficulty: Normal
 
 Pidgeot @ Pidgeotite
-Level: 90
+Level: 100
 Ability: Big Pecks
 Nature: Timid
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -8998,7 +8998,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Roost
 
 Machamp @ Assault Vest
-Level: 88
+Level: 100
 Ability: No Guard
 Nature: Adamant
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -9008,7 +9008,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Knock Off
 
 Rhyperior @ Weakness Policy
-Level: 88
+Level: 100
 Ability: Solid Rock
 Nature: Adamant
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -9018,7 +9018,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Megahorn
 
 Arcanine @ Life Orb
-Level: 88
+Level: 100
 Ability: Intimidate
 Nature: Jolly
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -9028,7 +9028,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Wild Charge
 
 Gyarados @ Lum Berry
-Level: 88
+Level: 100
 Ability: Intimidate
 Nature: Jolly
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -9038,7 +9038,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Ice Fang
 
 Exeggutor @ Choice Specs
-Level: 88
+Level: 100
 Ability: Chlorophyll
 Nature: Modest
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
@@ -9715,7 +9715,7 @@ Mugshot: Blue
 Difficulty: Normal
 
 Jolteon @ Focus Sash
-Level: 94
+Level: 100
 Ability: Volt Absorb
 Nature: Modest
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -9724,28 +9724,28 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Volt Switch
 - Quick Attack
 
-Garchomp @ Life Orb
-Level: 94
-Ability: Rough Skin
+Charizard @ Charizardite X
+Level: 100
+Ability: Blaze
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
-- Swords Dance
+- Flare Blitz
 - Dragon Claw
-- Iron Head
+- Dragon Dance
 
-Volcarona @ Heavy-Duty Boots
-Level: 94
-Ability: Flame Body
-Nature: Timid
+Dracovish @ Choice Scarf
+Level: 100
+Ability: Strong Jaw
+Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Fiery Dance
-- Quiver Dance
-- Bug Buzz
-- Giga Drain
+- Fishious Rend
+- Psychic Fangs
+- Crunch
+- Dragon Claw
 
-Meowscarada @ Choice Scarf
-Level: 94
+Meowscarada @ Choice Band
+Level: 100
 Ability: Protean
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -9754,25 +9754,25 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Knock Off
 - Flower Trick
 
-Kingdra @ Scope Lens
-Level: 94
-Ability: Sniper
-Nature: Jolly
+Aegislash @ Leftovers
+Level: 100
+Ability: Stance Change
+Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Wave Crash
-- Scale Shot
-- Dragon Dance
-- Flip Turn
+- Swords Dance
+- Iron Head
+- Shadow Sneak
+- Kings Shield
 
-Metagross @ Metagrossite
-Level: 96
-Ability: Clear Body
+Garchomp @ Life Orb
+Level: 100
+Ability: Rough Skin
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Meteor Mash
-- Zen Headbutt
 - Earthquake
-- Ice Punch
+- Dragon Claw
+- Brick Break
+- Poison Jab
 
 === TRAINER_LANCE_3_HNS ===
 Name: LANCE
@@ -17535,7 +17535,7 @@ Items: Full Restore / Full Restore
 Difficulty: Hard
 
 Hippowdon @ Smooth Rock
-Level: 84
+Level: 90
 Ability: Sand Stream
 Nature: Impish
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17546,7 +17546,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Whirlwind
 
 Excadrill @ Life Orb
-Level: 84
+Level: 90
 Ability: Sand Rush
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17557,7 +17557,7 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Rock Slide
 
 Garganacl @ Leftovers
-Level: 84
+Level: 90
 Ability: Purifying Salt
 Nature: Careful
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17568,7 +17568,7 @@ EVs: 252 HP / 252 SpD / 4 Def
 - Body Press
 
 Cradily @ Sitrus Berry
-Level: 84
+Level: 90
 Ability: Storm Drain
 Nature: Calm
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17579,7 +17579,7 @@ EVs: 252 HP / 252 SpD / 4 Def
 - Recover
 
 Rhyperior @ Weakness Policy
-Level: 84
+Level: 90
 Ability: Solid Rock
 Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17590,7 +17590,7 @@ EVs: 252 HP / 252 Atk / 4 SpD
 - Megahorn
 
 Steelix @ Steelixite
-Level: 86
+Level: 90
 Ability: Sturdy
 Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17613,7 +17613,7 @@ Items: Full Restore / Full Restore
 Difficulty: Hard
 
 Pelipper @ Damp Rock
-Level: 76
+Level: 85
 Ability: Drizzle
 Nature: Bold
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17624,7 +17624,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Roost
 
 Starmie @ Starminite
-Level: 78
+Level: 85
 Ability: Analytic
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17635,7 +17635,7 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Thunder
 
 Barraskewda @ Choice Band
-Level: 76
+Level: 85
 Ability: Swift Swim
 Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17646,7 +17646,7 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Flip Turn
 
 Kingdra @ Choice Specs
-Level: 76
+Level: 85
 Ability: Swift Swim
 Nature: Modest
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17657,7 +17657,7 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Ice Beam
 
 Rotom-Wash @ Leftovers
-Level: 76
+Level: 85
 Ability: Levitate
 Nature: Bold
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17668,7 +17668,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Will-O-Wisp
 
 Gyarados @ Lum Berry
-Level: 76
+Level: 85
 Ability: Intimidate
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17691,7 +17691,7 @@ Mugshot: Yellow
 Difficulty: Hard
 
 Pincurchin @ Terrain Extender
-Level: 72
+Level: 75
 Ability: Electric Surge
 Nature: Relaxed
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17702,7 +17702,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Memento
 
 Raichu @ Raichunite Y
-Level: 72
+Level: 75
 Ability: Lightning Rod
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17713,7 +17713,7 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Surf
 
 Electivire @ Life Orb
-Level: 72
+Level: 75
 Ability: Sheer Force
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17724,7 +17724,7 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Rock Slide
 
 Magnezone @ Choice Specs
-Level: 74
+Level: 75
 Ability: Analytic
 Nature: Modest
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17735,7 +17735,7 @@ EVs: 252 HP / 252 SpA / 4 SpD
 - Signal Beam
 
 Iron Hands @ Electric Seed
-Level: 72
+Level: 75
 Ability: Quark Drive
 Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17746,7 +17746,7 @@ EVs: 252 HP / 252 Atk / 4 SpD
 - Swords Dance
 
 Manectric @ Expert Belt
-Level: 72
+Level: 75
 Ability: Intimidate
 Nature: Timid
 IVs: 31 HP / 30 Atk / 30 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17769,7 +17769,7 @@ Items: Full Restore / Full Restore
 Difficulty: Hard
 
 Rillaboom @ Terrain Extender
-Level: 74
+Level: 80
 Ability: Grassy Surge
 Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17780,7 +17780,7 @@ EVs: 252 HP / 252 Atk / 4 SpD
 - Knock Off
 
 Whimsicott @ Light Clay
-Level: 76
+Level: 80
 Ability: Prankster
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17791,7 +17791,7 @@ EVs: 252 HP / 252 Spe / 4 SpD
 - Memento
 
 Serperior @ Leftovers
-Level: 74
+Level: 80
 Ability: Contrary
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17802,7 +17802,7 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Substitute
 
 Ferrothorn @ Rocky Helmet
-Level: 74
+Level: 80
 Ability: Iron Barbs
 Nature: Relaxed
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17813,7 +17813,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Protect
 
 Vileplume @ Black Sludge
-Level: 74
+Level: 80
 Ability: Effect Spore
 Nature: Bold
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17824,7 +17824,7 @@ EVs: 252 HP / 128 Def / 128 SpD
 - Moonblast
 
 Venusaur @ Venusaurite
-Level: 74
+Level: 80
 Ability: Chlorophyll
 Nature: Modest
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17891,7 +17891,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Haze
 
 Muk-Alola @ Assault Vest
-Level: 82
+Level: 80
 Ability: Poison Touch
 Nature: Careful
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17925,7 +17925,7 @@ Items: Full Restore / Full Restore
 Difficulty: Hard
 
 Hatterene @ Mental Herb
-Level: 82
+Level: 80
 Ability: Magic Bounce
 Nature: Quiet
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17936,7 +17936,7 @@ EVs: 252 HP / 252 SpA / 4 Def
 - Mystical Fire
 
 Bronzong @ Leftovers
-Level: 82
+Level: 80
 Ability: Levitate
 Nature: Sassy
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17947,7 +17947,7 @@ EVs: 252 HP / 252 SpD / 4 Def
 - Explosion
 
 Slowking-Galar @ Assault Vest
-Level: 82
+Level: 80
 Ability: Regenerator
 Nature: Quiet
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17958,7 +17958,7 @@ EVs: 252 HP / 252 SpA / 4 Def
 - Ice Beam
 
 Reuniclus @ Life Orb
-Level: 82
+Level: 80
 Ability: Magic Guard
 Nature: Quiet
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17969,7 +17969,7 @@ EVs: 252 HP / 252 SpA / 4 Def
 - Recover
 
 Metagross @ Weakness Policy
-Level: 82
+Level: 80
 Ability: Clear Body
 Nature: Brave
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -17980,7 +17980,7 @@ EVs: 252 HP / 252 Atk / 4 SpD
 - Ice Punch
 
 Alakazam @ Alakazite
-Level: 84
+Level: 80
 Ability: Magic Guard
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -18003,7 +18003,7 @@ Items: Full Restore / Full Restore
 Difficulty: Hard
 
 Torkoal @ Heat Rock
-Level: 86
+Level: 95
 Ability: Drought
 Nature: Bold
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -18014,7 +18014,7 @@ EVs: 252 HP / 252 Def / 4 SpD
 - Yawn
 
 Ninetales @ Leftovers
-Level: 88
+Level: 95
 Ability: Drought
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -18025,7 +18025,7 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Encore
 
 Scovillain @ Life Orb
-Level: 86
+Level: 95
 Ability: Chlorophyll
 Nature: Modest
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -18036,7 +18036,7 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Growth
 
 Ceruledge @ Clear Amulet
-Level: 86
+Level: 95
 Ability: Flash Fire
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -18047,7 +18047,7 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Close Combat
 
 Volcarona @ Heavy-Duty Boots
-Level: 86
+Level: 95
 Ability: Flame Body
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -18058,7 +18058,7 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Giga Drain
 
 Charizard @ Charizardite Y
-Level: 86
+Level: 95
 Ability: Solar Power
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -18081,7 +18081,7 @@ Items: Full Restore / Full Restore
 Difficulty: Hard
 
 Pidgeot @ Pidgeotite
-Level: 90
+Level: 100
 Ability: Big Pecks
 Nature: Timid
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -18092,7 +18092,7 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Roost
 
 Machamp @ Assault Vest
-Level: 88
+Level: 100
 Ability: No Guard
 Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -18103,7 +18103,7 @@ EVs: 252 HP / 252 Atk / 4 SpD
 - Knock Off
 
 Rhyperior @ Weakness Policy
-Level: 88
+Level: 100
 Ability: Solid Rock
 Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -18114,7 +18114,7 @@ EVs: 252 HP / 252 Atk / 4 SpD
 - Megahorn
 
 Arcanine @ Life Orb
-Level: 88
+Level: 100
 Ability: Intimidate
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -18125,7 +18125,7 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Wild Charge
 
 Gyarados @ Lum Berry
-Level: 88
+Level: 100
 Ability: Intimidate
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -18136,7 +18136,7 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Ice Fang
 
 Exeggutor @ Choice Specs
-Level: 88
+Level: 100
 Ability: Chlorophyll
 Nature: Modest
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -18159,7 +18159,7 @@ Mugshot: Blue
 Difficulty: Hard
 
 Jolteon @ Focus Sash
-Level: 94
+Level: 100
 Ability: Volt Absorb
 Nature: Modest
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -18169,30 +18169,30 @@ EVs: 252 SpA / 252 Spe / 4 HP
 - Volt Switch
 - Quick Attack
 
-Garchomp @ Life Orb
-Level: 94
-Ability: Rough Skin
+Charizard @ Charizardite X
+Level: 100
+Ability: Blaze
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 4 HP
 - Earthquake
-- Swords Dance
+- Flare Blitz
 - Dragon Claw
-- Iron Head
+- Dragon Dance
 
-Volcarona @ Heavy-Duty Boots
-Level: 94
-Ability: Flame Body
-Nature: Timid
+Dracovish @ Choice Scarf
+Level: 100
+Ability: Strong Jaw
+Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 SpA / 252 Spe / 4 HP
-- Fiery Dance
-- Quiver Dance
-- Bug Buzz
-- Giga Drain
+EVs: 252 Atk / 252 Spe / 4 HP
+- Fishious Rend
+- Psychic Fangs
+- Crunch
+- Dragon Claw
 
-Meowscarada @ Choice Scarf
-Level: 94
+Meowscarada @ Choice Band
+Level: 100
 Ability: Protean
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -18202,27 +18202,27 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Knock Off
 - Flower Trick
 
-Kingdra @ Scope Lens
-Level: 94
-Ability: Sniper
-Nature: Jolly
+Aegislash @ Leftovers
+Level: 100
+Ability: Stance Change
+Nature: Adamant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Spe / 4 HP
-- Wave Crash
-- Scale Shot
-- Dragon Dance
-- Flip Turn
+EVs: 252 HP / 252 Atk / 4 SpD
+- Swords Dance
+- Iron Head
+- Shadow Sneak
+- Kings Shield
 
-Metagross @ Metagrossite
-Level: 96
-Ability: Clear Body
+Garchomp @ Life Orb
+Level: 100
+Ability: Rough Skin
 Nature: Jolly
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Spe / 4 HP
-- Meteor Mash
-- Zen Headbutt
 - Earthquake
-- Ice Punch
+- Dragon Claw
+- Brick Break
+- Poison Jab
 
 /* ========== Family Remix FINAL Rocket parties ========== */
 

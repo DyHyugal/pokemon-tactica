@@ -30,6 +30,8 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | Mega Ring après Mortimer | `[PARTIEL]` | Ordre scripté et validé ; réception/utilisation à confirmer en ROM. |
 | Méga uniques globalement | `[PARTIEL]` | Unicité automatisée ; transformations boss à observer en ROM. |
 | Une Méga par Champion dès Mortimer | `[PARTIEL]` | Validateur exige exactement une Méga pour chaque Champion concerné. |
+| Progression Kanto +5 | `[DONE]` | Major Bob 75 ; groupe Morgane/Erika/Jeannine 80 ; Ondine 85 ; Pierre 90 ; Auguste 95 ; Blue et deuxième Ligue 100. Test natif dédié. |
+| Match retour du Maître | `[PARTIEL]` | Nouvelle équipe canonique/runtime niveau 100 et objets uniques ; combat à observer en ROM. |
 | Jeannine : Aéromite ace + Méga-Kravarech | `[PARTIEL]` | Aéromite reste l’ace ; Méga-Kravarech remplace Gaulet au slot 3. Canonique/runtime/Dragalgite/Adaptabilité/validateur intégrés ; combat non observé en ROM. |
 | Soins des Champions | `[DONE]` | Au plus deux soins selon la progression ; ne pas recoder sans défaut concret. |
 | Encounters 4 slots 30/30/30/10 | `[DONE]` | 405 tables standard + pools spéciaux structurés. |
@@ -40,7 +42,7 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | Couverture globale pré-Ligue | `[DONE]` | Dataset standard : 479 espèces utilisées et 479 disponibles avant/à la Ligue ; 0 espèce utilisée reste uniquement post-Ligue. 72 slots ont été remplacés sur 43 tables ; 125 espèces restent dupliquées avant Ligue, ce qui est acceptable puisque la couverture est assurée. |
 | Headbutt | `[DONE]` | 4 tables dédiées. |
 | Safari | `[DONE]` | 53 pools. |
-| Wiki baseline owner | `[DONE]` | PR #29 intégrée, y compris Guide/Accueil/Changements/Roadmap/Routes-Villes. Ne pas restaurer une ancienne baseline. |
+| Wiki joueur FR/EN | `[DONE]` | Accueil au ton épique, Guide narratif avec galerie ouverte, cartes/sprites propres et Roadmap V1 courante. Boss & Conseils est généré depuis les sources canoniques et sépare Johto, Rocket, Rival, Kanto et deuxième Ligue. |
 | Sync Localisations — niveaux | `[DONE]` | Générateur canonique. |
 | Sync Localisations — espèces / recherche | `[DONE]` | Générateur étendu aux espèces et `data-search`; synchronisations `--check` et CI Tactica vertes sur le HEAD de la PR de nettoyage. |
 | Compteurs Pokédex | `[DONE]` | Recalculés depuis les tables standard + pools spéciaux visibles ; synchronisation idempotente confirmée par la CI Tactica. |
@@ -49,7 +51,7 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | UI boutiques | `[PARTIEL]` | Charte rouge/noir intégrée dans le runtime shop et protégée par le validateur UI ; lisibilité/sélection à confirmer en ROM. |
 | Assistant d’entraînement | `[DONE]` | Tests dédiés existants. |
 | Boutiques objets/moves/Méga-Gemmes — contenu | `[PARTIEL]` | Catalogues/runtime présents ; parcours d’achat ROM à revalider. |
-| Balance 26 espèces / 15 learnsets | `[DONE]` | Source canonique + validateur dédié. |
+| Balance 26 espèces / 16 learnsets | `[DONE]` | Source canonique + validateur dédié ; Draco-Griffe est légal pour Hydragon au match retour. |
 
 ## Règle de merge
 
@@ -59,7 +61,7 @@ Ne jamais transformer « non testé manuellement » en « non implémenté », e
 
 ## Prochain ordre de travail
 
-1. remettre toutes les synchronisations et la CI au vert ;
-2. confirmer Summary, HUD et boutiques dans une ROM fraîche ;
-3. réconcilier tout nouveau défaut observé ;
-4. clean build puis déclarer une candidate owner dans `PLAYTEST_STATUS.md`.
+1. valider la branche par les tests ciblés, le build et la CI ;
+2. fusionner dans `integration/v1` ;
+3. reconstruire une ROM candidate propre ;
+4. effectuer le playthrough owner complet et consigner les défauts observés.

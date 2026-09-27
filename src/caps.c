@@ -50,6 +50,7 @@ struct BossLevelCapMilestone
     u16 trainerIds[3];
     u16 completionFlag;
     u16 variantFlags[2];
+    bool8 requireAllTrainers;
 };
 
 #define BOSS_MILESTONE(trainerId) \
@@ -58,6 +59,8 @@ struct BossLevelCapMilestone
     { .trainerIds = {trainerId}, .completionFlag = flag }
 #define BOSS_MILESTONE_VARIANTS(trainerId1, trainerId2, trainerId3) \
     { .trainerIds = {trainerId1, trainerId2, trainerId3} }
+#define BOSS_MILESTONE_GROUP(trainerId1, trainerId2, trainerId3) \
+    { .trainerIds = {trainerId1, trainerId2, trainerId3}, .requireAllTrainers = TRUE }
 #define BOSS_MILESTONE_FLEXIBLE(trainerId1, trainerId2, trainerId3, flag, variantFlag1, variantFlag2) \
     { .trainerIds = {trainerId1, trainerId2, trainerId3}, .completionFlag = flag, .variantFlags = {variantFlag1, variantFlag2} }
 
@@ -95,12 +98,10 @@ static const struct BossLevelCapMilestone sJohtoBossMilestones[] =
 static const struct BossLevelCapMilestone sKantoBossMilestones[] =
 {
     BOSS_MILESTONE_FLAG(TRAINER_LTSURGE_HNS, FLAG_DEFEATED_VERMILION_GYM),
-    BOSS_MILESTONE_FLAG(TRAINER_ERIKA_HNS, FLAG_DEFEATED_CELADON_GYM),
+    BOSS_MILESTONE_GROUP(TRAINER_SABRINA_HNS, TRAINER_ERIKA_HNS, TRAINER_JANINE_HNS),
     BOSS_MILESTONE_FLAG(TRAINER_MISTY_HNS, FLAG_DEFEATED_CERULEAN_GYM),
-    BOSS_MILESTONE_VARIANTS(TRAINER_RIVAL_CHIKORITA_6_HNS, TRAINER_RIVAL_CYNDAQUIL_6_HNS, TRAINER_RIVAL_TOTODILE_6_HNS),
-    BOSS_MILESTONE_FLAG(TRAINER_JANINE_HNS, FLAG_DEFEATED_FUCHSIA_GYM),
-    BOSS_MILESTONE_FLAG(TRAINER_SABRINA_HNS, FLAG_DEFEATED_SAFFRON_GYM),
     BOSS_MILESTONE_FLAG(TRAINER_BROCK_HNS, FLAG_DEFEATED_PEWTER_GYM),
+    BOSS_MILESTONE_VARIANTS(TRAINER_RIVAL_CHIKORITA_6_HNS, TRAINER_RIVAL_CYNDAQUIL_6_HNS, TRAINER_RIVAL_TOTODILE_6_HNS),
     BOSS_MILESTONE_FLAG(TRAINER_BLAINE_HNS, FLAG_DEFEATED_CINNABAR_ISLAND_GYM),
     BOSS_MILESTONE_FLAG(TRAINER_BLUE_HNS, FLAG_DEFEATED_VIRIDIAN_GYM),
     BOSS_MILESTONE(TRAINER_WILL_2_HNS),
@@ -208,11 +209,13 @@ static bool32 IsMilestoneComplete(const struct BossLevelCapMilestone *milestone)
     {
         if (milestone->trainerIds[i] == 0)
             break;
-        if (HasTrainerBeenFought(milestone->trainerIds[i]))
+        if (!HasTrainerBeenFought(milestone->trainerIds[i]) && milestone->requireAllTrainers)
+            return FALSE;
+        if (HasTrainerBeenFought(milestone->trainerIds[i]) && !milestone->requireAllTrainers)
             return TRUE;
     }
 
-    return FALSE;
+    return milestone->requireAllTrainers;
 }
 
 static u32 GetBossProgressionLevelCap(const struct BossLevelCapMilestone *milestones, u32 count, bool8 useLowestLevel)

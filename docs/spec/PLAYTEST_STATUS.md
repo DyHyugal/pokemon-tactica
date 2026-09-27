@@ -2,15 +2,9 @@
 
 ## Candidate owner
 
-**Candidate owner : `7ab670bea4deabc70d4eee8ba5fbedd0425b242c`.**
+**Aucune candidate owner courante.** Les changements de progression Kanto, du match retour du Maître et du wiki postérieurs à l’ancienne ROM exigent une nouvelle fusion dans `integration/v1`, une CI verte et un build propre avant déclaration.
 
-- branche : `integration/v1` ;
-- CI complète : run [36274367144](https://github.com/DyHyugal/pokemon-tactica/actions/runs/36274367144), verte ;
-- build propre : `make clean && make hns -j4`, terminé le 27 septembre 2026 à 00:01 (Europe/Paris) ;
-- ROM : `pokehns.gba`, 33 554 432 octets ;
-- SHA-256 : `C9EAFBDBFDA510DBE48D961F593B4CDA56B1F192B6B272F72372FC9D936DFF62`.
-
-La présente mise à jour de statut est uniquement documentaire et ne modifie pas le contenu de cette ROM. Les contrôles mGBA listés ci-dessous ne sont pas encore effectués.
+Les contrôles mGBA de l’ancienne candidate ne couvrent pas ce bloc et ne sont pas reportés comme effectués.
 
 ## Ce qui est déjà couvert automatiquement
 
@@ -34,9 +28,18 @@ Les points suivants ne doivent pas être recodés simplement parce qu’une obse
 - unicité globale des Méga ;
 - exactement une Méga par Champion à partir de Mortimer ;
 - Jeannine : Aéromite reste l’ace ; Méga-Kravarech @ Dragalgite remplace Gaulet ;
+- courbe Kanto 75 → 80 → 85 → 90 → 95 → 100 et groupe central partagé ;
+- match retour du Maître niveau 100 : source canonique/runtime/objets uniques ;
+- Boss & Conseils généré depuis les sources canoniques ; cartes et sprites du Guide générés ;
 - Localisations/Pokédex dérivés des encounters canoniques.
 
 ## Témoins ROM encore utiles
+
+### Kanto et deuxième Ligue
+
+- vérifier que les caps affichés et appliqués suivent 75 / 80 / 85 / 90 / 95 / 100 ;
+- vérifier que Morgane, Erika et Jeannine partagent le cap 80 quel que soit leur ordre ;
+- vérifier l’équipe niveau 100 du match retour du Maître et ses six objets distincts ;
 
 ### Starter / œuf
 

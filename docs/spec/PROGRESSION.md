@@ -28,3 +28,7 @@ Le déblocage ne doit pas attendre le badge 5 ni un autre événement.
 ## Légalité
 
 Les Pokémon des champions et du rival respectent les niveaux d'évolution. Cochignon de Frédo est un choix intentionnel. Pour les boss Méga, la forme de base doit avoir un talent légal avant transformation ; le talent Méga est obtenu par la transformation réelle.
+
+## Kanto et deuxième Ligue
+
+Après le Maître niveau 70, les caps progressent par paliers de cinq. Major Bob ouvre Kanto au niveau 75. Morgane, Erika et Jeannine partagent le palier 80 car leurs Arènes sont accessibles dans le même mouvement. Ondine suit au niveau 85, Pierre au niveau 90, Auguste au niveau 95, puis Blue et la deuxième Ligue au niveau 100. Le groupe central ne libère le palier suivant qu’après les trois victoires ; le cap ne redescend jamais. Le rival conserve sa logique propre.
