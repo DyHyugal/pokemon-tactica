@@ -28,7 +28,7 @@ def validate_identity() -> None:
     help_window = read("src/data/help_window.h")
 
     require(re.search(r"^\s*TITLE\s*:=\s*PKMN TACTICA\s*$", makefile, re.MULTILINE) is not None, "HnS ROM title is not PKMN TACTICA")
-    require("POKéMON TACTICA defaults to HARD" in oak, "Oak intro does not identify Pokémon Tactica")
+    require("POKéMON TACTICA démarre en HARD" in oak, "Oak intro does not identify Pokémon Tactica")
     require("You are both playing POKéMON TACTICA." in help_window, "multiplayer help uses the wrong game name")
 
     for relative, text in (
