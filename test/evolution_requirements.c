@@ -47,10 +47,12 @@ TEST("Evolution requirements: obsolete convenience items no longer bypass offici
 
     InitEvolutionMon(&mon, SPECIES_CHARCADET, 30, MON_MALE);
     EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_FIRE_STONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_DUSK_STONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
     EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_AUSPICIOUS_ARMOR, NULL, &canStopEvo, CHECK_EVO), SPECIES_ARMAROUGE);
 
     InitEvolutionMon(&mon, SPECIES_APPLIN, 30, MON_MALE);
     EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_LEAF_STONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_SUN_STONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
     EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_TART_APPLE, NULL, &canStopEvo, CHECK_EVO), SPECIES_FLAPPLE);
 
     InitEvolutionMon(&mon, SPECIES_DURALUDON, 30, MON_MALE);
