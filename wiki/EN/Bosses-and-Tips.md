@@ -12,7 +12,7 @@ This page is generated from the game's canonical teams. Use it to prepare for ma
 |---|---:|---|---|---|
 | Murkrow | 14 | Focus Sash | Prankster | Tailwind · Taunt · Wing Attack · U-turn |
 | Gligar | 14 | — | Immunity | Aerial Ace · Bulldoze · Knock Off · Roost |
-| Pidgeotto | 17 | — | Big Pecks | Aerial Ace · Quick Attack · Roost · Work Up |
+| Pidgeotto | 18 | — | Big Pecks | Aerial Ace · Quick Attack · Roost · Work Up |
 
 ### Bugsy — Bug / hazards
 
@@ -39,7 +39,7 @@ This page is generated from the game's canonical teams. Use it to prepare for ma
 | Pokémon | Lv. | Item | Ability | Moves |
 |---|---:|---|---|---|
 | Sableye | 35 | Leftovers | Prankster | Will-O-Wisp · Taunt · Recover · Knock Off |
-| Dusclops | 35 | Eviolite | Pressure | Will-O-Wisp · Night Shade · Pain Split · Haze |
+| Dusclops | 37 | Eviolite | Pressure | Will-O-Wisp · Night Shade · Pain Split · Haze |
 | Mimikyu | 35 | Lum Berry | Disguise | Swords Dance · Play Rough · Shadow Sneak · Drain Punch |
 | Chandelure | 35 | Choice Specs | Flash Fire | Shadow Ball · Fire Blast · Energy Ball · Psychic |
 | Annihilape | 35 | Chesto Berry | Defiant | Bulk Up · Rage Fist · Drain Punch · Rest |
@@ -85,7 +85,7 @@ This page is generated from the game's canonical teams. Use it to prepare for ma
 | Dragonair | 61 | Eviolite | Shed Skin | Thunder Wave · Dragon Tail · Rest · Light Screen |
 | Dragalge | 61 | Black Sludge | Adaptability | Sludge Bomb · Dragon Pulse · Hydro Pump · Thunderbolt |
 | Dragapult | 61 | Life Orb | Infiltrator | Dragon Darts · Phantom Force · U-turn · Flamethrower |
-| Hydreigon | 61 | Choice Specs | Levitate | Dragon Pulse · Dark Pulse · Flamethrower · Earth Power |
+| Hydreigon | 64 | Choice Specs | Levitate | Dragon Pulse · Dark Pulse · Flamethrower · Earth Power |
 | Mega Altaria | 61 | Altarianite | Pixilate | Dragon Dance · Return · Earthquake · Roost |
 | Kingdra | 64 | Scope Lens | Sniper | Focus Energy · Dragon Pulse · Hydro Pump · Ice Beam |
 

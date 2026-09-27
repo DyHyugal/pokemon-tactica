@@ -27,6 +27,55 @@ def require(test, message):
         raise SystemExit(f"Tactica spec: {message}")
 
 
+SPECIES_CONSTANT_ALIASES = {
+    "Alolan Ninetales": "SPECIES_NINETALES_ALOLA",
+    "Arctozolt (Galvagla)": "SPECIES_ARCTOZOLT",
+    "Galarian Weezing": "SPECIES_WEEZING_GALAR",
+    "Galarian Slowking": "SPECIES_SLOWKING_GALAR",
+    "Alolan Muk": "SPECIES_MUK_ALOLA",
+    "Hisuian Zoroark": "SPECIES_ZOROARK_HISUI",
+    "Indeedee-F": "SPECIES_INDEEDEE_FEMALE",
+    "Rotom-Wash": "SPECIES_ROTOM_WASH",
+}
+
+
+def boss_species_constant(name):
+    base = name.removeprefix("Mega ")
+    if base.startswith("Charizard "):
+        base = "Charizard"
+    elif base.startswith("Raichu "):
+        base = "Raichu"
+    if base in SPECIES_CONSTANT_ALIASES:
+        return SPECIES_CONSTANT_ALIASES[base]
+    return "SPECIES_" + re.sub(r"[^A-Z0-9]+", "_", base.upper()).strip("_")
+
+
+def minimum_evolution_levels():
+    species = {}
+    docs = ROOT.parents[1] / "docs" / "assets"
+    prefix = "Object.assign(window.TacticaDexSpecies ||= {}, "
+    for path in sorted(docs.glob("tactica-species-*.js")):
+        text = path.read_text(encoding="utf-8").strip()
+        require(text.startswith(prefix) and text.endswith(");"),
+                f"invalid generated species data wrapper: {path.name}")
+        species.update(json.loads(text[len(prefix):-2]))
+
+    incoming = collections.defaultdict(list)
+    for source, data in species.items():
+        for evo in data.get("evolutions", []):
+            minimum = 1
+            if evo["method"].startswith("EVO_LEVEL"):
+                try:
+                    minimum = max(minimum, int(evo["param"]))
+                except ValueError:
+                    pass
+            for condition in evo.get("conditions", []):
+                if len(condition) >= 2 and condition[0] == "IF_MIN_LEVEL":
+                    minimum = max(minimum, int(condition[1]))
+            incoming[evo["target"]].append((minimum, source, evo["method"]))
+    return {target: min(routes, key=lambda route: route[0]) for target, routes in incoming.items()}
+
+
 standard = read("encounters_standard.json")["tables"]
 special = read("encounters_special.json")["tables"]
 require(len(standard) == 405, "expected 405 standard tables")
@@ -247,6 +296,21 @@ require(stats["SPECIES_CHARIZARD_MEGA_X"]["atk"] == 156, "Mega Charizard X Atk 1
 require(stats["SPECIES_CHARIZARD_MEGA_Y"]["atk"] == 120, "Mega Charizard Y unchanged by latest +10")
 
 teams = read("bosses.json")["teams"]
+
+# Boss species must be obtainable at the authored level.  Hidden substitutions
+# previously let the ROM and wiki disagree (Whitney/Teddiursa), so CI now checks
+# every fixed boss against the actual evolution data.
+minimum_levels = minimum_evolution_levels()
+for row in teams:
+    if row["level"] is None:
+        continue
+    species_key = boss_species_constant(row["species"])
+    if species_key in minimum_levels:
+        minimum, source, method = minimum_levels[species_key]
+        require(row["level"] >= minimum,
+                f"{row['boss']}/{row['species']} level {row['level']} is below "
+                f"its legal minimum {minimum} ({source} via {method})")
+
 bosses = collections.defaultdict(list)
 for row in teams:
     bosses[(row["region"], row["category"], row["boss"])].append(row)
