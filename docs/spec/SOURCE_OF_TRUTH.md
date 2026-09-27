@@ -69,8 +69,9 @@ Détail et audit : [EVOLUTIONS.md](EVOLUTIONS.md).
 La source détaillée est [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Les JSON `rival.json`, `rocket_progression.json` et `bosses.json` doivent rester synchronisés avec ce document.
 
 - Le rival possède un starter fixe par archétype. Il n’existe pas de combat scénario après le badge 1 : la progression cible est **1 Pokémon au premier duel, 4 après Hector, puis 6 à partir de la Tour Cendrée**. Sa Méga n’apparaît qu’à partir du combat suivant le badge 4.
+- Chaque combat Rival reprend la plage de cap du prochain Champion ou jalon majeur et devient le cap de préparation courant : le minimum sert au cap HARD, le maximum au cap NORMAL.
 - Chaque membre du Rival possède un talent canonique. Le runtime l’applique lorsqu’il est légal pour la forme réellement envoyée et conserve le talent de Méga pour la transformation.
-- Les Exécutifs Rocket suivent `3 → 4 → 6` et n’utilisent une Méga qu’en FINAL.
+- Les Exécutifs Rocket suivent les phases réellement présentes dans le scénario : Proton 3→6, Petrel/Ariana 4→6, Archer 6. Leur niveau vaut le dernier jalon Champion/Rival pertinent +2 et les Méga restent réservées aux équipes FINAL.
 - Archer utilise Méga-Sharpedo et Méga-évolue immédiatement ; aucun plan Abri → Méga retardée.
 - Méga-Démolosse reste réservé à Marion.
 
@@ -79,7 +80,7 @@ La source détaillée est [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Le
 
 - La courbe part du Maître de la première Ligue, niveau 70, puis monte par paliers de cinq jusqu’au niveau 100.
 - Major Bob est niveau 75. Morgane, Erika et Jeannine, accessibles dans le même mouvement, partagent le niveau et le cap 80. Ondine est niveau 85, Pierre 90, Auguste 95, Blue 100.
-- La deuxième Ligue et le match retour du Maître sont niveau 100. Le rival conserve sa logique existante.
+- La deuxième Ligue et le match retour du Maître sont niveau 100. Le Rival du Mont Sélénite et son combat quotidien du Plateau sont niveau 95, alignés sur Auguste, prochain Champion au moment de leur déblocage.
 - Le match retour du Maître utilise Voltali, Méga-Dracaufeu X, Hydragon, Miascarade, Exagide et Carchacrok. Les objets restent uniques au sein de l’équipe.
 
 ### Starters et systèmes protégés

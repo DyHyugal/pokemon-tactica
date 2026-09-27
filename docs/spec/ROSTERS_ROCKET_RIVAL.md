@@ -46,12 +46,23 @@ Une catégorie rival est tirée une fois parmi les choix autorisés puis sauvega
 Progression des effectifs :
 
 - premier combat : starter fixe seul, niveau 17, stade légal au niveau 17 ;
-- après badge 1 : 3 Pokémon ;
+- aucun combat après le badge 1 ;
 - après badge 2 : 4 Pokémon ;
 - après badge 3 : équipe complète de 6 ;
 - après badge 4 : la même équipe complète peut utiliser sa Méga.
 
 Les membres introduits restent présents dans les combats suivants.
+
+Les événements réellement joués utilisent les jalons suivants :
+
+- Ville Griotte : 1 Pokémon niveau 17 ;
+- après Hector : 4 Pokémon, niveaux 29–32, alignés sur Blanche ;
+- entre Blanche et Mortimer : 6 Pokémon, niveaux 35–38, alignés sur Mortimer ;
+- Tour Radio : 6 Pokémon, niveaux 61–64, alignés sur Sandra ;
+- Route Victoire : 6 Pokémon, niveaux 65–67, alignés sur le premier Conseil 4 ;
+- Mont Sélénite et combat quotidien du Plateau : 6 Pokémon niveau 95, alignés sur Auguste.
+
+Le niveau le plus bas de chaque plage est le cap HARD et le plus haut le cap NORMAL. Aucun combat Rival n'existe après le badge 1 : le scénario passe donc directement de 1 à 4 membres.
 
 ---
 
@@ -442,6 +453,8 @@ Les Exécutifs restent sur une progression 3 -> 4 -> 6. Les familles introduites
 Les thèmes Rocket n'imposent pas deux setters météo/terrain lorsqu'ils ne reposent pas sur une météo/terrain.
 
 Les Méga n'apparaissent que dans la version FINAL.
+
+Les phases sont appliquées aux rencontres qui existent réellement : Proton utilise EARLY puis FINAL, Petrel et Ariana MID puis FINAL, Archer FINAL uniquement. Les niveaux sont dynamiques et valent le dernier jalon Champion/Rival pertinent +2 ; le système ne suppose pas que chaque Exécutif soit combattu trois fois.
 
 ---
 

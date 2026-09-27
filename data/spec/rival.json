@@ -122,9 +122,39 @@
     "status": "owner rosters 2026-09-26; generated runtime, ROM playtest pending",
     "party_sizes": {
       "before_first_badge": 1,
-      "after_badge_1": 3,
       "after_badge_2": 4,
       "after_badge_3_and_later": 6
+    },
+    "runtime_fights": {
+      "1_cherrygrove_before_badge_1": {
+        "party_size": 1,
+        "levels": [17],
+        "moves_phase": "early",
+        "mega": false
+      },
+      "2_azalea_after_badge_2": {
+        "party_size": 4,
+        "levels": [29, 32, 31, 30],
+        "moves_phase": "mid",
+        "mega": false
+      },
+      "3_burned_tower_after_badge_3": {
+        "party_size": 6,
+        "levels": [35, 38, 37, 36, 36, 35],
+        "moves_phase": "mid",
+        "mega": false
+      },
+      "4_and_later_after_badge_4": {
+        "party_size": 6,
+        "levels_by_fight": {
+          "4_radio_tower_before_clair": [61, 64, 63, 62, 62, 61],
+          "5_victory_road_before_league": [65, 67, 66, 66, 65, 65],
+          "6_mt_moon_before_blaine": [95, 95, 95, 95, 95, 95],
+          "7_indigo_plateau_daily": [95, 95, 95, 95, 95, 95]
+        },
+        "moves_phase": "final",
+        "mega": true
+      }
     },
     "phase_slots": {
       "early": [
@@ -148,7 +178,7 @@
       ]
     },
     "mega_unlock": "after_badge_4",
-    "notes": "The rival archetype is drawn once and stored through its fixed starter. Fight 1 is level 17. EARLY/MID/FINAL retain members; Mega Stones are attached only to FINAL teams, whose existing story fights occur after badge 4.",
+    "notes": "The rival archetype is drawn once and stored through its fixed starter. There is no story fight after badge 1: Azalea happens after badge 2 and uses four Pokémon; Burned Tower happens after badge 3 and uses six. Every rival fight spans the next major boss's HARD-lowest to NORMAL-highest cap and becomes the current preparation cap. FINAL sets and Mega Stones begin with fight 4, after badge 4.",
     "categories": {
       "fire": [
         {

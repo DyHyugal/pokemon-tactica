@@ -582,7 +582,17 @@ def validate_rival_progression():
 
     text = (ROOT / "src/data/trainers_hns.party").read_text().split(
         "/* ========== Family Remix FINAL hard boss parties ========== */", 1)[0]
-    expected = (1, 3, 4, 6, 6, 6, 6)
+    runtime_fights = rival["fight_rosters"]["runtime_fights"]
+    expected_levels = {
+        1: runtime_fights["1_cherrygrove_before_badge_1"]["levels"],
+        2: runtime_fights["2_azalea_after_badge_2"]["levels"],
+        3: runtime_fights["3_burned_tower_after_badge_3"]["levels"],
+    }
+    expected_levels.update({
+        int(name.split("_", 1)[0]): levels
+        for name, levels in runtime_fights["4_and_later_after_badge_4"]["levels_by_fight"].items()
+    })
+    expected = tuple(len(expected_levels[fight]) for fight in range(1, 8))
     for starter, stages in (("CHIKORITA", ("Chikorita", "Bayleef", "Bayleef", "Meganium", "Meganium")),
                             ("CYNDAQUIL", ("Cyndaquil", "Quilava", "Quilava", "Typhlosion", "Typhlosion")),
                             ("TOTODILE", ("Totodile", "Croconaw", "Croconaw", "Feraligatr", "Feraligatr"))):
@@ -595,6 +605,8 @@ def validate_rival_progression():
             levels = [int(level) for level in re.findall(r"^Level: (\d+)$", party, re.M)]
             if len(levels) != party_size:
                 fail(f"{trainer_id}: expected {party_size} members")
+            if levels != expected_levels[fight]:
+                fail(f"{trainer_id}: expected canonical levels {expected_levels[fight]}, got {levels}")
             if fight == 1 and levels != [17]:
                 fail(f"{trainer_id}: first rival must use one level 17 starter")
             if fight <= 5 and len(re.findall(rf"^{stages[fight - 1]}(?: @ .+)?$", party, re.M)) != 1:

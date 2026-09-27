@@ -21,11 +21,27 @@ static u32 GetTestBossLevel(u16 trainerId, bool8 useLowestLevel)
     case TRAINER_RIVAL_CHIKORITA_2_HNS:
     case TRAINER_RIVAL_CYNDAQUIL_2_HNS:
     case TRAINER_RIVAL_TOTODILE_2_HNS:
-        return useLowestLevel ? 15 : 18;
+        return useLowestLevel ? 29 : 32;
     case TRAINER_BUGSY_1_HNS:
         return useLowestLevel ? 22 : 25;
     case TRAINER_WHITNEY_1_HNS:
         return useLowestLevel ? 29 : 32;
+    case TRAINER_RIVAL_CHIKORITA_3_HNS:
+    case TRAINER_RIVAL_CYNDAQUIL_3_HNS:
+    case TRAINER_RIVAL_TOTODILE_3_HNS:
+        return useLowestLevel ? 35 : 38;
+    case TRAINER_RIVAL_CHIKORITA_4_HNS:
+    case TRAINER_RIVAL_CYNDAQUIL_4_HNS:
+    case TRAINER_RIVAL_TOTODILE_4_HNS:
+        return useLowestLevel ? 61 : 64;
+    case TRAINER_RIVAL_CHIKORITA_5_HNS:
+    case TRAINER_RIVAL_CYNDAQUIL_5_HNS:
+    case TRAINER_RIVAL_TOTODILE_5_HNS:
+        return useLowestLevel ? 65 : 67;
+    case TRAINER_RIVAL_CHIKORITA_6_HNS:
+    case TRAINER_RIVAL_CYNDAQUIL_6_HNS:
+    case TRAINER_RIVAL_TOTODILE_6_HNS:
+        return 95;
     case TRAINER_MORTY_1_HNS:
         return useLowestLevel ? 35 : 38;
     case TRAINER_LTSURGE_HNS:
@@ -102,6 +118,43 @@ TEST("Level cap: Proton 1 immediately advances preparation to Bugsy")
     EXPECT_EQ(GetCurrentLevelCap(), 29);
 }
 
+TEST("Level cap: rival fights use the next Gym cap")
+{
+    SetLevelCapMode(1);
+    FlagSet(FLAG_DEFEATED_VIOLET_GYM);
+    SetTrainerFlag(TRAINER_PROTON_1_HNS);
+    FlagSet(FLAG_DEFEATED_AZALEA_TOWN_GYM);
+    EXPECT_EQ(GetCurrentLevelCap(), 32);
+
+    SetTrainerFlag(TRAINER_RIVAL_CYNDAQUIL_2_HNS);
+    FlagSet(FLAG_DEFEATED_GOLDENROD_CITY_GYM);
+    EXPECT_EQ(GetCurrentLevelCap(), 38);
+
+    SetLevelCapMode(2);
+    EXPECT_EQ(GetCurrentLevelCap(), 35);
+}
+
+TEST("Level cap: later rival fights follow the next major boss")
+{
+    EXPECT_EQ(GetTestBossLevel(TRAINER_RIVAL_CYNDAQUIL_4_HNS, FALSE), 64);
+    EXPECT_EQ(GetTestBossLevel(TRAINER_RIVAL_CYNDAQUIL_4_HNS, TRUE), 61);
+    EXPECT_EQ(GetTestBossLevel(TRAINER_RIVAL_CYNDAQUIL_5_HNS, FALSE), 67);
+    EXPECT_EQ(GetTestBossLevel(TRAINER_RIVAL_CYNDAQUIL_5_HNS, TRUE), 65);
+    EXPECT_EQ(GetTestBossLevel(TRAINER_RIVAL_CYNDAQUIL_6_HNS, FALSE), 95);
+}
+
+TEST("Level cap: Rocket encounters follow actual story stages")
+{
+    SetLevelCapMode(1);
+    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_PROTON_1_HNS), 19);
+    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_PETREL_1_HNS), 40);
+    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_ARIANA_1_HNS), 40);
+    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_PETREL_2_HNS), 40);
+    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_PROTON_2_HNS), 66);
+    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_ARIANA_2_HNS), 66);
+    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_ARCHER_HNS), 66);
+}
+
 TEST("Level cap: Rocket parties use legal evolution stages at their resolved level")
 {
     EXPECT_EQ(GetFamilyRocketLegalSpecies(SPECIES_CROBAT, 19), SPECIES_ZUBAT);
@@ -173,6 +226,9 @@ TEST("Level cap: Kanto scales by five and parallel central Gyms share level 80")
 
     FlagSet(FLAG_DEFEATED_PEWTER_GYM);
     EXPECT_EQ(GetCurrentLevelCap(), 95);
+
+    SetTrainerFlag(TRAINER_RIVAL_CYNDAQUIL_6_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 100);
 
     FlagSet(FLAG_DEFEATED_CINNABAR_ISLAND_GYM);
     EXPECT_EQ(GetCurrentLevelCap(), 100);

@@ -152,14 +152,14 @@ def labels(lang: str) -> dict:
             "johto": "Johto et première Ligue", "rocket": "Team Rocket", "rival": "Rival", "kanto": "Kanto", "rematch": "Deuxième Ligue",
             "pokemon": "Pokémon", "level": "Niv.", "item": "Objet", "ability": "Talent", "moves": "Capacités",
             "dynamic": "Dynamique", "rocket_note": "Les Exécutifs passent de 3 à 4 puis 6 Pokémon. Leur niveau suit le dernier jalon Champion ou Rival pertinent, augmenté de 2 ; les Méga n'apparaissent qu'au combat FINAL.",
-            "rival_note": "Le rival conserve un starter fixe selon son archétype et progresse de 1 à 3, 4 puis 6 Pokémon. Son niveau continue de suivre la logique du prochain jalon majeur et sa Méga n'arrive qu'après le badge 4.",
+            "rival_note": "Le rival conserve un starter fixe selon son archétype. Le premier duel se joue à un Pokémon ; comme aucun combat n'a lieu après le badge 1, l'équipe passe directement à 4 Pokémon après Hector, puis à 6 entre Blanche et Mortimer. Sa Méga n'arrive qu'après le badge 4.",
         }
     return {
         "title": "Bosses & Tips", "intro": "This page is generated from the game's canonical teams. Use it to prepare for major battles without following a turn-by-turn script.",
         "johto": "Johto and first League", "rocket": "Team Rocket", "rival": "Rival", "kanto": "Kanto", "rematch": "Second League",
         "pokemon": "Pokémon", "level": "Lv.", "item": "Item", "ability": "Ability", "moves": "Moves",
         "dynamic": "Dynamic", "rocket_note": "Executives grow from 3 to 4 and then 6 Pokémon. Their level is the latest relevant Gym or Rival milestone plus 2; Mega Evolution appears only in the FINAL battle.",
-        "rival_note": "The rival keeps a fixed starter for each archetype and grows from 1 to 3, 4 and then 6 Pokémon. Its level logic is unchanged, and Mega Evolution begins only after Badge 4.",
+        "rival_note": "The rival keeps a fixed starter for each archetype. The first duel uses one Pokémon; because no battle occurs after Badge 1, the team jumps directly to four after Bugsy, then six between Whitney and Morty. Mega Evolution begins only after Badge 4.",
     }
 
 

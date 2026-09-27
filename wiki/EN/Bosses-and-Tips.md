@@ -1,4 +1,4 @@
-[Home](Home.md) · [Guide](Game-Guide.md) · [Changes](Changes.md) · [Pokédex](Pokedex.md) · [Locations](Locations.md) · [Routes & Cities](Routes-and-Cities.md) · [Bosses & Tips](Bosses-and-Tips.md) · [Credits](Credits-and-Versions.md) · [Roadmap](Roadmap.md) · **[FR](../FR/Boss-et-Conseils.md)**
+[Home](Home.md) · [Game Guide](Game-Guide.md) · [Changes](Changes.md) · [Pokédex](Pokedex.md) · [Locations](Locations.md) · **[Bosses & Tips](Bosses-and-Tips.md)** · [Credits](Credits-and-Versions.md) · [Roadmap](Roadmap.md) · **[FR](../FR/Boss-et-Conseils.md)**
 
 # Bosses & Tips
 
@@ -194,7 +194,7 @@ Executives grow from 3 to 4 and then 6 Pokémon. Their level is the latest relev
 
 ## Rival
 
-The rival keeps a fixed starter for each archetype and grows from 1 to 3, 4 and then 6 Pokémon. Its level logic is unchanged, and Mega Evolution begins only after Badge 4.
+The rival keeps a fixed starter for each archetype. The first duel uses one Pokémon; because no battle occurs after Badge 1, the team jumps directly to four after Bugsy, then six between Whitney and Morty. Mega Evolution begins only after Badge 4.
 
 ### Fire archetype — progressive team
 

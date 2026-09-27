@@ -13,20 +13,20 @@ L’ancienne candidate `31fe7d7c9d33dcc757fede543db249651f7dc53f` reste un témo
 
 Le dernier `integration/v1` doit être reconstruit proprement avant tout nouveau playtest. Un simple `git pull` ne met jamais à jour une ROM déjà compilée.
 
-## Bloquant connu avant la prochaine candidate
+## Correctif prioritaire intégré avant la prochaine candidate
 
-### Rival — progression encore absente du HEAD courant
+### Rival — progression réintégrée
 
-Le contrat owner issu du playtest n’est **pas encore présent dans le runtime courant** :
+Le contrat owner est désormais présent côté source canonique, runtime, générateur et tests :
 
-- premier duel : 1 Pokémon niveau 17 — conforme ;
-- après Hector : attendu **4 Pokémon niveaux 29–32** ;
-- Tour Cendrée : attendu **6 Pokémon niveaux 35–38** ;
-- combats suivants : progression alignée sur les jalons réellement joués.
+- premier duel : 1 Pokémon niveau 17 ;
+- après Hector : **4 Pokémon niveaux 29–32** ;
+- Tour Cendrée : **6 Pokémon niveaux 35–38** ;
+- Tour Radio : **61–64** ;
+- Route Victoire : **65–67** ;
+- Mont Sélénite et Plateau : **niveau 95**.
 
-Au HEAD courant, `data/spec/rival.json` contient encore `after_badge_1: 3` et `src/data/trainers_hns.party` conserve notamment les anciens niveaux **15/16/18** au combat 2 puis **22/23/22/24** au combat 3.
-
-Ce correctif doit être réintégré avant de déclarer une nouvelle candidate « complète et à jour ».
+La progression automatisée est couverte ; il reste à observer ces combats dans la prochaine ROM candidate.
 
 ## Couverture automatisée actuelle
 
@@ -45,6 +45,7 @@ Les points suivants sont intégrés et protégés automatiquement. Une observati
 - absence d’anciens `EVO_TRADE` actifs ;
 - Pokédex évolution régénéré depuis le runtime et protégé par `sync_tactica_species_evolutions.py --check` ;
 - rosters Rocket et règles Méga ;
+- caps Rival synchronisés sur le prochain jalon majeur et niveaux Rocket calculés sur le dernier jalon pertinent +2 ;
 - talents canoniques du Rival lorsqu’ils sont légaux pour la forme envoyée ;
 - Mega Ring placé après Mortimer ;
 - premier accès réel des encounters ;
@@ -93,6 +94,15 @@ Le Pokédex n’est plus une source manuelle pour ces méthodes : ses champs d�
 - sélection utilisable ;
 - persistance après sauvegarde/rechargement ;
 - ne pas toucher à Vitesse, Audio ou Shiny Rate sans défaut reproduit.
+
+### Rival / Rocket
+
+- premier rival : un Pokémon, niveau 17, stade légal ;
+- après Hector : 4 Pokémon, plage 29–32 ;
+- Tour Cendrée : 6 Pokémon, plage 35–38 ;
+- Tour Radio : 61–64 ; Route Victoire : 65–67 ; Mont Sélénite/Plateau : 95 ;
+- Rocket : Proton 3→6, Petrel/Ariana 4→6, Archer 6 ; niveaux dynamiques +2 selon les jalons réels ;
+- vérifier en combat que les talents attendus du Rival se déclenchent selon les archétypes.
 
 ### Méga
 
