@@ -399,18 +399,22 @@ TEST("Family starter: saved rival category resolves every authored party phase")
     EXPECT_EQ(mon.ability, ABILITY_BLAZE);
     EXPECT_EQ(mon.moves[0], MOVE_NONE);
 
-    mon = (struct TrainerMon){.lvl = 15};
+    mon = (struct TrainerMon){.lvl = 29};
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_2_HNS, 0, &mon));
     EXPECT_EQ(mon.species, SPECIES_TORKOAL);
     EXPECT_EQ(mon.ability, ABILITY_DROUGHT);
-    EXPECT_EQ(mon.moves[0], MOVE_EMBER);
+    EXPECT_EQ(mon.moves[0], MOVE_FLAME_WHEEL);
     EXPECT_EQ(mon.heldItem, ITEM_NONE);
     EXPECT_EQ(mon.ev, NULL);
 
-    mon = (struct TrainerMon){.lvl = 16};
+    mon = (struct TrainerMon){.lvl = 32};
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_2_HNS, 1, &mon));
     EXPECT_EQ(mon.species, SPECIES_COMBUSKEN);
     EXPECT_EQ(mon.moves[0], MOVE_NONE);
+
+    mon = (struct TrainerMon){.lvl = 35};
+    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_3_HNS, 5, &mon));
+    EXPECT_EQ(mon.heldItem, ITEM_NONE);
 
     mon = (struct TrainerMon){.lvl = 24};
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_3_HNS, 2, &mon));

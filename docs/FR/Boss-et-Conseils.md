@@ -194,7 +194,7 @@ Les Exécutifs passent de 3 à 4 puis 6 Pokémon. Leur niveau suit le dernier ja
 
 ## Rival
 
-Le rival conserve un starter fixe selon son archétype et progresse de 1 à 3, 4 puis 6 Pokémon. Son niveau continue de suivre la logique du prochain jalon majeur et sa Méga n'arrive qu'après le badge 4.
+Le rival conserve un starter fixe selon son archétype. Le premier duel se joue à un Pokémon ; comme aucun combat n'a lieu après le badge 1, l'équipe passe directement à 4 Pokémon après Hector, puis à 6 entre Blanche et Mortimer. Sa Méga n'arrive qu'après le badge 4.
 
 ### Archétype Feu — équipe progressive
 

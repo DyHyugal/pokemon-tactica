@@ -40,7 +40,7 @@ Ne pas recoder sans défaut démontré :
 - sélection des 30 starters + Évoli ;
 - curseur initial du sélecteur et retour après annulation ;
 - œuf d’Orme distinct du starter principal ;
-- rival fixe par archétype, premier combat niveau 17, progression 1→3→4→6 ;
+- rival fixe par archétype, premier combat niveau 17, puis 4 membres après Hector et 6 après Blanche ;
 - rosters Rival/Rocket courants ;
 - talents canoniques du Rival générés depuis `rival.json` et appliqués lorsqu’ils sont légaux pour la forme envoyée ;
 - Méga Rival après badge 4 ;
@@ -109,15 +109,11 @@ Une fois le bloc Méga entièrement terminé, poursuivre la migration canonique 
 - migration Fil Liaison : toutes les évolutions par échange ont été converties vers Fil Liaison, avec objet officiel tenu lorsque requis ; les routes `EVO_TRADE` et remplacements HnS associés ne font plus partie du runtime Tactica ;
 - PR #40 : correctifs de légalité boss déjà fusionnés, notamment Blanche/Ursaring et Mortimer/Ossatueur d’Alola.
 
-Travail restant principal :
+Bloc terminé : Sépiatop, Dofin, Tutafeh-Galar, Ursaring et Meltan utilisent Fil Liaison ; le validateur générique interdit les routes obsolètes et les assets Pokédex ont été régénérés pour 102 espèces. `sync_tactica_pokedex_evolutions.py --check` protège désormais leur synchronisation avec le runtime.
 
-- audit des mécaniques impossibles : **traité** pour Sépiatop, Dofin, Tutafeh-Galar, Ursaring et Meltan, convertis vers Fil Liaison ;
-- validateur générique de conformité évolution : **traité** ; il interdit les routes `EVO_TRADE`, les `IF_MIN_LEVEL` artificiels sur `EVO_ITEM`, les Fil Liaison hors liste canonique et les objets d'échange utilisables directement ;
-- régénérer le wiki/Pokédex depuis le runtime corrigé.
+### PRIORITÉS SUIVANTES — après les blocs terminés
 
-### PRIORITÉS SUIVANTES — seulement après les quatre blocs ci-dessus
-
-- scaling/progression du Rival ;
+- scaling/progression du Rival : **traité** sur les sept combats réels et les caps des prochains jalons ;
 - texte de refus du second starter déjà possédé ;
 - ajustements IA ciblés (Mimiqui, Provoc de Cornèbre, Téraclope) ;
 - autres écarts non bloquants.
@@ -200,13 +196,7 @@ Audit déjà établi :
 - échanges + objet : migrés vers **objet officiel tenu + Fil Liaison** ;
 - aucune route `EVO_TRADE` ne doit subsister dans le runtime Tactica.
 
-Ordre de correction restant :
-
-1. mettre à jour les documents de statut finaux ;
-2. régénérer le wiki/Pokédex depuis les sources runtime corrigées ;
-3. vérifier l'idempotence des générateurs et la CI sur le SHA final.
-
-Ne pas considérer le wiki actuel comme source de vérité pendant cette migration : il doit refléter le runtime corrigé, pas l’inverse.
+Le wiki est dérivé du runtime par `sync_tactica_pokedex_evolutions.py`; son `--check` doit rester vert en CI.
 
 ## 5. Œuf / second starter
 
@@ -222,20 +212,20 @@ Validé en ROM :
   **« Tu as bien reconnu l’espèce, mais tu la possèdes déjà. Essaie d’en choisir une différente ! »**
 - conserver le flow actuel ; ne pas le réécrire.
 
-## 6. Rival — progression/niveaux faux après Hector
+## 6. Rival — progression et caps courants
 
 Validé :
 
 - avec Salamèche joueur, premier Rival Eau = **Flobio niv.17**, conforme ;
 - sets observés cohérents.
 
-À corriger :
+Implémenté :
 
-- après Hector, le combat observé utilise bien **Goélise / Flobio / Hypotrempe**, mais niveaux **15 / 16 / 18** : incorrect ;
-- entre Blanche et Mortimer, le Rival n’a encore que **4 Pokémon** et reste basé sur les niveaux d’Hector : incorrect ;
-- vérifier les événements réels avant de modifier la progression : il ne semble pas y avoir de combat Rival juste après le badge 1 ;
-- corriger la logique générale de scaling/progression afin que les combats Rival réellement déclenchés utilisent le nombre de Pokémon et les niveaux attendus au point réel de progression, en cohérence avec le cap/prochain boss ;
-- corriger source canonique + générateur/runtime + tests, sans hardcoder uniquement les deux combats observés.
+- aucun combat n'existe après le badge 1 ; le combat après Hector utilise donc 4 Pokémon niveaux 29–32, alignés sur Blanche ;
+- la Tour Cendrée utilise 6 Pokémon niveaux 35–38, alignés sur Mortimer ;
+- Tour Radio 61–64 (Sandra), Route Victoire 65–67 (premier Conseil 4), Mont Sélénite et Plateau 95 (Auguste) ;
+- le minimum de chaque plage est le cap HARD et le maximum le cap NORMAL ;
+- les événements, la source JSON, les parties runtime, le wiki et les tests sont synchronisés par générateur.
 
 ## 7. Blanche — corrigé, ne pas reprendre
 
@@ -294,7 +284,7 @@ Les blocs suivants sont validés automatiquement :
 
 Le défaut suivant reste ouvert après le bloc Évolutions :
 
-- Rival progression/scaling → `[À CORRIGER]` tant que le défaut runtime n’est pas corrigé ;
+- Rival progression/scaling → `[PARTIEL]` : correction et tests automatisés intégrés, combats à observer dans la prochaine ROM candidate ;
 
 ## Wiki
 

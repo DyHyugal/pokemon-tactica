@@ -730,7 +730,10 @@ bool32 FamilyStarter_ResolveRivalMon(u16 trainerId, u32 slot, struct TrainerMon 
         return TRUE;
     }
 
-    phase = fight == 2 ? TACTICA_RIVAL_EARLY : fight == 3 ? TACTICA_RIVAL_MID : TACTICA_RIVAL_FINAL;
+    // No story fight occurs after Badge 1. Fight 2 is reached after Bugsy and
+    // fight 3 after Whitney, so both use MID sets. Mega items remain locked
+    // until fight 4, after the player has obtained Badge 4.
+    phase = fight < 4 ? TACTICA_RIVAL_MID : TACTICA_RIVAL_FINAL;
     source = &sTacticaRivalMons[category][slot];
     if (source->isSavedStarter)
     {

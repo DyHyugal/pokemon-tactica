@@ -136,7 +136,7 @@ Après une modification encounters/wiki :
 
 Une passe éditoriale wiki n’autorise pas à réintroduire des données gameplay anciennes.
 
-Après la migration des évolutions, le Pokédex doit être régénéré depuis les sources corrigées. Tant que cette migration n’est pas terminée, les anciennes méthodes d’évolution affichées ne constituent pas une source de vérité et ne doivent pas être recopiées dans le runtime.
+`tools/sync_tactica_pokedex_evolutions.py` régénère les conditions d'évolution des assets Pokédex depuis `src/data/pokemon/species_info`. Son mode `--check` est obligatoire en CI ; les fichiers `tactica-species-*.js` ne doivent pas être corrigés manuellement.
 
 ## Données de boss et assets du Guide
 

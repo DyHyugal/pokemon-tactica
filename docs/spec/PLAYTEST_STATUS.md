@@ -28,6 +28,7 @@ Les points suivants ne doivent pas être recodés simplement parce qu’une obse
 - curseur initial et retour après annulation — garde-fous automatiques ;
 - premier rival niveau 17 et stade légal ;
 - rosters Rival/Rocket et progression ;
+- caps Rival synchronisés sur le prochain jalon majeur et niveaux Rocket calculés sur le dernier jalon pertinent +2 ;
 - talents canoniques du Rival appliqués lorsqu’ils sont légaux pour la forme envoyée ;
 - talents pré-Méga légaux ;
 - Mega Ring placé après Mortimer ;
@@ -48,11 +49,11 @@ Les points suivants ne doivent pas être recodés simplement parce qu’une obse
 - Simiabraz de Chuck/Aldo avec Acrobatie et Méga-Altaria à bonheur maximal pour Retour ;
 - Localisations/Pokédex dérivés des encounters canoniques.
 
-## Évolutions — validation à refaire après migration
+## Évolutions — migration automatisée terminée
 
 Les observations et tests historiques sur les « évolutions solo » prouvent uniquement que l’ancienne implémentation HnS fonctionnait techniquement. Ils ne valident plus la cible produit.
 
-Après implémentation de [EVOLUTIONS.md](EVOLUTIONS.md), couvrir au minimum :
+Le runtime, le validateur et les données Pokédex sont synchronisés. Le prochain playtest peut couvrir :
 
 - échange simple → Fil Liaison ;
 - échange + objet → objet officiel tenu + Fil Liaison ;
@@ -63,9 +64,7 @@ Après implémentation de [EVOLUTIONS.md](EVOLUTIONS.md), couvrir au minimum :
 - Téraclope → Noctunoir = Tissu Fauche tenu + Fil Liaison ;
 - Mélancolux → Lugulabre = Pierre Nuit uniquement ;
 - Lampéroie → Ohmassacre = Pierre Foudre uniquement ;
-- Pokédex/wiki régénéré et identique au runtime réellement compilé.
-
-Aucun de ces contrôles ne doit être marqué effectué avant la migration runtime.
+- Pokédex/wiki régénéré et identique au runtime réellement compilé — couvert automatiquement ; vérifier seulement la présentation en navigateur si utile.
 
 ## Témoins ROM encore utiles
 
@@ -85,7 +84,9 @@ Aucun de ces contrôles ne doit être marqué effectué avant la migration runti
 ### Rival / Rocket / Méga
 
 - premier rival : un Pokémon, niveau 17, stade légal ;
-- progression des tailles Rival/Rocket ;
+- Rival après Hector : 4 Pokémon, plage 29–32 ; Tour Cendrée : 6 Pokémon, plage 35–38 ;
+- progression tardive Rival : Tour Radio 61–64, Route Victoire 65–67, Mont Sélénite/Plateau 95 ;
+- Rocket : Proton 3→6, Petrel/Ariana 4→6, Archer 6 ; niveaux dynamiques +2 selon les jalons réels ;
 - vérifier en combat que les talents attendus du Rival se déclenchent selon les archétypes ;
 - Mortimer : Méga réellement déclenchée sans assert ;
 - réception du Mega Ring après badge 4 puis utilisation joueur avant badge 5 ;

@@ -24,9 +24,9 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | 30 starters + Évoli | `[DONE]` | Logique cœur intégrée. |
 | Sélecteur — curseur initial / annulation | `[PARTIEL]` | Correction intégrée automatiquement ; comportement visuel à revalider en ROM fraîche. |
 | Œuf d’Orme / second starter distinct | `[PARTIEL]` | Garde-fou intégré ; flow à revalider en ROM. |
-| Évolutions — conformité 9G / Fil Liaison | `[PARTIEL]` | Runtime migré et validateur générique intégré à la CI : `EVO_TRADE`, seuils artificiels, Fil Liaison hors contrat et objets d’échange directs sont bloqués. Reste la régénération wiki/Pokédex depuis le runtime final. |
-| Rival — starter fixe / niveau 17 / 1→3→4→6 | `[PARTIEL]` | JSON/runtime/validateurs intégrés, talents canoniques déterministes lorsqu’ils sont légaux pour la forme envoyée ; combats ROM à observer. |
-| Rocket — 3→4→6 / Méga FINAL | `[PARTIEL]` | JSON/runtime/validateurs intégrés ; combats ROM à observer. |
+| Évolutions — conformité 9G / Fil Liaison | `[DONE]` | Runtime migré, Pokédex régénéré pour 102 espèces et deux validateurs CI protègent la conformité runtime ainsi que l'idempotence des données joueur. |
+| Rival — starter fixe / progression réelle | `[PARTIEL]` | Les 7 combats sont synchronisés depuis `rival.json` sur le prochain cap majeur : 17, 29–32, 35–38, 61–64, 65–67, 95 et 95. Tailles réelles 1→4→6, Méga dès le combat 4 ; observation ROM encore utile. |
+| Rocket — phases scénario / Méga FINAL | `[PARTIEL]` | Les sept combats réels sont protégés : Proton 3→6, Petrel/Ariana 4→6, Archer 6 ; niveaux dynamiques dernier jalon +2 et Méga FINAL. Combats ROM à observer. |
 | Archer = Méga-Sharpedo immédiat | `[PARTIEL]` | Set et garde-fou automatisés ; transformation à observer en ROM. |
 | Mega Ring après Mortimer / Méga joueur | `[DONE]` | Anneau remis après le badge 4 ; START libéré pour la commande Méga, SELECT ouvre l’aide des attaques ; garde-fou automatisé. Observation ROM de confort conservée. |
 | Méga-Ectoplasma de Mortimer | `[DONE]` | Équipes NORMAL/HARD équipées de l’Ectoplasmite ; test de combat : Corps Maudit → Méga-Ectoplasma → Marque Ombre. |
@@ -45,7 +45,7 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | Headbutt | `[DONE]` | 4 tables dédiées. |
 | Safari | `[DONE]` | 53 pools. |
 | Wiki joueur FR/EN | `[DONE]` | Baseline visuelle/structurelle validée : Accueil, Guide, cartes/sprites, Roadmap, Changements et Boss & Conseils. Ne pas refaire le style global. |
-| Pokédex — méthodes d’évolution | `[À CORRIGER]` | Le wiki reflète encore des méthodes HnS obsolètes. Corriger d’abord le runtime selon `EVOLUTIONS.md`, puis régénérer les données Pokédex ; ne pas corriger les JS générés à la main. |
+| Pokédex — méthodes d’évolution | `[DONE]` | Données régénérées depuis les fichiers runtime par `sync_tactica_pokedex_evolutions.py` ; 102 fiches corrigées et mode `--check` intégré à la CI. |
 | Sync Localisations — niveaux | `[DONE]` | Générateur canonique. |
 | Sync Localisations — espèces / recherche | `[DONE]` | Générateur étendu aux espèces et `data-search`; synchronisations `--check` et CI Tactica vertes sur le HEAD de la PR de nettoyage. |
 | Compteurs Pokédex | `[DONE]` | Recalculés depuis les tables standard + pools spéciaux visibles ; synchronisation idempotente confirmée par la CI Tactica. |
@@ -66,7 +66,6 @@ Ne jamais transformer « non testé manuellement » en « non implémenté », e
 
 ## Prochain ordre de travail
 
-1. intégrer les correctifs UI/Difficulty/Méga après CI verte ;
-2. reprendre l’audit des évolutions selon `EVOLUTIONS.md` et les résultats owner à venir ;
-3. reconstruire une ROM candidate propre ;
-4. effectuer le playthrough owner complet et consigner les défauts observés.
+1. fusionner la branche courante après CI verte ;
+2. reconstruire une ROM candidate propre ;
+3. effectuer le playthrough owner demandé et consigner uniquement les défauts observés.

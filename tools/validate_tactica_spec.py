@@ -228,7 +228,7 @@ require("species_draw" not in rival["selection"] and
 rosters = rival["fight_rosters"]
 require(set(rosters["categories"]) == set(starter["categories"]),
         "six rival roster categories")
-require(rosters["party_sizes"] == {"before_first_badge": 1, "after_badge_1": 3,
+require(rosters["party_sizes"] == {"before_first_badge": 1,
         "after_badge_2": 4, "after_badge_3_and_later": 6}, "rival party progression")
 require(rosters["phase_slots"] == {"early": [1, 2, 3], "mid": [1, 2, 3, 4],
         "final": [1, 2, 3, 4, 5, 6]}, "persistent rival slots")

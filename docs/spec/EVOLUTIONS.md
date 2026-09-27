@@ -274,23 +274,11 @@ Ajouter des contrôles génériques afin d'éviter une nouvelle dérive :
 - les mécaniques impossibles remplacées par Fil Liaison doivent être listées explicitement ;
 - le wiki doit afficher uniquement les méthodes réellement utilisables dans Pokémon Tactica.
 
-## 8. Portée de ce document
-
-Ce document décrit la **cible**. Il ne signifie pas que les évolutions actuelles du runtime ont déjà été corrigées.
-
-À la date de création de ce fichier :
-
-- l'audit a identifié la dérive ;
-- la règle Fil Liaison est validée par l'owner ;
-- les corrections runtime restent à appliquer ;
-- les données générées et le wiki devront être régénérés après correction du code.
-
-
-## 8. État de migration au 27 septembre 2026
+## 8. État courant
 
 - méthodes non-échange réalisables : restaurées ;
 - échanges simples : Fil Liaison ;
 - échanges + objet : objet officiel tenu + Fil Liaison ;
 - mécaniques impossibles validées : Fil Liaison pour Sépiatop, Dofin, Tutafeh-Galar, Ursaring et Meltan ;
 - validateur générique intégré : routes `EVO_TRADE`, `IF_MIN_LEVEL` artificiels sur `EVO_ITEM`, Fil Liaison non autorisé et objets d’échange utilisables directement sont refusés par la CI ;
-- prochaine étape : régénérer le Pokédex/wiki depuis le runtime finalisé et vérifier l’idempotence.
+- Pokédex/wiki : 102 fiches régénérées depuis le runtime final ; `tools/sync_tactica_pokedex_evolutions.py --check` garantit l'idempotence en CI.
