@@ -2,104 +2,139 @@
 
 ## Candidate owner
 
-**Candidate owner courante : gameplay `31fe7d7c9d33dcc757fede543db249651f7dc53f`.**
+**Aucune candidate owner actuelle ne doit être considérée comme représentative de l’état courant.**
 
-- fusion dans `integration/v1` : PR #34 ;
-- CI d'intégration verte : [Family Remix validation #36308010995](https://github.com/DyHyugal/pokemon-tactica/actions/runs/36308010995) ;
-- build propre : `make clean && make hns -j4`, terminé le 27 septembre 2026 à 11:12 CEST ;
-- ROM : `pokehns.gba`, 33 554 432 octets ;
-- SHA-256 : `EFD0D15B78A64EC9A9E5CE712F0FF7C9B80DD0E6AD04A965B1362BEFADC15FE4`.
+L’ancienne candidate `31fe7d7c9d33dcc757fede543db249651f7dc53f` reste un témoin historique du playtest effectué jusqu’à Mortimer, mais elle précède notamment :
 
-Le commit de documentation qui enregistre cette candidate ne modifie ni le gameplay ni la ROM : le SHA de référence du binaire reste `31fe7d7c9d33dcc757fede543db249651f7dc53f`.
+- la migration canonique des évolutions / Fil Liaison ;
+- la régénération du Pokédex évolution ;
+- les correctifs de légalité boss ;
+- la PR #48 sur l’introduction Tactica, HARD/Recommended et le message du second starter.
 
-**Cette candidate précède le nouveau contrat d’évolution de `EVOLUTIONS.md` et ne valide donc pas la conformité 9G / Fil Liaison.**
+Le dernier `integration/v1` doit être reconstruit proprement avant tout nouveau playtest. Un simple `git pull` ne met jamais à jour une ROM déjà compilée.
 
-Les contrôles mGBA de l'ancienne candidate ne couvrent pas ce bloc et ne sont pas reportés comme effectués.
+## Bloquant connu avant la prochaine candidate
 
-## Ce qui est déjà couvert automatiquement
+### Rival — progression encore absente du HEAD courant
 
-Les points suivants ne doivent pas être recodés simplement parce qu’une observation ROM reste souhaitable :
+Le contrat owner issu du playtest n’est **pas encore présent dans le runtime courant** :
+
+- premier duel : 1 Pokémon niveau 17 — conforme ;
+- après Hector : attendu **4 Pokémon niveaux 29–32** ;
+- Tour Cendrée : attendu **6 Pokémon niveaux 35–38** ;
+- combats suivants : progression alignée sur les jalons réellement joués.
+
+Au HEAD courant, `data/spec/rival.json` contient encore `after_badge_1: 3` et `src/data/trainers_hns.party` conserve notamment les anciens niveaux **15/16/18** au combat 2 puis **22/23/22/24** au combat 3.
+
+Ce correctif doit être réintégré avant de déclarer une nouvelle candidate « complète et à jour ».
+
+## Couverture automatisée actuelle
+
+Les points suivants sont intégrés et protégés automatiquement. Une observation ROM reste utile, mais leur absence de playtest manuel ne justifie pas de les recoder :
 
 - vitesse native x1/x2/x3/x4 ;
 - audio indépendant ;
 - Shiny Rate ;
 - starter/œuf — logique cœur ;
-- curseur initial et retour après annulation — garde-fous automatiques ;
-- premier rival niveau 17 et stade légal ;
-- rosters Rival/Rocket et progression ;
-- talents canoniques du Rival appliqués lorsqu’ils sont légaux pour la forme envoyée ;
-- talents pré-Méga légaux ;
+- curseur initial et retour après annulation ;
+- second starter distinct du starter principal ;
+- évolutions conformes à `EVOLUTIONS.md` ;
+- échanges simples → Fil Liaison ;
+- échanges + objet → objet officiel tenu + Fil Liaison ;
+- cas impossibles validés → Fil Liaison ;
+- absence d’anciens `EVO_TRADE` actifs ;
+- Pokédex évolution régénéré depuis le runtime et protégé par `sync_tactica_species_evolutions.py --check` ;
+- rosters Rocket et règles Méga ;
+- talents canoniques du Rival lorsqu’ils sont légaux pour la forme envoyée ;
 - Mega Ring placé après Mortimer ;
-- premier accès réel pour les encounters ;
-- Route 36 à 14–17 ;
-- Scorplane Route 34 jour après badge 2 ;
-- Wattouat Route 31 jour ;
-- synchronisation runtime des 405 tables ;
+- premier accès réel des encounters ;
+- 405 tables standard synchronisées ;
+- Scorplane Route 34 après badge 2 ;
+- Wattouat Route 31 ;
 - unicité globale des Méga ;
 - exactement une Méga par Champion à partir de Mortimer ;
-- Jeannine : Aéromite reste l’ace ; Méga-Kravarech @ Dragalgite remplace Gaulet ;
-- courbe Kanto 75 → 80 → 85 → 90 → 95 → 100 et groupe central partagé ;
-- match retour du Maître niveau 100 : source canonique/runtime/objets uniques ;
-- Boss & Conseils généré depuis les sources canoniques ; cartes et sprites du Guide générés ;
-- Boss & Conseils : cartes repliables, sprites de dresseurs/Pokémon et talents du Rival générés ;
-- Simiabraz de Chuck/Aldo avec Acrobatie et Méga-Altaria à bonheur maximal pour Retour ;
-- Localisations/Pokédex dérivés des encounters canoniques.
+- Jeannine : Aéromite reste l’ace, Méga-Kravarech remplace Gaulet ;
+- progression Kanto 75 → 80 → 85 → 90 → 95 → 100 ;
+- match retour du Maître niveau 100 ;
+- Boss & Conseils et assets du Guide générés depuis les sources canoniques ;
+- PR #48 : intro Chen/Tactica, avertissements HARD/Recommended/Custom et refus du second starter identique.
 
-## Évolutions — validation à refaire après migration
+## Évolutions — migration terminée
 
-Les observations et tests historiques sur les « évolutions solo » prouvent uniquement que l’ancienne implémentation HnS fonctionnait techniquement. Ils ne valident plus la cible produit.
+La migration définie dans [EVOLUTIONS.md](EVOLUTIONS.md) est terminée côté runtime et données Pokédex.
 
-Après implémentation de [EVOLUTIONS.md](EVOLUTIONS.md), couvrir au minimum :
+Témoins utiles lors du prochain playtest :
 
 - échange simple → Fil Liaison ;
 - échange + objet → objet officiel tenu + Fil Liaison ;
-- mécanique impossible validée → Fil Liaison ;
-- évolution par pierre officielle → aucune contrainte de niveau ajoutée ;
 - Élektek → Élekable = Électriseur tenu + Fil Liaison ;
 - Rhinoféros → Rhinastoc = Protecteur tenu + Fil Liaison ;
 - Téraclope → Noctunoir = Tissu Fauche tenu + Fil Liaison ;
 - Mélancolux → Lugulabre = Pierre Nuit uniquement ;
 - Lampéroie → Ohmassacre = Pierre Foudre uniquement ;
-- Pokédex/wiki régénéré et identique au runtime réellement compilé.
+- mécanique impossible validée → Fil Liaison ;
+- évolution officielle par pierre → aucune contrainte de niveau artificielle.
 
-Aucun de ces contrôles ne doit être marqué effectué avant la migration runtime.
+Le Pokédex n’est plus une source manuelle pour ces méthodes : ses champs d’évolution sont générés depuis les fichiers runtime.
 
 ## Témoins ROM encore utiles
 
+### Introduction / starter
+
+- intro Chen = texte Pokémon Tactica, sans ancien speech vanilla résiduel ;
+- avertissement HARD lisible ;
+- RECOMMENDED / CUSTOM compréhensibles ;
+- second starter identique → message dédié puis retour au flow existant ;
+- curseur starter et annulation à revalider comme témoins de non-régression.
+
+### Difficulty
+
+- option visible ;
+- sélection utilisable ;
+- persistance après sauvegarde/rechargement ;
+- ne pas toucher à Vitesse, Audio ou Shiny Rate sans défaut reproduit.
+
+### Méga
+
+- Mortimer déclenche réellement sa Méga ;
+- Mega Ring reçu après badge 4 ;
+- joueur + pierre compatible → commande Méga disponible ;
+- forme et talent avant/après transformation cohérents ;
+- Jeannine : Kravarech entre sous sa forme/talent de base puis Méga-évolue en Adaptabilité.
+
 ### Kanto et deuxième Ligue
 
-- vérifier que les caps affichés et appliqués suivent 75 / 80 / 85 / 90 / 95 / 100 ;
-- vérifier que Morgane, Erika et Jeannine partagent le cap 80 quel que soit leur ordre ;
-- vérifier l’équipe niveau 100 du match retour du Maître et ses six objets distincts ;
-
-### Starter / œuf
-
-- première ouverture : curseur en haut, pas sur `Retour` ;
-- annuler un starter : revenir exactement sur ce Pokémon ;
-- vérifier Élekid comme ancien cas de régression ;
-- œuf d’Orme : impossible de récupérer exactement le starter principal.
-
-### Rival / Rocket / Méga
-
-- premier rival : un Pokémon, niveau 17, stade légal ;
-- progression des tailles Rival/Rocket ;
-- vérifier en combat que les talents attendus du Rival se déclenchent selon les archétypes ;
-- Mortimer : Méga réellement déclenchée sans assert ;
-- réception du Mega Ring après badge 4 puis utilisation joueur avant badge 5 ;
-- Jeannine : Aéromite reste l’ace ; Kravarech du slot 3 entre avec un talent de base légal puis Méga-évolue en Adaptabilité.
+- caps 75 / 80 / 85 / 90 / 95 / 100 ;
+- Morgane, Erika et Jeannine partagent bien le cap 80 ;
+- équipe niveau 100 du match retour du Maître et six objets distincts.
 
 ### Encounters
 
-- Route 31 jour : Wattouat présent ;
-- Route 36 jour : aucun Scorplane/Scorvol, Mimigal restauré au slot 30 % ;
-- Route 34 jour : Scorplane présent après badge 2, niveaux 25–28, slot 30 % ;
-- une méthode tardive sur une ancienne zone ne rehausse pas les niveaux.
+- Route 31 jour : Wattouat ;
+- Route 36 : pas de Scorplane/Scorvol avant le badge 2 ;
+- Route 34 jour : Scorplane niveaux 25–28 ;
+- une méthode tardive sur une ancienne zone ne rehausse pas ses niveaux.
 
 ### UI
 
-- Summary : pages lisibles, aucune superposition/ancienne zone concours parasite, IV/EV exploitables ;
-- HUD : aucune plaque blanche résiduelle à gauche de la barre PV ; action/attaques cohérents ;
-- boutiques : fond rouge, texte noir, sélection lisible.
+- Summary lisible, sans superposition ;
+- HUD combat sans plaque blanche résiduelle ;
+- boutiques lisibles en rouge/noir ;
+- header Options lisible avec `B SAVE & EXIT`.
+
+Le centrage du titre « Pokémon Tactica » sur l’écran titre reste un défaut visuel **non prioritaire**.
+
+## IA HARD — premier vrai test avant toute correction
+
+Ne pas corriger l’IA avant le premier playtest HARD de la candidate courante.
+
+Les anciens retours Mimiqui / Provoc de Cornèbre / Téraclope sont des points d’observation, pas des bugs confirmés sur la version actuelle.
+
+Après test :
+
+- comportement correct → ne rien modifier ;
+- défauts ciblés reproduits → correction générique ciblée ;
+- comportement global insuffisant → réévaluation du bloc IA.
 
 ## Protocole candidate
 
@@ -108,11 +143,10 @@ git fetch origin
 git switch integration/v1
 git pull --ff-only origin integration/v1
 git rev-parse HEAD
-make clean && make hns -j4
+make clean
+make hns -j4
 ```
 
-Avant de lancer mGBA, vérifier que `pokehns.gba` vient bien d’être régénérée après le pull.
+Avant de lancer mGBA, vérifier que `pokehns.gba` vient réellement d’être régénérée après le pull.
 
-Le playtest doit ensuite noter le SHA exact et uniquement les comportements réellement observés.
-
-Un simple `git pull` ne met pas à jour la ROM existante.
+Le compte rendu de playtest doit toujours noter le SHA exact de la ROM testée et uniquement les comportements réellement observés.
