@@ -129,11 +129,15 @@ Une fois le bloc Méga entièrement terminé, poursuivre la migration canonique 
 - migration Fil Liaison : toutes les évolutions par échange ont été converties vers Fil Liaison, avec objet officiel tenu lorsque requis ; les routes `EVO_TRADE` et remplacements HnS associés ne font plus partie du runtime Tactica ;
 - PR #40 : correctifs de légalité boss déjà fusionnés, notamment Blanche/Ursaring et Mortimer/Ossatueur d’Alola.
 
-Travail restant principal :
+État du bloc évolution :
 
-- audit des mécaniques impossibles : **traité** pour Sépiatop, Dofin, Tutafeh-Galar, Ursaring et Meltan, convertis vers Fil Liaison ;
-- validateur générique de conformité évolution : **traité** ; il interdit les routes `EVO_TRADE`, les `IF_MIN_LEVEL` artificiels sur `EVO_ITEM`, les Fil Liaison hors liste canonique et les objets d'échange utilisables directement ;
-- régénérer le wiki/Pokédex depuis le runtime corrigé.
+- méthodes non-échange officielles : traitées ;
+- échanges simples et échanges + objet : traités via Fil Liaison ;
+- mécaniques impossibles : traitées pour Sépiatop, Dofin, Tutafeh-Galar, Ursaring et Meltan ;
+- validateur générique : intégré à la CI ;
+- Pokédex/wiki : champs d'évolution régénérés depuis le runtime et verrouillés par un synchroniseur `--check`.
+
+**Le bloc évolution est terminé. Ne pas le rouvrir sans défaut démontré.**
 
 ### PRIORITÉS SUIVANTES — seulement après les quatre blocs ci-dessus
 
@@ -240,11 +244,7 @@ Audit déjà établi :
 - échanges + objet : migrés vers **objet officiel tenu + Fil Liaison** ;
 - aucune route `EVO_TRADE` ne doit subsister dans le runtime Tactica.
 
-Ordre de correction restant :
-
-1. mettre à jour les documents de statut finaux ;
-2. régénérer le wiki/Pokédex depuis les sources runtime corrigées ;
-3. vérifier l'idempotence des générateurs et la CI sur le SHA final.
+Le prochain travail ne concerne plus les évolutions. Reprendre l'ordre global de priorité défini plus haut sans revenir sur ce bloc sauf régression démontrée.
 
 Ne pas considérer le wiki actuel comme source de vérité pendant cette migration : il doit refléter le runtime corrigé, pas l’inverse.
 
