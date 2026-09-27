@@ -38,6 +38,7 @@
 #if IS_HNS
 
 extern const u8 gText_Oak_Welcome[];
+extern const u8 gText_Oak_Pokemon[];
 extern const u8 gText_Oak_MainSpeech[];
 extern const u8 gText_Oak_AndYouAre[];
 extern const u8 gText_Oak_BoyOrGirl[];
@@ -350,9 +351,11 @@ static void Task_NewGameHnsSpeech_WaitForSpriteFadeInWelcome(u8 taskId)
 static void Task_NewGameHnsSpeech_FamilyRemixDisclaimer(u8 taskId)
 {
     static const u8 sText_FamilyRemixDisclaimer[] = _(
-        "{COLOR RED}POKéMON TACTICA defaults to HARD.{COLOR DARK_GRAY}\p"
-        "Boss battles are more strategic and demanding.\p"
-        "NORMAL remains available in the settings if you prefer a lighter challenge.");
+        "{COLOR RED}POKéMON TACTICA démarre en HARD.{COLOR DARK_GRAY}\p"
+        "Les Dresseurs utilisent leurs équipes\n"
+        "HARD, plus exigeantes.\p"
+        "NORMAL reste disponible dans les\n"
+        "Options.");
 
     StringCopy(gStringVar4, sText_FamilyRemixDisclaimer);
     AddTextPrinterForMessage(TRUE);
@@ -375,7 +378,7 @@ static void Task_NewGameHnsSpeech_ThisIsAPokemon(u8 taskId)
     if (!gPaletteFade.active && !RunTextPrintersAndIsPrinter0Active())
     {
         gTasks[taskId].func = Task_NewGameHnsSpeech_MainSpeech;
-        StringExpandPlaceholders(gStringVar4, gText_ThisIsAPokemon);
+        StringExpandPlaceholders(gStringVar4, gText_Oak_Pokemon);
         AddTextPrinterWithCallbackForMessage(TRUE, NewGameHnsSpeech_WaitForThisIsPokemonText);
         sHnsSpeechMainTaskId = taskId;
     }
@@ -603,7 +606,7 @@ static void Task_NewGameHnsSpeech_SlideInNewGenderSprite(u8 taskId)
 
 static void Task_NewGameHnsSpeech_ChallengeDisclaimer(u8 taskId)
 {
-    static const u8 sText_Disclaimer[] = _("What challenge are you\nexpecting?\p{COLOR RED}The following settings can be changed\nfrom the PC once you start the game.\lHowever, after starting the game, the\lnuzlocke, randomizer, difficulty and\lchallenge settings can only be made\leasier, not harder.");
+    static const u8 sText_Disclaimer[] = _("Choisis ton mode de jeu.\p{COLOR RED}RECOMMENDED{COLOR DARK_GRAY} applique le preset\nTactica et démarre directement.\pCUSTOM te laisse régler chaque option.\pAprès le départ, Randomizer, Nuzlocke,\lDifficulty et Challenges ne pourront\lêtre qu'assouplis.");
     NewGameHnsSpeech_ClearWindow(0);
     StringCopy(gStringVar4, sText_Disclaimer);
     AddTextPrinterWithCustomSpeedForMessage(FALSE, 2);

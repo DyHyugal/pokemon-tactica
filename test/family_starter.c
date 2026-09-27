@@ -499,7 +499,7 @@ TEST("Family starter: Elm egg cannot duplicate the primary starter")
     FlagSet(FLAG_SYS_POKEMON_GET);
     VarSet(VAR_FAMILY_STARTER_SPECIES, SPECIES_CHARCADET);
     FamilyStarter_GiveEgg();
-    EXPECT_EQ(gSpecialVar_Result, MON_CANT_GIVE);
+    EXPECT_EQ(gSpecialVar_Result, MON_CANT_GIVE_DUPLICATE);
     EXPECT_EQ(gPlayerPartyCount, 1);
     EXPECT(CheckBagHasItem(ITEM_MYSTERY_EGG, 1));
     EXPECT_EQ(VarGet(VAR_FAMILY_EGG_SPECIES), SPECIES_NONE);

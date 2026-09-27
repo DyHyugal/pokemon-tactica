@@ -1082,6 +1082,7 @@ NewBarkTown_Lab_FamilyEggChoice::
 	call FamilyStarter_Select
 	goto_if_eq VAR_RESULT, FALSE, NewBarkTown_Lab_FamilyEggLater
 	callnative FamilyStarter_GiveEgg
+	goto_if_eq VAR_RESULT, MON_CANT_GIVE_DUPLICATE, NewBarkTown_Lab_FamilyEggDuplicate
 	goto_if_eq VAR_RESULT, MON_CANT_GIVE, NewBarkTown_Lab_FamilyEggNoRoom
 	copyvar VAR_0x8007, VAR_RESULT
 	bufferspeciesname STR_VAR_1, VAR_FAMILY_EGG_SPECIES
@@ -1097,6 +1098,10 @@ NewBarkTown_Lab_FamilyEggPC::
 
 NewBarkTown_Lab_FamilyEggLater::
 	msgbox NewBarkTown_Lab_FamilyEggKeep, MSGBOX_DEFAULT
+	return
+
+NewBarkTown_Lab_FamilyEggDuplicate::
+	msgbox NewBarkTown_Lab_FamilyEggDuplicateText, MSGBOX_DEFAULT
 	return
 
 NewBarkTown_Lab_FamilyEggNoRoom::
@@ -1122,6 +1127,11 @@ NewBarkTown_Lab_FamilyEggRecognized:
 NewBarkTown_Lab_FamilyEggKeep:
 	.string "Garde l'œuf. Nous pourrons\n"
 	.string "en reparler quand tu voudras.$"
+NewBarkTown_Lab_FamilyEggDuplicateText:
+	.string "Bien vu, tu as reconnu\n"
+	.string "l'espèce !\p"
+	.string "Mais tu possèdes déjà ce POKéMON.\n"
+	.string "Choisis-en un autre !$"
 NewBarkTown_Lab_FamilyEggFull:
 	.string "Ton équipe et ton PC sont pleins.\p"
 	.string "Garde l'œuf et reviens après\n"
