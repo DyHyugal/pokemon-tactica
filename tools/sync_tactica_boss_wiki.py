@@ -58,6 +58,7 @@ SPECIES_FR = {
     "Mega Charizard Y": "Méga-Dracaufeu Y",
     "Mega Raichu Y": "Méga-Raichu Y",
     "Rotom-Wash": "Motisma-Lavage",
+    "Darmanitan-Galar": "Darumacho de Galar",
 }
 
 
@@ -110,7 +111,7 @@ def rival_groups() -> OrderedDict[tuple[str, str, str], list[dict]]:
         for slot, member in enumerate(party, 1):
             species = member.get("mega_species") or member.get("target_final_species") or member["family"]
             if member["family"] == "saved starter":
-                species = member.get("mega_species") or fixed[archetype]
+                species = member.get("mega_species") or member.get("target_final_species") or fixed[archetype]
                 moves = ["level-legal moves"]
             else:
                 moves = member["phase_moves"]["final"]
@@ -185,6 +186,8 @@ def pokemon_sprite(species: str) -> str:
     local = {
         "Mega Charizard X": "../assets/mega-charizard-x.png",
         "Mega Charizard Y": "../assets/mega-charizard-y.png",
+        "Great Tusk": "https://play.pokemonshowdown.com/sprites/dex/greattusk.png",
+        "Iron Hands": "https://play.pokemonshowdown.com/sprites/dex/ironhands.png",
     }
     if species in local:
         return local[species]

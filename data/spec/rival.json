@@ -190,7 +190,8 @@
           "nature": "Jolly",
           "hard_evs": "252 Atk / 252 Spe / 4 HP",
           "ability": "Blaze",
-          "mega_ability": "Speed Boost"
+          "mega_ability": "Speed Boost",
+          "target_final_species": "Blaziken"
         },
         {
           "family": "Bulbasaur",
@@ -349,7 +350,8 @@
           "nature": "Adamant",
           "hard_evs": "252 Atk / 252 Spe / 4 HP",
           "ability": "Torrent",
-          "mega_ability": "Swift Swim"
+          "mega_ability": "Swift Swim",
+          "target_final_species": "Swampert"
         },
         {
           "family": "Horsea",
@@ -508,7 +510,8 @@
           "nature": "Jolly",
           "hard_evs": "252 Atk / 252 Spe / 4 HP",
           "ability": "Chlorophyll",
-          "mega_ability": "Chlorophyll"
+          "mega_ability": "Chlorophyll",
+          "target_final_species": "Sceptile"
         },
         {
           "family": "Hawlucha",
@@ -666,7 +669,8 @@
           "mega_species": null,
           "nature": "Jolly",
           "hard_evs": "252 Atk / 252 Spe / 4 HP",
-          "ability": "Sheer Force"
+          "ability": "Sheer Force",
+          "target_final_species": "Electivire"
         },
         {
           "family": "Raichu-Alola",
@@ -825,7 +829,8 @@
           "mega_species": null,
           "nature": "Jolly",
           "hard_evs": "252 Atk / 252 Spe / 4 HP",
-          "ability": "Sand Rush"
+          "ability": "Sand Rush",
+          "target_final_species": "Excadrill"
         },
         {
           "family": "Larvitar",
@@ -984,7 +989,8 @@
           "mega_species": null,
           "nature": "Jolly",
           "hard_evs": "252 Atk / 252 Spe / 4 HP",
-          "ability": "Gorilla Tactics"
+          "ability": "Gorilla Tactics",
+          "target_final_species": "Darmanitan-Galar"
         },
         {
           "family": "Amaura",

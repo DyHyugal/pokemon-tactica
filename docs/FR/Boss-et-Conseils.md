@@ -234,7 +234,7 @@ Le rival conserve un starter fixe selon son archétype et progresse de 1 à 3, 4
 | Pokémon | Niv. | Objet | Talent | Capacités |
 |---|---:|---|---|---|
 | Wattapik | Dynamique | Champ’Duit | Créa-Élec | Picots · Soin · Coup d’Jus · Souvenir |
-| Élekid | Dynamique | Ceinture Pro | Sans Limite | level-legal moves |
+| Élekable | Dynamique | Ceinture Pro | Sans Limite | level-legal moves |
 | Raichu-Alola | Dynamique | Orbe Vie | Surf Caudal | Machination · Tonnerre · Psyko · Surf |
 | Salarsen | Dynamique | Spray Gorge | Punk Rock | Champ Électrifié · Overdrive · Bang Sonique · Bombe Beurk |
 | Paume-de-Fer | Dynamique | Veste de Combat | Charge Quantique | Vampi-Poing · Éclair Fou · Poing Glace · Change Éclair |
@@ -245,7 +245,7 @@ Le rival conserve un starter fixe selon son archétype et progresse de 1 à 3, 4
 | Pokémon | Niv. | Objet | Talent | Capacités |
 |---|---:|---|---|---|
 | Hippodocus | Dynamique | Roche Lisse | Sable Volant | Piège de Roc · Séisme · Paresse · Cyclone |
-| Rototaupe | Dynamique | Orbe Vie | Baigne Sable | level-legal moves |
+| Minotaupe | Dynamique | Orbe Vie | Baigne Sable | level-legal moves |
 | Méga-Tyranocif | Dynamique | Tyranocivite | Sable Volant | Danse Draco · Mâchouille · Éboulement · Poing Glace |
 | Carchacrok | Dynamique | Baie Nanone | Peau Dure | Danse Lames · Séisme · Draco-Griffe · Tête de Fer |
 | Scorvol | Dynamique | Orbe Toxique | Soin Poison | Séisme · Sabotage · Toxik · Atterrissage |
@@ -256,7 +256,7 @@ Le rival conserve un starter fixe selon son archétype et progresse de 1 à 3, 4
 | Pokémon | Niv. | Objet | Talent | Capacités |
 |---|---:|---|---|---|
 | Sorbouboul | Dynamique | Roche Glace | Alerte Neige | Blizzard · Lyophilisation · Luminocanon · Provoc |
-| Darumaka-Galar | Dynamique | Bandeau Choix | Entêtement | level-legal moves |
+| Darumacho de Galar | Dynamique | Bandeau Choix | Entêtement | level-legal moves |
 | Dragmara | Dynamique | Lunettes Sages | Alerte Neige | Blizzard · Lyophilisation · Telluriforce · Tonnerre |
 | Sandslash-Alola | Dynamique | Orbe Vie | Chasse-Neige | Danse Lames · Chute Glace · Tête de Fer · Séisme |
 | Hydragla | Dynamique | Lumargile | Chasse-Neige | Chute Glace · Voile Aurore · Branchicrok · Éboulement |

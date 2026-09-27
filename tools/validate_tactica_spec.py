@@ -184,12 +184,12 @@ require(rosters["phase_slots"] == {"early": [1, 2, 3], "mid": [1, 2, 3, 4],
         "final": [1, 2, 3, 4, 5, 6]}, "persistent rival slots")
 require(rosters.get("mega_unlock") == "after_badge_4", "rival Mega unlock")
 expected_rival_finals = {
-    "fire": ["Torkoal", "saved starter", "Venusaur", "Ninetales", "Lilligant-Hisui", "Great Tusk"],
-    "water": ["Pelipper", "saved starter", "Kingdra", "Politoed", "Barraskewda", "Dracovish"],
-    "grass": ["Rillaboom", "saved starter", "Hawlucha", "Ferrothorn", "Gholdengo", "Arboliva"],
-    "electric": ["Pincurchin", "saved starter", "Raichu-Alola", "Toxtricity", "Iron Hands", "Manectric"],
-    "ground": ["Hippowdon", "saved starter", "Tyranitar", "Garchomp", "Gliscor", "Corviknight"],
-    "ice": ["Vanilluxe", "saved starter", "Aurorus", "Sandslash-Alola", "Arctovish", "Baxcalibur"],
+    "fire": ["Torkoal", "Blaziken", "Venusaur", "Ninetales", "Lilligant-Hisui", "Great Tusk"],
+    "water": ["Pelipper", "Swampert", "Kingdra", "Politoed", "Barraskewda", "Dracovish"],
+    "grass": ["Rillaboom", "Sceptile", "Hawlucha", "Ferrothorn", "Gholdengo", "Arboliva"],
+    "electric": ["Pincurchin", "Electivire", "Raichu-Alola", "Toxtricity", "Iron Hands", "Manectric"],
+    "ground": ["Hippowdon", "Excadrill", "Tyranitar", "Garchomp", "Gliscor", "Corviknight"],
+    "ice": ["Vanilluxe", "Darmanitan-Galar", "Aurorus", "Sandslash-Alola", "Arctovish", "Baxcalibur"],
 }
 expected_rival_abilities = {
     "fire": ["Drought", "Blaze", "Chlorophyll", "Drought", "Chlorophyll", "Protosynthesis"],
