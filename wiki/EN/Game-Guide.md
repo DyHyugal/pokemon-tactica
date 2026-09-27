@@ -1,22 +1,22 @@
-[Home](Home.md) · [Game Guide](Game-Guide.md) · [Changes](Changes.md) · [Pokédex](Pokedex.md) · [Locations](Locations.md) · [Bosses & Tips](Bosses-and-Tips.md) · [Credits](Credits-and-Versions.md) · [Roadmap](Roadmap.md) · **[FR](../FR/Guide-de-jeu.md)**
+[Home](Home.md) · [Guide](Game-Guide.md) · [Changes](Changes.md) · [Pokédex](Pokedex.md) · [Locations](Locations.md) · [Routes & Cities](Routes-and-Cities.md) · [Bosses & Tips](Bosses-and-Tips.md) · [Credits](Credits-and-Versions.md) · [Roadmap](Roadmap.md) · **[FR](../FR/Guide-de-jeu.md)**
 
-# Game Guide — concise walkthrough
+# Guide — concise walkthrough
 
 This page is mainly a **where-do-I-go-next walkthrough**. It follows the main Heart & Soul story flow, adapted to Pokémon Tactica. Optional detours, minor items and wild encounters are intentionally left out: use **Pokédex**, **Locations** and **Bosses & Tips** to build and prepare your team.
 
 > Pokémon, levels, bosses and encounters come from Tactica. The Heart & Soul walkthrough is used only as a reference for story order and locations.
 
+![Johto map in Pokémon Tactica](../../docs/assets/guide-johto.png)
+
 ## Start → Badge 1: Falkner
 
-**New Bark Town** — configure your options, talk to Professor Elm and choose your Tactica starter. **Route 29 → Cherrygrove → Route 30** — reach Mr. Pokémon's house and obtain the Mystery Egg / Pokédex. Return toward **New Bark Town**: the first rival battle triggers on the way. Then return to Elm's Lab. Head back through **Routes 30 and 31** to **Violet City**. Clear **Sprout Tower** to finish the city's required progression. Challenge **Falkner**.
-
+**New Bark Town** — configure your options and choose your first Tactica starter in Professor Elm's lab. Cross **Route 29 → Cherrygrove → Route 30**, reach Mr. Pokémon and receive the Mystery Egg / Pokédex. Fight your rival on the way back, then return to **Elm's lab** for the theft and police sequence. **This is where Tactica offers the second starter**: identify the Egg species, choose a species different from your first starter, then keep the Egg and receive any associated items. Continue through Routes 30 and 31 to **Violet City**, clear Sprout Tower and defeat **Falkner**.
 
 **Tactica cap: 17.**
 
 ## Badge 1 → Badge 2: Bugsy
 
-After Falkner, follow Elm's aide event at the Pokémon Center: in Tactica this section leads to the **second starter through the Egg system**. Go south through **Route 32**, cross **Union Cave**, then **Route 33**. In **Azalea Town**, talk to Kurt and enter **Slowpoke Well** to remove Team Rocket. Return to the Gym and defeat **Bugsy**. When leaving Azalea to the west, prepare for the next **rival battle**. Cross **Ilex Forest** and obtain **Cut** to open the next route.
-
+After Falkner, continue the normal Violet City progression and head south through **Route 32 → Union Cave → Route 33**. The later event with **Elm's aide does not unlock the second starter**; that choice already happened in Elm's lab after the theft/police sequence. In **Azalea Town**, help Kurt and clear Team Rocket from Slowpoke Well. Defeat **Bugsy**, then prepare for the rival battle while leaving toward Ilex Forest.
 
 **Tactica cap: 25.**
 
@@ -71,14 +71,8 @@ Return to **New Bark Town** for Elm's reward. Complete the mandatory **Kimono Gi
 
 ## Kanto → second League
 
+![Kanto map in Pokémon Tactica](../../docs/assets/guide-kanto.png)
+
 Kanto is more open, but this route gives a clear main progression:
 
 After the first League, obtain the **S.S. Ticket** from Elm and sail from **Olivine** to Kanto. **Vermilion City** — defeat **Lt. Surge**. Reach **Saffron City** and defeat **Sabrina**. Continue to **Celadon City** and defeat **Erika**. Travel down Cycling Road to **Fuchsia City** and defeat **Janine**. Head toward **Lavender / Power Plant** and complete the **Machine Part** quest. Return to **Cerulean City**, finish the Rocket sequence, then defeat **Misty**. Obtain the Radio upgrade in **Lavender**, wake Snorlax near Vermilion and cross **Diglett's Cave**. Reach **Pewter City** and defeat **Brock**. Continue through **Route 3 → Mt. Moon** for another rival battle. Reach **Cinnabar Island / Seafoam Islands** and defeat **Blaine**. With 15 Badges, speak to **Blue** on Cinnabar, then return to **Viridian City** for the sixteenth Badge. Return to the **Indigo Plateau**: the rival challenges you before the **second League**, then the Kanto Elite Four is available.
-
-
-## If you are stuck
-
-- **A route is blocked?** Go back to your latest Badge and check the immediately following story event above.
-- **A fight is too hard?** Check **Bosses & Tips**, then use **Pokédex** and **Locations** to find answers for your team.
-- **Need to verify a Tactica change?** Use **Changes**: types, stats, abilities, learnsets, QoL and systems are centralized there.
-- **Looking for a Pokémon?** Click its Pokédex card to open its complete ROM-specific entry; the Locations button opens its encounter results directly.
