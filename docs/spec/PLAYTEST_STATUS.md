@@ -2,9 +2,17 @@
 
 ## Candidate owner
 
-**Aucune candidate owner courante.** Les changements de progression Kanto, du match retour du Maître et du wiki postérieurs à l’ancienne ROM exigent une nouvelle fusion dans `integration/v1`, une CI verte et un build propre avant déclaration.
+**Candidate owner courante : gameplay `31fe7d7c9d33dcc757fede543db249651f7dc53f`.**
 
-Les contrôles mGBA de l’ancienne candidate ne couvrent pas ce bloc et ne sont pas reportés comme effectués.
+- fusion dans `integration/v1` : PR #34 ;
+- CI d'intégration verte : [Family Remix validation #36308010995](https://github.com/DyHyugal/pokemon-tactica/actions/runs/36308010995) ;
+- build propre : `make clean && make hns -j4`, terminé le 27 septembre 2026 à 11:12 CEST ;
+- ROM : `pokehns.gba`, 33 554 432 octets ;
+- SHA-256 : `EFD0D15B78A64EC9A9E5CE712F0FF7C9B80DD0E6AD04A965B1362BEFADC15FE4`.
+
+Le commit de documentation qui enregistre cette candidate ne modifie ni le gameplay ni la ROM : le SHA de référence du binaire reste `31fe7d7c9d33dcc757fede543db249651f7dc53f`.
+
+Les contrôles mGBA de l'ancienne candidate ne couvrent pas ce bloc et ne sont pas reportés comme effectués.
 
 ## Ce qui est déjà couvert automatiquement
 
