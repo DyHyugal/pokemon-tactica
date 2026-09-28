@@ -10,6 +10,8 @@ L’ancienne candidate `31fe7d7c9d33dcc757fede543db249651f7dc53f` reste un témo
 - la régénération du Pokédex évolution ;
 - les correctifs de légalité boss ;
 - la PR #48 sur l’introduction Tactica, HARD/Recommended et le message du second starter.
+- la restauration finale des interfaces Summary/HUD/boutiques, du sélecteur Difficulty et des garde-fous Méga ;
+- le centrage du libellé `TACTICA` dans sa bulle sur l'écran titre.
 
 Le dernier `integration/v1` doit être reconstruit proprement avant tout nouveau playtest. Un simple `git pull` ne met jamais à jour une ROM déjà compilée.
 
@@ -131,8 +133,7 @@ Le Pokédex n’est plus une source manuelle pour ces méthodes : ses champs d�
 - HUD combat sans plaque blanche résiduelle ;
 - boutiques lisibles en rouge/noir ;
 - header Options lisible avec `B SAVE & EXIT`.
-
-Le centrage du titre « Pokémon Tactica » sur l’écran titre reste un défaut visuel **non prioritaire**.
+- libellé `TACTICA` visuellement centré dans sa bulle sur l'écran titre.
 
 ## IA HARD — premier vrai test avant toute correction
 

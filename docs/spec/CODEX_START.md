@@ -63,7 +63,8 @@ Les corrections de runtime/assets déjà intégrées ne doivent pas être rééc
 - Summary ;
 - HUD combat ;
 - boutiques ;
-- header Options / `B SAVE & EXIT`.
+- header Options / `B SAVE & EXIT` ;
+- libellé `TACTICA` centré dans sa bulle sur l'écran titre.
 
 Ces écrans restent à **observer dans une ROM fraîche**. Une validation statique verte ne vaut pas validation visuelle.
 
@@ -176,18 +177,6 @@ Après ce premier test HARD :
 - si le comportement global est insuffisant → réévaluer le bloc IA dans son ensemble.
 
 Ne pas lancer d'audit IA avant ce playtest.
-
-## Non prioritaire
-
-### Écran titre
-
-Défaut visuel connu mais non bloquant :
-
-- le titre « Pokémon Tactica » n'est pas parfaitement centré sur l'écran titre avant la sélection de partie / New Game.
-
-Ce point est **non prioritaire** et ne doit pas retarder la prochaine ROM candidate ni le playtest des correctifs importants.
-
-Lorsqu'il sera traité, corriger uniquement le positionnement du titre sans refaire l'écran.
 
 ## Wiki
 

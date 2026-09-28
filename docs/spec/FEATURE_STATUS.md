@@ -57,7 +57,7 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | Balance 26 espèces / 16 learnsets | `[DONE]` | Source canonique + validateur dédié ; Draco-Griffe est légal pour Hydragon au match retour. |
 | Intro Chen / HARD / Recommended | `[DONE]` | PR #48 : speech vanilla remplacé par l’intro Tactica, avertissements HARD/Recommended/Custom clarifiés. |
 | IA HARD | `[À TESTER]` | Aucun correctif à faire avant le premier vrai playtest HARD de la version courante. Les anciens cas Mimiqui/Cornèbre/Téraclope sont seulement des témoins à surveiller. |
-| Écran titre — centrage « Pokémon Tactica » | `[À CORRIGER]` | Défaut visuel connu mais non prioritaire ; ne doit pas bloquer la prochaine candidate. |
+| Écran titre — centrage « Pokémon Tactica » | `[DONE]` | Le libellé `TACTICA` est centré dans sa bulle sans déplacer l'ensemble de la bannière ; le validateur UI protège le centrage interne et la position écran. |
 
 ## Règle de merge
 
@@ -67,6 +67,5 @@ Ne jamais transformer « non testé manuellement » en « non implémenté », e
 
 ## Prochain ordre de travail
 
-1. garder le centrage du titre en non-prioritaire ;
-2. reconstruire une ROM candidate propre depuis le SHA final ;
-3. effectuer le playthrough owner complet ; l’IA HARD est à tester avant toute correction.
+1. reconstruire une ROM candidate propre depuis le SHA final ;
+2. effectuer le playthrough owner complet ; l’IA HARD est à tester avant toute correction.

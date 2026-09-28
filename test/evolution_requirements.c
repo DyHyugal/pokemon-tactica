@@ -68,9 +68,11 @@ TEST("Evolution requirements: Eevee uses current friendship and move conditions"
     struct Pokemon mon;
     bool32 canStopEvo = TRUE;
     u8 friendship = (P_FRIENDSHIP_EVO_THRESHOLD >= GEN_8) ? 160 : 220;
+    u8 previousFairyTypes = gSaveBlock3Ptr->challengeSettings.tx_Mode_Fairy_Types;
     u16 previousHour = SetTimeOfDay(DAY_HOUR_BEGIN);
     u32 i;
 
+    gSaveBlock3Ptr->challengeSettings.tx_Mode_Fairy_Types = TRUE;
     InitEvolutionMon(&mon, SPECIES_EEVEE, 30, MON_FEMALE);
     SetMonData(&mon, MON_DATA_FRIENDSHIP, &friendship);
     for (i = 0; i < MAX_MON_MOVES; i++)
@@ -90,6 +92,7 @@ TEST("Evolution requirements: Eevee uses current friendship and move conditions"
     EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_UMBREON);
 
     SetTimeOfDay(previousHour);
+    gSaveBlock3Ptr->challengeSettings.tx_Mode_Fairy_Types = previousFairyTypes;
 }
 
 
@@ -134,41 +137,43 @@ static const struct LinkingCordEvolutionCase sLinkingCordEvolutionCases[] =
     {SPECIES_PUMPKABOO_SUPER, SPECIES_GOURGEIST_SUPER, ITEM_NONE},
 };
 
-TEST("Evolution requirements: Tactica exposes no legacy trade evolution routes")
+TEST("Evolution requirements: canonical trade families expose no legacy trade route")
 {
-    u32 species;
-    for (species = 1; species < NUM_SPECIES; species++)
-    {
-        const struct Evolution *evos = GetSpeciesEvolutions(species);
-        u32 i;
+    const struct LinkingCordEvolutionCase *testCase = NULL;
+    const struct Evolution *evos;
+    u32 i;
 
-        for (i = 0; evos[i].method != EVOLUTIONS_END; i++)
-            EXPECT_NE(evos[i].method, EVO_TRADE);
-    }
+    for (i = 0; i < ARRAY_COUNT(sLinkingCordEvolutionCases); i++)
+        PARAMETRIZE { testCase = &sLinkingCordEvolutionCases[i]; }
+
+    evos = GetSpeciesEvolutions(testCase->source);
+    EXPECT_NE(evos, NULL);
+    for (i = 0; evos[i].method != EVOLUTIONS_END; i++)
+        EXPECT_NE(evos[i].method, EVO_TRADE);
 }
 
 TEST("Evolution requirements: all canonical trade families use Linking Cord")
 {
+    const struct LinkingCordEvolutionCase *testCase = NULL;
+    struct Pokemon mon;
+    bool32 canStopEvo = TRUE;
+    u16 heldItem;
     u32 i;
 
     for (i = 0; i < ARRAY_COUNT(sLinkingCordEvolutionCases); i++)
+        PARAMETRIZE { testCase = &sLinkingCordEvolutionCases[i]; }
+
+    heldItem = testCase->heldItem;
+    InitEvolutionMon(&mon, testCase->source, 50, MON_GENDER_RANDOM);
+
+    if (heldItem != ITEM_NONE)
     {
-        const struct LinkingCordEvolutionCase *testCase = &sLinkingCordEvolutionCases[i];
-        struct Pokemon mon;
-        bool32 canStopEvo = TRUE;
-        u16 heldItem = testCase->heldItem;
-
-        InitEvolutionMon(&mon, testCase->source, 50, MON_MALE);
-
-        if (heldItem != ITEM_NONE)
-        {
-            EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_LINKING_CORD, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
-            SetMonData(&mon, MON_DATA_HELD_ITEM, &heldItem);
-            EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, heldItem, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
-        }
-
-        EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_LINKING_CORD, NULL, &canStopEvo, CHECK_EVO), testCase->target);
+        EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_LINKING_CORD, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
+        SetMonData(&mon, MON_DATA_HELD_ITEM, &heldItem);
+        EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, heldItem, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
     }
+
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_LINKING_CORD, NULL, &canStopEvo, CHECK_EVO), testCase->target);
 }
 
 
@@ -189,18 +194,17 @@ static const struct ImpossibleEvolutionCase sImpossibleEvolutionCases[] =
 
 TEST("Evolution requirements: unsupported official mechanics use Linking Cord")
 {
+    const struct ImpossibleEvolutionCase *testCase = NULL;
+    struct Pokemon mon;
+    bool32 canStopEvo = TRUE;
     u32 i;
 
     for (i = 0; i < ARRAY_COUNT(sImpossibleEvolutionCases); i++)
-    {
-        const struct ImpossibleEvolutionCase *testCase = &sImpossibleEvolutionCases[i];
-        struct Pokemon mon;
-        bool32 canStopEvo = TRUE;
+        PARAMETRIZE { testCase = &sImpossibleEvolutionCases[i]; }
 
-        InitEvolutionMon(&mon, testCase->source, 60, MON_MALE);
-        EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
-        EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_LINKING_CORD, NULL, &canStopEvo, CHECK_EVO), testCase->target);
-    }
+    InitEvolutionMon(&mon, testCase->source, 60, MON_GENDER_RANDOM);
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_NORMAL, ITEM_NONE, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_LINKING_CORD, NULL, &canStopEvo, CHECK_EVO), testCase->target);
 }
 
 TEST("Evolution requirements: supported atypical mechanics remain native")

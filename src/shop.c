@@ -968,8 +968,11 @@ static u8 CreateShopMenu(u8 martType)
     }
 
 #if IS_HNS
-    // Do not expose the vanilla white shop plate behind the action menu.
+    // Palette 15 belongs to these field windows. Load the Tactica palette
+    // there before using its red background and dark frame.
+    Menu_LoadStdPalAt(BG_PLTT_ID(15));
     FillWindowPixelBuffer(sMartInfo.windowId, PIXEL_FILL(12));
+    SetStandardWindowBorderStyle(sMartInfo.windowId, FALSE);
 #else
     SetStandardWindowBorderStyle(sMartInfo.windowId, FALSE);
 #endif
@@ -1456,6 +1459,9 @@ static void BuyMenuInitWindows(void)
 
     LoadUserWindowBorderGfx(moneyWindowId, 1, BG_PLTT_ID(13));
     LoadMessageBoxGfx(moneyWindowId, 0xA, BG_PLTT_ID(14));
+#if IS_HNS
+    Menu_LoadStdPalAt(BG_PLTT_ID(15));
+#endif
     PutWindowTilemap(moneyWindowId);
     PutWindowTilemap(WIN_ITEM_LIST);
     PutWindowTilemap(WIN_ITEM_DESCRIPTION);

@@ -138,6 +138,9 @@ void SetDefaultChallengeSettings(void)
     gSaveblock3.challengeSettings.newBackgrounds = 1;
     gSaveblock3.challengeSettings.newBattleUI = 0;
     gSaveblock3.challengeSettings.musicOnOff = 0;
+#if IS_HNS
+    gSaveblock3.challengeSettings.tx_Features_LimitDifficulty = 1;
+#endif
     // Family Remix recommended audio preset: start quietly instead of blasting at 100%.
     gSaveblock3.challengeSettings.audioVolumeInitialized = 1;
     gSaveblock3.challengeSettings.musicVolume = 1; // 20%
@@ -308,9 +311,8 @@ void NewGameInitData(void)
     ResetTrainerTowerResults();
     ResetContestLinkResults();
 #if IS_HNS
-    // Family Remix defaults to HARD. NORMAL remains selectable through the
-    // existing difficulty controls.
-    SetCurrentDifficultyLevel(DIFFICULTY_HARD);
+    SetCurrentDifficultyLevel(gSaveBlock3Ptr->challengeSettings.tx_Features_LimitDifficulty
+        ? DIFFICULTY_HARD : DIFFICULTY_NORMAL);
 #else
     SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
 #endif
