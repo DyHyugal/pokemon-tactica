@@ -62,7 +62,7 @@ Détail et audit : [EVOLUTIONS.md](EVOLUTIONS.md).
 - Une Méga importante est unique globalement entre Champions, Conseil 4, Rival et Rocket sauf exception owner explicitement écrite.
 - La forme de base doit entrer avec un talent légal ; le talent de Méga vient de la transformation.
 - Mortimer remet le Mega Ring après le badge 4 puis la CT.
-- En combat, START commande la Méga-Évolution et SELECT affiche l’aide des attaques afin que les deux actions restent accessibles.
+- En combat, START commande la Méga-Évolution et R affiche l’aide des attaques afin que les deux actions restent accessibles.
 - Jeannine conserve Aéromite comme ace et Pokémon de prédilection. Méga-Kravarech @ Dragalgite remplace Gaulet au slot 3 ; Kravarech entre avec un talent de base légal et reçoit Adaptabilité à la transformation.
 - Les Simiabraz de Chuck et d’Aldo utilisent Acrobatie. Méga-Altaria possède le bonheur maximal dans les données runtime afin que Retour atteigne sa puissance maximale ; cette donnée technique n’est pas affichée dans le wiki joueur.
 

@@ -35,7 +35,7 @@ def main() -> None:
     rayquaza_family = (ROOT / "src/data/pokemon/species_info/gen_3_families.h").read_text(encoding="utf-8")
     require("#if P_MODIFIED_MEGA_CRIES\n        .cryId = CRY_RAYQUAZA_MEGA,\n    #else\n        .cryId = CRY_RAYQUAZA," in rayquaza_family,
             "Mega Rayquaza must fall back to the base cry when modified Mega cries are disabled")
-    require("#define B_MOVE_DESCRIPTION_BUTTON           SELECT_BUTTON" in battle_config,
+    require("#define B_MOVE_DESCRIPTION_BUTTON           R_BUTTON" in battle_config,
             "START must remain available for the battle gimmick command")
     description = player_controller.index("else if (JOY_NEW(B_MOVE_DESCRIPTION_BUTTON)")
     gimmick = player_controller.index("else if (JOY_NEW(START_BUTTON))", description)

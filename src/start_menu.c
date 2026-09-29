@@ -239,9 +239,9 @@ static const u8 *const sHnsStartMenuDescriptions[] =
     [MENU_ACTION_RETIRE_BUG_CONTEST] = sText_HnsMenuRetire,
 };
 
-static const u8 sHnsStartMenuTextColors[] = {12, 10, 13};
-static const u8 sHnsStartMenuDescriptionColors[] = {12, 10, 13};
-static const u8 sHnsStartMenuSelectedColors[] = {4, 10, 13};
+static const u8 sHnsStartMenuTextColors[] = {11, 4, 13};
+static const u8 sHnsStartMenuDescriptionColors[] = {11, 5, 13};
+static const u8 sHnsStartMenuSelectedColors[] = {12, 1, 13};
 #endif
 
 static const struct MenuAction sStartMenuItems[] =
@@ -601,7 +601,7 @@ static void DrawHnsStartMenuActions(void)
     u8 windowId = GetStartMenuWindowId();
     u32 index;
 
-    FillWindowPixelBuffer(windowId, PIXEL_FILL(12));
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(11));
     for (index = 0; index < sNumStartMenuActions; index++)
     {
         u32 action = sCurrentStartMenuActions[index];
@@ -619,13 +619,13 @@ static void DrawHnsStartMenuActions(void)
         }
         else
         {
-            FillWindowPixelRect(windowId, PIXEL_FILL(10), 0, y - 3, 2, 15);
+            FillWindowPixelRect(windowId, PIXEL_FILL(4), 0, y - 3, 2, 15);
             colors = sHnsStartMenuTextColors;
             descriptionColors = sHnsStartMenuDescriptionColors;
         }
 
-        FillWindowPixelRect(windowId, PIXEL_FILL(10), 0, y - 3, 152, 1);
-        FillWindowPixelRect(windowId, PIXEL_FILL(10), 0, y + 11, 152, 1);
+        FillWindowPixelRect(windowId, PIXEL_FILL(4), 0, y - 3, 152, 1);
+        FillWindowPixelRect(windowId, PIXEL_FILL(4), 0, y + 11, 152, 1);
         StringExpandPlaceholders(gStringVar4, sStartMenuItems[action].text);
         AddTextPrinterParameterized4(windowId, FONT_NORMAL, 7, y - 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
 

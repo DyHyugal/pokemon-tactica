@@ -508,7 +508,7 @@ static const struct WindowTemplate sSummaryTemplate[] =
 #if IS_HNS
         .tilemapLeft = 11,
         .tilemapTop = 0,
-        .width = 18,
+        .width = 10,
         .height = 2,
         .paletteNum = 6,
         .baseBlock = 760,
@@ -2066,15 +2066,20 @@ static void PrintSkillsModeTabs(void)
 {
 #if IS_HNS
     u8 windowId = PSS_LABEL_WINDOW_SKILLS_MODE;
+    const u8 *modeText;
 
     FillWindowPixelBuffer(windowId, PIXEL_FILL(0));
-    PrintTextOnWindow(windowId, sText_SkillsModeButton, 0, 1, 0, 1);
-    PrintTextOnWindow(windowId, sText_SkillsModeStats, 43, 1, 0,
-                      sMonSummaryScreen->skillsPageMode == SUMMARY_SKILLS_MODE_STATS ? 2 : 1);
-    PrintTextOnWindow(windowId, sText_SkillsModeIvs, 89, 1, 0,
-                      sMonSummaryScreen->skillsPageMode == SUMMARY_SKILLS_MODE_IVS ? 2 : 1);
-    PrintTextOnWindow(windowId, sText_SkillsModeEvs, 113, 1, 0,
-                      sMonSummaryScreen->skillsPageMode == SUMMARY_SKILLS_MODE_EVS ? 2 : 1);
+    if (sMonSummaryScreen->skillsPageMode == SUMMARY_SKILLS_MODE_IVS)
+        modeText = sText_SkillsModeIvs;
+    else if (sMonSummaryScreen->skillsPageMode == SUMMARY_SKILLS_MODE_EVS)
+        modeText = sText_SkillsModeEvs;
+    else
+        modeText = sText_SkillsModeStats;
+
+    // Keep the control discoverable without laying three large tabs over the
+    // ITEM / BONHEUR header. START cycles through the value shown in red.
+    PrintTextOnWindowWithFont(windowId, sText_SkillsModeButton, 0, 1, 0, 1, FONT_SMALL);
+    PrintTextOnWindowWithFont(windowId, modeText, 42, 1, 0, 2, FONT_SMALL);
     CopyWindowToVram(windowId, COPYWIN_FULL);
 #endif
 }
@@ -3616,7 +3621,7 @@ static void PrintAOrBButtonIcon(u8 windowId, bool8 bButton, u32 x)
 static void PrintPageNamesAndStats(void)
 {
     int statsXPos;
-    u32 statsFont = IS_HNS ? FONT_NARROW : FONT_NORMAL;
+    u32 statsFont = IS_HNS ? FONT_SMALL_NARROWER : FONT_NORMAL;
 
 #if !IS_HNS
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_INFO_TITLE, gText_PkmnInfo, 2, 1, 0, 1);
@@ -4312,13 +4317,14 @@ static void BufferLeftColumnIvEvStats(void)
 static void PrintLeftColumnStats(void)
 {
     int x;
+    u32 fontId = IS_HNS ? FONT_SMALL_NARROWER : FONT_NORMAL;
 
     if (sMonSummaryScreen->skillsPageMode == SUMMARY_SKILLS_MODE_IVS && !P_SUMMARY_SCREEN_IV_EV_VALUES)
         x = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 46);
     else
         x = 4;
 
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar4, x, 1, 0, 0);
+    PrintTextOnWindowWithFont(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar4, x, 1, 0, 0, fontId);
 }
 
 static void BufferRightColumnStats(void)
@@ -4335,13 +4341,14 @@ static void BufferRightColumnStats(void)
 static void PrintRightColumnStats(void)
 {
     int x;
+    u32 fontId = IS_HNS ? FONT_SMALL_NARROWER : FONT_NORMAL;
 
     if (sMonSummaryScreen->skillsPageMode == SUMMARY_SKILLS_MODE_IVS && !P_SUMMARY_SCREEN_IV_EV_VALUES)
         x = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 20);
     else
         x = 2;
 
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_RIGHT), gStringVar4, x, 1, 0, 0);
+    PrintTextOnWindowWithFont(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_RIGHT), gStringVar4, x, 1, 0, 0, fontId);
 }
 
 static void PrintExpPointsNextLevel(void)

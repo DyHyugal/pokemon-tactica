@@ -932,7 +932,7 @@ static const struct WindowTemplate sShopBuyMenuYesNoWindowTemplates =
 static const u8 sShopBuyMenuTextColors[][3] =
 {
 #if IS_HNS
-    // Tactica shops: red surface, black text, gray secondary state.
+    // Tactica shops: anthracite surface, restrained red text and gray shadow.
     [COLORID_NORMAL]      = {12, 10, 13},
     [COLORID_ITEM_LIST]   = {12, 10, 13},
     [COLORID_GRAY_CURSOR] = {12, 13, 10},
@@ -942,6 +942,23 @@ static const u8 sShopBuyMenuTextColors[][3] =
     [COLORID_GRAY_CURSOR] = {0, 3, 2},
 #endif
 };
+
+#if IS_HNS
+// Field and buy windows use palette 15. Do not rely on the standard menu
+// palette here: its color 12 is the vanilla near-white surface seen in ROM.
+static const u16 sTacticaShopWindowPalette[16] =
+{
+    RGB(0, 0, 0),    RGB(3, 3, 5),    RGB(26, 5, 7),   RGB(12, 2, 4),
+    RGB(19, 3, 5),   RGB(2, 2, 3),    RGB(7, 7, 9),    RGB(11, 11, 13),
+    RGB(4, 4, 6),    RGB(8, 8, 10),   RGB(27, 6, 8),   RGB(14, 14, 16),
+    RGB(2, 2, 3),    RGB(10, 10, 12), RGB(18, 3, 5),   RGB(0, 0, 0),
+};
+
+static void LoadTacticaShopWindowPalette(void)
+{
+    LoadPalette(sTacticaShopWindowPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+}
+#endif
 
 static u8 CreateShopMenu(u8 martType)
 {
@@ -968,11 +985,10 @@ static u8 CreateShopMenu(u8 martType)
     }
 
 #if IS_HNS
-    // Palette 15 belongs to these field windows. Load the Tactica palette
-    // there before using its red background and dark frame.
-    Menu_LoadStdPalAt(BG_PLTT_ID(15));
+    LoadTacticaShopWindowPalette();
     FillWindowPixelBuffer(sMartInfo.windowId, PIXEL_FILL(12));
     SetStandardWindowBorderStyle(sMartInfo.windowId, FALSE);
+    LoadTacticaShopWindowPalette();
 #else
     SetStandardWindowBorderStyle(sMartInfo.windowId, FALSE);
 #endif
@@ -1460,7 +1476,7 @@ static void BuyMenuInitWindows(void)
     LoadUserWindowBorderGfx(moneyWindowId, 1, BG_PLTT_ID(13));
     LoadMessageBoxGfx(moneyWindowId, 0xA, BG_PLTT_ID(14));
 #if IS_HNS
-    Menu_LoadStdPalAt(BG_PLTT_ID(15));
+    LoadTacticaShopWindowPalette();
     FillWindowPixelBuffer(WIN_ITEM_LIST, PIXEL_FILL(12));
     FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(12));
 #endif
