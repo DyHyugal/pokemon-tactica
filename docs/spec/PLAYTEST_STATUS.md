@@ -129,9 +129,9 @@ Le Pokédex n’est plus une source manuelle pour ces méthodes : ses champs d�
 
 ### UI
 
-- Summary lisible, sans superposition ;
-- HUD combat sans plaque blanche résiduelle ;
-- boutiques lisibles en rouge/noir ;
+- Summary : vérifier que STATS/IV/EV reste dans le header, disparaît sur les autres pages et que les deux colonnes ne se chevauchent plus ;
+- HUD combat : vérifier l’absence de plaque blanche adverse, les fonds noirs opaques des actions/capacités et la progression EXP rouge visible ;
+- boutiques : vérifier que la liste et la description restent rouges avec texte noir ;
 - header Options lisible avec `B SAVE & EXIT`.
 - libellé `TACTICA` visuellement centré dans sa bulle sur l'écran titre.
 

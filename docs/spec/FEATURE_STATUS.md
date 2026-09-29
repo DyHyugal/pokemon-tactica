@@ -49,9 +49,9 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | Sync Localisations — niveaux | `[DONE]` | Générateur canonique. |
 | Sync Localisations — espèces / recherche | `[DONE]` | Générateur étendu aux espèces et `data-search`; synchronisations `--check` et CI Tactica vertes sur le HEAD de la PR de nettoyage. |
 | Compteurs Pokédex | `[DONE]` | Recalculés depuis les tables standard + pools spéciaux visibles ; synchronisation idempotente confirmée par la CI Tactica. |
-| Summary ROM | `[PARTIEL]` | Recomposition structurelle intégrée et protégée par le validateur UI ; rendu réel à confirmer dans une ROM fraîche. |
-| HUD combat | `[PARTIEL]` | Plaque blanche résiduelle de la barre PV supprimée dans l’asset et protégée par le validateur UI ; panneaux/rendu final à confirmer en ROM. |
-| UI boutiques | `[PARTIEL]` | Charte rouge/noir intégrée dans le runtime shop et protégée par le validateur UI ; lisibilité/sélection à confirmer en ROM. |
+| Summary ROM | `[PARTIEL]` | Les onglets STATS/IV/EV sont replacés dans le header et leur fenêtre est maintenant effacée lors d’un changement de page ; libellés de stats resserrés pour séparer les deux colonnes sans chevauchement de fenêtres. Recontrôle ROM requis. |
+| HUD combat | `[PARTIEL]` | La plaque adverse est retirée par l’asset `misc`, les panneaux action/capacités utilisent désormais un noir opaque et la progression EXP rouge est épaissie. Recontrôle ROM requis. |
+| UI boutiques | `[PARTIEL]` | La palette rouge/noir est chargée avant affichage et la liste comme la description sont remplies explicitement en rouge. Recontrôle ROM requis. |
 | Assistant d’entraînement | `[DONE]` | Tests dédiés existants. |
 | Boutiques objets/moves/Méga-Gemmes — contenu | `[PARTIEL]` | Catalogues/runtime présents ; parcours d’achat ROM à revalider. |
 | Balance 26 espèces / 16 learnsets | `[DONE]` | Source canonique + validateur dédié ; Draco-Griffe est légal pour Hydragon au match retour. |

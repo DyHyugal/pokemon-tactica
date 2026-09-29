@@ -99,12 +99,19 @@ def main() -> None:
             "HNS healthbox text must remain light on dark")
     require("FillWindowPixelRect(windowId, PIXEL_FILL(2), 0, 14, 64, 2)" in battle_message,
             "move rows must retain their red horizontal separator")
+    require("#define BATTLE_ACTION_PROMPT_FILL       PIXEL_FILL(5)" in battle_message
+            and "#define BATTLE_ACTION_MENU_FILL         PIXEL_FILL(8)" in battle_message
+            and "#define BATTLE_MOVE_MENU_FILL           PIXEL_FILL(8)" in battle_message
+            and "FillWindowPixelBuffer(B_WIN_ACTION_MENU, PIXEL_FILL(8))" in
+                (ROOT / "src/battle_controller_player.c").read_text(encoding="utf-8"),
+            "battle action and move panels must use opaque dark fills")
     require(graphics.count('graphics/battle_interface/hns/textbox.gbapal') == 2,
             "both battle tilemap palette banks must be initialized explicitly")
     require(".fillValue = 12" in shop
             and "[COLORID_NORMAL]      = {12, 10, 13}" in shop
             and "FillWindowPixelBuffer(sMartInfo.windowId, PIXEL_FILL(12))" in shop
             and "FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(12))" in shop
+            and "FillWindowPixelBuffer(WIN_ITEM_LIST, PIXEL_FILL(12))" in shop
             and shop.count("Menu_LoadStdPalAt(BG_PLTT_ID(15))") >= 2
             and "SetStandardWindowBorderStyle(sMartInfo.windowId, FALSE);" in shop,
             "HNS shops must keep the red surface / black text runtime treatment")
@@ -113,6 +120,9 @@ def main() -> None:
             and 'static const u8 sText_HnsFriendship[] = _("{STR_VAR_1}")' in summary
             and summary.count("#if !IS_HNS") >= 7,
             "HNS Summary must keep IV/EV on Skills without duplicate fixed labels or normal Contest page")
+    require(".tilemapTop = 0," in summary
+            and "ClearWindowTilemap(PSS_LABEL_WINDOW_SKILLS_MODE);" in summary,
+            "HNS Summary mode tabs must stay in the header and be cleared between pages")
     require("120 - width, 0, color, 0, tabName" in challenge_menu
             and "120 - GetStringWidth(FONT_SMALL, sText_TopBar_Cancel, 0) / 2,\n        9, color" in challenge_menu,
             "the Options header must keep navigation and SAVE & EXIT on separate rows")
@@ -169,7 +179,7 @@ def main() -> None:
         pixels = tile_pixels(expbar, fill)
         for y, row in enumerate(pixels):
             expected = [0] * 8 if y >= 6 else [1] * 8
-            if y in (3, 4):
+            if y in (2, 3, 4, 5):
                 expected[:fill] = [14] * fill
             require(row == expected, f"EXP bar state {fill}, row {y} is not dark/red only")
 
