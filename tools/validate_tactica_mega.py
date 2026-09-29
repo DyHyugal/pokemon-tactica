@@ -17,6 +17,8 @@ def sections(text: str, marker: str) -> list[str]:
 
 
 def main() -> None:
+    species_config = (ROOT / "include/config/species_enabled.h").read_text(encoding="utf-8")
+    pokemon_config = (ROOT / "include/config/pokemon.h").read_text(encoding="utf-8")
     battle_config = (ROOT / "include/config/battle.h").read_text(encoding="utf-8")
     player_controller = (ROOT / "src/battle_controller_player.c").read_text(encoding="utf-8")
     battle_util = (ROOT / "src/battle_util.c").read_text(encoding="utf-8")
@@ -24,6 +26,15 @@ def main() -> None:
     parties = (ROOT / "src/data/trainers_hns.party").read_text(encoding="utf-8")
     gengar_family = (ROOT / "src/data/pokemon/species_info/gen_1_families.h").read_text(encoding="utf-8")
 
+    require("#define P_MEGA_EVOLUTIONS                TRUE" in species_config,
+            "Mega Evolution must be enabled in the production species configuration")
+    require("#define P_MODIFIED_MEGA_CRIES            FALSE" in pokemon_config,
+            "Mega forms must reuse base cries to protect the 32 MiB production ROM budget")
+    require("#if P_MODIFIED_MEGA_CRIES\n        .cryId = CRY_SLOWBRO_MEGA,\n    #else\n        .cryId = CRY_SLOWBRO," in gengar_family,
+            "Mega Slowbro must fall back to the base cry when modified Mega cries are disabled")
+    rayquaza_family = (ROOT / "src/data/pokemon/species_info/gen_3_families.h").read_text(encoding="utf-8")
+    require("#if P_MODIFIED_MEGA_CRIES\n        .cryId = CRY_RAYQUAZA_MEGA,\n    #else\n        .cryId = CRY_RAYQUAZA," in rayquaza_family,
+            "Mega Rayquaza must fall back to the base cry when modified Mega cries are disabled")
     require("#define B_MOVE_DESCRIPTION_BUTTON           SELECT_BUTTON" in battle_config,
             "START must remain available for the battle gimmick command")
     description = player_controller.index("else if (JOY_NEW(B_MOVE_DESCRIPTION_BUTTON)")

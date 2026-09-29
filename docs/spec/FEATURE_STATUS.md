@@ -50,7 +50,7 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | Sync Localisations — espèces / recherche | `[DONE]` | Générateur étendu aux espèces et `data-search`; synchronisations `--check` et CI Tactica vertes sur le HEAD de la PR de nettoyage. |
 | Compteurs Pokédex | `[DONE]` | Recalculés depuis les tables standard + pools spéciaux visibles ; synchronisation idempotente confirmée par la CI Tactica. |
 | Summary ROM | `[PARTIEL]` | Les onglets STATS/IV/EV sont replacés dans le header et leur fenêtre est maintenant effacée lors d’un changement de page ; libellés de stats resserrés pour séparer les deux colonnes sans chevauchement de fenêtres. Recontrôle ROM requis. |
-| HUD combat | `[PARTIEL]` | La plaque adverse est retirée par l’asset `misc`, les panneaux action/capacités utilisent désormais un noir opaque et la progression EXP rouge est épaissie. Recontrôle ROM requis. |
+| HUD combat | `[PARTIEL]` | La plaque adverse est retirée par l’asset `misc`, les panneaux action/capacités utilisent désormais un noir opaque et la progression EXP rouge est épaissie. La Méga-Évolution est activée dans la configuration de production et se déclenche avec `START` sur les capacités lorsque le Méga-Anneau et la Méga-Gemme sont présents. Recontrôle ROM requis. |
 | UI boutiques | `[PARTIEL]` | La palette rouge/noir est chargée avant affichage et la liste comme la description sont remplies explicitement en rouge. Recontrôle ROM requis. |
 | Assistant d’entraînement | `[DONE]` | Tests dédiés existants. |
 | Boutiques objets/moves/Méga-Gemmes — contenu | `[PARTIEL]` | Catalogues/runtime présents ; parcours d’achat ROM à revalider. |
