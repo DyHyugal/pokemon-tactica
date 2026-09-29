@@ -89,10 +89,10 @@ def main() -> None:
 
     require("(numActions * 2) + 2, STD_WINDOW_PALETTE_NUM, 0x50" in menu,
             "HNS start menu must use the dark/red standard palette without touching field tilemaps")
-    require("sHnsStartMenuTextColors[] = {12, 10, 13}" in start_menu,
-            "HNS start-menu text must remain black on red")
-    require("FillWindowPixelBuffer(windowId, PIXEL_FILL(12))" in start_menu,
-            "HNS start-menu background must remain red")
+    require("sHnsStartMenuTextColors[] = {11, 4, 13}" in start_menu,
+            "HNS start-menu text must remain red on anthracite")
+    require("FillWindowPixelBuffer(windowId, PIXEL_FILL(11))" in start_menu,
+            "HNS start-menu background must remain anthracite")
     require("#define HEALTHBOX_BG_INDEX 7" in battle_interface,
             "HNS healthbox dynamic fields must remain dark")
     require(".background = 7" in battle_interface and ".foreground = 2" in battle_interface,
@@ -112,9 +112,10 @@ def main() -> None:
             and "FillWindowPixelBuffer(sMartInfo.windowId, PIXEL_FILL(12))" in shop
             and "FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(12))" in shop
             and "FillWindowPixelBuffer(WIN_ITEM_LIST, PIXEL_FILL(12))" in shop
-            and shop.count("Menu_LoadStdPalAt(BG_PLTT_ID(15))") >= 2
+            and shop.count("LoadTacticaShopWindowPalette();") >= 3
+            and "static const u16 sTacticaShopWindowPalette[16]" in shop
             and "SetStandardWindowBorderStyle(sMartInfo.windowId, FALSE);" in shop,
-            "HNS shops must keep the red surface / black text runtime treatment")
+            "HNS shops must keep the anthracite surface / red text runtime treatment")
     require("sMonSummaryScreen->maxPageIndex = PSS_PAGE_BATTLE_MOVES;" in summary
             and 'static const u8 sText_HnsHeldItem[] = _("{STR_VAR_1}")' in summary
             and 'static const u8 sText_HnsFriendship[] = _("{STR_VAR_1}")' in summary
@@ -179,9 +180,20 @@ def main() -> None:
         pixels = tile_pixels(expbar, fill)
         for y, row in enumerate(pixels):
             expected = [0] * 8 if y >= 6 else [1] * 8
-            if y in (2, 3, 4, 5):
+            if y in (3, 4):
                 expected[:fill] = [14] * fill
             require(row == expected, f"EXP bar state {fill}, row {y} is not dark/red only")
+
+    shiny = Image.open(ROOT / "graphics/battle_interface/shiny_icon.png")
+    require(shiny.info.get("transparency") == 0
+            and all(pixel != 2 for pixel in shiny.getdata()),
+            "battle shiny icon must not contain the legacy white plate")
+
+    mega_trigger = Image.open(ROOT / "graphics/battle_interface/mega_trigger.png")
+    require(mega_trigger.size == (32, 64)
+            and sum(pixel in (7, 13) for pixel in mega_trigger.crop((0, 26, 32, 32)).getdata()) >= 20
+            and sum(pixel in (7, 13) for pixel in mega_trigger.crop((0, 58, 32, 64)).getdata()) >= 20,
+            "Mega trigger must display its START key in both interactive states")
 
     summary_root = ROOT / "graphics/summary_screen/hns"
     summary_tiles = (summary_root / "tiles.4bpp").read_bytes()
@@ -193,7 +205,7 @@ def main() -> None:
         "page_contest_moves.bin",
     ):
         largest = largest_light_surface(render_summary_page(summary_tiles, summary_root / page))
-        require(largest < 100,
+        require(largest < 48,
                 f"HNS Summary {page} still contains a legacy light panel ({largest} connected pixels)")
 
     print("Tactica UI validation passed: Summary, shops, battle HUD/panels, menu VRAM and Violet Gym guide")

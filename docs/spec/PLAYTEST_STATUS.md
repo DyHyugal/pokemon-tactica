@@ -129,10 +129,13 @@ Le Pokédex n’est plus une source manuelle pour ces méthodes : ses champs d�
 
 ### UI
 
-- Summary : vérifier que STATS/IV/EV reste dans le header, disparaît sur les autres pages et que les deux colonnes ne se chevauchent plus ;
-- HUD combat : vérifier l’absence de plaque blanche adverse, les fonds noirs opaques des actions/capacités et la progression EXP rouge visible ;
-- Méga-Évolution : après Mortimer, équiper une Méga-Gemme compatible puis appuyer sur `START` depuis le choix des capacités ; le bouton doit s’activer et la transformation doit précéder l’attaque ;
-- boutiques : vérifier que la liste et la description restent rouges avec texte noir ;
+- Summary : vérifier l’absence des anciennes plaques claires, le contrôle compact `START` + STATS/IV/EV, la lisibilité des valeurs et l’absence de chevauchement entre les deux colonnes ;
+- HUD combat : vérifier l’absence de surface blanche dans les cadres adverses et le menu d’actions, la transparence autour de l’icône shiny et la barre EXP sombre avec une seule progression rouge ;
+- Méga-Évolution : après Mortimer, équiper une Méga-Gemme compatible puis appuyer sur `START` depuis le choix des capacités ; le logo `START` doit changer d’état et la transformation doit précéder l’attaque ;
+- aide des capacités : vérifier que `R` affiche les informations sans entrer en conflit avec la commande Méga ;
+- menu principal et Pokédex : vérifier le texte rouge lisible sur les fonds anthracite et la présence normale de la liste du Pokédex ;
+- boutiques : vérifier que les fenêtres terrain, la liste et la description restent anthracite avec texte rouge, sans panneau blanc ;
+- sac et carte Dresseur : vérifier l’application homogène des palettes anthracite/rouge ;
 - header Options lisible avec `B SAVE & EXIT`.
 - libellé `TACTICA` visuellement centré dans sa bulle sur l'écran titre.
 

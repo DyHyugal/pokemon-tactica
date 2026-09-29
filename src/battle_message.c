@@ -1529,24 +1529,24 @@ static u8 sHnsMoveSelectionCursor;
 #if IS_HNS
 #define BATTLE_ACTION_PROMPT_FILL       PIXEL_FILL(5)
 #define BATTLE_ACTION_PROMPT_BACKGROUND 5
-#define BATTLE_ACTION_PROMPT_SHADOW     12
+#define BATTLE_ACTION_PROMPT_SHADOW     3
 #define BATTLE_ACTION_MENU_FILL         PIXEL_FILL(8)
-#define BATTLE_ACTION_MENU_FOREGROUND   1
+#define BATTLE_ACTION_MENU_FOREGROUND   2
 #define BATTLE_ACTION_MENU_BACKGROUND   8
-#define BATTLE_ACTION_MENU_SHADOW       12
+#define BATTLE_ACTION_MENU_SHADOW       3
 #define BATTLE_MOVE_MENU_FILL           PIXEL_FILL(8)
-#define BATTLE_MOVE_MENU_FOREGROUND     1
+#define BATTLE_MOVE_MENU_FOREGROUND     2
 #define BATTLE_MOVE_MENU_BACKGROUND     8
-#define BATTLE_MOVE_MENU_SHADOW         12
-#define BATTLE_MOVE_PP_FOREGROUND       1
-#define BATTLE_MOVE_PP_SHADOW           12
+#define BATTLE_MOVE_MENU_SHADOW         3
+#define BATTLE_MOVE_PP_FOREGROUND       2
+#define BATTLE_MOVE_PP_SHADOW           3
 #define BATTLE_SECONDARY_FILL           PIXEL_FILL(8)
-#define BATTLE_SECONDARY_FOREGROUND     1
+#define BATTLE_SECONDARY_FOREGROUND     2
 #define BATTLE_SECONDARY_BACKGROUND     8
-#define BATTLE_SECONDARY_SHADOW         12
-#define BATTLE_DESCRIPTION_FOREGROUND   1
+#define BATTLE_SECONDARY_SHADOW         3
+#define BATTLE_DESCRIPTION_FOREGROUND   2
 #define BATTLE_DESCRIPTION_BACKGROUND   8
-#define BATTLE_DESCRIPTION_SHADOW       12
+#define BATTLE_DESCRIPTION_SHADOW       3
 #else
 #define BATTLE_ACTION_PROMPT_FILL       PIXEL_FILL(0xF)
 #define BATTLE_ACTION_PROMPT_BACKGROUND 15
@@ -3995,8 +3995,10 @@ void BattlePutTextOnWindow(const u8 *text, u8 windowId)
         FillWindowPixelRect(windowId, PIXEL_FILL(3), 0, 0, 3, 16);
         printerTemplate.x += 4;
         printerTemplate.currentX = printerTemplate.x;
+        printerTemplate.color.foreground = 1;
         printerTemplate.color.background = 2;
         printerTemplate.color.accent = 2;
+        printerTemplate.color.shadow = 12;
     }
 #endif
 

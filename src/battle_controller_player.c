@@ -1853,7 +1853,7 @@ static void DrawHnsBattleActionMenu(u8 cursorPosition)
     static const u8 *const sSafariActions[] = {sText_Ball, sText_Bait, sText_Near, sText_Run};
     // Palette index 0 is transparent on BG windows. Use the opaque black
     // entry so the battlefield cannot show through unselected action cells.
-    static const u8 sNormalColors[] = {8, 1, 12};
+    static const u8 sNormalColors[] = {8, 2, 3};
     static const u8 sSelectedColors[] = {2, 1, 12};
     const u8 *const *actions = (gBattleTypeFlags & BATTLE_TYPE_SAFARI) ? sSafariActions : sBattleActions;
     u32 i;

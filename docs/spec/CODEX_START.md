@@ -59,10 +59,12 @@ Ne pas recoder ces blocs sans défaut démontré sur le HEAD courant :
 
 Les corrections de runtime/assets déjà intégrées ne doivent pas être réécrites avant la prochaine ROM candidate :
 
-- menu principal Start ;
-- Summary ;
-- HUD combat ;
-- boutiques ;
+- menu principal Start et texte du Pokédex sombre en anthracite/rouge ;
+- Summary sans plaques claires, avec contrôle compact `START` pour STATS/IV/EV ;
+- HUD combat sans surfaces blanches, icône shiny transparente et barre EXP sombre/rouge ;
+- logo Méga interactif étiqueté `START`, avec aide des capacités sur `R` ;
+- boutiques avec palette runtime dédiée anthracite/rouge ;
+- sac et carte Dresseur recolorés dans le même thème ;
 - header Options / `B SAVE & EXIT` ;
 - libellé `TACTICA` centré dans sa bulle sur l'écran titre.
 

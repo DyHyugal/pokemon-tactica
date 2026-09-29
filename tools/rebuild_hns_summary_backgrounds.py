@@ -24,7 +24,9 @@ MAPS = (
     "page_contest_moves.bin",
 )
 LIGHT = {2, 3, 4, 5, 19, 20, 21, 37, 66, 67, 68, 69}
-MIN_SURFACE_PIXELS = 100
+# A single legacy plate tile is already visually conspicuous at GBA scale.
+# Labels remain safe because their individual glyph components are smaller.
+MIN_SURFACE_PIXELS = 48
 VISIBLE_WIDTH = 240
 VISIBLE_HEIGHT = 160
 
