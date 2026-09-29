@@ -507,7 +507,7 @@ static const struct WindowTemplate sSummaryTemplate[] =
         .bg = 0,
 #if IS_HNS
         .tilemapLeft = 11,
-        .tilemapTop = 2,
+        .tilemapTop = 0,
         .width = 18,
         .height = 2,
         .paletteNum = 6,
@@ -550,7 +550,7 @@ static const struct WindowTemplate sSummaryTemplate[] =
     },
     [PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT] = {
         .bg = 0,
-        .tilemapLeft = 22,
+        .tilemapLeft = 21,
         .tilemapTop = 7,
         .width = 5,
         .height = 6,
@@ -3616,6 +3616,7 @@ static void PrintAOrBButtonIcon(u8 windowId, bool8 bButton, u32 x)
 static void PrintPageNamesAndStats(void)
 {
     int statsXPos;
+    u32 statsFont = IS_HNS ? FONT_NARROW : FONT_NORMAL;
 
 #if !IS_HNS
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_INFO_TITLE, gText_PkmnInfo, 2, 1, 0, 1);
@@ -3628,18 +3629,18 @@ static void PrintPageNamesAndStats(void)
 
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_INFO_RENTAL, gText_RentalPkmn, 0, 1, 0, 1);
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_INFO_TYPE, gText_TypeSlash, 0, 1, 0, 0);
-    statsXPos = 6 + GetStringCenterAlignXOffset(FONT_NORMAL, gText_HP4, 42);
-    PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_LEFT, gText_HP4, statsXPos, 1, 0, 1);
-    statsXPos = 6 + GetStringCenterAlignXOffset(FONT_NORMAL, gText_Attack3, 42);
-    PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_LEFT, gText_Attack3, statsXPos, 17, 0, 1);
-    statsXPos = 6 + GetStringCenterAlignXOffset(FONT_NORMAL, gText_Defense3, 42);
-    PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_LEFT, gText_Defense3, statsXPos, 33, 0, 1);
-    statsXPos = 2 + GetStringCenterAlignXOffset(FONT_NORMAL, gText_SpAtk4, 36);
-    PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT, gText_SpAtk4, statsXPos, 1, 0, 1);
-    statsXPos = 2 + GetStringCenterAlignXOffset(FONT_NORMAL, gText_SpDef4, 36);
-    PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT, gText_SpDef4, statsXPos, 17, 0, 1);
-    statsXPos = 2 + GetStringCenterAlignXOffset(FONT_NORMAL, gText_Speed2, 36);
-    PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT, gText_Speed2, statsXPos, 33, 0, 1);
+    statsXPos = 6 + GetStringCenterAlignXOffset(statsFont, gText_HP4, 42);
+    PrintTextOnWindowWithFont(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_LEFT, gText_HP4, statsXPos, 1, 0, 1, statsFont);
+    statsXPos = 6 + GetStringCenterAlignXOffset(statsFont, gText_Attack3, 42);
+    PrintTextOnWindowWithFont(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_LEFT, gText_Attack3, statsXPos, 17, 0, 1, statsFont);
+    statsXPos = 6 + GetStringCenterAlignXOffset(statsFont, gText_Defense3, 42);
+    PrintTextOnWindowWithFont(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_LEFT, gText_Defense3, statsXPos, 33, 0, 1, statsFont);
+    statsXPos = 2 + GetStringCenterAlignXOffset(statsFont, gText_SpAtk4, 36);
+    PrintTextOnWindowWithFont(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT, gText_SpAtk4, statsXPos, 1, 0, 1, statsFont);
+    statsXPos = 2 + GetStringCenterAlignXOffset(statsFont, gText_SpDef4, 36);
+    PrintTextOnWindowWithFont(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT, gText_SpDef4, statsXPos, 17, 0, 1, statsFont);
+    statsXPos = 2 + GetStringCenterAlignXOffset(statsFont, gText_Speed2, 36);
+    PrintTextOnWindowWithFont(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT, gText_Speed2, statsXPos, 33, 0, 1, statsFont);
 #if !IS_HNS
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_EXP, gText_ExpPoints, 6, 1, 0, 1);
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_EXP, gText_NextLv, 6, 17, 0, 1);
@@ -3743,6 +3744,7 @@ static void ClearPageWindowTilemaps(u8 page)
     case PSS_PAGE_SKILLS:
         ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_LEFT);
         ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT);
+        ClearWindowTilemap(PSS_LABEL_WINDOW_SKILLS_MODE);
         ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_EXP);
         ClearWindowTilemap(PSS_LABEL_WINDOW_PROMPT_RELEARN);
         break;

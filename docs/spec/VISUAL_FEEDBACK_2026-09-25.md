@@ -8,7 +8,7 @@ La palette custom Tactica est **noir / rouge / gris**. Les interfaces custom ne 
 
 ## Menu starter
 
-État observé le 26/09 :
+État observé sur la dernière ROM owner avant le correctif courant :
 
 - à l'ouverture de certaines listes, le curseur peut se retrouver sur `Retour` au lieu du haut ;
 - après sélection puis annulation de la confirmation, la plupart des espèces reviennent correctement sur l'espèce précédente, mais **Élekid peut renvoyer sur `Retour`** ;
@@ -36,6 +36,10 @@ Attendu :
 - les healthboxes allié/adversaire ont bien été assombries ;
 - le panneau d'actions `ATTAQUE / SAC / ÉQUIPE / FUITE` conserve encore de grandes surfaces gris/blanc ;
 - le panneau des capacités conserve encore une forte présence de blanc/gris et n'est pas au niveau du rendu final attendu.
+- un rectangle blanc reste visible à gauche de la barre PV adverse ;
+- la progression EXP du joueur manque de contraste et paraît masquée.
+
+Correctif courant : les fenêtres de combat n’emploient plus l’index transparent comme fond noir, l’asset de statut adverse ne contient plus de plaque claire et la progression EXP rouge occupe quatre lignes de pixels.
 
 Attendu :
 
@@ -48,7 +52,7 @@ Attendu :
 
 ## Summary
 
-Le Summary reste **À CORRIGER**. Les captures jusqu'au badge 4 montrent que le problème principal n'est pas seulement la palette : les fonds/tilemaps statiques de l'ancien Summary restent visibles sous les fenêtres dynamiques.
+Le Summary reste **À RECONTRÔLER EN ROM**. Les captures reçues montrent que le problème principal n'était pas seulement la palette : la fenêtre STATS/IV/EV restait affichée pendant les changements de page et occupait la ligne ITEM/BONHEUR.
 
 Symptômes :
 
@@ -57,7 +61,7 @@ Symptômes :
 - les anciennes zones `BATTLE MOVES / CONTEST MOVES`, catégories concours, PP et cadres donnent un rendu chargé ;
 - de grandes surfaces blanc cassé restent visibles.
 
-Priorité : corriger la composition BG/tilemaps/windows avant de retoucher les couleurs.
+Le correctif courant place cette fenêtre dans le header, l'efface en quittant la page et élargit la colonne droite des statistiques. Les fonds/tilemaps ont déjà été assombris ; une observation ROM doit confirmer la composition finale.
 
 Si nécessaire, décision owner validée :
 

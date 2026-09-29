@@ -1461,6 +1461,8 @@ static void BuyMenuInitWindows(void)
     LoadMessageBoxGfx(moneyWindowId, 0xA, BG_PLTT_ID(14));
 #if IS_HNS
     Menu_LoadStdPalAt(BG_PLTT_ID(15));
+    FillWindowPixelBuffer(WIN_ITEM_LIST, PIXEL_FILL(12));
+    FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(12));
 #endif
     PutWindowTilemap(moneyWindowId);
     PutWindowTilemap(WIN_ITEM_LIST);

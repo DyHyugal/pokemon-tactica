@@ -1851,12 +1851,14 @@ static void DrawHnsBattleActionMenu(u8 cursorPosition)
     static const u8 sText_Near[] = _("APPROCHE");
     static const u8 *const sBattleActions[] = {sText_Attack, sText_Bag, sText_Team, sText_Run};
     static const u8 *const sSafariActions[] = {sText_Ball, sText_Bait, sText_Near, sText_Run};
-    static const u8 sNormalColors[] = {0, 1, 12};
+    // Palette index 0 is transparent on BG windows. Use the opaque black
+    // entry so the battlefield cannot show through unselected action cells.
+    static const u8 sNormalColors[] = {8, 1, 12};
     static const u8 sSelectedColors[] = {2, 1, 12};
     const u8 *const *actions = (gBattleTypeFlags & BATTLE_TYPE_SAFARI) ? sSafariActions : sBattleActions;
     u32 i;
 
-    FillWindowPixelBuffer(B_WIN_ACTION_MENU, PIXEL_FILL(0));
+    FillWindowPixelBuffer(B_WIN_ACTION_MENU, PIXEL_FILL(8));
     for (i = 0; i < ARRAY_COUNT(sBattleActions); i++)
     {
         u32 x = (i & 1) * 48;
