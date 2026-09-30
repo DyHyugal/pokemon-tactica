@@ -27,7 +27,6 @@
 #include "link.h"
 #include "mail.h"
 #include "malloc.h"
-#include "new_shop.h"
 #include "map_name_popup.h"
 #include "menu.h"
 #include "money.h"
@@ -1576,7 +1575,7 @@ void ChooseBerryForMachine(MainCallback exitCallback)
 
 void CB2_GoToSellMenu(void)
 {
-    GoToBagMenu(ITEMMENULOCATION_SHOP, POCKETS_COUNT, CB2_ExitSellNewShopMenu);
+    GoToBagMenu(ITEMMENULOCATION_SHOP, POCKETS_COUNT, CB2_ExitSellMenu);
 }
 
 void CB2_GoToItemDepositMenu(void)

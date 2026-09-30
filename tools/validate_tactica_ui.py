@@ -78,7 +78,7 @@ def main() -> None:
     start_menu = (ROOT / "src/start_menu.c").read_text(encoding="utf-8")
     text_window = (ROOT / "src/text_window.c").read_text(encoding="utf-8")
     malloc_header = (ROOT / "include/malloc.h").read_text(encoding="utf-8")
-    new_shop = (ROOT / "src/new_shop.c").read_text(encoding="utf-8")
+    general_config = (ROOT / "include/config/general.h").read_text(encoding="utf-8")
     battle_controller = (ROOT / "src/battle_controller_player.c").read_text(encoding="utf-8")
     battle_ui = (ROOT / "src/bw_battle_ui.c").read_text(encoding="utf-8")
     battle_ui_config = (ROOT / "include/config/bw_battle_ui.h").read_text(encoding="utf-8")
@@ -113,13 +113,15 @@ def main() -> None:
             "the Sword/Shield Summary and its IV/EV page must remain enabled")
     require("ShowPokemonSummaryScreen_SwSh" in summary,
             "the public Summary entry point must remain routed to the Sword/Shield screen")
-    require("NewShop_CreatePokemartMenu(ptr);" in scrcmd
-            and "NewShop_CreateDecorationShop1Menu(ptr);" in scrcmd
-            and "NewShop_CreateDecorationShop2Menu(ptr);" in scrcmd,
-            "standard and decoration shops must remain routed to the modern shop")
-    require("LZ77UnCompVram(src" in new_shop
-            and "DecompressAndCopyTileDataToVram(2" not in new_shop,
-            "modern shop graphics must load without heap-backed temporary buffers")
+    require("CreatePokemartMenu(ptr);" in scrcmd
+            and "CreateDecorationShop1Menu(ptr);" in scrcmd
+            and "CreateDecorationShop2Menu(ptr);" in scrcmd
+            and "NewShop_Create" not in scrcmd,
+            "standard and decoration shops must use the stable native shop")
+    require("#define MUDSKIP_SHOP_UI" not in "\n".join(
+                line for line in general_config.splitlines()
+                if not line.lstrip().startswith("//")),
+            "the animated shop must stay disabled to preserve runtime memory")
     require("tileset_interface_DECA_hns" not in pokedex
             and "tileset_interface_hns" not in pokedex,
             "the HGSS Pokédex must not load the retired Tactica recolor assets")
@@ -174,7 +176,6 @@ def main() -> None:
         "graphics/party_menu/swsh/tiles.png",
         "graphics/bag/swsh/tiles.png",
         "graphics/summary_screen/swsh/tiles.png",
-        "graphics/new_shop/menu.png",
         "graphics/battle_interface/bw/actionbox.png",
         "graphics/battle_interface/bw/healthbox_singles_player.png",
         "graphics/battle_interface/bw/mega_trigger.png",
@@ -183,7 +184,7 @@ def main() -> None:
         require(image.mode == "P" and image.getbbox() is not None,
                 f"modern UI asset is missing or invalid: {path}")
 
-    print("Tactica UI validation passed: SwSh menus, HGSS Pokédex, modern shop, BW battle UI, title and Violet Gym guide")
+    print("Tactica UI validation passed: SwSh menus, HGSS Pokédex, native shop, BW battle UI, title and Violet Gym guide")
 
 
 if __name__ == "__main__":

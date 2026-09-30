@@ -133,8 +133,8 @@ Le Pokédex n’est plus une source manuelle pour ces méthodes : ses champs d�
 - sac Épée/Bouclier : vérifier les poches, la description, les quantités et l’utilisation d’un objet sur le terrain ;
 - Summary Épée/Bouclier : parcourir toutes les pages, dont IV/EV, et vérifier textes, icônes, capacités et navigation ;
 - Pokédex HGSS : vérifier la liste, la fiche, les formes et les compteurs ;
-- boutique moderne : confirmer que l’écran d’achat s’affiche désormais, puis vérifier achat, vente, quantités, argent, description et sortie ;
-- HUD Noir/Blanc : confirmer le retour des décors propres à l’environnement, puis vérifier cadres allié/adversaire, menus action/capacités, statut, shiny, doubles et barre EXP ;
+- boutique native légère : confirmer l’ouverture sans écran noir ni crash, puis vérifier achat, vente, quantités, argent, description et sortie ;
+- HUD Noir/Blanc d’origine : confirmer le retour des décors propres à l’environnement, puis vérifier cadres allié/adversaire, menus action/capacités, statut, shiny, doubles et barre EXP ;
 - changement de Pokémon en combat : ouvrir l’équipe, changer de Pokémon et confirmer le retour au combat sans écran d’erreur mémoire ;
 - Méga-Évolution : après Mortimer, équiper une Méga-Gemme compatible puis appuyer sur `START` depuis le choix des capacités ; le logo doit changer d’état et la transformation doit précéder l’attaque ;
 - aide des capacités : vérifier que `R` affiche les informations sans entrer en conflit avec la commande Méga ;

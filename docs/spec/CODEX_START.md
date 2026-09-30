@@ -62,8 +62,8 @@ La pile d’interfaces moderne intégrée remplace les anciennes recolorations T
 - équipe, sac et Summary inspirés de Pokémon Épée/Bouclier ;
 - Summary avec pages normales et page IV/EV ;
 - Pokédex HGSS standard ;
-- boutique moderne, dont les graphismes sont chargés directement en VRAM pour éviter l’écran noir sous pression mémoire ;
-- interface de combat inspirée de Pokémon Noir/Blanc, avec cadres, menus, barre EXP et indicateurs propres à ce port ; le fond de texte du moteur reste utilisé afin de conserver les décors de combat ;
+- boutique native, statique et légère, conservée pour garantir la stabilité avec les autres écrans modernes ;
+- interface de combat Noir/Blanc conservée dans son design d’origine, avec ses cadres, menus, barre EXP et indicateurs ; seul le fond de texte du moteur est utilisé afin de conserver les décors de combat ;
 - logo Méga interactif commandé par `START`, avec aide des capacités sur `R` ;
 - menu Start compact et boîtes de dialogue revenus au cadre et aux couleurs d’origine ; carte Dresseur et Options conservées dans leur état stable actuel ;
 - libellé `TACTICA` centré dans sa bulle sur l'écran titre.
