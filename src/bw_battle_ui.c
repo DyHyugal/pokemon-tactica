@@ -80,38 +80,20 @@ static bool32 BattleUI_PlayVerticalSlideAnim(bool32, s16 *, s32, s32);
 // code
 const u32 *BattleUI_GetTextboxTiles(void)
 {
-    if (BW_BATTLE_UI && BW_BATTLE_UI_TEXTBOX)
-    {
-        return sBWBattleUI_TextboxTiles;
-    }
-    else
-    {
-        return gBattleTextboxTiles;
-    }
+    // The imported BW textbox covers the whole BG0 with opaque tiles.  Tactica
+    // keeps the BW windows and controls, but uses the engine textbox backing so
+    // the environment on BG3 remains visible.
+    return gBattleTextboxTiles;
 }
 
 const u16 *BattleUI_GetTextboxPalette(void)
 {
-    if (BW_BATTLE_UI && BW_BATTLE_UI_TEXTBOX)
-    {
-        return sBWBattleUI_TextboxPalette;
-    }
-    else
-    {
-        return gBattleTextboxPalette;
-    }
+    return gBattleTextboxPalette;
 }
 
 const u32 *BattleUI_GetTextboxTilemap(void)
 {
-    if (BW_BATTLE_UI && BW_BATTLE_UI_TEXTBOX)
-    {
-        return sBWBattleUI_TextboxTilemap;
-    }
-    else
-    {
-        return gBattleTextboxTilemap;
-    }
+    return gBattleTextboxTilemap;
 }
 
 bool32 BattleUI_LoadAllHealthboxGfx(u32 state)

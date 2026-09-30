@@ -41,7 +41,10 @@ struct MemBlock
     u8 data[0];
 };
 
-#define HEAP_SIZE 0x1C500
+// The modern menu stack temporarily coexists with the battle engine while
+// returning from the party screen.  Keep enough contiguous heap available for
+// the largest battle-background ANS decode (currently 11012 bytes).
+#define HEAP_SIZE 0x1ED00
 extern u8 gHeap[HEAP_SIZE];
 
 #if TESTING || !defined(NDEBUG)

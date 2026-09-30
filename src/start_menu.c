@@ -205,45 +205,6 @@ static const struct WindowTemplate sWindowTemplate_PyramidPeak = {
 
 static const u8 sText_MenuDebug[] = _("DEBUG");
 
-#if IS_HNS
-static const u8 sText_HnsMenuPokedex[] = _("DONNEES CAPTUREES");
-static const u8 sText_HnsMenuPokemon[] = _("EQUIPE");
-static const u8 sText_HnsMenuBag[] = _("OBJETS ET SOINS");
-static const u8 sText_HnsMenuPokeNav[] = _("JOHTO / KANTO");
-static const u8 sText_HnsMenuPlayer[] = _("CARTE DRESSEUR");
-static const u8 sText_HnsMenuSave[] = _("PROGRESSION");
-static const u8 sText_HnsMenuOptions[] = _("REGLAGES");
-static const u8 sText_HnsMenuExit[] = _("RETOUR");
-static const u8 sText_HnsMenuRetire[] = _("QUITTER");
-static const u8 sText_HnsMenuRest[] = _("REPOS");
-static const u8 sText_HnsMenuDebug[] = _("OUTILS");
-static const u8 sText_HnsMenuDexNav[] = _("RECHERCHE");
-
-static const u8 *const sHnsStartMenuDescriptions[] =
-{
-    [MENU_ACTION_POKEDEX] = sText_HnsMenuPokedex,
-    [MENU_ACTION_POKEMON] = sText_HnsMenuPokemon,
-    [MENU_ACTION_BAG] = sText_HnsMenuBag,
-    [MENU_ACTION_POKENAV] = sText_HnsMenuPokeNav,
-    [MENU_ACTION_PLAYER] = sText_HnsMenuPlayer,
-    [MENU_ACTION_SAVE] = sText_HnsMenuSave,
-    [MENU_ACTION_OPTION] = sText_HnsMenuOptions,
-    [MENU_ACTION_EXIT] = sText_HnsMenuExit,
-    [MENU_ACTION_RETIRE_SAFARI] = sText_HnsMenuRetire,
-    [MENU_ACTION_PLAYER_LINK] = sText_HnsMenuPlayer,
-    [MENU_ACTION_REST_FRONTIER] = sText_HnsMenuRest,
-    [MENU_ACTION_RETIRE_FRONTIER] = sText_HnsMenuRetire,
-    [MENU_ACTION_PYRAMID_BAG] = sText_HnsMenuBag,
-    [MENU_ACTION_DEBUG] = sText_HnsMenuDebug,
-    [MENU_ACTION_DEXNAV] = sText_HnsMenuDexNav,
-    [MENU_ACTION_RETIRE_BUG_CONTEST] = sText_HnsMenuRetire,
-};
-
-static const u8 sHnsStartMenuTextColors[] = {11, 4, 13};
-static const u8 sHnsStartMenuDescriptionColors[] = {11, 5, 13};
-static const u8 sHnsStartMenuSelectedColors[] = {12, 1, 13};
-#endif
-
 static const struct MenuAction sStartMenuItems[] =
 {
     [MENU_ACTION_POKEDEX]         = {gText_MenuPokedex, {.u8_void = StartMenuPokedexCallback}},
@@ -317,7 +278,6 @@ static void ShowSafariBallsWindow(void);
 static void ShowPyramidFloorWindow(void);
 static void RemoveExtraStartMenuWindows(void);
 static bool32 PrintStartMenuActions(s8 *pIndex, u32 count);
-static void DrawHnsStartMenuActions(void);
 static bool32 InitStartMenuStep(void);
 static void InitStartMenu(void);
 static void CreateStartMenuTask(TaskFunc followupFunc);
@@ -595,55 +555,12 @@ static void RemoveExtraStartMenuWindows(void)
     }
 }
 
-static void DrawHnsStartMenuActions(void)
-{
-#if IS_HNS
-    u8 windowId = GetStartMenuWindowId();
-    u32 index;
-
-    FillWindowPixelBuffer(windowId, PIXEL_FILL(11));
-    for (index = 0; index < sNumStartMenuActions; index++)
-    {
-        u32 action = sCurrentStartMenuActions[index];
-        u32 y = 8 + index * 16;
-        const u8 *colors;
-        const u8 *descriptionColors;
-        u32 descriptionX;
-
-        if (index == sStartMenuCursorPos)
-        {
-            FillWindowPixelRect(windowId, PIXEL_FILL(4), 0, y - 3, 152, 15);
-            FillWindowPixelRect(windowId, PIXEL_FILL(1), 0, y - 3, 3, 15);
-            colors = sHnsStartMenuSelectedColors;
-            descriptionColors = sHnsStartMenuSelectedColors;
-        }
-        else
-        {
-            FillWindowPixelRect(windowId, PIXEL_FILL(4), 0, y - 3, 2, 15);
-            colors = sHnsStartMenuTextColors;
-            descriptionColors = sHnsStartMenuDescriptionColors;
-        }
-
-        FillWindowPixelRect(windowId, PIXEL_FILL(4), 0, y - 3, 152, 1);
-        FillWindowPixelRect(windowId, PIXEL_FILL(4), 0, y + 11, 152, 1);
-        StringExpandPlaceholders(gStringVar4, sStartMenuItems[action].text);
-        AddTextPrinterParameterized4(windowId, FONT_NORMAL, 7, y - 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
-
-        descriptionX = GetStringRightAlignXOffset(FONT_SMALL, sHnsStartMenuDescriptions[action], 145);
-        AddTextPrinterParameterized4(windowId, FONT_SMALL, descriptionX, y, 0, 0,
-                                     descriptionColors, TEXT_SKIP_DRAW, sHnsStartMenuDescriptions[action]);
-    }
-    CopyWindowToVram(windowId, COPYWIN_FULL);
-#endif
-}
-
 static bool32 PrintStartMenuActions(s8 *pIndex, u32 count)
 {
     s8 index = *pIndex;
 
     do
     {
-#if !IS_HNS
         if (sStartMenuItems[sCurrentStartMenuActions[index]].func.u8_void == StartMenuPlayerNameCallback)
         {
             PrintPlayerNameOnWindow(GetStartMenuWindowId(), sStartMenuItems[sCurrentStartMenuActions[index]].text, 8, (index << 4) + 9);
@@ -653,8 +570,6 @@ static bool32 PrintStartMenuActions(s8 *pIndex, u32 count)
             StringExpandPlaceholders(gStringVar4, sStartMenuItems[sCurrentStartMenuActions[index]].text);
             AddTextPrinterParameterized(GetStartMenuWindowId(), FONT_NORMAL, gStringVar4, 8, (index << 4) + 9, TEXT_SKIP_DRAW, NULL);
         }
-#endif
-
         index++;
         if (index >= sNumStartMenuActions)
         {
@@ -707,7 +622,6 @@ static bool32 InitStartMenuStep(void)
         break;
     case 6:
         sStartMenuCursorPos = InitMenuNormal(GetStartMenuWindowId(), FONT_NORMAL, 0, 9, 16, sNumStartMenuActions, sStartMenuCursorPos);
-        DrawHnsStartMenuActions();
         CopyWindowToVram(GetStartMenuWindowId(), COPYWIN_MAP);
         return TRUE;
     }
@@ -795,14 +709,12 @@ static bool8 HandleStartMenuInput(void)
     {
         PlaySECursorMove(SE_SELECT);
         sStartMenuCursorPos = Menu_MoveCursor(-1);
-        DrawHnsStartMenuActions();
     }
 
     if (JOY_NEW(DPAD_DOWN))
     {
         PlaySECursorMove(SE_SELECT);
         sStartMenuCursorPos = Menu_MoveCursor(1);
-        DrawHnsStartMenuActions();
     }
 
     if (JOY_NEW(A_BUTTON))

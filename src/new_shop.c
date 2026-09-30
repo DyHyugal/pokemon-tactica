@@ -1093,26 +1093,35 @@ static void BuyMenuInitBgs(void)
 }
 
 #define DEFAULT_MENU_TILE_OFFSET 9
+
+static void DecompressShopTiles(const u32 *src, u16 tileOffset)
+{
+    // Loading both shop layers through the generic temporary-buffer path can
+    // exhaust the heap before the first frame is drawn.  The assets are normal
+    // LZ streams and BG2 uses charblock 0, so decompress them directly to VRAM.
+    LZ77UnCompVram(src, (void *)(BG_CHAR_ADDR(0) + TILE_OFFSET_4BPP(tileOffset)));
+}
+
 static void BuyMenuDecompressBgGraphics(void)
 {
     u32 i = sMartInfo.sellerId;
     if (gSpecialVar_LastTalked == 0 || i == SELLER_NONE)
     {
         if (IsMartTypeCoin(sMartInfo.martType))
-            DecompressAndCopyTileDataToVram(2, sNewShopMenu_DefaultMenuCoinGfx, 0, DEFAULT_MENU_TILE_OFFSET, 0);
+            DecompressShopTiles(sNewShopMenu_DefaultMenuCoinGfx, DEFAULT_MENU_TILE_OFFSET);
         else if (IsMartTypePoints(sMartInfo.martType))
-            DecompressAndCopyTileDataToVram(2, sNewShopMenu_DefaultMenuPointGfx, 0, DEFAULT_MENU_TILE_OFFSET, 0);
+            DecompressShopTiles(sNewShopMenu_DefaultMenuPointGfx, DEFAULT_MENU_TILE_OFFSET);
         else // if (IsMartTypeMoney(sMartInfo.martType))
-            DecompressAndCopyTileDataToVram(2, sNewShopMenu_DefaultMenuGfx, 0, DEFAULT_MENU_TILE_OFFSET, 0);
-        DecompressAndCopyTileDataToVram(2, sNewShopMenu_DefaultScrollGfx, 0, 0, 0);
+            DecompressShopTiles(sNewShopMenu_DefaultMenuGfx, DEFAULT_MENU_TILE_OFFSET);
+        DecompressShopTiles(sNewShopMenu_DefaultScrollGfx, 0);
         LZ77UnCompWram(sNewShopMenu_DefaultMenuTilemap, sShopData->tilemapBuffers[0]);
         LZ77UnCompWram(sNewShopMenu_DefaultScrollTilemap, sShopData->tilemapBuffers[1]);
         LoadPalette(sNewShopMenu_DefaultMenuPal, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
         LoadPalette(sNewShopMenu_DefaultMenuPal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
         return;
     }
-    DecompressAndCopyTileDataToVram(2, Shop_GetSellerGraphics(SELLER_GFX_MENU_GFX), 0, sSellers[i].menuTileOffset != 0 ? sSellers[i].menuTileOffset : DEFAULT_MENU_TILE_OFFSET, 0);
-    DecompressAndCopyTileDataToVram(2, Shop_GetSellerGraphics(SELLER_GFX_SCROLL_GFX), 0, 0, 0);
+    DecompressShopTiles(Shop_GetSellerGraphics(SELLER_GFX_MENU_GFX), sSellers[i].menuTileOffset != 0 ? sSellers[i].menuTileOffset : DEFAULT_MENU_TILE_OFFSET);
+    DecompressShopTiles(Shop_GetSellerGraphics(SELLER_GFX_SCROLL_GFX), 0);
 
     LZ77UnCompWram(Shop_GetSellerGraphics(SELLER_GFX_MENU_MAP), sShopData->tilemapBuffers[0]);
     LZ77UnCompWram(Shop_GetSellerGraphics(SELLER_GFX_SCROLL_MAP), sShopData->tilemapBuffers[1]);
