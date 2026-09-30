@@ -6011,9 +6011,9 @@ void CopyPartyMonToBattleData(enum BattlerId battler, u32 partyIndex)
     ClearTemporarySpeciesSpriteData(battler, FALSE, FALSE);
 }
 
-bool8 ExecuteTableBasedItemEffect(struct Pokemon *mon, enum Item item, u8 partyIndex, u8 moveIndex)
+bool8 ExecuteTableBasedItemEffect(struct Pokemon *mon, enum Item item, u8 partyIndex, u8 moveIndex, u8 modifyStats, u16 itemCount)
 {
-    return PokemonUseItemEffects(mon, item, partyIndex, moveIndex, FALSE);
+    return PokemonUseItemEffects(mon, item, partyIndex, moveIndex, FALSE, modifyStats, itemCount);
 }
 
 #define UPDATE_FRIENDSHIP_FROM_ITEM()                                                                   \
@@ -6042,7 +6042,7 @@ const u32 sExpCandyExperienceTable[] = {
 };
 
 // Returns TRUE if the item has no effect on the Pokémon, FALSE otherwise
-bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, u8 moveIndex, bool8 usedByAI)
+bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, u8 moveIndex, bool8 usedByAI, u8 modifyStats, u16 itemCount)
 {
     u32 dataUnsigned;
     s32 dataSigned, evCap;
@@ -6058,7 +6058,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
     bool32 friendshipOnly = FALSE;
     enum Item heldItem;
     u8 effectFlags;
-    s8 evChange;
+    s16 evChange;
     u16 evCount;
     u8 levelBefore;
     bool8 didLevelUp = FALSE;
@@ -6117,12 +6117,12 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
 
                 if (param == 0) // Rare Candy
                 {
-                    dataUnsigned = gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES)].growthRate][GetMonData(mon, MON_DATA_LEVEL) + 1];
+                    dataUnsigned = gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES)].growthRate][min(GetMonData(mon, MON_DATA_LEVEL) + itemCount, MAX_LEVEL)];
                 }
                 else if (param - 1 < ARRAY_COUNT(sExpCandyExperienceTable)) // EXP Candies
                 {
                     u16 species = GetMonData(mon, MON_DATA_SPECIES);
-                    dataUnsigned = sExpCandyExperienceTable[param - 1] + GetMonData(mon, MON_DATA_EXP);
+                    dataUnsigned = (sExpCandyExperienceTable[param - 1] * itemCount) + GetMonData(mon, MON_DATA_EXP);
 
                     if ((B_RARE_CANDY_CAP && B_EXP_CAP_TYPE == EXP_CAP_HARD) || gSaveBlock3Ptr->challengeSettings.tx_Challenges_LevelCap)
                     {
@@ -6138,10 +6138,13 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
 
                 if (dataUnsigned != 0) // Failsafe
                 {
-                    SetMonData(mon, MON_DATA_EXP, &dataUnsigned);
-                    CalculateMonStats(mon);
-                    if (GetMonData(mon, MON_DATA_LEVEL, NULL) > levelBefore)
-                        didLevelUp = TRUE;
+                    if (modifyStats)
+                    {
+                        SetMonData(mon, MON_DATA_EXP, &dataUnsigned);
+                        CalculateMonStats(mon);
+                        if (GetMonData(mon, MON_DATA_LEVEL, NULL) > levelBefore)
+                            didLevelUp = TRUE;
+                    }
                     retVal = FALSE;
                 }
             }
@@ -6195,7 +6198,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
                         evCount = GetMonEVCount(mon);
                         temp2 = itemEffect[itemEffectParam];
                         dataSigned = GetMonData(mon, sGetMonDataEVConstants[temp1]);
-                        evChange = temp2;
+                        evChange = (s8)itemEffect[itemEffectParam] * itemCount;
 
                         if (evChange > 0) // Increasing EV (HP or Atk)
                         {
@@ -6250,8 +6253,11 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
                         }
 
                         // Update EVs and stats
-                        SetMonData(mon, sGetMonDataEVConstants[temp1], &dataSigned);
-                        CalculateMonStats(mon);
+                        if (modifyStats)
+                        {
+                            SetMonData(mon, sGetMonDataEVConstants[temp1], &dataSigned);
+                            CalculateMonStats(mon);
+                        }
                         itemEffectParam++;
                         retVal = FALSE;
                         break;
@@ -6307,7 +6313,8 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
                             dataUnsigned = currentHP + dataUnsigned;
                             if (dataUnsigned > maxHP)
                                 dataUnsigned = maxHP;
-                            SetMonData(mon, MON_DATA_HP, &dataUnsigned);
+                            if (modifyStats)
+                                SetMonData(mon, MON_DATA_HP, &dataUnsigned);
                             retVal = FALSE;
                         }
                         effectFlags &= ~(ITEM4_REVIVE >> 2);
@@ -6395,7 +6402,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
                         evCount = GetMonEVCount(mon);
                         temp2 = itemEffect[itemEffectParam];
                         dataSigned = GetMonData(mon, sGetMonDataEVConstants[temp1 + 2]);
-                        evChange = temp2;
+                        evChange = (s8)itemEffect[itemEffectParam] * itemCount;
                         if (evChange > 0) // Increasing EV
                         {
                             // Check if the total EV limit is reached
@@ -6449,8 +6456,11 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
                         }
 
                         // Update EVs and stats
-                        SetMonData(mon, sGetMonDataEVConstants[temp1 + 2], &dataSigned);
-                        CalculateMonStats(mon);
+                        if (modifyStats)
+                        {
+                            SetMonData(mon, sGetMonDataEVConstants[temp1 + 2], &dataSigned);
+                            CalculateMonStats(mon);
+                        }
                         retVal = FALSE;
                         itemEffectParam++;
                         break;
@@ -6481,19 +6491,19 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
                         // how much friendship the Pokémon already has.
                         // In general, Pokémon with lower friendship receive more,
                         // and Pokémon with higher friendship receive less.
-                        if (GetMonData(mon, MON_DATA_FRIENDSHIP) < 100)
+                        if (modifyStats && GetMonData(mon, MON_DATA_FRIENDSHIP) < 100)
                             UPDATE_FRIENDSHIP_FROM_ITEM();
                         itemEffectParam++;
                         break;
 
                     case 6: // ITEM5_FRIENDSHIP_MID
-                        if (GetMonData(mon, MON_DATA_FRIENDSHIP) >= 100 && GetMonData(mon, MON_DATA_FRIENDSHIP) < 200)
+                        if (modifyStats && GetMonData(mon, MON_DATA_FRIENDSHIP) >= 100 && GetMonData(mon, MON_DATA_FRIENDSHIP) < 200)
                             UPDATE_FRIENDSHIP_FROM_ITEM();
                         itemEffectParam++;
                         break;
 
                     case 7: // ITEM5_FRIENDSHIP_HIGH
-                        if (GetMonData(mon, MON_DATA_FRIENDSHIP) >= 200)
+                        if (modifyStats && GetMonData(mon, MON_DATA_FRIENDSHIP) >= 200)
                             UPDATE_FRIENDSHIP_FROM_ITEM();
                         itemEffectParam++;
                         break;
@@ -8492,6 +8502,9 @@ const u8 *GetTrainerPartnerName(void)
 
 #define sAnimId    data[2]
 #define sAnimDelay data[3]
+#define tIsShadow  data[4]
+
+static EWRAM_DATA u8 sShadowAnimDelayTaskId = 0;
 
 static void Task_AnimateAfterDelay(u8 taskId)
 {
@@ -8507,7 +8520,10 @@ static void Task_PokemonSummaryAnimateAfterDelay(u8 taskId)
     if (--gTasks[taskId].sAnimDelay == 0)
     {
         StartMonSummaryAnimation(READ_PTR_FROM_TASK(taskId, 0), gTasks[taskId].sAnimId);
-        SummaryScreen_SetAnimDelayTaskId(TASK_NONE);
+        if (gTasks[taskId].tIsShadow)
+            sShadowAnimDelayTaskId = TASK_NONE;
+        else
+            SummaryScreen_SetAnimDelayTaskId(TASK_NONE);
         DestroyTask(taskId);
     }
 }
@@ -8567,7 +8583,7 @@ void DoMonFrontSpriteAnimation(struct Sprite *sprite, u16 species, bool8 noCry, 
     }
 }
 
-void PokemonSummaryDoMonAnimation(struct Sprite *sprite, u16 species, bool8 oneFrame)
+void PokemonSummaryDoMonAnimation(struct Sprite *sprite, u16 species, bool8 oneFrame, bool32 isShadow)
 {
     if (!oneFrame && HasTwoFramesAnimation(species))
         StartSpriteAnim(sprite, 1);
@@ -8578,7 +8594,11 @@ void PokemonSummaryDoMonAnimation(struct Sprite *sprite, u16 species, bool8 oneF
         STORE_PTR_IN_TASK(sprite, taskId, 0);
         gTasks[taskId].sAnimId = gSpeciesInfo[species].frontAnimId;
         gTasks[taskId].sAnimDelay = gSpeciesInfo[species].frontAnimDelay;
-        SummaryScreen_SetAnimDelayTaskId(taskId);
+        gTasks[taskId].tIsShadow = isShadow;
+        if (isShadow)
+            sShadowAnimDelayTaskId = taskId;
+        else
+            SummaryScreen_SetAnimDelayTaskId(taskId);
         SetSpriteCB_MonAnimDummy(sprite);
     }
     else
@@ -8590,9 +8610,18 @@ void PokemonSummaryDoMonAnimation(struct Sprite *sprite, u16 species, bool8 oneF
 
 void StopPokemonAnimationDelayTask(void)
 {
-    u8 delayTaskId = FindTaskIdByFunc(Task_PokemonSummaryAnimateAfterDelay);
-    if (delayTaskId != TASK_NONE)
+    u8 delayTaskId;
+    while ((delayTaskId = FindTaskIdByFunc(Task_PokemonSummaryAnimateAfterDelay)) != TASK_NONE)
         DestroyTask(delayTaskId);
+}
+
+void StopShadowAnimDelayTask(void)
+{
+    if (sShadowAnimDelayTaskId != TASK_NONE)
+    {
+        DestroyTask(sShadowAnimDelayTaskId);
+        sShadowAnimDelayTaskId = TASK_NONE;
+    }
 }
 
 void BattleAnimateBackSprite(struct Sprite *sprite, u16 species)
