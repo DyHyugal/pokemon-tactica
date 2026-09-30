@@ -57,18 +57,18 @@ Ne pas recoder ces blocs sans défaut démontré sur le HEAD courant :
 
 ### UI/UX
 
-Les corrections de runtime/assets déjà intégrées ne doivent pas être réécrites avant la prochaine ROM candidate :
+La pile d’interfaces moderne intégrée remplace les anciennes recolorations Tactica qui provoquaient des surfaces blanches, des textes superposés et des écrans incomplets :
 
-- menu principal Start et texte du Pokédex sombre en anthracite/rouge ;
-- Summary sans plaques claires, avec contrôle compact `START` pour STATS/IV/EV ;
-- HUD combat sans surfaces blanches, icône shiny transparente et barre EXP sombre/rouge ;
-- logo Méga interactif étiqueté `START`, avec aide des capacités sur `R` ;
-- boutiques avec palette runtime dédiée anthracite/rouge ;
-- sac et carte Dresseur recolorés dans le même thème ;
-- header Options / `B SAVE & EXIT` ;
+- équipe, sac et Summary inspirés de Pokémon Épée/Bouclier ;
+- Summary avec pages normales et page IV/EV ;
+- Pokédex HGSS standard ;
+- boutique moderne ;
+- interface de combat inspirée de Pokémon Noir/Blanc, avec cadres, menus, barre EXP et indicateurs propres à ce port ;
+- logo Méga interactif commandé par `START`, avec aide des capacités sur `R` ;
+- menu Start, carte Dresseur et Options conservés dans leur état stable actuel, faute de port officiel DS/Switch autonome et compatible ;
 - libellé `TACTICA` centré dans sa bulle sur l'écran titre.
 
-Ces écrans restent à **observer dans une ROM fraîche**. Une validation statique verte ne vaut pas validation visuelle.
+Ne pas réappliquer les anciennes palettes anthracite/rouge sur les écrans remplacés. Ces interfaces restent à **observer dans une ROM fraîche**. Une validation statique verte ne vaut pas validation visuelle.
 
 ### Difficulty
 

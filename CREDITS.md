@@ -120,6 +120,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
 ## Other Credits
+### Interface feature ports
+- [montmoguri](https://github.com/montmoguri/pokeemerald-expansion) — Sword & Shield Party Menu, Bag Menu and Summary Screen ports.
+- [mudskipper13](https://github.com/mudskipper13/pokeemerald/tree/feature/bwBattleUI) — Black & White Battle UI and modern shop implementation used as integration sources.
+
 ### Mega Evolution Overworld Sprite Credits:
 - [princess-phoenix](https://www.deviantart.com/princess-phoenix)
 - [larryturbo](https://www.deviantart.com/larryturbo)
