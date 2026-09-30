@@ -87,6 +87,8 @@ def main() -> None:
     party_config = (ROOT / "include/constants/party_menu.h").read_text(encoding="utf-8")
     summary_config = (ROOT / "include/swsh_summary_screen.h").read_text(encoding="utf-8")
     scrcmd = (ROOT / "src/scrcmd.c").read_text(encoding="utf-8")
+    graphics = (ROOT / "src/graphics.c").read_text(encoding="utf-8")
+    shop = (ROOT / "src/shop.c").read_text(encoding="utf-8")
     pokedex = (ROOT / "src/pokedex_plus_hgss.c").read_text(encoding="utf-8")
     summary = (ROOT / "src/pokemon_summary_screen.c").read_text(encoding="utf-8")
     challenge_menu = (ROOT / "src/challenge_menu.c").read_text(encoding="utf-8")
@@ -122,6 +124,11 @@ def main() -> None:
                 line for line in general_config.splitlines()
                 if not line.lstrip().startswith("//")),
             "the animated shop must stay disabled to preserve runtime memory")
+    require('graphics/shop/b2w2/menu.4bpp.smol' in graphics
+            and 'graphics/shop/b2w2/menu.gbapal' in graphics
+            and 'graphics/shop/b2w2/menu.bin.smolTM' in graphics
+            and "B2W2 shop: pale list surface and slate description panel" in shop,
+            "the native HNS shop must keep the static B2W2 skin")
     require("tileset_interface_DECA_hns" not in pokedex
             and "tileset_interface_hns" not in pokedex,
             "the HGSS Pokédex must not load the retired Tactica recolor assets")
@@ -179,12 +186,13 @@ def main() -> None:
         "graphics/battle_interface/bw/actionbox.png",
         "graphics/battle_interface/bw/healthbox_singles_player.png",
         "graphics/battle_interface/bw/mega_trigger.png",
+        "graphics/shop/b2w2/menu.png",
     ):
         image = Image.open(ROOT / path)
         require(image.mode == "P" and image.getbbox() is not None,
                 f"modern UI asset is missing or invalid: {path}")
 
-    print("Tactica UI validation passed: SwSh menus, HGSS Pokédex, native shop, BW battle UI, title and Violet Gym guide")
+    print("Tactica UI validation passed: SwSh menus, HGSS Pokédex, B2W2 native shop, BW battle UI, title and Violet Gym guide")
 
 
 if __name__ == "__main__":
