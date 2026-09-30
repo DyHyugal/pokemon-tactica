@@ -76,10 +76,15 @@ def largest_light_surface(image: list[list[int]]) -> int:
 def main() -> None:
     menu = (ROOT / "src/menu.c").read_text(encoding="utf-8")
     start_menu = (ROOT / "src/start_menu.c").read_text(encoding="utf-8")
-    battle_interface = (ROOT / "src/battle_interface.c").read_text(encoding="utf-8")
-    battle_message = (ROOT / "src/battle_message.c").read_text(encoding="utf-8")
-    graphics = (ROOT / "src/graphics.c").read_text(encoding="utf-8")
-    shop = (ROOT / "src/shop.c").read_text(encoding="utf-8")
+    battle_controller = (ROOT / "src/battle_controller_player.c").read_text(encoding="utf-8")
+    battle_ui = (ROOT / "src/bw_battle_ui.c").read_text(encoding="utf-8")
+    battle_ui_config = (ROOT / "include/config/bw_battle_ui.h").read_text(encoding="utf-8")
+    battle_config = (ROOT / "include/config/battle.h").read_text(encoding="utf-8")
+    bag_config = (ROOT / "include/config/swsh_item_menu.h").read_text(encoding="utf-8")
+    party_config = (ROOT / "include/constants/party_menu.h").read_text(encoding="utf-8")
+    summary_config = (ROOT / "include/swsh_summary_screen.h").read_text(encoding="utf-8")
+    scrcmd = (ROOT / "src/scrcmd.c").read_text(encoding="utf-8")
+    pokedex = (ROOT / "src/pokedex_plus_hgss.c").read_text(encoding="utf-8")
     summary = (ROOT / "src/pokemon_summary_screen.c").read_text(encoding="utf-8")
     challenge_menu = (ROOT / "src/challenge_menu.c").read_text(encoding="utf-8")
     title_screen = (ROOT / "src/title_screen.c").read_text(encoding="utf-8")
@@ -93,37 +98,34 @@ def main() -> None:
             "HNS start-menu text must remain red on anthracite")
     require("FillWindowPixelBuffer(windowId, PIXEL_FILL(11))" in start_menu,
             "HNS start-menu background must remain anthracite")
-    require("#define HEALTHBOX_BG_INDEX 7" in battle_interface,
-            "HNS healthbox dynamic fields must remain dark")
-    require(".background = 7" in battle_interface and ".foreground = 2" in battle_interface,
-            "HNS healthbox text must remain light on dark")
-    require("FillWindowPixelRect(windowId, PIXEL_FILL(2), 0, 14, 64, 2)" in battle_message,
-            "move rows must retain their red horizontal separator")
-    require("#define BATTLE_ACTION_PROMPT_FILL       PIXEL_FILL(5)" in battle_message
-            and "#define BATTLE_ACTION_MENU_FILL         PIXEL_FILL(8)" in battle_message
-            and "#define BATTLE_MOVE_MENU_FILL           PIXEL_FILL(8)" in battle_message
-            and "FillWindowPixelBuffer(B_WIN_ACTION_MENU, PIXEL_FILL(8))" in
-                (ROOT / "src/battle_controller_player.c").read_text(encoding="utf-8"),
-            "battle action and move panels must use opaque dark fills")
-    require(graphics.count('graphics/battle_interface/hns/textbox.gbapal') == 2,
-            "both battle tilemap palette banks must be initialized explicitly")
-    require(".fillValue = 12" in shop
-            and "[COLORID_NORMAL]      = {12, 10, 13}" in shop
-            and "FillWindowPixelBuffer(sMartInfo.windowId, PIXEL_FILL(12))" in shop
-            and "FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(12))" in shop
-            and "FillWindowPixelBuffer(WIN_ITEM_LIST, PIXEL_FILL(12))" in shop
-            and shop.count("LoadTacticaShopWindowPalette();") >= 3
-            and "static const u16 sTacticaShopWindowPalette[16]" in shop
-            and "SetStandardWindowBorderStyle(sMartInfo.windowId, FALSE);" in shop,
-            "HNS shops must keep the anthracite surface / red text runtime treatment")
-    require("sMonSummaryScreen->maxPageIndex = PSS_PAGE_BATTLE_MOVES;" in summary
-            and 'static const u8 sText_HnsHeldItem[] = _("{STR_VAR_1}")' in summary
-            and 'static const u8 sText_HnsFriendship[] = _("{STR_VAR_1}")' in summary
-            and summary.count("#if !IS_HNS") >= 7,
-            "HNS Summary must keep IV/EV on Skills without duplicate fixed labels or normal Contest page")
-    require(".tilemapTop = 0," in summary
-            and "ClearWindowTilemap(PSS_LABEL_WINDOW_SKILLS_MODE);" in summary,
-            "HNS Summary mode tabs must stay in the header and be cleared between pages")
+    require("#define SWSH_ITEM_MENU                  TRUE" in bag_config,
+            "the Sword/Shield Bag must remain enabled")
+    require("#define SWSH_PARTY_MENU                   TRUE" in party_config,
+            "the Sword/Shield party menu must remain enabled")
+    require("#define SWSH_SUMMARY_SCREEN                           TRUE" in summary_config
+            and "#define SWSH_SUMMARY_SHOW_IV_EV                       TRUE" in summary_config,
+            "the Sword/Shield Summary and its IV/EV page must remain enabled")
+    require("ShowPokemonSummaryScreen_SwSh" in summary,
+            "the public Summary entry point must remain routed to the Sword/Shield screen")
+    require("NewShop_CreatePokemartMenu(ptr);" in scrcmd
+            and "NewShop_CreateDecorationShop1Menu(ptr);" in scrcmd
+            and "NewShop_CreateDecorationShop2Menu(ptr);" in scrcmd,
+            "standard and decoration shops must remain routed to the modern shop")
+    require("tileset_interface_DECA_hns" not in pokedex
+            and "tileset_interface_hns" not in pokedex,
+            "the HGSS Pokédex must not load the retired Tactica recolor assets")
+    require(all(f"#define {setting}" in battle_ui_config for setting in (
+                "BW_BATTLE_UI", "BW_BATTLE_UI_TEXTBOX", "BW_BATTLE_UI_INPUTBOX",
+                "BW_BATTLE_UI_PARTY_SUMMARY", "BW_BATTLE_UI_HEALTHBOX",
+                "BW_BATTLE_UI_ABILITY_POP_UP", "BW_BATTLE_UI_WINDOW_SPRITES"))
+            and battle_ui_config.count("(TRUE)") >= 7,
+            "all Black/White battle-interface components must remain enabled")
+    require("#define B_MOVE_DESCRIPTION_BUTTON           R_BUTTON" in battle_config
+            and "else if (JOY_NEW(START_BUTTON))" in battle_controller
+            and "ChangeGimmickTriggerSprite" in battle_controller,
+            "battle controls must keep move help on R and Mega activation on START")
+    require("BattleUI_CreateGimmickTriggerSprite" in battle_ui,
+            "the Black/White UI must expose the interactive Mega trigger")
     require("120 - width, 0, color, 0, tabName" in challenge_menu
             and "120 - GetStringWidth(FONT_SMALL, sText_TopBar_Cancel, 0) / 2,\n        9, color" in challenge_menu,
             "the Options header must keep navigation and SAVE & EXIT on separate rows")
@@ -153,62 +155,20 @@ def main() -> None:
         require(move.upper() in violet_gym and f"- {move}" in falkner,
                 f"the Violet Gym advice no longer matches Falkner's {move}")
 
-    ui_root = ROOT / "graphics/battle_interface/hns"
-    require(palette_rgb(ui_root / "textbox.gbapal", 5) == (16, 16, 24),
-            "battle panel fill color must remain black")
-
-    textbox = (ui_root / "textbox.4bpp").read_bytes()
-    separator = tile_pixels(textbox, 31)
-    require(all(row == [0, 0, 0, 2, 2, 0, 0, 0] for row in separator),
-            "battle move-column separator tile is invalid")
-    tilemap = (ui_root / "textbox_map.bin").read_bytes()
-    for y in range(55, 59):
-        offset = (y * 32 + 10) * 2
-        entry = tilemap[offset] | tilemap[offset + 1] << 8
-        require(entry == 31, f"missing red move separator at tilemap row {y}")
-
-    hpbar = (ui_root / "hpbar.4bpp").read_bytes()
-    require(all((packed & 0xF) != 2 and (packed >> 4) != 2 for packed in hpbar),
-            "HNS HP bar still contains the residual white plate color")
-
-    misc = (ui_root / "misc.4bpp").read_bytes()
-    require(all((packed & 0xF) != 2 and (packed >> 4) != 2 for packed in misc),
-            "HNS healthbox still contains the residual white plate below the HP bar")
-
-    expbar = (ui_root / "expbar.4bpp").read_bytes()
-    for fill in range(9):
-        pixels = tile_pixels(expbar, fill)
-        for y, row in enumerate(pixels):
-            expected = [0] * 8 if y >= 6 else [1] * 8
-            if y in (3, 4):
-                expected[:fill] = [14] * fill
-            require(row == expected, f"EXP bar state {fill}, row {y} is not dark/red only")
-
-    shiny = Image.open(ROOT / "graphics/battle_interface/shiny_icon.png")
-    require(shiny.info.get("transparency") == 0
-            and all(pixel != 2 for pixel in shiny.getdata()),
-            "battle shiny icon must not contain the legacy white plate")
-
-    mega_trigger = Image.open(ROOT / "graphics/battle_interface/mega_trigger.png")
-    require(mega_trigger.size == (32, 64)
-            and sum(pixel in (7, 13) for pixel in mega_trigger.crop((0, 26, 32, 32)).getdata()) >= 20
-            and sum(pixel in (7, 13) for pixel in mega_trigger.crop((0, 58, 32, 64)).getdata()) >= 20,
-            "Mega trigger must display its START key in both interactive states")
-
-    summary_root = ROOT / "graphics/summary_screen/hns"
-    summary_tiles = (summary_root / "tiles.4bpp").read_bytes()
-    for page in (
-        "page_info.bin",
-        "page_info_egg.bin",
-        "page_skills.bin",
-        "page_battle_moves.bin",
-        "page_contest_moves.bin",
+    for path in (
+        "graphics/party_menu/swsh/tiles.png",
+        "graphics/bag/swsh/tiles.png",
+        "graphics/summary_screen/swsh/tiles.png",
+        "graphics/new_shop/menu.png",
+        "graphics/battle_interface/bw/actionbox.png",
+        "graphics/battle_interface/bw/healthbox_singles_player.png",
+        "graphics/battle_interface/bw/mega_trigger.png",
     ):
-        largest = largest_light_surface(render_summary_page(summary_tiles, summary_root / page))
-        require(largest < 48,
-                f"HNS Summary {page} still contains a legacy light panel ({largest} connected pixels)")
+        image = Image.open(ROOT / path)
+        require(image.mode == "P" and image.getbbox() is not None,
+                f"modern UI asset is missing or invalid: {path}")
 
-    print("Tactica UI validation passed: Summary, shops, battle HUD/panels, menu VRAM and Violet Gym guide")
+    print("Tactica UI validation passed: SwSh menus, HGSS Pokédex, modern shop, BW battle UI, title and Violet Gym guide")
 
 
 if __name__ == "__main__":

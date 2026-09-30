@@ -10,7 +10,7 @@ L’ancienne candidate `31fe7d7c9d33dcc757fede543db249651f7dc53f` reste un témo
 - la régénération du Pokédex évolution ;
 - les correctifs de légalité boss ;
 - la PR #48 sur l’introduction Tactica, HARD/Recommended et le message du second starter.
-- la restauration finale des interfaces Summary/HUD/boutiques, du sélecteur Difficulty et des garde-fous Méga ;
+- l’intégration des interfaces Épée/Bouclier, HGSS et Noir/Blanc, du sélecteur Difficulty et des garde-fous Méga ;
 - le centrage du libellé `TACTICA` dans sa bulle sur l'écran titre.
 
 Le dernier `integration/v1` doit être reconstruit proprement avant tout nouveau playtest. Un simple `git pull` ne met jamais à jour une ROM déjà compilée.
@@ -129,14 +129,15 @@ Le Pokédex n’est plus une source manuelle pour ces méthodes : ses champs d�
 
 ### UI
 
-- Summary : vérifier l’absence des anciennes plaques claires, le contrôle compact `START` + STATS/IV/EV, la lisibilité des valeurs et l’absence de chevauchement entre les deux colonnes ;
-- HUD combat : vérifier l’absence de surface blanche dans les cadres adverses et le menu d’actions, la transparence autour de l’icône shiny et la barre EXP sombre avec une seule progression rouge ;
-- Méga-Évolution : après Mortimer, équiper une Méga-Gemme compatible puis appuyer sur `START` depuis le choix des capacités ; le logo `START` doit changer d’état et la transformation doit précéder l’attaque ;
+- équipe Épée/Bouclier : vérifier les six emplacements, les états vide/œuf/statut et toutes les actions du menu contextuel ;
+- sac Épée/Bouclier : vérifier les poches, la description, les quantités et l’utilisation d’un objet sur le terrain ;
+- Summary Épée/Bouclier : parcourir toutes les pages, dont IV/EV, et vérifier textes, icônes, capacités et navigation ;
+- Pokédex HGSS : vérifier la liste, la fiche, les formes et les compteurs ;
+- boutique moderne : vérifier achat, vente, quantités, argent, description et sortie ;
+- HUD Noir/Blanc : vérifier cadres allié/adversaire, menus action/capacités, statut, shiny, doubles et barre EXP ;
+- Méga-Évolution : après Mortimer, équiper une Méga-Gemme compatible puis appuyer sur `START` depuis le choix des capacités ; le logo doit changer d’état et la transformation doit précéder l’attaque ;
 - aide des capacités : vérifier que `R` affiche les informations sans entrer en conflit avec la commande Méga ;
-- menu principal et Pokédex : vérifier le texte rouge lisible sur les fonds anthracite et la présence normale de la liste du Pokédex ;
-- boutiques : vérifier que les fenêtres terrain, la liste et la description restent anthracite avec texte rouge, sans panneau blanc ;
-- sac et carte Dresseur : vérifier l’application homogène des palettes anthracite/rouge ;
-- header Options lisible avec `B SAVE & EXIT`.
+- menu Start, carte Dresseur et header Options : vérifier leur rendu stable, dont `B SAVE & EXIT` ;
 - libellé `TACTICA` visuellement centré dans sa bulle sur l'écran titre.
 
 ## IA HARD — premier vrai test avant toute correction

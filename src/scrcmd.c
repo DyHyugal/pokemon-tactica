@@ -64,6 +64,7 @@
 #include "window.h"
 #include "list_menu.h"
 #include "malloc.h"
+#include "new_shop.h"
 #include "battle.h"
 #include "challenge_menu.h"
 #include "starter_choose.h"
@@ -3368,7 +3369,7 @@ bool8 ScrCmd_pokemart(struct ScriptContext *ctx)
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
-    CreatePokemartMenu(ptr);
+    NewShop_CreatePokemartMenu(ptr);
     ScriptContext_Stop();
     return TRUE;
 }
@@ -3380,7 +3381,7 @@ bool8 ScrCmd_pokemartdecoration(struct ScriptContext *ctx)
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
-    CreateDecorationShop1Menu(ptr);
+    NewShop_CreateDecorationShop1Menu(ptr);
     ScriptContext_Stop();
     return TRUE;
 }
@@ -3392,7 +3393,7 @@ bool8 ScrCmd_pokemartdecoration2(struct ScriptContext *ctx)
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
-    CreateDecorationShop2Menu(ptr);
+    NewShop_CreateDecorationShop2Menu(ptr);
     ScriptContext_Stop();
     return TRUE;
 }

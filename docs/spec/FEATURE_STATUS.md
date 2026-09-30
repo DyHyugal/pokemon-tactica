@@ -49,10 +49,10 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | Sync Localisations — niveaux | `[DONE]` | Générateur canonique. |
 | Sync Localisations — espèces / recherche | `[DONE]` | Générateur étendu aux espèces et `data-search`; synchronisations `--check` et CI Tactica vertes sur le HEAD de la PR de nettoyage. |
 | Compteurs Pokédex | `[DONE]` | Recalculés depuis les tables standard + pools spéciaux visibles ; synchronisation idempotente confirmée par la CI Tactica. |
-| Summary ROM | `[PARTIEL]` | Les grandes plaques claires héritées ont été retirées des tilemaps. Le mode courant STATS/IV/EV est affiché dans un contrôle compact `START`, les libellés et valeurs utilisent une police resserrée et les fenêtres conservent le fond anthracite. Recontrôle ROM requis. |
-| HUD combat | `[PARTIEL]` | Les panneaux action/capacités sont anthracite avec texte rouge, les surfaces blanches du cadre ont été retirées, l’icône shiny est transparente et la barre EXP revient à un fond sombre avec une progression rouge unique. La Méga se déclenche avec `START`, indiqué dans les deux états du logo interactif ; l’aide des capacités passe sur `R`. Recontrôle ROM requis. |
-| Menu principal / Pokédex / sac / carte Dresseur | `[PARTIEL]` | Menu principal et texte du Pokédex sombre remis en contraste anthracite/rouge ; palettes du sac et de la carte Dresseur alignées sur le thème. Recontrôle ROM requis. |
-| UI boutiques | `[PARTIEL]` | Les fenêtres terrain, liste et description chargent une palette dédiée anthracite/rouge au runtime afin de supprimer les surfaces blanches résiduelles. Recontrôle ROM requis. |
+| Summary ROM | `[PARTIEL]` | Interface inspirée de Pokémon Épée/Bouclier intégrée, avec pages Summary usuelles et page IV/EV. Compilation et validation statique vertes ; contrôle ROM requis. |
+| HUD combat | `[PARTIEL]` | Interface inspirée de Pokémon Noir/Blanc intégrée. La Méga reste interactive sur `START` et l’aide des capacités utilise `R`. Compilation et tests ciblés verts ; contrôle ROM requis. |
+| Menu principal / Pokédex / sac / carte Dresseur | `[PARTIEL]` | Sac Épée/Bouclier et Pokédex HGSS intégrés. Le menu Start et la carte Dresseur conservent leur implémentation stable : aucun port officiel DS/Switch autonome et compatible n’a été identifié. Contrôle ROM requis. |
+| UI boutiques | `[PARTIEL]` | Boutique moderne intégrée à la place de l’ancienne recoloration Tactica. Compilation et validation statique vertes ; parcours d’achat ROM à contrôler. |
 | Assistant d’entraînement | `[DONE]` | Tests dédiés existants. |
 | Boutiques objets/moves/Méga-Gemmes — contenu | `[PARTIEL]` | Catalogues/runtime présents ; parcours d’achat ROM à revalider. |
 | Balance 26 espèces / 16 learnsets | `[DONE]` | Source canonique + validateur dédié ; Draco-Griffe est légal pour Hydragon au match retour. |

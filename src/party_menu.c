@@ -82,6 +82,8 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 
+#if !SWSH_PARTY_MENU
+
 enum {
     MENU_SUMMARY,
     MENU_SWITCH,
@@ -8657,3 +8659,4 @@ static void Task_FirstBattleEnterParty_WaitFadeNormal(u8 taskId)
         gTasks[taskId].func = Task_HandleChooseMonInput;
     }
 }
+#endif // !SWSH_PARTY_MENU
