@@ -3508,3 +3508,29 @@ static void Task_BannedSpeciesWindowInput(u8 taskId)
 #undef tArrowTaskId
 #undef tScrollOffset
 #undef tListPointerElemId
+
+u16 GetBattlePoints(void)
+{
+    return gSaveBlock2Ptr->frontier.battlePoints;
+}
+
+bool8 IsEnoughBattlePoints(u16 cost)
+{
+    return GetBattlePoints() >= cost;
+}
+
+void SetBattlePoints(u16 pointAmount)
+{
+    gSaveBlock2Ptr->frontier.battlePoints = pointAmount;
+}
+
+bool8 RemoveBattlePoints(u16 toSub)
+{
+    u16 ownedPoints = GetBattlePoints();
+
+    if (ownedPoints < toSub)
+        return FALSE;
+
+    SetBattlePoints(ownedPoints - toSub);
+    return TRUE;
+}

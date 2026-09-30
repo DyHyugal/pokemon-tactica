@@ -80,3 +80,8 @@ bool8 RemoveCoins(u16 toSub)
     }
     return FALSE;
 }
+
+bool8 IsEnoughCoins(u16 cost)
+{
+    return GetCoins() >= cost;
+}
