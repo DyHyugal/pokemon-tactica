@@ -76,6 +76,9 @@ def largest_light_surface(image: list[list[int]]) -> int:
 def main() -> None:
     menu = (ROOT / "src/menu.c").read_text(encoding="utf-8")
     start_menu = (ROOT / "src/start_menu.c").read_text(encoding="utf-8")
+    text_window = (ROOT / "src/text_window.c").read_text(encoding="utf-8")
+    malloc_header = (ROOT / "include/malloc.h").read_text(encoding="utf-8")
+    new_shop = (ROOT / "src/new_shop.c").read_text(encoding="utf-8")
     battle_controller = (ROOT / "src/battle_controller_player.c").read_text(encoding="utf-8")
     battle_ui = (ROOT / "src/bw_battle_ui.c").read_text(encoding="utf-8")
     battle_ui_config = (ROOT / "include/config/bw_battle_ui.h").read_text(encoding="utf-8")
@@ -92,12 +95,15 @@ def main() -> None:
     violet_map = (ROOT / "data/maps/VioletCity_Gym_hns/map.json").read_text(encoding="utf-8")
     trainers = (ROOT / "src/data/trainers_hns.party").read_text(encoding="utf-8")
 
-    require("(numActions * 2) + 2, STD_WINDOW_PALETTE_NUM, 0x50" in menu,
-            "HNS start menu must use the dark/red standard palette without touching field tilemaps")
-    require("sHnsStartMenuTextColors[] = {11, 4, 13}" in start_menu,
-            "HNS start-menu text must remain red on anthracite")
-    require("FillWindowPixelBuffer(windowId, PIXEL_FILL(11))" in start_menu,
-            "HNS start-menu background must remain anthracite")
+    require('INCBIN_U16("graphics/interface/std_menu.gbapal")' in menu
+            and "AddWindowParameterized(0, 22, 1, 7" in menu,
+            "the Start menu must use the original compact layout and palette")
+    require("sHnsStartMenuDescriptions" not in start_menu
+            and "DrawHnsStartMenuActions" not in start_menu,
+            "the oversized HNS Start-menu renderer must stay retired")
+    require('INCBIN_U8("graphics/text_window/1.4bpp")' in text_window
+            and 'INCBIN_U16("graphics/text_window/1.gbapal")' in text_window,
+            "the default textbox must use its original frame and palette")
     require("#define SWSH_ITEM_MENU                  TRUE" in bag_config,
             "the Sword/Shield Bag must remain enabled")
     require("#define SWSH_PARTY_MENU                   TRUE" in party_config,
@@ -111,6 +117,9 @@ def main() -> None:
             and "NewShop_CreateDecorationShop1Menu(ptr);" in scrcmd
             and "NewShop_CreateDecorationShop2Menu(ptr);" in scrcmd,
             "standard and decoration shops must remain routed to the modern shop")
+    require("LZ77UnCompVram(src" in new_shop
+            and "DecompressAndCopyTileDataToVram(2" not in new_shop,
+            "modern shop graphics must load without heap-backed temporary buffers")
     require("tileset_interface_DECA_hns" not in pokedex
             and "tileset_interface_hns" not in pokedex,
             "the HGSS Pokédex must not load the retired Tactica recolor assets")
@@ -126,6 +135,12 @@ def main() -> None:
             "battle controls must keep move help on R and Mega activation on START")
     require("BattleUI_CreateGimmickTriggerSprite" in battle_ui,
             "the Black/White UI must expose the interactive Mega trigger")
+    require("return gBattleTextboxTiles;" in battle_ui
+            and "return gBattleTextboxPalette;" in battle_ui
+            and "return gBattleTextboxTilemap;" in battle_ui,
+            "the battle textbox backing must preserve environmental backgrounds")
+    require("#define HEAP_SIZE 0x1ED00" in malloc_header,
+            "the battle/menu heap must fit background restoration after a party switch")
     require("120 - width, 0, color, 0, tabName" in challenge_menu
             and "120 - GetStringWidth(FONT_SMALL, sText_TopBar_Cancel, 0) / 2,\n        9, color" in challenge_menu,
             "the Options header must keep navigation and SAVE & EXIT on separate rows")
