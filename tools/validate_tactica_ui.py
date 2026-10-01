@@ -128,6 +128,16 @@ def main() -> None:
             and full_start_menu.index("DestroyStatusSprites();") < full_start_menu.index("try_free(sStartMenuDataPtr);")
             and "CB2_ReturnToFullScreenStartMenu" in full_start_menu,
             "the full Start menu must release sprites before its state and preserve return routing")
+    require("DUMMY_WIN_TEMPLATE" in full_start_menu
+            and "if (!InitWindows(sStartMenuWindowTemplates))" in full_start_menu,
+            "the full Start menu window list must be terminated and allocation failures must use the safe fallback")
+    require("sBg1TilemapBuffer" not in full_start_menu
+            and "sBg2TilemapBuffer" not in full_start_menu
+            and "DecompressDataWithHeaderVram(sStartMenuTilemap, (void *)BG_SCREEN_ADDR(30));" in full_start_menu
+            and "DecompressDataWithHeaderVram(sScrollBgTilemap, (void *)BG_SCREEN_ADDR(28));" in full_start_menu,
+            "the full Start menu must stream its static backgrounds to VRAM without two redundant heap tilemaps")
+    require("while (1)" not in full_start_menu[full_start_menu.index("static void StartMenuFull_RunSetup(void)"):full_start_menu.index("static void StartMenuFull_MainCB(void)")],
+            "the full Start menu setup must advance over multiple frames")
     require("sHnsStartMenuDescriptions" not in start_menu
             and "DrawHnsStartMenuActions" not in start_menu,
             "the oversized HNS Start-menu renderer must stay retired")
