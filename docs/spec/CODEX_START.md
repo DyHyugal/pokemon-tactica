@@ -62,10 +62,11 @@ La pile d’interfaces moderne intégrée remplace les anciennes recolorations T
 - équipe, sac et Summary inspirés de Pokémon Épée/Bouclier ;
 - Summary avec pages normales et page IV/EV ;
 - Pokédex HGSS standard ;
-- boutique native, statique et légère, conservée pour garantir la stabilité avec les autres écrans modernes ;
+- boutique native, statique et légère avec habillage B2W2 « 2020s Edition », sans moteur animé additionnel ;
 - interface de combat Noir/Blanc conservée dans son design d’origine, avec ses cadres, menus, barre EXP et indicateurs ; seul le fond de texte du moteur est utilisé afin de conserver les décors de combat ;
 - logo Méga interactif commandé par `START`, avec aide des capacités sur `R` ;
-- menu Start compact et boîtes de dialogue revenus au cadre et aux couleurs d’origine ; carte Dresseur et Options conservées dans leur état stable actuel ;
+- menu Start plein écran inspiré HGSS/BW en jeu normal, avec repli compact d’origine dans les contextes spéciaux (link, Safari, Pyramide, Pike, Union, partenaire et concours d’insectes) ;
+- carte Dresseur inspirée d’Épée/Bouclier, adaptée aux textes localisés et aux 16 badges de Tactica ; boîtes de dialogue et Options conservées dans leur état stable actuel ;
 - libellé `TACTICA` centré dans sa bulle sur l'écran titre.
 
 Ne pas réappliquer les anciennes palettes anthracite/rouge sur les écrans remplacés. Ces interfaces restent à **observer dans une ROM fraîche**. Une validation statique verte ne vaut pas validation visuelle.

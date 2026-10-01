@@ -186,10 +186,10 @@ static void DestroyTrainerCardMonIcons(void);
 static const u32 sTrainerCardStickers_Gfx[]      = INCBIN_U32("graphics/trainer_card/frlg/stickers.4bpp.smol");
 static const u16 sUnused_Pal[]                   = INCBIN_U16("graphics/trainer_card/unused.gbapal");
 #if IS_HNS
-static const u16 sHnsTrainerCardBronze_Pal[]   = INCBIN_U16("graphics/trainer_card/hns/bronze.gbapal");
-static const u16 sHnsTrainerCardCopper_Pal[]   = INCBIN_U16("graphics/trainer_card/hns/copper.gbapal");
-static const u16 sHnsTrainerCardSilver_Pal[]   = INCBIN_U16("graphics/trainer_card/hns/silver.gbapal");
-static const u16 sHnsTrainerCardGold_Pal[]     = INCBIN_U16("graphics/trainer_card/hns/gold.gbapal");
+static const u16 sHnsTrainerCardBronze_Pal[]   = INCBIN_U16("graphics/trainer_card/hns/swsh/bronze.gbapal");
+static const u16 sHnsTrainerCardCopper_Pal[]   = INCBIN_U16("graphics/trainer_card/hns/swsh/copper.gbapal");
+static const u16 sHnsTrainerCardSilver_Pal[]   = INCBIN_U16("graphics/trainer_card/hns/swsh/silver.gbapal");
+static const u16 sHnsTrainerCardGold_Pal[]     = INCBIN_U16("graphics/trainer_card/hns/swsh/gold.gbapal");
 static const u16 sHnsTrainerCardFemaleBg_Pal[] = INCBIN_U16("graphics/trainer_card/hns/female_bg.gbapal");
 static const u32 sHnsTrainerCardBadgesCombined_Gfx[] = INCBIN_U32("graphics/trainer_card/hns/combined_badges.4bpp.smol");
 #endif
@@ -577,12 +577,22 @@ static bool8 LoadCardGfx(void)
     switch (sData->gfxLoadState)
     {
     case 0:
+#if IS_HNS
+        if (sData->cardType == CARD_TYPE_HNS)
+            DecompressDataWithHeaderWram(gHnsTrainerCardBg_Tilemap, sData->bgTilemap);
+        else
+#endif
         if (sData->cardType != CARD_TYPE_FRLG)
             DecompressDataWithHeaderWram(gHoennTrainerCardBg_Tilemap, sData->bgTilemap);
         else
             DecompressDataWithHeaderWram(gKantoTrainerCardBg_Tilemap, sData->bgTilemap);
         break;
     case 1:
+#if IS_HNS
+        if (sData->cardType == CARD_TYPE_HNS)
+            DecompressDataWithHeaderWram(gHnsTrainerCardBack_Tilemap, sData->backTilemap);
+        else
+#endif
         if (sData->cardType != CARD_TYPE_FRLG)
             DecompressDataWithHeaderWram(gHoennTrainerCardBack_Tilemap, sData->backTilemap);
         else
@@ -591,6 +601,11 @@ static bool8 LoadCardGfx(void)
     case 2:
         if (!sData->isLink)
         {
+#if IS_HNS
+            if (sData->cardType == CARD_TYPE_HNS)
+                DecompressDataWithHeaderWram(gHnsTrainerCardFront_Tilemap, sData->frontTilemap);
+            else
+#endif
             if (sData->cardType != CARD_TYPE_FRLG)
                 DecompressDataWithHeaderWram(gHoennTrainerCardFront_Tilemap, sData->frontTilemap);
             else
@@ -598,6 +613,11 @@ static bool8 LoadCardGfx(void)
         }
         else
         {
+#if IS_HNS
+            if (sData->cardType == CARD_TYPE_HNS)
+                DecompressDataWithHeaderWram(gHnsTrainerCardFrontLink_Tilemap, sData->frontTilemap);
+            else
+#endif
             if (sData->cardType != CARD_TYPE_FRLG)
                 DecompressDataWithHeaderWram(gHoennTrainerCardFrontLink_Tilemap, sData->frontTilemap);
             else
@@ -615,6 +635,11 @@ static bool8 LoadCardGfx(void)
 #endif
         break;
     case 4:
+#if IS_HNS
+        if (sData->cardType == CARD_TYPE_HNS)
+            DecompressDataWithHeaderWram(gHnsTrainerCard_Gfx, sData->cardTiles);
+        else
+#endif
         if (sData->cardType != CARD_TYPE_FRLG)
             DecompressDataWithHeaderWram(gHoennTrainerCard_Gfx, sData->cardTiles);
         else
@@ -2017,7 +2042,8 @@ static u8 GetSetCardType(void)
     else
     {
 #if IS_HNS
-        sData->isHoenn = TRUE;
+        // The Sword/Shield card uses the wider FRLG text and portrait layout.
+        sData->isHoenn = FALSE;
         return CARD_TYPE_HNS;
 #else
         if (sData->trainerCard.version == VERSION_FIRE_RED || sData->trainerCard.version == VERSION_LEAF_GREEN)

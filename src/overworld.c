@@ -3,6 +3,7 @@
 #include "overworld.h"
 #include "constants/heal_locations.h"
 #include "battle_pyramid.h"
+#include "battle_pike.h"
 #include "battle_setup.h"
 #include "battle_util.h"
 #include "berry.h"
@@ -83,6 +84,7 @@
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
+#include "ui_startmenu_full.h"
 #include "constants/vars_hns.h"
 #include "nuzlocke.h"
 #include "pokemon_storage_system.h"
@@ -4176,4 +4178,19 @@ static void Task_OvwldCredits_WaitFade(u8 taskId)
         SetMainCallback2(CB2_LoadMap);
         DestroyTask(taskId);
     }
+}
+
+void CB2_ReturnToFullScreenStartMenu(void)
+{
+    FieldClearVBlankHBlankCallbacks();
+
+    if (GetSafariZoneFlag() || CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE
+     || InBattlePike() || InUnionRoom() || InMultiPartnerRoom()
+     || VarGet(VAR_BUG_CONTEST_STATE) != 0)
+    {
+        SetMainCallback2(CB2_ReturnToFieldWithOpenMenu);
+        return;
+    }
+
+    StartMenuFull_Init(CB2_ReturnToField);
 }

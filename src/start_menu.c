@@ -51,6 +51,7 @@
 #include "constants/battle_frontier.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "ui_startmenu_full.h"
 #include "rtc.h"
 #include "constants/layouts.h"
 
@@ -699,7 +700,18 @@ void ShowStartMenu(void)
         PlayerFreeze();
         StopPlayerAvatar();
     }
-    CreateStartMenuTask(Task_ShowStartMenu);
+    if (IsOverworldLinkActive() || GetSafariZoneFlag()
+     || CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE
+     || InBattlePike() || InUnionRoom() || InMultiPartnerRoom()
+     || VarGet(VAR_BUG_CONTEST_STATE) != 0)
+    {
+        CreateStartMenuTask(Task_ShowStartMenu);
+    }
+    else
+    {
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+        CreateTask(Task_OpenStartMenuFullScreen, 0);
+    }
     LockPlayerFieldControls();
 }
 
@@ -982,6 +994,33 @@ static bool8 SaveStartCallback(void)
     gMenuCallback = SaveCallback;
 
     return FALSE;
+}
+
+static void Task_SaveFromStartMenuFull(u8 taskId)
+{
+    switch (RunSaveCallback())
+    {
+    case SAVE_IN_PROGRESS:
+        break;
+    case SAVE_CANCELED:
+    case SAVE_SUCCESS:
+    case SAVE_ERROR:
+        ClearDialogWindowAndFrameToTransparent(0, TRUE);
+        HideSaveMessageWindow();
+        ScriptUnfreezeObjectEvents();
+        UnlockPlayerFieldControls();
+        DestroyTask(taskId);
+        break;
+    }
+}
+
+void SaveStartCallback_FullStartMenu(void)
+{
+    WarpFadeInScreen();
+    InitSave();
+    ShowSaveInfoWindow();
+    sSaveDialogCallback = SaveSavingMessageCallback;
+    CreateTask(Task_SaveFromStartMenuFull, 0);
 }
 
 static bool8 SaveCallback(void)
