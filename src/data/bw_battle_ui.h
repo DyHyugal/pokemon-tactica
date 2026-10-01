@@ -409,7 +409,7 @@ static const union TextColor sBWBattleUI_TextColors[NUM_BUI_TXTCLRS] =
     [BUI_TXTCLR_ABOX_2] =
     {
         .foreground = 14,
-        .accent = 5,
+        .accent = 14,
         .shadow = 9,
     },
     [BUI_TXTCLR_ABOX_3] =
