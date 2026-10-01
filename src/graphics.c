@@ -1875,13 +1875,17 @@ const u32 gSwapLineGfx[] = INCBIN_U32("graphics/interface/swap_line.4bpp.smol");
 const u16 gSwapLinePal[] = INCBIN_U16("graphics/interface/swap_line.gbapal");
 
 #if IS_HNS
-const u32 gShopMenu_Gfx[] = INCBIN_U32("graphics/shop/hns/menu.4bpp.smol");
-const u16 gShopMenu_Pal[] = INCBIN_U16("graphics/shop/hns/menu.gbapal");
+const u32 gShopMenu_Gfx[] = INCBIN_U32("graphics/shop/b2w2/menu.4bpp.smol");
+const u16 gShopMenu_Pal[] = INCBIN_U16("graphics/shop/b2w2/menu.gbapal");
 #else
 const u32 gShopMenu_Gfx[] = INCBIN_U32("graphics/shop/menu.4bpp.smol");
 const u16 gShopMenu_Pal[] = INCBIN_U16("graphics/shop/menu.gbapal");
 #endif
+#if IS_HNS
+const u32 gShopMenu_Tilemap[] = INCBIN_U32("graphics/shop/b2w2/menu.bin.smolTM");
+#else
 const u32 gShopMenu_Tilemap[] = INCBIN_U32("graphics/shop/menu.bin.smolTM");
+#endif
 const u32 gShopMenuMoney_Gfx[] = INCBIN_U32("graphics/shop/money.4bpp.smol");
 const u32 gShopMenuBP_Gfx[] = INCBIN_U32("graphics/shop/bp.4bpp.smol");
 
@@ -2128,7 +2132,14 @@ const u16 gUsePokeblockNatureWin_Pal[] = INCBIN_U16("graphics/pokeblock/use_scre
 // trainer card
 
 #if IS_HNS
-const u16 gHnsTrainerCardGreen_Pal[] = INCBIN_U16("graphics/trainer_card/hns/green.gbapal");
+// Sword/Shield card skin adapted from ModExe-FR. Source labels are neutralized
+// so the runtime text remains localized and the Tactica 16-badge logic is kept.
+const u16 gHnsTrainerCardGreen_Pal[] = INCBIN_U16("graphics/trainer_card/hns/swsh/green.gbapal");
+const u32 gHnsTrainerCard_Gfx[] = INCBIN_U32("graphics/trainer_card/hns/swsh/tiles.4bpp.smol");
+const u32 gHnsTrainerCardBg_Tilemap[] = INCBIN_U32("graphics/trainer_card/hns/swsh/bg.bin.smolTM");
+const u32 gHnsTrainerCardFront_Tilemap[] = INCBIN_U32("graphics/trainer_card/hns/swsh/front.bin.smolTM");
+const u32 gHnsTrainerCardBack_Tilemap[] = INCBIN_U32("graphics/trainer_card/hns/swsh/back.bin.smolTM");
+const u32 gHnsTrainerCardFrontLink_Tilemap[] = INCBIN_U32("graphics/trainer_card/hns/swsh/front.bin.smolTM");
 #endif
 const u16 gHoennTrainerCardGreen_Pal[] = INCBIN_U16("graphics/trainer_card/green.gbapal");
 const u32 gHoennTrainerCard_Gfx[] = INCBIN_U32("graphics/trainer_card/tiles.4bpp.smol");

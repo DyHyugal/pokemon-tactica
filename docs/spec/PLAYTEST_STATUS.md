@@ -133,12 +133,13 @@ Le Pokédex n’est plus une source manuelle pour ces méthodes : ses champs d�
 - sac Épée/Bouclier : vérifier les poches, la description, les quantités et l’utilisation d’un objet sur le terrain ;
 - Summary Épée/Bouclier : parcourir toutes les pages, dont IV/EV, et vérifier textes, icônes, capacités et navigation ;
 - Pokédex HGSS : vérifier la liste, la fiche, les formes et les compteurs ;
-- boutique moderne : confirmer que l’écran d’achat s’affiche désormais, puis vérifier achat, vente, quantités, argent, description et sortie ;
-- HUD Noir/Blanc : confirmer le retour des décors propres à l’environnement, puis vérifier cadres allié/adversaire, menus action/capacités, statut, shiny, doubles et barre EXP ;
+- boutique native habillée B2W2 : confirmer l’ouverture sans écran noir ni crash, puis vérifier achat, vente, quantités, argent, description et sortie ;
+- HUD Noir/Blanc d’origine : confirmer le retour des décors propres à l’environnement, puis vérifier cadres allié/adversaire, menus action/capacités, statut, shiny, doubles et barre EXP ;
 - changement de Pokémon en combat : ouvrir l’équipe, changer de Pokémon et confirmer le retour au combat sans écran d’erreur mémoire ;
 - Méga-Évolution : après Mortimer, équiper une Méga-Gemme compatible puis appuyer sur `START` depuis le choix des capacités ; le logo doit changer d’état et la transformation doit précéder l’attaque ;
 - aide des capacités : vérifier que `R` affiche les informations sans entrer en conflit avec la commande Méga ;
-- menu Start et boîtes de dialogue : vérifier le retour du cadre compact et des couleurs d’origine ; vérifier aussi la carte Dresseur et le header Options, dont `B SAVE & EXIT` ;
+- menu Start plein écran HGSS/BW : vérifier les six accès, les icônes d’équipe, les retours depuis chaque écran et la sauvegarde ; vérifier aussi le repli compact dans les contextes spéciaux ;
+- carte Dresseur Épée/Bouclier : vérifier les deux faces, le portrait, les textes localisés et l’affichage des 16 badges ; vérifier également le header Options, dont `B SAVE & EXIT` ;
 - libellé `TACTICA` visuellement centré dans sa bulle sur l'écran titre.
 
 ## IA HARD — premier vrai test avant toute correction

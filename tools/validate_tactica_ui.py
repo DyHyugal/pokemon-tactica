@@ -73,12 +73,29 @@ def largest_light_surface(image: list[list[int]]) -> int:
     return largest
 
 
+def render_card_page(tiles_path: Path, map_path: Path) -> list[list[int]]:
+    tiles = Image.open(tiles_path)
+    entries = struct.unpack("<600H", map_path.read_bytes())
+    rendered = [[0] * 240 for _ in range(160)]
+    for pos, entry in enumerate(entries):
+        tile = entry & 0x3FF
+        for y in range(8):
+            for x in range(8):
+                source_x = 7 - x if entry & 0x400 else x
+                source_y = 7 - y if entry & 0x800 else y
+                rendered[(pos // 30) * 8 + y][(pos % 30) * 8 + x] = tiles.getpixel(
+                    ((tile % 16) * 8 + source_x, (tile // 16) * 8 + source_y)
+                )
+    return rendered
+
+
 def main() -> None:
     menu = (ROOT / "src/menu.c").read_text(encoding="utf-8")
     start_menu = (ROOT / "src/start_menu.c").read_text(encoding="utf-8")
+    full_start_menu = (ROOT / "src/ui_startmenu_full.c").read_text(encoding="utf-8")
     text_window = (ROOT / "src/text_window.c").read_text(encoding="utf-8")
     malloc_header = (ROOT / "include/malloc.h").read_text(encoding="utf-8")
-    new_shop = (ROOT / "src/new_shop.c").read_text(encoding="utf-8")
+    general_config = (ROOT / "include/config/general.h").read_text(encoding="utf-8")
     battle_controller = (ROOT / "src/battle_controller_player.c").read_text(encoding="utf-8")
     battle_ui = (ROOT / "src/bw_battle_ui.c").read_text(encoding="utf-8")
     battle_ui_config = (ROOT / "include/config/bw_battle_ui.h").read_text(encoding="utf-8")
@@ -87,6 +104,8 @@ def main() -> None:
     party_config = (ROOT / "include/constants/party_menu.h").read_text(encoding="utf-8")
     summary_config = (ROOT / "include/swsh_summary_screen.h").read_text(encoding="utf-8")
     scrcmd = (ROOT / "src/scrcmd.c").read_text(encoding="utf-8")
+    graphics = (ROOT / "src/graphics.c").read_text(encoding="utf-8")
+    shop = (ROOT / "src/shop.c").read_text(encoding="utf-8")
     pokedex = (ROOT / "src/pokedex_plus_hgss.c").read_text(encoding="utf-8")
     summary = (ROOT / "src/pokemon_summary_screen.c").read_text(encoding="utf-8")
     challenge_menu = (ROOT / "src/challenge_menu.c").read_text(encoding="utf-8")
@@ -94,10 +113,21 @@ def main() -> None:
     violet_gym = (ROOT / "data/maps/VioletCity_Gym_hns/scripts.inc").read_text(encoding="utf-8")
     violet_map = (ROOT / "data/maps/VioletCity_Gym_hns/map.json").read_text(encoding="utf-8")
     trainers = (ROOT / "src/data/trainers_hns.party").read_text(encoding="utf-8")
+    trainer_card = (ROOT / "src/trainer_card.c").read_text(encoding="utf-8")
 
     require('INCBIN_U16("graphics/interface/std_menu.gbapal")' in menu
             and "AddWindowParameterized(0, 22, 1, 7" in menu,
-            "the Start menu must use the original compact layout and palette")
+            "the compact Start-menu fallback must retain the original layout and palette")
+    require("Task_OpenStartMenuFullScreen" in start_menu
+            and "CreateStartMenuTask(Task_ShowStartMenu)" in start_menu
+            and "IsOverworldLinkActive()" in start_menu
+            and "SaveStartCallback_FullStartMenu" in start_menu
+            and "sSaveDialogCallback = SaveSavingMessageCallback" in start_menu,
+            "normal play must use the full HGSS/BW Start menu with a safe compact fallback and direct save flow")
+    require("StartMenuFull_FreeResources" in full_start_menu
+            and full_start_menu.index("DestroyStatusSprites();") < full_start_menu.index("try_free(sStartMenuDataPtr);")
+            and "CB2_ReturnToFullScreenStartMenu" in full_start_menu,
+            "the full Start menu must release sprites before its state and preserve return routing")
     require("sHnsStartMenuDescriptions" not in start_menu
             and "DrawHnsStartMenuActions" not in start_menu,
             "the oversized HNS Start-menu renderer must stay retired")
@@ -113,13 +143,35 @@ def main() -> None:
             "the Sword/Shield Summary and its IV/EV page must remain enabled")
     require("ShowPokemonSummaryScreen_SwSh" in summary,
             "the public Summary entry point must remain routed to the Sword/Shield screen")
-    require("NewShop_CreatePokemartMenu(ptr);" in scrcmd
-            and "NewShop_CreateDecorationShop1Menu(ptr);" in scrcmd
-            and "NewShop_CreateDecorationShop2Menu(ptr);" in scrcmd,
-            "standard and decoration shops must remain routed to the modern shop")
-    require("LZ77UnCompVram(src" in new_shop
-            and "DecompressAndCopyTileDataToVram(2" not in new_shop,
-            "modern shop graphics must load without heap-backed temporary buffers")
+    require("CreatePokemartMenu(ptr);" in scrcmd
+            and "CreateDecorationShop1Menu(ptr);" in scrcmd
+            and "CreateDecorationShop2Menu(ptr);" in scrcmd
+            and "NewShop_Create" not in scrcmd,
+            "standard and decoration shops must use the stable native shop")
+    require("#define MUDSKIP_SHOP_UI" not in "\n".join(
+                line for line in general_config.splitlines()
+                if not line.lstrip().startswith("//")),
+            "the animated shop must stay disabled to preserve runtime memory")
+    require('graphics/shop/b2w2/menu.4bpp.smol' in graphics
+            and 'graphics/shop/b2w2/menu.gbapal' in graphics
+            and 'graphics/shop/b2w2/menu.bin.smolTM' in graphics
+            and "B2W2 shop: pale list surface and slate description panel" in shop,
+            "the native HNS shop must keep the static B2W2 skin")
+    require('graphics/trainer_card/hns/swsh/tiles.4bpp.smol' in graphics
+            and 'graphics/trainer_card/hns/swsh/front.bin.smolTM' in graphics
+            and "gHnsTrainerCardFront_Tilemap" in trainer_card
+            and "sData->isHoenn = FALSE" in trainer_card,
+            "the HNS Trainer Card must keep the localized Sword/Shield skin and its wide layout")
+    for name in ("front.bin", "back.bin", "bg.bin"):
+        require((ROOT / "graphics/trainer_card/hns/swsh" / name).stat().st_size == 1200,
+                f"Trainer Card tilemap must fit its 30x20 buffer exactly: {name}")
+    card_tiles = ROOT / "graphics/trainer_card/hns/swsh/tiles.png"
+    card_front = render_card_page(card_tiles, ROOT / "graphics/trainer_card/hns/swsh/front.bin")
+    card_back = render_card_page(card_tiles, ROOT / "graphics/trainer_card/hns/swsh/back.bin")
+    require(all(card_front[y][x] != 5 for y in range(18, 28) for x in range(10, 99))
+            and all(card_front[y][x] != 5 for y in range(116, 127) for x in range(10, 56))
+            and all(card_back[y][x] != 5 for y in range(18, 30) for x in range(20, 106)),
+            "the Trainer Card source labels must stay neutral so runtime localization remains authoritative")
     require("tileset_interface_DECA_hns" not in pokedex
             and "tileset_interface_hns" not in pokedex,
             "the HGSS Pokédex must not load the retired Tactica recolor assets")
@@ -174,16 +226,19 @@ def main() -> None:
         "graphics/party_menu/swsh/tiles.png",
         "graphics/bag/swsh/tiles.png",
         "graphics/summary_screen/swsh/tiles.png",
-        "graphics/new_shop/menu.png",
         "graphics/battle_interface/bw/actionbox.png",
         "graphics/battle_interface/bw/healthbox_singles_player.png",
         "graphics/battle_interface/bw/mega_trigger.png",
+        "graphics/shop/b2w2/menu.png",
+        "graphics/ui_startmenu_full/menu.png",
+        "graphics/ui_startmenu_full/menu_tiles.png",
+        "graphics/trainer_card/hns/swsh/tiles.png",
     ):
         image = Image.open(ROOT / path)
-        require(image.mode == "P" and image.getbbox() is not None,
+        require(image.mode in ("P", "RGBA") and image.getbbox() is not None,
                 f"modern UI asset is missing or invalid: {path}")
 
-    print("Tactica UI validation passed: SwSh menus, HGSS Pokédex, modern shop, BW battle UI, title and Violet Gym guide")
+    print("Tactica UI validation passed: SwSh menus, HGSS Pokédex/Start menu, B2W2 native shop, SwSh Trainer Card, BW battle UI, title and Violet Gym guide")
 
 
 if __name__ == "__main__":

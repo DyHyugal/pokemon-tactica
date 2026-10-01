@@ -58,8 +58,9 @@
 #define POKEMON_EXPANSION
 #define ITEM_EXPANSION
 
-// Official-game-inspired replacement for the vanilla shop presentation.
-#define MUDSKIP_SHOP_UI
+// Keep the native shop path: the animated replacement exceeds Tactica's
+// runtime memory budget when combined with the modern menu stack.
+// #define MUDSKIP_SHOP_UI
 
 // Generation constants used in configs to define behavior.
 #define GEN_1 0

@@ -794,9 +794,9 @@ static const struct ListMenuTemplate sShopBuyMenuListTemplate =
     .cursor_X = 0,
     .upText_Y = 1,
 #if IS_HNS
-    .cursorPal = 10,
-    .fillValue = 12,
-    .cursorShadowPal = 13,
+    .cursorPal = 2,
+    .fillValue = 1,
+    .cursorShadowPal = 3,
 #else
     .cursorPal = 2,
     .fillValue = 0,
@@ -932,10 +932,10 @@ static const struct WindowTemplate sShopBuyMenuYesNoWindowTemplates =
 static const u8 sShopBuyMenuTextColors[][3] =
 {
 #if IS_HNS
-    // Tactica shops: anthracite surface, restrained red text and gray shadow.
-    [COLORID_NORMAL]      = {12, 10, 13},
-    [COLORID_ITEM_LIST]   = {12, 10, 13},
-    [COLORID_GRAY_CURSOR] = {12, 13, 10},
+    // B2W2 shop: pale list surface and slate description panel.
+    [COLORID_NORMAL]      = {4, 5, 6},
+    [COLORID_ITEM_LIST]   = {1, 2, 3},
+    [COLORID_GRAY_CURSOR] = {1, 3, 2},
 #else
     [COLORID_NORMAL]      = {1, 2, 3},
     [COLORID_ITEM_LIST]   = {0, 2, 3},
@@ -944,14 +944,14 @@ static const u8 sShopBuyMenuTextColors[][3] =
 };
 
 #if IS_HNS
-// Field and buy windows use palette 15. Do not rely on the standard menu
-// palette here: its color 12 is the vanilla near-white surface seen in ROM.
+// Field and buy windows use palette 15. Keep the native shop state machine,
+// but skin its static surfaces after the B2W2 2020s mart resource pack.
 static const u16 sTacticaShopWindowPalette[16] =
 {
-    RGB(0, 0, 0),    RGB(3, 3, 5),    RGB(26, 5, 7),   RGB(12, 2, 4),
-    RGB(19, 3, 5),   RGB(2, 2, 3),    RGB(7, 7, 9),    RGB(11, 11, 13),
-    RGB(4, 4, 6),    RGB(8, 8, 10),   RGB(27, 6, 8),   RGB(14, 14, 16),
-    RGB(2, 2, 3),    RGB(10, 10, 12), RGB(18, 3, 5),   RGB(0, 0, 0),
+    RGB(0, 0, 0),    RGB(24, 29, 31), RGB(5, 12, 20),  RGB(11, 17, 22),
+    RGB(11, 11, 14), RGB(31, 31, 31), RGB(5, 5, 7),    RGB(31, 10, 0),
+    RGB(0, 0, 0),    RGB(23, 28, 31), RGB(8, 15, 21),  RGB(17, 20, 23),
+    RGB(24, 29, 31), RGB(11, 17, 22), RGB(31, 10, 0),  RGB(0, 0, 0),
 };
 
 static void LoadTacticaShopWindowPalette(void)
@@ -986,7 +986,7 @@ static u8 CreateShopMenu(u8 martType)
 
 #if IS_HNS
     LoadTacticaShopWindowPalette();
-    FillWindowPixelBuffer(sMartInfo.windowId, PIXEL_FILL(12));
+    FillWindowPixelBuffer(sMartInfo.windowId, PIXEL_FILL(1));
     SetStandardWindowBorderStyle(sMartInfo.windowId, FALSE);
     LoadTacticaShopWindowPalette();
 #else
@@ -1298,7 +1298,7 @@ static void BuyMenuPrintItemDescriptionAndShowItemIcon(s32 item, bool8 onInit, s
     }
 
 #if IS_HNS
-    FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(12));
+    FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(4));
 #else
     FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
 #endif
@@ -1477,8 +1477,8 @@ static void BuyMenuInitWindows(void)
     LoadMessageBoxGfx(moneyWindowId, 0xA, BG_PLTT_ID(14));
 #if IS_HNS
     LoadTacticaShopWindowPalette();
-    FillWindowPixelBuffer(WIN_ITEM_LIST, PIXEL_FILL(12));
-    FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(12));
+    FillWindowPixelBuffer(WIN_ITEM_LIST, PIXEL_FILL(1));
+    FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(4));
 #endif
     PutWindowTilemap(moneyWindowId);
     PutWindowTilemap(WIN_ITEM_LIST);
@@ -2153,7 +2153,7 @@ static void BuyMenuPrintItemQuantityAndPrice(u8 taskId)
     s16 *data = gTasks[taskId].data;
 
 #if IS_HNS
-    FillWindowPixelBuffer(WIN_QUANTITY_PRICE, PIXEL_FILL(12));
+    FillWindowPixelBuffer(WIN_QUANTITY_PRICE, PIXEL_FILL(4));
 #else
     FillWindowPixelBuffer(WIN_QUANTITY_PRICE, PIXEL_FILL(1));
 #endif
