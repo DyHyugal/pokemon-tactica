@@ -95,8 +95,6 @@ enum StartMenuBoxes
 
 //==========EWRAM==========//
 static EWRAM_DATA struct StartMenuResources *sStartMenuDataPtr = NULL;
-static EWRAM_DATA u8 *sBg1TilemapBuffer = NULL;
-static EWRAM_DATA u8 *sBg2TilemapBuffer = NULL;
 static EWRAM_DATA u8 gSelectedMenu = 0; // holds the position of the menu so that it persists in memory,
                                         // when you go into something like the bag and leave your cursor is still on the bag
 
@@ -106,7 +104,7 @@ static bool8 StartMenuFull_DoGfxSetup(void);
 static bool8 StartMenuFull_InitBgs(void);
 static void StartMenuFull_FadeAndBail(void);
 static bool8 StartMenuFull_LoadGraphics(void);
-static void StartMenuFull_InitWindows(void);
+static bool8 StartMenuFull_InitWindows(void);
 static void Task_StartMenuFullWaitFadeIn(u8 taskId);
 static void Task_StartMenuFullMain(u8 taskId);
 static u32 GetHPEggCyclePercent(u32 partyIndex);
@@ -170,6 +168,7 @@ static const struct WindowTemplate sStartMenuWindowTemplates[] =
         .paletteNum = 0,   // palette index to use for text
         .baseBlock = 1 + (9 * 15) + (30 * 2),     // tile start in VRAM
     },
+    DUMMY_WIN_TEMPLATE
 };
 
 
@@ -886,18 +885,16 @@ static void CreatePartyMonStatuses()
                 break;
         }
 
-        sStartMenuDataPtr->iconStatusSpriteIds[i] = CreateSprite(&sSpriteTemplate_StatusIcons, x, y, 0);
-        if (sStartMenuDataPtr->iconStatusSpriteIds[i] == SPRITE_NONE)
-            continue;
-
         status = GetMonAilment(&gPlayerParty[i]);
         switch (status)
         {
             case AILMENT_NONE:
             case AILMENT_PKRS:
-                gSprites[sStartMenuDataPtr->iconStatusSpriteIds[i]].invisible = TRUE;
-                break;
+                continue;
             default:
+                sStartMenuDataPtr->iconStatusSpriteIds[i] = CreateSprite(&sSpriteTemplate_StatusIcons, x, y, 0);
+                if (sStartMenuDataPtr->iconStatusSpriteIds[i] == SPRITE_NONE)
+                    continue;
                 StartSpriteAnim(&gSprites[sStartMenuDataPtr->iconStatusSpriteIds[i]], status - 1);
                 gSprites[sStartMenuDataPtr->iconStatusSpriteIds[i]].invisible = FALSE;
                 break;
@@ -962,11 +959,9 @@ void StartMenuFull_Init(MainCallback callback)
 
 static void StartMenuFull_RunSetup(void)
 {
-    while (1)
-    {
-        if (StartMenuFull_DoGfxSetup() == TRUE)
-            break;
-    }
+    // Advance one setup stage per frame. This avoids doing every
+    // decompression, allocation and sprite upload in a single frame.
+    StartMenuFull_DoGfxSetup();
 }
 
 static void StartMenuFull_MainCB(void)
@@ -1022,8 +1017,13 @@ static bool8 StartMenuFull_DoGfxSetup(void) // base UI loader from Ghouls UI She
             gMain.state++;
         break;
     case 4:
-        StartMenuFull_InitWindows();
-        gMain.state++;
+        if (StartMenuFull_InitWindows())
+            gMain.state++;
+        else
+        {
+            StartMenuFull_FadeAndBail();
+            return TRUE;
+        }
         break;
     case 5:
         PrintMapNameAndTime(); // print all sprites
@@ -1066,8 +1066,6 @@ static void StartMenuFull_FreeResources(void) // Clear Everything if Leaving
     DestroyStatusSprites();
     DestroyGreyMenuBoxes();
     FreeAllWindowBuffers();
-    try_free(sBg1TilemapBuffer);
-    try_free(sBg2TilemapBuffer);
     try_free(sStartMenuDataPtr);
 }
 
@@ -1109,22 +1107,8 @@ static void Task_StartMenuFullTurnOff(u8 taskId)
 static bool8 StartMenuFull_InitBgs(void) // This function sets the bg tilemap buffers for each bg and initializes them, shows them, and turns sprites on
 {
     ResetAllBgsCoordinates();
-    sBg1TilemapBuffer = Alloc(0x800);
-    if (sBg1TilemapBuffer == NULL)
-        return FALSE;
-    memset(sBg1TilemapBuffer, 0, 0x800);
-
-    sBg2TilemapBuffer = Alloc(0x800);
-    if (sBg2TilemapBuffer == NULL)
-        return FALSE;
-    memset(sBg2TilemapBuffer, 0, 0x800);
-
     ResetBgsAndClearDma3BusyFlags(0);
     InitBgsFromTemplates(0, sStartMenuBgTemplates, NELEMS(sStartMenuBgTemplates));
-    SetBgTilemapBuffer(1, sBg1TilemapBuffer);
-    SetBgTilemapBuffer(2, sBg2TilemapBuffer);
-    ScheduleBgCopyTilemapToVram(1);
-    ScheduleBgCopyTilemapToVram(2);
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
     ShowBg(0);
     ShowBg(1);
@@ -1137,27 +1121,22 @@ static bool8 StartMenuFull_LoadGraphics(void) // Load the Tilesets, Tilemaps, Sp
     switch (sStartMenuDataPtr->gfxLoadState)
     {
     case 0:
-        ResetTempTileDataBuffers();
         if (gSaveBlock2Ptr->playerGender == FEMALE)
-        {
-            DecompressAndCopyTileDataToVram(1, sStartMenuTilesAlt, 0, 0, 0);
-        }
+            DecompressDataWithHeaderVram(sStartMenuTilesAlt, (void *)BG_CHAR_ADDR(1));
         else
-        {
-            DecompressAndCopyTileDataToVram(1, sStartMenuTiles, 0, 0, 0);
-        }
-        DecompressAndCopyTileDataToVram(2, sScrollBgTiles, 0, 0, 0);
+            DecompressDataWithHeaderVram(sStartMenuTiles, (void *)BG_CHAR_ADDR(1));
         sStartMenuDataPtr->gfxLoadState++;
         break;
     case 1:
-        if (FreeTempTileDataBuffersIfPossible() != TRUE)
-        {
-            DecompressDataWithHeaderWram(sStartMenuTilemap, sBg1TilemapBuffer);
-            DecompressDataWithHeaderWram(sScrollBgTilemap, sBg2TilemapBuffer);
-            sStartMenuDataPtr->gfxLoadState++;
-        }
+        DecompressDataWithHeaderVram(sScrollBgTiles, (void *)BG_CHAR_ADDR(2));
+        sStartMenuDataPtr->gfxLoadState++;
         break;
     case 2:
+        DecompressDataWithHeaderVram(sStartMenuTilemap, (void *)BG_SCREEN_ADDR(30));
+        DecompressDataWithHeaderVram(sScrollBgTilemap, (void *)BG_SCREEN_ADDR(28));
+        sStartMenuDataPtr->gfxLoadState++;
+        break;
+    case 3:
     {
         struct SpritePalette cursorPal = {sSpritePal_Cursor.data, sSpritePal_Cursor.tag};
         if (gSaveBlock2Ptr->playerGender == FEMALE)
@@ -1177,13 +1156,30 @@ static bool8 StartMenuFull_LoadGraphics(void) // Load the Tilesets, Tilemaps, Sp
         LoadSpritePalette(&sSpritePal_IconBox);
         LoadCompressedSpriteSheet(&sSpriteSheet_Cursor);
         LoadSpritePalette(&cursorPal);
-        LoadCompressedSpriteSheet(&sSpriteSheet_StatusIcons);
-        LoadSpritePalette(&sSpritePalette_StatusIcons);
 
-        LoadCompressedSpriteSheet(&sSpriteSheet_GreyMenuButtonMap);
-        LoadCompressedSpriteSheet(&sSpriteSheet_GreyMenuButtonDex);
-        LoadCompressedSpriteSheet(&sSpriteSheet_GreyMenuButtonParty);
-        LoadSpritePalette(&sSpritePal_GreyMenuButton);
+        if (!FlagGet(FLAG_SYS_POKEDEX_GET)
+         || !FlagGet(FLAG_SYS_POKEMON_GET)
+         || !FlagGet(FLAG_SYS_POKENAV_GET))
+        {
+            if (!FlagGet(FLAG_SYS_POKEDEX_GET))
+                LoadCompressedSpriteSheet(&sSpriteSheet_GreyMenuButtonDex);
+            if (!FlagGet(FLAG_SYS_POKEMON_GET))
+                LoadCompressedSpriteSheet(&sSpriteSheet_GreyMenuButtonParty);
+            if (!FlagGet(FLAG_SYS_POKENAV_GET))
+                LoadCompressedSpriteSheet(&sSpriteSheet_GreyMenuButtonMap);
+            LoadSpritePalette(&sSpritePal_GreyMenuButton);
+        }
+
+        for (u32 i = 0; i < gPlayerPartyCount; i++)
+        {
+            u8 status = GetMonAilment(&gPlayerParty[i]);
+            if (status != AILMENT_NONE && status != AILMENT_PKRS)
+            {
+                LoadCompressedSpriteSheet(&sSpriteSheet_StatusIcons);
+                LoadSpritePalette(&sSpritePalette_StatusIcons);
+                break;
+            }
+        }
         sStartMenuDataPtr->gfxLoadState++;
         break;
     }
@@ -1194,9 +1190,10 @@ static bool8 StartMenuFull_LoadGraphics(void) // Load the Tilesets, Tilemaps, Sp
     return FALSE;
 }
 
-static void StartMenuFull_InitWindows(void)
+static bool8 StartMenuFull_InitWindows(void)
 {
-    InitWindows(sStartMenuWindowTemplates);
+    if (!InitWindows(sStartMenuWindowTemplates))
+        return FALSE;
     DeactivateAllTextPrinters();
     ScheduleBgCopyTilemapToVram(0);
 
@@ -1212,7 +1209,7 @@ static void StartMenuFull_InitWindows(void)
     PutWindowTilemap(WINDOW_BOTTOM_BAR);
     CopyWindowToVram(WINDOW_BOTTOM_BAR, COPYWIN_FULL);
 
-    ScheduleBgCopyTilemapToVram(2);
+    return TRUE;
 }
 
 

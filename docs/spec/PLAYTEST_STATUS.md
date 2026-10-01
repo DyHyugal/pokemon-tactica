@@ -138,7 +138,7 @@ Le Pokédex n’est plus une source manuelle pour ces méthodes : ses champs d�
 - changement de Pokémon en combat : ouvrir l’équipe, changer de Pokémon et confirmer le retour au combat sans écran d’erreur mémoire ;
 - Méga-Évolution : après Mortimer, équiper une Méga-Gemme compatible puis appuyer sur `START` depuis le choix des capacités ; le logo doit changer d’état et la transformation doit précéder l’attaque ;
 - aide des capacités : vérifier que `R` affiche les informations sans entrer en conflit avec la commande Méga ;
-- menu Start plein écran HGSS/BW : vérifier les six accès, les icônes d’équipe, les retours depuis chaque écran et la sauvegarde ; vérifier aussi le repli compact dans les contextes spéciaux ;
+- menu Start plein écran HGSS/BW : l’ouvrir et le fermer plusieurs fois pour confirmer l’absence d’écran d’erreur et de police corrompue, puis vérifier les six accès, les icônes d’équipe, les retours depuis chaque écran et la sauvegarde ; vérifier aussi le repli compact dans les contextes spéciaux ;
 - carte Dresseur Épée/Bouclier : vérifier les deux faces, le portrait, les textes localisés et l’affichage des 16 badges ; vérifier également le header Options, dont `B SAVE & EXIT` ;
 - libellé `TACTICA` visuellement centré dans sa bulle sur l'écran titre.
 
