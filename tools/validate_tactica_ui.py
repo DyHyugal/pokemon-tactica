@@ -98,8 +98,10 @@ def main() -> None:
     general_config = (ROOT / "include/config/general.h").read_text(encoding="utf-8")
     battle_controller = (ROOT / "src/battle_controller_player.c").read_text(encoding="utf-8")
     battle_ui = (ROOT / "src/bw_battle_ui.c").read_text(encoding="utf-8")
+    battle_ui_data = (ROOT / "src/data/bw_battle_ui.h").read_text(encoding="utf-8")
     battle_ui_config = (ROOT / "include/config/bw_battle_ui.h").read_text(encoding="utf-8")
     battle_config = (ROOT / "include/config/battle.h").read_text(encoding="utf-8")
+    bag_menu = (ROOT / "src/swsh_item_menu.c").read_text(encoding="utf-8")
     bag_config = (ROOT / "include/config/swsh_item_menu.h").read_text(encoding="utf-8")
     party_config = (ROOT / "include/constants/party_menu.h").read_text(encoding="utf-8")
     summary_config = (ROOT / "include/swsh_summary_screen.h").read_text(encoding="utf-8")
@@ -138,6 +140,9 @@ def main() -> None:
             "the full Start menu must stream its static backgrounds to VRAM without two redundant heap tilemaps")
     require("while (1)" not in full_start_menu[full_start_menu.index("static void StartMenuFull_RunSetup(void)"):full_start_menu.index("static void StartMenuFull_MainCB(void)")],
             "the full Start menu setup must advance over multiple frames")
+    require("ClearWindowTilemap(WINDOW_TOP_BAR);" in full_start_menu
+            and "AddTextPrinterParameterized(WINDOW_TOP_BAR" not in full_start_menu,
+            "the HGSS Start-menu title strip must stay free of the obsolete runtime text overlay")
     require("sHnsStartMenuDescriptions" not in start_menu
             and "DrawHnsStartMenuActions" not in start_menu,
             "the oversized HNS Start-menu renderer must stay retired")
@@ -146,6 +151,10 @@ def main() -> None:
             "the default textbox must use its original frame and palette")
     require("#define SWSH_ITEM_MENU                  TRUE" in bag_config,
             "the Sword/Shield Bag must remain enabled")
+    require("GetStringCenterAlignXOffset(FONT_NARROW, name, 88)" in bag_menu
+            and "BagMenu_Print(WIN_POCKET_NAME, FONT_NARROW" in bag_menu
+            and "CopyWindowToVram(WIN_POCKET_NAME, COPYWIN_FULL);" in bag_menu,
+            "Bag pocket titles must use the stable narrow font and upload their complete window")
     require("#define SWSH_PARTY_MENU                   TRUE" in party_config,
             "the Sword/Shield party menu must remain enabled")
     require("#define SWSH_SUMMARY_SCREEN                           TRUE" in summary_config
@@ -197,6 +206,9 @@ def main() -> None:
             "battle controls must keep move help on R and Mega activation on START")
     require("BattleUI_CreateGimmickTriggerSprite" in battle_ui,
             "the Black/White UI must expose the interactive Mega trigger")
+    bag_color = battle_ui_data[battle_ui_data.index("[BUI_TXTCLR_ABOX_2]"):battle_ui_data.index("[BUI_TXTCLR_ABOX_3]")]
+    require(".foreground = 14" in bag_color and ".accent = 14" in bag_color,
+            "the BAG action label must use the same gray for both halves of its glyphs")
     require("return gBattleTextboxTiles;" in battle_ui
             and "return gBattleTextboxPalette;" in battle_ui
             and "return gBattleTextboxTilemap;" in battle_ui,

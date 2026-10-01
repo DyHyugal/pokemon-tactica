@@ -4345,11 +4345,11 @@ static void CB2_QuizLadyExitBagMenu(void)
 
 static void PrintPocketName(const u8 *name)
 {
-    u8 offset = GetStringCenterAlignXOffset(FONT_SHORT_NARROW, name, 88);
+    u8 offset = GetStringCenterAlignXOffset(FONT_NARROW, name, 88);
     FillWindowPixelBuffer(WIN_POCKET_NAME, PIXEL_FILL(0));
-    BagMenu_Print(WIN_POCKET_NAME, FONT_SHORT_NARROW, name, offset, 1, 0, 0, TEXT_SKIP_DRAW, COLORID_POCKET_NAME);
+    BagMenu_Print(WIN_POCKET_NAME, FONT_NARROW, name, offset, 1, 0, 0, TEXT_SKIP_DRAW, COLORID_POCKET_NAME);
     PutWindowTilemap(WIN_POCKET_NAME);
-    CopyWindowToVram(WIN_POCKET_NAME, COPYWIN_GFX);
+    CopyWindowToVram(WIN_POCKET_NAME, COPYWIN_FULL);
 }
 
 static void LoadBagMenuTextWindows(void)
