@@ -158,11 +158,13 @@ void SetDefaultChallengeSettings(void)
     gSaveblock3.challengeSettings.tx_Mode_Mints              = 1;
     gSaveblock3.challengeSettings.tx_Mode_PoisonSurvive      = 1;
 
-    // Family Remix competitive defaults: perfect IVs for both sides and
-    // badge-scaled EVs for ordinary Trainer parties.
+    // Family Remix competitive defaults: a normal level cap, perfect IVs for
+    // both sides, and maximum EVs for ordinary Trainer parties. Explicit EV
+    // spreads in Trainer data remain authoritative (see battle_main.c).
+    gSaveblock3.challengeSettings.tx_Challenges_LevelCap         = 1;
     gSaveblock3.challengeSettings.tx_Challenges_MaxPartyIVs       = 1;
     gSaveblock3.challengeSettings.tx_Challenges_TrainerScalingIVs = 2;
-    gSaveblock3.challengeSettings.tx_Challenges_TrainerScalingEVs = 1;
+    gSaveblock3.challengeSettings.tx_Challenges_TrainerScalingEVs = 3;
 
     // Randomizer defaults (shown when Randomizer is ON)
     gSaveblock3.challengeSettings.tx_Random_Similar          = 1;

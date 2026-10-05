@@ -39,7 +39,7 @@ TEST("Settings shiny rate: extended odds use the existing shiny threshold")
     gSaveblock3.challengeSettings = saved;
 }
 
-TEST("Settings recommended: competitive IVs and scaled Trainer EVs are enabled")
+TEST("Settings recommended: normal cap and competitive Trainer stats are enabled")
 {
     struct ChallengeSettings saved = gSaveblock3.challengeSettings;
     struct Pokemon mon;
@@ -49,7 +49,8 @@ TEST("Settings recommended: competitive IVs and scaled Trainer EVs are enabled")
     SetDefaultChallengeSettings();
     EXPECT_EQ((u32)gSaveblock3.challengeSettings.tx_Challenges_MaxPartyIVs, 1);
     EXPECT_EQ((u32)gSaveblock3.challengeSettings.tx_Challenges_TrainerScalingIVs, 2);
-    EXPECT_EQ((u32)gSaveblock3.challengeSettings.tx_Challenges_TrainerScalingEVs, 1);
+    EXPECT_EQ((u32)gSaveblock3.challengeSettings.tx_Challenges_LevelCap, 1);
+    EXPECT_EQ((u32)gSaveblock3.challengeSettings.tx_Challenges_TrainerScalingEVs, 3);
     EXPECT_EQ((u32)gSaveblock3.challengeSettings.tx_Challenges_NoEVs, 0);
     EXPECT_EQ((u32)gSaveblock3.challengeSettings.tx_Features_LimitDifficulty, 1);
     SetCurrentDifficultyLevel(gSaveblock3.challengeSettings.tx_Features_LimitDifficulty
@@ -64,7 +65,7 @@ TEST("Settings recommended: competitive IVs and scaled Trainer EVs are enabled")
     gSaveblock3.challengeSettings = saved;
 }
 
-TEST("Settings setup: Recommended A and R bypass all challenge tabs")
+TEST("Settings setup: Recommended A and R open editable setup without starting")
 {
     u32 shortcut, frame;
     MainCallback original = gMain.callback2;
@@ -85,6 +86,10 @@ TEST("Settings setup: Recommended A and R bypass all challenge tabs")
         PumpSetupFrame(shortcuts[shortcut]);
         for (frame = 0; frame < 64; frame++)
             PumpSetupFrame(0);
+        EXPECT(!sReturnedFromSetup);
+        PumpSetupFrame(B_BUTTON); // Save the preset and any feature adjustments.
+        for (frame = 0; frame < 64; frame++)
+            PumpSetupFrame(0);
         EXPECT(sReturnedFromSetup);
         EXPECT_EQ((u32)gSaveblock3.challengeSettings.tx_Challenges_Nuzlocke, 0);
         EXPECT_EQ((u32)gSaveblock3.challengeSettings.tx_Random_Starter, 0);
@@ -96,7 +101,7 @@ TEST("Settings setup: Recommended A and R bypass all challenge tabs")
     SetMainCallback2(original);
 }
 
-TEST("Settings setup: Custom edits are discarded when returning to Recommended")
+TEST("Settings setup: Recommended keeps feature edits and waits for explicit save")
 {
     u32 frame;
     MainCallback original = gMain.callback2;
@@ -113,15 +118,18 @@ TEST("Settings setup: Custom edits are discarded when returning to Recommended")
         PumpSetupFrame(0);
     PumpSetupFrame(DPAD_RIGHT); // Custom
     PumpSetupFrame(R_BUTTON); // Features
+    PumpSetupFrame(DPAD_DOWN); // RTC type (difficulty is locked during setup)
     PumpSetupFrame(DPAD_RIGHT); // Change RTC type
     EXPECT(!sReturnedFromSetup);
     PumpSetupFrame(L_BUTTON); // Mode
     PumpSetupFrame(DPAD_LEFT); // Recommended
     PumpSetupFrame(A_BUTTON);
+    EXPECT(!sReturnedFromSetup);
+    PumpSetupFrame(B_BUTTON);
     for (frame = 0; frame < 64; frame++)
         PumpSetupFrame(0);
     EXPECT(sReturnedFromSetup);
-    EXPECT_EQ((u32)gSaveblock3.challengeSettings.tx_Features_RTCType, 0);
+    EXPECT_EQ((u32)gSaveblock3.challengeSettings.tx_Features_RTCType, 1);
     gSaveblock3.challengeSettings = saved;
     gMain.savedCallback = savedCallback;
     SetVBlankCallback(vblank);

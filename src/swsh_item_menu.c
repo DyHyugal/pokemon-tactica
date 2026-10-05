@@ -455,6 +455,7 @@ static void Task_BagMenu_MultiFullSwap(u8);
 static const u8 *const sPocketNamesStringsTable[] =
 {
     [POCKET_ITEMS]      = COMPOUND_STRING("Items"),
+    [POCKET_MEDICINE]   = COMPOUND_STRING("Medicine"),
     [POCKET_POKE_BALLS] = COMPOUND_STRING("Poké Balls"),
     [POCKET_TM_HM]      = COMPOUND_STRING("TMs & HMs"),
     [POCKET_BERRIES]    = COMPOUND_STRING("Berries"),
