@@ -142,17 +142,16 @@ Le Pokédex n’est plus une source manuelle pour ces méthodes : ses champs d�
 - carte Dresseur Épée/Bouclier : vérifier les deux faces, le portrait, les textes localisés et l’affichage des 16 badges ; vérifier également le header Options, dont `B SAVE & EXIT` ;
 - libellé `TACTICA` visuellement centré dans sa bulle sur l'écran titre.
 
-## IA HARD — premier vrai test avant toute correction
+## IA HARD — correctifs ciblés issus du premier playtest
 
-Ne pas corriger l’IA avant le premier playtest HARD de la candidate courante.
+Le premier playtest owner a reproduit les boucles de setup sur Évoli et Mimiqui. La candidate suivante doit confirmer :
 
-Les anciens retours Mimiqui / Provoc de Cornèbre / Téraclope sont des points d’observation, pas des bugs confirmés sur la version actuelle.
+- Évoli utilise deux Reflets puis Relais ; un troisième Reflet n’est permis qu’à PV pleins face à un adversaire non Combat, puis Relais devient prioritaire ;
+- le relais choisit un receveur pertinent dans l’équipe de Blanche, notamment Ursaring ou Écrémeuh selon le matchup ;
+- Mimiqui utilise une Danse-Lames puis attaque au lieu de continuer jusqu’à +6 ;
+- les autres setup offensifs convertissent leur avantage en attaque après deux niveaux positifs.
 
-Après test :
-
-- comportement correct → ne rien modifier ;
-- défauts ciblés reproduits → correction générique ciblée ;
-- comportement global insuffisant → réévaluation du bloc IA.
+Les témoins Provoc de Cornèbre et Téraclope restent à observer sans autre changement tant qu’aucun défaut courant n’est reproduit.
 
 ## Protocole candidate
 

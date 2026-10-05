@@ -6897,7 +6897,8 @@ static void BagMenu_UseRareCandy(u8 taskId)
     sBagItemUseState->savedExitCallback = gBagPosition.exitCallback;
     sBagItemUseState->moveLearnContinue = BagMenu_RareCandyDoLearnMoveStep;
 
-    if (B_RARE_CANDY_CAP && initialLevel >= GetCurrentLevelCap())
+    if ((B_RARE_CANDY_CAP || gSaveBlock3Ptr->challengeSettings.tx_Challenges_LevelCap)
+     && initialLevel >= GetCurrentLevelCap())
     {
         cannotUse = TRUE;
     }
@@ -8327,11 +8328,13 @@ static s16 BagMenu_ComputeMultiUseMax(u8 taskId)
 
         if (holdEffectParam == 0)
         {
-            if (B_RARE_CANDY_CAP && level >= GetCurrentLevelCap())
+            bool32 levelCapEnabled = B_RARE_CANDY_CAP || gSaveBlock3Ptr->challengeSettings.tx_Challenges_LevelCap;
+
+            if (levelCapEnabled && level >= GetCurrentLevelCap())
                 return 0;
             if (level >= MAX_LEVEL)
                 return 0;
-            return B_RARE_CANDY_CAP ? (s16)min(bagQty, GetCurrentLevelCap() - level) : bagQty;
+            return levelCapEnabled ? (s16)min(bagQty, GetCurrentLevelCap() - level) : bagQty;
         }
         else
         {
