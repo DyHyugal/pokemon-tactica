@@ -153,8 +153,9 @@ def main() -> None:
             "the Sword/Shield Bag must remain enabled")
     require("GetStringCenterAlignXOffset(FONT_NARROW, name, 88)" in bag_menu
             and "BagMenu_Print(WIN_POCKET_NAME, FONT_NARROW" in bag_menu
-            and "CopyWindowToVram(WIN_POCKET_NAME, COPYWIN_FULL);" in bag_menu,
-            "Bag pocket titles must use the stable narrow font and upload their complete window")
+            and "CopyWindowToVram(WIN_POCKET_NAME, COPYWIN_FULL);" in bag_menu
+            and '[POCKET_MEDICINE]   = COMPOUND_STRING("Medicine")' in bag_menu,
+            "Bag pocket titles must use the stable narrow font, include Medicine, and upload their complete window")
     require("#define SWSH_PARTY_MENU                   TRUE" in party_config,
             "the Sword/Shield party menu must remain enabled")
     require("#define SWSH_SUMMARY_SCREEN                           TRUE" in summary_config

@@ -1311,6 +1311,13 @@ static bool8 CheckConditions(u8 tab, u8 itemIndex)
     if (GetLockPolicy(tab, itemIndex) == LOCK_FULL)
         return FALSE;
 
+    // Difficulty and level-cap choices are intentionally deferred until the
+    // player can open Challenge Settings from the in-game Options menu.
+    if (sIsInitialSetup
+     && ((tab == TAB_FEATURES && itemIndex == ITEM_FEATURES_BATTLE_DIFFICULTY)
+      || (tab == TAB_DIFFICULTY && itemIndex == ITEM_DIFFICULTY_LEVEL_CAP)))
+        return FALSE;
+
     switch (tab)
     {
     case TAB_MODE:
@@ -1405,7 +1412,7 @@ static void ApplyRecommendedPresets(void)
     *GetSelectionPtr(TAB_DIFFICULTY, ITEM_DIFFICULTY_MAX_PARTY_IVS) = 1; // 31
     *GetSelectionPtr(TAB_DIFFICULTY, ITEM_DIFFICULTY_SCALING_IVS)   = 2; // 31
     *GetSelectionPtr(TAB_DIFFICULTY, ITEM_DIFFICULTY_NO_EVS)        = 0; // ENABLED
-    *GetSelectionPtr(TAB_DIFFICULTY, ITEM_DIFFICULTY_SCALING_EVS)   = 1; // BADGE SCALE
+    *GetSelectionPtr(TAB_DIFFICULTY, ITEM_DIFFICULTY_SCALING_EVS)   = 3; // EXTREME
 }
 
 // =============================================================================
@@ -1783,16 +1790,6 @@ static void DrawConfirmWindowFrame(void)
 static void SwitchTab(u8 taskId, s8 direction)
 {
     s8 newTab = sMenu->currentTab + direction;
-
-    if (sIsInitialSetup && sMenu->currentTab == TAB_MODE && direction > 0
-     && *GetSelectionPtr(TAB_MODE, ITEM_MODE_GAMEMODE) == 0)
-    {
-        // Discard any challenge edits made while exploring Custom in this setup.
-        memcpy(sMenu->selections, sMenu->initialSelections, sizeof(sMenu->selections));
-        ApplyRecommendedPresets();
-        Task_ConfirmSaveYes(taskId);
-        return;
-    }
 
     if (newTab < 0 || newTab > TAB_COUNT)
         return;
