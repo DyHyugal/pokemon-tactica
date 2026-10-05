@@ -126,6 +126,12 @@ def main() -> None:
             and "SaveStartCallback_FullStartMenu" in start_menu
             and "sSaveDialogCallback = SaveSavingMessageCallback" in start_menu,
             "normal play must use the full HGSS/BW Start menu with a safe compact fallback and direct save flow")
+    full_save_start = start_menu.index("static void Task_SaveFromStartMenuFull")
+    full_save_task = start_menu[full_save_start:
+                                start_menu.index("static bool8 SaveCallback", full_save_start)]
+    require("if (gPaletteFade.active)" in full_save_task
+            and "ShowSaveInfoWindow();" not in full_save_task,
+            "full Start-menu saving must wait for the field fade and avoid the incompatible legacy info window")
     require("StartMenuFull_FreeResources" in full_start_menu
             and full_start_menu.index("DestroyStatusSprites();") < full_start_menu.index("try_free(sStartMenuDataPtr);")
             and "CB2_ReturnToFullScreenStartMenu" in full_start_menu,

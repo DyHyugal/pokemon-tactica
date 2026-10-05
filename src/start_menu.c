@@ -998,6 +998,19 @@ static bool8 SaveStartCallback(void)
 
 static void Task_SaveFromStartMenuFull(u8 taskId)
 {
+    if (gTasks[taskId].data[0] == 0)
+    {
+        // The full-screen menu returns through a black fade. Wait until the
+        // overworld and its windows are restored before drawing save text.
+        if (gPaletteFade.active)
+            return;
+
+        InitSave();
+        sSaveDialogCallback = SaveSavingMessageCallback;
+        gTasks[taskId].data[0] = 1;
+        return;
+    }
+
     switch (RunSaveCallback())
     {
     case SAVE_IN_PROGRESS:
@@ -1017,9 +1030,6 @@ static void Task_SaveFromStartMenuFull(u8 taskId)
 void SaveStartCallback_FullStartMenu(void)
 {
     WarpFadeInScreen();
-    InitSave();
-    ShowSaveInfoWindow();
-    sSaveDialogCallback = SaveSavingMessageCallback;
     CreateTask(Task_SaveFromStartMenuFull, 0);
 }
 

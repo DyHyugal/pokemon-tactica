@@ -134,6 +134,20 @@ TEST("Level cap: rival fights use the next Gym cap")
     EXPECT_EQ(GetCurrentLevelCap(), 35);
 }
 
+TEST("Level cap: Whitney remains the next cap after the equal-level rival milestone")
+{
+    SetLevelCapMode(1);
+    FlagSet(FLAG_DEFEATED_VIOLET_GYM);
+    SetTrainerFlag(TRAINER_PROTON_1_HNS);
+    FlagSet(FLAG_DEFEATED_AZALEA_TOWN_GYM);
+    SetTrainerFlag(TRAINER_RIVAL_CYNDAQUIL_2_HNS);
+
+    EXPECT_EQ(GetCurrentLevelCap(), 32);
+
+    SetLevelCapMode(2);
+    EXPECT_EQ(GetCurrentLevelCap(), 29);
+}
+
 TEST("Level cap: later rival fights follow the next major boss")
 {
     EXPECT_EQ(GetTestBossLevel(TRAINER_RIVAL_CYNDAQUIL_4_HNS, FALSE), 64);
@@ -228,7 +242,7 @@ TEST("Level cap: Kanto scales by five and parallel central Gyms share level 80")
     EXPECT_EQ(GetCurrentLevelCap(), 95);
 
     SetTrainerFlag(TRAINER_RIVAL_CYNDAQUIL_6_HNS);
-    EXPECT_EQ(GetCurrentLevelCap(), 100);
+    EXPECT_EQ(GetCurrentLevelCap(), 95);
 
     FlagSet(FLAG_DEFEATED_CINNABAR_ISLAND_GYM);
     EXPECT_EQ(GetCurrentLevelCap(), 100);

@@ -1170,6 +1170,19 @@ void BattleAI_DoAIProcessing_PredictedSwitchin(struct AiThinkingStruct *aiThink,
 
 // AI Score Functions
 // AI_FLAG_CHECK_BAD_MOVE - decreases move scores
+static u32 CountPositiveStatStageLevels(enum BattlerId battler)
+{
+    u32 count = 0;
+
+    for (enum Stat stat = STAT_ATK; stat < NUM_BATTLE_STATS; stat++)
+    {
+        if (gBattleMons[battler].statStages[stat] > DEFAULT_STAT_STAGE)
+            count += gBattleMons[battler].statStages[stat] - DEFAULT_STAT_STAGE;
+    }
+
+    return count;
+}
+
 static s32 AI_CheckBadMove(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum Move move, s32 score)
 {
     if (IsTargetingPartner(battlerAtk, battlerDef))
@@ -1194,6 +1207,14 @@ static s32 AI_CheckBadMove(enum BattlerId battlerAtk, enum BattlerId battlerDef,
 
     SetTypeBeforeUsingMove(move, battlerAtk);
     moveType = GetBattleMoveType(move);
+
+    // Once a setup plan has produced two positive stages, prefer
+    // converting the advantage into damage instead of boosting to +6. Baton
+    // Pass teams have their own hand-off policy in AI_PreferBatonPass.
+    if (IsStatRaisingEffect(moveEffect)
+     && CountPositiveStatStageLevels(battlerAtk) >= 2
+     && !HasMoveWithEffect(battlerAtk, EFFECT_BATON_PASS))
+        RETURN_SCORE_MINUS(10);
 
     if (gBattleStruct->battlerState[battlerDef].commandingDondozo)
         RETURN_SCORE_MINUS(20);
@@ -6524,19 +6545,21 @@ static s32 AI_PreferBatonPass(enum BattlerId battlerAtk, enum BattlerId battlerD
       || CountUsablePartyMons(battlerAtk) == 0
       || !IsBattleMoveStatus(move)
       || !HasMoveWithEffect(battlerAtk, EFFECT_BATON_PASS)
-      || IsBattlerTrapped(battlerAtk, battlerDef))
+      || IsBattlerTrapped(battlerDef, battlerAtk))
         return score;
 
     enum BattleMoveEffects effect = GetMoveEffect(move);
+    u32 positiveStages = CountPositiveStatStageLevels(battlerAtk);
+    bool32 safeForOneMoreBoost = positiveStages == 2
+                               && gAiLogicData->hpPercents[battlerAtk] == 100
+                               && !IS_BATTLER_OF_TYPE(battlerDef, TYPE_FIGHTING);
 
     if (IsStatRaisingEffect(effect))
     {
-        if (gBattleResults.battleTurnCounter == 0)
-            ADJUST_SCORE(GOOD_EFFECT);
-        else if (gAiLogicData->hpPercents[battlerAtk] < 60)
-            ADJUST_SCORE(-10);
+        if (positiveStages < 2 || safeForOneMoreBoost)
+            ADJUST_SCORE(BEST_EFFECT);
         else
-            ADJUST_SCORE(WEAK_EFFECT);
+            RETURN_SCORE_MINUS(20);
     }
 
     // other specific checks
@@ -6561,7 +6584,12 @@ static s32 AI_PreferBatonPass(enum BattlerId battlerAtk, enum BattlerId battlerD
             ADJUST_SCORE(DECENT_EFFECT);
         if (gBattleMons[battlerAtk].volatiles.leechSeed)
             ADJUST_SCORE(-3);
-        ADJUST_SCORE(CountPositiveStatStages(battlerAtk) - CountNegativeStatStages(battlerAtk));
+        if (positiveStages < 2)
+            RETURN_SCORE_MINUS(10);
+        if (safeForOneMoreBoost)
+            RETURN_SCORE_MINUS(5);
+
+        ADJUST_SCORE(20 + positiveStages - CountNegativeStatStages(battlerAtk));
         break;
     default:
         break;

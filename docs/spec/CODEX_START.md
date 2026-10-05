@@ -165,21 +165,17 @@ Il doit valider en priorité :
 
 Ne consigner comme défaut que ce qui est réellement reproduit sur la nouvelle candidate.
 
-## IA — à tester avant toute correction
+## IA — correctifs issus du premier playtest HARD
 
-**Ne pas modifier l'IA pour l'instant.**
+Le premier playtest owner a reproduit deux défauts ciblés : Évoli continuait Reflet au lieu d'utiliser Relais et Mimiqui pouvait accumuler ses boosts jusqu'à +6.
 
-La version actuelle de l'IA Difficile n'a pas encore reçu son premier vrai playtest owner complet dans sa forme actuelle.
+La logique courante protège désormais les règles suivantes :
 
-Les anciens retours sur Mimiqui, Provoc de Cornèbre ou Téraclope sont uniquement des **témoins historiques à surveiller**. Ils ne doivent plus être considérés comme bugs actuels tant qu'ils ne sont pas reproduits sur la prochaine ROM candidate.
+- Évoli passe après deux Reflets, avec un troisième autorisé uniquement à PV pleins face à un adversaire non Combat ;
+- après ce troisième boost, Relais devient prioritaire ;
+- les autres plans de setup attaquent après deux niveaux positifs au lieu de continuer jusqu'à +6.
 
-Après ce premier test HARD :
-
-- si le comportement est correct → ne rien changer ;
-- si quelques défauts sont reproduits → correctifs ciblés et génériques ;
-- si le comportement global est insuffisant → réévaluer le bloc IA dans son ensemble.
-
-Ne pas lancer d'audit IA avant ce playtest.
+Ces comportements sont couverts par des tests de combat et doivent être recontrôlés avec les équipes complètes dans la prochaine ROM. Provoc de Cornèbre et Téraclope restent de simples témoins tant qu'aucun défaut courant n'est reproduit.
 
 ## Wiki
 

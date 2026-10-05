@@ -7254,7 +7254,8 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     tItemEffect = GetItemEffectType(gSpecialVar_ItemId);
     tItemCount = 1;
 
-    if (!(B_RARE_CANDY_CAP && sInitialLevel >= GetCurrentLevelCap()))
+    if (!((B_RARE_CANDY_CAP || gSaveBlock3Ptr->challengeSettings.tx_Challenges_LevelCap)
+       && sInitialLevel >= GetCurrentLevelCap()))
     {
         cannotUseEffect = ExecuteTableBasedItemEffect(mon, gSpecialVar_ItemId, gPartyMenu.slotId, 0, 0, 1);
     }
