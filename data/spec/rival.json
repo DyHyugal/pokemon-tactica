@@ -128,7 +128,7 @@
     "runtime_fights": {
       "1_cherrygrove_before_badge_1": {
         "party_size": 1,
-        "levels": [17],
+        "levels": [18],
         "moves_phase": "early",
         "mega": false
       },

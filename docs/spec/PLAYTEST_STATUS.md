@@ -21,7 +21,7 @@ Le dernier `integration/v1` doit être reconstruit proprement avant tout nouveau
 
 Le contrat owner est désormais présent côté source canonique, runtime, générateur et tests :
 
-- premier duel : 1 Pokémon niveau 17 ;
+- premier duel : 1 Pokémon niveau 18 ;
 - après Hector : **4 Pokémon niveaux 29–32** ;
 - Tour Cendrée : **6 Pokémon niveaux 35–38** ;
 - Tour Radio : **61–64** ;
@@ -99,7 +99,7 @@ Le Pokédex n’est plus une source manuelle pour ces méthodes : ses champs d�
 
 ### Rival / Rocket
 
-- premier rival : un Pokémon, niveau 17, stade légal ;
+- premier rival : un Pokémon, niveau 18, stade légal ;
 - après Hector : 4 Pokémon, plage 29–32 ;
 - Tour Cendrée : 6 Pokémon, plage 35–38 ;
 - Tour Radio : 61–64 ; Route Victoire : 65–67 ; Mont Sélénite/Plateau : 95 ;

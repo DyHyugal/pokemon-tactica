@@ -12,7 +12,7 @@ This page is mainly a **where-do-I-go-next walkthrough**. It follows the main He
 
 **New Bark Town** — configure your options and choose your first Tactica starter in Professor Elm's lab. Cross **Route 29 → Cherrygrove → Route 30**, reach Mr. Pokémon and receive the Mystery Egg / Pokédex. Fight your rival on the way back, then return to **Elm's lab** for the theft and police sequence. **This is where Tactica offers the second starter**: identify the Egg species, choose a species different from your first starter, then keep the Egg and receive any associated items. Continue through Routes 30 and 31 to **Violet City**, clear Sprout Tower and defeat **Falkner**.
 
-**Tactica cap: 17.**
+**Tactica cap: 18.**
 
 ## Badge 1 → Badge 2: Bugsy
 

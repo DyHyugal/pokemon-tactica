@@ -607,8 +607,8 @@ def validate_rival_progression():
                 fail(f"{trainer_id}: expected {party_size} members")
             if levels != expected_levels[fight]:
                 fail(f"{trainer_id}: expected canonical levels {expected_levels[fight]}, got {levels}")
-            if fight == 1 and levels != [17]:
-                fail(f"{trainer_id}: first rival must use one level 17 starter")
+            if fight == 1 and levels != [18]:
+                fail(f"{trainer_id}: first rival must use one level 18 starter")
             if fight <= 5 and len(re.findall(rf"^{stages[fight - 1]}(?: @ .+)?$", party, re.M)) != 1:
                 fail(f"{trainer_id}: saved starter placeholder missing or duplicated")
             if fight in (4, 5) and len(re.findall(r"^Ursaring(?: @ .+)?$", party, re.M)) != 1:

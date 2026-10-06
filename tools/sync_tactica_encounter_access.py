@@ -38,7 +38,7 @@ def synchronized_text() -> tuple[str, int]:
         raise ValueError(f"Methods on the same map must share one first-access cap: {inconsistent}")
     route36_caps = map_caps.get("MAP_ROUTE36_HNS", set())
     if route36_caps != {17}:
-        raise ValueError(f"Route 36 must use the pre-Albert cap 17, found {sorted(route36_caps)}")
+        raise ValueError(f"Route 36 must remain in its authored 14-17 range, found {sorted(route36_caps)}")
 
     canonical_pairs = {(entry["map"], entry["method"]) for entry in encounters["tables"]}
     if set(caps) != canonical_pairs:

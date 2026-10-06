@@ -227,7 +227,7 @@ Le rival tire une **catégorie/archétype** une seule fois, puis cet archétype 
 
 Progression :
 
-- premier combat : starter seul niveau 17, stade légal ;
+- premier combat : starter seul niveau 18, stade légal ;
 - après badge 1 : 3 Pokémon ;
 - après badge 2 : 4 Pokémon ;
 - après badge 3 : 6 Pokémon ;
@@ -354,8 +354,8 @@ Le tableau des milestones doit correspondre à l'ordre réel des combats accessi
 
 Cas de régression obligatoire :
 
-- avant Albert : cap 17 ;
-- Albert battu : cap 19 avant Proton ;
+- avant Albert : cap 18 ;
+- Albert battu : cap 20 avant Proton ;
 - Proton 1 battu : cap 25 avant Hector ;
 - Hector doit être jouable avec cap 25 ;
 - le cap ne doit jamais redescendre après Hector.

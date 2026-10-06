@@ -261,6 +261,8 @@ NewBarkTown_Lab_EventScript_StarterGiven::
 	bufferspeciesname STR_VAR_1, PLAYER_STARTER_SPECIES
 	message NewBarkTown_Lab_Text_ReceivedStarter
 	waitfanfare
+	waitmessage
+	waitbuttonpress
 	call FamilyStarter_ShowPendingItem
 	specialvar VAR_RESULT, IsNuzlockeNicknamingActive
 	goto_if_eq VAR_RESULT, TRUE, NewBarkTown_Lab_EventScript_ChoseStarter_NicknameStarter_Nuzlocke
@@ -320,7 +322,6 @@ NewBarkTown_Lab_EventScript_MrPokemon::
 	goto_if_eq VAR_FACING, DIR_EAST, NewBarkTown_Lab_EventScript_MrPokemonMovementSafe
 	applymovement LOCALID_ELM, NewBarkTown_Lab_Movement_CheckEmailSlow
 	waitmovement 0
-	clearflag FLAG_RECEIVED_FIRST_BALLS
 	clearflag FLAG_RECEIVED_FIRST_POTION
 	setvar VAR_NEWBARK_TOWN_STATE, 3
 	setflag FLAG_ENABLE_CONDITION
@@ -330,7 +331,6 @@ NewBarkTown_Lab_EventScript_MrPokemon::
 NewBarkTown_Lab_EventScript_MrPokemonMovementSafe::
 	applymovement LOCALID_ELM, NewBarkTown_Lab_Movement_GotoComputerSafe
 	waitmovement 0
-	clearflag FLAG_RECEIVED_FIRST_BALLS
 	clearflag FLAG_RECEIVED_FIRST_POTION
 	setvar VAR_NEWBARK_TOWN_STATE, 3
 	release
@@ -367,9 +367,14 @@ NewBarkTown_Lab_EventScript_TriggerAideGivePotion::
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	msgbox NewBarkTown_Lab_Text_AideGivePotion, MSGBOX_DEFAULT
 	closemessage
-	giveitem ITEM_POTION
+	checkitemspace ITEM_POTION
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	checkitemspace ITEM_POKE_BALL, 10
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	giveitem ITEM_POTION
+	giveitem ITEM_POKE_BALL, 10
 	setflag FLAG_RECEIVED_FIRST_POTION
+	setflag FLAG_RECEIVED_FIRST_BALLS
 	setvar VAR_NEWBARKTOWN_LABSTATE, 3
 	applymovement LOCALID_AIDE1, NewBarkTown_Lab_Movement_Aide1LeavePlayer
 	waitmovement 0
@@ -510,6 +515,7 @@ NewBarkTown_Lab_EventScript_ElmSSTicket::
 
 NewBarkTown_Lab_EventScript_TriggerAideGiveBalls::
 	lock
+	goto_if_set FLAG_RECEIVED_FIRST_BALLS, NewBarkTown_Lab_EventScript_AideBallsAlreadyGiven
 	applymovement LOCALID_AIDE1, NewBarkTown_Lab_Movement_Aide1WalkToPlayer
 	waitmovement 0
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
@@ -522,6 +528,11 @@ NewBarkTown_Lab_EventScript_TriggerAideGiveBalls::
 	applymovement LOCALID_AIDE1, NewBarkTown_Lab_Movement_Aide1LeavePlayer
 	waitmovement 0
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
+	release
+	end
+
+NewBarkTown_Lab_EventScript_AideBallsAlreadyGiven::
+	setvar VAR_NEWBARKTOWN_LABSTATE, 6
 	release
 	end
 
@@ -992,7 +1003,7 @@ NewBarkTown_Lab_Text_LabMonEgg:
 
 NewBarkTown_Lab_Text_AideGivePotion:
 	.string "{PLAYER}, I want you to have\n"
-	.string "this for your errand.$"
+	.string "these supplies for your errand.$"
 
 NewBarkTown_Lab_Text_AideAlwaysBusy:
 	.string "There are only three of us, so\n"

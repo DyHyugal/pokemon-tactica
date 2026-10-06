@@ -117,7 +117,7 @@ Rocket reste intégré côté sources/runtime et doit surtout être observé dan
 
 Le correctif de progression **Rival est intégré** :
 
-- premier duel : 1 Pokémon niveau 17 ;
+- premier duel : 1 Pokémon niveau 18 ;
 - aucun combat scénario après le badge 1 ;
 - après Hector : 4 Pokémon, niveaux 29–32 ;
 - Tour Cendrée : 6 Pokémon, niveaux 35–38 ;

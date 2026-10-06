@@ -101,6 +101,7 @@ EWRAM_DATA static u8 (*sSaveDialogCallback)(void) = NULL;
 EWRAM_DATA static u8 sSaveDialogTimer = 0;
 EWRAM_DATA static bool8 sSavingComplete = FALSE;
 EWRAM_DATA static u8 sSaveInfoWindowId = 0;
+EWRAM_DATA static bool8 sSaveInfoWindowActive = FALSE;
 
 // Menu action callbacks
 static bool8 StartMenuPokedexCallback(void);
@@ -1573,6 +1574,7 @@ static void ShowSaveInfoWindow(void)
     }
 
     sSaveInfoWindowId = AddWindow(&saveInfoWindow);
+    sSaveInfoWindowActive = TRUE;
     DrawStdWindowFrame(sSaveInfoWindowId, FALSE);
 
     gender = gSaveBlock2Ptr->playerGender;
@@ -1626,8 +1628,12 @@ static void ShowSaveInfoWindow(void)
 
 static void RemoveSaveInfoWindow(void)
 {
+    if (!sSaveInfoWindowActive)
+        return;
+
     ClearStdWindowAndFrame(sSaveInfoWindowId, FALSE);
     RemoveWindow(sSaveInfoWindowId);
+    sSaveInfoWindowActive = FALSE;
 }
 
 static void Task_WaitForBattleTowerLinkSave(u8 taskId)

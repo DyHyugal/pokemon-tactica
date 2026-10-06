@@ -15,9 +15,9 @@ static u32 GetTestBossLevel(u16 trainerId, bool8 useLowestLevel)
     case TRAINER_RIVAL_CHIKORITA_1_HNS:
     case TRAINER_RIVAL_CYNDAQUIL_1_HNS:
     case TRAINER_RIVAL_TOTODILE_1_HNS:
-        return 17;
+        return 18;
     case TRAINER_FALKNER_1_HNS:
-        return useLowestLevel ? 14 : 17;
+        return useLowestLevel ? 14 : 18;
     case TRAINER_RIVAL_CHIKORITA_2_HNS:
     case TRAINER_RIVAL_CYNDAQUIL_2_HNS:
     case TRAINER_RIVAL_TOTODILE_2_HNS:
@@ -44,6 +44,21 @@ static u32 GetTestBossLevel(u16 trainerId, bool8 useLowestLevel)
         return 95;
     case TRAINER_MORTY_1_HNS:
         return useLowestLevel ? 35 : 38;
+    case TRAINER_CHUCK_1_HNS:
+        return useLowestLevel ? 42 : 45;
+    case TRAINER_JASMINE_1_HNS:
+        return useLowestLevel ? 48 : 52;
+    case TRAINER_PRYCE_1_HNS:
+        return useLowestLevel ? 55 : 57;
+    case TRAINER_CLAIR_1_HNS:
+        return useLowestLevel ? 61 : 64;
+    case TRAINER_WILL_1_HNS:
+    case TRAINER_KOGA_1_HNS:
+    case TRAINER_BRUNO_1_HNS:
+    case TRAINER_KAREN_1_HNS:
+        return useLowestLevel ? 65 : 67;
+    case TRAINER_LANCE_1_HNS:
+        return useLowestLevel ? 68 : 70;
     case TRAINER_LTSURGE_HNS:
         return 75;
     case TRAINER_SABRINA_HNS:
@@ -57,12 +72,15 @@ static u32 GetTestBossLevel(u16 trainerId, bool8 useLowestLevel)
     case TRAINER_BLAINE_HNS:
         return 95;
     case TRAINER_BLUE_HNS:
-    case TRAINER_WILL_2_HNS:
-    case TRAINER_KOGA_2_HNS:
-    case TRAINER_BRUNO_2_HNS:
-    case TRAINER_KAREN_2_HNS:
     case TRAINER_LANCE_2_HNS:
         return 100;
+    case TRAINER_WILL_2_HNS:
+        return useLowestLevel ? 66 : 68;
+    case TRAINER_KOGA_2_HNS:
+    case TRAINER_BRUNO_2_HNS:
+        return useLowestLevel ? 67 : 68;
+    case TRAINER_KAREN_2_HNS:
+        return useLowestLevel ? 67 : 69;
     case TRAINER_RED_HNS:
         return useLowestLevel ? 77 : 93;
     default:
@@ -79,7 +97,7 @@ static void SetLevelCapMode(u8 mode)
 TEST("Level cap: Falkner is the first HnS milestone")
 {
     SetLevelCapMode(1);
-    EXPECT_EQ(GetCurrentLevelCap(), 17);
+    EXPECT_EQ(GetCurrentLevelCap(), 18);
 
     SetLevelCapMode(2);
     EXPECT_EQ(GetCurrentLevelCap(), 14);
@@ -89,8 +107,8 @@ TEST("Level cap: first Rocket boss escalates two levels from the previous cap")
 {
     SetLevelCapMode(1);
     FlagSet(FLAG_DEFEATED_VIOLET_GYM);
-    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_PROTON_1_HNS), 19);
-    EXPECT_EQ(GetCurrentLevelCap(), 19);
+    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_PROTON_1_HNS), 20);
+    EXPECT_EQ(GetCurrentLevelCap(), 20);
 
     SetLevelCapMode(2);
     EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_PROTON_1_HNS), 16);
@@ -160,23 +178,129 @@ TEST("Level cap: later rival fights follow the next major boss")
 TEST("Level cap: Rocket encounters follow actual story stages")
 {
     SetLevelCapMode(1);
-    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_PROTON_1_HNS), 19);
+    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_PROTON_1_HNS), 20);
     EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_PETREL_1_HNS), 40);
     EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_ARIANA_1_HNS), 40);
-    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_PETREL_2_HNS), 40);
+    EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_PETREL_2_HNS), 59);
     EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_PROTON_2_HNS), 66);
     EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_ARIANA_2_HNS), 66);
     EXPECT_EQ(GetFamilyRocketTrainerLevel(TRAINER_ARCHER_HNS), 66);
 }
 
+TEST("Level cap: every Johto milestone follows the complete NORMAL progression")
+{
+    SetLevelCapMode(1);
+    EXPECT_EQ(GetCurrentLevelCap(), 18);
+
+    FlagSet(FLAG_DEFEATED_VIOLET_GYM);
+    EXPECT_EQ(GetCurrentLevelCap(), 20);
+    SetTrainerFlag(TRAINER_PROTON_1_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 25);
+    FlagSet(FLAG_DEFEATED_AZALEA_TOWN_GYM);
+    EXPECT_EQ(GetCurrentLevelCap(), 32);
+    SetTrainerFlag(TRAINER_RIVAL_CYNDAQUIL_2_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 32);
+    FlagSet(FLAG_DEFEATED_GOLDENROD_CITY_GYM);
+    EXPECT_EQ(GetCurrentLevelCap(), 38);
+    SetTrainerFlag(TRAINER_RIVAL_CYNDAQUIL_3_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 38);
+    FlagSet(FLAG_DEFEATED_ECRUTEAK_CITY_GYM);
+    EXPECT_EQ(GetCurrentLevelCap(), 40);
+    SetTrainerFlag(TRAINER_PETREL_1_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 40);
+    SetTrainerFlag(TRAINER_ARIANA_1_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 45);
+    FlagSet(FLAG_DEFEATED_CIANWOOD_GYM);
+    EXPECT_EQ(GetCurrentLevelCap(), 52);
+    FlagSet(FLAG_DEFEATED_OLIVINE_CITY_GYM);
+    EXPECT_EQ(GetCurrentLevelCap(), 57);
+    FlagSet(FLAG_DEFEATED_MAHOGANY_TOWN_GYM);
+    EXPECT_EQ(GetCurrentLevelCap(), 59);
+    SetTrainerFlag(TRAINER_PETREL_2_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 64);
+    SetTrainerFlag(TRAINER_RIVAL_CYNDAQUIL_4_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 66);
+    SetTrainerFlag(TRAINER_PROTON_2_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 66);
+    SetTrainerFlag(TRAINER_ARIANA_2_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 66);
+    SetTrainerFlag(TRAINER_ARCHER_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 66);
+    FlagSet(FLAG_DEFEATED_BLACKTHORN_GYM);
+    EXPECT_EQ(GetCurrentLevelCap(), 67);
+    SetTrainerFlag(TRAINER_RIVAL_CYNDAQUIL_5_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 67);
+    SetTrainerFlag(TRAINER_WILL_1_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 67);
+    SetTrainerFlag(TRAINER_KOGA_1_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 67);
+    SetTrainerFlag(TRAINER_BRUNO_1_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 67);
+    SetTrainerFlag(TRAINER_KAREN_1_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 70);
+}
+
+TEST("Level cap: every Johto milestone follows the complete HARD progression")
+{
+    SetLevelCapMode(2);
+    EXPECT_EQ(GetCurrentLevelCap(), 14);
+
+    FlagSet(FLAG_DEFEATED_VIOLET_GYM);
+    EXPECT_EQ(GetCurrentLevelCap(), 16);
+    SetTrainerFlag(TRAINER_PROTON_1_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 22);
+    FlagSet(FLAG_DEFEATED_AZALEA_TOWN_GYM);
+    EXPECT_EQ(GetCurrentLevelCap(), 29);
+    SetTrainerFlag(TRAINER_RIVAL_CYNDAQUIL_2_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 29);
+    FlagSet(FLAG_DEFEATED_GOLDENROD_CITY_GYM);
+    EXPECT_EQ(GetCurrentLevelCap(), 35);
+    SetTrainerFlag(TRAINER_RIVAL_CYNDAQUIL_3_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 35);
+    FlagSet(FLAG_DEFEATED_ECRUTEAK_CITY_GYM);
+    EXPECT_EQ(GetCurrentLevelCap(), 37);
+    SetTrainerFlag(TRAINER_PETREL_1_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 37);
+    SetTrainerFlag(TRAINER_ARIANA_1_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 42);
+    FlagSet(FLAG_DEFEATED_CIANWOOD_GYM);
+    EXPECT_EQ(GetCurrentLevelCap(), 48);
+    FlagSet(FLAG_DEFEATED_OLIVINE_CITY_GYM);
+    EXPECT_EQ(GetCurrentLevelCap(), 55);
+    FlagSet(FLAG_DEFEATED_MAHOGANY_TOWN_GYM);
+    EXPECT_EQ(GetCurrentLevelCap(), 57);
+    SetTrainerFlag(TRAINER_PETREL_2_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 61);
+    SetTrainerFlag(TRAINER_RIVAL_CYNDAQUIL_4_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 63);
+    SetTrainerFlag(TRAINER_PROTON_2_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 63);
+    SetTrainerFlag(TRAINER_ARIANA_2_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 63);
+    SetTrainerFlag(TRAINER_ARCHER_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 63);
+    FlagSet(FLAG_DEFEATED_BLACKTHORN_GYM);
+    EXPECT_EQ(GetCurrentLevelCap(), 65);
+    SetTrainerFlag(TRAINER_RIVAL_CYNDAQUIL_5_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 65);
+    SetTrainerFlag(TRAINER_WILL_1_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 65);
+    SetTrainerFlag(TRAINER_KOGA_1_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 65);
+    SetTrainerFlag(TRAINER_BRUNO_1_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 65);
+    SetTrainerFlag(TRAINER_KAREN_1_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 68);
+}
+
 TEST("Level cap: Rocket parties use legal evolution stages at their resolved level")
 {
-    EXPECT_EQ(GetFamilyRocketLegalSpecies(SPECIES_CROBAT, 19), SPECIES_ZUBAT);
-    EXPECT_EQ(GetFamilyRocketLegalSpecies(SPECIES_WEEZING, 19), SPECIES_KOFFING);
-    EXPECT_EQ(GetFamilyRocketLegalSpecies(SPECIES_RATICATE, 19), SPECIES_RATTATA);
-    EXPECT_EQ(GetFamilyRocketLegalSpecies(SPECIES_SCOLIPEDE, 19), SPECIES_VENIPEDE);
-    EXPECT_EQ(GetFamilyRocketLegalSpecies(SPECIES_TOXICROAK, 19), SPECIES_CROAGUNK);
-    EXPECT_EQ(GetFamilyRocketLegalSpecies(SPECIES_MUK_ALOLA, 19), SPECIES_GRIMER_ALOLA);
+    EXPECT_EQ(GetFamilyRocketLegalSpecies(SPECIES_CROBAT, 20), SPECIES_ZUBAT);
+    EXPECT_EQ(GetFamilyRocketLegalSpecies(SPECIES_WEEZING, 20), SPECIES_KOFFING);
+    EXPECT_EQ(GetFamilyRocketLegalSpecies(SPECIES_RATICATE, 20), SPECIES_RATICATE);
+    EXPECT_EQ(GetFamilyRocketLegalSpecies(SPECIES_SCOLIPEDE, 20), SPECIES_VENIPEDE);
+    EXPECT_EQ(GetFamilyRocketLegalSpecies(SPECIES_TOXICROAK, 20), SPECIES_CROAGUNK);
+    EXPECT_EQ(GetFamilyRocketLegalSpecies(SPECIES_MUK_ALOLA, 20), SPECIES_GRIMER_ALOLA);
 
     EXPECT_EQ(GetFamilyRocketLegalSpecies(SPECIES_CROBAT, 23), SPECIES_CROBAT);
     EXPECT_EQ(GetFamilyRocketLegalSpecies(SPECIES_SCOLIPEDE, 29), SPECIES_WHIRLIPEDE);
@@ -192,7 +316,7 @@ TEST("Level cap: Rocket runtime applies the dynamic level and legal species")
 
     ApplyFamilyRocketPartyLevel(gEnemyParty, 1, TRAINER_PROTON_1_HNS);
 
-    EXPECT_EQ(GetMonData(&gEnemyParty[0], MON_DATA_LEVEL), 19);
+    EXPECT_EQ(GetMonData(&gEnemyParty[0], MON_DATA_LEVEL), 20);
     EXPECT_EQ(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES), SPECIES_ZUBAT);
 }
 
@@ -214,6 +338,9 @@ TEST("Level cap: league transitions use Kanto, Red, then the engine maximum")
 
     FlagSet(FLAG_IS_KANTO_CHAMPION);
     EXPECT_EQ(GetCurrentLevelCap(), 93);
+
+    SetLevelCapMode(2);
+    EXPECT_EQ(GetCurrentLevelCap(), 77);
 
     FlagSet(FLAG_DEFEATED_RED);
     EXPECT_EQ(GetCurrentLevelCap(), MAX_LEVEL);
@@ -246,6 +373,18 @@ TEST("Level cap: Kanto scales by five and parallel central Gyms share level 80")
 
     FlagSet(FLAG_DEFEATED_CINNABAR_ISLAND_GYM);
     EXPECT_EQ(GetCurrentLevelCap(), 100);
+
+    FlagSet(FLAG_DEFEATED_VIRIDIAN_GYM);
+    SetTrainerFlag(TRAINER_WILL_2_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 100);
+    SetTrainerFlag(TRAINER_KOGA_2_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 100);
+    SetTrainerFlag(TRAINER_BRUNO_2_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 100);
+    SetTrainerFlag(TRAINER_KAREN_2_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 100);
+    SetTrainerFlag(TRAINER_LANCE_2_HNS);
+    EXPECT_EQ(GetCurrentLevelCap(), 100);
 }
 
 TEST("Level cap: EXP Training reads the live boss cap")
@@ -260,6 +399,6 @@ TEST("Level cap: EXP Training reads the live boss cap")
     TrainingNpc_ApplyExp();
 
     EXPECT_EQ(gSpecialVar_Result, TRAINING_RESULT_SUCCESS);
-    EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_LEVEL), 17);
+    EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_LEVEL), 18);
 }
 #endif
