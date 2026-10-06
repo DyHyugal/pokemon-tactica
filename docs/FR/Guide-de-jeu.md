@@ -28,7 +28,7 @@ Le sélecteur remplace le choix classique de Johto par **six groupes de cinq Pok
 **Bourg Geon** — règle tes options, parle au Prof. Orme et choisis ton starter Tactica. **Route 29 → Ville Griotte → Route 30** — rejoins la maison de M. Pokémon et récupère l'Œuf Mystère / le Pokédex. Retourne vers **Bourg Geon** : le premier combat contre le rival se déclenche sur le trajet. Au laboratoire, termine la séquence du vol avec la police puis rends l'Œuf Mystère à Orme. **C'est à ce moment-là, au laboratoire d'Orme, que Tactica propose le second starter** : reconnais l'espèce de l'œuf, choisis une espèce différente de ton starter principal, puis récupère l'œuf et les éventuels objets associés. Ce choix ne vient pas de l'assistant d'Orme. Repars par **Routes 30 et 31** jusqu'à **Mauville**. Termine la **Tour Chétiflor** pour débloquer la suite utile de la ville. Défie **Albert** à l'Arène de Mauville.
 
 
-**Cap Tactica : 17.**
+**Cap Tactica : 18.**
 
 ## Badge 1 → badge 2 : Hector
 

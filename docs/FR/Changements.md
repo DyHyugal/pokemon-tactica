@@ -22,7 +22,7 @@ Cette page regroupe les changements de gameplay propres à Pokémon Tactica. Ell
 
 ### Difficulté et Level Caps
 
-NORMAL et HARD conservent les mêmes Pokémon, équipes, sets, niveaux et mécaniques. HARD ajoute surtout une préparation IV/EV optimisée et une IA plus exigeante. Le Level Cap suit le prochain combat majeur et ne redescend jamais : Albert 17, Hector 25, Blanche 32, Mortimer 38, Chuck 45, Jasmine 52, Frédo 57, Sandra 64, Conseil 4 67, Maître 70. À Kanto, Major Bob est niveau 75 ; Morgane, Erika et Jeannine partagent le palier 80 ; Ondine est niveau 85, Pierre 90, Auguste 95, puis Blue et la deuxième Ligue 100.
+NORMAL et HARD conservent les mêmes Pokémon, équipes, sets, niveaux et mécaniques. HARD ajoute surtout une préparation IV/EV optimisée et une IA plus exigeante. Le Level Cap suit le prochain combat majeur et ne redescend jamais : Albert 18, Hector 25, Blanche 32, Mortimer 38, Chuck 45, Jasmine 52, Frédo 57, Sandra 64, Conseil 4 67, Maître 70. À Kanto, Major Bob est niveau 75 ; Morgane, Erika et Jeannine partagent le palier 80 ; Ondine est niveau 85, Pierre 90, Auguste 95, puis Blue et la deuxième Ligue 100.
 
 ### Starters et œuf d'Orme
 

@@ -49,7 +49,6 @@ struct BossLevelCapMilestone
 {
     u16 trainerIds[3];
     u16 completionFlag;
-    u16 variantFlags[2];
     bool8 requireAllTrainers;
 };
 
@@ -61,12 +60,8 @@ struct BossLevelCapMilestone
     { .trainerIds = {trainerId1, trainerId2, trainerId3} }
 #define BOSS_MILESTONE_GROUP(trainerId1, trainerId2, trainerId3) \
     { .trainerIds = {trainerId1, trainerId2, trainerId3}, .requireAllTrainers = TRUE }
-#define BOSS_MILESTONE_FLEXIBLE(trainerId1, trainerId2, trainerId3, flag, variantFlag1, variantFlag2) \
-    { .trainerIds = {trainerId1, trainerId2, trainerId3}, .completionFlag = flag, .variantFlags = {variantFlag1, variantFlag2} }
-
-// The order follows the mandatory HnS story. When the middle Johto gyms or
-// Kanto gyms are completed out of order, completed milestones establish a
-// floor so that the cap can never move backwards.
+// The order follows the intended Tactica story. Completed milestones establish
+// a floor so that optional ordering can never move the cap backwards.
 static const struct BossLevelCapMilestone sJohtoBossMilestones[] =
 {
     BOSS_MILESTONE_FLAG(TRAINER_FALKNER_1_HNS, FLAG_DEFEATED_VIOLET_GYM),
@@ -78,9 +73,9 @@ static const struct BossLevelCapMilestone sJohtoBossMilestones[] =
     BOSS_MILESTONE_FLAG(TRAINER_MORTY_1_HNS, FLAG_DEFEATED_ECRUTEAK_CITY_GYM),
     BOSS_MILESTONE(TRAINER_PETREL_1_HNS),
     BOSS_MILESTONE(TRAINER_ARIANA_1_HNS),
-    BOSS_MILESTONE_FLEXIBLE(TRAINER_CHUCK_1_HNS, TRAINER_CHUCK_1_2_HNS, TRAINER_CHUCK_1_3_HNS, FLAG_DEFEATED_CIANWOOD_GYM, FLAG_DEFEATED_OLIVINE_CITY_GYM, FLAG_DEFEATED_MAHOGANY_TOWN_GYM),
-    BOSS_MILESTONE_FLEXIBLE(TRAINER_PRYCE_1_HNS, TRAINER_PRYCE_1_2_HNS, TRAINER_PRYCE_1_3_HNS, FLAG_DEFEATED_MAHOGANY_TOWN_GYM, FLAG_DEFEATED_CIANWOOD_GYM, FLAG_DEFEATED_OLIVINE_CITY_GYM),
-    BOSS_MILESTONE_FLEXIBLE(TRAINER_JASMINE_1_HNS, TRAINER_JASMINE_1_2_HNS, TRAINER_JASMINE_1_3_HNS, FLAG_DEFEATED_OLIVINE_CITY_GYM, FLAG_DEFEATED_CIANWOOD_GYM, FLAG_DEFEATED_MAHOGANY_TOWN_GYM),
+    BOSS_MILESTONE_FLAG(TRAINER_CHUCK_1_HNS, FLAG_DEFEATED_CIANWOOD_GYM),
+    BOSS_MILESTONE_FLAG(TRAINER_JASMINE_1_HNS, FLAG_DEFEATED_OLIVINE_CITY_GYM),
+    BOSS_MILESTONE_FLAG(TRAINER_PRYCE_1_HNS, FLAG_DEFEATED_MAHOGANY_TOWN_GYM),
     BOSS_MILESTONE(TRAINER_PETREL_2_HNS),
     BOSS_MILESTONE_VARIANTS(TRAINER_RIVAL_CHIKORITA_4_HNS, TRAINER_RIVAL_CYNDAQUIL_4_HNS, TRAINER_RIVAL_TOTODILE_4_HNS),
     BOSS_MILESTONE(TRAINER_PROTON_2_HNS),
@@ -150,12 +145,6 @@ static u32 GetTrainerLevelCap(u16 trainerId, bool8 useLowestLevel)
 
 static u16 GetMilestoneTrainerId(const struct BossLevelCapMilestone *milestone)
 {
-    if (milestone->variantFlags[0] != 0)
-    {
-        u32 variant = FlagGet(milestone->variantFlags[0]) + FlagGet(milestone->variantFlags[1]);
-        return milestone->trainerIds[variant];
-    }
-
     return milestone->trainerIds[0];
 }
 
@@ -180,9 +169,6 @@ static u32 GetMilestoneLevelCap(const struct BossLevelCapMilestone *milestone, b
 {
     u32 levelCap = 0;
     u32 i;
-
-    if (milestone->variantFlags[0] != 0)
-        return GetTrainerLevelCap(GetMilestoneTrainerId(milestone), useLowestLevel);
 
     for (i = 0; i < ARRAY_COUNT(milestone->trainerIds); i++)
     {
@@ -242,8 +228,9 @@ static u32 GetBossProgressionLevelCap(const struct BossLevelCapMilestone *milest
         // A completed temporary Rocket +2 cap must immediately advance to the
         // next canonical milestone. Equal-level consecutive milestones (for
         // example Rival 2 then Whitney) must each remain active until beaten.
-        // Lower optional milestones cannot hold the preparation cap backwards.
-        else if (nextBossCap == 0 && milestoneCap >= progressionFloor)
+        // A lower next milestone remains the active target while the completed
+        // progression floor keeps the effective cap from moving backwards.
+        else if (nextBossCap == 0)
         {
             nextBossCap = milestoneCap;
         }

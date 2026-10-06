@@ -45,7 +45,7 @@ Une catégorie rival est tirée une fois parmi les choix autorisés puis sauvega
 
 Progression des effectifs :
 
-- premier combat : starter fixe seul, niveau 17, stade légal au niveau 17 ;
+- premier combat : starter fixe seul, niveau 18, stade légal au niveau 18 ;
 - aucun combat après le badge 1 ;
 - après badge 2 : 4 Pokémon ;
 - après badge 3 : équipe complète de 6 ;
@@ -55,7 +55,7 @@ Les membres introduits restent présents dans les combats suivants.
 
 Les événements réellement joués utilisent les jalons suivants :
 
-- Ville Griotte : 1 Pokémon niveau 17 ;
+- Ville Griotte : 1 Pokémon niveau 18 ;
 - après Hector : 4 Pokémon, niveaux 29–32, alignés sur Blanche ;
 - entre Blanche et Mortimer : 6 Pokémon, niveaux 35–38, alignés sur Mortimer ;
 - Tour Radio : 6 Pokémon, niveaux 61–64, alignés sur Sandra ;

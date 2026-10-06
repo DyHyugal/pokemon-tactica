@@ -22,7 +22,7 @@ This page groups the gameplay changes specific to Pokémon Tactica. It is intend
 
 ### Difficulty and Level Caps
 
-NORMAL and HARD keep the same Pokémon, rosters, sets, levels and mechanics. HARD mainly adds stronger IV/EV preparation and more demanding AI. The Level Cap follows the next major battle and never moves backward: Falkner 17, Bugsy 25, Whitney 32, Morty 38, Chuck 45, Jasmine 52, Pryce 57, Clair 64, Elite Four 67, Champion 70.
+NORMAL and HARD keep the same Pokémon, rosters, sets, levels and mechanics. HARD mainly adds stronger IV/EV preparation and more demanding AI. The Level Cap follows the next major battle and never moves backward: Falkner 18, Bugsy 25, Whitney 32, Morty 38, Chuck 45, Jasmine 52, Pryce 57, Clair 64, Elite Four 67, Champion 70.
 
 ### Starters and Elm's Egg
 

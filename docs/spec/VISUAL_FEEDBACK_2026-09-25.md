@@ -78,7 +78,7 @@ Attendu :
 
 - l'équipe reste composée uniquement du starter rival ;
 - niveau du starter rival = **17**, correspondant au cap de préparation d'Albert ;
-- son stade d'évolution doit être légal au niveau 17 ;
+- son stade d'évolution doit être légal au niveau 18 ;
 - les attaques doivent être légales à ce stade/niveau.
 
 Ce point est un écart gameplay, pas uniquement un polish UX.
@@ -119,7 +119,7 @@ Mortimer doit également donner le **Mega Ring après le badge 4**, avant la CT 
 - boutiques : fond rouge / texte noir ;
 - combat : healthboxes, actions et capacités cohérents avec la charte ;
 - Summary : toutes les pages lisibles, sans superpositions ;
-- premier rival : starter seul niveau 17, stade légal ;
+- premier rival : starter seul niveau 18, stade légal ;
 - Route 36 : slots runtime = données canoniques ;
 - Mortimer : aucune assert Méga, transformation effective ;
 - après badge 4 : Mega Ring reçu et Méga joueur utilisable.

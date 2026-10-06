@@ -70,7 +70,7 @@ Contrat owner 26-09 :
 - taille d'équipe : **1** ;
 - contenu : **starter rival uniquement** ;
 - niveau : **17**, soit le cap de préparation d'Albert ;
-- stade d'évolution : résoudre légalement l'espèce au niveau 17 ;
+- stade d'évolution : résoudre légalement l'espèce au niveau 18 ;
 - attaques : légales pour ce stade et ce niveau ;
 - NORMAL/HARD gardent le même contenu.
 

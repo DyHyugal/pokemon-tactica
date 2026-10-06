@@ -1,12 +1,12 @@
 # Progression et caps
 
-La courbe des niveaux d'ace validée est : Albert 17, Hector 25, Blanche 32, Mortimer 38, Chuck 45, Jasmine 52, Frédo 57, Sandra 64, Clément/Conseil 4 67, Maître 70. Les niveaux précis des autres membres viennent du roster canonique. Le cap courant ne décroît jamais.
+La courbe des niveaux d'ace validée est : Albert 18, Hector 25, Blanche 32, Mortimer 38, Chuck 45, Jasmine 52, Frédo 57, Sandra 64, Clément/Conseil 4 67, Maître 70. Les niveaux précis des autres membres viennent du roster canonique. Le cap courant ne décroît jamais.
 
 ## Rival
 
 Le rival suit les jalons de préparation de la progression, pas les niveaux historiques du jeu d'origine. Il persiste un **archétype** puis utilise le starter fixe de cet archétype ; l'ancien tirage d'une espèce parmi cinq starters est obsolète.
 
-- Premier combat : **1 Pokémon**, le starter rival, **niveau 17**, avec stade d'évolution légal au niveau 17.
+- Premier combat : **1 Pokémon**, le starter rival, **niveau 18**, aligné sur Roucoups d'Albert et avec un stade d'évolution légal au niveau 18.
 - Les combats suivants gardent la progression **3 -> 4 -> 6** puis restent à 6 ; après le badge 4, l'équipe complète peut utiliser sa Méga définie dans `ROSTERS_ROCKET_RIVAL.md`.
 - Un rival peut devenir jalon canonique uniquement lorsqu'il est explicitement désigné dans la progression.
 

@@ -315,6 +315,48 @@ for row in teams:
 bosses = collections.defaultdict(list)
 for row in teams:
     bosses[(row["region"], row["category"], row["boss"])].append(row)
+
+# These ranges are the gameplay contract consumed by src/caps.c.  Keeping the
+# whole curve here prevents a single stale ace or low-level party member from
+# silently changing NORMAL or HARD level caps.
+expected_boss_ranges = {
+    ("Johto", "Gym", "Albert"): (14, 18),
+    ("Johto", "Gym", "Hector"): (22, 25),
+    ("Johto", "Gym", "Blanche"): (29, 32),
+    ("Johto", "Gym", "Mortimer"): (35, 38),
+    ("Johto", "Gym", "Chuck"): (42, 45),
+    ("Johto", "Gym", "Jasmine"): (48, 52),
+    ("Johto", "Gym", "Frédo"): (55, 57),
+    ("Johto", "Gym", "Sandra"): (61, 64),
+    ("Johto", "Elite Four", "Clément"): (65, 67),
+    ("Johto", "Elite Four", "Koga"): (65, 67),
+    ("Johto", "Elite Four", "Aldo"): (65, 67),
+    ("Johto", "Elite Four", "Marion"): (65, 67),
+    ("Johto", "Champion", "Maître"): (68, 70),
+    ("Kanto", "Gym", "Major Bob"): (75, 75),
+    ("Kanto", "Gym", "Erika"): (80, 80),
+    ("Kanto", "Gym", "Morgane"): (80, 80),
+    ("Kanto", "Gym", "Jeannine"): (80, 80),
+    ("Kanto", "Gym", "Ondine"): (85, 85),
+    ("Kanto", "Gym", "Pierre"): (90, 90),
+    ("Kanto", "Gym", "Auguste"): (95, 95),
+    ("Kanto", "Gym", "Blue"): (100, 100),
+    ("Kanto", "Champion Rematch", "Maître"): (100, 100),
+}
+for key, expected in expected_boss_ranges.items():
+    levels = [row["level"] for row in bosses[key]]
+    require(levels and None not in levels and (min(levels), max(levels)) == expected,
+            f"{key}: expected level range {expected}, found {levels}")
+
+middle_gym_scripts = {
+    "CianwoodGym_hns/scripts.inc": "TRAINER_CHUCK_1_HNS",
+    "OlivineCity_Gym_hns/scripts.inc": "TRAINER_JASMINE_1_HNS",
+    "MahoganyTown_Gym_hns/scripts.inc": "TRAINER_PRYCE_1_HNS",
+}
+for relative_path, trainer_id in middle_gym_scripts.items():
+    script = (ROOT.parents[1] / "data/maps" / relative_path).read_text(encoding="utf-8")
+    require(script.count(f"trainerbattle_no_intro {trainer_id},") == 3,
+            f"{relative_path}: every badge-order branch must use canonical {trainer_id}")
 for row in (row for row in teams if row["species"] == "Infernape"):
     require("Acrobatics" in row["moves"] and "Aerial Ace" not in row["moves"],
             f"{row['boss']}: Infernape must use Acrobatics")
