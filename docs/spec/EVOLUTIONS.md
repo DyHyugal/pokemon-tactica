@@ -66,6 +66,8 @@ Aucun seuil de niveau artificiel ne doit être ajouté.
 
 > La consommation exacte de l'objet tenu au moment de l'évolution relève de l'implémentation runtime ; ce document impose uniquement qu'il soit requis et tenu lors de l'utilisation du Fil Liaison.
 
+Le runtime applique en plus un verrou explicite au Fil Liaison avant l'évaluation générique des conditions : toute route qui déclare `IF_HOLD_ITEM` est refusée si l'objet tenu ne correspond pas. Les tests couvrent la vérification puis l'exécution réelle pour les 16 routes concernées et confirment que l'objet tenu est consommé uniquement lorsque l'évolution réussit. Hypotrempe est un témoin de début de partie : devenu Hypocéan au niveau 32, il exige l'Écaille Draco reçue avec ce starter avant d'accepter le Fil Liaison.
+
 ### 2.3 Évolution officiellement impossible à reproduire proprement dans Tactica
 
 **Règle : utiliser un Fil Liaison.**
