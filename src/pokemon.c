@@ -7117,6 +7117,25 @@ static bool32 IsSpeciesAlreadyEvolved(u32 species)
     return FALSE;
 }
 
+static bool32 HasRequiredHeldItemForLinkingCord(struct Pokemon *mon, const struct Evolution *evolution)
+{
+    const struct EvolutionParam *params = evolution->params;
+    u32 heldItem;
+    u32 i;
+
+    if (evolution->method != EVO_ITEM || evolution->param != ITEM_LINKING_CORD || params == NULL)
+        return TRUE;
+
+    heldItem = GetMonData(mon, MON_DATA_HELD_ITEM);
+    for (i = 0; params[i].condition != CONDITIONS_END; i++)
+    {
+        if (params[i].condition == IF_HOLD_ITEM && heldItem != params[i].arg1)
+            return FALSE;
+    }
+
+    return TRUE;
+}
+
 u32 GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode mode, u16 evolutionItem, struct Pokemon *tradePartner, bool32 *canStopEvo, enum EvoState evoState)
 {
     int i;
@@ -7226,7 +7245,8 @@ u32 GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode mode, u16 
             switch (evolutions[i].method)
             {
             case EVO_ITEM:
-                if (evolutions[i].param == evolutionItem)
+                if (evolutions[i].param == evolutionItem
+                 && HasRequiredHeldItemForLinkingCord(mon, &evolutions[i]))
                     conditionsMet = TRUE;
                 break;
             }

@@ -169,11 +169,35 @@ TEST("Evolution requirements: all canonical trade families use Linking Cord")
     if (heldItem != ITEM_NONE)
     {
         EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_LINKING_CORD, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
+        EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_LINKING_CORD, NULL, &canStopEvo, DO_EVO), SPECIES_NONE);
         SetMonData(&mon, MON_DATA_HELD_ITEM, &heldItem);
         EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, heldItem, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
     }
 
     EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_LINKING_CORD, NULL, &canStopEvo, CHECK_EVO), testCase->target);
+
+    if (heldItem != ITEM_NONE)
+    {
+        EXPECT_EQ(GetMonData(&mon, MON_DATA_HELD_ITEM), heldItem);
+        EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_LINKING_CORD, NULL, &canStopEvo, DO_EVO), testCase->target);
+        EXPECT_EQ(GetMonData(&mon, MON_DATA_HELD_ITEM), ITEM_NONE);
+    }
+}
+
+TEST("Evolution requirements: early Horsea starter requires Dragon Scale for Linking Cord")
+{
+    struct Pokemon mon;
+    bool32 canStopEvo = TRUE;
+    u16 heldItem = ITEM_DRAGON_SCALE;
+
+    InitEvolutionMon(&mon, SPECIES_SEADRA, 32, MON_MALE);
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_LINKING_CORD, NULL, &canStopEvo, CHECK_EVO), SPECIES_NONE);
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_LINKING_CORD, NULL, &canStopEvo, DO_EVO), SPECIES_NONE);
+
+    SetMonData(&mon, MON_DATA_HELD_ITEM, &heldItem);
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_LINKING_CORD, NULL, &canStopEvo, CHECK_EVO), SPECIES_KINGDRA);
+    EXPECT_EQ(GetEvolutionTargetSpecies(&mon, EVO_MODE_ITEM_USE, ITEM_LINKING_CORD, NULL, &canStopEvo, DO_EVO), SPECIES_KINGDRA);
+    EXPECT_EQ(GetMonData(&mon, MON_DATA_HELD_ITEM), ITEM_NONE);
 }
 
 
