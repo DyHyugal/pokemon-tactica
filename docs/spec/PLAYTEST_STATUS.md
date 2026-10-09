@@ -168,7 +168,9 @@ Les tests mGBA du lot courant passent : 16 groupes de combat terrain/climat, 3 g
 - Wattapik transmet le terrain actif à un attaquant pertinent ; Salarsen reste poseur manuel de secours avec Champ Électrifié. Une attaque super efficace sans KO ne bloque pas le relais ;
 - terrain remplacé/expiré : retour d'un poseur avant un nouvel attaquant, puis restauration et relais ; vérifier aussi après KO et sur les cinq autres archétypes ;
 - absence de switch impossible sous piège et de sacrifice immédiat sur hazards connus ; ne pas confondre ces limites avec une lecture de capacités cachées ;
-- Coupe, Flash, Éclate-Roc, Force, Surf, Vol, Plongée et Cascade avant/après leur condition scénario, avec une équipe incompatible et sans CS apprise ou objet CS ;
+- Coupe, Éclate-Roc, Force, Surf, Plongée, Siphon et Cascade par interaction avant/après leur condition scénario, avec une équipe incompatible et sans CS apprise ou objet CS ; vérifier l’absence de CS dans les menus Pokémon ;
+- Carte depuis Start (plein écran et compact), murs et objet carte : déplacement du curseur, libellés, A sur destination visitée, refus des villes non visitées, B retour, ouvertures répétées ; Vol avant/après badge 5, en extérieur/intérieur et pendant une escorte, puis arrivée correcte à Johto et Kanto sans Pokémon volant ;
+- Flash automatique dans une grotte dès le début, sans badge, et au chargement d’une sauvegarde auparavant sombre ; retour à l’éclairage normal hors grotte ;
 - tous les onglets Options et Settings, toutes les valeurs et lignes désactivées, cadres et challenge de type compris ; vérifier header, scroll, sauvegarde et rechargement ;
 - éclosion, message du Pokémon éclos, choix de surnom Oui/Non puis retour au terrain ;
 - Oui/Non de changement en combat : curseur sur chaque réponse, annulation et répétitions, sans rectangles noirs ni lettres effacées.
@@ -189,3 +191,11 @@ make hns -j4
 Avant de lancer mGBA, vérifier que `pokehns.gba` vient réellement d’être régénérée après le pull.
 
 Le compte rendu de playtest doit toujours noter le SHA exact de la ROM testée et uniquement les comportements réellement observés.
+
+## Carte et CS contextuelles — validations automatisées
+
+Les 37 groupes Tactica, 5 groupes Settings et 34 groupes Family passent sous mGBA dans cet environnement (76 groupes, aucun échec ni groupe ignoré). Les huit groupes de traversée vérifient les commandes script sans learnset ni objet CS, Flash sans badge et avec anciens niveaux d’obscurité, l’absence de CS apprises dans le menu Équipe actif Épée/Bouclier et le maintien de Tunnel, les refus de Vol avant badge 5/sur destination non visitée/en intérieur, les flags de visite et l’arrivée réelle à Johto/Kanto, ainsi que les pixels des panneaux de carte. Le moteur des accompagnateurs PNJ est désactivé dans cette configuration : son contrôle de permission est conservé, sans prétendre valider un scénario d’escorte actif.
+
+Les validateurs de sources Tactica, d’UI, de localisation, d’index documentaire et de synchronisation des assets wiki passent. L’audit reproductible `python3 tools/audit_tactica_climbing_walls.py` examine 458 layouts HnS et ne trouve aucune paroi Escalade placée. Les transitions de carte, les trajets et le rendu complet restent à confirmer dans la candidate par le propriétaire.
+
+Compilation `make hns -j4` réussie : ROM autonome de 32 Mio ; mémoire ROM utilisée 96,69 %, EWRAM 98,63 %. La publication reconstruit la candidate depuis le commit d’intégration exact, dans un checkout neuf.

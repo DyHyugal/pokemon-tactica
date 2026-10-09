@@ -102,7 +102,11 @@ La source détaillée est [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Le
 
 Les CS de traversée se débloquent uniquement par leurs conditions scénaristiques existantes. Ni compatibilité d'espèce, ni capacité apprise, ni possession de la CS ne sont requises. Le Pokémon choisi sert à l'animation. Les autres capacités de terrain gardent leurs règles ordinaires.
 
-Déblocages CS conservés : Coupe = badge 2 et quête de Coupe terminée ; Éclate-Roc = badge 1 et remise scénaristique effectuée ; Flash = badge 1 ; Force = badge 3 ; Surf = badge 4 ; Vol = badge 5 ; Plongée et Siphon = badge 7 ; Cascade = badge 8. Les flags de quête ne sont pas des contrôles de possession des objets CS. Siphon utilise déjà directement sa condition de badge, sans Pokémon compatible.
+Déblocages CS conservés : Coupe = badge 2 et quête de Coupe terminée ; Éclate-Roc = badge 1 et remise scénaristique effectuée ; Flash = automatique dès le début, sans badge ; Force = badge 3 ; Surf = badge 4 ; Vol = badge 5 ; Plongée et Siphon = badge 7 ; Cascade = badge 8. Les flags de quête ne sont pas des contrôles de possession des objets CS. Siphon utilise déjà directement sa condition de badge, sans Pokémon compatible.
+
+Vol se sélectionne depuis la Carte du menu Start, avec A sur une destination déjà visitée après le cinquième badge. Aucun Pokémon n’est requis pour ce voyage ; les restrictions de lieu et d’accompagnement scénaristique restent applicables. La carte adopte une interface sobre inspirée d’Épée/Bouclier et conserve la géographie Johto/Kanto. Les autres CS restent contextuelles. Flash applique automatiquement l’éclairage natif maximal des grottes dès le début, y compris au chargement d’une sauvegarde, sans badge. Les CS ne figurent plus dans les menus individuels des Pokémon.
+
+Escalade reste désactivée en V1 : aucun bloc utilisant le comportement `MB_ROCK_CLIMB` dans les 458 layouts HnS audités (`python3 tools/audit_tactica_climbing_walls.py`). La CT d’Escalade disponible Route 49 conserve son usage en combat.
 
 Les choix de tous les onglets Options et Settings doivent rester lisibles, sans chevauchement. Les dialogues d'éclosion utilisent leur propre cadre et palette ; le curseur Oui/Non de combat ne doit pas effacer les libellés.
 

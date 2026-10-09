@@ -1,4 +1,5 @@
 #include "global.h"
+#include "fieldmap.h"
 #include "ui_startmenu_full.h"
 #include "strings.h"
 #include "bg.h"
@@ -1306,7 +1307,10 @@ void Task_OpenPokenavStartMenu(u8 taskId)
         StartMenuFull_FreeResources();
 		PlayRainStoppingSoundEffect();
 		CleanupOverworldWindowsAndTilemaps();
-        SetMainCallback2(CB2_InitPokeNav);
+        if (IS_HNS)
+            FieldInitRegionMap(CB2_ReturnToFullScreenStartMenu);
+        else
+            SetMainCallback2(CB2_InitPokeNav);
     }
 }
 
