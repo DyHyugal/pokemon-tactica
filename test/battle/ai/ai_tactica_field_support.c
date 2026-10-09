@@ -1,7 +1,7 @@
 #include "global.h"
 #include "test/battle.h"
 
-AI_SINGLE_BATTLE_TEST("Tactica field support: Electric setter hands off before the ace without a knockout")
+AI_SINGLE_BATTLE_TEST("Tactica field support: Electric setter hands off to a beneficiary instead of the backup setter")
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_BASIC_TRAINER | AI_FLAG_FIELD_SUPPORT | AI_FLAG_ACE_POKEMON);

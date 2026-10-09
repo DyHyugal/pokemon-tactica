@@ -4,6 +4,8 @@
 
 This page groups the gameplay changes specific to Pokémon Tactica. It is intended to remain **exhaustive** for V1 changes that directly affect team building or progression.
 
+On HARD, terrain and weather teams coordinate setters and attackers. A missing or replaced field is restored before handing off; Toxtricity is the Electric rival’s backup manual setter. The AI uses revealed information and battle assumptions without knowing hidden moves or the player’s chosen action. Traversal HMs no longer require a compatible species, a taught move or the HM item; existing badge and quest unlocks still apply. Options and Settings share a layout that adapts spacing across all tabs, and the hatch dialogue and battle Yes/No cursor have been corrected.
+
 ## Systems and quality of life
 
 - NORMAL and HARD use the same content; HARD optimizes IV/EV investment and AI.

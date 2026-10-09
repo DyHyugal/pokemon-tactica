@@ -51,7 +51,7 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | Couverture globale pré-Ligue | `[DONE]` | Dataset standard : 479 espèces utilisées et 479 disponibles avant/à la Ligue ; 0 espèce utilisée reste uniquement post-Ligue. 72 slots ont été remplacés sur 43 tables ; 125 espèces restent dupliquées avant Ligue, ce qui est acceptable puisque la couverture est assurée. |
 | Headbutt | `[DONE]` | 4 tables dédiées. |
 | Safari | `[DONE]` | 53 pools. |
-| Jouer / téléchargement V1 | `[PARTIEL]` | Pages FR/EN et navigation synchronisées. Nouvelle release v1-candidate-e27999c2 préparée depuis integration/v1 (e27999c276fc4c2d4898b4afbd2c12f1dbd6f787) avec ROM autonome et ZIP ; publication et téléchargement à vérifier. Aucun patch ni ROM de base requis. |
+| Jouer / téléchargement V1 | `[DONE]` | Pages FR/EN et navigation synchronisées. Release v1-candidate-e27999c2 publiée depuis integration/v1 (e27999c276fc4c2d4898b4afbd2c12f1dbd6f787). ZIP téléchargé : commit source et SHA-256 du manifeste vérifiés ; ROM autonome 32 Mio, checklist incluse. Aucun patch ni ROM de base requis. Le wiki est déployé ; playtest owner restant. |
 | Wiki joueur FR/EN | `[DONE]` | Site HTML : Accueil remake 2G, Guide illustré, Kanto développé, Routes/Villes, navigation FR/EN et fiches Pokédex détaillées intégrés. Les sources Markdown sont maintenues en miroir ; ne pas refaire le style global. |
 | Pokédex — méthodes d’évolution | `[DONE]` | Les champs `evolutions` de `tactica-species-*.js` sont générés depuis le runtime par `sync_tactica_species_evolutions.py` et protégés par `--check` en CI. |
 | Sync Localisations — niveaux | `[DONE]` | Générateur canonique. |

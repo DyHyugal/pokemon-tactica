@@ -4,6 +4,8 @@
 
 Cette page regroupe les changements de gameplay propres à Pokémon Tactica. Elle doit rester **exhaustive** sur les modifications V1 qui affectent directement la construction d'équipe ou la progression.
 
+En HARD, les équipes de terrain et de climat coordonnent leurs poseurs et leurs attaquants. Un terrain disparu ou remplacé doit être restauré avant le relais ; Salarsen est le poseur manuel de secours du rival Électrik. L’IA utilise les informations révélées et des hypothèses de combat, sans connaître les capacités cachées ni le choix du joueur. Les CS de déplacement ne demandent plus d’espèce compatible, de capacité apprise ou d’objet CS : les badges et quêtes de déblocage restent nécessaires. Les menus Options et Settings partagent un rendu qui adapte l’espacement sur tous les onglets ; les dialogues d’éclosion et le curseur Oui/Non de combat ont aussi été corrigés.
+
 ## Systèmes et qualité de vie
 
 - NORMAL et HARD utilisent le même contenu ; HARD optimise IV/EV et IA.
