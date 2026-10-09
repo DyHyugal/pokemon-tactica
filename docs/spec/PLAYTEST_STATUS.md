@@ -2,7 +2,7 @@
 
 ## Candidate owner
 
-La nouvelle candidate est construite depuis `integration/v1`, commit `e27999c276fc4c2d4898b4afbd2c12f1dbd6f787`. Elle comprend les corrections terrain/climat HARD, CS et dialogues/options du dernier playtest. Son téléchargement est référencé dans [Jouer](../FR/Jouer.md) ; le manifeste du ZIP donne le SHA source et l’empreinte de la ROM exacte.
+La nouvelle candidate est construite depuis `integration/v1`, commit `49465e2efd38d8961e3e2a6100c93b70d72d0c17`. Elle comprend les corrections terrain/climat HARD et dialogues/options, ainsi que Vol depuis la carte, les CS contextuelles et Flash automatique. Son téléchargement est référencé dans [Jouer](../FR/Jouer.md) ; le manifeste du ZIP donne le SHA source et l’empreinte de la ROM exacte.
 
 Cette candidate attend la validation owner des corrections visuelles et comportementales, puis le parcours jusqu’à Mortimer et l’aventure complète. Elle n’est pas une version stable validée. Les anciennes candidates ne contiennent pas ces corrections.
 
