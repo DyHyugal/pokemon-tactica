@@ -1,4 +1,6 @@
 #include "global.h"
+#include "field_move.h"
+#include "follower_npc.h"
 #include "main.h"
 #include "text.h"
 #include "menu.h"
@@ -3054,3 +3056,19 @@ void SetFlyDestination(struct RegionMap* regionMap)
     else
         SetWarpDestinationToMapWarp(sMapHealLocations[regionMap->mapSecId][0], sMapHealLocations[regionMap->mapSecId][1], WARP_ID_NONE);
 }
+
+bool32 CanFlyFromRegionMap(const struct RegionMap *regionMap)
+{
+    return (regionMap->mapSecType == MAPSECTYPE_CITY_CANFLY
+         || (IS_HNS && regionMap->mapSecType == MAPSECTYPE_BATTLE_FRONTIER))
+        && (IS_HNS ? IsFieldMoveUnlocked(FIELD_MOVE_FLY) : FlagGet(OW_FLAG_POKE_RIDER))
+        && Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType)
+        && (!IS_HNS || CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_LEAVE_ROUTE));
+}
+
+#if TESTING
+u32 TestTacticaMapsecType(mapsec_u16_t mapSecId)
+{
+    return GetMapsecType(mapSecId);
+}
+#endif

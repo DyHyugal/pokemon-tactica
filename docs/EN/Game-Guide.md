@@ -2,7 +2,7 @@
 
 # Guide — concise walkthrough
 
-Traversal HMs become usable once their story requirements are unlocked. You do not need to teach the move, carry the HM item or keep a compatible species in your party. Interact directly with trees, rocks or water; Fly and Flash remain available from the party menu. The existing badge and quest unlocks still apply, including the Cut quest and the scripted Rock Smash reward. Whirlpool requires the seventh badge.
+Use traversal HMs by interacting with trees, rocks, water and other obstacles after their story unlocks. No HM item, learned move or compatible Pokémon is required. For Fly, open Map from the Start menu and press A on a previously visited destination after the fifth badge. The restrained Sword/Shield-inspired interface preserves Johto/Kanto geography. Flash automatically lights caves from the beginning, without a badge or menu action. Traversal HMs no longer appear in individual Pokémon menus; Dig, Teleport and Headbutt retain their ordinary rules. Rock Climb remains disabled: no functional climbing walls were found in the 458 audited HnS layouts; its TM remains usable in battle. Cut still requires its quest and the second badge; Rock Smash still requires its scripted reward and the first badge. Strength requires badge three, Surf badge four, Dive and Whirlpool badge seven, Waterfall badge eight.
 
 This page is mainly a **where-do-I-go-next walkthrough**. It follows the main Heart & Soul story flow, adapted to Pokémon Tactica. Optional detours, minor items and wild encounters are intentionally left out: use **Pokédex**, **Locations** and **Bosses & Tips** to build and prepare your team.
 

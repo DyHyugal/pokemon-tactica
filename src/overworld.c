@@ -1146,6 +1146,12 @@ bool32 Overworld_IsBikingAllowed(void)
 // Flash level of 8 is fully black
 void SetDefaultFlashLevel(void)
 {
+    if (IS_HNS)
+    {
+        // Automatic native Flash, including new games and old saves.
+        gSaveBlock1Ptr->flashLevel = gMapHeader.cave ? 1 : 0;
+        return;
+    }
     if (!gMapHeader.cave)
         gSaveBlock1Ptr->flashLevel = 0;
     else if (FlagGet(FLAG_SYS_USE_FLASH))
@@ -2291,6 +2297,9 @@ static void VBlankCB_Field(void)
 static void InitCurrentFlashLevelScanlineEffect(void)
 {
     u8 flashLevel;
+
+    if (IS_HNS)
+        SetDefaultFlashLevel();
 
     if (InBattlePyramid_())
     {

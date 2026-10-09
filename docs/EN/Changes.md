@@ -4,7 +4,9 @@
 
 This page groups the gameplay changes specific to Pokémon Tactica. It is intended to remain **exhaustive** for V1 changes that directly affect team building or progression.
 
-On HARD, terrain and weather teams coordinate setters and attackers. A missing or replaced field is restored before handing off; Toxtricity is the Electric rival’s backup manual setter. The AI uses revealed information and battle assumptions without knowing hidden moves or the player’s chosen action. Traversal HMs no longer require a compatible species, a taught move or the HM item; existing badge and quest unlocks still apply. Options and Settings share a layout that adapts spacing across all tabs, and the hatch dialogue and battle Yes/No cursor have been corrected.
+Use Fly from Map in the Start menu: press A on a previously visited destination after badge five, without needing a flying Pokémon. A restrained Sword/Shield-inspired interface preserves Johto/Kanto geography. Other traversal HMs work at their obstacles and no longer appear in Pokémon menus; Flash lights caves automatically from the beginning without a badge. Rock Climb remains disabled in V1 because the HnS layouts contain no functional climbing walls.
+
+On HARD, terrain and weather teams coordinate setters and attackers. A missing or replaced field is restored before handing off; Toxtricity is the Electric rival’s backup manual setter. The AI uses revealed information and battle assumptions without knowing hidden moves or the player’s chosen action. Traversal HMs no longer require a compatible species, a taught move or the HM item; obstacles and Fly still require their story unlocks. Options and Settings share a layout that adapts spacing across all tabs, and the hatch dialogue and battle Yes/No cursor have been corrected.
 
 ## Systems and quality of life
 

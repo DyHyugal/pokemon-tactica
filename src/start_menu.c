@@ -1,4 +1,5 @@
 #include "global.h"
+#include "fieldmap.h"
 #include "config/save.h"
 #include "battle_pike.h"
 #include "battle_pyramid.h"
@@ -833,7 +834,10 @@ static bool8 StartMenuPokeNavCallback(void)
         PlayRainStoppingSoundEffect();
         RemoveExtraStartMenuWindows();
         CleanupOverworldWindowsAndTilemaps();
-        SetMainCallback2(CB2_InitPokeNav);  // Display PokéNav
+        if (IS_HNS)
+            FieldInitRegionMap(CB2_ReturnToFieldWithOpenMenu);
+        else
+            SetMainCallback2(CB2_InitPokeNav);  // Display PokéNav
 
         return TRUE;
     }

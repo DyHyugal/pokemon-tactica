@@ -3626,7 +3626,8 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     {
         for (j = 0; j != FIELD_MOVES_COUNT; j++)
         {
-            if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == FieldMove_GetMoveId(j))
+            if ((!IS_HNS || !IsTacticaTraversalMove(j))
+             && GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == FieldMove_GetMoveId(j))
             {
                 AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
                 break;
@@ -3645,6 +3646,22 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     }
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL1);
 }
+
+#if TESTING
+u32 TestTacticaPartyFieldActions(struct Pokemon *mons, u8 slotId)
+{
+    struct PartyMenuInternal local = {0};
+    struct PartyMenuInternal *saved = sPartyMenuInternal;
+    sPartyMenuInternal = &local;
+    SetPartyMonFieldSelectionActions(mons, slotId);
+    u32 moves = 0;
+    for (u32 i = 0; i < local.numActions; i++)
+        if (local.actions[i] >= MENU_FIELD_MOVES && local.actions[i] < MENU_FIELD_MOVES + FIELD_MOVES_COUNT)
+            moves |= 1u << (local.actions[i] - MENU_FIELD_MOVES);
+    sPartyMenuInternal = saved;
+    return moves;
+}
+#endif
 
 static void SetPartyMonLearnMoveSelectionActions(struct Pokemon *mons, u8 slotId)
 {

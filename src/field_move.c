@@ -22,7 +22,7 @@ static bool32 IsFieldMoveUnlocked_Cut(void)
 static bool32 IsFieldMoveUnlocked_Flash(void)
 {
     if (IS_HNS)
-        return FlagGet(FLAG_BADGE01_GET);
+        return TRUE;
     if (IS_FRLG)
         return FlagGet(FLAG_BADGE01_GET);
 

@@ -2944,19 +2944,10 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 
     if (IS_HNS)
     {
-        // Reserve menu slots for unlocked traversal before optional learned
-        // field moves so a full moveset cannot hide Fly or Flash.
-        if (!GetMonData(&mons[slotId], MON_DATA_IS_EGG))
-            for (j = FIELD_MOVE_CUT; j <= FIELD_MOVE_WATERFALL; j++)
-                if ((j == FIELD_MOVE_FLY || j == FIELD_MOVE_FLASH)
-                 && IsFieldMoveUnlocked(j) && numFieldMoves < maxFieldMoves)
-                {
-                    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
-                    numFieldMoves++;
-                }
+        // Traversal is contextual (or the map for Fly), never a party action.
         for (i = 0; i < MAX_MON_MOVES; i++)
-            for (j = FIELD_MOVE_TELEPORT; j < FIELD_MOVES_COUNT; j++)
-                if (GetMonData(&mons[slotId], MON_DATA_MOVE1 + i) == FieldMove_GetMoveId(j) && numFieldMoves < maxFieldMoves)
+            for (j = 0; j < FIELD_MOVES_COUNT; j++)
+                if (!IsTacticaTraversalMove(j) && GetMonData(&mons[slotId], MON_DATA_MOVE1 + i) == FieldMove_GetMoveId(j) && numFieldMoves < maxFieldMoves)
                 {
                     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
                     numFieldMoves++;
@@ -3040,6 +3031,22 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL1);
 }
+
+#if TESTING
+u32 TestTacticaPartyFieldActions(struct Pokemon *mons, u8 slotId)
+{
+    struct PartyMenuInternal local = {0};
+    struct PartyMenuInternal *saved = sPartyMenuInternal;
+    sPartyMenuInternal = &local;
+    SetPartyMonFieldSelectionActions(mons, slotId);
+    u32 moves = 0;
+    for (u32 i = 0; i < local.numActions; i++)
+        if (local.actions[i] >= MENU_FIELD_MOVES && local.actions[i] < MENU_FIELD_MOVES + FIELD_MOVES_COUNT)
+            moves |= 1u << (local.actions[i] - MENU_FIELD_MOVES);
+    sPartyMenuInternal = saved;
+    return moves;
+}
+#endif
 
 static void SetPartyMonLearnMoveSelectionActions(struct Pokemon *mons, u8 slotId)
 {
