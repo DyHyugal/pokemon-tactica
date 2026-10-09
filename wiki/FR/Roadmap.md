@@ -11,3 +11,7 @@ La phase actuelle consiste à produire une ROM candidate depuis le dernier `inte
 ## Après la V1
 
 Les extensions qui ne sont pas nécessaires à cette première version stable restent prévues pour plus tard, notamment Shiny Only, une traduction française complète si elle ne peut pas tenir proprement dans la ROM unique, et les refontes graphiques plus profondes.
+
+## Combats mystère
+
+Des rencontres facultatives et inattendues avec un Maître de Ligue ou un personnage important sont prévues après la stabilisation de la V1, dans l’esprit de Cynthia à Vaguelone dans Noir 2 et Blanc 2. Elles doivent se découvrir au fil de l’exploration et proposer un combat marquant. Red, déjà présent dans l’aventure, ne sera pas réutilisé pour cette fonctionnalité. Les personnages, lieux, conditions d’accès et équipes restent à définir ; ces combats ne sont pas encore implémentés.

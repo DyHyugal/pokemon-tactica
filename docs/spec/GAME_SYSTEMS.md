@@ -29,3 +29,9 @@ Conserver la structure réellement validée : `Mode / Features / Randomizer / Nu
 ## Après V1
 
 Ajouter `Shiny Only — ON/OFF` au menu Nuzlocke, en s'appuyant sur le moteur shiny existant. Tester sauvegarde/chargement et interactions avec le taux choisi. Aucun code ou menu Shiny Only supplémentaire n'est nécessaire à la V1.
+
+## Capacités de terrain — accès scénaristique
+
+Coupe, Flash, Éclate-Roc, Force, Surf, Vol, Plongée et Cascade sont utilisables dès leur déblocage scénaristique existant. Il n'est nécessaire ni de posséder la CS, ni de l'enseigner, ni de transporter une espèce compatible. Les scripts d'obstacle, Surf sur le terrain et les entrées Vol/Flash du menu Équipe utilisent la même règle. Un Pokémon non-œuf est seulement sélectionné pour les animations et messages. Les capacités ordinaires comme Tunnel, Téléport et Coup d'Boule conservent leurs règles.
+
+Déblocages CS conservés : Coupe = badge 2 et quête de Coupe terminée ; Éclate-Roc = badge 1 et remise scénaristique effectuée ; Flash = badge 1 ; Force = badge 3 ; Surf = badge 4 ; Vol = badge 5 ; Plongée et Siphon = badge 7 ; Cascade = badge 8. Les flags de quête ne sont pas des contrôles de possession des objets CS. Siphon utilise déjà directement sa condition de badge, sans Pokémon compatible.

@@ -155,7 +155,7 @@ Les témoins Provoc de Cornèbre et Téraclope restent à observer sans autre ch
 
 ## Contrôles owner des corrections de cohérence
 
-À effectuer après intégration de la branche locale `fix/audit-progression-rosters`, dans une ROM reconstruite depuis le SHA exact. Les tests automatiques de données et de combat ne remplacent pas ces parcours :
+À effectuer sur une ROM construite depuis `integration/v1`, en notant son SHA exact. Les tests automatiques de données et de combat ne remplacent pas ces parcours :
 
 - nouveau départ : recevoir une Potion et dix Poké Balls de l'assistant d'Orme, puis vérifier qu'il n'en redonne pas au retour ;
 - Blanche (29–32) puis un admin : équipe Rocket 31, ace 34 ; deux admins sans nouvelle arène gardent cette plage ; le cap correspond au boss courant et ne redescend pas si un cap supérieur est déjà acquis ;
@@ -167,6 +167,22 @@ Les témoins Provoc de Cornèbre et Téraclope restent à observer sans autre ch
 - branchages conditionnels : Chenipotte selon personnalité, Apitrini selon sexe, Amagara selon horaire. Le wiki affiche les formes possibles dans les plages.
 
 Rectification owner du 9 octobre 2026 : le cas théorique de sac et PC d'objets pleins lors des récompenses initiales n'est pas un défaut de progression établi. À ce stade, le sac est vide et les Poké Balls ne sont pas encore distribuées. Aucun parcours accessible démontrant une perte de récompense n'a été reproduit ; ce point est retiré des défauts confirmés et des corrections à prévoir.
+
+## Corrections du playtest — terrain/climat, CS et dialogues
+
+Les tests mGBA du lot courant passent : 16 groupes de combat terrain/climat, 3 groupes CS, rendu de tous les choix des deux menus (actif/inactif) et déplacement/effacement du curseur Oui/Non dans les trois variantes de fenêtre. Les 32 groupes du filtre `Tactica` passent, y compris les régressions rencontres, boutiques et équilibrage. Les régressions Settings (5), Family (34), Relais/setup (3) et caps (18) passent aussi : 92 groupes mGBA au total, ainsi que 4 tests Python et les validateurs de spec, données et interfaces. La compilation HNS réussit. Ces tests ne constituent pas une validation visuelle de l'éclosion ou un playthrough complet.
+
+À observer dans la nouvelle candidate :
+
+- Wattapik transmet le terrain actif à un attaquant pertinent ; Salarsen reste poseur manuel de secours avec Champ Électrifié. Une attaque super efficace sans KO ne bloque pas le relais ;
+- terrain remplacé/expiré : retour d'un poseur avant un nouvel attaquant, puis restauration et relais ; vérifier aussi après KO et sur les cinq autres archétypes ;
+- absence de switch impossible sous piège et de sacrifice immédiat sur hazards connus ; ne pas confondre ces limites avec une lecture de capacités cachées ;
+- Coupe, Flash, Éclate-Roc, Force, Surf, Vol, Plongée et Cascade avant/après leur condition scénario, avec une équipe incompatible et sans CS apprise ou objet CS ;
+- tous les onglets Options et Settings, toutes les valeurs et lignes désactivées, cadres et challenge de type compris ; vérifier header, scroll, sauvegarde et rechargement ;
+- éclosion, message du Pokémon éclos, choix de surnom Oui/Non puis retour au terrain ;
+- Oui/Non de changement en combat : curseur sur chaque réponse, annulation et répétitions, sans rectangles noirs ni lettres effacées.
+
+Les combats mystère restent planifiés hors V1 ; aucune rencontre supplémentaire n'est ajoutée à cette candidate.
 
 ## Protocole candidate
 

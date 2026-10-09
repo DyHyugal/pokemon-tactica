@@ -223,7 +223,7 @@ def main() -> None:
     require("#define HEAP_SIZE 0x1ED00" in malloc_header,
             "the battle/menu heap must fit background restoration after a party switch")
     require("120 - width, 0, color, 0, tabName" in challenge_menu
-            and "120 - GetStringWidth(FONT_SMALL, sText_TopBar_Cancel, 0) / 2,\n        9, color" in challenge_menu,
+            and "120 - GetStringWidth(FONT_SMALL_NARROW, sText_TopBar_Cancel, 0) / 2,\n        8, color" in challenge_menu,
             "the Options header must keep navigation and SAVE & EXIT on separate rows")
     require("#define VERSION_BANNER_LEFT_X 98" in title_screen
             and "#define VERSION_BANNER_RIGHT_X 162" in title_screen,

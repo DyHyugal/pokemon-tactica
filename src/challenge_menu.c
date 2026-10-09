@@ -1,4 +1,5 @@
 #include "global.h"
+#include "config_menu_layout.h"
 #include "native_speed.h"
 #include "bg.h"
 #include "event_data.h"
@@ -319,20 +320,6 @@ static const u16 sTextPal[] = INCBIN_U16("graphics/interface/option_menu_text_cu
 #define TILE_BOT_CORNER_R 0x1AA
 
 // Text color arrays for AddTextPrinterParameterized3/4
-#define TEXT_COLOR_OPTIONS_WHITE              1
-#define TEXT_COLOR_OPTIONS_GRAY_FG            2
-#define TEXT_COLOR_OPTIONS_GRAY_SHADOW        3
-#define TEXT_COLOR_OPTIONS_GRAY_LIGHT_FG      4
-#define TEXT_COLOR_OPTIONS_ORANGE_FG          5
-#define TEXT_COLOR_OPTIONS_ORANGE_SHADOW      6
-#define TEXT_COLOR_OPTIONS_RED_FG             7
-#define TEXT_COLOR_OPTIONS_RED_SHADOW         8
-#define TEXT_COLOR_OPTIONS_GREEN_FG           9
-#define TEXT_COLOR_OPTIONS_GREEN_SHADOW      10
-#define TEXT_COLOR_OPTIONS_GREEN_DARK_FG     11
-#define TEXT_COLOR_OPTIONS_GREEN_DARK_SHADOW 12
-#define TEXT_COLOR_OPTIONS_RED_DARK_FG       13
-#define TEXT_COLOR_OPTIONS_RED_DARK_SHADOW   14
 
 // =============================================================================
 // Placeholder choice strings
@@ -358,10 +345,10 @@ static const u8 *const sChoices_OriginalModern[] = {
     COMPOUND_STRING("MODERN"),
 };
 
-static const u8 sText_TopBar_Left[]   = _("{L_BUTTON}PREVIOUS");
-static const u8 sText_TopBar_Right[]  = _("{R_BUTTON}NEXT");
-static const u8 sText_TopBar_Save[]   = _("{R_BUTTON}SAVE");
-static const u8 sText_TopBar_Cancel[] = _("{B_BUTTON}SAVE & EXIT");
+static const u8 sText_TopBar_Left[]   = _("L PREV");
+static const u8 sText_TopBar_Right[]  = _("R NEXT");
+static const u8 sText_TopBar_Save[]   = _("R SAVE");
+static const u8 sText_TopBar_Cancel[] = _("B SAVE & EXIT");
 
 // =============================================================================
 // Tab item tables — skeleton placeholders
@@ -1450,75 +1437,7 @@ static void HighlightRow(void)
 // Right-side choice drawing
 // =============================================================================
 
-static void DrawRightSideChoiceText(const u8 *text, int x, int y, bool8 chosen, bool8 active)
-{
-    u8 color[3];
-    color[0] = TEXT_COLOR_TRANSPARENT;
-    if (active)
-    {
-        color[1] = chosen ? TEXT_COLOR_OPTIONS_RED_FG : TEXT_COLOR_OPTIONS_GRAY_FG;
-        color[2] = chosen ? TEXT_COLOR_OPTIONS_RED_SHADOW : TEXT_COLOR_OPTIONS_GRAY_SHADOW;
-    }
-    else
-    {
-        color[1] = chosen ? TEXT_COLOR_OPTIONS_RED_DARK_FG : TEXT_COLOR_OPTIONS_GRAY_LIGHT_FG;
-        color[2] = chosen ? TEXT_COLOR_OPTIONS_RED_DARK_SHADOW : TEXT_COLOR_OPTIONS_GRAY_SHADOW;
-    }
-    AddTextPrinterParameterized4(WIN_OPTIONS, FONT_NORMAL, x, y, 0, 0, color, TEXT_SKIP_DRAW, text);
-}
 
-static int GetMiddleX(const u8 *txt1, const u8 *txt2, const u8 *txt3)
-{
-    int widthLeft = GetStringWidth(FONT_NORMAL, txt1, 0);
-    int widthMid = GetStringWidth(FONT_NORMAL, txt2, 0);
-    int widthRight = GetStringWidth(FONT_NORMAL, txt3, 0);
-    widthMid -= (198 - 104);
-    return (widthLeft - widthMid - widthRight) / 2 + 104;
-}
-
-static void DrawChoices_Two(const u8 *const *strings, int selection, int y, bool8 active, int leftX)
-{
-    DrawRightSideChoiceText(strings[0], leftX, y + 1, selection == 0, active);
-    DrawRightSideChoiceText(strings[1], GetStringRightAlignXOffset(FONT_NORMAL, strings[1], 198), y + 1, selection == 1, active);
-}
-
-static void DrawChoices_Three(const u8 *const *strings, int selection, int y, bool8 active)
-{
-    static const u8 orders[][2] = { {0, 1}, {1, 2}, {1, 2} };
-    const u8 *order = orders[selection];
-    DrawRightSideChoiceText(strings[order[0]], 104, y + 1, selection == order[0], active);
-    DrawRightSideChoiceText(strings[order[1]], GetStringRightAlignXOffset(FONT_NORMAL, strings[order[1]], 198), y + 1, selection == order[1], active);
-}
-
-static void DrawChoices_Four(const u8 *const *strings, int selection, int y, bool8 active)
-{
-    static const u8 orders[][3] = { {0, 1, 2}, {0, 1, 2}, {1, 2, 3}, {1, 2, 3} };
-    const u8 *order = orders[selection];
-    int xMid = GetMiddleX(strings[order[0]], strings[order[1]], strings[order[2]]);
-    DrawRightSideChoiceText(strings[order[0]], 104, y + 1, selection == order[0], active);
-    DrawRightSideChoiceText(strings[order[1]], xMid, y + 1, selection == order[1], active);
-    DrawRightSideChoiceText(strings[order[2]], GetStringRightAlignXOffset(FONT_NORMAL, strings[order[2]], 198), y + 1, selection == order[2], active);
-}
-
-static void DrawChoices_Five(const u8 *const *strings, int selection, int y, bool8 active)
-{
-    static const u8 orders[][3] = { {0, 1, 2}, {0, 1, 2}, {1, 2, 3}, {2, 3, 4}, {2, 3, 4} };
-    const u8 *order = orders[selection];
-    int xMid = GetMiddleX(strings[order[0]], strings[order[1]], strings[order[2]]);
-    DrawRightSideChoiceText(strings[order[0]], 104, y + 1, selection == order[0], active);
-    DrawRightSideChoiceText(strings[order[1]], xMid, y + 1, selection == order[1], active);
-    DrawRightSideChoiceText(strings[order[2]], GetStringRightAlignXOffset(FONT_NORMAL, strings[order[2]], 198), y + 1, selection == order[2], active);
-}
-
-static void DrawChoices_Six(const u8 *const *strings, int selection, int y, bool8 active)
-{
-    static const u8 orders[][3] = { {0, 1, 2}, {0, 1, 2}, {1, 2, 3}, {2, 3, 4}, {3, 4, 5}, {3, 4, 5} };
-    const u8 *order = orders[selection];
-    int xMid = GetMiddleX(strings[order[0]], strings[order[1]], strings[order[2]]);
-    DrawRightSideChoiceText(strings[order[0]], 104, y + 1, selection == order[0], active);
-    DrawRightSideChoiceText(strings[order[1]], xMid, y + 1, selection == order[1], active);
-    DrawRightSideChoiceText(strings[order[2]], GetStringRightAlignXOffset(FONT_NORMAL, strings[order[2]], 198), y + 1, selection == order[2], active);
-}
 
 // =============================================================================
 // ListMenu callbacks
@@ -1543,12 +1462,7 @@ static void ChallengeMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
 
     bool8 active = CheckConditions(sMenu->currentTab, itemId);
 
-    // Gray out locked item names by overriding the ListMenu text colors
-    if (!active)
-    {
-        u8 color[3] = { TEXT_COLOR_TRANSPARENT, TEXT_COLOR_OPTIONS_GRAY_LIGHT_FG, TEXT_COLOR_OPTIONS_GRAY_SHADOW };
-        AddTextPrinterParameterized4(windowId, FONT_NORMAL, 8, y + 1, 0, 0, color, TEXT_SKIP_DRAW, items[itemId].name);
-    }
+    u32 choiceLeft = DrawConfigMenuLabel(windowId, items[itemId].name, y, active);
 
     u8 sel = *GetSelectionPtr(sMenu->currentTab, itemId);
 
@@ -1567,7 +1481,8 @@ static void ChallengeMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
             text = gTypesInfo[n + 2].name;
         else
             text = gTypesInfo[n + 1].name;
-        DrawRightSideChoiceText(text, GetStringRightAlignXOffset(FONT_NORMAL, text, 198), y + 1, TRUE, active);
+        const u8 *choices[] = {text};
+        DrawConfigMenuChoices(windowId, choices, 1, 0, y + 1, active, choiceLeft);
         return;
     }
 
@@ -1577,34 +1492,8 @@ static void ChallengeMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
     if (sel >= items[itemId].numChoices)
         sel = 0;
 
-    switch (items[itemId].numChoices)
-    {
-    case 2:
-    {
-        int leftX = (sMenu->currentTab == TAB_MODE && itemId == ITEM_MODE_GAMEMODE) ? 74 : 104;
-        DrawChoices_Two(items[itemId].choiceNames, sel, y, active, leftX);
-        break;
-    }
-    case 3:
-        DrawChoices_Three(items[itemId].choiceNames, sel, y, active);
-        break;
-    case 4:
-        DrawChoices_Four(items[itemId].choiceNames, sel, y, active);
-        break;
-    case 5:
-        DrawChoices_Five(items[itemId].choiceNames, sel, y, active);
-        break;
-    case 6:
-        DrawChoices_Six(items[itemId].choiceNames, sel, y, active);
-        break;
-    default:
-    {
-        const u8 *choiceStr = items[itemId].choiceNames[sel];
-        u8 x = GetStringRightAlignXOffset(FONT_NORMAL, choiceStr, 198);
-        DrawRightSideChoiceText(choiceStr, x, y + 1, TRUE, active);
-        break;
-    }
-    }
+    DrawConfigMenuChoices(windowId, items[itemId].choiceNames,
+        items[itemId].numChoices, sel, y + 1, active, choiceLeft);
 }
 
 // =============================================================================
@@ -1627,6 +1516,7 @@ static void InitListMenu(void)
     template.items = sListItems;
     template.moveCursorFunc = ChallengeMenu_MoveCursorFunc;
     template.itemPrintFunc = ChallengeMenu_ItemPrintFunc;
+    template.isDynamic = TRUE;
     template.totalItems = count;
     template.maxShowed = (count < ITEMS_VISIBLE) ? count : ITEMS_VISIBLE;
     template.windowId = WIN_OPTIONS;
@@ -1684,23 +1574,23 @@ static void DrawTopBar(void)
 {
     const u8 color[3] = { TEXT_DYNAMIC_COLOR_6, TEXT_COLOR_OPTIONS_WHITE, TEXT_COLOR_OPTIONS_GRAY_FG };
     const u8 *tabName = sTabs[sMenu->currentTab].tabName;
-    int width = GetStringWidth(FONT_SMALL, tabName, 0) / 2;
-    int right = 240 - GetStringWidth(FONT_SMALL, sText_TopBar_Right, 0) - 5;
+    int width = GetStringWidth(FONT_SMALL_NARROW, tabName, 0) / 2;
+    int right = 240 - GetStringWidth(FONT_SMALL_NARROW, sText_TopBar_Right, 0) - 5;
 
     FillWindowPixelBuffer(WIN_TOPBAR, PIXEL_FILL(15));
 
-    AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 120 - width, 0, color, 0, tabName);
+    AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL_NARROW, 120 - width, 0, color, 0, tabName);
 
     if (sMenu->currentTab > 0)
-        AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 5, 0, color, 0, sText_TopBar_Left);
+        AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL_NARROW, 5, 0, color, 0, sText_TopBar_Left);
     if (sMenu->currentTab < TAB_COUNT - 1)
-        AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, right, 0, color, 0, sText_TopBar_Right);
+        AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL_NARROW, right, 0, color, 0, sText_TopBar_Right);
     else if (sMenu->currentTab == TAB_COUNT - 1)
-        AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, right, 0, color, 0, sText_TopBar_Save);
+        AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL_NARROW, right, 0, color, 0, sText_TopBar_Save);
 
-    AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL,
-        120 - GetStringWidth(FONT_SMALL, sText_TopBar_Cancel, 0) / 2,
-        9, color, 0, sText_TopBar_Cancel);
+    AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL_NARROW,
+        120 - GetStringWidth(FONT_SMALL_NARROW, sText_TopBar_Cancel, 0) / 2,
+        8, color, 0, sText_TopBar_Cancel);
 
     PutWindowTilemap(WIN_TOPBAR);
     CopyWindowToVram(WIN_TOPBAR, COPYWIN_FULL);
@@ -2537,3 +2427,33 @@ bool8 DoesSpeciesPassOneTypeChallenge(u16 species)
 
     return DoesEvoLineHaveType(species, gSaveBlock3Ptr->challengeSettings.tx_Challenges_OneTypeChallenge, 0);
 }
+
+#if TESTING
+bool32 GetChallengeMenuTestRow(u32 index, const u8 **label, const u8 *const **choices, u32 *count)
+{
+    for (u32 tab = 0; tab < TAB_COUNT; tab++)
+    {
+        if (index < sTabs[tab].count)
+        {
+            *label = sTabs[tab].items[index].name;
+            *choices = sTabs[tab].items[index].choiceNames;
+            *count = sTabs[tab].items[index].numChoices;
+            if (tab == TAB_CHALLENGES && index == ITEM_CHALLENGES_ONE_TYPE)
+            {
+                static const u8 random[] = _("RANDOM");
+                static const u8 off[] = _("OFF");
+                static const u8 *values[20];
+                for (u32 type = 0; type < 18; type++)
+                    values[type] = gTypesInfo[type < 9 ? type + 1 : type + 2].name;
+                values[18] = random;
+                values[19] = off;
+                *choices = values;
+                *count = ARRAY_COUNT(values);
+            }
+            return TRUE;
+        }
+        index -= sTabs[tab].count;
+    }
+    return FALSE;
+}
+#endif

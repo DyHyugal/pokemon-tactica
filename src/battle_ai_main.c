@@ -1,4 +1,5 @@
 #include "global.h"
+#include "difficulty.h"
 #include "main.h"
 #include "malloc.h"
 #include "battle.h"
@@ -108,7 +109,7 @@ static s32 (*const sBattleAiFuncTable[])(enum BattlerId, enum BattlerId, enum Mo
     [31] = NULL,                     // Unused
     [32] = NULL,                     // Unused
     [33] = NULL,                     // Unused
-    [34] = NULL,                     // Unused
+    [34] = NULL,                     // AI_FLAG_FIELD_SUPPORT
     [35] = NULL,                     // Unused
     [36] = NULL,                     // Unused
     [37] = NULL,                     // Unused
@@ -244,6 +245,13 @@ static u64 GetAiFlags(u16 trainerId, enum BattlerId battler)
     if (IsDoubleBattle() && flags != 0)
     {
         flags |= AI_FLAG_DOUBLE_BATTLE;
+    }
+
+    if (IS_HNS && GetCurrentDifficultyLevel() == DIFFICULTY_HARD)
+    {
+        flags &= ~(AI_FLAG_OMNISCIENT | AI_FLAG_PREDICTION | AI_FLAG_KNOW_OPPONENT_PARTY);
+        if (flags & AI_FLAG_SMART_SWITCHING)
+            flags |= AI_FLAG_FIELD_SUPPORT;
     }
 
     // Automatically includes AI_FLAG_SMART_MON_CHOICES to improve smart switching
@@ -507,6 +515,9 @@ u32 BattleAI_ChooseMoveIndex(enum BattlerId battler)
         DecideTerastal(battler);
 
     chosenMoveIndex = ChooseMoveOrAction(battler);
+    u32 fieldMove = AI_GetTacticaFieldSupportMove(battler);
+    if (fieldMove < MAX_MON_MOVES && chosenMoveIndex < MAX_MON_MOVES)
+        chosenMoveIndex = fieldMove;
 
     if (gBattleStruct->gimmick.usableGimmick[battler] != GIMMICK_NONE)
         ReconsiderGimmick(battler, gBattlerTarget, gBattleMons[battler].moves[chosenMoveIndex]);

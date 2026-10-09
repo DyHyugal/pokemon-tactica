@@ -32,6 +32,8 @@ struct IncomingHealInfo
     u16 healEndOfTurn:1;
     u16 curesStatus:1;
 };
+static u32 GetTacticaFieldSwitchin(enum BattlerId battler, enum SwitchType switchType);
+static bool32 TacticaFieldSupportWantsSwitch(enum BattlerId battler);
 static bool32 CanUseSuperEffectiveMoveAgainstOpponents(enum BattlerId battler);
 static bool32 FindMonWithFlagsAndSuperEffective(enum BattlerId battler, u16 flags, u32 moduloPercent);
 static u32 GetSwitchinHazardsDamage(enum BattlerId battler);
@@ -312,7 +314,7 @@ static bool32 ShouldSwitchIfHasBadOdds(enum BattlerId battler)
     // Get max damage mon could take
     for (u32 moveIndex = 0; moveIndex < MAX_MON_MOVES; moveIndex++)
     {
-        playerMove = SMART_SWITCHING_OMNISCIENT ? gBattleMons[opposingBattler].moves[moveIndex] : playerMoves[moveIndex];
+        playerMove = (!IS_HNS && SMART_SWITCHING_OMNISCIENT) ? gBattleMons[opposingBattler].moves[moveIndex] : playerMoves[moveIndex];
         if (playerMove != MOVE_NONE && !IsBattleMoveStatus(playerMove) && GetMoveEffect(playerMove) != EFFECT_FOCUS_PUNCH && gBattleMons[opposingBattler].pp[moveIndex] > 0)
         {
             hitsToKOAI = GetNoOfHitsToKOBattler(opposingBattler, battler, moveIndex, AI_DEFENDING, CONSIDER_ENDURE);
@@ -1307,6 +1309,13 @@ bool32 ShouldSwitch(enum BattlerId battler)
     if (gAiThinkingStruct->aiFlags[battler] & AI_FLAG_SEQUENCE_SWITCHING)
         return FALSE;
 
+    if (TacticaFieldSupportWantsSwitch(battler))
+    {
+        u32 mon = GetTacticaFieldSwitchin(battler, SWITCH_MID_BATTLE_OPTIONAL);
+        if (mon < PARTY_SIZE)
+            return SetSwitchinAndSwitch(battler, mon);
+    }
+
     availableToSwitch = 0;
 
     GetActiveBattlerIds(battler, &battlerIn1, &battlerIn2);
@@ -1338,6 +1347,7 @@ bool32 ShouldSwitch(enum BattlerId battler)
 
     // FindMon functions can prompt a switch to specific party members that override GetMostSuitableMonToSwitchInto
     // The rest can prompt a switch to party member returned by GetMostSuitableMonToSwitchInto
+
 
     if (ShouldSwitchIfWonderGuard(battler))
         return TRUE;
@@ -1483,7 +1493,7 @@ void ModifySwitchAfterMoveScoring(enum BattlerId battler)
 
     if (ShouldSwitchIfAllScoresBad(battler))
         gAiLogicData->shouldSwitch |= (1u << battler);
-    else if (ShouldStayInToUseMove(battler))
+    else if (!TacticaFieldSupportWantsSwitch(battler) && ShouldStayInToUseMove(battler))
         gAiLogicData->shouldSwitch &= ~(1u << battler);
 }
 
@@ -2000,7 +2010,7 @@ static s32 GetMaxDamagePlayerCouldDealToSwitchin(enum BattlerId battler, enum Ba
 
     for (u32 moveIndex = 0; moveIndex < MAX_MON_MOVES; moveIndex++)
     {
-        playerMove = SMART_SWITCHING_OMNISCIENT ? gBattleMons[opposingBattler].moves[moveIndex] : playerMoves[moveIndex];
+        playerMove = (!IS_HNS && SMART_SWITCHING_OMNISCIENT) ? gBattleMons[opposingBattler].moves[moveIndex] : playerMoves[moveIndex];
         if (playerMove != MOVE_NONE && !IsBattleMoveStatus(playerMove) && GetMoveEffect(playerMove) != EFFECT_FOCUS_PUNCH && gBattleMons[opposingBattler].pp[moveIndex] > 0)
         {
             damageTaken = AI_GetDamage(opposingBattler, battler, moveIndex, AI_DEFENDING, gAiLogicData);
@@ -2030,7 +2040,7 @@ static s32 GetMaxPriorityDamagePlayerCouldDealToSwitchin(enum BattlerId battler,
         // If player is choiced into a non-priority move, AI understands that it can't deal priority damage
         if (gBattleStruct->choicedMove[opposingBattler] != MOVE_NONE && GetMovePriority(gBattleStruct->choicedMove[opposingBattler]) < 1)
             break;
-        playerMove = SMART_SWITCHING_OMNISCIENT ? gBattleMons[opposingBattler].moves[moveIndex] : playerMoves[moveIndex];
+        playerMove = (!IS_HNS && SMART_SWITCHING_OMNISCIENT) ? gBattleMons[opposingBattler].moves[moveIndex] : playerMoves[moveIndex];
         if (GetBattleMovePriority(opposingBattler, gAiLogicData->abilities[opposingBattler], playerMove) > 0
             && playerMove != MOVE_NONE && !IsBattleMoveStatus(playerMove) && GetMoveEffect(playerMove) != EFFECT_FOCUS_PUNCH && gBattleMons[opposingBattler].pp[moveIndex] > 0)
         {
@@ -2506,6 +2516,264 @@ static u32 GetNextMonInParty(struct Pokemon *party, int firstId, int lastId, enu
     return PARTY_SIZE;
 }
 
+// A team plan is inferred from our own abilities/moves. Opponent data is
+// obtained exclusively through the engine's observed/assumed AI knowledge.
+struct TacticaFieldPlan
+{
+    u32 mask;
+    bool32 weather;
+};
+
+static struct TacticaFieldPlan TacticaPlanForMove(enum Move move)
+{
+    switch (move)
+    {
+    case MOVE_RAIN_DANCE: return (struct TacticaFieldPlan){B_WEATHER_RAIN, TRUE};
+    case MOVE_SUNNY_DAY: return (struct TacticaFieldPlan){B_WEATHER_SUN, TRUE};
+    case MOVE_SANDSTORM: return (struct TacticaFieldPlan){B_WEATHER_SANDSTORM, TRUE};
+    case MOVE_HAIL: case MOVE_SNOWSCAPE: return (struct TacticaFieldPlan){B_WEATHER_ICY_ANY, TRUE};
+    case MOVE_ELECTRIC_TERRAIN: return (struct TacticaFieldPlan){STATUS_FIELD_ELECTRIC_TERRAIN, FALSE};
+    case MOVE_GRASSY_TERRAIN: return (struct TacticaFieldPlan){STATUS_FIELD_GRASSY_TERRAIN, FALSE};
+    case MOVE_PSYCHIC_TERRAIN: return (struct TacticaFieldPlan){STATUS_FIELD_PSYCHIC_TERRAIN, FALSE};
+    case MOVE_MISTY_TERRAIN: return (struct TacticaFieldPlan){STATUS_FIELD_MISTY_TERRAIN, FALSE};
+    default: return (struct TacticaFieldPlan){0, FALSE};
+    }
+}
+
+static struct TacticaFieldPlan TacticaPlanForAbility(enum Ability ability)
+{
+    switch (ability)
+    {
+    case ABILITY_DRIZZLE: return (struct TacticaFieldPlan){B_WEATHER_RAIN, TRUE};
+    case ABILITY_DROUGHT: case ABILITY_ORICHALCUM_PULSE: return (struct TacticaFieldPlan){B_WEATHER_SUN, TRUE};
+    case ABILITY_SAND_STREAM: return (struct TacticaFieldPlan){B_WEATHER_SANDSTORM, TRUE};
+    case ABILITY_SNOW_WARNING: return (struct TacticaFieldPlan){B_WEATHER_ICY_ANY, TRUE};
+    case ABILITY_ELECTRIC_SURGE: case ABILITY_HADRON_ENGINE: return (struct TacticaFieldPlan){STATUS_FIELD_ELECTRIC_TERRAIN, FALSE};
+    case ABILITY_GRASSY_SURGE: return (struct TacticaFieldPlan){STATUS_FIELD_GRASSY_TERRAIN, FALSE};
+    case ABILITY_PSYCHIC_SURGE: return (struct TacticaFieldPlan){STATUS_FIELD_PSYCHIC_TERRAIN, FALSE};
+    case ABILITY_MISTY_SURGE: return (struct TacticaFieldPlan){STATUS_FIELD_MISTY_TERRAIN, FALSE};
+    default: return (struct TacticaFieldPlan){0, FALSE};
+    }
+}
+
+static bool32 SameTacticaPlan(struct TacticaFieldPlan a, struct TacticaFieldPlan b)
+{
+    return a.mask != 0 && a.mask == b.mask && a.weather == b.weather;
+}
+
+static struct TacticaFieldPlan TacticaSetterPlan(enum BattlerId battler, u32 index)
+{
+    struct Pokemon *mon = &GetBattlerParty(battler)[index];
+    struct TacticaFieldPlan plan = TacticaPlanForAbility(GetPartyMonAbilityForSwitchCalc(battler, index, mon));
+    if (plan.mask != 0)
+        return plan;
+    for (u32 i = 0; i < MAX_MON_MOVES; i++)
+    {
+        plan = TacticaPlanForMove(GetMonData(mon, MON_DATA_MOVE1 + i));
+        if (plan.mask != 0 && GetMonData(mon, MON_DATA_PP1 + i) != 0)
+            return plan;
+    }
+    return (struct TacticaFieldPlan){0, FALSE};
+}
+
+static u32 TacticaFieldBenefit(enum BattlerId battler, u32 index, struct TacticaFieldPlan plan)
+{
+    struct Pokemon *mon = &GetBattlerParty(battler)[index];
+    u32 species = GetMonData(mon, MON_DATA_SPECIES);
+    if (species == SPECIES_NONE || GetMonData(mon, MON_DATA_HP) == 0)
+        return 0;
+    enum Ability ability = GetPartyMonAbilityForSwitchCalc(battler, index, mon);
+    bool32 flying = gSpeciesInfo[species].types[0] == TYPE_FLYING || gSpeciesInfo[species].types[1] == TYPE_FLYING;
+    if (!plan.weather && (flying || ability == ABILITY_LEVITATE || GetItemHoldEffect(GetMonData(mon, MON_DATA_HELD_ITEM)) == HOLD_EFFECT_AIR_BALLOON))
+        return 0;
+    if ((!plan.weather && plan.mask == STATUS_FIELD_ELECTRIC_TERRAIN
+         && (ability == ABILITY_SURGE_SURFER || ability == ABILITY_QUARK_DRIVE))
+     || (plan.weather && plan.mask == B_WEATHER_RAIN && ability == ABILITY_SWIFT_SWIM)
+     || (plan.weather && plan.mask == B_WEATHER_SUN && (ability == ABILITY_CHLOROPHYLL || ability == ABILITY_SOLAR_POWER || ability == ABILITY_PROTOSYNTHESIS))
+     || (plan.weather && plan.mask == B_WEATHER_SANDSTORM && (ability == ABILITY_SAND_RUSH || ability == ABILITY_SAND_FORCE))
+     || (plan.weather && plan.mask == B_WEATHER_ICY_ANY && ability == ABILITY_SLUSH_RUSH))
+        return 3;
+    for (u32 i = 0; i < MAX_MON_MOVES; i++)
+    {
+        enum Move move = GetMonData(mon, MON_DATA_MOVE1 + i);
+        if (move == MOVE_NONE || move == MOVE_UNAVAILABLE || IsBattleMoveStatus(move) || GetMonData(mon, MON_DATA_PP1 + i) == 0)
+            continue;
+        u32 type = GetMoveType(move);
+        if ((!plan.weather && plan.mask == STATUS_FIELD_ELECTRIC_TERRAIN && type == TYPE_ELECTRIC)
+         || (!plan.weather && plan.mask == STATUS_FIELD_GRASSY_TERRAIN && type == TYPE_GRASS)
+         || (!plan.weather && plan.mask == STATUS_FIELD_PSYCHIC_TERRAIN && type == TYPE_PSYCHIC)
+         || (plan.weather && plan.mask == B_WEATHER_RAIN && (type == TYPE_WATER || move == MOVE_THUNDER || move == MOVE_HURRICANE))
+         || (plan.weather && plan.mask == B_WEATHER_SUN && (type == TYPE_FIRE || move == MOVE_SOLAR_BEAM || move == MOVE_SOLAR_BLADE))
+         || (plan.weather && plan.mask == B_WEATHER_ICY_ANY && move == MOVE_BLIZZARD))
+            return 1;
+    }
+    return 0;
+}
+
+static struct TacticaFieldPlan TacticaTeamPlan(enum BattlerId battler)
+{
+    struct TacticaFieldPlan best = {0, FALSE};
+    u32 bestBenefit = 0;
+    s32 first, last;
+    GetAIPartyIndexes(battler, &first, &last);
+    for (u32 i = first; i < last; i++)
+    {
+        struct TacticaFieldPlan plan = TacticaSetterPlan(battler, i);
+        u32 benefit = 0;
+        if (plan.mask == 0 || (plan.weather && (IsWeatherActive(plan.mask) == WEATHER_ACTIVE_BUT_BLOCKED || IsWeatherActive(plan.mask) == WEATHER_INACTIVE_AND_BLOCKED)))
+            continue;
+        for (u32 j = first; j < last; j++)
+            if (j != i)
+                benefit += TacticaFieldBenefit(battler, j, plan);
+        if (benefit > bestBenefit)
+        {
+            bestBenefit = benefit;
+            best = plan;
+        }
+    }
+    return best;
+}
+
+static bool32 TacticaPlanActive(struct TacticaFieldPlan plan)
+{
+    return plan.mask != 0 && ((plan.weather ? AI_GetWeather() : gFieldStatuses) & plan.mask);
+}
+
+static bool32 TacticaFieldSupportEnabled(enum BattlerId battler)
+{
+    return !IsDoubleBattle() && !gAiLogicData->aiPredictionInProgress
+        && (gAiThinkingStruct->aiFlags[battler] & AI_FLAG_FIELD_SUPPORT);
+}
+
+static bool32 TacticaCanTakeImmediateKO(enum BattlerId battler)
+{
+    enum BattlerId target = GetOppositeBattler(battler);
+    if (gBattleMons[battler].hp == 0)
+        return FALSE;
+    for (u32 i = 0; i < MAX_MON_MOVES; i++)
+    {
+        enum Move move = gBattleMons[battler].moves[i];
+        if (IsMoveUnusable(i, move, gAiLogicData->moveLimitations[battler]) || IsBattleMoveStatus(move))
+            continue;
+        if ((GetMoveAccuracy(move) == 0 || GetMoveAccuracy(move) >= 90) && AI_GetDamage(battler, target, i, AI_ATTACKING, gAiLogicData) * 85 / 100 >= gBattleMons[target].hp)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+static bool32 TacticaSetterNeedsVeil(enum BattlerId battler, struct TacticaFieldPlan plan)
+{
+    if (!plan.weather || plan.mask != B_WEATHER_ICY_ANY || !TacticaPlanActive(plan)
+     || (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_AURORA_VEIL))
+        return FALSE;
+    for (u32 i = 0; i < MAX_MON_MOVES; i++)
+        if (gBattleMons[battler].moves[i] == MOVE_AURORA_VEIL
+         && !IsMoveUnusable(i, MOVE_AURORA_VEIL, gAiLogicData->moveLimitations[battler]))
+            return TRUE;
+    return FALSE;
+}
+
+static bool32 TacticaFieldSupportWantsSwitch(enum BattlerId battler)
+{
+    if (!TacticaFieldSupportEnabled(battler) || TacticaCanTakeImmediateKO(battler))
+        return FALSE;
+    struct TacticaFieldPlan plan = TacticaTeamPlan(battler);
+    if (plan.mask == 0 || TacticaSetterNeedsVeil(battler, plan))
+        return FALSE;
+    if (!TacticaPlanActive(plan))
+    {
+        // A manual setter restores directly; an ability setter has to leave
+        // and re-enter if the opponent removed its field while it was active.
+        if (SameTacticaPlan(plan, TacticaSetterPlan(battler, gBattlerPartyIndexes[battler]))
+         && !SameTacticaPlan(plan, TacticaPlanForAbility(gAiLogicData->abilities[battler])))
+            return FALSE;
+        return TRUE;
+    }
+    u32 remaining = plan.weather ? gBattleStruct->weatherDuration : gFieldTimers.terrainTimer;
+    if (remaining == 1)
+        return FALSE;
+    return SameTacticaPlan(plan, TacticaSetterPlan(battler, gBattlerPartyIndexes[battler]));
+}
+
+static u32 GetTacticaFieldSwitchin(enum BattlerId battler, enum SwitchType switchType)
+{
+    if (!TacticaFieldSupportEnabled(battler))
+        return PARTY_SIZE;
+    struct TacticaFieldPlan plan = TacticaTeamPlan(battler);
+    if (plan.mask == 0)
+        return PARTY_SIZE;
+    bool32 active = TacticaPlanActive(plan);
+    bool32 cycleSetter = !active && gBattleMons[battler].hp != 0
+        && SameTacticaPlan(plan, TacticaPlanForAbility(gAiLogicData->abilities[battler]));
+    enum BattlerId target, in1, in2;
+    target = GetActiveBattlerIds(battler, &in1, &in2);
+    s32 first, last;
+    GetAIPartyIndexes(battler, &first, &last);
+    struct Pokemon *party = GetBattlerParty(battler);
+    struct AiLogicData *savedAi = AllocSaveAiLogicData();
+    struct BattlePokemon *savedMons = AllocSaveBattleMons();
+    u32 best = PARTY_SIZE, bestScore = 0;
+    u32 otherBeneficiaries = 0;
+    for (u32 i = first; i < last; i++)
+        if (IsValidForBattle(&party[i]) && !IsAceMon(battler, i)
+         && !SameTacticaPlan(plan, TacticaSetterPlan(battler, i))
+         && TacticaFieldBenefit(battler, i, plan) != 0)
+            otherBeneficiaries++;
+    for (u32 i = first; i < last; i++)
+    {
+        if (!IsValidForBattle(&party[i]) || IsPartyMonOnFieldOrChosenToSwitch(i, in1, in2))
+            continue;
+        if (IsAceMon(battler, i) && otherBeneficiaries != 0)
+            continue;
+        u32 benefit = TacticaFieldBenefit(battler, i, plan);
+        bool32 setter = SameTacticaPlan(plan, TacticaSetterPlan(battler, i));
+        if ((!active && !setter && !(cycleSetter && benefit != 0)) || (active && (setter || benefit == 0)))
+            continue;
+        InitializeSwitchinCandidate(battler, i, &party[i]);
+        u32 hazards = GetSwitchinHazardsDamage(battler);
+        if (hazards >= gBattleMons[battler].hp)
+            continue;
+        enum Move knownMove = MOVE_NONE;
+        s32 incoming = GetMaxDamagePlayerCouldDealToSwitchin(battler, target, &knownMove);
+        // Never volunteer a switch that known damage will immediately knock out.
+        // A post-KO entry is free; manual setters still need a turn to set up.
+        bool32 automatic = SameTacticaPlan(plan, TacticaPlanForAbility(gAiLogicData->abilities[battler]));
+        if ((switchType != SWITCH_AFTER_KO || (!active && !automatic))
+         && incoming >= gBattleMons[battler].hp - hazards)
+            continue;
+        u32 damage = GetBestDmgFromBattler(battler, target, AI_ATTACKING);
+        if (active && damage == 0)
+            continue;
+        u32 score = (!active && setter ? 500 : benefit * 100) + min(damage, 99);
+        if (score > bestScore)
+        {
+            bestScore = score;
+            best = i;
+        }
+    }
+    FreeRestoreBattleMons(savedMons);
+    FreeRestoreAiLogicData(savedAi);
+    return best;
+}
+
+u32 AI_GetTacticaFieldSupportMove(enum BattlerId battler)
+{
+    if (!TacticaFieldSupportEnabled(battler) || TacticaCanTakeImmediateKO(battler))
+        return MAX_MON_MOVES;
+    struct TacticaFieldPlan plan = TacticaTeamPlan(battler);
+    bool32 needsVeil = TacticaSetterNeedsVeil(battler, plan);
+    if (plan.mask == 0 || (TacticaPlanActive(plan) && !needsVeil))
+        return MAX_MON_MOVES;
+    for (u32 i = 0; i < MAX_MON_MOVES; i++)
+    {
+        enum Move move = gBattleMons[battler].moves[i];
+        if (!IsMoveUnusable(i, move, gAiLogicData->moveLimitations[battler])
+         && ((needsVeil && move == MOVE_AURORA_VEIL) || (!needsVeil && SameTacticaPlan(plan, TacticaPlanForMove(move)))))
+            return i;
+    }
+    return MAX_MON_MOVES;
+}
+
 u32 GetMostSuitableMonToSwitchInto(enum BattlerId battler, enum SwitchType switchType)
 {
     enum BattlerId opposingBattler = 0;
@@ -2529,6 +2797,10 @@ u32 GetMostSuitableMonToSwitchInto(enum BattlerId battler, enum SwitchType switc
         bestMonId = GetNextMonInParty(party, firstId, lastId, battlerIn1, battlerIn2);
         return bestMonId;
     }
+
+    u32 fieldMon = GetTacticaFieldSwitchin(battler, switchType);
+    if (fieldMon < PARTY_SIZE)
+        return fieldMon;
 
     // Only use better mon selection if AI_FLAG_SMART_MON_CHOICES is set for the trainer.
     if (gAiThinkingStruct->aiFlags[battler] & AI_FLAG_SMART_MON_CHOICES && !IsDoubleBattle()) // Double Battles aren't included in AI_FLAG_SMART_MON_CHOICE. Defaults to regular switch in logic

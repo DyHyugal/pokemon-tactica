@@ -1,4 +1,5 @@
 #include "global.h"
+#include "config_menu_layout.h"
 #include "option_menu.h"
 #include "challenge_menu.h"
 #include "bg.h"
@@ -185,20 +186,6 @@ static const u16 sTextPal[] = INCBIN_U16("graphics/interface/option_menu_text_cu
 #define TILE_BOT_EDGE     0x1A9
 #define TILE_BOT_CORNER_R 0x1AA
 
-#define TEXT_COLOR_OPTIONS_WHITE              1
-#define TEXT_COLOR_OPTIONS_GRAY_FG            2
-#define TEXT_COLOR_OPTIONS_GRAY_SHADOW        3
-#define TEXT_COLOR_OPTIONS_GRAY_LIGHT_FG      4
-#define TEXT_COLOR_OPTIONS_ORANGE_FG          5
-#define TEXT_COLOR_OPTIONS_ORANGE_SHADOW      6
-#define TEXT_COLOR_OPTIONS_RED_FG             7
-#define TEXT_COLOR_OPTIONS_RED_SHADOW         8
-#define TEXT_COLOR_OPTIONS_GREEN_FG           9
-#define TEXT_COLOR_OPTIONS_GREEN_SHADOW      10
-#define TEXT_COLOR_OPTIONS_GREEN_DARK_FG     11
-#define TEXT_COLOR_OPTIONS_GREEN_DARK_SHADOW 12
-#define TEXT_COLOR_OPTIONS_RED_DARK_FG       13
-#define TEXT_COLOR_OPTIONS_RED_DARK_SHADOW   14
 
 // =============================================================================
 // Choice strings
@@ -670,83 +657,15 @@ static void HighlightRow(void)
 // Right-side choice drawing
 // =============================================================================
 
-static void DrawRightSideChoiceText(const u8 *text, int x, int y, bool8 chosen, bool8 active)
-{
-    u8 color[3];
-    color[0] = TEXT_COLOR_TRANSPARENT;
-    if (active)
-    {
-        color[1] = chosen ? TEXT_COLOR_OPTIONS_RED_FG : TEXT_COLOR_OPTIONS_GRAY_FG;
-        color[2] = chosen ? TEXT_COLOR_OPTIONS_RED_SHADOW : TEXT_COLOR_OPTIONS_GRAY_SHADOW;
-    }
-    else
-    {
-        color[1] = chosen ? TEXT_COLOR_OPTIONS_RED_DARK_FG : TEXT_COLOR_OPTIONS_GRAY_LIGHT_FG;
-        color[2] = chosen ? TEXT_COLOR_OPTIONS_RED_DARK_SHADOW : TEXT_COLOR_OPTIONS_GRAY_SHADOW;
-    }
-    AddTextPrinterParameterized4(WIN_OPTIONS, FONT_NORMAL, x, y, 0, 0, color, TEXT_SKIP_DRAW, text);
-}
 
-static int GetMiddleX(const u8 *txt1, const u8 *txt2, const u8 *txt3)
-{
-    int widthLeft = GetStringWidth(FONT_NORMAL, txt1, 0);
-    int widthMid = GetStringWidth(FONT_NORMAL, txt2, 0);
-    int widthRight = GetStringWidth(FONT_NORMAL, txt3, 0);
-    widthMid -= (198 - 104);
-    return (widthLeft - widthMid - widthRight) / 2 + 104;
-}
-
-static void DrawChoices_Two(const u8 *const *strings, int selection, int y, bool8 active)
-{
-    DrawRightSideChoiceText(strings[0], 104, y + 1, selection == 0, active);
-    DrawRightSideChoiceText(strings[1], GetStringRightAlignXOffset(FONT_NORMAL, strings[1], 198), y + 1, selection == 1, active);
-}
-
-static void DrawChoices_Three(const u8 *const *strings, int selection, int y, bool8 active)
-{
-    int xMid = GetMiddleX(strings[0], strings[1], strings[2]);
-    DrawRightSideChoiceText(strings[0], 104, y + 1, selection == 0, active);
-    DrawRightSideChoiceText(strings[1], xMid, y + 1, selection == 1, active);
-    DrawRightSideChoiceText(strings[2], GetStringRightAlignXOffset(FONT_NORMAL, strings[2], 198), y + 1, selection == 2, active);
-}
-
-static void DrawChoices_Four(const u8 *const *strings, int selection, int y, bool8 active)
-{
-    static const u8 orders[][3] = { {0, 1, 2}, {0, 1, 2}, {1, 2, 3}, {1, 2, 3} };
-    const u8 *order = orders[selection];
-    int xMid = GetMiddleX(strings[order[0]], strings[order[1]], strings[order[2]]);
-    DrawRightSideChoiceText(strings[order[0]], 104, y + 1, selection == order[0], active);
-    DrawRightSideChoiceText(strings[order[1]], xMid, y + 1, selection == order[1], active);
-    DrawRightSideChoiceText(strings[order[2]], GetStringRightAlignXOffset(FONT_NORMAL, strings[order[2]], 198), y + 1, selection == order[2], active);
-}
-
-static void DrawChoices_SingleSelected(const u8 *const *strings, int selection, int y, bool8 active)
-{
-    const u8 *text = strings[selection];
-    DrawRightSideChoiceText(text, GetStringRightAlignXOffset(FONT_NORMAL, text, 198), y + 1, TRUE, active);
-}
 
 // Frame type: draws "TYPE  N" on the right side
-static void DrawFrameTypeChoice(u8 selection, int y, bool8 active)
+static void DrawFrameTypeChoice(u8 selection, int y, bool8 active, u32 left)
 {
     u8 text[16];
-    u8 n = selection + 1;
-    u8 i = 0;
-
-    if (n / 10 != 0)
-    {
-        text[i++] = n / 10 + CHAR_0;
-        text[i++] = n % 10 + CHAR_0;
-    }
-    else
-    {
-        text[i++] = n % 10 + CHAR_0;
-        text[i++] = CHAR_SPACER;
-    }
-    text[i] = EOS;
-
-    DrawRightSideChoiceText(COMPOUND_STRING("TYPE"), 104, y + 1, FALSE, active);
-    DrawRightSideChoiceText(text, 128, y + 1, TRUE, active);
+    ConvertIntToDecimalStringN(text, selection + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
+    const u8 *choices[] = {text};
+    DrawConfigMenuChoices(WIN_OPTIONS, choices, 1, 0, y + 1, active, left);
 }
 
 // =============================================================================
@@ -772,16 +691,12 @@ static void OptionMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
 
     bool8 active = CheckConditions(sMenu->currentTab, itemId);
 
-    if (!active)
-    {
-        u8 color[3] = { TEXT_COLOR_TRANSPARENT, TEXT_COLOR_OPTIONS_GRAY_LIGHT_FG, TEXT_COLOR_OPTIONS_GRAY_SHADOW };
-        AddTextPrinterParameterized4(windowId, FONT_NORMAL, 8, y + 1, 0, 0, color, TEXT_SKIP_DRAW, items[itemId].name);
-    }
+    u32 choiceLeft = DrawConfigMenuLabel(windowId, items[itemId].name, y, active);
 
     // Frame type is special — no choiceNames array
     if (sMenu->currentTab == TAB_MAIN && itemId == ITEM_MAIN_FRAMETYPE)
     {
-        DrawFrameTypeChoice(*GetSelectionPtr(sMenu->currentTab, itemId), y, active);
+        DrawFrameTypeChoice(*GetSelectionPtr(sMenu->currentTab, itemId), y, active, choiceLeft);
         return;
     }
 
@@ -792,23 +707,8 @@ static void OptionMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
     if (sel >= items[itemId].numChoices)
         sel = 0;
 
-    switch (items[itemId].numChoices)
-    {
-    case 2:
-        DrawChoices_Two(items[itemId].choiceNames, sel, y, active);
-        break;
-    case 3:
-        DrawChoices_Three(items[itemId].choiceNames, sel, y, active);
-        break;
-    case 4:
-        DrawChoices_Four(items[itemId].choiceNames, sel, y, active);
-        break;
-    case 6:
-        // Volume has six values; showing all six at once would overlap.
-        // Render only the currently selected percentage/mute label.
-        DrawChoices_SingleSelected(items[itemId].choiceNames, sel, y, active);
-        break;
-    }
+    DrawConfigMenuChoices(windowId, items[itemId].choiceNames,
+        items[itemId].numChoices, sel, y + 1, active, choiceLeft);
 }
 
 // =============================================================================
@@ -831,6 +731,7 @@ static void InitListMenu(void)
     template.items = sListItems;
     template.moveCursorFunc = OptionMenu_MoveCursorFunc;
     template.itemPrintFunc = OptionMenu_ItemPrintFunc;
+    template.isDynamic = TRUE;
     template.totalItems = count;
     template.maxShowed = (count < ITEMS_VISIBLE) ? count : ITEMS_VISIBLE;
     template.windowId = WIN_OPTIONS;
@@ -1318,3 +1219,33 @@ void CB2_InitOptionMenu(void)
         break;
     }
 }
+
+#if TESTING
+bool32 GetOptionMenuTestRow(u32 index, const u8 **label, const u8 *const **choices, u32 *count)
+{
+    for (u32 tab = 0; tab < TAB_COUNT; tab++)
+    {
+        if (index < sTabs[tab].count)
+        {
+            *label = sTabs[tab].items[index].name;
+            *choices = sTabs[tab].items[index].choiceNames;
+            *count = sTabs[tab].items[index].numChoices;
+            if (tab == TAB_MAIN && index == ITEM_MAIN_FRAMETYPE)
+            {
+                static u8 names[WINDOW_FRAMES_COUNT][3];
+                static const u8 *values[WINDOW_FRAMES_COUNT];
+                for (u32 frame = 0; frame < WINDOW_FRAMES_COUNT; frame++)
+                {
+                    ConvertIntToDecimalStringN(names[frame], frame + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
+                    values[frame] = names[frame];
+                }
+                *choices = values;
+                *count = WINDOW_FRAMES_COUNT;
+            }
+            return TRUE;
+        }
+        index -= sTabs[tab].count;
+    }
+    return FALSE;
+}
+#endif

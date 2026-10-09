@@ -2,6 +2,8 @@
 
 # Guide — soluce condensée
 
+Les CS de déplacement deviennent utilisables dès leur déblocage dans l’histoire. Il n’est pas nécessaire de les enseigner, de posséder leur objet CS ni d’avoir une espèce compatible dans l’équipe. Interagis directement avec les arbres, rochers ou l’eau ; Vol et Flash restent accessibles depuis le menu Équipe. Les badges et quêtes qui débloquent ces actions restent nécessaires, notamment la quête de Coupe et la remise scénaristique d’Éclate-Roc. Siphon dépend du septième badge.
+
 Cette page sert surtout de **soluce si tu ne sais plus où aller**. Elle suit l'enchaînement principal de Heart & Soul, adapté à Pokémon Tactica. Les détours facultatifs, objets secondaires et rencontres sauvages ne sont pas détaillés ici : utilise **Pokédex**, **Localisations** et **Boss & Conseils** pour préparer ton équipe.
 
 > Les données de Pokémon, niveaux, boss et rencontres viennent de Tactica. Le walkthrough Heart & Soul sert uniquement de repère pour l'ordre narratif et les lieux.

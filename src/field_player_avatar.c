@@ -1,4 +1,5 @@
 #include "global.h"
+#include "field_move.h"
 #include "main.h"
 #include "bike.h"
 #include "challenge_menu.h"
@@ -1665,6 +1666,10 @@ enum Gender GetPlayerAvatarGenderByGraphicsId(u16 gfxId)
 
 bool8 PartyHasMonWithSurf(void)
 {
+    if (IS_HNS)
+        return !TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING)
+            && GetTacticaTraversalUser(FIELD_MOVE_SURF) != PARTY_SIZE;
+
     u8 i;
 
     if (!TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))

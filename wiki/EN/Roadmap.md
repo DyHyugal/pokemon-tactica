@@ -11,3 +11,7 @@ The current phase is to build a candidate ROM from the latest `integration/v1`, 
 ## After V1
 
 Extensions that are not required for the first stable release remain planned for later, including Shiny Only, a complete French translation if it cannot fit cleanly in the single ROM, and deeper graphical redesigns.
+
+## Mystery battles
+
+Optional, unexpected encounters with a League Champion or another major character are planned after V1 is stable, inspired by Cynthia in Undella Town in Black 2 and White 2. Players should discover them while exploring and face a memorable battle. Red is already part of the adventure and will not be reused for this feature. Characters, locations, access conditions and teams remain to be defined; these battles are not implemented yet.

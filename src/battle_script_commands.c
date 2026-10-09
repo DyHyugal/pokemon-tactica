@@ -11367,6 +11367,11 @@ void HandleBattleWindow(u8 xStart, u8 yStart, u8 xEnd, u8 yEnd, u8 flags)
 
 void BattleCreateYesNoCursorAt(u8 cursorPosition)
 {
+    if (IS_HNS)
+    {
+        BattleDrawYesNoWindowCursor(cursorPosition, TRUE);
+        return;
+    }
     u16 src[2];
     src[0] = 1;
     src[1] = 2;
@@ -11377,6 +11382,11 @@ void BattleCreateYesNoCursorAt(u8 cursorPosition)
 
 void BattleDestroyYesNoCursorAt(u8 cursorPosition)
 {
+    if (IS_HNS)
+    {
+        BattleDrawYesNoWindowCursor(cursorPosition, FALSE);
+        return;
+    }
     u16 src[2];
     src[0] = 0x1016;
     src[1] = 0x1016;
