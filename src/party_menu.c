@@ -2942,7 +2942,28 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUB_MOVES);
     }
 
-    if (HMsOverwriteOptionActive() && slotId == 0)
+    if (IS_HNS)
+    {
+        // Reserve menu slots for unlocked traversal before optional learned
+        // field moves so a full moveset cannot hide Fly or Flash.
+        if (!GetMonData(&mons[slotId], MON_DATA_IS_EGG))
+            for (j = FIELD_MOVE_CUT; j <= FIELD_MOVE_WATERFALL; j++)
+                if ((j == FIELD_MOVE_FLY || j == FIELD_MOVE_FLASH)
+                 && IsFieldMoveUnlocked(j) && numFieldMoves < maxFieldMoves)
+                {
+                    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
+                    numFieldMoves++;
+                }
+        for (i = 0; i < MAX_MON_MOVES; i++)
+            for (j = FIELD_MOVE_TELEPORT; j < FIELD_MOVES_COUNT; j++)
+                if (GetMonData(&mons[slotId], MON_DATA_MOVE1 + i) == FieldMove_GetMoveId(j) && numFieldMoves < maxFieldMoves)
+                {
+                    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
+                    numFieldMoves++;
+                    break;
+                }
+    }
+    else if (HMsOverwriteOptionActive() && slotId == 0)
     {
         for (i = 0; i < MAX_MON_MOVES; i++)
         {

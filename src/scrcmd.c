@@ -2990,6 +2990,14 @@ bool8 ScrCmd_checkfieldmove(struct ScriptContext *ctx)
     if (doUnlockedCheck && !IsFieldMoveUnlocked(fieldMove))
         return FALSE;
 
+    if (IsTacticaTraversalMove(fieldMove))
+    {
+        gSpecialVar_Result = GetTacticaTraversalUser(fieldMove);
+        if (gSpecialVar_Result != PARTY_SIZE)
+            gSpecialVar_0x8004 = GetMonData(&gPlayerParty[gSpecialVar_Result], MON_DATA_SPECIES);
+        return FALSE;
+    }
+
     move = FieldMove_GetMoveId(fieldMove);
     for (u32 i = 0; i < GetMaxPartySize(); i++)
     {
@@ -3051,6 +3059,17 @@ bool8 ScrCmd_checkfieldmove(struct ScriptContext *ctx)
 bool8 ScrCmd_checkpartymove(struct ScriptContext *ctx)
 {
     u16 moveId = ScriptReadHalfword(ctx);
+
+    for (u32 i = 0; i < FIELD_MOVES_COUNT; i++)
+    {
+        if (IsTacticaTraversalMove(i) && FieldMove_GetMoveId(i) == moveId)
+        {
+            gSpecialVar_Result = GetTacticaTraversalUser(i);
+            if (gSpecialVar_Result != PARTY_SIZE)
+                gSpecialVar_0x8004 = GetMonData(&gPlayerParty[gSpecialVar_Result], MON_DATA_SPECIES);
+            return FALSE;
+        }
+    }
 
     gSpecialVar_Result = PARTY_SIZE;
     for (u32 i = 0; i < GetMaxPartySize(); i++)

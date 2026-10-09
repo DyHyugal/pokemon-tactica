@@ -264,7 +264,7 @@ static const struct WindowTemplate sWinTemplates_EggHatch[] =
         .tilemapTop = 15,
         .width = 26,
         .height = 4,
-        .paletteNum = 0,
+        .paletteNum = 15,
         .baseBlock = 64
     },
     DUMMY_WIN_TEMPLATE
@@ -277,7 +277,7 @@ static const struct WindowTemplate sYesNoWinTemplate =
     .tilemapTop = 9,
     .width = 5,
     .height = 4,
-    .paletteNum = 15,
+    .paletteNum = 14,
     .baseBlock = 424
 };
 
@@ -540,9 +540,7 @@ static void CB2_LoadEggHatch(void)
         gMain.state++;
         break;
     case 2:
-        DecompressAndLoadBgGfxUsingHeap(0, gBattleTextboxTiles, 0, 0, 0);
-        CopyToBgTilemapBuffer(0, gBattleTextboxTilemap, 0, 0);
-        LoadPalette(gBattleTextboxPalette, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
+        LoadMessageBoxGfx(sEggHatchData->windowId, 0x120, BG_PLTT_ID(15));
         gMain.state++;
         break;
     case 3:
@@ -747,7 +745,7 @@ static void EggHatchStep(void)
         {
             LoadUserWindowBorderGfx(sEggHatchData->windowId, 0x140, BG_PLTT_ID(14));
             if (!IsNuzlockeNicknamingActive())
-                CreateYesNoMenu(&sYesNoWinTemplate, 0x140, 0xE, 0);
+                CreateYesNoMenu(&sYesNoWinTemplate, 0x140, 14, 0);
             sEggHatchData->state++;
         }
         break;
@@ -996,10 +994,10 @@ static void CreateEggShardSprite(u8 x, u8 y, s16 velocityX, s16 velocityY, s16 a
 
 static void EggHatchPrintMessage(u8 windowId, u8 *string, u8 x, u8 y, u8 speed)
 {
-    FillWindowPixelBuffer(windowId, PIXEL_FILL(15));
-    sEggHatchData->textColor[0] = 0;
-    sEggHatchData->textColor[1] = 5;
-    sEggHatchData->textColor[2] = 6;
+    DrawDialogFrameWithCustomTileAndPalette(windowId, FALSE, 0x120, 15);
+    sEggHatchData->textColor[0] = 1;
+    sEggHatchData->textColor[1] = 2;
+    sEggHatchData->textColor[2] = 3;
     AddTextPrinterParameterized4(windowId, FONT_NORMAL, x, y, 0, 0, sEggHatchData->textColor, speed, string);
 }
 

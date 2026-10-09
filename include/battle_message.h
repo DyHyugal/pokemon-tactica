@@ -253,6 +253,7 @@ struct BattleMsgData
 void BufferStringBattle(enum StringID stringID, enum BattlerId battler);
 u32 BattleStringExpandPlaceholdersToDisplayedString(const u8 *src);
 u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize);
+void BattleDrawYesNoWindowCursor(u8 position, bool32 visible);
 void BattlePutTextOnWindow(const u8 *text, u8 windowId);
 void SetHnsBattleMoveSelectionCursor(u8 cursorPosition);
 void SetPpNumbersPaletteInMoveSelection(enum BattlerId battler);

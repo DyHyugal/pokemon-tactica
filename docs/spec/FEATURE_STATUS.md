@@ -21,6 +21,10 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | Audio indépendant / preset | `[DONE]` | Tests audio existants ; contrôle auditif final uniquement. |
 | Shiny Rate | `[DONE]` | Menu et persistance couverts. |
 | Difficulty / HARD | `[PARTIEL]` | Runtime et écran de configuration intégrés ; visibilité et persistance restent à revalider dans une ROM fraîche avant toute nouvelle correction. |
+| CS — scénario uniquement | `[DONE]` | Les huit CS passent par les déblocages existants sans learnset, move appris ou CS dans le sac. Tests mGBA des deux commandes script avec Magicarpe et sac vide ; Surf utilise le même contrôle, Vol/Flash sont prioritaires dans le menu. Animation et obstacles à observer en ROM. |
+| Menus Options / Settings | `[PARTIEL]` | Rendu commun selon la largeur réelle, sur tous les onglets et valeurs, cadres et challenge de type compris. Tests mGBA des pixels en état actif/inactif ; header Settings sur deux lignes de 8 px. Navigation, persistance et confort visuel restent à observer en ROM. |
+| Éclosion / Oui-Non combat | `[PARTIEL]` | Dialogue d’éclosion séparé du HUD combat, palettes texte/cadre cohérentes. Curseur combat dessiné dans la fenêtre, sans écritures de tuiles fixes ; test mGBA des trois variantes de fenêtre et déplacement/effacement. Éclosion complète et prompts à observer en ROM. |
+| Combats mystère | `[HORS V1]` | Rencontres facultatives de Maîtres/personnages importants, inspirées de Cynthia à Vaguelone (N2/B2), hors Red déjà présent. Personnages/lieux/accès/équipes à définir ; non implémentés. |
 | Shiny Only | `[HORS V1]` | À reprendre après stabilisation V1. |
 | 30 starters + Évoli | `[DONE]` | Logique cœur intégrée. |
 | Sélecteur — curseur initial / annulation | `[PARTIEL]` | Correction intégrée automatiquement ; comportement visuel à revalider en ROM fraîche. |
@@ -61,7 +65,7 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 | Boutiques objets/moves/Méga-Gemmes — contenu | `[PARTIEL]` | Catalogues/runtime présents ; parcours d’achat ROM à revalider. |
 | Balance 26 espèces / 16 learnsets | `[DONE]` | Source canonique + validateur dédié ; Draco-Griffe est légal pour Hydragon au match retour. |
 | Intro Chen / HARD / Recommended | `[DONE]` | PR #48 : speech vanilla remplacé par l’intro Tactica, avertissements HARD/Recommended/Custom clarifiés. |
-| IA HARD | `[PARTIEL]` | Le premier playtest owner a reproduit deux défauts ciblés : Évoli continuait Reflet au lieu de Relais et Mimiqui pouvait monter à +6. La logique corrigée passe après deux boosts, autorise un troisième Reflet uniquement à PV pleins face à un adversaire non Combat, puis impose Relais ; les autres plans de setup attaquent après deux niveaux positifs. Tests de combat verts ; comportement des équipes complètes à recontrôler en ROM. |
+| IA HARD | `[PARTIEL]` | Le premier playtest owner a reproduit deux défauts ciblés : Évoli continuait Reflet au lieu de Relais et Mimiqui pouvait monter à +6. La logique corrigée passe après deux boosts, autorise un troisième Reflet uniquement à PV pleins face à un adversaire non Combat, puis impose Relais ; les autres plans de setup attaquent après deux niveaux positifs. Tests de combat verts. La coordination terrain/climat commune gère poseurs automatiques/manuels, relais, expiration/remplacement, secours après KO, Voile Aurore, pièges et hazards ; 16 tests de bataille dédiés passent avec Wattapik et Salarsen dans leurs rôles distincts. Les options omniscientes/prédictives sont retirées en HARD. Équipes complètes à recontrôler en ROM. |
 | Écran titre — centrage « Pokémon Tactica » | `[DONE]` | Le libellé `TACTICA` est centré dans sa bulle sans déplacer l'ensemble de la bannière ; le validateur UI protège le centrage interne et la position écran. |
 
 ## Règle de merge
@@ -73,4 +77,4 @@ Ne jamais transformer « non testé manuellement » en « non implémenté », e
 ## Prochain ordre de travail
 
 1. reconstruire une ROM candidate propre depuis le SHA final ;
-2. effectuer le playthrough owner complet ; l’IA HARD est à tester avant toute correction.
+2. effectuer le playthrough owner complet ; les corrections issues du playtest HARD, les CS et les interfaces sont à observer dans la nouvelle candidate.

@@ -18,8 +18,16 @@ Les Simiabraz de Chuck et d’Aldo utilisent Acrobatie. Méga-Altaria garde Reto
 
 ## Points du dataset corrigés
 
-Voltali du Maître en rematch : Modeste, Vive-Attaque + Change Éclair, rôle spécial. Hyporoi garde Lentilscope. Corboss avec Orbe Vie là où le roster l'attribue. Magnézone spécial : Rayon Signal au lieu de Big Splash. Noadkoko spécial : Pouvoir Antique au lieu de Poudre Dodo. Rocket prend le dernier cap champion/rival +2, **jamais** le Rocket précédent +2.
+Voltali du Maître en rematch : Modeste, Vive-Attaque + Change Éclair, rôle spécial. Hyporoi garde Lentilscope. Corboss avec Orbe Vie là où le roster l'attribue. Magnézone spécial : Rayon Signal au lieu de Big Splash. Noadkoko spécial : Pouvoir Antique au lieu de Poudre Dodo. Rocket prend la plage de la dernière arène vaincue +2, **jamais** le Rocket précédent +2.
 
 ## Match retour du Maître
 
 Au niveau 100 : Voltali conserve son set ; Méga-Dracaufeu X reprend le set du premier match ; Hydragon est Rigide, Prognathe, Mouchoir Choix, DPS physique, avec Branchicrok / Psycho-Croc / Mâchouille / Draco-Griffe ; Miascarade conserve son set avec Bandeau Choix ; Exagide est Rigide, DPS physique, Restes, avec Danse Lames / Tête de Fer / Ombre Portée / Bouclier Royal ; Carchacrok conserve les capacités, talent, nature et EV du premier match avec Orbe Vie afin de préserver l’unicité des objets.
+
+## Coordination climat / terrain HARD
+
+La stratégie commune infère un plan depuis les talents et capacités de sa propre équipe, puis utilise les calculs de dégâts et de hazards du moteur. Le poseur transmet le terrain/climat à un bénéficiaire dès qu'il est actif ; une capacité super efficace sans KO ne suffit pas à le retenir. Un KO immédiat conservateur reste une raison valable d'attaquer. Un poseur de neige peut installer Voile Aurore avant la transmission. Quand le terrain/climat disparaît ou est remplacé, un poseur disponible est prioritaire sur un nouvel attaquant, y compris après un KO. Un poseur à talent déjà sur le terrain doit sortir puis revenir pour réactiver son talent. Le relais ne consomme pas volontairement le dernier tour de l’effet. Pour le rival Électrik, Wattapik est le poseur automatique et Salarsen (Champ Électrifié) le poseur manuel de secours ; Raichu d’Alola et Paume-de-Fer sont les bénéficiaires spécialisés. Sous terrain actif, les poseurs restent en réserve après leur travail.
+
+Les bénéficiaires doivent être vivants, profiter de l'effet, et ne pas être mis KO à l'entrée par les hazards ou les dégâts connus lors d'un switch volontaire. L'ace est conservé tant qu'un autre bénéficiaire reste disponible. Sans bénéficiaire ou sans poseur utilisable, les décisions normales du moteur reprennent. Le mode NORMAL conserve sa logique ; HARD n'active ni omniscience, ni connaissance de l'équipe cachée, ni lecture/prédiction du choix du joueur. Les types visibles, capacités/objets révélés et hypothèses STAB du moteur restent disponibles.
+
+Versions amont examinées : RHH/pokeemerald-expansion (`7b95be15d84a053948791ce91e5dec0b168947a5`) et pokemonhns-development/pokehns-expansion (`167aa6d537b109bb229c231ddce4616974c4da71`). Leur moteur gère les bénéfices de climat/terrain et les calculs de switches ; aucune orchestration complète du cycle poseur/bénéficiaire/restauration n'a été identifiée dans les sources examinées. La coordination Tactica s'appuie sur ce moteur, sans remplacer l'ensemble de l'IA.

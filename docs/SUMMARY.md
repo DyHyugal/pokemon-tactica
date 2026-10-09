@@ -153,6 +153,7 @@
 
 - [Wiki français]()
     - [Accueil](FR/Accueil.md)
+    - [Jouer](FR/Jouer.md)
     - [Boss et Conseils](FR/Boss-et-Conseils.md)
     - [Changements](FR/Changements.md)
     - [Credits et Versions](FR/Credits-et-Versions.md)
@@ -167,6 +168,7 @@
     - [Credits and Versions](EN/Credits-and-Versions.md)
     - [Game Guide](EN/Game-Guide.md)
     - [Home](EN/Home.md)
+    - [Play](EN/Play.md)
     - [Locations](EN/Locations.md)
     - [Pokedex](EN/Pokedex.md)
     - [Roadmap](EN/Roadmap.md)

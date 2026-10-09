@@ -53,6 +53,7 @@ Détail et audit : [EVOLUTIONS.md](EVOLUTIONS.md).
 - Le menu Settings expose NORMAL/HARD, persiste le choix et applique HARD dans le preset recommandé et sur une nouvelle partie par défaut.
 - NORMAL et HARD utilisent le même contenu : équipes, espèces, niveaux, moves, objets, talents, natures, progression et rencontres.
 - HARD ajoute IV 31, EV stratégiques légaux et une IA plus exigeante ; NORMAL conserve l’optimisation native.
+- HARD coordonne les poseurs de terrain/climat, leurs bénéficiaires et la restauration de leur effet. Wattapik est le poseur automatique Électrik ; Salarsen est le poseur manuel de secours, pas le bénéficiaire à envoyer par défaut sous un terrain actif. Les informations cachées du joueur et son choix à venir ne sont pas accessibles. Détail : [BOSSES_AI.md](BOSSES_AI.md).
 - Albert a 3 Pokémon, Hector 4, Blanche et les Champions suivants 6.
 - Les objets tenus sont uniques au sein d’une équipe.
 - Les formes et moves doivent être légaux au niveau du combat.
@@ -96,6 +97,16 @@ La source détaillée est [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Le
 - Vitesse native x1/x2/x3/x4, audio indépendant, Shiny Rate et cœur du flow starter/œuf sont protégés contre les réécritures sans défaut démontré.
 - Le principe d’un jeu entièrement jouable en solo reste protégé. La migration des anciennes méthodes d’évolution HnS vers [EVOLUTIONS.md](EVOLUTIONS.md) est terminée ; ne pas réintroduire les anciennes adaptations.
 - `Shiny Only` reste post-V1.
+
+### CS et interfaces
+
+Les CS de traversée se débloquent uniquement par leurs conditions scénaristiques existantes. Ni compatibilité d'espèce, ni capacité apprise, ni possession de la CS ne sont requises. Le Pokémon choisi sert à l'animation. Les autres capacités de terrain gardent leurs règles ordinaires.
+
+Déblocages CS conservés : Coupe = badge 2 et quête de Coupe terminée ; Éclate-Roc = badge 1 et remise scénaristique effectuée ; Flash = badge 1 ; Force = badge 3 ; Surf = badge 4 ; Vol = badge 5 ; Plongée et Siphon = badge 7 ; Cascade = badge 8. Les flags de quête ne sont pas des contrôles de possession des objets CS. Siphon utilise déjà directement sa condition de badge, sans Pokémon compatible.
+
+Les choix de tous les onglets Options et Settings doivent rester lisibles, sans chevauchement. Les dialogues d'éclosion utilisent leur propre cadre et palette ; le curseur Oui/Non de combat ne doit pas effacer les libellés.
+
+Les combats mystère sont une feature future hors V1, inspirée de Cynthia à Vaguelone dans N2/B2. Ils feront intervenir des Maîtres/personnages importants autres que Red ; leur contenu reste à définir.
 
 ### Récompenses de début de partie
 

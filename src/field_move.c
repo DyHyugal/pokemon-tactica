@@ -4,6 +4,7 @@
 #include "fldeff.h"
 #include "fldeff_misc.h"
 #include "party_menu.h"
+#include "pokemon.h"
 #include "constants/field_move.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
@@ -11,7 +12,7 @@
 static bool32 IsFieldMoveUnlocked_Cut(void)
 {
     if (IS_HNS)
-        return FlagGet(FLAG_BADGE02_GET);
+        return FlagGet(FLAG_BADGE02_GET) && FlagGet(FLAG_RECEIVED_HM_CUT);
     if (IS_FRLG)
         return FlagGet(FLAG_BADGE02_GET);
 
@@ -31,7 +32,7 @@ static bool32 IsFieldMoveUnlocked_Flash(void)
 static bool32 IsFieldMoveUnlocked_RockSmash(void)
 {
     if (IS_HNS)
-        return FlagGet(FLAG_BADGE01_GET);
+        return FlagGet(FLAG_BADGE01_GET) && FlagGet(FLAG_RECEIVED_HM_ROCK_SMASH);
     if (IS_FRLG)
         return FlagGet(FLAG_BADGE06_GET);
 
@@ -258,3 +259,29 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
     },
 #endif
 };
+
+// Story gates are the only gameplay requirement for Tactica traversal.
+// The selected party member is just the animation actor, not a learnset gate.
+bool32 IsTacticaTraversalMove(enum FieldMove fieldMove)
+{
+    return IS_HNS && fieldMove <= FIELD_MOVE_WATERFALL;
+}
+
+u32 GetTacticaTraversalUser(enum FieldMove fieldMove)
+{
+    if (!IsTacticaTraversalMove(fieldMove) || !IsFieldMoveUnlocked(fieldMove))
+        return PARTY_SIZE;
+    for (u32 i = 0; i < PARTY_SIZE; i++)
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) != SPECIES_NONE
+         && !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+            return i;
+    return PARTY_SIZE;
+}
+
+u32 GetTacticaTraversalUserForMove(enum Move move)
+{
+    for (u32 i = 0; i < FIELD_MOVES_COUNT; i++)
+        if (IsTacticaTraversalMove(i) && FieldMove_GetMoveId(i) == move)
+            return GetTacticaTraversalUser(i);
+    return PARTY_SIZE;
+}

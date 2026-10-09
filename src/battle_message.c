@@ -1711,7 +1711,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal[] =
     [B_WIN_YESNO] = {
         .fillValue = BATTLE_SECONDARY_FILL,
         .fontId = FONT_NORMAL,
-        .x = 0,
+        .x = IS_HNS ? 8 : 0,
         .y = 1,
         .speed = 0,
         .color.foreground = BATTLE_SECONDARY_FOREGROUND,
@@ -1984,7 +1984,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_KantoTutorial[] =
     [B_WIN_YESNO] = {
         .fillValue = BATTLE_SECONDARY_FILL,
         .fontId = FONT_NORMAL,
-        .x = 0,
+        .x = IS_HNS ? 8 : 0,
         .y = 1,
         .speed = 0,
         .color.foreground = BATTLE_SECONDARY_FOREGROUND,
@@ -2270,7 +2270,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Arena[] =
     [B_WIN_YESNO] = {
         .fillValue = BATTLE_SECONDARY_FILL,
         .fontId = FONT_NORMAL,
-        .x = 0,
+        .x = IS_HNS ? 8 : 0,
         .y = 1,
         .speed = 0,
         .color.foreground = BATTLE_SECONDARY_FOREGROUND,
@@ -4135,4 +4135,15 @@ u8 GetCurrentPpToMaxPpState(u8 currentPp, u8 maxPp)
     }
 
     return 0;
+}
+
+void BattleDrawYesNoWindowCursor(u8 position, bool32 visible)
+{
+    const struct BattleWindowText *info = &sBattleTextOnWindowsInfo[gBattleScripting.windowsType][B_WIN_YESNO];
+    u8 colors[] = {info->color.background, info->color.foreground, info->color.shadow};
+    FillWindowPixelRect(B_WIN_YESNO, info->fillValue, 0, position * 16, 8, 16);
+    if (visible)
+        AddTextPrinterParameterized4(B_WIN_YESNO, FONT_NORMAL, 0, 1 + position * 16,
+            0, 0, colors, TEXT_SKIP_DRAW, gText_SelectorArrow3);
+    CopyWindowToVram(B_WIN_YESNO, COPYWIN_GFX);
 }

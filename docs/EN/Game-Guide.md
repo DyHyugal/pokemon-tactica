@@ -2,6 +2,8 @@
 
 # Guide — concise walkthrough
 
+Traversal HMs become usable once their story requirements are unlocked. You do not need to teach the move, carry the HM item or keep a compatible species in your party. Interact directly with trees, rocks or water; Fly and Flash remain available from the party menu. The existing badge and quest unlocks still apply, including the Cut quest and the scripted Rock Smash reward. Whirlpool requires the seventh badge.
+
 This page is mainly a **where-do-I-go-next walkthrough**. It follows the main Heart & Soul story flow, adapted to Pokémon Tactica. Optional detours, minor items and wild encounters are intentionally left out: use **Pokédex**, **Locations** and **Bosses & Tips** to build and prepare your team.
 
 > Pokémon, levels, bosses and encounters come from Tactica. The Heart & Soul walkthrough is used only as a reference for story order and locations.

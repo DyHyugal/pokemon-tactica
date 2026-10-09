@@ -14,6 +14,10 @@ struct FieldMoveInfo
 
 extern const struct FieldMoveInfo gFieldMoveInfo[];
 
+bool32 IsTacticaTraversalMove(enum FieldMove fieldMove);
+u32 GetTacticaTraversalUser(enum FieldMove fieldMove);
+u32 GetTacticaTraversalUserForMove(enum Move move);
+
 static inline bool32 SetUpFieldMove(enum FieldMove fieldMove)
 {
     return gFieldMoveInfo[fieldMove].fieldMoveFunc();

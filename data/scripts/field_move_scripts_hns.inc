@@ -3,7 +3,7 @@ EventScript_CutTree::
 	lockall
 	goto_if_unset FLAG_RECEIVED_HM_CUT, EventScript_CheckTreeCantCut
 	goto_if_unset FLAG_BADGE02_GET, EventScript_CheckTreeCantCut
-	checkpartymove MOVE_CUT
+	checkfieldmove FIELD_MOVE_CUT, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CheckTreeCantCut
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
@@ -66,7 +66,7 @@ EventScript_UseRockSmash::
 @ Interact with smashable rock
 EventScript_RockSmash::
 	lockall
-	checkpartymove MOVE_ROCK_SMASH
+	checkfieldmove FIELD_MOVE_ROCK_SMASH, TRUE
 	goto_if_unset FLAG_BADGE01_GET, EventScript_CantSmashRock
 	goto_if_unset FLAG_RECEIVED_HM_ROCK_SMASH, EventScript_CantSmashRock
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSmashRock
@@ -324,10 +324,8 @@ Text_CantHeadbutt:
 EventScript_StrengthBoulder::
 	lockall
 	goto_if_unset FLAG_BADGE03_GET, EventScript_CantStrength
-	checkitem ITEM_HM_STRENGTH
-	goto_if_eq VAR_RESULT, FALSE, EventScript_CantStrength
 	goto_if_set FLAG_SYS_USE_STRENGTH, EventScript_CheckActivatedBoulder
-	checkpartymove MOVE_STRENGTH
+	checkfieldmove FIELD_MOVE_STRENGTH, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantStrength
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
