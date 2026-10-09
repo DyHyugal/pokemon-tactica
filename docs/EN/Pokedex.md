@@ -16,12 +16,12 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Alakazam | 1 |
 | Alomomola | 1 |
 | Amaura | 1 |
-| Amoonguss | 2 |
+| Amoonguss | 1 |
 | Ampharos | 1 |
 | Annihilape | 7 |
 | Anorith | 1 |
 | Applin | 1 |
-| Araquanid | 10 |
+| Araquanid | 11 |
 | Arboliva | 1 |
 | Archaludon | 7 |
 | Archen | 0 |
@@ -30,9 +30,9 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Aron | 2 |
 | Arrokuda | 1 |
 | Audino | 1 |
-| Avalugg | 2 |
+| Avalugg | 3 |
 | Axew | 1 |
-| Azumarill | 13 |
+| Azumarill | 12 |
 | Azurill | 1 |
 | Bagon | 0 |
 | Baltoy | 3 |
@@ -42,9 +42,9 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Barraskewda | 17 |
 | Basculegion (Male) | 21 |
 | Basculin (Red-Striped Form) | 9 |
-| Baxcalibur | 10 |
+| Baxcalibur | 9 |
 | Beartic | 3 |
-| Beautifly | 2 |
+| Beautifly | 4 |
 | Beedrill | 2 |
 | Beldum | 0 |
 | Bellibolt | 3 |
@@ -52,12 +52,12 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Bellsprout | 2 |
 | Bergmite | 1 |
 | Bewear | 4 |
-| Bidoof | 1 |
+| Bidoof | 0 |
 | Binacle | 1 |
 | Bisharp | 3 |
 | Blacephalon | 1 |
 | Blastoise | 1 |
-| Blaziken | 1 |
+| Blaziken | 2 |
 | Blipbug | 0 |
 | Blissey | 5 |
 | Blitzle | 1 |
@@ -70,29 +70,29 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Bramblin | 1 |
 | Braviary | 5 |
 | Breloom | 1 |
-| Bronzor | 1 |
+| Bronzor | 0 |
 | Brute Bonnet | 1 |
 | Bruxish | 11 |
 | Budew | 1 |
 | Buizel | 0 |
 | Bulbasaur | 0 |
 | Buneary | 1 |
-| Bunnelby | 1 |
-| Burmy (Plant Cloak) | 1 |
-| Butterfree | 2 |
+| Bunnelby | 0 |
+| Burmy (Plant Cloak) | 0 |
+| Butterfree | 4 |
 | Buzzwole | 1 |
-| Cacnea | 1 |
+| Cacnea | 0 |
 | Camerupt | 2 |
 | Capsakid | 1 |
 | Carbink | 1 |
-| Carkol | 0 |
+| Carkol | 1 |
 | Carnivine | 1 |
 | Carvanha | 1 |
-| Cascoon | 0 |
+| Cascoon | 2 |
 | Castform | 1 |
 | Caterpie | 1 |
 | Celesteela | 1 |
-| Centiskorch | 5 |
+| Centiskorch | 6 |
 | Cetitan | 3 |
 | Cetoddle | 1 |
 | Chandelure | 4 |
@@ -102,18 +102,18 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Charjabug | 1 |
 | Charmander | 0 |
 | Chatot | 1 |
-| Cherubi | 1 |
-| Chesnaught | 1 |
+| Cherubi | 0 |
+| Chesnaught | 2 |
 | Chespin | 0 |
 | Chewtle | 0 |
-| Chikorita | 1 |
+| Chikorita | 0 |
 | Chimchar | 0 |
 | Chinchou | 4 |
 | Chingling | 1 |
 | Cinderace | 2 |
 | Clamperl | 1 |
 | Clauncher | 2 |
-| Clawitzer | 20 |
+| Clawitzer | 21 |
 | Clefable | 1 |
 | Clefairy | 1 |
 | Cleffa | 1 |
@@ -131,7 +131,7 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Crabrawler | 1 |
 | Cramorant | 13 |
 | Cranidos | 1 |
-| Crawdaunt | 13 |
+| Crawdaunt | 14 |
 | Croagunk | 1 |
 | Crobat | 1 |
 | Crustle | 2 |
@@ -144,18 +144,18 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Cyndaquil | 0 |
 | Darmanitan (Standard Mode) | 1 |
 | Darumaka | 0 |
-| Decidueye | 1 |
+| Decidueye | 2 |
 | Dedenne | 1 |
-| Deerling (Spring Form) | 1 |
+| Deerling (Spring Form) | 0 |
 | Deino | 1 |
 | Delibird | 1 |
-| Delphox | 1 |
+| Delphox | 2 |
 | Dewpider | 1 |
 | Dhelmise | 1 |
 | Diglett | 1 |
 | Dipplin | 4 |
 | Ditto | 1 |
-| Doduo | 1 |
+| Doduo | 0 |
 | Dondozo | 13 |
 | Donphan | 4 |
 | Dracovish | 15 |
@@ -167,13 +167,13 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Drampa | 1 |
 | Drapion | 4 |
 | Dratini | 0 |
-| Drednaw | 23 |
+| Drednaw | 22 |
 | Dreepy | 1 |
-| Drifloon | 1 |
+| Drifloon | 0 |
 | Drilbur | 0 |
-| Drowzee | 1 |
+| Drowzee | 0 |
 | Druddigon | 1 |
-| Ducklett | 1 |
+| Ducklett | 0 |
 | Dugtrio | 1 |
 | Dunsparce | 1 |
 | Duraludon | 1 |
@@ -181,7 +181,7 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Dusclops | 2 |
 | Dusknoir | 4 |
 | Duskull | 4 |
-| Dustox | 2 |
+| Dustox | 4 |
 | Dwebble | 1 |
 | Eelektrik | 1 |
 | Eelektross | 3 |
@@ -196,10 +196,10 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Emboar | 1 |
 | Emolga | 1 |
 | Empoleon | 1 |
-| Espurr | 1 |
+| Espurr | 0 |
 | Excadrill | 4 |
 | Exeggcute | 1 |
-| Exploud | 1 |
+| Exploud | 2 |
 | Falinks | 1 |
 | Farfetch'd | 1 |
 | Feebas | 8 |
@@ -207,35 +207,35 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Feraligatr | 1 |
 | Ferroseed | 1 |
 | Ferrothorn | 4 |
-| Fidough | 1 |
+| Fidough | 0 |
 | Finizen | 1 |
 | Finneon | 1 |
-| Flabébé (Red Flower) | 1 |
+| Flabébé (Red Flower) | 0 |
 | Flamigo | 1 |
 | Fletchling | 1 |
-| Flittle | 1 |
+| Flittle | 0 |
 | Floatzel | 21 |
-| Floette (Red Flower) | 1 |
-| Florges (Red Flower) | 5 |
+| Floette (Red Flower) | 0 |
+| Florges (Red Flower) | 0 |
 | Flutter Mane | 1 |
 | Flygon | 1 |
 | Fomantis | 1 |
-| Foongus | 1 |
+| Foongus | 2 |
 | Forretress | 1 |
 | Frigibax | 0 |
-| Frillish | 1 |
+| Frillish | 0 |
 | Froakie | 0 |
 | Froslass | 3 |
 | Frosmoth | 2 |
 | Fuecoco | 0 |
-| Furfrou (Natural Form) | 1 |
+| Furfrou (Natural Form) | 0 |
 | Gallade | 5 |
 | Galvantula | 2 |
 | Garchomp | 6 |
 | Gardevoir | 2 |
 | Garganacl | 4 |
 | Gastly | 2 |
-| Gastrodon (West Sea) | 16 |
+| Gastrodon (West Sea) | 17 |
 | Gengar | 2 |
 | Geodude | 6 |
 | Gholdengo | 4 |
@@ -244,7 +244,7 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Gimmighoul Chest | 1 |
 | Girafarig | 1 |
 | Glalie | 4 |
-| Glameow | 1 |
+| Glameow | 0 |
 | Gligar | 1 |
 | Glimmet | 1 |
 | Glimmora | 6 |
@@ -252,17 +252,17 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Gloom | 1 |
 | Goldeen | 9 |
 | Golem | 3 |
-| Golett | 1 |
+| Golett | 2 |
 | Golisopod | 18 |
-| Golurk | 2 |
+| Golurk | 1 |
 | Goodra | 7 |
-| Goomy | 1 |
-| Gossifleur | 1 |
+| Goomy | 0 |
+| Gossifleur | 0 |
 | Gothita | 0 |
 | Gothitelle | 3 |
 | Gouging Fire | 1 |
 | Gourgeist | 5 |
-| Granbull | 1 |
+| Granbull | 2 |
 | Grapploct | 2 |
 | Graveler | 0 |
 | Great Tusk | 1 |
@@ -273,7 +273,7 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Grookey | 0 |
 | Growlithe | 1 |
 | Grubbin | 0 |
-| Gulpin | 1 |
+| Gulpin | 0 |
 | Gurdurr | 3 |
 | Guzzlord | 1 |
 | Gyarados | 18 |
@@ -291,8 +291,8 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Hippowdon | 5 |
 | Honchkrow | 5 |
 | Honedge | 1 |
-| Hoothoot | 1 |
-| Hoppip | 1 |
+| Hoothoot | 0 |
+| Hoppip | 0 |
 | Horsea | 0 |
 | Houndoom | 3 |
 | Houndour | 0 |
@@ -303,9 +303,9 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Impidimp | 1 |
 | Incineroar | 2 |
 | Indeedee (Male) | 1 |
-| Infernape | 1 |
+| Infernape | 2 |
 | Inkay | 1 |
-| Inteleon | 1 |
+| Inteleon | 2 |
 | Iron Boulder | 1 |
 | Iron Bundle | 1 |
 | Iron Crown | 1 |
@@ -319,8 +319,8 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Jangmo-o | 0 |
 | Jigglypuff | 1 |
 | Joltik | 2 |
-| Jumpluff | 1 |
-| Jynx | 1 |
+| Jumpluff | 2 |
+| Jynx | 2 |
 | Kabuto | 2 |
 | Kangaskhan | 1 |
 | Karrablast | 1 |
@@ -330,31 +330,31 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Kingambit | 4 |
 | Kingdra | 1 |
 | Kirlia | 0 |
-| Klang | 3 |
+| Klang | 2 |
 | Klawf | 1 |
 | Kleavor | 4 |
 | Klefki | 1 |
-| Klink | 0 |
+| Klink | 1 |
 | Klinklang | 5 |
 | Koffing | 1 |
 | Komala | 1 |
 | Kommo-o | 5 |
 | Krabby | 1 |
-| Kricketot | 1 |
-| Krokorok | 1 |
-| Krookodile | 6 |
+| Kricketot | 0 |
+| Krokorok | 2 |
+| Krookodile | 7 |
 | Lairon | 1 |
 | Lampent | 1 |
 | Lanturn | 8 |
 | Lapras | 17 |
-| Larvesta | 1 |
+| Larvesta | 3 |
 | Larvitar | 0 |
 | Leavanny | 1 |
-| Lechonk | 1 |
-| Ledyba | 1 |
+| Lechonk | 0 |
+| Ledyba | 0 |
 | Lickitung | 1 |
 | Lileep | 1 |
-| Lillipup | 1 |
+| Lillipup | 0 |
 | Litleo | 0 |
 | Litten | 0 |
 | Litwick | 1 |
@@ -378,25 +378,25 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Magnemite | 0 |
 | Magneton | 1 |
 | Magnezone | 5 |
-| Makuhita | 1 |
+| Makuhita | 0 |
 | Mamoswine | 3 |
 | Mandibuzz | 6 |
-| Manectric | 1 |
+| Manectric | 2 |
 | Mankey | 2 |
 | Mantyke | 5 |
 | Maractus | 1 |
 | Mareanie | 1 |
 | Mareep | 1 |
 | Marill | 0 |
-| Maschiff | 1 |
-| Masquerain | 1 |
+| Maschiff | 0 |
+| Masquerain | 2 |
 | Maushold Three | 1 |
 | Mawile | 2 |
 | Meditite | 1 |
-| Meganium | 1 |
+| Meganium | 2 |
 | Meowscarada | 2 |
 | Meowth | 1 |
-| Metagross | 9 |
+| Metagross | 10 |
 | Mienfoo | 1 |
 | Mienshao | 4 |
 | Milcery | 1 |
@@ -405,7 +405,7 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Mime Jr. | 1 |
 | Mimikyu (Disguised Form) | 1 |
 | Minccino | 1 |
-| Minior (Meteor Form) | 1 |
+| Minior (Meteor Form) | 0 |
 | Minun | 1 |
 | Misdreavus | 1 |
 | Mismagius | 2 |
@@ -421,13 +421,13 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Murkrow | 2 |
 | Nacli | 1 |
 | Naclstack | 0 |
-| Natu | 1 |
-| Nickit | 1 |
+| Natu | 0 |
+| Nickit | 0 |
 | Nidoking | 5 |
 | Nidoqueen | 5 |
 | Nidoran♀ | 0 |
 | Nihilego | 1 |
-| Nincada | 2 |
+| Nincada | 1 |
 | Ninetales | 2 |
 | Noibat | 2 |
 | Noivern | 6 |
@@ -447,16 +447,16 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Overqwil | 6 |
 | Pachirisu | 1 |
 | Palafin (Zero Form) | 14 |
-| Palossand | 2 |
-| Palpitoad | 1 |
+| Palossand | 0 |
+| Palpitoad | 2 |
 | Pancham | 1 |
 | Pangoro | 5 |
 | Panpour | 1 |
 | Pansage | 1 |
 | Pansear | 1 |
-| Paras | 3 |
+| Paras | 2 |
 | Passimian | 1 |
-| Patrat | 1 |
+| Patrat | 0 |
 | Pawmi | 0 |
 | Pawmot | 1 |
 | Pawniard | 1 |
@@ -471,7 +471,7 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Pidove | 1 |
 | Pikachu | 1 |
 | Pikipek | 1 |
-| Piloswine | 3 |
+| Piloswine | 2 |
 | Pincurchin | 1 |
 | Pineco | 1 |
 | Pinsir | 3 |
@@ -485,7 +485,7 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Poltchageist | 1 |
 | Polteageist | 3 |
 | Ponyta | 1 |
-| Poochyena | 1 |
+| Poochyena | 0 |
 | Popplio | 0 |
 | Porygon | 1 |
 | Porygon-Z | 5 |
@@ -493,10 +493,10 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Primarina | 2 |
 | Psyduck | 2 |
 | Pumpkaboo | 1 |
-| Purrloin | 1 |
+| Purrloin | 0 |
 | Pyroar | 4 |
 | Pyukumuku | 1 |
-| Quaquaval | 1 |
+| Quaquaval | 2 |
 | Quaxly | 0 |
 | Qwilfish | 1 |
 | Rabsca | 1 |
@@ -508,7 +508,7 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Rellor | 2 |
 | Remoraid | 2 |
 | Reuniclus | 3 |
-| Revavroom | 4 |
+| Revavroom | 5 |
 | Rhyhorn | 1 |
 | Rhyperior | 5 |
 | Ribombee | 2 |
@@ -527,13 +527,13 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Sableye | 1 |
 | Salamence | 6 |
 | Salandit | 1 |
-| Salazzle | 2 |
+| Salazzle | 3 |
 | Samurott | 1 |
 | Sandaconda | 4 |
 | Sandile | 0 |
 | Sandshrew | 1 |
 | Sandy Shocks | 1 |
-| Sandygast | 1 |
+| Sandygast | 3 |
 | Sawk | 1 |
 | Scatterbug | 2 |
 | Sceptile | 1 |
@@ -546,14 +546,14 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Scyther | 3 |
 | Seadra | 11 |
 | Sealeo | 5 |
-| Seedot | 1 |
+| Seedot | 0 |
 | Seel | 2 |
 | Seismitoad | 31 |
 | Sentret | 2 |
-| Serperior | 1 |
+| Serperior | 2 |
 | Seviper | 1 |
 | Sewaddle | 0 |
-| Sharpedo | 13 |
+| Sharpedo | 14 |
 | Shellder | 2 |
 | Shellos (West Sea) | 1 |
 | Shelmet | 1 |
@@ -561,39 +561,39 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Shiftry | 1 |
 | Shiinotic | 1 |
 | Shinx | 0 |
-| Shroodle | 1 |
+| Shroodle | 0 |
 | Shroomish | 0 |
 | Shuckle | 1 |
 | Shuppet | 1 |
 | Sigilyph | 1 |
-| Silcoon | 0 |
+| Silcoon | 2 |
 | Silicobra | 0 |
 | Sinistcha | 5 |
 | Sinistea | 1 |
 | Sizzlipede | 1 |
 | Skarmory | 1 |
 | Skeledirge | 2 |
-| Skiddo | 1 |
+| Skiddo | 0 |
 | Skitty | 1 |
-| Skorupi | 1 |
+| Skorupi | 2 |
 | Skrelp | 3 |
-| Skwovet | 1 |
-| Slaking | 1 |
+| Skwovet | 0 |
+| Slaking | 2 |
 | Slakoth | 1 |
 | Slither Wing | 1 |
 | Slowpoke | 4 |
-| Slugma | 1 |
+| Slugma | 2 |
 | Smeargle | 1 |
 | Smoliv | 1 |
-| Smoochum | 1 |
+| Smoochum | 0 |
 | Sneasel | 2 |
 | Sneasler | 6 |
 | Snivy | 0 |
 | Snom | 1 |
 | Snorlax | 1 |
-| Snorunt | 0 |
+| Snorunt | 1 |
 | Snover | 0 |
-| Snubbull | 1 |
+| Snubbull | 0 |
 | Sobble | 0 |
 | Solosis | 0 |
 | Solrock | 1 |
@@ -604,7 +604,7 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Spinarak | 5 |
 | Spinda | 1 |
 | Spiritomb | 1 |
-| Spoink | 1 |
+| Spoink | 0 |
 | Sprigatito | 0 |
 | Spritzee | 1 |
 | Squawkabilly (Green Plumage) | 1 |
@@ -614,12 +614,12 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Staraptor | 2 |
 | Starly | 1 |
 | Staryu | 3 |
-| Steenee | 1 |
+| Steenee | 2 |
 | Stonjourner | 1 |
-| Stoutland | 1 |
+| Stoutland | 2 |
 | Stufful | 1 |
 | Stunfisk | 1 |
-| Stunky | 1 |
+| Stunky | 0 |
 | Sunkern | 1 |
 | Surskit | 5 |
 | Swablu | 1 |
@@ -664,20 +664,20 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Treecko | 0 |
 | Trevenant | 1 |
 | Tropius | 1 |
-| Trubbish | 1 |
+| Trubbish | 0 |
 | Tsareena | 5 |
 | Turtonator | 1 |
 | Turtwig | 0 |
 | Tympole | 4 |
-| Tynamo | 1 |
-| Typhlosion | 1 |
-| Tyranitar | 11 |
+| Tynamo | 2 |
+| Typhlosion | 2 |
+| Tyranitar | 10 |
 | Tyrogue | 2 |
 | Tyrunt | 1 |
 | Unfezant | 2 |
 | Unown | 1 |
 | Ursaluna | 6 |
-| Ursaring | 3 |
+| Ursaring | 4 |
 | Vanillish | 2 |
 | Vanillite | 0 |
 | Vanilluxe | 3 |
@@ -691,41 +691,41 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Vigoroth | 1 |
 | Vikavolt | 4 |
 | Vileplume | 2 |
-| Vivillon (Meadow Pattern) | 1 |
+| Vivillon (Meadow Pattern) | 0 |
 | Volbeat | 1 |
-| Volcarona | 5 |
+| Volcarona | 3 |
 | Voltorb | 1 |
 | Vullaby | 1 |
 | Vulpix | 1 |
 | Wailmer | 1 |
-| Wailord | 22 |
+| Wailord | 21 |
 | Walking Wake | 1 |
-| Walrein | 24 |
+| Walrein | 25 |
 | Wattrel | 0 |
 | Weavile | 4 |
 | Weedle | 1 |
 | Whiscash | 16 |
-| Whismur | 1 |
+| Whismur | 0 |
 | Wigglytuff | 1 |
 | Wiglett | 1 |
 | Wimpod | 2 |
 | Wingull | 2 |
 | Wishiwashi (Solo Form) | 1 |
 | Woobat | 1 |
-| Wooloo | 1 |
+| Wooloo | 0 |
 | Wooper | 16 |
 | Wugtrio | 9 |
-| Wurmple | 3 |
-| Wynaut | 1 |
+| Wurmple | 1 |
+| Wynaut | 0 |
 | Wyrdeer | 5 |
 | Xurkitree | 1 |
-| Yamask | 1 |
+| Yamask | 0 |
 | Yamper | 0 |
 | Yanma | 1 |
 | Yungoos | 1 |
 | Zangoose | 1 |
-| Zebstrika | 3 |
-| Zigzagoon | 1 |
-| Zoroark | 4 |
+| Zebstrika | 4 |
+| Zigzagoon | 0 |
+| Zoroark | 5 |
 | Zorua | 1 |
 | Zubat | 10 |

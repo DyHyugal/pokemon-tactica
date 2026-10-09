@@ -20,7 +20,7 @@ La cible unique est [EVOLUTIONS.md](EVOLUTIONS.md) :
 - mécanique impossible à reproduire proprement → Fil Liaison ;
 - aucun seuil `IF_MIN_LEVEL` ou objet de substitution maison sans décision owner explicite.
 
-Le runtime actuel est **à corriger** sur ce domaine ; un ancien test vert ne doit jamais être utilisé pour restaurer une règle HnS devenue obsolète.
+La migration runtime est terminée et le Pokédex est synchronisé. Les tests et validateurs interdisent de restaurer une règle HnS devenue obsolète.
 
 ## Réglages et entraînement
 

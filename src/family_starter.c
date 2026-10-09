@@ -1,5 +1,6 @@
 #include "global.h"
 #include "family_starter.h"
+#include "tactica_progression.h"
 #include "pokemon.h"
 #include "daycare.h"
 #include "pokemon_storage_system.h"
@@ -78,9 +79,6 @@ struct TacticaRivalMon
     u8 nature;
     bool8 isSavedStarter;
 };
-
-static const u8 sTacticaRivalPhysicalEvs[NUM_STATS] = {4, 252, 0, 0, 0, 252};
-static const u8 sTacticaRivalSpecialEvs[NUM_STATS] = {4, 0, 0, 252, 0, 252};
 
 #include "data/tactica_rival.h"
 #endif
@@ -722,32 +720,19 @@ bool32 FamilyStarter_ResolveRivalMon(u16 trainerId, u32 slot, struct TrainerMon 
     if (fight == 0 || slot >= PARTY_SIZE || category >= FAMILY_EEVEE || !IsMenuSpecies(savedStarter))
         return FALSE;
 
-    if (fight == 1)
-    {
-        mon->species = GetTacticaRivalSpeciesAtLevel(savedStarter, SPECIES_NONE, mon->lvl, FALSE);
-        mon->ability = GetTacticaRivalLegalAbility(mon->species, sTacticaRivalStarterAbilities[category]);
-        memset(mon->moves, MOVE_NONE, sizeof(mon->moves));
-        return TRUE;
-    }
-
     // No story fight occurs after Badge 1. Fight 2 is reached after Bugsy and
     // fight 3 after Whitney, so both use MID sets. Mega items remain locked
     // until fight 4, after the player has obtained Badge 4.
-    phase = fight < 4 ? TACTICA_RIVAL_MID : TACTICA_RIVAL_FINAL;
+    phase = fight == 1 ? TACTICA_RIVAL_EARLY : (fight < 4 ? TACTICA_RIVAL_MID : TACTICA_RIVAL_FINAL);
     source = &sTacticaRivalMons[category][slot];
-    if (source->isSavedStarter)
+    if (fight == 1)
     {
-        mon->species = GetTacticaRivalSpeciesAtLevel(savedStarter, SPECIES_NONE, mon->lvl, phase == TACTICA_RIVAL_FINAL);
-        mon->heldItem = phase == TACTICA_RIVAL_FINAL ? sTacticaRivalStarterItems[category] : ITEM_NONE;
-        mon->ability = GetTacticaRivalLegalAbility(mon->species, sTacticaRivalStarterAbilities[category]);
-        mon->nature = gSpeciesInfo[mon->species].baseAttack >= gSpeciesInfo[mon->species].baseSpAttack
-            ? NATURE_JOLLY : NATURE_TIMID;
-        mon->ev = GetTrainerDifficultyLevel(trainerId) == DIFFICULTY_HARD
-            ? (gSpeciesInfo[mon->species].baseAttack >= gSpeciesInfo[mon->species].baseSpAttack
-                ? sTacticaRivalPhysicalEvs : sTacticaRivalSpecialEvs)
-            : NULL;
-        memset(mon->moves, MOVE_NONE, sizeof(mon->moves));
-        return TRUE;
+        for (i = 0; i < PARTY_SIZE; i++)
+            if (sTacticaRivalMons[category][i].isSavedStarter)
+            {
+                source = &sTacticaRivalMons[category][i];
+                break;
+            }
     }
 
     mon->species = GetTacticaRivalSpeciesAtLevel(
@@ -759,9 +744,10 @@ bool32 FamilyStarter_ResolveRivalMon(u16 trainerId, u32 slot, struct TrainerMon 
     mon->heldItem = phase == TACTICA_RIVAL_FINAL ? source->finalItem : ITEM_NONE;
     mon->ability = GetTacticaRivalLegalAbility(mon->species, source->ability);
     mon->nature = source->nature;
-    mon->ev = GetTrainerDifficultyLevel(trainerId) == DIFFICULTY_HARD ? source->hardEvs : NULL;
-    for (i = 0; i < MAX_MON_MOVES; i++)
-        mon->moves[i] = source->moves[phase][i];
+    mon->ev = GetCurrentDifficultyLevel() == DIFFICULTY_HARD ? source->hardEvs : NULL;
+    if (GetCurrentDifficultyLevel() == DIFFICULTY_HARD)
+        mon->iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31);
+    AdaptTacticaTrainerMoves(mon->species, mon->lvl, source->moves[phase], mon->moves);
     return TRUE;
 #else
     return FALSE;

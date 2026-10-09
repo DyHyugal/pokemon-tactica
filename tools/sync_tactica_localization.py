@@ -10,7 +10,12 @@ import json
 import re
 import sys
 import unicodedata
+from functools import lru_cache
 from pathlib import Path
+from sync_tactica_special_encounters import species_constant
+from sync_tactica_species_evolutions import runtime_evolutions
+from validate_tactica_encounter_evolutions import legal_stage, level_evolutions
+level_evolutions = lru_cache(maxsize=1)(level_evolutions)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,7 +45,7 @@ POKEDEX_HTML_FILES = (
     (ROOT / "docs/EN/Pokedex.html", "en"),
 )
 
-HTML_STANDARD_ROW = re.compile(r'<tr data-kind="standard".*?</tr>', re.S)
+HTML_STANDARD_ROW = re.compile(r'<tr data-kind="(?:standard|headbutt|safari)".*?</tr>', re.S)
 HTML_CELL = re.compile(r"<td>.*?</td>", re.S)
 DEX_CARD = re.compile(r'<article class="card dex-card".*?</article>', re.S)
 DEX_CARD_NAME = re.compile(r"<strong>([^<]+)</strong>")
@@ -206,6 +211,60 @@ def format_range(min_level: int, max_level: int) -> str:
     return str(min_level) if min_level == max_level else f"{min_level}–{max_level}"
 
 
+@lru_cache(maxsize=1)
+def conditional_level_routes():
+    return runtime_evolutions()
+
+
+def possible_stages(constant: str, level: int, time: str = "Any", depth: int = 3) -> set[str]:
+    """Possible wild forms, preserving official conditions and player items."""
+    constant = legal_stage(constant, level, level_evolutions())
+    if depth == 0:
+        return {constant}
+    candidates = []
+    definite = False
+    genders = set()
+    pids = set()
+    for route in conditional_level_routes().get(constant, []):
+        if route["method"] != "EVO_LEVEL" or not route["param"].isdigit():
+            continue
+        if not 0 < int(route["param"]) <= level:
+            continue
+        conditions = route["conditions"]
+        if any(condition in {"IF_HOLD_ITEM", "IF_BAG_ITEM_COUNT"} for condition, _ in conditions):
+            continue
+        possible = True
+        uncertain = []
+        for condition, value in conditions:
+            if condition == "IF_REGION" and value in {"REGION_HISUI", "REGION_ALOLA"}:
+                possible = False
+            elif condition == "IF_NOT_REGION" and value in {"REGION_HISUI", "REGION_ALOLA"}:
+                continue
+            elif condition in {"IF_TIME", "IF_NOT_TIME"} and value == "TIME_NIGHT" and time != "Any":
+                matches = time == "Night"
+                if matches != (condition == "IF_TIME"):
+                    possible = False
+            else:
+                uncertain.append((condition, value))
+        if not possible:
+            continue
+        candidates.append(route["target"])
+        definite |= not uncertain
+        if len(uncertain) == 1:
+            condition, value = uncertain[0]
+            if condition == "IF_GENDER":
+                genders.add(value)
+            elif condition == "IF_PID_UPPER_MODULO_10_GT":
+                pids.update(range(int(value) + 1, 10))
+            elif condition == "IF_PID_UPPER_MODULO_10_LT":
+                pids.update(range(int(value)))
+    definite |= genders >= {"MON_MALE", "MON_FEMALE"} or len(pids) == 10
+    result = set() if definite else {constant}
+    for target in candidates:
+        result.update(possible_stages(target, level, time, depth - 1))
+    return result
+
+
 def species_text(
     table: dict,
     lang: str,
@@ -213,10 +272,20 @@ def species_text(
     species_meta: dict[str, dict],
     fr_species: dict[str, str],
 ) -> str:
-    return " · ".join(
-        f"{display_label(species, lang, display_maps, species_meta, fr_species)} {rate}%"
-        for species, rate in zip(table["species"], table["rates"])
-    )
+    slots = []
+    for constant, rate in zip(table["species"], table["rates"]):
+        stages = collections.OrderedDict()
+        for level in range(table["min_level"], table["max_level"] + 1):
+            for stage in sorted(possible_stages(constant, level, table.get("time", "Any"))):
+                stages.setdefault(stage, []).append(level)
+        labels = []
+        for stage, levels in stages.items():
+            label = display_label(stage, lang, display_maps, species_meta, fr_species)
+            if len(stages) > 1:
+                label += " " + format_range(min(levels), max(levels))
+            labels.append(label)
+        slots.append(" / ".join(labels) + f" {rate}%")
+    return " · ".join(slots)
 
 
 def update_markdown(
@@ -247,8 +316,8 @@ def search_aliases() -> list[tuple[str, str, str, str, str, str]]:
         ("en", ROOT / "docs/EN/Locations.html"),
     ):
         rows = list(HTML_STANDARD_ROW.finditer(path.read_text(encoding="utf-8")))
-        if len(rows) != 405:
-            raise ValueError(f"{path.relative_to(ROOT)}: expected 405 standard rows")
+        if len(rows) != 462:
+            raise ValueError(f"{path.relative_to(ROOT)}: expected 462 encounter rows")
         pages[lang] = [
             [html_cell_text(cell.group(0)) for cell in HTML_CELL.finditer(row.group(0))][:3]
             for row in rows
@@ -259,7 +328,7 @@ def search_aliases() -> list[tuple[str, str, str, str, str, str]]:
             pages["fr"][index][1], pages["en"][index][1],
             pages["fr"][index][2], pages["en"][index][2],
         )
-        for index in range(405)
+        for index in range(462)
     ]
 
 
@@ -316,18 +385,6 @@ def update_html(
     return "".join(parts)
 
 
-def special_display_counts(lang: str) -> collections.Counter[str]:
-    path = ROOT / ("wiki/FR/Localisations.md" if lang == "fr" else "wiki/EN/Locations.md")
-    _, lines, rows = markdown_data_rows(path.read_text(encoding="utf-8"))
-    counts: collections.Counter[str] = collections.Counter()
-    for row_index in rows[405:]:
-        cells = lines[row_index].split("|")
-        for part in cells[5].split("·"):
-            name = re.sub(r"\s+\d+%$", "", part.strip())
-            counts[name] += 1
-    return counts
-
-
 def encounter_counts(
     standard: list[dict],
     lang: str,
@@ -335,9 +392,17 @@ def encounter_counts(
     species_meta: dict[str, dict],
     fr_species: dict[str, str],
 ) -> collections.Counter[str]:
-    counts = special_display_counts(lang)
+    counts = collections.Counter()
     for table in standard:
-        for constant in table["species"]:
+        # Count a table once per actual species, including ranges that cross
+        # a level evolution. Do not double-count duplicate slots.
+        species = {
+            stage
+            for constant in table["species"]
+            for level in range(table["min_level"], table["max_level"] + 1)
+            for stage in possible_stages(constant, level, table.get("time", "Any"))
+        }
+        for constant in species:
             counts[display_label(constant, lang, display_maps, species_meta, fr_species)] += 1
     return counts
 
@@ -350,8 +415,7 @@ def update_pokedex_markdown(text: str, counts: collections.Counter[str]) -> str:
         if not match or match.group(1) == "Pokémon":
             continue
         name = match.group(1)
-        if name in counts:
-            lines[index] = f"| {name} | {counts[name]} |"
+        lines[index] = f"| {name} | {counts[name]} |"
     return newline.join(lines)
 
 
@@ -364,8 +428,6 @@ def update_pokedex_html(text: str, counts: collections.Counter[str]) -> str:
         if not name_match:
             continue
         name = html.unescape(name_match.group(1))
-        if name not in counts:
-            continue
         replacement = DEX_CARD_COUNT.sub(
             f"<small>{counts[name]} {'table' if counts[name] == 1 else 'tables'}</small>",
             card,
@@ -383,8 +445,8 @@ def main() -> int:
     parser.add_argument("--check", action="store_true", help="fail instead of updating stale files")
     args = parser.parse_args()
 
-    standard = load_standard()
-    load_special()
+    standard = load_standard() + load_special()
+    standard = [dict(table, species=[species_constant(s) for s in table["species"]]) for table in standard]
     species_meta = load_species_metadata()
     fr_species = load_fr_species()
     display_maps = {

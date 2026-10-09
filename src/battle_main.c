@@ -1,4 +1,5 @@
 #include "global.h"
+#include "tactica_progression.h"
 #include "native_speed.h"
 #include "family_starter.h"
 #include "battle.h"
@@ -2228,10 +2229,13 @@ void ApplyFamilyRocketPartyLevel(struct Pokemon *party, u8 count, u16 trainerNum
 
     for (i = 0; i < count; i++)
     {
+        level = GetFamilyRocketTrainerMonLevel(trainerNum, i, count);
         u16 species = GetMonData(&party[i], MON_DATA_SPECIES);
         u16 legalSpecies = GetFamilyRocketLegalSpecies(species, level);
         u16 ability = GetMonAbility(&party[i]);
         u32 abilityNum;
+        enum Move preferred[MAX_MON_MOVES];
+        enum Move moves[MAX_MON_MOVES];
 
         u32 exp = gExperienceTables[gSpeciesInfo[legalSpecies].growthRate][level];
 
@@ -2245,6 +2249,11 @@ void ApplyFamilyRocketPartyLevel(struct Pokemon *party, u8 count, u16 trainerNum
         if (abilityNum == NUM_ABILITY_SLOTS)
             abilityNum = 0;
         SetMonData(&party[i], MON_DATA_ABILITY_NUM, &abilityNum);
+        for (u32 j = 0; j < MAX_MON_MOVES; j++)
+            preferred[j] = GetMonData(&party[i], MON_DATA_MOVE1 + j);
+        AdaptTacticaTrainerMoves(legalSpecies, level, preferred, moves);
+        for (u32 j = 0; j < MAX_MON_MOVES; j++)
+            SetMonMoveSlot(&party[i], moves[j], j);
         CalculateMonStats(&party[i]);
     }
 #endif

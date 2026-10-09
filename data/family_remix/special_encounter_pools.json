@@ -35,8 +35,8 @@
       ],
       "species": [
         "Pineco",
-        "Nincada",
-        "Paras",
+        "Ninjask",
+        "Parasect",
         "Heracross"
       ],
       "curated": true,
@@ -131,7 +131,7 @@
       ],
       "species": [
         "Beedrill",
-        "Deerling (Spring Form)",
+        "Sawsbuck Spring",
         "Dustox",
         "Wigglytuff"
       ],
@@ -156,7 +156,7 @@
       "species": [
         "Beautifly",
         "Butterfree",
-        "Ledyba",
+        "Ledian",
         "Yanma"
       ],
       "curated": true,
@@ -179,7 +179,7 @@
       ],
       "species": [
         "Combee",
-        "Hoppip",
+        "Jumpluff",
         "Igglybuff",
         "Tropius"
       ],
@@ -227,7 +227,7 @@
       ],
       "species": [
         "Burmy (Plant Cloak)",
-        "Kricketot",
+        "Kricketune",
         "Shelmet",
         "Maractus"
       ],
@@ -251,7 +251,7 @@
       ],
       "species": [
         "Dedenne",
-        "Natu",
+        "Xatu",
         "Woobat",
         "Girafarig"
       ],
@@ -274,8 +274,8 @@
         10
       ],
       "species": [
-        "Fidough",
-        "Snubbull",
+        "Dachsbun",
+        "Granbull",
         "Spritzee",
         "Swirlix"
       ],
@@ -322,9 +322,9 @@
         10
       ],
       "species": [
-        "Drowzee",
+        "Hypno",
         "Munna",
-        "Spoink",
+        "Grumpig",
         "Elgyem"
       ],
       "curated": true,
@@ -346,9 +346,9 @@
         10
       ],
       "species": [
-        "Lillipup",
-        "Wooloo",
-        "Wynaut",
+        "Stoutland",
+        "Dubwool",
+        "Wobbuffet",
         "Chingling"
       ],
       "curated": true,
@@ -371,7 +371,7 @@
       ],
       "species": [
         "Chatot",
-        "Doduo",
+        "Dodrio",
         "Farfetch'd",
         "Stunfisk"
       ],
@@ -396,7 +396,7 @@
       "species": [
         "Emolga",
         "Furfrou (Natural Form)",
-        "Hoothoot",
+        "Noctowl",
         "Komala"
       ],
       "curated": true,
@@ -466,9 +466,9 @@
         10
       ],
       "species": [
-        "Glameow",
+        "Purugly",
         "Minccino",
-        "Skwovet",
+        "Greedent",
         "Buneary"
       ],
       "curated": true,
@@ -514,9 +514,9 @@
         10
       ],
       "species": [
-        "Ducklett",
+        "Swanna",
         "Panpour",
-        "Skiddo",
+        "Gogoat",
         "Carnivine"
       ],
       "curated": true,
@@ -538,10 +538,10 @@
         10
       ],
       "species": [
-        "Chikorita",
+        "Meganium",
         "Pansage",
-        "Shroodle",
-        "Cacnea"
+        "Grafaiai",
+        "Cacturne"
       ],
       "curated": true,
       "notes": "Safari sector pool C; dedicated Safari rotation/set. 30/30/30/10."
@@ -562,10 +562,10 @@
         10
       ],
       "species": [
-        "Gossifleur",
-        "Seedot",
+        "Eldegoss",
+        "Nuzleaf",
         "Sunkern",
-        "Cherubi"
+        "Cherrim Overcast"
       ],
       "curated": true,
       "notes": "Safari sector pool D; dedicated Safari rotation/set. 30/30/30/10."
@@ -658,10 +658,10 @@
         10
       ],
       "species": [
-        "Flittle",
-        "Patrat",
+        "Espathra",
+        "Watchog",
         "Skitty",
-        "Bronzor"
+        "Bronzong"
       ],
       "curated": true,
       "notes": "Safari sector pool C; dedicated Safari rotation/set. 30/30/30/10."
@@ -682,7 +682,7 @@
         10
       ],
       "species": [
-        "Bidoof",
+        "Bibarel",
         "Smeargle",
         "Yungoos",
         "Lechonk"
@@ -706,10 +706,10 @@
         10
       ],
       "species": [
-        "Bunnelby",
+        "Diggersby",
         "Happiny",
-        "Whismur",
-        "Zigzagoon"
+        "Exploud",
+        "Linoone"
       ],
       "curated": true,
       "notes": "Safari sector pool E; dedicated Safari rotation/set. 30/30/30/10."
@@ -731,9 +731,9 @@
       ],
       "species": [
         "Delibird",
-        "Frillish",
-        "Smoochum",
-        "Maschiff"
+        "Jellicent",
+        "Jynx",
+        "Mabosstiff"
       ],
       "curated": true,
       "notes": "Safari sector pool A; dedicated Safari rotation/set. 30/30/30/10."
@@ -755,8 +755,8 @@
       ],
       "species": [
         "Bramblin",
-        "Nickit",
-        "Purrloin",
+        "Thievul",
+        "Liepard",
         "Inkay"
       ],
       "curated": true,
@@ -779,9 +779,9 @@
       ],
       "species": [
         "Greavard",
-        "Poochyena",
-        "Yamask",
-        "Drifloon"
+        "Mightyena",
+        "Cofagrigus",
+        "Drifblim"
       ],
       "curated": true,
       "notes": "Safari sector pool C; dedicated Safari rotation/set. 30/30/30/10."
@@ -804,7 +804,7 @@
       "species": [
         "Pichu",
         "Poipole",
-        "Stunky",
+        "Skuntank",
         "Seviper"
       ],
       "curated": true,
@@ -826,9 +826,9 @@
         10
       ],
       "species": [
-        "Gulpin",
-        "Makuhita",
-        "Trubbish",
+        "Swalot",
+        "Hariyama",
+        "Garbodor",
         "Falinks"
       ],
       "curated": true,

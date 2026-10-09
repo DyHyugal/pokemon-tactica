@@ -1,26 +1,26 @@
 #!/usr/bin/env python3
-"""Reject wild level evolutions that are overdue at the encounter level."""
+"""Validate deterministic level stages in all standard, Headbutt and Safari pools."""
 
 from __future__ import annotations
-
-import json
 import argparse
+import json
 import re
 import sys
 from pathlib import Path
-
+from generate_tactica_rival import constants, normalize
 
 ROOT = Path(__file__).resolve().parents[1]
-SPECIES_FILES = ROOT.glob("src/data/pokemon/species_info/*_families.h")
 SPECIES_START = re.compile(r"^\s*\[(SPECIES_[A-Z0-9_]+)\]\s*=")
-LEVEL_EVOLUTION = re.compile(r"\{EVO_LEVEL,\s*(\d+),\s*(SPECIES_[A-Z0-9_]+)\}")
+LEVEL_EVOLUTION = re.compile(
+    r"\{EVO_LEVEL,\s*(\d+),\s*(SPECIES_[A-Z0-9_]+)(?:,\s*CONDITIONS\(\{IF_NOT_REGION,\s*REGION_HISUI\}\))?\}"
+)
 
 
-def level_evolutions() -> dict[str, list[tuple[int, str]]]:
-    result: dict[str, list[tuple[int, str]]] = {}
-    for path in SPECIES_FILES:
+def level_evolutions():
+    result = {}
+    for path in ROOT.glob("src/data/pokemon/species_info/*_families.h"):
         species = None
-        for line in path.read_text(encoding="utf-8").splitlines():
+        for line in path.read_text().splitlines():
             start = SPECIES_START.match(line)
             if start:
                 species = start.group(1)
@@ -28,44 +28,93 @@ def level_evolutions() -> dict[str, list[tuple[int, str]]]:
                 continue
             for level, target in LEVEL_EVOLUTION.findall(line):
                 if int(level) > 0:
-                    result.setdefault(species, []).append((int(level), target))
+                    route = (int(level), target)
+                    if route not in result.setdefault(species, []):
+                        result[species].append(route)
     return result
 
 
-def main() -> int:
+def legal_stage(species, level, evolutions):
+    parents = {}
+    for source, routes in evolutions.items():
+        for threshold, target in routes:
+            parents.setdefault(target, []).append((threshold, source))
+    for _ in range(3):
+        incoming = parents.get(species, [])
+        if len(incoming) != 1 or level >= incoming[0][0]:
+            break
+        species = incoming[0][1]
+    for _ in range(3):
+        routes = [
+            (threshold, target)
+            for threshold, target in evolutions.get(species, [])
+            if threshold <= level
+        ]
+        if len(routes) != 1:
+            break
+        species = routes[0][1]
+    return species
+
+
+def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--fix", action="store_true", help="replace unambiguous overdue level evolutions")
+    parser.add_argument(
+        "--fix",
+        action="store_true",
+        help="normalize stages at the minimum level; runtime handles thresholds inside a range",
+    )
     args = parser.parse_args()
     evolutions = level_evolutions()
-    spec_path = ROOT / "data/spec/encounters_standard.json"
-    document = json.loads(spec_path.read_text(encoding="utf-8"))
-    encounters = document["tables"]
-    errors: list[str] = []
-    changed = 0
-    for table in encounters:
-        for index, original_species in enumerate(table["species"]):
-            species = original_species
-            overdue = [(level, target) for level, target in evolutions.get(species, []) if table["min_level"] >= level]
-            while args.fix and len(overdue) == 1:
-                species = overdue[0][1]
-                overdue = [(level, target) for level, target in evolutions.get(species, []) if table["min_level"] >= level]
-            if species != original_species:
-                table["species"][index] = species
-                changed += 1
-            if overdue:
-                choices = ", ".join(f"{target} at {level}" for level, target in overdue)
-                errors.append(
-                    f"{table['map']} {table['method']} {table['time']}: {species} "
-                    f"at {table['min_level']}-{table['max_level']} should have evolved ({choices})"
+    ids = constants(ROOT / "include/constants/species.h", "SPECIES_")
+    errors = []
+    total = 0
+    for kind in ("standard", "special"):
+        path = ROOT / f"data/spec/encounters_{kind}.json"
+        doc = json.loads(path.read_text())
+        changed = 0
+        for table in doc["tables"]:
+            for i, authored in enumerate(table["species"]):
+                species = (
+                    authored
+                    if authored.startswith("SPECIES_")
+                    else ids.get(
+                        normalize(
+                            authored.replace(" (Spring Form)", "-Spring")
+                            .replace(" (Plant Cloak)", "-Plant")
+                            .replace(" (Natural Form)", "")
+                        )
+                    )
                 )
-    if args.fix and changed:
-        spec_path.write_text(json.dumps(document, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        print(f"Tactica encounters: evolved {changed} overdue wild slots")
+                if species is None:
+                    raise ValueError(f"unknown species {authored}")
+                expected = legal_stage(species, table["min_level"], evolutions)
+                if expected == species:
+                    continue
+                label = f"{kind}: {table['map']} {table['method']} {table.get('time',table.get('pool'))}"
+                if args.fix:
+                    table["species"][i] = (
+                        expected
+                        if kind == "standard"
+                        else expected.removeprefix("SPECIES_").replace("_", " ").title()
+                    )
+                    changed += 1
+                    print(
+                        f"{label}: {authored} -> {table['species'][i]} ({table['min_level']}-{table['max_level']})"
+                    )
+                else:
+                    errors.append(
+                        f"{label}: {authored} should be {expected} at {table['min_level']}-{table['max_level']}"
+                    )
+        if changed:
+            path.write_text(json.dumps(doc, ensure_ascii=False, indent=2) + "\n")
+        total += changed
     if errors:
         for error in errors:
-            print(f"ERROR: {error}", file=sys.stderr)
+            print("ERROR: " + error, file=sys.stderr)
         return 1
-    print("Tactica encounters: all deterministic level evolutions match wild levels")
+    print(
+        f"Tactica encounters: all 462 tables have legal deterministic level stages ({total} changed)"
+    )
     return 0
 
 

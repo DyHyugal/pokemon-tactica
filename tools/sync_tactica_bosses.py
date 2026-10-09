@@ -205,7 +205,9 @@ def synchronize(check: bool = False) -> None:
         raise ValueError("Boss mapping does not match the canonical fixed-team groups")
 
     text = PARTY_PATH.read_text(encoding="utf-8")
-    normal, remainder = text.split(HARD_MARKER, 1)
+    rival_marker = "/* ========== Tactica HARD rival parties ========== */"
+    boss_text, separator, rival = text.partition(rival_marker)
+    normal, remainder = boss_text.split(HARD_MARKER, 1)
     hard, rocket = remainder.split(ROCKET_MARKER, 1)
     for key, trainer_id in TRAINERS.items():
         canonical = groups[key]
@@ -225,6 +227,8 @@ def synchronize(check: bool = False) -> None:
                 normal = replace_rocket_phase(normal, trainer_id, stage, canonical, False)
                 rocket = replace_rocket_phase(rocket, trainer_id, stage, canonical, True)
     synchronized = (normal + HARD_MARKER + hard + ROCKET_MARKER + rocket).rstrip() + "\n"
+    if separator:
+        synchronized = synchronized.rstrip() + "\n\n" + separator + rival
     if check:
         if synchronized != text:
             raise SystemExit("Tactica boss parties are not synchronized; run tools/sync_tactica_bosses.py")

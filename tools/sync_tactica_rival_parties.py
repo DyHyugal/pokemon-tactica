@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = ROOT / "data/spec/rival.json"
 PARTIES = ROOT / "src/data/trainers_hns.party"
+HARD_MARKER = "/* ========== Tactica HARD rival parties ========== */"
 STARTERS = ("CHIKORITA", "CYNDAQUIL", "TOTODILE")
 SECTION_RE = re.compile(
     r"(?ms)^=== TRAINER_RIVAL_(CHIKORITA|CYNDAQUIL|TOTODILE)_([1-7])_HNS ===\n(.*?)(?=^===|\Z)"
@@ -31,6 +32,7 @@ def set_level(block: str, level: int) -> str:
 
 
 def render(source: str) -> str:
+    source = source.split(HARD_MARKER, 1)[0].rstrip() + "\n\n"
     canonical = json.loads(SPEC.read_text(encoding="utf-8"))["fight_rosters"]["runtime_fights"]
     levels = {
         1: canonical["1_cherrygrove_before_badge_1"]["levels"],
@@ -74,7 +76,21 @@ def render(source: str) -> str:
         body = replacements.get(key, match.group(3))
         return f"=== TRAINER_RIVAL_{key[0]}_{key[1]}_HNS ===\n{body}"
 
-    return SECTION_RE.sub(replace, source)
+    normal = SECTION_RE.sub(replace, source)
+    hard = []
+    for starter in STARTERS:
+        for fight in range(1, 8):
+            body = replacements[(starter, fight)]
+            header, party = body.split("\n\n", 1)
+            ai = "AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status"
+            if re.search(r"(?m)^AI:.*$", header):
+                header = re.sub(r"(?m)^AI:.*$", ai, header)
+            else:
+                header += "\n" + ai
+            header += "\nDifficulty: Hard"
+            party = re.sub(r"(?m)^IVs:.*$", "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe", party)
+            hard.append(f"=== TRAINER_RIVAL_{starter}_{fight}_HNS ===\n{header}\n\n{party}")
+    return normal.rstrip() + "\n\n" + HARD_MARKER + "\n\n" + "\n".join(hard).rstrip() + "\n"
 
 
 def main() -> None:

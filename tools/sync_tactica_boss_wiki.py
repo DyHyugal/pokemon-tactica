@@ -113,7 +113,7 @@ def rival_groups() -> OrderedDict[tuple[str, str, str], list[dict]]:
             species = member.get("mega_species") or member.get("target_final_species") or member["family"]
             if member["family"] == "saved starter":
                 species = member.get("mega_species") or member.get("target_final_species") or fixed[archetype]
-                moves = ["level-legal moves"]
+                moves = member["phase_moves"]["final"]
             else:
                 moves = member["phase_moves"]["final"]
             if member.get("final_item", "").endswith("ite") and member.get("final_item") != "Eviolite":
@@ -151,14 +151,14 @@ def labels(lang: str) -> dict:
             "title": "Boss & Conseils", "intro": "Cette page est générée depuis les équipes canoniques du jeu. Elle permet de préparer les combats sans imposer un déroulé tour par tour.",
             "johto": "Johto et première Ligue", "rocket": "Team Rocket", "rival": "Rival", "kanto": "Kanto", "rematch": "Deuxième Ligue",
             "pokemon": "Pokémon", "level": "Niv.", "item": "Objet", "ability": "Talent", "moves": "Capacités",
-            "dynamic": "Dynamique", "rocket_note": "Les Exécutifs passent de 3 à 4 puis 6 Pokémon. Leur niveau suit le dernier jalon Champion ou Rival pertinent, augmenté de 2 ; les Méga n'apparaissent qu'au combat FINAL.",
+            "dynamic": "Dynamique", "rocket_note": "Les Exécutifs passent de 3 à 4 puis 6 Pokémon. Leur équipe et leur ace suivent la plage de l'arène vaincue la plus avancée, augmentée de 2 sans cumul entre admins ; les Méga n'apparaissent qu'au combat FINAL.",
             "rival_note": "Le rival conserve un starter fixe selon son archétype. Le premier duel se joue à un Pokémon ; comme aucun combat n'a lieu après le badge 1, l'équipe passe directement à 4 Pokémon après Hector, puis à 6 entre Blanche et Mortimer. Sa Méga n'arrive qu'après le badge 4.",
         }
     return {
         "title": "Bosses & Tips", "intro": "This page is generated from the game's canonical teams. Use it to prepare for major battles without following a turn-by-turn script.",
         "johto": "Johto and first League", "rocket": "Team Rocket", "rival": "Rival", "kanto": "Kanto", "rematch": "Second League",
         "pokemon": "Pokémon", "level": "Lv.", "item": "Item", "ability": "Ability", "moves": "Moves",
-        "dynamic": "Dynamic", "rocket_note": "Executives grow from 3 to 4 and then 6 Pokémon. Their level is the latest relevant Gym or Rival milestone plus 2; Mega Evolution appears only in the FINAL battle.",
+        "dynamic": "Dynamic", "rocket_note": "Executives grow from 3 to 4 and then 6 Pokémon. Their team and ace follow the most advanced defeated Gym range plus 2, without stacking between executives; Mega Evolution appears only in the FINAL battle.",
         "rival_note": "The rival keeps a fixed starter for each archetype. The first duel uses one Pokémon; because no battle occurs after Badge 1, the team jumps directly to four after Bugsy, then six between Whitney and Morty. Mega Evolution begins only after Badge 4.",
     }
 

@@ -50,7 +50,7 @@ The Training NPC covers **EXP up to the cap, IVs, EVs, EV reset, nature, ability
 
 ### Mega Evolution
 
-Morty gives the **Mega Ring** after Badge 4 and his TM, so the player can Mega Evolve immediately throughout the section between Badges 4 and 5. Boss Mega users must start from a legal base form and legal base ability; the Mega ability is obtained through the transformation itself.
+Morty gives the **Mega Ring** after Badge 4, before his TM, so the player can Mega Evolve immediately throughout the section between Badges 4 and 5. Boss Mega users must start from a legal base form and legal base ability; the Mega ability is obtained through the transformation itself.
 
 ### Evolutions
 
@@ -132,7 +132,7 @@ Falkner uses 3 Pokémon, Bugsy 4 and Whitney 6. Later bosses use their canonical
 
 The rival keeps its category and starter, grows into fuller teams and uses the level profile of the **next mandatory boss**.
 
-Rocket Executives use the latest relevant Gym/rival milestone **+2**, without chaining the previous Rocket fight's level.
+Rocket Executives use the last defeated Gym’s level range **+2**, without chaining the previous Rocket fight's level.
 
 Mega Evolutions are part of selected boss fights. The player receives the Mega Ring after Morty and can use their own Megas immediately after Badge 4.
 

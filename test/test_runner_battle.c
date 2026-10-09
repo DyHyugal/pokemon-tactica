@@ -55,6 +55,9 @@ static inline bool32 RngSeedNotDefault(const rng_value_t *seed)
 
 const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINERS_COUNT] =
 {
+#if IS_HNS
+    #include "battle/tactica_story_trainers.h"
+#endif
     #include "battle/trainer_control.h"
 };
 

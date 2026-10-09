@@ -17,7 +17,10 @@ Les cannes/CS ouvrent une méthode mais ne modifient pas le scaling d’une zone
 Contraintes :
 
 - habitat cohérent ;
-- stade d’évolution cohérent au niveau rencontré ;
+- stade d’évolution cohérent au niveau réellement tiré, avec normalisation des formes trop évoluées et résolution des évolutions par niveau ;
+- les évolutions par objet/objet tenu/Fil Liaison restent à la charge du joueur ;
+- les autres conditions officielles (sexe, personnalité, région, horaire, météo) restent appliquées, sans inventer de seuil ;
+- les plages qui traversent un seuil d’évolution peuvent produire les deux stades dans le même slot ;
 - aucune famille starter avant badge 2 ;
 - pas de légendaire/fabuleux ajouté comme encounter standard ;
 - starters sauvages autorisés ensuite de façon rare et cohérente ;

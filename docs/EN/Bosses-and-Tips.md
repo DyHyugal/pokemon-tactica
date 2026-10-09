@@ -146,7 +146,7 @@ This page is generated from the game's canonical teams. Use it to prepare for ma
 
 ## Team Rocket
 
-Executives grow from 3 to 4 and then 6 Pokémon. Their level is the latest relevant Gym or Rival milestone plus 2; Mega Evolution appears only in the FINAL battle.
+Executives grow from 3 to 4 and then 6 Pokémon. Their team and ace follow the most advanced defeated Gym range plus 2, without stacking between executives; Mega Evolution appears only in the FINAL battle.
 
 ### Proton — Poison offense / hazards
 
@@ -201,7 +201,7 @@ The rival keeps a fixed starter for each archetype. The first duel uses one Pok�
 | Pokémon | Lv. | Item | Ability | Moves |
 |---|---:|---|---|---|
 | Torkoal | Dynamic | Heavy-Duty Boots | Drought | Stealth Rock · Rapid Spin · Lava Plume · Yawn |
-| Mega Blaziken | Dynamic | Blazikenite | Speed Boost | level-legal moves |
+| Mega Blaziken | Dynamic | Blazikenite | Speed Boost | Flare Blitz · Close Combat · Brave Bird · Protect |
 | Venusaur | Dynamic | Life Orb | Chlorophyll | Growth · Giga Drain · Sludge Bomb · Earth Power |
 | Ninetales | Dynamic | Heat Rock | Drought | Nasty Plot · Flamethrower · Solar Beam · Dark Pulse |
 | Lilligant-Hisui | Dynamic | Expert Belt | Chlorophyll | Victory Dance · Leaf Blade · Close Combat · Ice Spinner |
@@ -212,7 +212,7 @@ The rival keeps a fixed starter for each archetype. The first duel uses one Pok�
 | Pokémon | Lv. | Item | Ability | Moves |
 |---|---:|---|---|---|
 | Pelipper | Dynamic | Damp Rock | Drizzle | Hurricane · Surf · U-turn · Roost |
-| Mega Swampert | Dynamic | Swampertite | Swift Swim | level-legal moves |
+| Mega Swampert | Dynamic | Swampertite | Swift Swim | Waterfall · Earthquake · Ice Punch · Flip Turn |
 | Kingdra | Dynamic | Life Orb | Swift Swim | Surf · Dragon Pulse · Ice Beam · Hurricane |
 | Politoed | Dynamic | Leftovers | Drizzle | Scald · Encore · Perish Song · Ice Beam |
 | Barraskewda | Dynamic | Choice Band | Swift Swim | Liquidation · Close Combat · Psychic Fangs · Flip Turn |
@@ -223,7 +223,7 @@ The rival keeps a fixed starter for each archetype. The first duel uses one Pok�
 | Pokémon | Lv. | Item | Ability | Moves |
 |---|---:|---|---|---|
 | Rillaboom | Dynamic | Terrain Extender | Grassy Surge | Grassy Glide · Wood Hammer · Knock Off · U-turn |
-| Mega Sceptile | Dynamic | Sceptilite | Chlorophyll | level-legal moves |
+| Mega Sceptile | Dynamic | Sceptilite | Chlorophyll | Dragon Dance · Leaf Blade · Dragon Claw · Rock Slide |
 | Hawlucha | Dynamic | Grassy Seed | Unburden | Swords Dance · Acrobatics · Close Combat · Encore |
 | Ferrothorn | Dynamic | Leftovers | Iron Barbs | Stealth Rock · Leech Seed · Power Whip · Gyro Ball |
 | Gholdengo | Dynamic | Air Balloon | Good as Gold | Nasty Plot · Make It Rain · Shadow Ball · Recover |
@@ -234,7 +234,7 @@ The rival keeps a fixed starter for each archetype. The first duel uses one Pok�
 | Pokémon | Lv. | Item | Ability | Moves |
 |---|---:|---|---|---|
 | Pincurchin | Dynamic | Terrain Extender | Electric Surge | Spikes · Recover · Discharge · Memento |
-| Electivire | Dynamic | Expert Belt | Sheer Force | level-legal moves |
+| Electivire | Dynamic | Expert Belt | Sheer Force | Thunder Punch · Earthquake · Ice Punch · Fire Punch |
 | Raichu-Alola | Dynamic | Life Orb | Surge Surfer | Nasty Plot · Thunderbolt · Psychic · Surf |
 | Toxtricity | Dynamic | Throat Spray | Punk Rock | Electric Terrain · Overdrive · Boomburst · Sludge Bomb |
 | Iron Hands | Dynamic | Assault Vest | Quark Drive | Drain Punch · Wild Charge · Ice Punch · Volt Switch |
@@ -245,7 +245,7 @@ The rival keeps a fixed starter for each archetype. The first duel uses one Pok�
 | Pokémon | Lv. | Item | Ability | Moves |
 |---|---:|---|---|---|
 | Hippowdon | Dynamic | Smooth Rock | Sand Stream | Stealth Rock · Earthquake · Slack Off · Whirlwind |
-| Excadrill | Dynamic | Life Orb | Sand Rush | level-legal moves |
+| Excadrill | Dynamic | Life Orb | Sand Rush | Swords Dance · Earthquake · Iron Head · Rock Slide |
 | Mega Tyranitar | Dynamic | Tyranitarite | Sand Stream | Dragon Dance · Crunch · Rock Slide · Ice Punch |
 | Garchomp | Dynamic | Yache Berry | Rough Skin | Swords Dance · Earthquake · Dragon Claw · Iron Head |
 | Gliscor | Dynamic | Toxic Orb | Poison Heal | Earthquake · Knock Off · Toxic · Roost |
@@ -256,7 +256,7 @@ The rival keeps a fixed starter for each archetype. The first duel uses one Pok�
 | Pokémon | Lv. | Item | Ability | Moves |
 |---|---:|---|---|---|
 | Vanilluxe | Dynamic | Icy Rock | Snow Warning | Blizzard · Freeze-Dry · Flash Cannon · Taunt |
-| Darmanitan-Galar | Dynamic | Choice Band | Gorilla Tactics | level-legal moves |
+| Darmanitan-Galar | Dynamic | Choice Band | Gorilla Tactics | Icicle Crash · Flare Blitz · Earthquake · U Turn |
 | Aurorus | Dynamic | Wise Glasses | Snow Warning | Blizzard · Freeze-Dry · Earth Power · Thunderbolt |
 | Sandslash-Alola | Dynamic | Life Orb | Slush Rush | Swords Dance · Icicle Crash · Iron Head · Earthquake |
 | Arctovish | Dynamic | Light Clay | Slush Rush | Icicle Crash · Aurora Veil · Fishious Rend · Rock Slide |

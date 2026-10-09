@@ -146,7 +146,7 @@ Cette page est générée depuis les équipes canoniques du jeu. Elle permet de 
 
 ## Team Rocket
 
-Les Exécutifs passent de 3 à 4 puis 6 Pokémon. Leur niveau suit le dernier jalon Champion ou Rival pertinent, augmenté de 2 ; les Méga n'apparaissent qu'au combat FINAL.
+Les Exécutifs passent de 3 à 4 puis 6 Pokémon. Leur équipe et leur ace suivent la plage de l'arène vaincue la plus avancée, augmentée de 2 sans cumul entre admins ; les Méga n'apparaissent qu'au combat FINAL.
 
 ### Proton — Poison offense / hazards
 
@@ -201,7 +201,7 @@ Le rival conserve un starter fixe selon son archétype. Le premier duel se joue 
 | Pokémon | Niv. | Objet | Talent | Capacités |
 |---|---:|---|---|---|
 | Chartor | Dynamique | Grosses Bottes | Sécheresse | Piège de Roc · Tour Rapide · Ébullilave · Bâillement |
-| Méga-Braségali | Dynamique | Braségalite | Turbo | level-legal moves |
+| Méga-Braségali | Dynamique | Braségalite | Turbo | Boutefeu · Close Combat · Rapace · Abri |
 | Florizarre | Dynamique | Orbe Vie | Chlorophylle | Croissance · Giga-Sangsue · Bombe Beurk · Telluriforce |
 | Feunard | Dynamique | Roche Chaude | Sécheresse | Machination · Lance-Flammes · Lance-Soleil · Vibrobscur |
 | Lilligant-Hisui | Dynamique | Ceinture Pro | Chlorophylle | Danse Victoire · Lame Feuille · Close Combat · Cryo-Pirouette |
@@ -212,7 +212,7 @@ Le rival conserve un starter fixe selon son archétype. Le premier duel se joue 
 | Pokémon | Niv. | Objet | Talent | Capacités |
 |---|---:|---|---|---|
 | Bekipan | Dynamique | Roche Humide | Crachin | Vent Violent · Surf · Demi-Tour · Atterrissage |
-| Méga-Laggron | Dynamique | Laggronite | Glissade | level-legal moves |
+| Méga-Laggron | Dynamique | Laggronite | Glissade | Cascade · Séisme · Poing Glace · Eau Revoir |
 | Hyporoi | Dynamique | Orbe Vie | Glissade | Surf · Draco-Choc · Laser Glace · Vent Violent |
 | Tarpaud | Dynamique | Restes | Crachin | Ébullition · Encore · Requiem · Laser Glace |
 | Hastacuda | Dynamique | Bandeau Choix | Glissade | Aqua-Brèche · Close Combat · Psycho-Croc · Eau Revoir |
@@ -223,7 +223,7 @@ Le rival conserve un starter fixe selon son archétype. Le premier duel se joue 
 | Pokémon | Niv. | Objet | Talent | Capacités |
 |---|---:|---|---|---|
 | Gorythmic | Dynamique | Champ’Duit | Créa-Herbe | Gliss’Herbe · Martobois · Sabotage · Demi-Tour |
-| Méga-Jungko | Dynamique | Jungkite | Chlorophylle | level-legal moves |
+| Méga-Jungko | Dynamique | Jungkite | Chlorophylle | Danse Draco · Lame Feuille · Draco-Griffe · Éboulement |
 | Brutalibré | Dynamique | Graine Herbe | Délestage | Danse Lames · Acrobatie · Close Combat · Encore |
 | Noacier | Dynamique | Restes | Épine de Fer | Piège de Roc · Vampigraine · Mégafouet · Gyroballe |
 | Gromago | Dynamique | Ballon | Corps en Or | Machination · Ruée d'Or · Ball’Ombre · Soin |
@@ -234,7 +234,7 @@ Le rival conserve un starter fixe selon son archétype. Le premier duel se joue 
 | Pokémon | Niv. | Objet | Talent | Capacités |
 |---|---:|---|---|---|
 | Wattapik | Dynamique | Champ’Duit | Créa-Élec | Picots · Soin · Coup d’Jus · Souvenir |
-| Élekable | Dynamique | Ceinture Pro | Sans Limite | level-legal moves |
+| Élekable | Dynamique | Ceinture Pro | Sans Limite | Poing Éclair · Séisme · Poing Glace · Poing Feu |
 | Raichu-Alola | Dynamique | Orbe Vie | Surf Caudal | Machination · Tonnerre · Psyko · Surf |
 | Salarsen | Dynamique | Spray Gorge | Punk Rock | Champ Électrifié · Overdrive · Bang Sonique · Bombe Beurk |
 | Paume-de-Fer | Dynamique | Veste de Combat | Charge Quantique | Vampi-Poing · Éclair Fou · Poing Glace · Change Éclair |
@@ -245,7 +245,7 @@ Le rival conserve un starter fixe selon son archétype. Le premier duel se joue 
 | Pokémon | Niv. | Objet | Talent | Capacités |
 |---|---:|---|---|---|
 | Hippodocus | Dynamique | Roche Lisse | Sable Volant | Piège de Roc · Séisme · Paresse · Cyclone |
-| Minotaupe | Dynamique | Orbe Vie | Baigne Sable | level-legal moves |
+| Minotaupe | Dynamique | Orbe Vie | Baigne Sable | Danse Lames · Séisme · Tête de Fer · Éboulement |
 | Méga-Tyranocif | Dynamique | Tyranocivite | Sable Volant | Danse Draco · Mâchouille · Éboulement · Poing Glace |
 | Carchacrok | Dynamique | Baie Nanone | Peau Dure | Danse Lames · Séisme · Draco-Griffe · Tête de Fer |
 | Scorvol | Dynamique | Orbe Toxique | Soin Poison | Séisme · Sabotage · Toxik · Atterrissage |
@@ -256,7 +256,7 @@ Le rival conserve un starter fixe selon son archétype. Le premier duel se joue 
 | Pokémon | Niv. | Objet | Talent | Capacités |
 |---|---:|---|---|---|
 | Sorbouboul | Dynamique | Roche Glace | Alerte Neige | Blizzard · Lyophilisation · Luminocanon · Provoc |
-| Darumacho de Galar | Dynamique | Bandeau Choix | Entêtement | level-legal moves |
+| Darumacho de Galar | Dynamique | Bandeau Choix | Entêtement | Chute Glace · Boutefeu · Séisme · U Turn |
 | Dragmara | Dynamique | Lunettes Sages | Alerte Neige | Blizzard · Lyophilisation · Telluriforce · Tonnerre |
 | Sandslash-Alola | Dynamique | Orbe Vie | Chasse-Neige | Danse Lames · Chute Glace · Tête de Fer · Séisme |
 | Hydragla | Dynamique | Lumargile | Chasse-Neige | Chute Glace · Voile Aurore · Branchicrok · Éboulement |
