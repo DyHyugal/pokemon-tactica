@@ -199,3 +199,5 @@ Les 37 groupes Tactica, 5 groupes Settings et 34 groupes Family passent sous mGB
 Les validateurs de sources Tactica, d’UI, de localisation, d’index documentaire et de synchronisation des assets wiki passent. L’audit reproductible `python3 tools/audit_tactica_climbing_walls.py` examine 458 layouts HnS et ne trouve aucune paroi Escalade placée. Les transitions de carte, les trajets et le rendu complet restent à confirmer dans la candidate par le propriétaire.
 
 Compilation `make hns -j4` réussie : ROM autonome de 32 Mio ; mémoire ROM utilisée 96,69 %, EWRAM 98,63 %. La publication reconstruit la candidate depuis le commit d’intégration exact, dans un checkout neuf.
+
+Publication `v1-candidate-49465e2e` réussie. ZIP téléchargé et contrôlé : source `49465e2efd38d8961e3e2a6100c93b70d72d0c17`, branche `integration/v1`, ROM de 33 554 432 octets, SHA-256 publié `fa560a558bd8c8b28e290a3112ca85da0c13318c25ac0c96536ef426b9fb8f6f`. Le hash local diffère avec le compilateur de l’environnement ; le manifeste du téléchargement identifie la ROM distribuée. La checklist du ZIP référence le même commit.
