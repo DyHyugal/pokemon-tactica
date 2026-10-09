@@ -2,7 +2,7 @@
 
 ## Candidate owner
 
-La nouvelle candidate est construite depuis `integration/v1`, commit `49465e2efd38d8961e3e2a6100c93b70d72d0c17`. Elle comprend les corrections terrain/climat HARD et dialogues/options, ainsi que Vol depuis la carte, les CS contextuelles et Flash automatique. Son téléchargement est référencé dans [Jouer](../FR/Jouer.md) ; le manifeste du ZIP donne le SHA source et l’empreinte de la ROM exacte.
+La nouvelle candidate est construite depuis `integration/v1`, commit `0f1ec55d4d6fea87d74ad4a8ca74ed424798b5aa`. Elle comprend les corrections terrain/climat HARD et dialogues/options, ainsi que Vol depuis la carte, les CS contextuelles, Flash automatique et la confirmation explicite des messages de combat. Son téléchargement est référencé dans [Jouer](../FR/Jouer.md) ; le manifeste du ZIP donne le SHA source et l’empreinte de la ROM exacte.
 
 Cette candidate attend la validation owner des corrections visuelles et comportementales, puis le parcours jusqu’à Mortimer et l’aventure complète. Elle n’est pas une version stable validée. Les anciennes candidates ne contiennent pas ces corrections.
 
@@ -214,3 +214,5 @@ Résultats locaux : Tactica 42, Native 3, Audio 6, Settings 5 et Family 34, soit
 À observer dans la nouvelle ROM : en x1 puis x4, avec FASTER et Fast Battles activé/désactivé, lire « used … », une baisse de précision et les messages de terrain/climat ; attendre sans appuyer, maintenir A pendant l’écriture, puis relâcher et appuyer de nouveau. Vérifier aussi le texte de défaite du Dresseur sans double validation finale, l’apprentissage/refus de capacité, les questions de remplacement et la capture. Le confort de lecture et l’audio restent à confirmer en jeu.
 
 La recherche de carte est documentée dans [REGION_MAP_ASSETS.md](../REGION_MAP_ASSETS.md). Aucun remplacement moderne Johto/Kanto prêt à intégrer n’a été vérifié dans les sources consultées : les images et tilemaps restent inchangées, et le souhait de moderniser routes, villes et eau n’est pas déclaré réalisé.
+
+Publication de la candidate `v1-candidate-0f1ec55d` lancée depuis le commit d’intégration `0f1ec55d4d6fea87d74ad4a8ca74ed424798b5aa`. Les liens Jouer/Play ciblent cette reconstruction ; son téléchargement et son manifeste doivent encore être vérifiés.
