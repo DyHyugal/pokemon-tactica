@@ -16,7 +16,7 @@ The V1 ROM is in English; the wiki is available in French and English. Difficult
 
 ## The current candidate
 
-The download is candidate **0f1ec55d**, built from **integration/v1**. It includes the level cap, Team Rocket, rival profile and wild evolution corrections, terrain/weather AI, dialogue/options fixes, map travel and contextual HMs with automatic Flash. It is intended for playtesting and has not yet been declared stable.
+The download is candidate **0f1ec55d**, built from **integration/v1**. It includes the level cap, Team Rocket, rival profile and wild evolution corrections, terrain/weather AI, dialogue/options fixes, map travel and contextual HMs with automatic Flash, plus battle messages requiring a fresh press after rendering, including at x4 with FASTER. It is intended for playtesting and has not yet been declared stable.
 
 The first validation playthrough goes through Morty, followed by the full adventure across Johto, Kanto, the second League and Red. When reporting an issue, include version **0f1ec55d**, your difficulty, level cap setting and steps to reproduce it. Fixes and balance adjustments will follow actual gameplay feedback.
 
