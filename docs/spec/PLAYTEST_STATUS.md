@@ -201,3 +201,16 @@ Les validateurs de sources Tactica, d’UI, de localisation, d’index documenta
 Compilation `make hns -j4` réussie : ROM autonome de 32 Mio ; mémoire ROM utilisée 96,69 %, EWRAM 98,63 %. La publication reconstruit la candidate depuis le commit d’intégration exact, dans un checkout neuf.
 
 Publication `v1-candidate-49465e2e` réussie. ZIP téléchargé et contrôlé : source `49465e2efd38d8961e3e2a6100c93b70d72d0c17`, branche `integration/v1`, ROM de 33 554 432 octets, SHA-256 publié `fa560a558bd8c8b28e290a3112ca85da0c13318c25ac0c96536ef426b9fb8f6f`. Le hash local diffère avec le compilateur de l’environnement ; le manifeste du téléchargement identifie la ROM distribuée. La checklist du ZIP référence le même commit.
+
+
+## Messages de combat — confirmation explicite
+
+Le défilement observé en x4 provenait de la fin automatique du contrôleur d’affichage et des délais de script, pas d’un A généré par la vitesse native. Les messages informatifs locaux attendent désormais un nouvel appui A/B après affichage. Les pauses terminales sont remplacées par cette confirmation unique ; les pages internes, choix Oui/Non, tutoriels, link/replays et simulations gardent leur fonctionnement natif. Aucun changement du moteur de vitesse, de l’audio ou des options FASTER/Fast Battles.
+
+Les 5 nouveaux groupes mGBA couvrent le rendu réel pour chaque multiplicateur x1 à x4, les quatre vitesses de texte et les deux états de Fast Battles, A maintenu, l’appui utilisé pour accélérer le rendu, deux messages successifs, les exclusions, les codes de contrôle et le dispatch réel du contrôleur. Une mutation qui rétablit l’ancien callback provoque bien l’échec du test de dispatch ; le code corrigé a ensuite été restauré et revalidé.
+
+Résultats locaux : Tactica 42, Native 3, Audio 6, Settings 5 et Family 34, soit 90 groupes passés, aucun échec ni groupe ignoré. Spec, UI, localisation, index et assets wiki synchronisés sont validés ; `make hns -j4` réussit. Les tests automatisés de bataille conservent volontairement leur progression sans boutons ; les nouveaux tests exercent séparément la politique de combat local. Ils ne constituent pas un playtest owner.
+
+À observer dans la nouvelle ROM : en x1 puis x4, avec FASTER et Fast Battles activé/désactivé, lire « used … », une baisse de précision et les messages de terrain/climat ; attendre sans appuyer, maintenir A pendant l’écriture, puis relâcher et appuyer de nouveau. Vérifier aussi le texte de défaite du Dresseur sans double validation finale, l’apprentissage/refus de capacité, les questions de remplacement et la capture. Le confort de lecture et l’audio restent à confirmer en jeu.
+
+La recherche de carte est documentée dans [REGION_MAP_ASSETS.md](../REGION_MAP_ASSETS.md). Aucun remplacement moderne Johto/Kanto prêt à intégrer n’a été vérifié dans les sources consultées : les images et tilemaps restent inchangées, et le souhait de moderniser routes, villes et eau n’est pas déclaré réalisé.

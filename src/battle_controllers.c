@@ -16,6 +16,7 @@
 #include "item.h"
 #include "link.h"
 #include "link_rfu.h"
+#include "main.h"
 #include "m4a.h"
 #include "overworld.h"
 #include "palette.h"
@@ -39,6 +40,7 @@
 
 static EWRAM_DATA u8 sLinkSendTaskId = 0;
 static EWRAM_DATA u8 sLinkReceiveTaskId = 0;
+static EWRAM_DATA u8 sTacticaMessageReadyMask = 0;
 
 COMMON_DATA void (*gBattlerControllerFuncs[MAX_BATTLERS_COUNT])(enum BattlerId battler) = {0};
 COMMON_DATA u8 gBattleControllerData[MAX_BATTLERS_COUNT] = {0}; // Used by the battle controllers to store misc sprite/task IDs for each battler
@@ -2213,6 +2215,86 @@ static void Controller_WaitForTrainerPic(enum BattlerId battler)
         BtlController_Complete(battler);
 }
 
+// A displayed local battle message belongs to the player, not the timer.
+// Keep selection prompts, automated battles and the existing speed engine intact.
+static bool32 PrepareTacticaBattleMessage(enum BattlerId battler, enum StringID stringId, bool32 automated)
+{
+    sTacticaMessageReadyMask &= ~(1u << battler);
+    if (!IS_HNS || automated || IsAiVsAiBattle()
+     || (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED | BATTLE_TYPE_RECORDED_LINK
+                          | BATTLE_TYPE_CATCH_TUTORIAL | BATTLE_TYPE_POKEDUDE)))
+        return FALSE;
+
+    switch (stringId)
+    {
+    case STRINGID_USENEXTPKMN:
+    case STRINGID_ENEMYABOUTTOSWITCHPKMN:
+    case STRINGID_TRYTOLEARNMOVE3:
+    case STRINGID_STOPLEARNINGMOVE:
+        return FALSE; // Their Yes/No menu is already the confirmation.
+    default:
+        break;
+    }
+    if ((gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
+     && (stringId == STRINGID_TRAINER1WINTEXT || stringId == STRINGID_DONTLEAVEBIRCH))
+        return FALSE; // Preserve the dedicated Oak tutorial callbacks.
+
+    // Replace existing terminal waits with one controller confirmation. Parsing
+    // control lengths avoids mistaking a sound/colour/pause argument for a prompt.
+    while (gDisplayedStringBattle[0] != EOS)
+    {
+        u8 *last = gDisplayedStringBattle;
+        for (u8 *text = gDisplayedStringBattle; *text != EOS;)
+        {
+            last = text;
+            if (*text == EXT_CTRL_CODE_BEGIN)
+                text += 1 + GetExtCtrlCodeLength(text[1]);
+            else if (*text == CHAR_KEYPAD_ICON || *text == CHAR_EXTRA_SYMBOL || *text == CHAR_DYNAMIC)
+                text += 2;
+            else
+                text++;
+        }
+        if (*last == CHAR_PROMPT_SCROLL || *last == CHAR_PROMPT_CLEAR
+         || (*last == EXT_CTRL_CODE_BEGIN && last[1] == EXT_CTRL_CODE_PAUSE_UNTIL_PRESS))
+            *last = EOS;
+        else
+            break;
+    }
+    return gDisplayedStringBattle[0] != EOS;
+}
+
+static void Controller_WaitForTacticaMessage(enum BattlerId battler)
+{
+    if (IsTextPrinterActiveOnWindow(B_WIN_MSG))
+        return;
+
+    u32 mask = 1u << battler;
+    if (!(sTacticaMessageReadyMask & mask))
+    {
+        // The press that sped up rendering cannot also dismiss this message.
+        // Extra native-speed ticks already clear input edges between callbacks.
+        sTacticaMessageReadyMask |= mask;
+        return;
+    }
+    if (JOY_NEW(A_BUTTON | B_BUTTON))
+    {
+        sTacticaMessageReadyMask &= ~mask;
+        BtlController_Complete(battler);
+    }
+}
+
+#if TESTING
+bool32 TestTacticaPrepareBattleMessage(enum BattlerId battler, enum StringID stringId, bool32 automated)
+{
+    return PrepareTacticaBattleMessage(battler, stringId, automated);
+}
+
+void TestTacticaWaitForBattleMessage(enum BattlerId battler)
+{
+    Controller_WaitForTacticaMessage(battler);
+}
+#endif
+
 void Controller_WaitForString(enum BattlerId battler)
 {
     if (!IsTextPrinterActiveOnWindow(B_WIN_MSG))
@@ -2639,7 +2721,7 @@ void BtlController_HandleMoveAnimation(enum BattlerId battler)
     }
 }
 
-void BtlController_HandlePrintString(enum BattlerId battler)
+static void HandlePrintString(enum BattlerId battler, bool32 automated)
 {
     u16 *stringId;
 
@@ -2648,7 +2730,7 @@ void BtlController_HandlePrintString(enum BattlerId battler)
     stringId = (u16 *)(&gBattleResources->bufferA[battler][2]);
     BufferStringBattle(*stringId, battler);
 
-    if (gTestRunnerEnabled)
+    if (gTestRunnerEnabled && automated)
     {
         TestRunner_Battle_RecordMessage(gDisplayedStringBattle);
         if (gTestRunnerHeadless)
@@ -2658,6 +2740,7 @@ void BtlController_HandlePrintString(enum BattlerId battler)
         }
     }
 
+    bool32 confirmMessage = PrepareTacticaBattleMessage(battler, *stringId, automated);
 
     // if (BattleStringShouldBeColored(*stringId))
     //     BattlePutTextOnWindow(gDisplayedStringBattle, (B_WIN_MSG | B_TEXT_FLAG_NPC_CONTEXT_FONT));
@@ -2677,13 +2760,27 @@ void BtlController_HandlePrintString(enum BattlerId battler)
         }
     }
 
-    gBattlerControllerFuncs[battler] = Controller_WaitForString;
+    gBattlerControllerFuncs[battler] = confirmMessage ? Controller_WaitForTacticaMessage : Controller_WaitForString;
     if (ShouldUpdateTvData(battler))
         BattleTv_SetDataBasedOnString(*stringId);
     if (IsControllerPlayer(battler)
      || IsControllerOpponent(battler))
         BattleArena_DeductSkillPoints(battler, *stringId);
 }
+
+void BtlController_HandlePrintString(enum BattlerId battler)
+{
+    HandlePrintString(battler, gTestRunnerEnabled);
+}
+
+#if TESTING
+void TestTacticaHandlePrintString(enum BattlerId battler)
+{
+    // Exercise the same dispatcher with the local-player policy, without
+    // asking the battle runner to record a message outside a battle scenario.
+    HandlePrintString(battler, FALSE);
+}
+#endif
 
 void BtlController_HandlePrintStringPlayerOnly(enum BattlerId battler)
 {

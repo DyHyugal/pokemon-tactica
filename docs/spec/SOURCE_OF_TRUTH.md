@@ -19,6 +19,12 @@ Pokémon Tactica est un remake/fork jouable de la 2G basé sur HnS, centré sur 
 
 ## Contrats V1
 
+### Lecture des combats et carte
+
+En combat local, les messages informatifs attendent un nouvel appui A/B après affichage, même avec FASTER et en x4 ; maintenir A pour accélérer l’écriture ne passe pas le message. Les choix et combats automatiques conservent leur fonctionnement natif. Détail : [GAME_SYSTEMS.md](GAME_SYSTEMS.md).
+
+La modernisation souhaitée de la carte concerne aussi le dessin des routes, villes et étendues d’eau, avec la géographie Johto/Kanto conservée. Seuls les bandeaux ont actuellement été adaptés ; aucune grande refonte n’est engagée sans remplacement compatible vérifié.
+
 ### Rencontres
 
 - Chaque table/méthode applicable contient quatre vrais slots pondérés `30/30/30/10`.

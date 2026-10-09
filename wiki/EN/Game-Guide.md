@@ -2,7 +2,9 @@
 
 # Guide — concise walkthrough
 
-Use traversal HMs by interacting with trees, rocks, water and other obstacles after their story unlocks. No HM item, learned move or compatible Pokémon is required. For Fly, open Map from the Start menu and press A on a previously visited destination after the fifth badge. The restrained Sword/Shield-inspired interface preserves Johto/Kanto geography. Flash automatically lights caves from the beginning, without a badge or menu action. Traversal HMs no longer appear in individual Pokémon menus; Dig, Teleport and Headbutt retain their ordinary rules. Rock Climb remains disabled: no functional climbing walls were found in the 458 audited HnS layouts; its TM remains usable in battle. Cut still requires its quest and the second badge; Rock Smash still requires its scripted reward and the first badge. Strength requires badge three, Surf badge four, Dive and Whirlpool badge seven, Waterfall badge eight.
+Battle messages now wait for a fresh A (or B) press after rendering, including at x4 with FASTER. Holding A speeds up the text without dismissing it; Yes/No choices retain their own confirmation.
+
+Use traversal HMs by interacting with trees, rocks, water and other obstacles after their story unlocks. No HM item, learned move or compatible Pokémon is required. For Fly, open Map from the Start menu and press A on a previously visited destination after the fifth badge. The header and footer have been adapted, while routes, city markers and water retain their HnS artwork. Johto/Kanto geography is preserved; no ready-to-import DS/Switch replacement has been verified. Flash automatically lights caves from the beginning, without a badge or menu action. Traversal HMs no longer appear in individual Pokémon menus; Dig, Teleport and Headbutt retain their ordinary rules. Rock Climb remains disabled: no functional climbing walls were found in the 458 audited HnS layouts; its TM remains usable in battle. Cut still requires its quest and the second badge; Rock Smash still requires its scripted reward and the first badge. Strength requires badge three, Surf badge four, Dive and Whirlpool badge seven, Waterfall badge eight.
 
 This page is mainly a **where-do-I-go-next walkthrough**. It follows the main Heart & Soul story flow, adapted to Pokémon Tactica. Optional detours, minor items and wild encounters are intentionally left out: use **Pokédex**, **Locations** and **Bosses & Tips** to build and prepare your team.
 
@@ -14,7 +16,7 @@ This page is mainly a **where-do-I-go-next walkthrough**. It follows the main He
 
 **New Bark Town** — configure your options and choose your first Tactica starter in Professor Elm's lab. Cross **Route 29 → Cherrygrove → Route 30**, reach Mr. Pokémon and receive the Mystery Egg / Pokédex. Fight your rival on the way back, then return to **Elm's lab** for the theft and police sequence. **This is where Tactica offers the second starter**: identify the Egg species, choose a species different from your first starter, then keep the Egg and receive any associated items. Continue through Routes 30 and 31 to **Violet City**, clear Sprout Tower and defeat **Falkner**.
 
-**Tactica cap: 17.**
+**Tactica cap: 18.**
 
 ## Badge 1 → Badge 2: Bugsy
 
