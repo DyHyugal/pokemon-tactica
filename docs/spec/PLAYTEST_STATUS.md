@@ -2,18 +2,9 @@
 
 ## Candidate owner
 
-**Aucune candidate owner actuelle ne doit être considérée comme représentative de l’état courant.**
+La nouvelle candidate est construite depuis `integration/v1`, commit `e27999c276fc4c2d4898b4afbd2c12f1dbd6f787`. Elle comprend les corrections terrain/climat HARD, CS et dialogues/options du dernier playtest. Son téléchargement est référencé dans [Jouer](../FR/Jouer.md) ; le manifeste du ZIP donne le SHA source et l’empreinte de la ROM exacte.
 
-L’ancienne candidate `31fe7d7c9d33dcc757fede543db249651f7dc53f` reste un témoin historique du playtest effectué jusqu’à Mortimer, mais elle précède notamment :
-
-- la migration canonique des évolutions / Fil Liaison ;
-- la régénération du Pokédex évolution ;
-- les correctifs de légalité boss ;
-- la PR #48 sur l’introduction Tactica, HARD/Recommended et le message du second starter.
-- l’intégration des interfaces Épée/Bouclier, HGSS et Noir/Blanc, du sélecteur Difficulty et des garde-fous Méga ;
-- le centrage du libellé `TACTICA` dans sa bulle sur l'écran titre.
-
-Le dernier `integration/v1` doit être reconstruit proprement avant tout nouveau playtest. Un simple `git pull` ne met jamais à jour une ROM déjà compilée.
+Cette candidate attend la validation owner des corrections visuelles et comportementales, puis le parcours jusqu’à Mortimer et l’aventure complète. Elle n’est pas une version stable validée. Les anciennes candidates ne contiennent pas ces corrections.
 
 ## Correctif prioritaire intégré avant la prochaine candidate
 
