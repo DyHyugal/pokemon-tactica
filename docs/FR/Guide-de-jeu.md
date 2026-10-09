@@ -46,7 +46,7 @@ Continue par la **Route 34** jusqu'à **Doublonville**. Explore les **Souterrain
 
 ## Badge 3 → badge 4 : Mortimer
 
-Monte par la **Route 35**, le **Parc Naturel**, puis la **Route 36**. Utilise l'objet de Doublonville sur **Simularbre** ; récupère ensuite **Éclate-Roc**. Continue par la **Route 37** jusqu'à **Rosalia**. Au **Théâtre de Danse**, règle l'incident Rocket pour récupérer **Surf**. Explore la **Tour Cendrée** : le combat rival et l'événement des trois fauves s'y déclenchent. Défie **Mortimer** à l'Arène de Rosalia. Dans Tactica, après le badge et sa CT, Mortimer remet aussi le **Méga-Anneau**. La Méga-Évolution devient utilisable immédiatement, donc dès la portion **badge 4 → badge 5**.
+Monte par la **Route 35**, le **Parc Naturel**, puis la **Route 36**. Utilise l'objet de Doublonville sur **Simularbre** ; récupère ensuite **Éclate-Roc**. Continue par la **Route 37** jusqu'à **Rosalia**. Au **Théâtre de Danse**, règle l'incident Rocket pour récupérer **Surf**. Explore la **Tour Cendrée** : le combat rival et l'événement des trois fauves s'y déclenchent. Défie **Mortimer** à l'Arène de Rosalia. Dans Tactica, après le badge, Mortimer remet le **Méga-Anneau**, puis sa CT. La Méga-Évolution devient utilisable immédiatement, donc dès la portion **badge 4 → badge 5**.
 
 
 **Cap Tactica : 38.**

@@ -3,8 +3,8 @@
 static const struct WildPokemon sFamilyHeadbuttIlexForest[] =
 {
     {24, 27, SPECIES_PINECO},
-    {24, 27, SPECIES_NINCADA},
-    {24, 27, SPECIES_PARAS},
+    {24, 27, SPECIES_NINJASK},
+    {24, 27, SPECIES_PARASECT},
     {24, 27, SPECIES_HERACROSS},
 };
 

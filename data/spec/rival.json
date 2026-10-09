@@ -128,29 +128,71 @@
     "runtime_fights": {
       "1_cherrygrove_before_badge_1": {
         "party_size": 1,
-        "levels": [18],
+        "levels": [
+          18
+        ],
         "moves_phase": "early",
         "mega": false
       },
       "2_azalea_after_badge_2": {
         "party_size": 4,
-        "levels": [29, 32, 31, 30],
+        "levels": [
+          29,
+          32,
+          31,
+          30
+        ],
         "moves_phase": "mid",
         "mega": false
       },
       "3_burned_tower_after_badge_3": {
         "party_size": 6,
-        "levels": [35, 38, 37, 36, 36, 35],
+        "levels": [
+          35,
+          38,
+          37,
+          36,
+          36,
+          35
+        ],
         "moves_phase": "mid",
         "mega": false
       },
       "4_and_later_after_badge_4": {
         "party_size": 6,
         "levels_by_fight": {
-          "4_radio_tower_before_clair": [61, 64, 63, 62, 62, 61],
-          "5_victory_road_before_league": [65, 67, 66, 66, 65, 65],
-          "6_mt_moon_before_blaine": [95, 95, 95, 95, 95, 95],
-          "7_indigo_plateau_daily": [95, 95, 95, 95, 95, 95]
+          "4_radio_tower_before_clair": [
+            61,
+            64,
+            63,
+            62,
+            62,
+            61
+          ],
+          "5_victory_road_before_league": [
+            65,
+            67,
+            66,
+            66,
+            65,
+            65
+          ],
+          "6_mt_moon_before_blaine": [
+            95,
+            95,
+            95,
+            95,
+            95,
+            95
+          ],
+          "7_indigo_plateau_daily": [
+            95,
+            95,
+            95,
+            95,
+            95,
+            95
+          ]
         },
         "moves_phase": "final",
         "mega": true
@@ -214,14 +256,34 @@
           "family": "saved starter",
           "role": "fixed starter / persistent ace",
           "species_source": "VAR_FAMILY_RIVAL_SPECIES",
-          "phase_moves": "natural level-legal moves for the fixed starter and its legal evolution",
+          "phase_moves": {
+            "early": [
+              "Ember",
+              "Double Kick",
+              "Peck",
+              "Focus Energy"
+            ],
+            "mid": [
+              "Flame Charge",
+              "Double Kick",
+              "Peck",
+              "Bulk Up"
+            ],
+            "final": [
+              "Flare Blitz",
+              "Close Combat",
+              "Brave Bird",
+              "Protect"
+            ]
+          },
           "final_item": "Blazikenite",
           "mega_species": "Mega Blaziken",
           "nature": "Jolly",
           "hard_evs": "252 Atk / 252 Spe / 4 HP",
           "ability": "Blaze",
           "mega_ability": "Speed Boost",
-          "target_final_species": "Blaziken"
+          "target_final_species": "Blaziken",
+          "profile": "DPS_Physique"
         },
         {
           "family": "Bulbasaur",
@@ -374,14 +436,34 @@
           "family": "saved starter",
           "role": "fixed starter / persistent ace",
           "species_source": "VAR_FAMILY_RIVAL_SPECIES",
-          "phase_moves": "natural level-legal moves for the fixed starter and its legal evolution",
+          "phase_moves": {
+            "early": [
+              "Water Gun",
+              "Mud Slap",
+              "Rock Throw",
+              "Protect"
+            ],
+            "mid": [
+              "Water Pulse",
+              "Mud Shot",
+              "Rock Slide",
+              "Protect"
+            ],
+            "final": [
+              "Waterfall",
+              "Earthquake",
+              "Ice Punch",
+              "Flip Turn"
+            ]
+          },
           "final_item": "Swampertite",
           "mega_species": "Mega Swampert",
           "nature": "Adamant",
           "hard_evs": "252 Atk / 252 Spe / 4 HP",
           "ability": "Torrent",
           "mega_ability": "Swift Swim",
-          "target_final_species": "Swampert"
+          "target_final_species": "Swampert",
+          "profile": "DPS_Physique"
         },
         {
           "family": "Horsea",
@@ -534,14 +616,34 @@
           "family": "saved starter",
           "role": "fixed starter / persistent ace",
           "species_source": "VAR_FAMILY_RIVAL_SPECIES",
-          "phase_moves": "natural level-legal moves for the fixed starter and its legal evolution",
+          "phase_moves": {
+            "early": [
+              "Quick Attack",
+              "Absorb",
+              "Pursuit",
+              "Leer"
+            ],
+            "mid": [
+              "Bullet Seed",
+              "Dragon Breath",
+              "Rock Tomb",
+              "Swords Dance"
+            ],
+            "final": [
+              "Dragon Dance",
+              "Leaf Blade",
+              "Dragon Claw",
+              "Rock Slide"
+            ]
+          },
           "final_item": "Sceptilite",
           "mega_species": "Mega Sceptile",
           "nature": "Jolly",
           "hard_evs": "252 Atk / 252 Spe / 4 HP",
           "ability": "Chlorophyll",
           "mega_ability": "Chlorophyll",
-          "target_final_species": "Sceptile"
+          "target_final_species": "Sceptile",
+          "profile": "DPS_Physique"
         },
         {
           "family": "Hawlucha",
@@ -694,13 +796,33 @@
           "family": "saved starter",
           "role": "fixed starter / persistent ace",
           "species_source": "VAR_FAMILY_RIVAL_SPECIES",
-          "phase_moves": "natural level-legal moves for the fixed starter and its legal evolution",
+          "phase_moves": {
+            "early": [
+              "Thunder Shock",
+              "Quick Attack",
+              "Low Kick",
+              "Swift"
+            ],
+            "mid": [
+              "Thunder Punch",
+              "Low Kick",
+              "Ice Punch",
+              "Fire Punch"
+            ],
+            "final": [
+              "Thunder Punch",
+              "Earthquake",
+              "Ice Punch",
+              "Fire Punch"
+            ]
+          },
           "final_item": "Expert Belt",
           "mega_species": null,
           "nature": "Jolly",
           "hard_evs": "252 Atk / 252 Spe / 4 HP",
           "ability": "Sheer Force",
-          "target_final_species": "Electivire"
+          "target_final_species": "Electivire",
+          "profile": "DPS_Physique"
         },
         {
           "family": "Raichu-Alola",
@@ -854,13 +976,33 @@
           "family": "saved starter",
           "role": "fixed starter / persistent ace",
           "species_source": "VAR_FAMILY_RIVAL_SPECIES",
-          "phase_moves": "natural level-legal moves for the fixed starter and its legal evolution",
+          "phase_moves": {
+            "early": [
+              "Mud Slap",
+              "Rapid Spin",
+              "Fury Swipes",
+              "Hone Claws"
+            ],
+            "mid": [
+              "Dig",
+              "Metal Claw",
+              "Rock Slide",
+              "Swords Dance"
+            ],
+            "final": [
+              "Swords Dance",
+              "Earthquake",
+              "Iron Head",
+              "Rock Slide"
+            ]
+          },
           "final_item": "Life Orb",
           "mega_species": null,
           "nature": "Jolly",
           "hard_evs": "252 Atk / 252 Spe / 4 HP",
           "ability": "Sand Rush",
-          "target_final_species": "Excadrill"
+          "target_final_species": "Excadrill",
+          "profile": "DPS_Physique"
         },
         {
           "family": "Larvitar",
@@ -1014,13 +1156,33 @@
           "family": "saved starter",
           "role": "fixed starter / persistent ace",
           "species_source": "VAR_FAMILY_RIVAL_SPECIES",
-          "phase_moves": "natural level-legal moves for the fixed starter and its legal evolution",
+          "phase_moves": {
+            "early": [
+              "Ice Fang",
+              "Headbutt",
+              "Bite",
+              "Work Up"
+            ],
+            "mid": [
+              "Ice Punch",
+              "Fire Punch",
+              "Rock Slide",
+              "U Turn"
+            ],
+            "final": [
+              "Icicle Crash",
+              "Flare Blitz",
+              "Earthquake",
+              "U Turn"
+            ]
+          },
           "final_item": "Choice Band",
           "mega_species": null,
           "nature": "Jolly",
           "hard_evs": "252 Atk / 252 Spe / 4 HP",
           "ability": "Gorilla Tactics",
-          "target_final_species": "Darmanitan-Galar"
+          "target_final_species": "Darmanitan-Galar",
+          "profile": "DPS_Physique"
         },
         {
           "family": "Amaura",

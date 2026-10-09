@@ -5,6 +5,7 @@
 #include "event_data.h"
 #include "caps.h"
 #include "pokemon.h"
+#include "tactica_progression.h"
 
 static u8 GetCurrentBadgeCount(void)
 {
@@ -71,10 +72,10 @@ static const struct BossLevelCapMilestone sJohtoBossMilestones[] =
     BOSS_MILESTONE_FLAG(TRAINER_WHITNEY_1_HNS, FLAG_DEFEATED_GOLDENROD_CITY_GYM),
     BOSS_MILESTONE_VARIANTS(TRAINER_RIVAL_CHIKORITA_3_HNS, TRAINER_RIVAL_CYNDAQUIL_3_HNS, TRAINER_RIVAL_TOTODILE_3_HNS),
     BOSS_MILESTONE_FLAG(TRAINER_MORTY_1_HNS, FLAG_DEFEATED_ECRUTEAK_CITY_GYM),
-    BOSS_MILESTONE(TRAINER_PETREL_1_HNS),
-    BOSS_MILESTONE(TRAINER_ARIANA_1_HNS),
     BOSS_MILESTONE_FLAG(TRAINER_CHUCK_1_HNS, FLAG_DEFEATED_CIANWOOD_GYM),
     BOSS_MILESTONE_FLAG(TRAINER_JASMINE_1_HNS, FLAG_DEFEATED_OLIVINE_CITY_GYM),
+    BOSS_MILESTONE(TRAINER_PETREL_1_HNS),
+    BOSS_MILESTONE(TRAINER_ARIANA_1_HNS),
     BOSS_MILESTONE_FLAG(TRAINER_PRYCE_1_HNS, FLAG_DEFEATED_MAHOGANY_TOWN_GYM),
     BOSS_MILESTONE(TRAINER_PETREL_2_HNS),
     BOSS_MILESTONE_VARIANTS(TRAINER_RIVAL_CHIKORITA_4_HNS, TRAINER_RIVAL_CYNDAQUIL_4_HNS, TRAINER_RIVAL_TOTODILE_4_HNS),
@@ -106,26 +107,12 @@ static const struct BossLevelCapMilestone sKantoBossMilestones[] =
     BOSS_MILESTONE(TRAINER_LANCE_2_HNS),
 };
 
-#if TESTING
-static LevelCapTrainerLevelGetter sLevelCapTrainerLevelGetter;
-
-void SetLevelCapTrainerLevelGetterForTesting(LevelCapTrainerLevelGetter getter)
-{
-    sLevelCapTrainerLevelGetter = getter;
-}
-#endif
-
 static u32 GetTrainerLevelCap(u16 trainerId, bool8 useLowestLevel)
 {
     const struct Trainer *trainer;
     const struct TrainerMon *party;
     u32 levelCap = useLowestLevel ? MAX_LEVEL : 0;
     u32 i;
-
-#if TESTING
-    if (sLevelCapTrainerLevelGetter != NULL)
-        return sLevelCapTrainerLevelGetter(trainerId, useLowestLevel);
-#endif
 
     trainerId = SanitizeTrainerId(trainerId);
     trainer = &gTrainers[GetTrainerDifficultyLevel(trainerId)][trainerId];
@@ -204,22 +191,38 @@ static bool32 IsMilestoneComplete(const struct BossLevelCapMilestone *milestone)
     return milestone->requireAllTrainers;
 }
 
+static bool32 IsJohtoGymMilestone(const struct BossLevelCapMilestone *milestone)
+{
+    return milestone->completionFlag != 0;
+}
+
+static u32 GetCompletedJohtoGymLevel(bool8 useLowestLevel)
+{
+    u32 level = 0;
+    u32 i;
+
+    for (i = 0; i < ARRAY_COUNT(sJohtoBossMilestones); i++)
+        if (IsJohtoGymMilestone(&sJohtoBossMilestones[i])
+         && IsMilestoneComplete(&sJohtoBossMilestones[i]))
+            level = max(level, GetMilestoneLevelCap(&sJohtoBossMilestones[i], useLowestLevel));
+    return level;
+}
+
 static u32 GetBossProgressionLevelCap(const struct BossLevelCapMilestone *milestones, u32 count, bool8 useLowestLevel)
 {
     u32 nextBossCap = 0;
     u32 progressionFloor = 0;
-    u32 progressionReference = 0;
     u32 i;
 
     for (i = 0; i < count; i++)
     {
         u16 trainerId = GetMilestoneTrainerId(&milestones[i]);
         u32 milestoneCap = IsFamilyRocketTrainer(trainerId)
-            ? min(progressionReference + 2, MAX_LEVEL)
+            ? min(GetCompletedJohtoGymLevel(useLowestLevel) + 2, MAX_LEVEL)
             : GetMilestoneLevelCap(&milestones[i], useLowestLevel);
 
-        if (!IsFamilyRocketTrainer(trainerId))
-            progressionReference = max(progressionReference, milestoneCap);
+        // Only defeated Gyms establish Rocket levels. Neither the Rival nor
+        // another Rocket fight can raise their reference.
         if (IsMilestoneComplete(&milestones[i]))
         {
             if (milestoneCap > progressionFloor)
@@ -241,27 +244,18 @@ static u32 GetBossProgressionLevelCap(const struct BossLevelCapMilestone *milest
 
 u32 GetFamilyRocketTrainerLevel(u16 trainerId)
 {
-    bool8 useLowestLevel = gSaveBlock3Ptr->challengeSettings.tx_Challenges_LevelCap == 2;
-    u32 progressionReference = 0;
-    u32 i;
-
     if (!IsFamilyRocketTrainer(trainerId))
         return 0;
+    return min(GetCompletedJohtoGymLevel(FALSE) + 2, MAX_LEVEL);
+}
 
-    for (i = 0; i < ARRAY_COUNT(sJohtoBossMilestones); i++)
-    {
-        u16 milestoneTrainerId = GetMilestoneTrainerId(&sJohtoBossMilestones[i]);
-        u32 milestoneCap = IsFamilyRocketTrainer(milestoneTrainerId)
-            ? min(progressionReference + 2, MAX_LEVEL)
-            : GetMilestoneLevelCap(&sJohtoBossMilestones[i], useLowestLevel);
-
-        if (!IsFamilyRocketTrainer(milestoneTrainerId))
-            progressionReference = max(progressionReference, milestoneCap);
-        if (milestoneTrainerId == trainerId)
-            return milestoneCap;
-    }
-
-    return 0;
+u32 GetFamilyRocketTrainerMonLevel(u16 trainerId, u32 slot, u32 count)
+{
+    if (!IsFamilyRocketTrainer(trainerId) || count == 0 || slot >= count)
+        return 0;
+    if (slot == count - 1)
+        return GetFamilyRocketTrainerLevel(trainerId);
+    return min(GetCompletedJohtoGymLevel(TRUE) + 2, MAX_LEVEL);
 }
 
 u16 GetFamilyRocketLegalSpecies(u16 species, u32 level)
@@ -310,7 +304,7 @@ u16 GetFamilyRocketLegalSpecies(u16 species, u32 level)
         break;
     }
 
-    return species;
+    return GetTacticaWildSpeciesAtLevel(species, level);
 }
 
 static u32 GetHnsLevelCap(u8 challengeLevelCap)
@@ -323,9 +317,8 @@ static u32 GetHnsLevelCap(u8 challengeLevelCap)
     if (!FlagGet(FLAG_IS_KANTO_CHAMPION))
         return GetBossProgressionLevelCap(sKantoBossMilestones, ARRAY_COUNT(sKantoBossMilestones), useLowestLevel);
 
-    if (!FlagGet(FLAG_DEFEATED_RED))
-        return GetTrainerLevelCap(TRAINER_RED_HNS, useLowestLevel);
-
+    // The second League already established level 100. Red's lower roster
+    // must not revoke that cap, in either player cap mode.
     return MAX_LEVEL;
 }
 #endif

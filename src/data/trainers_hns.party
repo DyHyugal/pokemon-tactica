@@ -18761,3 +18761,1102 @@ EVs: 252 Atk / 252 Spe / 4 HP
 - Liquidation
 - Psychic Fangs
 - Ice Fang
+
+/* ========== Tactica HARD rival parties ========== */
+
+=== TRAINER_RIVAL_CHIKORITA_1_HNS ===
+Name: ???
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status
+Mugshot: Dark Red
+Difficulty: Hard
+
+Chikorita
+Level: 18
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+
+=== TRAINER_RIVAL_CHIKORITA_2_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status
+Mugshot: Dark Red
+Items: Potion
+Difficulty: Hard
+
+Zubat
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Absorb
+- Supersonic
+- Poison Sting
+- Astonish
+
+Larvitar
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bite
+- Rock Throw
+- Screech
+- Sandstorm
+
+Bayleef
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Razor Leaf
+- Reflect
+- Poison Powder
+- Tackle
+
+Remoraid
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bubble Beam
+- Aurora Beam
+- Psybeam
+- Lock On
+
+
+=== TRAINER_RIVAL_CHIKORITA_3_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status
+Mugshot: Dark Red
+Items: Super Potion
+Difficulty: Hard
+
+Larvitar
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bite
+- Rock Throw
+- Screech
+- Sandstorm
+
+Remoraid
+Level: 38
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bubble Beam
+- Aurora Beam
+- Psybeam
+- Lock On
+
+Golbat
+Level: 37
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bite
+- Confuse Ray
+- Poison Sting
+- Air Cutter
+
+Bayleef
+Level: 36
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Mega Drain
+- Magical Leaf
+- Tackle
+- Leech Seed
+
+Houndoom
+Level: 36
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flamethrower
+- Iron Tail
+- Bite
+- Nasty Plot
+
+Ursaring
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Slash
+- Faint Attack
+- Rock Smash
+- Rest
+
+
+=== TRAINER_RIVAL_CHIKORITA_4_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status
+Mugshot: Dark Red
+Items: Hyper Potion
+Difficulty: Hard
+
+Pupitar
+Level: 61
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thrash
+- Rock Slide
+- Screech
+- Bite
+
+Houndoom
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flamethrower
+- Iron Tail
+- Bite
+- Nasty Plot
+
+Octillery
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Octazooka
+- Psybeam
+- Aurora Beam
+- Signal Beam
+
+Golbat
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poison Fang
+- Double Team
+- Confuse Ray
+- Air Cutter
+
+Ursaring
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Slash
+- Faint Attack
+- Rock Smash
+- Rest
+
+Meganium
+Level: 61
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Synthesis
+- Magical Leaf
+- Sunny Day
+- Body Slam
+
+
+=== TRAINER_RIVAL_CHIKORITA_5_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status
+Mugshot: Dark Red
+Items: Hyper Potion
+Difficulty: Hard
+
+Ursaring @ Chesto Berry
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Slash
+- Faint Attack
+- Rock Smash
+- Rest
+
+Golbat
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Venoshock
+- Aerial Ace
+- Double Team
+- Confuse Ray
+
+Octillery @ Quick Claw
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Ice Beam
+- Psybeam
+- Signal Beam
+
+Houndoom
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flamethrower
+- Iron Tail
+- Crunch
+- Sunny Day
+
+Meganium @ Miracle Seed
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Play Rough
+- Petal Dance
+- Petal Blizzard
+- Poison Powder
+
+Tyranitar
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Earthquake
+- Rock Slide
+- Fire Fang
+
+
+=== TRAINER_RIVAL_CHIKORITA_6_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status
+Mugshot: Dark Red
+Items: Full Restore / Full Restore
+Difficulty: Hard
+
+Ursaluna Bloodmoon @ Chesto Berry
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hammer Arm
+- Moonblast
+- Ancient Power
+- Rest
+
+Crobat @ Leftovers
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Venoshock
+- Dark Pulse
+- Facade
+
+Octillery @ Never Melt Ice
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Ice Beam
+- Psybeam
+- Signal Beam
+
+Houndoom @ Charcoal
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fire Blast
+- Iron Tail
+- Crunch
+- Sunny Day
+
+Meganium @ Miracle Seed
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Synthesis
+- MoonBlast
+- Petal Blizzard
+- Body Slam
+
+Tyranitar @ Quick Claw
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Earthquake
+- Stone Edge
+- Fire Fang
+
+
+=== TRAINER_RIVAL_CHIKORITA_7_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status
+Mugshot: Dark Red
+Items: Full Restore / Full Restore
+Difficulty: Hard
+
+Ursaluna Bloodmoon @ Chesto Berry
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hammer Arm
+- Moonblast
+- Ancient Power
+- Rest
+
+Crobat @ Leftovers
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Venoshock
+- Dark Pulse
+- Facade
+
+Octillery @ Never Melt Ice
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Ice Beam
+- Psybeam
+- Signal Beam
+
+Houndoom @ Charcoal
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fire Blast
+- Iron Tail
+- Crunch
+- Sunny Day
+
+Meganium @ Miracle Seed
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Reflect
+- Giga Drain
+- Solar Beam
+- Body Slam
+
+Tyranitar @ Quick Claw
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Earthquake
+- Stone Edge
+- Fire Fang
+
+
+=== TRAINER_RIVAL_CYNDAQUIL_1_HNS ===
+Name: ???
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status
+Mugshot: Dark Red
+Difficulty: Hard
+
+Cyndaquil
+Level: 18
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+
+=== TRAINER_RIVAL_CYNDAQUIL_2_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status
+Mugshot: Dark Red
+Items: Potion
+Difficulty: Hard
+
+Zubat
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Absorb
+- Supersonic
+- Poison Sting
+- Astonish
+
+Larvitar
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bite
+- Rock Throw
+- Screech
+- Sandstorm
+
+Quilava
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leer
+- Smokescreen
+- Ember
+- Tackle
+
+Weepinbell
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Razor Leaf
+- Growth
+- Sleep Powder
+- Stun Spore
+
+
+=== TRAINER_RIVAL_CYNDAQUIL_3_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status
+Mugshot: Dark Red
+Items: Super Potion
+Difficulty: Hard
+
+Larvitar
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bite
+- Rock Throw
+- Screech
+- Sandstorm
+
+Weepinbell
+Level: 38
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Razor Leaf
+- Growth
+- Sleep Powder
+- Stun Spore
+
+Golbat
+Level: 37
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bite
+- Confuse Ray
+- Poison Sting
+- Air Cutter
+
+Quilava
+Level: 36
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flame Wheel
+- Dig
+- Quick Attack
+- Smokescreen
+
+Octillery
+Level: 36
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Octazooka
+- Psybeam
+- Aurora Beam
+- Signal Beam
+
+Ursaring
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Slash
+- Faint Attack
+- Rock Smash
+- Rest
+
+
+=== TRAINER_RIVAL_CYNDAQUIL_4_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status
+Mugshot: Dark Red
+Items: Super Potion
+Difficulty: Hard
+
+Pupitar
+Level: 61
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thrash
+- Rock Slide
+- Screech
+- Bite
+
+Victreebel
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sludge
+- Razor Leaf
+- Sleep Powder
+- Growth
+
+Octillery
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Octazooka
+- Psybeam
+- Aurora Beam
+- Signal Beam
+
+Golbat
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poison Fang
+- Double Team
+- Confuse Ray
+- Air Cutter
+
+Ursaring
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Slash
+- Faint Attack
+- Rock Smash
+- Rest
+
+Typhlosion
+Level: 61
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Punch
+- Flamethrower
+- Quick Attack
+- Iron Tail
+
+
+=== TRAINER_RIVAL_CYNDAQUIL_5_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status
+Mugshot: Dark Red
+Items: Hyper Potion
+Difficulty: Hard
+
+Ursaring @ Chesto Berry
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Slash
+- Faint Attack
+- Rock Smash
+- Rest
+
+Golbat
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Venoshock
+- Aerial Ace
+- Double Team
+- Confuse Ray
+
+Octillery @ Quick Claw
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Ice Beam
+- Psybeam
+- Signal Beam
+
+Victreebel
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sludge Bomb
+- Giga Drain
+- Sleep Powder
+- Growth
+
+Typhlosion @ Charcoal
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flamethrower
+- Quick Attack
+- Iron Tail
+- Thunder Punch
+
+Tyranitar
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Earthquake
+- Rock Slide
+- Fire Fang
+
+
+=== TRAINER_RIVAL_CYNDAQUIL_6_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status
+Mugshot: Dark Red
+Items: Full Restore / Full Restore
+Difficulty: Hard
+
+Ursaluna Bloodmoon @ Chesto Berry
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hammer Arm
+- Moonblast
+- Ancient Power
+- Rest
+
+Crobat @ Leftovers
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Venoshock
+- Dark Pulse
+- Facade
+
+Octillery @ Never Melt Ice
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Ice Beam
+- Psybeam
+- Signal Beam
+
+Victreebel @ Scope Lens
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sludge Bomb
+- Razor Leaf
+- Sleep Powder
+- Growth
+
+Typhlosion @ Charcoal
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fire Blast
+- Earthquake
+- Iron Tail
+- Thunder Punch
+
+Tyranitar @ Quick Claw
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Earthquake
+- Stone Edge
+- Fire Fang
+
+
+=== TRAINER_RIVAL_CYNDAQUIL_7_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status
+Mugshot: Dark Red
+Items: Full Restore / Full Restore
+Difficulty: Hard
+
+Ursaluna Bloodmoon @ Chesto Berry
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hammer Arm
+- Moonblast
+- Ancient Power
+- Rest
+
+Crobat @ Leftovers
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Venoshock
+- Dark Pulse
+- Facade
+
+Octillery @ Never Melt Ice
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Ice Beam
+- Psybeam
+- Signal Beam
+
+Victreebel @ Scope Lens
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leaf Blade
+- Sludge Bomb
+- Sleep Powder
+- Growth
+
+Typhlosion @ Charcoal
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fire Blast
+- Earthquake
+- Iron Tail
+- Thunder Punch
+
+Tyranitar @ Quick Claw
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Earthquake
+- Stone Edge
+- Fire Fang
+
+
+=== TRAINER_RIVAL_TOTODILE_1_HNS ===
+Name: ???
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status
+Mugshot: Dark Red
+Difficulty: Hard
+
+Totodile
+Level: 18
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+
+=== TRAINER_RIVAL_TOTODILE_2_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status
+Mugshot: Dark Red
+Items: Potion
+Difficulty: Hard
+
+Zubat
+Level: 29
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Absorb
+- Supersonic
+- Poison Sting
+- Astonish
+
+Larvitar
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bite
+- Rock Throw
+- Screech
+- Sandstorm
+
+Croconaw
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Scratch
+- Rage
+- Bubble Beam
+- Leer
+
+Houndour
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ember
+- Bite
+- Smog
+- Roar
+
+
+=== TRAINER_RIVAL_TOTODILE_3_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status
+Mugshot: Dark Red
+Items: Super Potion
+Difficulty: Hard
+
+Larvitar
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bite
+- Rock Throw
+- Screech
+- Sandstorm
+
+Houndour
+Level: 38
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ember
+- Bite
+- Smog
+- Roar
+
+Golbat
+Level: 37
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bite
+- Confuse Ray
+- Poison Sting
+- Air Cutter
+
+Croconaw
+Level: 36
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bite
+- Ice Punch
+- Bubble Beam
+- Mud Slap
+
+Victreebel
+Level: 36
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sludge
+- Razor Leaf
+- Sleep Powder
+- Growth
+
+Ursaring
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Slash
+- Faint Attack
+- Rock Smash
+- Rest
+
+
+=== TRAINER_RIVAL_TOTODILE_4_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status
+Mugshot: Dark Red
+Items: Super Potion
+Difficulty: Hard
+
+Pupitar
+Level: 61
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thrash
+- Rock Slide
+- Screech
+- Bite
+
+Victreebel
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sludge
+- Razor Leaf
+- Sleep Powder
+- Growth
+
+Houndoom
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flamethrower
+- Iron Tail
+- Bite
+- Nasty Plot
+
+Golbat
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poison Fang
+- Double Team
+- Confuse Ray
+- Air Cutter
+
+Ursaring
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Slash
+- Faint Attack
+- Rock Smash
+- Rest
+
+Feraligatr
+Level: 61
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Punch
+- Surf
+- Slash
+- Bite
+
+
+=== TRAINER_RIVAL_TOTODILE_5_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status
+Mugshot: Dark Red
+Items: Hyper Potion
+Difficulty: Hard
+
+Ursaring @ Chesto Berry
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Slash
+- Faint Attack
+- Rock Smash
+- Rest
+
+Golbat
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Venoshock
+- Aerial Ace
+- Double Team
+- Confuse Ray
+
+Victreebel @ Quick Claw
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sludge Bomb
+- Giga Drain
+- Sleep Powder
+- Growth
+
+Houndoom
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flamethrower
+- Iron Tail
+- Crunch
+- Double Team
+
+Feraligatr @ Mystic Water
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Punch
+- Surf
+- Slash
+- Bite
+
+Tyranitar
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Earthquake
+- Rock Slide
+- Fire Fang
+
+
+=== TRAINER_RIVAL_TOTODILE_6_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status
+Mugshot: Dark Red
+Items: Full Restore / Full Restore
+Difficulty: Hard
+
+Ursaluna Bloodmoon @ Chesto Berry
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hammer Arm
+- Moonblast
+- Ancient Power
+- Rest
+
+Crobat @ Leftovers
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Venoshock
+- Dark Pulse
+- Facade
+
+Victreebel @ Scope Lens
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sludge Bomb
+- Razor Leaf
+- Sleep Powder
+- Growth
+
+Houndoom @ Charcoal
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fire Blast
+- Iron Tail
+- Crunch
+- Double Team
+
+Feraligatr @ Mystic Water
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Beam
+- Surf
+- Slash
+- Earthquake
+
+Tyranitar @ Quick Claw
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Earthquake
+- Stone Edge
+- Fire Fang
+
+
+=== TRAINER_RIVAL_TOTODILE_7_HNS ===
+Name: {B_RIVAL_NAME}
+Class: Rival Hns
+Pic: Silver Hns
+Gender: Male
+Music: Silver
+Double Battle: No
+AI: Basic Trainer / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status
+Mugshot: Dark Red
+Items: Full Restore / Full Restore
+Difficulty: Hard
+
+Ursaluna Bloodmoon @ Chesto Berry
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hammer Arm
+- Moonblast
+- Ancient Power
+- Rest
+
+Crobat @ Leftovers
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Venoshock
+- Dark Pulse
+- Facade
+
+Victreebel @ Scope Lens
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leaf Blade
+- Sludge Bomb
+- Sleep Powder
+- Growth
+
+Houndoom @ Charcoal
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fire Blast
+- Iron Tail
+- Crunch
+- Double Team
+
+Feraligatr @ Mystic Water
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Beam
+- Surf
+- Slash
+- Earthquake
+
+Tyranitar @ Quick Claw
+Level: 95
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Earthquake
+- Stone Edge
+- Fire Fang

@@ -1,5 +1,7 @@
 #include "global.h"
 #include "family_starter.h"
+#include "tactica_progression.h"
+#include "difficulty.h"
 #include "data.h"
 #include "pokemon.h"
 #include "pokemon_storage_system.h"
@@ -11,6 +13,7 @@
 #include "constants/moves.h"
 #include "constants/opponents.h"
 #include "constants/flags.h"
+#include "constants/battle_ai.h"
 #include "test/test.h"
 
 #if IS_HNS
@@ -391,13 +394,14 @@ TEST("Family starter: saved rival category resolves every authored party phase")
     struct TrainerMon mon = {0};
 
     InitFamilyTest();
+    gSaveBlock3Ptr->challengeSettings.tx_Mode_Modern_Moves = 1;
     VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_TORCHIC);
 
     mon.lvl = 17;
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_1_HNS, 0, &mon));
     EXPECT_EQ(mon.species, SPECIES_COMBUSKEN);
     EXPECT_EQ(mon.ability, ABILITY_BLAZE);
-    EXPECT_EQ(mon.moves[0], MOVE_NONE);
+    EXPECT_EQ(mon.moves[0], MOVE_EMBER);
 
     mon = (struct TrainerMon){.lvl = 29};
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_2_HNS, 0, &mon));
@@ -410,7 +414,7 @@ TEST("Family starter: saved rival category resolves every authored party phase")
     mon = (struct TrainerMon){.lvl = 32};
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_2_HNS, 1, &mon));
     EXPECT_EQ(mon.species, SPECIES_COMBUSKEN);
-    EXPECT_EQ(mon.moves[0], MOVE_NONE);
+    EXPECT_EQ(mon.moves[0], MOVE_FLAME_CHARGE);
 
     mon = (struct TrainerMon){.lvl = 35};
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_3_HNS, 5, &mon));
@@ -420,7 +424,7 @@ TEST("Family starter: saved rival category resolves every authored party phase")
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_3_HNS, 2, &mon));
     EXPECT_EQ(mon.species, SPECIES_IVYSAUR);
     EXPECT_EQ(mon.ability, ABILITY_CHLOROPHYLL);
-    EXPECT_EQ(mon.moves[0], MOVE_MEGA_DRAIN);
+    EXPECT_EQ(mon.moves[0], MOVE_RAZOR_LEAF);
 
     mon = (struct TrainerMon){.lvl = 24};
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_3_HNS, 1, &mon));
@@ -433,6 +437,9 @@ TEST("Family starter: saved rival category resolves every authored party phase")
     EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_7_HNS, 5, &mon));
     EXPECT_EQ(mon.species, SPECIES_GREAT_TUSK);
     EXPECT_EQ(mon.ability, ABILITY_PROTOSYNTHESIS);
+    EXPECT_EQ(mon.moves[0], MOVE_EARTHQUAKE);
+    mon.lvl = 95;
+    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_7_HNS, 5, &mon));
     EXPECT_EQ(mon.moves[0], MOVE_HEADLONG_RUSH);
     EXPECT_EQ(mon.heldItem, ITEM_ASSAULT_VEST);
 
@@ -462,6 +469,73 @@ TEST("Family starter: saved rival category resolves every authored party phase")
     EXPECT_EQ(mon.heldItem, ITEM_EXPERT_BELT);
 
     EXPECT(!FamilyStarter_ResolveRivalMon(TRAINER_YOUNGSTER_CALVIN, 0, &mon));
+}
+
+TEST("Family starter: Water rival keeps its physical profile and legal stages at every fight")
+{
+    struct TrainerMon mon;
+    static const u8 levels[] = {18, 32, 38, 64, 67, 95, 95};
+    static const u16 species[] = {SPECIES_MARSHTOMP, SPECIES_MARSHTOMP, SPECIES_SWAMPERT, SPECIES_SWAMPERT, SPECIES_SWAMPERT, SPECIES_SWAMPERT, SPECIES_SWAMPERT};
+    InitFamilyTest();
+    gSaveBlock3Ptr->challengeSettings.tx_Mode_Modern_Moves = 1;
+    SetCurrentDifficultyLevel(DIFFICULTY_HARD);
+    VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_MUDKIP);
+    for (u32 fight = 0; fight < ARRAY_COUNT(levels); fight++)
+    {
+        mon = (struct TrainerMon){.lvl = levels[fight]};
+        EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_1_HNS + fight, fight == 0 ? 0 : 1, &mon));
+        EXPECT_EQ(mon.species, species[fight]);
+        EXPECT_EQ((u32)mon.nature, NATURE_ADAMANT);
+        EXPECT_NE(mon.ev, NULL);
+        EXPECT_EQ(mon.ev[STAT_ATK], 252);
+        EXPECT_EQ(mon.iv, TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31));
+        EXPECT_EQ(mon.ev[STAT_SPATK], 0);
+        EXPECT_EQ(mon.heldItem, fight < 3 ? ITEM_NONE : ITEM_SWAMPERTITE);
+        for (u32 move = 0; move < MAX_MON_MOVES; move++)
+            EXPECT(IsTacticaMoveLegalAtLevel(mon.species, mon.lvl, mon.moves[move]));
+    }
+    mon = (struct TrainerMon){.lvl = 45};
+    EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_3_HNS, 1, &mon));
+    EXPECT_EQ(mon.species, SPECIES_SWAMPERT);
+}
+
+TEST("Family starter: all six archetypes resolve legal sets in both difficulties")
+{
+    static const u16 starters[] = {SPECIES_TORCHIC, SPECIES_MUDKIP, SPECIES_TREECKO, SPECIES_ELEKID, SPECIES_DRILBUR, SPECIES_DARUMAKA_GALAR};
+    static const u8 counts[] = {1, 4, 6, 6, 6, 6, 6};
+    static const u8 minima[] = {18, 29, 35, 61, 65, 95, 95};
+    static const u8 maxima[] = {18, 32, 38, 64, 67, 95, 95};
+    u32 category = 0, fight = 0, difficulty = DIFFICULTY_NORMAL;
+    for (u32 c = 0; c < ARRAY_COUNT(starters); c++)
+        for (u32 f = 0; f < ARRAY_COUNT(counts); f++)
+            for (u32 d = DIFFICULTY_NORMAL; d <= DIFFICULTY_HARD; d++)
+                PARAMETRIZE { category = c; fight = f; difficulty = d; }
+    InitFamilyTest();
+    gSaveBlock3Ptr->challengeSettings.tx_Mode_Modern_Moves = 1;
+    SetCurrentDifficultyLevel(difficulty);
+    VarSet(VAR_FAMILY_RIVAL_SPECIES, starters[category]);
+    u16 trainerId = TRAINER_RIVAL_CYNDAQUIL_1_HNS + fight;
+    EXPECT_EQ((u32)GetTrainerDifficultyLevel(trainerId), difficulty);
+    EXPECT_EQ(gTrainers[difficulty][trainerId].partySize, counts[fight]);
+    if (difficulty == DIFFICULTY_HARD)
+        EXPECT_NE(GetTrainerAIFlagsFromId(trainerId) & AI_FLAG_SMART_SWITCHING, 0);
+    for (u32 slot = 0; slot < counts[fight]; slot++)
+    {
+        struct TrainerMon mon = {.lvl = slot == counts[fight] - 1 ? maxima[fight] : minima[fight]};
+        EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CYNDAQUIL_1_HNS + fight, slot, &mon));
+        for (u32 move = 0; move < MAX_MON_MOVES; move++)
+        {
+            if (mon.moves[move] == MOVE_NONE)
+                continue;
+            EXPECT(IsTacticaMoveLegalAtLevel(mon.species, mon.lvl, mon.moves[move]));
+            for (u32 previous = 0; previous < move; previous++)
+                EXPECT_NE(mon.moves[move], mon.moves[previous]);
+        }
+        EXPECT_NE(mon.moves[0], MOVE_NONE);
+        EXPECT_EQ(mon.ev == NULL, difficulty == DIFFICULTY_NORMAL);
+        if (fight < 3)
+            EXPECT_EQ(mon.heldItem, ITEM_NONE);
+    }
 }
 
 TEST("Family starter: monotype keeps the historical rival selection")

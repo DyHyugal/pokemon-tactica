@@ -112,6 +112,15 @@ preleague_species = {
     if access_caps[(table["map"], table["method"])] <= 67
     for species in table["species"]
 }
+# Owner: a legal pre-evolution caught in Johto may evolve by level before the
+# League. Do not demand an illegal evolved wild slot to satisfy coverage.
+from validate_tactica_encounter_evolutions import level_evolutions
+level_routes = level_evolutions()
+for _ in range(3):
+    preleague_species.update(
+        target for species in tuple(preleague_species)
+        for threshold, target in level_routes.get(species, []) if threshold <= 67
+    )
 missing_preleague_species = sorted(encounter_species - preleague_species)
 require(not missing_preleague_species,
         "standard species only available after first League: " +

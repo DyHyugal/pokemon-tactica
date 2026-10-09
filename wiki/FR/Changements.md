@@ -22,7 +22,7 @@ Cette page regroupe les changements de gameplay propres à Pokémon Tactica. Ell
 
 ### Difficulté et Level Caps
 
-NORMAL et HARD conservent les mêmes Pokémon, équipes, sets, niveaux et mécaniques. HARD ajoute surtout une préparation IV/EV optimisée et une IA plus exigeante. Le Level Cap suit le prochain combat majeur et ne redescend jamais : Albert 17, Hector 25, Blanche 32, Mortimer 38, Chuck 45, Jasmine 52, Frédo 57, Sandra 64, Conseil 4 67, Maître 70. À Kanto, Major Bob est niveau 75 ; Morgane, Erika et Jeannine partagent le palier 80 ; Ondine est niveau 85, Pierre 90, Auguste 95, puis Blue et la deuxième Ligue 100.
+NORMAL et HARD conservent les mêmes Pokémon, équipes, sets, niveaux et mécaniques. HARD ajoute surtout une préparation IV/EV optimisée et une IA plus exigeante. Le Level Cap suit le prochain combat majeur et ne redescend jamais : Albert 18, Hector 25, Blanche 32, Mortimer 38, Chuck 45, Jasmine 52, Frédo 57, Sandra 64, Conseil 4 67, Maître 70. À Kanto, Major Bob est niveau 75 ; Morgane, Erika et Jeannine partagent le palier 80 ; Ondine est niveau 85, Pierre 90, Auguste 95, puis Blue et la deuxième Ligue 100.
 
 ### Starters et œuf d'Orme
 
@@ -50,7 +50,7 @@ L'assistant d'entraînement couvre **EXP jusqu'au cap, IV, EV, reset EV, nature,
 
 ### Méga-Évolution
 
-Le **Méga-Anneau** est remis par Mortimer après le badge 4 et sa CT. Le joueur peut donc Méga-Évoluer immédiatement dans toute la portion entre les badges 4 et 5. Les boss qui utilisent une Méga doivent commencer avec une forme de base et un talent légaux ; le talent de la Méga vient de la transformation elle-même.
+Le **Méga-Anneau** est remis par Mortimer après le badge 4, avant sa CT. Le joueur peut donc Méga-Évoluer immédiatement dans toute la portion entre les badges 4 et 5. Les boss qui utilisent une Méga doivent commencer avec une forme de base et un talent légaux ; le talent de la Méga vient de la transformation elle-même.
 
 ### Évolutions
 
@@ -132,7 +132,7 @@ Albert utilise 3 Pokémon, Hector 4 et Blanche 6. Les boss suivants utilisent le
 
 Le rival conserve sa catégorie et son starter, progresse vers des équipes plus complètes et utilise le profil de niveaux du **prochain boss obligatoire**.
 
-Les dirigeants Rocket utilisent le dernier jalon Champion/rival pertinent **+2**, sans chaîner le niveau du Rocket précédent.
+Les dirigeants Rocket utilisent le plage de la dernière arène vaincue **+2**, sans chaîner le niveau du Rocket précédent.
 
 Les Méga font partie de certains combats de boss. Le joueur obtient son Méga-Anneau après Mortimer et peut utiliser ses propres Méga immédiatement après le badge 4.
 

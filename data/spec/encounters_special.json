@@ -17,8 +17,8 @@
       ],
       "species": [
         "Pineco",
-        "Nincada",
-        "Paras",
+        "Ninjask",
+        "Parasect",
         "Heracross"
       ]
     },
@@ -97,7 +97,7 @@
       ],
       "species": [
         "Beedrill",
-        "Deerling (Spring Form)",
+        "Sawsbuck Spring",
         "Dustox",
         "Wigglytuff"
       ]
@@ -118,7 +118,7 @@
       "species": [
         "Beautifly",
         "Butterfree",
-        "Ledyba",
+        "Ledian",
         "Yanma"
       ]
     },
@@ -137,7 +137,7 @@
       ],
       "species": [
         "Combee",
-        "Hoppip",
+        "Jumpluff",
         "Igglybuff",
         "Tropius"
       ]
@@ -177,7 +177,7 @@
       ],
       "species": [
         "Burmy (Plant Cloak)",
-        "Kricketot",
+        "Kricketune",
         "Shelmet",
         "Maractus"
       ]
@@ -197,7 +197,7 @@
       ],
       "species": [
         "Dedenne",
-        "Natu",
+        "Xatu",
         "Woobat",
         "Girafarig"
       ]
@@ -216,8 +216,8 @@
         10
       ],
       "species": [
-        "Fidough",
-        "Snubbull",
+        "Dachsbun",
+        "Granbull",
         "Spritzee",
         "Swirlix"
       ]
@@ -256,9 +256,9 @@
         10
       ],
       "species": [
-        "Drowzee",
+        "Hypno",
         "Munna",
-        "Spoink",
+        "Grumpig",
         "Elgyem"
       ]
     },
@@ -276,9 +276,9 @@
         10
       ],
       "species": [
-        "Lillipup",
-        "Wooloo",
-        "Wynaut",
+        "Stoutland",
+        "Dubwool",
+        "Wobbuffet",
         "Chingling"
       ]
     },
@@ -297,7 +297,7 @@
       ],
       "species": [
         "Chatot",
-        "Doduo",
+        "Dodrio",
         "Farfetch'd",
         "Stunfisk"
       ]
@@ -318,7 +318,7 @@
       "species": [
         "Emolga",
         "Furfrou (Natural Form)",
-        "Hoothoot",
+        "Noctowl",
         "Komala"
       ]
     },
@@ -376,9 +376,9 @@
         10
       ],
       "species": [
-        "Glameow",
+        "Purugly",
         "Minccino",
-        "Skwovet",
+        "Greedent",
         "Buneary"
       ]
     },
@@ -416,9 +416,9 @@
         10
       ],
       "species": [
-        "Ducklett",
+        "Swanna",
         "Panpour",
-        "Skiddo",
+        "Gogoat",
         "Carnivine"
       ]
     },
@@ -436,10 +436,10 @@
         10
       ],
       "species": [
-        "Chikorita",
+        "Meganium",
         "Pansage",
-        "Shroodle",
-        "Cacnea"
+        "Grafaiai",
+        "Cacturne"
       ]
     },
     {
@@ -456,10 +456,10 @@
         10
       ],
       "species": [
-        "Gossifleur",
-        "Seedot",
+        "Eldegoss",
+        "Nuzleaf",
         "Sunkern",
-        "Cherubi"
+        "Cherrim Overcast"
       ]
     },
     {
@@ -536,10 +536,10 @@
         10
       ],
       "species": [
-        "Flittle",
-        "Patrat",
+        "Espathra",
+        "Watchog",
         "Skitty",
-        "Bronzor"
+        "Bronzong"
       ]
     },
     {
@@ -556,7 +556,7 @@
         10
       ],
       "species": [
-        "Bidoof",
+        "Bibarel",
         "Smeargle",
         "Yungoos",
         "Lechonk"
@@ -576,10 +576,10 @@
         10
       ],
       "species": [
-        "Bunnelby",
+        "Diggersby",
         "Happiny",
-        "Whismur",
-        "Zigzagoon"
+        "Exploud",
+        "Linoone"
       ]
     },
     {
@@ -597,9 +597,9 @@
       ],
       "species": [
         "Delibird",
-        "Frillish",
-        "Smoochum",
-        "Maschiff"
+        "Jellicent",
+        "Jynx",
+        "Mabosstiff"
       ]
     },
     {
@@ -617,8 +617,8 @@
       ],
       "species": [
         "Bramblin",
-        "Nickit",
-        "Purrloin",
+        "Thievul",
+        "Liepard",
         "Inkay"
       ]
     },
@@ -637,9 +637,9 @@
       ],
       "species": [
         "Greavard",
-        "Poochyena",
-        "Yamask",
-        "Drifloon"
+        "Mightyena",
+        "Cofagrigus",
+        "Drifblim"
       ]
     },
     {
@@ -658,7 +658,7 @@
       "species": [
         "Pichu",
         "Poipole",
-        "Stunky",
+        "Skuntank",
         "Seviper"
       ]
     },
@@ -676,9 +676,9 @@
         10
       ],
       "species": [
-        "Gulpin",
-        "Makuhita",
-        "Trubbish",
+        "Swalot",
+        "Hariyama",
+        "Garbodor",
         "Falinks"
       ]
     },

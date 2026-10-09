@@ -1,6 +1,6 @@
 # Pokémon Tactica — source de vérité V1
 
-État : décisions produit courantes au 27 septembre 2026.
+État : décisions produit courantes au 9 octobre 2026.
 
 La hiérarchie normative est stricte :
 
@@ -25,6 +25,8 @@ Pokémon Tactica est un remake/fork jouable de la 2G basé sur HnS, centré sur 
 - Le niveau vient du premier accès réel à la zone. Surf, Pêche ou Éclate-Roc débloquent une méthode mais ne rehaussent pas artificiellement une ancienne zone.
 - Route 36 est calibrée `14–17`.
 - Habitat et stade d’évolution doivent rester cohérents avec la zone et le niveau.
+- Une évolution par niveau disponible au niveau réel de la rencontre est appliquée ; une forme trop évoluée revient au stade légal. Les niveaux des zones restent inchangés. Les seuils traversés dans une plage sont résolus à la création du Pokémon, pour toutes les méthodes, Headbutt et Safari compris.
+- Les formes qui évoluent par objet, objet tenu ou Fil Liaison restent sauvages sous leur forme actuelle ; leur évolution appartient au joueur. Les autres conditions officielles sont respectées.
 - Aucune famille starter n’est disponible avant le badge 2.
 - Aucun légendaire/fabuleux n’est ajouté comme encounter standard.
 - Scorplane appartient aux starters Tactica : aucune occurrence de sa famille avant le badge 2. Sa première occurrence sauvage est Route 34, herbe/sol, jour, niveaux 25–28, slot 30 %, à la place de Migalos.
@@ -72,8 +74,9 @@ La source détaillée est [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Le
 
 - Le rival possède un starter fixe par archétype. Il n’existe pas de combat scénario après le badge 1 : la progression cible est **1 Pokémon au premier duel, 4 après Hector, puis 6 à partir de la Tour Cendrée**. Sa Méga n’apparaît qu’à partir du combat suivant le badge 4.
 - Chaque combat Rival reprend la plage de cap du prochain Champion ou jalon majeur et devient le cap de préparation courant : le minimum sert au cap HARD, le maximum au cap NORMAL.
+- Le profil canonique du Rival conserve nature, EV HARD et plan de capacités à chaque stade ; les capacités sont adaptées à la forme et au niveau réellement envoyés. Le starter suit le même chemin que les cinq autres membres.
 - Chaque membre du Rival possède un talent canonique. Le runtime l’applique lorsqu’il est légal pour la forme réellement envoyée et conserve le talent de Méga pour la transformation.
-- Les Exécutifs Rocket suivent les phases réellement présentes dans le scénario : Proton 3→6, Petrel/Ariana 4→6, Archer 6. Leur niveau vaut le dernier jalon Champion/Rival pertinent +2 et les Méga restent réservées aux équipes FINAL.
+- Les Exécutifs Rocket suivent les phases réellement présentes dans le scénario : Proton 3→6, Petrel/Ariana 4→6, Archer 6. Leur plage de niveaux vaut celle de l’arène vaincue la plus avancée +2, sans cumul entre admins ni référence au Rival et les Méga restent réservées aux équipes FINAL.
 - Archer utilise Méga-Sharpedo et Méga-évolue immédiatement ; aucun plan Abri → Méga retardée.
 - Méga-Démolosse reste réservé à Marion.
 
@@ -93,6 +96,10 @@ La source détaillée est [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Le
 - Vitesse native x1/x2/x3/x4, audio indépendant, Shiny Rate et cœur du flow starter/œuf sont protégés contre les réécritures sans défaut démontré.
 - Le principe d’un jeu entièrement jouable en solo reste protégé. La migration des anciennes méthodes d’évolution HnS vers [EVOLUTIONS.md](EVOLUTIONS.md) est terminée ; ne pas réintroduire les anciennes adaptations.
 - `Shiny Only` reste post-V1.
+
+### Récompenses de début de partie
+
+L’assistant d’Orme donne une Potion et dix Poké Balls au premier départ du laboratoire. Le drapeau de remise empêche une seconde attribution au retour ; la boutique de Ville Griotte conserve son déblocage actuel. Le parcours réel reste à observer en ROM. Selon la clarification owner du 9 octobre 2026, un sac et un PC d'objets pleins au moment des récompenses initiales ne constituent pas un scénario accessible : le sac est vide et les Poké Balls ne sont pas encore distribuées.
 
 ### Boutiques et balance
 

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "tactica_progression.h"
 #include "battle_setup.h"
 #include "battle_pike.h"
 #include "battle_pyramid.h"
@@ -620,9 +621,16 @@ static void TryApplyPokeblockBonus(struct Pokemon *mon, u16 species)
 
 void CreateWildMon(u16 species, u8 level)
 {
+#if IS_HNS
+    species = GetTacticaWildSpeciesAtLevel(species, level);
+#endif
     ZeroEnemyPartyMons();
     u32 personality = GetMonPersonality(species, GetSynchronizedGender(WILDMON_ORIGIN, species), PickWildMonNature(species), RANDOM_UNOWN_LETTER);
     CreateMonWithIVs(&gEnemyParty[0], species, level, personality, OTID_STRUCT_PLAYER_ID, USE_RANDOM_IVS);
+#if IS_HNS
+    EvolveTacticaWildMonAtLevel(&gEnemyParty[0]);
+    species = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES);
+#endif
     TryApplyPokeblockBonus(&gEnemyParty[0], species);
     GiveMonInitialMoveset(&gEnemyParty[0]);
 }

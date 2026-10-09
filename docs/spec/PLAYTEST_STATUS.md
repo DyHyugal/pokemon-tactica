@@ -47,7 +47,7 @@ Les points suivants sont intégrés et protégés automatiquement. Une observati
 - absence d’anciens `EVO_TRADE` actifs ;
 - Pokédex évolution régénéré depuis le runtime et protégé par `sync_tactica_species_evolutions.py --check` ;
 - rosters Rocket et règles Méga ;
-- caps Rival synchronisés sur le prochain jalon majeur et niveaux Rocket calculés sur le dernier jalon pertinent +2 ;
+- caps Rival synchronisés sur le prochain jalon majeur et niveaux Rocket calculés sur la plage de la dernière arène vaincue +2, sans cumul entre admins ;
 - talents canoniques du Rival lorsqu’ils sont légaux pour la forme envoyée ;
 - Mega Ring placé après Mortimer ;
 - premier accès réel des encounters ;
@@ -103,7 +103,7 @@ Le Pokédex n’est plus une source manuelle pour ces méthodes : ses champs d�
 - après Hector : 4 Pokémon, plage 29–32 ;
 - Tour Cendrée : 6 Pokémon, plage 35–38 ;
 - Tour Radio : 61–64 ; Route Victoire : 65–67 ; Mont Sélénite/Plateau : 95 ;
-- Rocket : Proton 3→6, Petrel/Ariana 4→6, Archer 6 ; niveaux dynamiques +2 selon les jalons réels ;
+- Rocket : Proton 3→6, Petrel/Ariana 4→6, Archer 6 ; plage de la dernière arène vaincue +2, sans cumul entre admins ;
 - vérifier en combat que les talents attendus du Rival se déclenchent selon les archétypes.
 
 ### Méga
@@ -152,6 +152,21 @@ Le premier playtest owner a reproduit les boucles de setup sur Évoli et Mimiqui
 - les autres setup offensifs convertissent leur avantage en attaque après deux niveaux positifs.
 
 Les témoins Provoc de Cornèbre et Téraclope restent à observer sans autre changement tant qu’aucun défaut courant n’est reproduit.
+
+## Contrôles owner des corrections de cohérence
+
+À effectuer après intégration de la branche locale `fix/audit-progression-rosters`, dans une ROM reconstruite depuis le SHA exact. Les tests automatiques de données et de combat ne remplacent pas ces parcours :
+
+- nouveau départ : recevoir une Potion et dix Poké Balls de l'assistant d'Orme, puis vérifier qu'il n'en redonne pas au retour ;
+- Blanche (29–32) puis un admin : équipe Rocket 31, ace 34 ; deux admins sans nouvelle arène gardent cette plage ; le cap correspond au boss courant et ne redescend pas si un cap supérieur est déjà acquis ;
+- Mortimer → Chuck → Jasmine → repaire Rocket : caps de préparation cohérents avec le Guide ;
+- deuxième Ligue → Red : cap 100 conservé en mode normal et strict, avec sauvegarde/rechargement ;
+- Rival Eau : Marshtomp au niveau 18, Laggron aux rencontres dont le niveau permet son évolution ; profil physique et nature Rigide conservés, Méga après badge 4 ; vérifier aussi les autres archétypes ;
+- Rival HARD : IV 31, EV du profil et IA renforcée ; NORMAL garde les mêmes espèces, niveaux, capacités et objets ;
+- zone dont la plage traverse un seuil : Tynamo 37–38 / Lampéroie 39–40 ; les formes par objet/Fil Liaison restent à faire évoluer par le joueur ; vérifier aussi Headbutt et Safari ;
+- branchages conditionnels : Chenipotte selon personnalité, Apitrini selon sexe, Amagara selon horaire. Le wiki affiche les formes possibles dans les plages.
+
+Rectification owner du 9 octobre 2026 : le cas théorique de sac et PC d'objets pleins lors des récompenses initiales n'est pas un défaut de progression établi. À ce stade, le sac est vide et les Poké Balls ne sont pas encore distribuées. Aucun parcours accessible démontrant une perte de récompense n'a été reproduit ; ce point est retiré des défauts confirmés et des corrections à prévoir.
 
 ## Protocole candidate
 

@@ -267,7 +267,7 @@ def validate_rockets():
     hard_marker = "/* ========== Family Remix FINAL hard boss parties ========== */"
     rocket_marker = "/* ========== Family Remix FINAL Rocket parties ========== */"
     normal = text.split(hard_marker, 1)[0]
-    rocket = text.split(rocket_marker, 1)[1]
+    rocket = text.split(rocket_marker, 1)[1].split("/* ========== Tactica HARD rival parties ========== */", 1)[0]
     hard_blocks = dict(re.findall(
         r"^=== ([A-Z0-9_]+) ===\n(.*?)(?=^=== |\Z)", rocket, re.M | re.S
     ))
@@ -563,11 +563,10 @@ def validate_rival_progression():
     learnset_aliases = {"TOXTRICITY": "TOXTRICITY_AMPED"}
     for category, roster in rival["fight_rosters"]["categories"].items():
         for mon in roster:
-            if mon["family"] == "saved starter":
-                continue
+            base = rival["selection"]["fixed_starters"][category] if mon["family"] == "saved starter" else mon["family"]
             species = {
                 learnset_aliases.get(key, key)
-                for name in (mon["family"], mon["target_final_species"])
+                for name in (base, mon["target_final_species"])
                 for key in (re.sub(r"[^A-Z0-9]+", "_", name.upper()).strip("_"),)
             }
             unknown = species - learnables.keys()
@@ -617,6 +616,27 @@ def validate_rival_progression():
             if len(items) != len(set(items)):
                 fail(f"{trainer_id}: duplicate rival held items")
 
+    full = (ROOT / "src/data/trainers_hns.party").read_text()
+    hard = full.split("/* ========== Tactica HARD rival parties ========== */", 1)[1]
+    for starter in ("CHIKORITA", "CYNDAQUIL", "TOTODILE"):
+        for fight in range(1, 8):
+            trainer_id = f"TRAINER_RIVAL_{starter}_{fight}_HNS"
+            pattern = rf"^=== {trainer_id} ===\n(.*?)(?=^=== |\Z)"
+            normal_match = re.findall(pattern, text, re.M | re.S)
+            hard_match = re.findall(pattern, hard, re.M | re.S)
+            if len(normal_match) != 1 or len(hard_match) != 1:
+                fail(f"{trainer_id}: missing or duplicated NORMAL/HARD story team")
+            hard_header, hard_party = hard_match[0].strip().split("\n\n", 1)
+            normal_party = normal_match[0].strip().split("\n\n", 1)[1]
+            if "Difficulty: Hard" not in hard_header or "Smart Switching" not in hard_header:
+                fail(f"{trainer_id}: HARD must have its own optimized AI entry")
+            ivs = re.findall(r"(?m)^IVs: (.*)$", hard_party)
+            if len(ivs) != len(expected_levels[fight]) or any(value != "31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe" for value in ivs):
+                fail(f"{trainer_id}: HARD IVs must all be 31")
+            normalize_ivs = lambda party: re.sub(r"(?m)^IVs:.*$", "IVs:", party).strip()
+            if normalize_ivs(normal_party) != normalize_ivs(hard_party):
+                fail(f"{trainer_id}: HARD changed roster content beyond IVs")
+
     runtime = (ROOT / "src/family_starter.c").read_text(encoding="utf-8")
     battle = (ROOT / "src/battle_main.c").read_text(encoding="utf-8")
     generated = (ROOT / "src/data/tactica_rival.h").read_text(encoding="utf-8")
@@ -626,8 +646,8 @@ def validate_rival_progression():
         fail("rival category resolver is not wired into trainer party creation")
     if generated.count(".isSavedStarter = TRUE") != 6:
         fail("generated rival data must contain one saved starter slot per category")
-    if generated.count(".baseSpecies = ") != 30:
-        fail("generated rival data must contain five authored members per category")
+    if generated.count(".baseSpecies = ") != 36:
+        fail("generated rival data must contain six authored members per category")
 
     selector_script = (ROOT / "data/scripts/family_starter.inc").read_text()
     if selector_script.count("setvar VAR_0x8007, 0xFFFF") != 2:

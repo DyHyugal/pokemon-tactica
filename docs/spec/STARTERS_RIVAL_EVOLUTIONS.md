@@ -61,21 +61,21 @@ Le type secondaire actuel ou une évolution custom d'un starter ne redéfinit pa
 
 L'archétype permanent dépend de la catégorie tirée : Eau → Pluie ; Feu → Soleil ; Plante → Champ Herbu ; Électrik → Champ Électrifié ; Sol → Tempête de sable ; Glace → Neige.
 
-Le runtime actuellement fusionné utilise encore les anciens rosters générés depuis `data/spec/rival.json` / `src/data/tactica_rival.h`. Ils sont **à régénérer** depuis `ROSTERS_ROCKET_RIVAL.md`. Les niveaux de chaque rencontre suivent le jalon de préparation canonique.
+Les rosters runtime sont générés depuis `data/spec/rival.json` dans `src/data/tactica_rival.h`. Les six membres, starter compris, conservent leur nature, leurs EV HARD et leur plan de capacités canonique ; seules la forme légale, les capacités disponibles et les objets autorisés à ce stade sont adaptés. Les niveaux suivent le jalon de préparation canonique.
 
 ### Premier combat
 
-Contrat owner 26-09 :
+Contrat courant :
 
 - taille d'équipe : **1** ;
 - contenu : **starter rival uniquement** ;
-- niveau : **17**, soit le cap de préparation d'Albert ;
+- niveau : **18**, soit le cap de préparation d'Albert ;
 - stade d'évolution : résoudre légalement l'espèce au niveau 18 ;
 - attaques : légales pour ce stade et ce niveau ;
 - NORMAL/HARD gardent le même contenu.
 
-Le template historique niveau 5 est donc un écart à corriger ; il ne doit pas être conservé au motif que le combat original HGSS était niveau 5.
+Le premier duel utilise le profil EARLY du starter fixe, au niveau 18.
 
 ### Combats suivants
 
-Les tailles progressives validées sont 1 -> 3 -> 4 -> 6. Après le badge 4, la même équipe complète peut utiliser sa Méga. Les niveaux suivent le prochain jalon obligatoire de la progression. Les espèces, évolutions, capacités, objets, natures et EV HARD doivent être résolus au niveau réel du duel puis vérifiés en ROM.
+Les tailles progressives validées sont 1 -> 4 -> 6. Après le badge 4, la même équipe complète peut utiliser sa Méga. Les niveaux suivent le prochain jalon obligatoire de la progression. Les espèces, évolutions, capacités, objets, natures et EV HARD doivent être résolus au niveau réel du duel puis vérifiés en ROM.
