@@ -99,7 +99,7 @@ La source détaillée est [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Le
 
 ### Récompenses de début de partie
 
-L’assistant d’Orme donne une Potion et dix Poké Balls au premier départ du laboratoire. Le drapeau de remise empêche une seconde attribution au retour ; la boutique de Ville Griotte conserve son déblocage actuel. Le parcours réel et le cas de sac plein restent à observer en ROM.
+L’assistant d’Orme donne une Potion et dix Poké Balls au premier départ du laboratoire. Le drapeau de remise empêche une seconde attribution au retour ; la boutique de Ville Griotte conserve son déblocage actuel. Le parcours réel reste à observer en ROM. Selon la clarification owner du 9 octobre 2026, un sac et un PC d'objets pleins au moment des récompenses initiales ne constituent pas un scénario accessible : le sac est vide et les Poké Balls ne sont pas encore distribuées.
 
 ### Boutiques et balance
 

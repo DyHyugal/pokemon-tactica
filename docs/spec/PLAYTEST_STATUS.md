@@ -157,7 +157,7 @@ Les témoins Provoc de Cornèbre et Téraclope restent à observer sans autre ch
 
 À effectuer après intégration de la branche locale `fix/audit-progression-rosters`, dans une ROM reconstruite depuis le SHA exact. Les tests automatiques de données et de combat ne remplacent pas ces parcours :
 
-- nouveau départ : recevoir une Potion et dix Poké Balls de l'assistant d'Orme, puis vérifier qu'il n'en redonne pas au retour ; essayer le cas de poche pleine et le retour après avoir libéré de la place ;
+- nouveau départ : recevoir une Potion et dix Poké Balls de l'assistant d'Orme, puis vérifier qu'il n'en redonne pas au retour ;
 - Blanche (29–32) puis un admin : équipe Rocket 31, ace 34 ; deux admins sans nouvelle arène gardent cette plage ; le cap correspond au boss courant et ne redescend pas si un cap supérieur est déjà acquis ;
 - Mortimer → Chuck → Jasmine → repaire Rocket : caps de préparation cohérents avec le Guide ;
 - deuxième Ligue → Red : cap 100 conservé en mode normal et strict, avec sauvegarde/rechargement ;
@@ -166,7 +166,7 @@ Les témoins Provoc de Cornèbre et Téraclope restent à observer sans autre ch
 - zone dont la plage traverse un seuil : Tynamo 37–38 / Lampéroie 39–40 ; les formes par objet/Fil Liaison restent à faire évoluer par le joueur ; vérifier aussi Headbutt et Safari ;
 - branchages conditionnels : Chenipotte selon personnalité, Apitrini selon sexe, Amagara selon horaire. Le wiki affiche les formes possibles dans les plages.
 
-Défaut supplémentaire issu de l'audit, hors des corrections demandées : si le sac **et** le PC d'objets sont pleins, `QueuePendingItem` abandonne une récompense starter/œuf sans mécanisme durable de récupération. La gestion de cette récompense reste à corriger ; le stockage de Pokémon plein constitue un cas différent.
+Rectification owner du 9 octobre 2026 : le cas théorique de sac et PC d'objets pleins lors des récompenses initiales n'est pas un défaut de progression établi. À ce stade, le sac est vide et les Poké Balls ne sont pas encore distribuées. Aucun parcours accessible démontrant une perte de récompense n'a été reproduit ; ce point est retiré des défauts confirmés et des corrections à prévoir.
 
 ## Protocole candidate
 
