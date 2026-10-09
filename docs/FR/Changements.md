@@ -2,9 +2,11 @@
 
 # Changements
 
+En combat, les messages attendent désormais un nouvel appui sur A (ou B) après leur affichage, y compris en x4 et avec FASTER. Maintenir A accélère le texte sans le valider ; les choix Oui/Non gardent leur propre confirmation.
+
 Cette page regroupe les changements de gameplay propres à Pokémon Tactica. Elle doit rester **exhaustive** sur les modifications V1 qui affectent directement la construction d'équipe ou la progression.
 
-Vol s’utilise depuis la Carte du menu Start : A sur une destination déjà visitée, après le cinquième badge, sans Pokémon volant. La géographie Johto/Kanto est conservée dans une interface sobre inspirée d’Épée/Bouclier. Les autres CS s’utilisent devant leurs obstacles et ne figurent plus dans les menus Pokémon ; Flash éclaire automatiquement les grottes dès le début, sans badge. Escalade reste désactivée en V1, aucune paroi fonctionnelle n’étant présente dans les layouts HnS.
+Vol s’utilise depuis la Carte du menu Start : A sur une destination déjà visitée, après le cinquième badge, sans Pokémon volant. Les bandeaux ont été adaptés ; le dessin des routes, marqueurs de villes et étendues d’eau reste celui de HnS. La géographie Johto/Kanto est conservée, et aucun remplacement DS/Switch prêt à intégrer n’a été vérifié. Les autres CS s’utilisent devant leurs obstacles et ne figurent plus dans les menus Pokémon ; Flash éclaire automatiquement les grottes dès le début, sans badge. Escalade reste désactivée en V1, aucune paroi fonctionnelle n’étant présente dans les layouts HnS.
 
 En HARD, les équipes de terrain et de climat coordonnent leurs poseurs et leurs attaquants. Un terrain disparu ou remplacé doit être restauré avant le relais ; Salarsen est le poseur manuel de secours du rival Électrik. L’IA utilise les informations révélées et des hypothèses de combat, sans connaître les capacités cachées ni le choix du joueur. Les CS de déplacement ne demandent plus d’espèce compatible, de capacité apprise ou d’objet CS : les conditions scénaristiques propres aux obstacles et à Vol restent nécessaires. Les menus Options et Settings partagent un rendu qui adapte l’espacement sur tous les onglets ; les dialogues d’éclosion et le curseur Oui/Non de combat ont aussi été corrigés.
 

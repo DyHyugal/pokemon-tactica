@@ -151,6 +151,8 @@
     - [STRATEGIC_TEAMS_AND_ACCESS](spec/STRATEGIC_TEAMS_AND_ACCESS.md)
     - [VISUAL_FEEDBACK_2026 09 25](spec/VISUAL_FEEDBACK_2026-09-25.md)
 
+- [Recherche carte Johto/Kanto](REGION_MAP_ASSETS.md)
+
 - [Wiki français]()
     - [Accueil](FR/Accueil.md)
     - [Jouer](FR/Jouer.md)

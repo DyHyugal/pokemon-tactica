@@ -10,6 +10,10 @@ Les anciennes évolutions solo HnS et leurs minimums de niveau **ne font plus pa
 
 Un défaut observé sur les systèmes réellement validés ci-dessus se corrige au plus près du code fautif, avec test ciblé. Aucun remaniement du moteur audio ou de vitesse n'est demandé.
 
+## Confirmation des messages de combat
+
+En combat local, chaque message informatif attend un nouvel appui sur A (ou B) après la fin de son affichage. Maintenir A pour accélérer le texte ne valide pas ce même message. Cette règle reste identique en x1/x2/x3/x4, avec FASTER et avec Fast Battles activé ou désactivé. Les choix Oui/Non gardent leur propre confirmation ; les démonstrations, replays, combats link et simulations automatisées conservent leur déroulement natif. La vitesse du texte et le moteur audio/vitesse ne sont pas modifiés.
+
 ## Évolutions
 
 La cible unique est [EVOLUTIONS.md](EVOLUTIONS.md) :
@@ -36,6 +40,6 @@ Coupe, Flash, Éclate-Roc, Force, Surf, Vol, Plongée et Cascade sont utilisable
 
 Déblocages CS conservés : Coupe = badge 2 et quête de Coupe terminée ; Éclate-Roc = badge 1 et remise scénaristique effectuée ; Flash = automatique dès le début, sans badge ; Force = badge 3 ; Surf = badge 4 ; Vol = badge 5 ; Plongée et Siphon = badge 7 ; Cascade = badge 8. Les flags de quête ne sont pas des contrôles de possession des objets CS. Siphon utilise déjà directement sa condition de badge, sans Pokémon compatible.
 
-Vol se sélectionne depuis la Carte du menu Start, avec A sur une destination déjà visitée après le cinquième badge. Aucun Pokémon n’est requis pour ce voyage ; les restrictions de lieu et d’accompagnement scénaristique restent applicables. La carte adopte une interface sobre inspirée d’Épée/Bouclier et conserve la géographie Johto/Kanto. Les autres CS restent contextuelles. Flash applique automatiquement l’éclairage natif maximal des grottes dès le début, y compris au chargement d’une sauvegarde, sans badge. Les CS ne figurent plus dans les menus individuels des Pokémon.
+Vol se sélectionne depuis la Carte du menu Start, avec A sur une destination déjà visitée après le cinquième badge. Aucun Pokémon n’est requis pour ce voyage ; les restrictions de lieu et d’accompagnement scénaristique restent applicables. Les bandeaux de carte adoptent une interface sobre inspirée d’Épée/Bouclier. Le dessin des routes, villes, reliefs et étendues d’eau reste celui de HnS ; sa modernisation DS/Switch est un souhait distinct, sans refonte engagée faute de remplacement prêt à intégrer vérifié. La géographie Johto/Kanto est conservée. Les autres CS restent contextuelles. Flash applique automatiquement l’éclairage natif maximal des grottes dès le début, y compris au chargement d’une sauvegarde, sans badge. Les CS ne figurent plus dans les menus individuels des Pokémon.
 
 Escalade reste désactivée en V1 : aucun bloc utilisant le comportement `MB_ROCK_CLIMB` dans les 458 layouts HnS audités (`python3 tools/audit_tactica_climbing_walls.py`). La CT d’Escalade disponible Route 49 conserve son usage en combat.
