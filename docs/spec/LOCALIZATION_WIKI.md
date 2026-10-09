@@ -23,6 +23,7 @@ La ROM V1 testable reste anglaise ; une ROM française distincte reste postérie
 Rubriques joueur :
 
 - Accueil / Home
+- Jouer / Play — téléchargement de la ROM complète et explications de lancement
 - Guide
 - Changements / Changes
 - Pokédex

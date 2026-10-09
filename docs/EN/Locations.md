@@ -1,4 +1,4 @@
-[Home](Home.md) · [Guide](Game-Guide.md) · [Changes](Changes.md) · [Pokédex](Pokedex.md) · [Locations](Locations.md) · [Routes & Cities](Routes-and-Cities.html) · [Bosses & Tips](Bosses-and-Tips.md) · [Credits](Credits-and-Versions.md) · [Roadmap](Roadmap.md) · **[FR](../FR/Localisations.md)**
+[Home](Home.md) · [Play](Play.md) · [Guide](Game-Guide.md) · [Changes](Changes.md) · [Pokédex](Pokedex.md) · [Locations](Locations.md) · [Routes & Cities](Routes-and-Cities.html) · [Bosses & Tips](Bosses-and-Tips.md) · [Credits](Credits-and-Versions.md) · [Roadmap](Roadmap.md) · **[FR](../FR/Localisations.md)**
 
 # Locations
 

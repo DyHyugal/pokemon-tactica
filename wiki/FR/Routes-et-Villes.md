@@ -1,4 +1,4 @@
-[Accueil](Accueil.md) · [Guide](Guide-de-jeu.md) · [Changements](Changements.md) · [Pokédex](Pokedex.md) · [Localisations](Localisations.md) · **Routes et Villes** · [Boss & Conseils](Boss-et-Conseils.md) · [Crédits](Credits-et-Versions.md) · [Roadmap](Roadmap.md) · **[EN](../EN/Routes-and-Cities.md)**
+[Accueil](Accueil.md) · [Jouer](Jouer.md) · [Guide](Guide-de-jeu.md) · [Changements](Changements.md) · [Pokédex](Pokedex.md) · [Localisations](Localisations.md) · **Routes et Villes** · [Boss & Conseils](Boss-et-Conseils.md) · [Crédits](Credits-et-Versions.md) · [Roadmap](Roadmap.md) · **[EN](../EN/Routes-and-Cities.md)**
 
 # Routes et Villes
 

@@ -119,7 +119,7 @@ Direction : noir / rouge / gris, sans grande surface blanche.
 
 La baseline actuelle inclut la passe owner fusionnée par la PR #29. Elle est protégée contre les restaurations ou refontes globales non demandées.
 
-- Navigation FR/EN : Accueil/Home, Guide, Changements/Changes, Pokédex, Localisations/Locations, Routes et Villes/Routes & Cities, Boss & Conseils/Tips, Crédits, Roadmap.
+- Navigation FR/EN : Accueil/Home, Jouer/Play, Guide, Changements/Changes, Pokédex, Localisations/Locations, Routes et Villes/Routes & Cities, Boss & Conseils/Tips, Crédits, Roadmap.
 - Routes/Villes est intégré et ne doit pas être retiré au nom d’une ancienne consigne.
 - Les pages Localisations et les compteurs Pokédex sont dérivés des sources canoniques par `tools/sync_tactica_localization.py`.
 - Les conditions d’évolution affichées dans les fiches Pokédex sont dérivées du runtime par `tools/sync_tactica_species_evolutions.py`.

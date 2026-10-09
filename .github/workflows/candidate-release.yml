@@ -1,0 +1,78 @@
+name: Publish Tactica V1 candidate
+
+on:
+  push:
+    branches: [integration/v1]
+    paths:
+      - .github/workflows/candidate-release.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tactica-v1-candidate-808b73e7
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout validated candidate
+        uses: actions/checkout@v4
+        with:
+          ref: 808b73e79f33a569e10ff083c170a268356763fa
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends binutils-arm-none-eabi gcc-arm-none-eabi libnewlib-arm-none-eabi libpng-dev python3 python3-pil
+
+      - name: Build candidate
+        run: make hns -j2
+
+      - name: Package ROM and source identity
+        shell: bash
+        run: |
+          mkdir -p release
+          cp pokehns.gba release/Pokemon-Tactica-V1-candidate-808b73e7.gba
+          cp docs/spec/PLAYTEST_STATUS.md release/PLAYTEST_STATUS.md
+          python3 - <<'PY'
+          import hashlib, json, pathlib, subprocess, zipfile
+          root = pathlib.Path('release')
+          rom = root / 'Pokemon-Tactica-V1-candidate-808b73e7.gba'
+          manifest = {
+              'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(),
+              'source_branch': 'integration/v1',
+              'rom_sha256': hashlib.sha256(rom.read_bytes()).hexdigest(),
+              'rom_size_bytes': rom.stat().st_size,
+              'status': 'V1 playtest candidate; not a stable release',
+          }
+          (root / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
+          (root / 'README.txt').write_text(
+              'Pokemon Tactica V1 - playtest candidate 808b73e7\n\n'
+              'Open the .gba file directly in mGBA. No base ROM or patch is required.\n'
+              'The ROM is in English. Start with the playtest through Morty, then the complete adventure.\n'
+              'See PLAYTEST_STATUS.md and include source_commit in bug reports.\n'
+          )
+          with zipfile.ZipFile(root / 'Pokemon-Tactica-V1-candidate-808b73e7.zip', 'w', zipfile.ZIP_DEFLATED) as archive:
+              for name in (rom.name, 'manifest.json', 'README.txt', 'PLAYTEST_STATUS.md'):
+                  archive.write(root / name, name)
+          PY
+
+      - name: Publish candidate downloads
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1-candidate-808b73e7
+          target_commitish: 808b73e79f33a569e10ff083c170a268356763fa
+          name: Pokémon Tactica V1 — candidate 808b73e7
+          prerelease: true
+          fail_on_unmatched_files: true
+          body: |
+            Candidate de playtest construite depuis integration/v1, commit 808b73e79f33a569e10ff083c170a268356763fa.
+            La ROM .gba fonctionne directement dans mGBA, sans ROM de base ni patch.
+            Le ZIP contient la ROM, son manifeste et la checklist de playtest. Cette candidate n'est pas une version stable validée.
+          files: |
+            release/Pokemon-Tactica-V1-candidate-808b73e7.gba
+            release/Pokemon-Tactica-V1-candidate-808b73e7.zip
+            release/manifest.json
