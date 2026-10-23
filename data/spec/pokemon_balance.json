@@ -118,7 +118,7 @@
       },
       "after": {
         "hp": 76,
-        "atk": 147,
+        "atk": 130,
         "def": 90,
         "spa": 60,
         "spd": 70,
@@ -128,7 +128,7 @@
           "STEEL"
         ]
       },
-      "notes": "+13 Speed; Dragon/Steel."
+      "notes": "-17 Attack; +13 Speed; Dragon/Steel. Attack adjusted by owner on 2026-10-23."
     },
     {
       "species": "SPECIES_CHARMANDER",

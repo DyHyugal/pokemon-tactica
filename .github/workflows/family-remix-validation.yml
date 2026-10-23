@@ -83,6 +83,8 @@ jobs:
           python3 tools/sync_tactica_encounters.py --check
           python3 tools/sync_tactica_special_encounters.py --check
           python3 tools/sync_tactica_species_evolutions.py --check
+          python3 tools/sync_tactica_species_balance.py --check
+          python3 tools/sync_tactica_trainer_levels.py --check
           python3 tools/sync_tactica_localization.py --check
           python3 tools/sync_tactica_boss_wiki.py --check
           python3 tools/sync_tactica_wiki_assets.py --check
@@ -118,6 +120,7 @@ jobs:
           make check BUILD=hns TESTS='*Family Safari:' -j2
           make check BUILD=hns TESTS='Tactica encounters:' -j2
           make check BUILD=hns TESTS='Tactica balance:' -j2
+          make check BUILD=hns TESTS='Tactica ordinary trainers:' -j2
           make check BUILD=hns TESTS='Tactica shops:' -j2
           make check BUILD=hns TESTS=Audio -j2
           make check BUILD=hns TESTS=Settings -j2

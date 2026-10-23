@@ -215,8 +215,8 @@ Recherche principale en **français**, avec les noms anglais acceptés comme ali
 | Passerouge | 1 |
 | Flotillon | 0 |
 | Mustéflott | 21 |
-| Floette (Fleur Rouge) | 0 |
-| Florges (Fleur Rouge) | 0 |
+| Floette (Fleur Rouge) | 2 |
+| Florges (Fleur Rouge) | 6 |
 | Flotte-Mèche | 1 |
 | Libégon | 1 |
 | Mimantis | 1 |
@@ -691,7 +691,7 @@ Recherche principale en **français**, avec les noms anglais acceptés comme ali
 | Vigoroth | 1 |
 | Lucanon | 4 |
 | Rafflesia | 2 |
-| Prismillon (Motif Floraison) | 0 |
+| Prismillon (Motif Floraison) | 1 |
 | Muciole | 1 |
 | Pyrax | 3 |
 | Voltorbe | 1 |

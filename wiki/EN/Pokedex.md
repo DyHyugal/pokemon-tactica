@@ -215,8 +215,8 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Fletchling | 1 |
 | Flittle | 0 |
 | Floatzel | 21 |
-| Floette (Red Flower) | 0 |
-| Florges (Red Flower) | 0 |
+| Floette (Red Flower) | 2 |
+| Florges (Red Flower) | 6 |
 | Flutter Mane | 1 |
 | Flygon | 1 |
 | Fomantis | 1 |
@@ -691,7 +691,7 @@ Primary search uses **English** names, with French names accepted as aliases on 
 | Vigoroth | 1 |
 | Vikavolt | 4 |
 | Vileplume | 2 |
-| Vivillon (Meadow Pattern) | 0 |
+| Vivillon (Meadow Pattern) | 1 |
 | Volbeat | 1 |
 | Volcarona | 3 |
 | Voltorb | 1 |

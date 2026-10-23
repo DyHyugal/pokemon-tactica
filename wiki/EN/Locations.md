@@ -14,7 +14,7 @@
 | Burned Tower B1F | Land | Day | 34–37 | Indeedee (Male) 30% · Oranguru 30% · Raticate 30% · Monferno 34–35 / Infernape 36–37 10% |
 | Burned Tower B1F | Land | Night | 34–37 | Mimikyu (Disguised Form) 30% · Skorupi 30% · Honedge 34 / Doublade 35–37 30% · Incineroar 10% |
 | Celadon City | Fishing | Any | 60–74 | Tentacruel 30% · Golisopod 30% · Basculegion (Male) 30% · Walrein 10% |
-| Celadon City | Land | Any | 60–74 | Reuniclus 30% · Blissey 30% · Florges Red 30% · Ursaluna 10% |
+| Celadon City | Land | Any | 60–74 | Reuniclus 30% · Blissey 30% · Florges (Red Flower) 30% · Ursaluna 10% |
 | Celadon City | Surf | Any | 60–74 | Wailord 30% · Golisopod 30% · Basculegion (Male) 30% · Walrein 10% |
 | Cerulean Cave 1F | Fishing | Day | 83–93 | Seismitoad 30% · Barbaracle 30% · Drednaw 30% · Lapras 10% |
 | Cerulean Cave 1F | Land | Day | 83–93 | Salamence 30% · Hydreigon 30% · Dragapult 30% · Goodra 10% |
@@ -45,7 +45,7 @@
 | Cliff Edge Gate | Surf | Day | 38–40 | Seismitoad 30% · Araquanid 30% · Wugtrio 30% · Palafin (Zero Form) 10% |
 | Dark Cave North Side | Fishing | Any | 38–40 | Azumarill 30% · Tatsugiri Curly 30% · Milotic 30% · Gyarados 10% |
 | Dark Cave North Side | Land | Any | 38–40 | Lucario 30% · Gholdengo 30% · Mamoswine 30% · Toxtricity (Amped Form) 10% |
-| Dark Cave North Side | Rock Smash | Any | 38–40 | Vivillon Meadow 30% · Lucario 30% · Larvesta 30% · Kingambit 10% |
+| Dark Cave North Side | Rock Smash | Any | 38–40 | Vivillon (Meadow Pattern) 30% · Lucario 30% · Larvesta 30% · Kingambit 10% |
 | Dark Cave North Side | Surf | Any | 38–40 | Azumarill 30% · Lapras 30% · Milotic 30% · Gyarados 10% |
 | Dark Cave South Side | Fishing | Day | 7–11 | Magikarp 30% · Barboach 30% · Corphish 30% · Chinchou 10% |
 | Dark Cave South Side | Land | Day | 7–11 | Zubat 30% · Geodude 30% · Roggenrola 30% · Noibat 10% |
@@ -61,7 +61,7 @@
 | Ecruteak City | Land | Any | 34–37 | Comfey 30% · Duosion 30% · Porygon 30% · Jynx 10% |
 | Ecruteak City | Surf | Any | 34–37 | Feebas 30% · Staryu 30% · Lumineon 30% · Quaxwell 34–35 / Quaquaval 36–37 10% |
 | Fuchsia City | Fishing | Any | 60–74 | Floatzel 30% · Toxapex 30% · Barraskewda 30% · Seismitoad 10% |
-| Fuchsia City | Land | Any | 60–74 | Wyrdeer 30% · Glimmora 30% · Porygon-Z 30% · Florges Red 10% |
+| Fuchsia City | Land | Any | 60–74 | Wyrdeer 30% · Glimmora 30% · Porygon-Z 30% · Florges (Red Flower) 10% |
 | Fuchsia City | Surf | Any | 60–74 | Tentacruel 30% · Golisopod 30% · Basculegion (Male) 30% · Walrein 10% |
 | Ice Path 1F | Land | Any | 58–60 | Avalugg 30% · Froslass 30% · Beartic 30% · Alolan Ninetales 10% |
 | Ice Path B1F | Land | Any | 58–61 | Abomasnow 30% · Glalie 30% · Sneasler 30% · Weavile 10% |
@@ -167,7 +167,7 @@
 | Route 12 | Rock Smash | Any | 60–74 | Sandaconda 30% · Donphan 30% · Hippowdon 30% · Magnezone 10% |
 | Route 12 | Surf | Any | 60–74 | Toxapex 30% · Barraskewda 30% · Tentacruel 30% · Walrein 10% |
 | Route 13 | Fishing | Any | 60–74 | Wailord 30% · Barbaracle 30% · Basculegion (Male) 30% · Golisopod 10% |
-| Route 13 | Land | Day | 60–74 | Abomasnow 30% · Wyrdeer 30% · Talonflame 30% · Florges Red 10% |
+| Route 13 | Land | Day | 60–74 | Abomasnow 30% · Wyrdeer 30% · Talonflame 30% · Florges (Red Flower) 10% |
 | Route 13 | Land | Night | 60–74 | Revavroom 30% · Roserade 30% · Nidoqueen 30% · Glimmora 10% |
 | Route 13 | Surf | Any | 60–74 | Floatzel 30% · Toxapex 30% · Clawitzer 30% · Seismitoad 10% |
 | Route 14 | Fishing | Any | 60–74 | Barraskewda 30% · Tentacruel 30% · Golisopod 30% · Walrein 10% |
@@ -206,7 +206,7 @@
 | Route 21 | Rock Smash | Any | 60–74 | Lycanroc (Midday Form) 30% · Sandaconda 30% · Donphan 30% · Aggron 10% |
 | Route 21 | Surf | Any | 60–74 | Wailord 30% · Milotic 30% · Gyarados 30% · Seismitoad 10% |
 | Route 22 | Fishing | Any | 60–74 | Crawdaunt 30% · Veluza 30% · Whiscash 30% · Floatzel 10% |
-| Route 22 | Land | Day | 60–74 | Abomasnow 30% · Ursaring 30% · Wyrdeer 30% · Florges Red 10% |
+| Route 22 | Land | Day | 60–74 | Abomasnow 30% · Ursaring 30% · Wyrdeer 30% · Florges (Red Flower) 10% |
 | Route 22 | Land | Night | 60–74 | Pangoro 30% · Gourgeist 30% · Dragalge 30% · Grimmsnarl 10% |
 | Route 22 | Surf | Any | 60–74 | Bruxish 30% · Cramorant 30% · Toxapex 30% · Dracovish 10% |
 | Route 24 | Fishing | Any | 60–74 | Walrein 30% · Gastrodon (West Sea) 30% · Barraskewda 30% · Dondozo 10% |
@@ -264,7 +264,7 @@
 | Route 36 | Rock Smash | Any | 14–17 | Mienfoo 30% · Cranidos 30% · Shieldon 30% · Geodude 10% |
 | Route 37 | Land | Day | 32–35 | Unfezant 30% · Staravia 32–33 / Staraptor 34–35 30% · Ursaring 30% · Charmeleon 10% |
 | Route 37 | Land | Night | 32–35 | Scovillain 30% · Zoroark 30% · Tangrowth 30% · Pignite 10% |
-| Route 38 | Land | Day | 35–38 | Gardevoir 30% · Floette Red 30% · Tangela 30% · Servine 35 / Serperior 36–38 10% |
+| Route 38 | Land | Day | 35–38 | Gardevoir 30% · Floette (Red Flower) 30% · Tangela 30% · Servine 35 / Serperior 36–38 10% |
 | Route 38 | Land | Night | 35–38 | Kangaskhan 30% · Rotom (Rotom) 30% · Wyrdeer 30% · Braixen 35 / Delphox 36–38 10% |
 | Route 39 | Land | Day | 35–38 | Tauros 30% · Jigglypuff 30% · Swellow 30% · Quilladin 35 / Chesnaught 36–38 10% |
 | Route 39 | Land | Night | 35–38 | Morpeko (Full Belly Mode) 30% · Ursaluna 30% · Nidoqueen 30% · Bouffalant 10% |
@@ -283,7 +283,7 @@
 | Route 42 | Rock Smash | Any | 36–38 | Vikavolt 30% · Gurdurr 30% · Klink 36–37 / Klang 38 30% · Scyther 10% |
 | Route 42 | Surf | Any | 36–38 | Clauncher 36 / Clawitzer 37–38 30% · Lumineon 30% · Tirtouga 36 / Carracosta 37–38 30% · Mantyke 10% |
 | Route 43 | Fishing | Any | 36–38 | Omanyte 30% · Kabuto 30% · Lanturn 30% · Octillery 10% |
-| Route 43 | Land | Day | 36–38 | Clefairy 30% · Florges Red 30% · Lurantis 30% · Manectric 10% |
+| Route 43 | Land | Day | 36–38 | Clefairy 30% · Florges (Red Flower) 30% · Lurantis 30% · Manectric 10% |
 | Route 43 | Land | Night | 36–38 | Foongus 30% · Roserade 30% · Darmanitan (Standard Mode) 30% · Salazzle 10% |
 | Route 43 | Surf | Any | 36–38 | Azumarill 30% · Pelipper 30% · Sharpedo 30% · Lapras 10% |
 | Route 44 | Fishing | Any | 57–59 | Tatsugiri Curly 30% · Arctovish 30% · Milotic 30% · Gyarados 10% |
@@ -298,7 +298,7 @@
 | Route 46 | Land | Day | 6–9 | Spearow 30% · Geodude 30% · Phanpy 30% · Mankey 10% |
 | Route 46 | Land | Night | 6–9 | Rattata 30% · Zubat 30% · Geodude 30% · Rookidee 10% |
 | Route 47 | Fishing | Any | 37–40 | Azumarill 30% · Bruxish 30% · Araquanid 30% · Whiscash 10% |
-| Route 47 | Land | Day | 37–40 | Flabebe Red 30% · Pikachu 30% · Squawkabilly (Green Plumage) 30% · Decidueye 10% |
+| Route 47 | Land | Day | 37–40 | Floette (Red Flower) 30% · Pikachu 30% · Squawkabilly (Green Plumage) 30% · Decidueye 10% |
 | Route 47 | Land | Night | 37–40 | Chansey 30% · Vullaby 30% · Varoom 37–39 / Revavroom 40 30% · Charcadet 10% |
 | Route 47 | Surf | Any | 37–40 | Wugtrio 30% · Cramorant 30% · Palafin (Zero Form) 30% · Arctovish 10% |
 | Route 48 | Land | Day | 37–40 | Mr. Mime 30% · Steenee 30% · Shiinotic 30% · Rillaboom 10% |
@@ -385,7 +385,7 @@
 | Viridian City | Fishing | Any | 60–74 | Walrein 30% · Crawdaunt 30% · Luvdisc 30% · Basculegion (Male) 10% |
 | Viridian City | Land | Any | 60–74 | Pyroar 30% · Zoroark 30% · Gothitelle 30% · Porygon-Z 10% |
 | Viridian City | Surf | Any | 60–74 | Gastrodon (West Sea) 30% · Floatzel 30% · Lumineon 30% · Mantyke 10% |
-| Viridian Forest | Land | Day | 60–74 | Toedscruel 30% · Tangrowth 30% · Florges Red 30% · Hydrapple 10% |
+| Viridian Forest | Land | Day | 60–74 | Toedscruel 30% · Tangrowth 30% · Florges (Red Flower) 30% · Hydrapple 10% |
 | Viridian Forest | Land | Night | 60–74 | Centiskorch 30% · Golisopod 30% · Glimmora 30% · Tsareena 10% |
 | Whirl Islands 1F | Fishing | Any | 40–43 | Wailord 30% · Poliwhirl 30% · Veluza 30% · Relicanth 10% |
 | Whirl Islands 1F | Land | Any | 40–43 | Vibrava 30% · Raticate 30% · Hakamo O 30% · Eiscue (Ice Face) 10% |
@@ -419,7 +419,7 @@
 | Safari Zone Top Left | Safari — Pool B | — | 37–40 | Beautifly 30% · Butterfree 30% · Ledian 30% · Yanma 10% |
 | Safari Zone Top Left | Safari — Pool C | — | 37–40 | Combee 37–40 / Vespiquen 37–40 30% · Jumpluff 30% · Igglybuff 30% · Tropius 10% |
 | Safari Zone Top Left | Safari — Pool D | — | 37–40 | Illumise 30% · Karrablast 30% · Mime Jr. 30% · Volbeat 10% |
-| Safari Zone Top Left | Safari — Pool E | — | 37–40 | Mothim Plant 37–40 / Wormadam 37–40 30% · Kricketune 30% · Shelmet 30% · Maractus 10% |
+| Safari Zone Top Left | Safari — Pool E | — | 37–40 | Mothim 37–40 / Wormadam 37–40 30% · Kricketune 30% · Shelmet 30% · Maractus 10% |
 | Safari Zone Top Mid | Safari — Pool A | — | 38–41 | Dedenne 30% · Xatu 30% · Woobat 30% · Girafarig 10% |
 | Safari Zone Top Mid | Safari — Pool B | — | 38–41 | Dachsbun 30% · Granbull 30% · Spritzee 30% · Swirlix 10% |
 | Safari Zone Top Mid | Safari — Pool C | — | 38–41 | Cleffa 30% · Milcery 30% · Togepi 30% · Meowstic 38–41 / Meowstic 38–41 10% |

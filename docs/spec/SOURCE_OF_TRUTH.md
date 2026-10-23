@@ -1,6 +1,6 @@
 # Pokémon Tactica — source de vérité V1
 
-État : décisions produit courantes au 9 octobre 2026.
+État : décisions produit courantes au 23 octobre 2026.
 
 La hiérarchie normative est stricte :
 
@@ -55,6 +55,8 @@ Détail : [ENCOUNTERS.md](ENCOUNTERS.md).
 Détail et audit : [EVOLUTIONS.md](EVOLUTIONS.md).
 
 ### Difficulté et boss
+
+Les dresseurs ordinaires suivent les planchers de leur zone et des jalons déjà franchis, selon [PROGRESSION.md](PROGRESSION.md) et `trainer_levels.json`. Les niveaux ne dépendent ni de l'équipe du joueur ni du mode de difficulté ; les boss conservent leurs règles canoniques.
 
 - Le menu Settings expose NORMAL/HARD, persiste le choix et applique HARD dans le preset recommandé et sur une nouvelle partie par défaut.
 - NORMAL et HARD utilisent le même contenu : équipes, espèces, niveaux, moves, objets, talents, natures, progression et rencontres.
@@ -126,6 +128,7 @@ L’assistant d’Orme donne une Potion et dix Poké Balls au premier départ du
 
 - Les boutiques spécialisées couvrent moves/CT compatibles, objets stratégiques et Méga-Gemmes sans contourner les objets de scénario.
 - Les 26 espèces modifiées et les 16 changements de learnset de `pokemon_balance.json` sont le contrat de balance courant. Hydragon reçoit Draco-Griffe afin que le set du match retour du Maître soit légal dans ce build.
+- Tranchodon conserve Dragon/Acier et Vitesse 110, avec Attaque abaissée de 147 à 130 à la demande owner du 23 octobre 2026.
 
 ### UI / UX ROM
 

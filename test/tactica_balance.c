@@ -25,6 +25,7 @@ TEST("Tactica balance: corrected species identities are compiled")
 
     EXPECT_EQ(gSpeciesInfo[SPECIES_HAXORUS].types[0], TYPE_DRAGON);
     EXPECT_EQ(gSpeciesInfo[SPECIES_HAXORUS].types[1], TYPE_STEEL);
+    EXPECT_EQ(gSpeciesInfo[SPECIES_HAXORUS].baseAttack, 130);
     EXPECT_EQ(gSpeciesInfo[SPECIES_HAXORUS].baseSpeed, 110);
 
     EXPECT_EQ(gSpeciesInfo[SPECIES_SCEPTILE].baseAttack, 105);

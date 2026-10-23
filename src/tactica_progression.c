@@ -1,7 +1,72 @@
 #include "global.h"
 #include "pokemon.h"
 #include "move.h"
+#include "data.h"
+#include "caps.h"
 #include "tactica_progression.h"
+#include "constants/maps.h"
+
+#if IS_HNS
+struct TacticaTrainerZoneFloor
+{
+    u16 map;
+    u8 level;
+    u8 ceiling;
+};
+
+#include "data/tactica_trainer_levels.h"
+#endif
+
+bool32 ResolveTacticaOrdinaryTrainerMon(u16 trainerId, u16 map, const struct Trainer *trainer, struct TrainerMon *mon)
+{
+#if IS_HNS
+    u32 minimum = MAX_LEVEL;
+    u32 floor = GetTacticaStoryTrainerFloor();
+    u32 ceiling = floor;
+    u16 oldSpecies = mon->species;
+    u8 oldLevel = mon->lvl;
+    enum Move moves[MAX_MON_MOVES];
+
+    if (trainerId >= ARRAY_COUNT(sTacticaOrdinaryTrainers) || !sTacticaOrdinaryTrainers[trainerId]
+     || trainer->party == NULL || trainer->partySize == 0)
+        return FALSE;
+    for (u32 i = 0; i < trainer->partySize; i++)
+        minimum = min(minimum, trainer->party[i].lvl);
+    for (u32 i = 0; i < ARRAY_COUNT(sTacticaTrainerZoneFloors); i++)
+        if (sTacticaTrainerZoneFloors[i].map == map)
+        {
+            floor = max(floor, sTacticaTrainerZoneFloors[i].level);
+            ceiling = max(ceiling, sTacticaTrainerZoneFloors[i].ceiling);
+            break;
+        }
+    // Bound inherited wide spreads (e.g. Stephen's 57-75 party): raising the
+    // lowest member must not manufacture level 93 before the level 80 Gyms.
+    // Never lower an authored level that already exceeded the area's band.
+    u32 raisedLevel = max(minimum, floor) + mon->lvl - minimum;
+    mon->lvl = min(MAX_LEVEL, max(oldLevel, min(raisedLevel, max(ceiling, floor))));
+    mon->species = GetTacticaWildSpeciesAtLevel(mon->species, mon->lvl);
+    if (mon->lvl != oldLevel || mon->species != oldSpecies)
+    {
+        // Empty authored move slots mean the normal native level-up moves.
+        if (mon->moves[0] != MOVE_NONE)
+        {
+            AdaptTacticaTrainerMoves(mon->species, mon->lvl, mon->moves, moves);
+            memcpy(mon->moves, moves, sizeof(moves));
+        }
+        if (mon->species != oldSpecies && mon->ability != ABILITY_NONE)
+        {
+            bool32 legal = FALSE;
+            for (u32 i = 0; i < NUM_ABILITY_SLOTS; i++)
+                legal |= gSpeciesInfo[mon->species].abilities[i] == mon->ability;
+            if (!legal)
+                mon->ability = ABILITY_NONE;
+        }
+    }
+    return TRUE;
+#else
+    return FALSE;
+#endif
+}
 
 u16 GetTacticaWildSpeciesAtLevel(u16 species, u8 level)
 {

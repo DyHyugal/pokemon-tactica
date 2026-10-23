@@ -323,6 +323,28 @@ static u32 GetHnsLevelCap(u8 challengeLevelCap)
 }
 #endif
 
+u32 GetTacticaStoryTrainerFloor(void)
+{
+    u32 level = 0;
+#if IS_HNS
+    // Completed rosters only: the next boss cap would overlevel early routes.
+    // Rocket levels are dynamic, so recomputing a past admin from today's Gym
+    // would incorrectly add +2 again; their ordinary grunts use the area floor.
+    for (u32 i = 0; i < ARRAY_COUNT(sJohtoBossMilestones); i++)
+        if (!IsFamilyRocketTrainer(GetMilestoneTrainerId(&sJohtoBossMilestones[i]))
+         && IsMilestoneComplete(&sJohtoBossMilestones[i]))
+            level = max(level, GetMilestoneLevelCap(&sJohtoBossMilestones[i], TRUE));
+    for (u32 i = 0; i < ARRAY_COUNT(sKantoBossMilestones); i++)
+        if (IsMilestoneComplete(&sKantoBossMilestones[i]))
+            level = max(level, GetMilestoneLevelCap(&sKantoBossMilestones[i], TRUE));
+    if (FlagGet(FLAG_IS_CHAMPION))
+        level = max(level, GetTrainerLevelCap(TRAINER_LANCE_1_HNS, TRUE));
+    if (FlagGet(FLAG_IS_KANTO_CHAMPION))
+        level = MAX_LEVEL;
+#endif
+    return level;
+}
+
 u32 GetCurrentLevelCap(void)
 {
     static const u32 sLevelCapFlagMap[][2] =

@@ -23,6 +23,10 @@ La progression automatisée est couverte ; il reste à observer ces combats dans
 
 ## Couverture automatisée actuelle
 
+Les corrections du 23 octobre ajoutent les niveaux des dresseurs ordinaires selon zone/scénario et abaissent l'Attaque de Tranchodon à 130. Les 30 starters sont contrôlés sur les deux tirages de leur catégorie : Glace → Feu/Eau reste le contrat courant, donc Gobou face à Darumarond de Galar est attendu. Les équipes de boss ne changent pas. Le Pokédex récupère les modèles de familles et les conditions multilignes, 142 fiches évolutives manquantes et les explications FR/EN des méthodes. Ces corrections doivent être testées sur un nouveau build ; la candidate `0f1ec55d` citée ci-dessus ne les contient pas.
+
+Témoins owner utiles : comparer un dresseur Route 31 et un de Caves Jumelles, puis un dresseur encore disponible dans une ancienne zone après progression ; contrôler sa forme, ses capacités et son niveau. Vérifier Attaque de base 130 dans le wiki pour Tranchodon ; une statistique affichée sur un individu dépend aussi de son niveau, de ses IV/EV et de sa nature. Dans le wiki, vérifier Crèmy → Charmilly, Flabébé → Floette, Hypocéan tenant Écaille Draco + Fil Liaison, et les conditions de Colossinge/Scalproie/Mordudor.
+
 Les points suivants sont intégrés et protégés automatiquement. Une observation ROM reste utile, mais leur absence de playtest manuel ne justifie pas de les recoder :
 
 - vitesse native x1/x2/x3/x4 ;
