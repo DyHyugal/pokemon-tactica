@@ -2,11 +2,11 @@
 
 ## Candidate owner
 
-La nouvelle candidate est construite depuis `integration/v1`, commit `0f1ec55d4d6fea87d74ad4a8ca74ed424798b5aa`. Elle comprend les corrections terrain/climat HARD et dialogues/options, ainsi que Vol depuis la carte, les CS contextuelles, Flash automatique et la confirmation explicite des messages de combat. Son téléchargement est référencé dans [Jouer](../FR/Jouer.md) ; le manifeste du ZIP donne le SHA source et l’empreinte de la ROM exacte.
+La candidate est construite depuis `integration/v1`, commit `3c62091405965922a8e20fdbdcb9148a114a30b5`. Elle comprend les corrections du rival et leur migration des sauvegardes, les niveaux des dresseurs ordinaires selon zone/scénario, l’Attaque de Tranchodon à 130 et les fonctionnalités précédemment intégrées. La ROM conserve le nom `pokemon-tactica.gba`, dans le ZIP et en téléchargement direct ; la version figure dans le README et le manifeste. Son téléchargement est référencé dans [Jouer](../FR/Jouer.md) ; le manifeste du ZIP donne le SHA source, le compilateur et l’empreinte de la ROM exacte.
 
 Cette candidate attend la validation owner des corrections visuelles et comportementales, puis le parcours jusqu’à Mortimer et l’aventure complète. Elle n’est pas une version stable validée. Les anciennes candidates ne contiennent pas ces corrections.
 
-## Correctif prioritaire intégré avant la prochaine candidate
+## Progression du rival incluse
 
 ### Rival — progression réintégrée
 
@@ -23,7 +23,7 @@ La progression automatisée est couverte ; il reste à observer ces combats dans
 
 ## Couverture automatisée actuelle
 
-Les corrections du 23 octobre ajoutent les niveaux des dresseurs ordinaires selon zone/scénario et abaissent l'Attaque de Tranchodon à 130. Les 30 starters sont contrôlés sur tous les tirages autorisés de leur catégorie de menu, indépendamment des types réels des espèces : Glace → Feu uniquement, Électrik → Sol uniquement, Sol → Eau/Plante/Glace. La matrice est vérifiée contre la table officielle de combat. Darumarond de Galar donne Poussifeu au rival ; une ancienne association Glace/Eau est automatiquement migrée vers Feu, et Électrik/Plante vers Sol. Une association déjà valide est conservée ; tout remplacement est tiré parmi les catégories légales et persisté, sans reroll ultérieur. Le contrôle intervient au chargement et avant la résolution du rival. Les tests couvrent toutes les associations des 30 starters, leurs remplacements autorisés, les recontrôles sans nouveau tirage et la conservation de la progression. Les équipes de boss ne changent pas. Le Pokédex récupère les modèles de familles et les conditions multilignes, 142 fiches évolutives manquantes et les explications FR/EN des méthodes. Ces corrections doivent être testées sur un nouveau build ; la candidate `0f1ec55d` citée ci-dessus ne les contient pas.
+Les corrections du 23 octobre ajoutent les niveaux des dresseurs ordinaires selon zone/scénario et abaissent l'Attaque de Tranchodon à 130. Les 30 starters sont contrôlés sur tous les tirages autorisés de leur catégorie de menu, indépendamment des types réels des espèces : Glace → Feu uniquement, Électrik → Sol uniquement, Sol → Eau/Plante/Glace. La matrice est vérifiée contre la table officielle de combat. Darumarond de Galar donne Poussifeu au rival ; une ancienne association Glace/Eau est automatiquement migrée vers Feu, et Électrik/Plante vers Sol. Une association déjà valide est conservée ; tout remplacement est tiré parmi les catégories légales et persisté, sans reroll ultérieur. Le contrôle intervient au chargement et avant la résolution du rival. Les tests couvrent toutes les associations des 30 starters, leurs remplacements autorisés, les recontrôles sans nouveau tirage et la conservation de la progression. Les équipes de boss ne changent pas. Le Pokédex récupère les modèles de familles et les conditions multilignes, 142 fiches évolutives manquantes et les explications FR/EN des méthodes. Ces corrections sont incluses dans la candidate `3c620914` et restent à observer en playtest manuel.
 
 Témoins owner utiles : comparer un dresseur Route 31 et un de Caves Jumelles, puis un dresseur encore disponible dans une ancienne zone après progression ; contrôler sa forme, ses capacités et son niveau. Vérifier Attaque de base 130 dans le wiki pour Tranchodon ; une statistique affichée sur un individu dépend aussi de son niveau, de ses IV/EV et de sa nature. Dans le wiki, vérifier Crèmy → Charmilly, Flabébé → Floette, Hypocéan tenant Écaille Draco + Fil Liaison, et les conditions de Colossinge/Scalproie/Mordudor.
 
@@ -202,9 +202,8 @@ Les 37 groupes Tactica, 5 groupes Settings et 34 groupes Family passent sous mGB
 
 Les validateurs de sources Tactica, d’UI, de localisation, d’index documentaire et de synchronisation des assets wiki passent. L’audit reproductible `python3 tools/audit_tactica_climbing_walls.py` examine 458 layouts HnS et ne trouve aucune paroi Escalade placée. Les transitions de carte, les trajets et le rendu complet restent à confirmer dans la candidate par le propriétaire.
 
-Compilation `make hns -j4` réussie : ROM autonome de 32 Mio ; mémoire ROM utilisée 96,69 %, EWRAM 98,63 %. La publication reconstruit la candidate depuis le commit d’intégration exact, dans un checkout neuf.
+Compilation propre réussie : ROM autonome de 32 Mio. La publication reconstruit la candidate depuis le commit d’intégration exact, dans un checkout neuf, après vérification de sa CI verte. Le manifeste donne le compilateur et l’empreinte du fichier distribué.
 
-Publication `v1-candidate-49465e2e` réussie. ZIP téléchargé et contrôlé : source `49465e2efd38d8961e3e2a6100c93b70d72d0c17`, branche `integration/v1`, ROM de 33 554 432 octets, SHA-256 publié `fa560a558bd8c8b28e290a3112ca85da0c13318c25ac0c96536ef426b9fb8f6f`. Le hash local diffère avec le compilateur de l’environnement ; le manifeste du téléchargement identifie la ROM distribuée. La checklist du ZIP référence le même commit.
 
 
 ## Messages de combat — confirmation explicite
@@ -218,5 +217,3 @@ Résultats locaux : Tactica 42, Native 3, Audio 6, Settings 5 et Family 34, soit
 À observer dans la nouvelle ROM : en x1 puis x4, avec FASTER et Fast Battles activé/désactivé, lire « used … », une baisse de précision et les messages de terrain/climat ; attendre sans appuyer, maintenir A pendant l’écriture, puis relâcher et appuyer de nouveau. Vérifier aussi le texte de défaite du Dresseur sans double validation finale, l’apprentissage/refus de capacité, les questions de remplacement et la capture. Le confort de lecture et l’audio restent à confirmer en jeu.
 
 La recherche de carte est documentée dans [REGION_MAP_ASSETS.md](../REGION_MAP_ASSETS.md). Aucun remplacement moderne Johto/Kanto prêt à intégrer n’a été vérifié dans les sources consultées : les images et tilemaps restent inchangées, et le souhait de moderniser routes, villes et eau n’est pas déclaré réalisé.
-
-Publication `v1-candidate-0f1ec55d` réussie ([run 37992243641](https://github.com/DyHyugal/pokemon-tactica/actions/runs/37992243641)). ZIP téléchargé : source `0f1ec55d4d6fea87d74ad4a8ca74ed424798b5aa`, branche `integration/v1`, CRC, SHA source de la checklist et manifeste vérifiés ; ROM de 33 554 432 octets, SHA-256 `a6417c69fbef8be6d35ed8dccc103529c4a1e8c6591d136a9689a470b0ba3488`. Les liens Jouer/Play ciblent cette ROM autonome. Le déploiement wiki associé est réussi ([run 37992243647](https://github.com/DyHyugal/pokemon-tactica/actions/runs/37992243647)). Le playtest owner reste à effectuer.
