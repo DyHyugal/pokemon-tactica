@@ -30,6 +30,8 @@ Règles communes :
 
 Le rival ne tire plus un starter aléatoire parmi cinq espèces d'une catégorie. Chaque archétype possède désormais un **starter fixe**.
 
+Le type de la catégorie du menu joueur détermine les candidats selon la table officielle : le type offensif du rival doit être super efficace contre lui. Les types réels et secondaires des espèces ne participent pas à ce tirage. Seuls les six archétypes du menu sont disponibles.
+
 Correspondances de catégorie :
 
 | Catégorie joueur | Archétype rival possible |
@@ -37,11 +39,11 @@ Correspondances de catégorie :
 | Feu | Eau ou Sol |
 | Eau | Plante ou Électrik |
 | Plante | Feu ou Glace |
-| Électrik | Sol ou Plante |
-| Sol | Eau ou Glace |
-| Glace | Feu ou Eau |
+| Électrik | Sol |
+| Sol | Eau, Plante ou Glace |
+| Glace | Feu |
 
-Une catégorie rival est tirée une fois parmi les choix autorisés puis sauvegardée.
+Une catégorie rival est tirée une fois parmi les choix autorisés puis sauvegardée. Un rival déjà enregistré dans une sauvegarde conserve son archétype.
 
 Progression des effectifs :
 

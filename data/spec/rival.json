@@ -19,16 +19,15 @@
         "ice"
       ],
       "electric": [
-        "ground",
-        "grass"
+        "ground"
       ],
       "ground": [
         "water",
+        "grass",
         "ice"
       ],
       "ice": [
-        "fire",
-        "water"
+        "fire"
       ]
     },
     "fixed_starters": {

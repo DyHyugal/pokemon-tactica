@@ -220,11 +220,11 @@ require(rival["selection"]["counter_categories"]["fire"] == ["water", "ground"],
         "Fire counter categories")
 expected_counters = {
     "fire": ["water", "ground"], "water": ["grass", "electric"],
-    "grass": ["fire", "ice"], "electric": ["ground", "grass"],
-    "ground": ["water", "ice"], "ice": ["fire", "water"],
+    "grass": ["fire", "ice"], "electric": ["ground"],
+    "ground": ["water", "grass", "ice"], "ice": ["fire"],
 }
 require(rival["selection"]["counter_categories"] == expected_counters,
-        "owner rival counter matrix")
+        "rival categories must be official offensive weaknesses of the player's menu category")
 expected_fixed_starters = {
     "fire": "Torchic", "water": "Mudkip", "grass": "Treecko",
     "electric": "Elekid", "ground": "Drilbur", "ice": "Darumaka-Galar",

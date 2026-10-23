@@ -89,13 +89,14 @@ struct RivalCounterCategories
     u8 categories[3];
 };
 
+// Official offensive weaknesses of the player's menu category, not species typing.
 static const struct RivalCounterCategories sRivalCounterCategories[] = {
     [FAMILY_FIRE] = {2, {FAMILY_WATER, FAMILY_GROUND}},
     [FAMILY_WATER] = {2, {FAMILY_GRASS, FAMILY_ELECTRIC}},
     [FAMILY_GRASS] = {2, {FAMILY_FIRE, FAMILY_ICE}},
-    [FAMILY_ELECTRIC] = {2, {FAMILY_GROUND, FAMILY_GRASS}},
-    [FAMILY_GROUND] = {2, {FAMILY_WATER, FAMILY_ICE}},
-    [FAMILY_ICE] = {2, {FAMILY_FIRE, FAMILY_WATER}},
+    [FAMILY_ELECTRIC] = {1, {FAMILY_GROUND}},
+    [FAMILY_GROUND] = {3, {FAMILY_WATER, FAMILY_GRASS, FAMILY_ICE}},
+    [FAMILY_ICE] = {1, {FAMILY_FIRE}},
 };
 
 static const u16 sRivalFixedStarters[FAMILY_EEVEE] = {

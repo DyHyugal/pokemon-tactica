@@ -81,6 +81,7 @@ Les dresseurs ordinaires suivent les planchers de leur zone et des jalons déjà
 
 La source détaillée est [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Les JSON `rival.json`, `rocket_progression.json` et `bosses.json` doivent rester synchronisés avec ce document.
 
+- Le tirage du rival utilise les faiblesses offensives officielles du type de la catégorie du menu joueur, parmi les six archétypes disponibles, sans tenir compte des types réels ou secondaires du Pokémon. Feu → Eau/Sol ; Eau → Plante/Électrik ; Plante → Feu/Glace ; Électrik → Sol ; Sol → Eau/Plante/Glace ; Glace → Feu. Le tirage est enregistré une seule fois ; les sauvegardes déjà attribuées conservent leur rival.
 - Le rival possède un starter fixe par archétype. Il n’existe pas de combat scénario après le badge 1 : la progression cible est **1 Pokémon au premier duel, 4 après Hector, puis 6 à partir de la Tour Cendrée**. Sa Méga n’apparaît qu’à partir du combat suivant le badge 4.
 - Chaque combat Rival reprend la plage de cap du prochain Champion ou jalon majeur et devient le cap de préparation courant : le minimum sert au cap HARD, le maximum au cap NORMAL.
 - Le profil canonique du Rival conserve nature, EV HARD et plan de capacités à chaque stade ; les capacités sont adaptées à la forme et au niveau réellement envoyés. Le starter suit le même chemin que les cinq autres membres.

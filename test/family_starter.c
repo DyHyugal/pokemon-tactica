@@ -1,4 +1,5 @@
 #include "global.h"
+#include "battle_main.h"
 #include "family_starter.h"
 #include "tactica_progression.h"
 #include "difficulty.h"
@@ -337,7 +338,7 @@ TEST("Family starter: rival uses an allowed fixed counter starter against Electr
     CreateRandomMon(&gPlayerParty[0], SPECIES_ELEKID, 5);
     FamilyStarter_RecordPrimary();
     rival = VarGet(VAR_FAMILY_RIVAL_SPECIES);
-    EXPECT(rival == SPECIES_DRILBUR || rival == SPECIES_TREECKO);
+    EXPECT_EQ(rival, SPECIES_DRILBUR);
     EXPECT_EQ(FamilyStarter_GetRivalSpecies(SPECIES_CHIKORITA), rival);
     EXPECT(FamilyStarter_IsAvailable(FamilyStarter_GetRivalSpecies(SPECIES_BAYLEEF)));
     VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_NONE);
@@ -350,14 +351,34 @@ TEST("Family starter: rival category draw follows the canonical counter matrix")
         {1, 4, 1},
         {2, 3, 2},
         {0, 5, 0},
-        {4, 2, 4},
-        {1, 5, 1},
-        {0, 1, 0},
+        {4, 4, 4},
+        {1, 2, 5},
+        {0, 0, 0},
     };
 
     for (u32 playerCategory = 0; playerCategory < ARRAY_COUNT(expected); playerCategory++)
         for (u32 roll = 0; roll < ARRAY_COUNT(expected[0]); roll++)
             EXPECT_EQ(FamilyStarter_GetRivalCounterCategory(playerCategory, roll), expected[playerCategory][roll]);
+}
+
+TEST("Family starter: rival counters cover exactly the official offensive weaknesses among menu types")
+{
+    static const enum Type menuTypes[] = {TYPE_FIRE, TYPE_WATER, TYPE_GRASS, TYPE_ELECTRIC, TYPE_GROUND, TYPE_ICE};
+
+    for (u32 playerCategory = 0; playerCategory < ARRAY_COUNT(menuTypes); playerCategory++)
+    {
+        u32 drawnCategories = 0;
+        // Six draws cover complete cycles for candidate counts of one, two or three.
+        for (u32 roll = 0; roll < 6; roll++)
+        {
+            u32 counter = FamilyStarter_GetRivalCounterCategory(playerCategory, roll);
+            EXPECT_LT(counter, ARRAY_COUNT(menuTypes));
+            drawnCategories |= 1u << counter;
+        }
+        for (u32 counter = 0; counter < ARRAY_COUNT(menuTypes); counter++)
+            EXPECT_EQ((drawnCategories >> counter) & 1,
+                gTypeEffectivenessTable[menuTypes[counter]][menuTypes[playerCategory]] > UQ_4_12(1.0));
+    }
 }
 
 TEST("Family starter: every rival archetype has one fixed starter")
@@ -378,22 +399,31 @@ TEST("Family starter: every rival archetype has one fixed starter")
 
 TEST("Family starter: all thirty primary starters draw from their menu category, not current typing")
 {
-    static const u16 counters[][2] = {
+    static const u16 counters[][3] = {
         {SPECIES_MUDKIP, SPECIES_DRILBUR},
         {SPECIES_TREECKO, SPECIES_ELEKID},
         {SPECIES_TORCHIC, SPECIES_DARUMAKA_GALAR},
-        {SPECIES_DRILBUR, SPECIES_TREECKO},
-        {SPECIES_MUDKIP, SPECIES_DARUMAKA_GALAR},
-        {SPECIES_TORCHIC, SPECIES_MUDKIP},
+        {SPECIES_DRILBUR},
+        {SPECIES_MUDKIP, SPECIES_TREECKO, SPECIES_DARUMAKA_GALAR},
+        {SPECIES_TORCHIC},
     };
-    static const u32 seeds[] = {0, 4};
+    static const u8 counts[] = {2, 2, 2, 1, 3, 1};
     for (u32 category = 0; category < ARRAY_COUNT(counters); category++)
         for (u32 index = 0; index < 5; index++)
-            for (u32 roll = 0; roll < ARRAY_COUNT(seeds); roll++)
+            for (u32 roll = 0; roll < counts[category]; roll++)
             {
+                u32 seed;
                 InitFamilyTest();
                 CreateRandomMon(&gPlayerParty[0], FamilyStarter_GetCandidate(category, index), 5);
-                SeedRng(seeds[roll]);
+                // Exercise each allowed draw through the real starter/save flow.
+                for (seed = 0; seed < 256; seed++)
+                {
+                    SeedRng(seed);
+                    if (Random() % counts[category] == roll)
+                        break;
+                }
+                EXPECT_LT(seed, 256);
+                SeedRng(seed);
                 FamilyStarter_RecordPrimary();
                 EXPECT_EQ(VarGet(VAR_FAMILY_RIVAL_SPECIES), counters[category][roll]);
             }
