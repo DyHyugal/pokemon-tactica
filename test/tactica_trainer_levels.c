@@ -94,6 +94,7 @@ TEST("Tactica ordinary trainers: protected bosses are never altered")
 
 TEST("Tactica ordinary trainers: NORMAL and HARD share levels, and late parties stop at 100")
 {
+    enum DifficultyLevel savedDifficulty = GetCurrentDifficultyLevel();
     InitEventData();
     FlagSet(FLAG_IS_KANTO_CHAMPION);
     for (u32 difficulty = DIFFICULTY_NORMAL; difficulty <= DIFFICULTY_HARD; difficulty++)
@@ -107,5 +108,6 @@ TEST("Tactica ordinary trainers: NORMAL and HARD share levels, and late parties 
             EXPECT_EQ(mon.lvl, MAX_LEVEL);
         }
     }
+    SetCurrentDifficultyLevel(savedDifficulty);
 }
 #endif

@@ -1,6 +1,6 @@
 # Pokémon Tactica — source de vérité V1
 
-État : décisions produit courantes au 9 octobre 2026.
+État : décisions produit courantes au 23 octobre 2026.
 
 La hiérarchie normative est stricte :
 

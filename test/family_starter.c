@@ -21,6 +21,7 @@
 static void InitFamilyTest(void)
 {
     InitEventData();
+    SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
     FamilyStarter_ClearPreview();
     ZeroPlayerPartyMons();
     ResetPokemonStorageSystem();
@@ -417,7 +418,10 @@ TEST("Family starter: saved rival category resolves every authored party phase")
 {
     struct TrainerMon mon = {0};
 
+    // A preceding HARD test must not change this fixture's NORMAL EV contract.
+    SetCurrentDifficultyLevel(DIFFICULTY_HARD);
     InitFamilyTest();
+    EXPECT_EQ(GetCurrentDifficultyLevel(), DIFFICULTY_NORMAL);
     gSaveBlock3Ptr->challengeSettings.tx_Mode_Modern_Moves = 1;
     VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_TORCHIC);
 
