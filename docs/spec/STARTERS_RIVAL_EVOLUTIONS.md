@@ -57,7 +57,11 @@ Le type secondaire actuel ou une évolution custom d'un starter ne redéfinit pa
 
 Darumarond de Galar appartient au menu Glace : le rival reçoit donc l'archétype Feu et son starter Poussifeu. Eau résiste à Glace mais ne lui inflige pas de dégâts super efficaces ; cette résistance ne suffit pas. Un starter du menu Eau donne Arcko ou Élekid, même si son espèce possède un type secondaire. Seuls les six types du menu sont candidats : Combat, Roche et Acier, par exemple, ne sont pas des archétypes disponibles.
 
-La règle s'applique au tirage initial. Les sauvegardes qui possèdent déjà un rival conservent leur archétype enregistré ; le second choix d'Orme ne le retire pas.
+La ROM contrôle aussi les sauvegardes existantes au chargement et avant la création d’une équipe Rival. La légalité signifie ici que le type offensif de l’archétype est super efficace contre la catégorie de menu du starter principal **enregistré** ; ni le Pokémon actuellement en tête d’équipe ni le second choix d’Orme ne servent de référence. Une association déjà légale est conservée. Une association invalide est remplacée par un tirage aléatoire parmi les catégories légales, puis enregistrée définitivement : aucun reroll au chargement suivant ou entre deux combats. Glace/Eau devient donc Glace/Feu ; Électrik/Plante devient Électrik/Sol.
+
+La correction modifie l’archétype de toute l’équipe du rival pour les prochains combats, sans rejouer les combats passés, changer les niveaux, réinitialiser les badges ou modifier le format de sauvegarde. Elle sera écrite sur disque lors de la prochaine sauvegarde normale. Évoli, les choix non encore attribués et les autres modes de starters ne sont pas migrés. Un état d’émulateur ancien est également contrôlé lors de la prochaine résolution du rival.
+
+**Règle verrouillée** : table officielle, catégorie du menu, contrôle de légalité et persistance du premier choix légal. Toute réouverture nécessite un défaut démontré ou une décision owner explicite.
 
 **Source détaillée des équipes :** [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). La matrice et les starters fixes sont synchronisés dans `data/spec/rival.json` et `src/family_starter.c`.
 

@@ -444,6 +444,103 @@ TEST("Family starter: rival draw is persisted once")
     EXPECT_EQ(VarGet(VAR_FAMILY_RIVAL_SPECIES), rival);
 }
 
+TEST("Family starter: migration checks all menu starters and persists only legal rival archetypes")
+{
+    static const enum Type types[] = {TYPE_FIRE, TYPE_WATER, TYPE_GRASS, TYPE_ELECTRIC, TYPE_GROUND, TYPE_ICE};
+    static const u16 rivals[] = {SPECIES_TORCHIC, SPECIES_MUDKIP, SPECIES_TREECKO, SPECIES_ELEKID, SPECIES_DRILBUR, SPECIES_DARUMAKA_GALAR};
+    for (u32 player = 0; player < ARRAY_COUNT(types); player++)
+    {
+        u16 legal[3];
+        u32 count = 0;
+        for (u32 rival = 0; rival < ARRAY_COUNT(types); rival++)
+            if (gTypeEffectivenessTable[types[rival]][types[player]] > UQ_4_12(1.0))
+                legal[count++] = rivals[rival];
+        for (u32 index = 0; index < 5; index++)
+            for (u32 rival = 0; rival < ARRAY_COUNT(rivals); rival++)
+                for (u32 roll = 0; roll < count; roll++)
+                {
+                    u32 seed;
+                    rng_value_t stableRng;
+                    bool32 valid = gTypeEffectivenessTable[types[rival]][types[player]] > UQ_4_12(1.0);
+                    u16 primary = FamilyStarter_GetCandidate(player, index);
+                    InitFamilyTest();
+                    VarSet(VAR_FAMILY_STARTER_SPECIES, primary);
+                    VarSet(VAR_FAMILY_RIVAL_SPECIES, rivals[rival]);
+                    VarSet(VAR_FAMILY_EGG_SPECIES, SPECIES_HORSEA);
+                    FlagSet(FLAG_BADGE04_GET);
+                    for (seed = 0; seed < 256; seed++)
+                    {
+                        SeedRng(seed);
+                        if (Random() % count == roll)
+                            break;
+                    }
+                    EXPECT_LT(seed, 256);
+                    SeedRng(seed);
+                    stableRng = gRngValue;
+                    EXPECT_EQ(FamilyStarter_MigrateRivalCategory(), !valid);
+                    EXPECT_EQ(VarGet(VAR_FAMILY_RIVAL_SPECIES), valid ? rivals[rival] : legal[roll]);
+                    EXPECT_EQ(VarGet(VAR_FAMILY_STARTER_SPECIES), primary);
+                    EXPECT_EQ(VarGet(VAR_FAMILY_EGG_SPECIES), SPECIES_HORSEA);
+                    EXPECT(FlagGet(FLAG_BADGE04_GET));
+                    if (valid)
+                        EXPECT_EQ(memcmp(&stableRng, &gRngValue, sizeof(stableRng)), 0);
+                    stableRng = gRngValue;
+                    for (u32 reload = 0; reload < 3; reload++)
+                    {
+                        EXPECT(!FamilyStarter_MigrateRivalCategory());
+                        EXPECT_EQ(VarGet(VAR_FAMILY_RIVAL_SPECIES), valid ? rivals[rival] : legal[roll]);
+                    }
+                    EXPECT_EQ(memcmp(&stableRng, &gRngValue, sizeof(stableRng)), 0);
+                }
+    }
+}
+
+TEST("Family starter: migration leaves Eevee and unselected or non-family starters untouched")
+{
+    static const u16 primaries[] = {SPECIES_NONE, SPECIES_EEVEE, SPECIES_CHIKORITA, SPECIES_DARUMAKA_GALAR};
+    for (u32 i = 0; i < ARRAY_COUNT(primaries); i++)
+    {
+        InitFamilyTest();
+        VarSet(VAR_FAMILY_STARTER_SPECIES, primaries[i]);
+        VarSet(VAR_FAMILY_RIVAL_SPECIES, i == 3 ? SPECIES_NONE : SPECIES_MUDKIP);
+        EXPECT(!FamilyStarter_MigrateRivalCategory());
+        EXPECT_EQ(VarGet(VAR_FAMILY_RIVAL_SPECIES), i == 3 ? SPECIES_NONE : SPECIES_MUDKIP);
+    }
+    InitFamilyTest();
+    VarSet(VAR_FAMILY_STARTER_SPECIES, SPECIES_DARUMAKA_GALAR);
+    VarSet(VAR_FAMILY_RIVAL_SPECIES, SPECIES_MUDKIP);
+    gSaveBlock3Ptr->challengeSettings.tx_Challenges_OneTypeChallenge = TYPE_ICE;
+    EXPECT(!FamilyStarter_MigrateRivalCategory());
+    EXPECT_EQ(VarGet(VAR_FAMILY_RIVAL_SPECIES), SPECIES_MUDKIP);
+}
+
+TEST("Family starter: migrated rival updates the whole next team and both species lookup paths")
+{
+    static const u16 players[] = {SPECIES_DARUMAKA_GALAR, SPECIES_ELEKID};
+    static const u16 oldRivals[] = {SPECIES_MUDKIP, SPECIES_TREECKO};
+    static const u16 newRivals[] = {SPECIES_TORCHIC, SPECIES_DRILBUR};
+    static const u16 setters[] = {SPECIES_TORKOAL, SPECIES_HIPPOPOTAS};
+    for (u32 i = 0; i < ARRAY_COUNT(players); i++)
+    {
+        struct TrainerMon mon = {.lvl = 32};
+        InitFamilyTest();
+        VarSet(VAR_FAMILY_STARTER_SPECIES, players[i]);
+        VarSet(VAR_FAMILY_RIVAL_SPECIES, oldRivals[i]);
+        EXPECT(FamilyStarter_ResolveRivalMon(TRAINER_RIVAL_CHIKORITA_2_HNS, 0, &mon));
+        EXPECT_EQ(mon.species, setters[i]);
+        EXPECT_EQ(VarGet(VAR_FAMILY_RIVAL_SPECIES), newRivals[i]);
+        // Recreate the legacy state to exercise the fallback lookup independently.
+        VarSet(VAR_FAMILY_RIVAL_SPECIES, oldRivals[i]);
+        EXPECT_EQ(FamilyStarter_GetRivalSpecies(SPECIES_CHIKORITA), newRivals[i]);
+        EXPECT_EQ(VarGet(VAR_FAMILY_RIVAL_SPECIES), newRivals[i]);
+    }
+    InitFamilyTest();
+    VarSet(VAR_FAMILY_STARTER_SPECIES, SPECIES_DARUMAKA_GALAR);
+    VarSet(VAR_FAMILY_RIVAL_SPECIES, 0xFFFF);
+    EXPECT(FamilyStarter_MigrateRivalCategory());
+    EXPECT_EQ(VarGet(VAR_FAMILY_RIVAL_SPECIES), SPECIES_TORCHIC);
+}
+
 TEST("Family starter: saved rival category resolves every authored party phase")
 {
     struct TrainerMon mon = {0};

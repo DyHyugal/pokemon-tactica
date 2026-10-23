@@ -43,7 +43,7 @@ Correspondances de catégorie :
 | Sol | Eau, Plante ou Glace |
 | Glace | Feu |
 
-Une catégorie rival est tirée une fois parmi les choix autorisés puis sauvegardée. Un rival déjà enregistré dans une sauvegarde conserve son archétype.
+Une catégorie rival est tirée une fois parmi les choix autorisés puis sauvegardée. Au chargement et avant une équipe Rival, une association existante invalide est remplacée par un tirage parmi les catégories légales, enregistré une seule fois ; les associations déjà valides restent inchangées. Le contrôle utilise le starter principal enregistré et s’applique à toute l’équipe du prochain combat. La règle est verrouillée selon [STARTERS_RIVAL_EVOLUTIONS.md](STARTERS_RIVAL_EVOLUTIONS.md).
 
 Progression des effectifs :
 

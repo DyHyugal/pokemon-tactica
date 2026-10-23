@@ -225,6 +225,13 @@ expected_counters = {
 }
 require(rival["selection"]["counter_categories"] == expected_counters,
         "rival categories must be official offensive weaknesses of the player's menu category")
+require(rival["selection"].get("save_migration") == {
+    "check": "official offensive weakness of the saved primary starter menu category",
+    "keep_legal_archetype": True,
+    "invalid_archetype": "random among legal counter categories; persist the replacement once",
+    "unselected_or_eevee_primary": "unchanged",
+    "save_layout": "unchanged",
+}, "locked rival legality check and one-time legal save migration")
 expected_fixed_starters = {
     "fire": "Torchic", "water": "Mudkip", "grass": "Treecko",
     "electric": "Elekid", "ground": "Drilbur", "ice": "Darumaka-Galar",
@@ -234,6 +241,8 @@ require(rival["selection"].get("fixed_starters") == expected_fixed_starters,
 require("species_draw" not in rival["selection"] and
         rival["selection"].get("starter_draw", "").startswith("none"),
         "rival species draw must be removed")
+require(rival["selection"].get("persist_once") is True,
+        "a legal rival archetype must remain permanently assigned")
 rosters = rival["fight_rosters"]
 require(set(rosters["categories"]) == set(starter["categories"]),
         "six rival roster categories")
