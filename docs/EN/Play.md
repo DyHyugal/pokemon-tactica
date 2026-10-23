@@ -4,9 +4,9 @@
 
 ## Download the game
 
-Pokémon Tactica is distributed as a complete Game Boy Advance ROM. Open the [Tactica .gba ROM](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-0f1ec55d/Pokemon-Tactica-V1-candidate-0f1ec55d.gba) directly in an emulator. You do not need a Pokémon Emerald ROM, an EmeraldPlus version or a patching tool.
+Pokémon Tactica is distributed as a complete Game Boy Advance ROM. Open the [Tactica .gba ROM](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-3c620914/Pokemon-Tactica-V1-candidate-3c620914.gba) directly in an emulator. You do not need a Pokémon Emerald ROM, an EmeraldPlus version or a patching tool.
 
-The [Tactica download package](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-0f1ec55d/Pokemon-Tactica-V1-candidate-0f1ec55d.zip) includes the same ROM, version information and the playtest checklist. Extract the ZIP to find the .gba file. The files are also available on the [candidate release page](https://github.com/DyHyugal/pokemon-tactica/releases/tag/v1-candidate-0f1ec55d).
+The [Tactica download package](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-3c620914/Pokemon-Tactica-V1-candidate-3c620914.zip) includes the same ROM, version information and the playtest checklist. Extract the ZIP to find the .gba file. The files are also available on the [candidate release page](https://github.com/DyHyugal/pokemon-tactica/releases/tag/v1-candidate-3c620914).
 
 ## Start your adventure
 
@@ -16,10 +16,10 @@ The V1 ROM is in English; the wiki is available in French and English. Difficult
 
 ## The current candidate
 
-The download is candidate **0f1ec55d**, built from **integration/v1**. It includes the level cap, Team Rocket, rival profile and wild evolution corrections, terrain/weather AI, dialogue/options fixes, map travel and contextual HMs with automatic Flash, plus battle messages requiring a fresh press after rendering, including at x4 with FASTER. It is intended for playtesting and has not yet been declared stable.
+The download is candidate **3c620914**, built from **integration/v1**. It fixes rival selection using the official weaknesses of the starter menu category and migrates invalid saved pairings to a legal team that is then retained. It also includes ordinary trainer levels based on area and story progress, Haxorus’s base Attack reduced to 130, and the existing battle, HM and interface fixes. The evolution wiki has been synchronized with the game. This version is intended for playtesting and has not yet been declared stable.
 
-The first validation playthrough goes through Morty, followed by the full adventure across Johto, Kanto, the second League and Red. When reporting an issue, include version **0f1ec55d**, your difficulty, level cap setting and steps to reproduce it. Fixes and balance adjustments will follow actual gameplay feedback.
+The first validation playthrough goes through Morty, followed by the full adventure across Johto, Kanto, the second League and Red. When reporting an issue, include version **3c620914**, your difficulty, level cap setting and steps to reproduce it. Fixes and balance adjustments will follow actual gameplay feedback.
 
 ## Keep your save
 
-When switching to a new candidate, keep a copy of your save and the previous ROM. In-game saves and emulator save states are different files; keep an in-game save to resume your adventure. Compatibility between candidates must be confirmed in the release notes.
+When replacing the ROM, keep a copy of your save and the previous version. Resume from an in-game save by choosing Continue. If your emulator matches files by name, give the new ROM and a copy of your .sav file the same base name, using the emulator’s save folder. This update keeps the save format unchanged: it checks the recorded primary starter category and preserves an already legal rival. An old Ice/Water pairing becomes Fire; Electric/Grass becomes Ground. Save normally after loading to write this choice to the file; the legal archetype will remain the same for the rest of the adventure.
