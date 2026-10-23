@@ -4,9 +4,9 @@
 
 ## Télécharger le jeu
 
-Pokémon Tactica se télécharge sous la forme d’une ROM Game Boy Advance complète. La [ROM Tactica au format .gba](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-3c620914/Pokemon-Tactica-V1-candidate-3c620914.gba) peut être ouverte directement dans un émulateur : aucune ROM Pokémon Émeraude, version EmeraldPlus ou application de patch n’est nécessaire.
+Pokémon Tactica se télécharge sous la forme d’une ROM Game Boy Advance complète. La [ROM Tactica au format .gba](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-3c620914/pokemon-tactica.gba) peut être ouverte directement dans un émulateur : aucune ROM Pokémon Émeraude, version EmeraldPlus ou application de patch n’est nécessaire.
 
-Le [pack de téléchargement Tactica](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-3c620914/Pokemon-Tactica-V1-candidate-3c620914.zip) réunit la même ROM, les informations de version et la checklist de playtest. Après téléchargement, extrais le ZIP pour retrouver le fichier .gba. Les fichiers sont également regroupés sur la [page de cette candidate](https://github.com/DyHyugal/pokemon-tactica/releases/tag/v1-candidate-3c620914).
+Le [pack de téléchargement Tactica](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-3c620914/pokemon-tactica.zip) réunit la même ROM, les informations de version et la checklist de playtest. Après téléchargement, extrais le ZIP pour retrouver le fichier .gba. Les fichiers sont également regroupés sur la [page de cette candidate](https://github.com/DyHyugal/pokemon-tactica/releases/tag/v1-candidate-3c620914).
 
 ## Lancer l’aventure
 
@@ -22,4 +22,4 @@ Le premier parcours de validation va jusqu’à Mortimer, puis le playtest compl
 
 ## Retrouver sa sauvegarde
 
-Lorsque tu remplaces la ROM, conserve une copie de ta sauvegarde et de l’ancienne version. Pour reprendre une partie, utilise une sauvegarde effectuée depuis le menu du jeu et sélectionne Continuer. Si ton émulateur associe les fichiers par leur nom, donne le même nom de base à la nouvelle ROM et à une copie de ton fichier .sav, dans le dossier de sauvegardes de l’émulateur. La mise à jour conserve le format de sauvegarde : elle contrôle la catégorie du starter principal enregistré et garde un rival déjà légal. Une ancienne association Glace/Eau devient Feu ; Électrik/Plante devient Sol. Sauvegarde normalement après chargement pour écrire ce choix dans le fichier ; l’archétype légal restera le même pour la suite de l’aventure.
+Lorsque tu remplaces la ROM, conserve une copie de ta sauvegarde et de l’ancienne version. Pour reprendre une partie, utilise une sauvegarde effectuée depuis le menu du jeu et sélectionne Continuer. Si ton émulateur associe les fichiers par leur nom, donne le même nom de base à la nouvelle ROM et à une copie de ton fichier .sav, dans le dossier de sauvegardes de l’émulateur. La ROM garde le nom pokemon-tactica.gba ; la sauvegarde associée peut donc rester pokemon-tactica.sav lors des prochaines mises à jour. La mise à jour conserve le format de sauvegarde : elle contrôle la catégorie du starter principal enregistré et garde un rival déjà légal. Une ancienne association Glace/Eau devient Feu ; Électrik/Plante devient Sol. Sauvegarde normalement après chargement pour écrire ce choix dans le fichier ; l’archétype légal restera le même pour la suite de l’aventure.

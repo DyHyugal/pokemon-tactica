@@ -4,9 +4,9 @@
 
 ## Download the game
 
-Pokémon Tactica is distributed as a complete Game Boy Advance ROM. Open the [Tactica .gba ROM](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-3c620914/Pokemon-Tactica-V1-candidate-3c620914.gba) directly in an emulator. You do not need a Pokémon Emerald ROM, an EmeraldPlus version or a patching tool.
+Pokémon Tactica is distributed as a complete Game Boy Advance ROM. Open the [Tactica .gba ROM](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-3c620914/pokemon-tactica.gba) directly in an emulator. You do not need a Pokémon Emerald ROM, an EmeraldPlus version or a patching tool.
 
-The [Tactica download package](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-3c620914/Pokemon-Tactica-V1-candidate-3c620914.zip) includes the same ROM, version information and the playtest checklist. Extract the ZIP to find the .gba file. The files are also available on the [candidate release page](https://github.com/DyHyugal/pokemon-tactica/releases/tag/v1-candidate-3c620914).
+The [Tactica download package](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-3c620914/pokemon-tactica.zip) includes the same ROM, version information and the playtest checklist. Extract the ZIP to find the .gba file. The files are also available on the [candidate release page](https://github.com/DyHyugal/pokemon-tactica/releases/tag/v1-candidate-3c620914).
 
 ## Start your adventure
 
@@ -22,4 +22,4 @@ The first validation playthrough goes through Morty, followed by the full advent
 
 ## Keep your save
 
-When replacing the ROM, keep a copy of your save and the previous version. Resume from an in-game save by choosing Continue. If your emulator matches files by name, give the new ROM and a copy of your .sav file the same base name, using the emulator’s save folder. This update keeps the save format unchanged: it checks the recorded primary starter category and preserves an already legal rival. An old Ice/Water pairing becomes Fire; Electric/Grass becomes Ground. Save normally after loading to write this choice to the file; the legal archetype will remain the same for the rest of the adventure.
+When replacing the ROM, keep a copy of your save and the previous version. Resume from an in-game save by choosing Continue. If your emulator matches files by name, give the new ROM and a copy of your .sav file the same base name, using the emulator’s save folder. The ROM keeps the name pokemon-tactica.gba, so its matching save can remain pokemon-tactica.sav across future updates. This update keeps the save format unchanged: it checks the recorded primary starter category and preserves an already legal rival. An old Ice/Water pairing becomes Fire; Electric/Grass becomes Ground. Save normally after loading to write this choice to the file; the legal archetype will remain the same for the rest of the adventure.

@@ -2,7 +2,7 @@
 
 ## Candidate owner
 
-La candidate est construite depuis `integration/v1`, commit `3c62091405965922a8e20fdbdcb9148a114a30b5`. Elle comprend les corrections du rival et leur migration des sauvegardes, les niveaux des dresseurs ordinaires selon zone/scénario, l’Attaque de Tranchodon à 130 et les fonctionnalités précédemment intégrées. Son téléchargement est référencé dans [Jouer](../FR/Jouer.md) ; le manifeste du ZIP donne le SHA source, le compilateur et l’empreinte de la ROM exacte.
+La candidate est construite depuis `integration/v1`, commit `3c62091405965922a8e20fdbdcb9148a114a30b5`. Elle comprend les corrections du rival et leur migration des sauvegardes, les niveaux des dresseurs ordinaires selon zone/scénario, l’Attaque de Tranchodon à 130 et les fonctionnalités précédemment intégrées. La ROM conserve le nom `pokemon-tactica.gba`, dans le ZIP et en téléchargement direct ; la version figure dans le README et le manifeste. Son téléchargement est référencé dans [Jouer](../FR/Jouer.md) ; le manifeste du ZIP donne le SHA source, le compilateur et l’empreinte de la ROM exacte.
 
 Cette candidate attend la validation owner des corrections visuelles et comportementales, puis le parcours jusqu’à Mortimer et l’aventure complète. Elle n’est pas une version stable validée. Les anciennes candidates ne contiennent pas ces corrections.
 

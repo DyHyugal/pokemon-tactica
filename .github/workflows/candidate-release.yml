@@ -56,12 +56,12 @@ jobs:
         shell: bash
         run: |
           mkdir -p release
-          cp pokehns.gba release/Pokemon-Tactica-V1-candidate-3c620914.gba
+          cp pokehns.gba release/pokemon-tactica.gba
           cp release-notes/docs/spec/PLAYTEST_STATUS.md release/PLAYTEST_STATUS.md
           python3 - <<'PY'
           import hashlib, json, pathlib, subprocess, zipfile
           root = pathlib.Path('release')
-          rom = root / 'Pokemon-Tactica-V1-candidate-3c620914.gba'
+          rom = root / 'pokemon-tactica.gba'
           source = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
           assert source == '3c62091405965922a8e20fdbdcb9148a114a30b5'
           assert rom.stat().st_size == 33554432
@@ -71,6 +71,7 @@ jobs:
               'source_branch': 'integration/v1',
               'rom_sha256': hashlib.sha256(rom.read_bytes()).hexdigest(),
               'rom_size_bytes': rom.stat().st_size,
+              'rom_filename': rom.name,
               'build_toolchain': subprocess.check_output(['arm-none-eabi-gcc', '--version'], text=True).splitlines()[0],
               'build': 'Fresh isolated checkout; make clean; make hns -j2',
               'validation_run': 'https://github.com/DyHyugal/pokemon-tactica/actions/runs/40010675424',
@@ -80,6 +81,7 @@ jobs:
           (root / 'README.txt').write_text(
               'Pokemon Tactica V1 - candidate 3c620914 - 23 octobre 2026\n'
               f'Source : {source} (integration/v1)\n\n'
+              'Nom fixe de la ROM : pokemon-tactica.gba. Version et provenance dans ce README et le manifeste.\n'
               'Ouvre le fichier .gba directement dans mGBA, sans ROM de base ni patch. Le jeu est en anglais.\n'
               'Wiki : https://dyhyugal.github.io/pokemon-tactica/FR/Jouer.html\n\n'
               'Cette version corrige les contres du rival selon la categorie du menu starter et migre les anciennes associations invalides. '
@@ -96,7 +98,7 @@ jobs:
               'Candidate de playtest, pas une version stable validee. Indique 3c620914, le lieu, la difficulte, le reglage de cap et les actions pour reproduire un probleme. '
               'Le manifeste donne le compilateur et le SHA-256 exact de la ROM distribuee.\n'
           )
-          with zipfile.ZipFile(root / 'Pokemon-Tactica-V1-candidate-3c620914.zip', 'w', zipfile.ZIP_DEFLATED) as archive:
+          with zipfile.ZipFile(root / 'pokemon-tactica.zip', 'w', zipfile.ZIP_DEFLATED) as archive:
               for name in (rom.name, 'manifest.json', 'README.txt', 'PLAYTEST_STATUS.md'):
                   archive.write(root / name, name)
           PY
@@ -117,6 +119,6 @@ jobs:
             Pour reprendre une partie : conserver une copie du .sav et de l’ancienne ROM, utiliser le même nom de base pour ROM/sauvegarde si nécessaire, charger Continuer puis sauvegarder normalement pour conserver la migration. Format de sauvegarde et progression conservés.
             Cette candidate n’est pas une version stable validée ; le playtest manuel reste à effectuer.
           files: |
-            release/Pokemon-Tactica-V1-candidate-3c620914.gba
-            release/Pokemon-Tactica-V1-candidate-3c620914.zip
+            release/pokemon-tactica.gba
+            release/pokemon-tactica.zip
             release/manifest.json
