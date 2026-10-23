@@ -2,6 +2,14 @@
 
 La courbe des niveaux d'ace validée est : Albert 18, Hector 25, Blanche 32, Mortimer 38, Chuck 45, Jasmine 52, Frédo 57, Sandra 64, Clément/Conseil 4 67, Maître 70. Les niveaux précis des autres membres viennent du roster canonique. Le cap courant ne décroît jamais.
 
+## Dresseurs ordinaires
+
+Les dresseurs ordinaires HnS des routes, grottes, bâtiments, leurs revanches et les sbires suivent la zone et l'avancement réel du scénario. À la création de l'équipe, son plus petit niveau est relevé au maximum de son niveau écrit, du plancher de zone et du plancher de scénario ; les écarts entre ses membres sont conservés dans la borne haute de zone ou du jalon atteint, avec une limite à 100. Un niveau écrit déjà supérieur à cette borne n’est jamais abaissé. Cela empêche un ancien écart très large de fabriquer un adversaire au-dessus des prochains boss.
+
+Le plancher de zone vient du plus haut minimum des tables de rencontres standard de la carte. Un intérieur sans table hérite du plus petit plancher connu de sa section géographique. Une zone inconnue n'invente pas de niveau. Le plancher de scénario est le plus haut minimum d'un roster d'arène, Rival ou Ligue déjà vaincu. Les drapeaux de Maître établissent aussi le palier de Ligue ; les admins Rocket dynamiques ne sont pas recalculés rétroactivement dans ce plancher pour éviter un nouveau cumul de +2.
+
+Le niveau de l'équipe du joueur, le mode NORMAL/HARD et son option de cap n'influencent pas ce calcul. Les évolutions par niveau déterministes et les capacités explicites suivent le nouveau niveau ; aucune évolution conditionnelle n'est inventée. Champions, Conseil 4, Rival, admins Rocket, Red et rencontres spéciales gardent leurs règles propres. La politique et les exclusions sont dans `data/spec/trainer_levels.json` ; zones et éligibilité sont générées par `tools/sync_tactica_trainer_levels.py`.
+
 ## Rival
 
 Le rival suit les jalons de préparation de la progression, pas les niveaux historiques du jeu d'origine. Il persiste un **archétype** puis utilise le starter fixe de cet archétype ; l'ancien tirage d'une espèce parmi cinq starters est obsolète.

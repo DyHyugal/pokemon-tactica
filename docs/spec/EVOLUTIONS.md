@@ -192,7 +192,7 @@ Cette liste correspond aux sources impactées par la passe HnS auditée. La migr
 
 ## 5. Autres incohérences identifiées pendant l'audit
 
-Les anomalies suivantes ne sont pas de simples seuils `IF_MIN_LEVEL` et doivent être revérifiées contre Poképédia 9G avant implémentation :
+Les dérives HnS suivantes ont été corrigées lors de la migration 9G. Elles restent des points de contrôle pour toute maintenance ; elles ne constituent pas des corrections encore à implémenter :
 
 ### Scalpereur
 
@@ -276,19 +276,7 @@ Ajouter des contrôles génériques afin d'éviter une nouvelle dérive :
 - les mécaniques impossibles remplacées par Fil Liaison doivent être listées explicitement ;
 - le wiki doit afficher uniquement les méthodes réellement utilisables dans Pokémon Tactica.
 
-## 8. Portée de ce document
-
-Ce document décrit la **cible**. Il ne signifie pas que les évolutions actuelles du runtime ont déjà été corrigées.
-
-À la date de création de ce fichier :
-
-- l'audit a identifié la dérive ;
-- la règle Fil Liaison est validée par l'owner ;
-- les corrections runtime restent à appliquer ;
-- les données générées et le wiki devront être régénérés après correction du code.
-
-
-## 8. État de migration au 27 septembre 2026
+## 8. État courant de migration
 
 - méthodes non-échange réalisables : restaurées ;
 - échanges simples : Fil Liaison ;
@@ -298,3 +286,7 @@ Ce document décrit la **cible**. Il ne signifie pas que les évolutions actuell
 - Pokédex/wiki régénéré depuis le runtime via `tools/sync_tactica_species_evolutions.py` ; le `--check` CI garantit l’idempotence et empêche le retour de données d’évolution obsolètes.
 
 **Migration évolution V1 terminée.**
+
+## Wiki et contrôle de publication
+
+Le Pokédex est régénéré après prétraitement de la configuration HnS : modèles de familles partagés, conditions sur plusieurs lignes et branche active des conditions C sont pris en compte. Crèmy conserve ses 63 routes par rotation, les formes de Flabébé/Lépidonille/Pérégrain leur lignée et Munja la condition de Poké Ball applicable. Les fiches FR/EN affichent un gain de niveau plutôt que « niveau 0 », explicitent les conditions composées et conservent les objets tenus requis par le Fil Liaison. Le générateur `--check` et les tests `test_tactica_wiki_evolutions.py` protègent ces cas. Aucun changement de méthode runtime n’est introduit par la correction de publication.

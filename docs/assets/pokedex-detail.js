@@ -188,34 +188,24 @@ function conditionValue(v){
   if(v.startsWith("SPECIES_"))return speciesLabel(v);
   if(v.startsWith("MAPSEC_"))return humanConst(v,"MAPSEC_");
   if(v.startsWith("MAP_"))return humanConst(v,"MAP_");
+  if(v.startsWith("REGION_"))return humanConst(v,"REGION_");
   if(v.startsWith("WEATHER_"))return humanConst(v,"WEATHER_");
   if(v==="MON_MALE")return lang==="fr"?"mâle":"male";
   if(v==="MON_FEMALE")return lang==="fr"?"femelle":"female";
   if(v==="TIME_DAY")return lang==="fr"?"jour":"day";
   if(v==="TIME_NIGHT")return lang==="fr"?"nuit":"night";
+  if(v==="TIME_EVENING")return lang==="fr"?"crépuscule":"evening";
+  if(v==="TIME_MORNING")return lang==="fr"?"matin":"morning";
+  if(v.startsWith("TIME_"))return humanConst(v,"TIME_");
   if(v==="FRIENDSHIP_EVO_THRESHOLD")return lang==="fr"?"seuil d’amitié":"friendship threshold";
   return humanConst(v);
 }
 function evoText(ev){
-  let base="";
-  if(ev.method==="EVO_LEVEL"||ev.method==="EVO_LEVEL_BATTLE_ONLY"){
-    base=(lang==="fr"?"Niveau ":"Level ")+(ev.param||"?");
-  }else if(ev.method==="EVO_ITEM"){
-    base=(lang==="fr"?"Utiliser ":"Use ")+itemName(ev.param);
-  }else if(ev.method==="EVO_TRADE"){
-    base=lang==="fr"?"Condition d’évolution Tactica (ancien échange)":"Tactica evolution condition (former trade)";
-  }else if(ev.method==="EVO_BATTLE_END"){
-    base=lang==="fr"?"Après un combat":"After a battle";
-  }else if(ev.method==="EVO_SCRIPT_TRIGGER"){
-    base=lang==="fr"?"Déclencheur spécifique dans Tactica":"Specific Tactica trigger";
-  }else if(ev.method==="EVO_SPIN"){
-    base=lang==="fr"?"Rotation dans le monde":"Overworld spin";
-  }else base=humanConst(ev.method,"EVO_");
-  const cond=(ev.conditions||[]).map(([k,v])=>{
-    const lbl=(lang==="fr"?conditionFR:conditionEN)[k]||humanConst(k,"IF_");
-    return lbl+(v?", "+conditionValue(v):"");
+  return window.TacticaEvolutionText(ev, {
+    lang,itemName,speciesName:speciesLabel,humanConst,conditionValue,
+    moveName:token=>moveInfo(token.replace(/^MOVE_/,"")).name,
+    conditionLabel:key=>(lang==="fr"?conditionFR:conditionEN)[key]||humanConst(key,"IF_")
   });
-  return cond.length?base+" · "+cond.join(" · "):base;
 }
 function componentEdges(start){
   const allEdges=[];

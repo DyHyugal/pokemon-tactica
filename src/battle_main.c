@@ -2072,6 +2072,10 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             if (trainer->trainerClass == TRAINER_CLASS_RIVAL_HNS
              && FamilyStarter_ResolveRivalMon(sCreatingTrainerId, i, &resolvedPartyEntry))
                 partyEntry = &resolvedPartyEntry;
+            else if (ResolveTacticaOrdinaryTrainerMon(sCreatingTrainerId,
+                         (gSaveBlock1Ptr->location.mapGroup << 8) | (u8)gSaveBlock1Ptr->location.mapNum,
+                         trainer, &resolvedPartyEntry))
+                partyEntry = &resolvedPartyEntry;
 
             useScaledEVs[i] = partyEntry->ev == NULL;
 

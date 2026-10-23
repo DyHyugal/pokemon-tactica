@@ -7,3 +7,5 @@ Correction postérieure au dataset v4 : Dracaufeu Atk `100 → 110`, Méga-Draca
 Correspondances officielles importantes pour la traduction : `MOVE_WAVE_CRASH` = Aquatacle, et non Aqua Tail ; `MOVE_FLIP_TURN` = Eau Revoir. Conserver les seize changements de capacités de la source et ne pas réintroduire les anciens candidats non validés.
 
 Hydragon reçoit aussi Draco-Griffe comme capacité compatible afin de rendre légal son set du match retour du Maître.
+
+Tranchodon a **130 en Attaque** (147 − 17, demande owner du 23 octobre 2026). Son type Dragon/Acier, sa Vitesse 110 et ses capacités restent inchangés. Les statistiques et types custom du Pokédex sont synchronisés depuis le JSON par `tools/sync_tactica_species_balance.py`.

@@ -140,6 +140,8 @@ Une passe éditoriale wiki n’autorise pas à réintroduire des données gamepl
 
 La migration des évolutions est terminée. Les champs d’évolution du Pokédex sont régénérés depuis `src/data/pokemon/species_info` par `tools/sync_tactica_species_evolutions.py`. Son mode `--check` est obligatoire en CI ; les fichiers `tactica-species-*.js` ne doivent pas être corrigés manuellement.
 
+Le générateur utilise le préprocesseur C avec la configuration HnS active afin de lire les modèles partagés, conditions multilignes et branches conditionnelles réellement retenues. Il crée aussi les fiches manquantes des nœuds évolutifs depuis leurs champs runtime, sans valeur de remplacement inventée. Chaque source et cible d'évolution doit disposer de sa fiche et de son learnset. L'affichage FR/EN distingue gain de niveau, objet tenu, conditions composées et durées/sens des rotations de Crèmy. Les statistiques et types custom viennent de `pokemon_balance.json` via `tools/sync_tactica_species_balance.py --check`.
+
 ## Données de boss et assets du Guide
 
 `tools/sync_tactica_boss_wiki.py` génère les pages Boss FR/EN depuis `bosses.json` et `rival.json` ; Rocket vient des groupes canoniques déjà réconciliés avec `rocket_progression.json`. `tools/sync_tactica_wiki_assets.py` assemble les cartes régionales depuis leurs tilemaps et exporte une seule frame transparente pour les starters et Méga-Dracaufeu. Les deux scripts doivent être idempotents et exécutés avec `--check` en CI.

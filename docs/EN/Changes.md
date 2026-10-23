@@ -60,7 +60,7 @@ Morty gives the **Mega Ring** after Badge 4, before his TM, so the player can Me
 
 ### Evolutions
 
-Tactica keeps the **official Generation IX methods** whenever the ROM can reproduce them. Trade evolutions now use the **Linking Cord**; when the official trade requires a held item, that item must be held before using the Linking Cord. The few mechanics that cannot be reproduced cleanly also use the Linking Cord. Old artificial level gates and HnS shortcut items have been removed.
+Official methods that can be reproduced are preserved. A plain trade is replaced by using a **Linking Cord**; a held-item trade still requires the Pokémon to **hold its official item** before the Linking Cord is used. The approved unavailable mechanics (Inkay, Finizen, Galarian Yamask, Ursaring and Meltan) also use a Linking Cord. Each Pokédex entry gives the conditions for its form, without artificial level requirements.
 
 The **Pokédex** displays the evolution conditions actually compiled in Tactica and regenerates them from runtime data.
 
@@ -72,7 +72,7 @@ The **Pokédex** displays the evolution conditions actually compiled in Tactica 
 | Elekid | Electric | Hidden Ability: Sheer Force |
 | Electabuzz | Electric / Fighting | Type: Electric / Fighting; Hidden Ability: Sheer Force |
 | Electivire | Electric / Fighting | Type: Electric / Fighting; Speed: 95 → 110; Hidden Ability: Sheer Force |
-| Haxorus | Dragon / Steel | Type: Dragon / Steel; Speed: 97 → 110 |
+| Haxorus | Dragon / Steel | Type: Dragon / Steel; Attack: 147 → 130; Speed: 97 → 110 |
 | Charmander | Fire / Dragon | Type: Fire / Dragon |
 | Charmeleon | Fire / Dragon | Type: Fire / Dragon |
 | Charizard | Fire / Dragon | Type: Fire / Dragon; Attack: 84 → 110; Speed: 100 → 110 |
@@ -118,7 +118,7 @@ The **Pokédex** displays the evolution conditions actually compiled in Tactica 
 
 ## Evolutions
 
-Trade evolutions are adapted for solo play. Actual requirements come from compiled data; there is no universal 16/30/36 rule that applies to every family.
+Official methods that can be reproduced are preserved. A plain trade is replaced by using a **Linking Cord**; a held-item trade still requires the Pokémon to **hold its official item** before the Linking Cord is used. The approved unavailable mechanics (Inkay, Finizen, Galarian Yamask, Ursaring and Meltan) also use a Linking Cord. Each Pokédex entry gives the conditions for its form, without artificial level requirements.
 
 Wild encounters also respect an evolutionary stage appropriate to the actual level: a base form should not remain artificially present far beyond its normal evolution level.
 

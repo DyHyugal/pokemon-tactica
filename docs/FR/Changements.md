@@ -72,7 +72,7 @@ Les fiches du **Pokédex** affichent directement les conditions réellement comp
 | Élekid | Électrik | Talent caché: Sans Limite |
 | Élektek | Électrik / Combat | Type : Électrik / Combat; Talent caché: Sans Limite |
 | Élekable | Électrik / Combat | Type : Électrik / Combat; Vitesse: 95 → 110; Talent caché: Sans Limite |
-| Tranchodon | Dragon / Acier | Type : Dragon / Acier; Vitesse: 97 → 110 |
+| Tranchodon | Dragon / Acier | Type : Dragon / Acier; Attaque : 147 → 130; Vitesse: 97 → 110 |
 | Salamèche | Feu / Dragon | Type : Feu / Dragon |
 | Reptincel | Feu / Dragon | Type : Feu / Dragon |
 | Dracaufeu | Feu / Dragon | Type : Feu / Dragon; Attaque: 84 → 110; Vitesse: 100 → 110 |
@@ -118,7 +118,7 @@ Les fiches du **Pokédex** affichent directement les conditions réellement comp
 
 ## Évolutions
 
-Les évolutions par échange sont adaptées au jeu solo. Les exigences réelles viennent des données compilées ; il n'existe pas de règle universelle 16/30/36 à appliquer à toutes les familles.
+Les méthodes officielles réalisables sont conservées. Un échange simple est remplacé par l’utilisation du **Fil Liaison** ; un échange avec objet exige toujours que le Pokémon **tienne l’objet officiel**, puis qu’on utilise le Fil Liaison. Les mécaniques impossibles validées (Sépiatop, Dofin, Tutafeh de Galar, Ursaring et Meltan) utilisent également le Fil Liaison. Les fiches du Pokédex donnent les conditions de chaque forme, sans seuil de niveau artificiel.
 
 Les rencontres sauvages respectent aussi le stade cohérent avec le niveau : une forme de base ne doit pas rester artificiellement utilisée bien après son niveau normal d'évolution.
 

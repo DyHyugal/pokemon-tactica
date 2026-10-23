@@ -55,6 +55,8 @@ Starters fixes des archétypes :
 
 Le type secondaire actuel ou une évolution custom d'un starter ne redéfinit pas rétroactivement sa catégorie.
 
+Exemple vérifié : Darumarond de Galar appartient au menu Glace et peut donc donner Poussifeu ou Gobou au rival. Un starter du menu Eau donne Arcko ou Élekid, même si son espèce possède un type secondaire. Le second choix d'Orme ne retire pas l'archétype déjà enregistré.
+
 **Source détaillée des équipes :** [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Tant que `data/spec/rival.json` n'a pas été régénéré, toute ancienne matrice de tirage d'espèce qu'il contient est obsolète.
 
 ## Équipes et niveaux du rival

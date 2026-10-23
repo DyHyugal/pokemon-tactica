@@ -15,6 +15,7 @@
 #include "constants/flags.h"
 #include "constants/battle_ai.h"
 #include "test/test.h"
+#include "random.h"
 
 #if IS_HNS
 static void InitFamilyTest(void)
@@ -372,6 +373,29 @@ TEST("Family starter: every rival archetype has one fixed starter")
     for (u32 category = 0; category < ARRAY_COUNT(expected); category++)
         EXPECT_EQ(FamilyStarter_GetRivalFixedStarter(category), expected[category]);
     EXPECT_EQ(FamilyStarter_GetRivalFixedStarter(ARRAY_COUNT(expected)), SPECIES_NONE);
+}
+
+TEST("Family starter: all thirty primary starters draw from their menu category, not current typing")
+{
+    static const u16 counters[][2] = {
+        {SPECIES_MUDKIP, SPECIES_DRILBUR},
+        {SPECIES_TREECKO, SPECIES_ELEKID},
+        {SPECIES_TORCHIC, SPECIES_DARUMAKA_GALAR},
+        {SPECIES_DRILBUR, SPECIES_TREECKO},
+        {SPECIES_MUDKIP, SPECIES_DARUMAKA_GALAR},
+        {SPECIES_TORCHIC, SPECIES_MUDKIP},
+    };
+    static const u32 seeds[] = {0, 4};
+    for (u32 category = 0; category < ARRAY_COUNT(counters); category++)
+        for (u32 index = 0; index < 5; index++)
+            for (u32 roll = 0; roll < ARRAY_COUNT(seeds); roll++)
+            {
+                InitFamilyTest();
+                CreateRandomMon(&gPlayerParty[0], FamilyStarter_GetCandidate(category, index), 5);
+                SeedRng(seeds[roll]);
+                FamilyStarter_RecordPrimary();
+                EXPECT_EQ(VarGet(VAR_FAMILY_RIVAL_SPECIES), counters[category][roll]);
+            }
 }
 
 TEST("Family starter: rival draw is persisted once")

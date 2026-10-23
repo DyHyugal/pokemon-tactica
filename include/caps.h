@@ -19,6 +19,7 @@
 #endif
 
 u32 GetCurrentLevelCap(void);
+u32 GetTacticaStoryTrainerFloor(void);
 u32 GetSoftLevelCapExpValue(u32 level, u32 expValue);
 u32 GetCurrentEVCap(void);
 u32 GetFamilyRocketTrainerLevel(u16 trainerId);

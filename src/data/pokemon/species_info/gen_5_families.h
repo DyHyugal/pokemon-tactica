@@ -10557,7 +10557,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
     [SPECIES_HAXORUS] =
     {
         .baseHP        = 76,
-        .baseAttack    = 147,
+        .baseAttack    = 130,
         .baseDefense   = 90,
         .baseSpeed     = 110,
         .baseSpAttack  = 60,
