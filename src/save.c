@@ -14,6 +14,7 @@
 #include "constants/game_stat.h"
 #include "constants/rematches.h"
 #include "event_data.h"
+#include "family_starter.h"
 
 static u16 CalculateChecksum(void *, u16);
 static bool8 ReadFlashSector(u8, struct SaveSector *);
@@ -911,6 +912,9 @@ u8 LoadGameSave(u8 saveType)
         CopyPartyAndObjectsFromSave();
         gSaveFileStatus = status;
         gGameContinueCallback = NULL;
+        // ERROR can mean the other slot was damaged and a valid backup loaded.
+        if (status == SAVE_STATUS_OK || status == SAVE_STATUS_ERROR)
+            FamilyStarter_MigrateRivalCategory();
         break;
     case SAVE_HALL_OF_FAME:
         if (gHoFSaveBuffer != NULL)

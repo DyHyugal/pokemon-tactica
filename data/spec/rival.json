@@ -19,16 +19,15 @@
         "ice"
       ],
       "electric": [
-        "ground",
-        "grass"
+        "ground"
       ],
       "ground": [
         "water",
+        "grass",
         "ice"
       ],
       "ice": [
-        "fire",
-        "water"
+        "fire"
       ]
     },
     "fixed_starters": {
@@ -41,7 +40,14 @@
     },
     "category_draw": "uniform among candidate categories",
     "starter_draw": "none; the drawn archetype determines one fixed starter",
-    "persist_once": true
+    "persist_once": true,
+    "save_migration": {
+      "check": "official offensive weakness of the saved primary starter menu category",
+      "keep_legal_archetype": true,
+      "invalid_archetype": "random among legal counter categories; persist the replacement once",
+      "unselected_or_eevee_primary": "unchanged",
+      "save_layout": "unchanged"
+    }
   },
   "archetypes": {
     "fire": "sun",

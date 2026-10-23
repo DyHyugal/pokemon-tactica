@@ -26,6 +26,7 @@ u16 FamilyStarter_GetPrimarySpecies(void);
 u16 FamilyStarter_GetRivalSpecies(u16 originalSpecies);
 u32 FamilyStarter_GetRivalCounterCategory(u32 playerCategory, u32 roll);
 u16 FamilyStarter_GetRivalFixedStarter(u32 rivalCategory);
+bool32 FamilyStarter_MigrateRivalCategory(void);
 bool32 FamilyStarter_ResolveRivalMon(u16 trainerId, u32 slot, struct TrainerMon *mon);
 
 #endif

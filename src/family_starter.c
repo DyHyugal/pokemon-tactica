@@ -89,13 +89,14 @@ struct RivalCounterCategories
     u8 categories[3];
 };
 
+// Official offensive weaknesses of the player's menu category, not species typing.
 static const struct RivalCounterCategories sRivalCounterCategories[] = {
     [FAMILY_FIRE] = {2, {FAMILY_WATER, FAMILY_GROUND}},
     [FAMILY_WATER] = {2, {FAMILY_GRASS, FAMILY_ELECTRIC}},
     [FAMILY_GRASS] = {2, {FAMILY_FIRE, FAMILY_ICE}},
-    [FAMILY_ELECTRIC] = {2, {FAMILY_GROUND, FAMILY_GRASS}},
-    [FAMILY_GROUND] = {2, {FAMILY_WATER, FAMILY_ICE}},
-    [FAMILY_ICE] = {2, {FAMILY_FIRE, FAMILY_WATER}},
+    [FAMILY_ELECTRIC] = {1, {FAMILY_GROUND}},
+    [FAMILY_GROUND] = {3, {FAMILY_WATER, FAMILY_GRASS, FAMILY_ICE}},
+    [FAMILY_ICE] = {1, {FAMILY_FIRE}},
 };
 
 static const u16 sRivalFixedStarters[FAMILY_EEVEE] = {
@@ -335,6 +336,35 @@ u16 FamilyStarter_GetRivalFixedStarter(u32 rivalCategory)
     if (rivalCategory >= FAMILY_EEVEE)
         return SPECIES_NONE;
     return sRivalFixedStarters[rivalCategory];
+}
+
+bool32 FamilyStarter_MigrateRivalCategory(void)
+{
+#if IS_HNS
+    u16 playerSpecies = VarGet(VAR_FAMILY_STARTER_SPECIES);
+    u16 rivalSpecies = VarGet(VAR_FAMILY_RIVAL_SPECIES);
+    u32 playerCategory = GetMenuCategory(playerSpecies);
+    u32 rivalCategory = GetMenuCategory(rivalSpecies);
+    const struct RivalCounterCategories *candidates;
+
+    // Keep unselected starters, Eevee and other starter modes untouched.
+    if (!IsFamilyStarterMode() || !IsMenuSpecies(playerSpecies)
+     || playerCategory >= FAMILY_EEVEE || rivalSpecies == SPECIES_NONE)
+        return FALSE;
+    candidates = &sRivalCounterCategories[playerCategory];
+    for (u32 i = 0; i < candidates->count; i++)
+        if (candidates->categories[i] == rivalCategory)
+            return FALSE;
+
+    // Redraw only invalid pairings, then persist the legal archetype permanently.
+    // In particular: Ice/Water -> Fire and Electric/Grass -> Ground.
+    rivalCategory = FamilyStarter_GetRivalCounterCategory(playerCategory,
+        candidates->count > 1 ? Random() : 0);
+    VarSet(VAR_FAMILY_RIVAL_SPECIES, FamilyStarter_GetRivalFixedStarter(rivalCategory));
+    return TRUE;
+#else
+    return FALSE;
+#endif
 }
 
 static void UNUSED SelectRivalStarter(u16 playerSpecies)
@@ -590,6 +620,7 @@ static u16 UNUSED GetFirstEvolution(u16 species)
 u16 FamilyStarter_GetRivalSpecies(u16 originalSpecies)
 {
 #if IS_HNS
+    FamilyStarter_MigrateRivalCategory();
     u32 stage = GetJohtoRivalStarterStage(originalSpecies);
     u16 species = VarGet(VAR_FAMILY_RIVAL_SPECIES);
     u32 i;
@@ -711,13 +742,17 @@ bool32 FamilyStarter_ResolveRivalMon(u16 trainerId, u32 slot, struct TrainerMon 
 {
 #if IS_HNS
     u32 fight = GetTacticaRivalFight(trainerId);
+    if (fight == 0 || slot >= PARTY_SIZE)
+        return FALSE;
+    // Also covers emulator states resumed without loading the save file again.
+    FamilyStarter_MigrateRivalCategory();
     u16 savedStarter = VarGet(VAR_FAMILY_RIVAL_SPECIES);
     u32 category = GetMenuCategory(savedStarter);
     enum TacticaRivalPhase phase;
     const struct TacticaRivalMon *source;
     u32 i;
 
-    if (fight == 0 || slot >= PARTY_SIZE || category >= FAMILY_EEVEE || !IsMenuSpecies(savedStarter))
+    if (category >= FAMILY_EEVEE || !IsMenuSpecies(savedStarter))
         return FALSE;
 
     // No story fight occurs after Badge 1. Fight 2 is reached after Bugsy and

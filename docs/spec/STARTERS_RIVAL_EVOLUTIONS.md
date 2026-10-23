@@ -28,8 +28,8 @@ Le cœur du sélecteur est protégé, mais son comportement de curseur fait part
 
 Évoli est exclu du rival. Le rival ne tire plus une espèce parmi les cinq starters disponibles dans une catégorie.
 
-1. déterminer la catégorie choisie par le joueur ;
-2. tirer uniformément **un archétype rival** parmi les catégories candidates ci-dessous ;
+1. déterminer la catégorie choisie par le joueur dans le menu, sans consulter les types de son espèce ;
+2. retenir les catégories dont le type offensif est super efficace contre ce type de menu selon la table officielle, puis tirer uniformément **un archétype rival** parmi elles ;
 3. enregistrer cet archétype une seule fois ;
 4. utiliser ensuite le **starter fixe** de cet archétype pendant toute la partie.
 
@@ -38,9 +38,9 @@ Le cœur du sélecteur est protégé, mais son comportement de curseur fait part
 | Feu | Eau, Sol |
 | Eau | Plante, Électrik |
 | Plante | Feu, Glace |
-| Électrik | Sol, Plante |
-| Sol | Eau, Glace |
-| Glace | Feu, Eau |
+| Électrik | Sol |
+| Sol | Eau, Plante, Glace |
+| Glace | Feu |
 
 Starters fixes des archétypes :
 
@@ -55,9 +55,15 @@ Starters fixes des archétypes :
 
 Le type secondaire actuel ou une évolution custom d'un starter ne redéfinit pas rétroactivement sa catégorie.
 
-Exemple vérifié : Darumarond de Galar appartient au menu Glace et peut donc donner Poussifeu ou Gobou au rival. Un starter du menu Eau donne Arcko ou Élekid, même si son espèce possède un type secondaire. Le second choix d'Orme ne retire pas l'archétype déjà enregistré.
+Darumarond de Galar appartient au menu Glace : le rival reçoit donc l'archétype Feu et son starter Poussifeu. Eau résiste à Glace mais ne lui inflige pas de dégâts super efficaces ; cette résistance ne suffit pas. Un starter du menu Eau donne Arcko ou Élekid, même si son espèce possède un type secondaire. Seuls les six types du menu sont candidats : Combat, Roche et Acier, par exemple, ne sont pas des archétypes disponibles.
 
-**Source détaillée des équipes :** [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). Tant que `data/spec/rival.json` n'a pas été régénéré, toute ancienne matrice de tirage d'espèce qu'il contient est obsolète.
+La ROM contrôle aussi les sauvegardes existantes au chargement et avant la création d’une équipe Rival. La légalité signifie ici que le type offensif de l’archétype est super efficace contre la catégorie de menu du starter principal **enregistré** ; ni le Pokémon actuellement en tête d’équipe ni le second choix d’Orme ne servent de référence. Une association déjà légale est conservée. Une association invalide est remplacée par un tirage aléatoire parmi les catégories légales, puis enregistrée définitivement : aucun reroll au chargement suivant ou entre deux combats. Glace/Eau devient donc Glace/Feu ; Électrik/Plante devient Électrik/Sol.
+
+La correction modifie l’archétype de toute l’équipe du rival pour les prochains combats, sans rejouer les combats passés, changer les niveaux, réinitialiser les badges ou modifier le format de sauvegarde. Elle sera écrite sur disque lors de la prochaine sauvegarde normale. Évoli, les choix non encore attribués et les autres modes de starters ne sont pas migrés. Un état d’émulateur ancien est également contrôlé lors de la prochaine résolution du rival.
+
+**Règle verrouillée** : table officielle, catégorie du menu, contrôle de légalité et persistance du premier choix légal. Toute réouverture nécessite un défaut démontré ou une décision owner explicite.
+
+**Source détaillée des équipes :** [ROSTERS_ROCKET_RIVAL.md](ROSTERS_ROCKET_RIVAL.md). La matrice et les starters fixes sont synchronisés dans `data/spec/rival.json` et `src/family_starter.c`.
 
 ## Équipes et niveaux du rival
 

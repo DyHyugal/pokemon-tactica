@@ -644,6 +644,10 @@ def validate_rival_progression():
         fail("generated rival roster table is not included by the runtime")
     if "FamilyStarter_ResolveRivalMon(sCreatingTrainerId, i" not in battle:
         fail("rival category resolver is not wired into trainer party creation")
+    save = (ROOT / "src/save.c").read_text(encoding="utf-8")
+    load_save = save.split("u8 LoadGameSave(u8 saveType)", 1)[1].split("u16 GetSaveBlocksPointersBaseOffset", 1)[0]
+    if "FamilyStarter_MigrateRivalCategory();" not in load_save:
+        fail("rival legality migration must run when loading existing saves")
     if generated.count(".isSavedStarter = TRUE") != 6:
         fail("generated rival data must contain one saved starter slot per category")
     if generated.count(".baseSpecies = ") != 36:
