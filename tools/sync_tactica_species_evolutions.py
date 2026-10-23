@@ -34,7 +34,10 @@ def preprocessed_species() -> str:
     if cpp is None:
         raise RuntimeError("The C preprocessor (cpp) is required to audit HnS evolutions")
     command = [cpp, "-Iinclude", "-I.", "-DPOKEMON_HNS", "-DMODERN=1", "-DTESTING=0"]
-    preamble = '#include "global.h"\n#include "pokemon.h"\n'
+    # Configuration/constants only: global.h/pokemon.h require generated map
+    # headers and must not make a wiki audit depend on a previous ROM build.
+    preamble = ('#include "config/general.h"\n#include "gba/defines.h"\n'
+                '#include "constants/global.h"\n#include "constants/pokemon.h"\n')
     macros = subprocess.run(command + ["-dM", "-"], input=preamble, cwd=ROOT,
                             capture_output=True, text=True, check=True).stdout
     names = re.findall(r"^#define (\w+)", macros, re.M)
