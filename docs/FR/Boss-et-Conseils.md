@@ -273,7 +273,7 @@ Le rival conserve un starter fixe selon son archétype. Le premier duel se joue 
 | Élekable | 75 | Orbe Vie | Sans Limite | Poing Éclair · Coup Croix · Poing Glace · Éboulement |
 | Magnézone | 75 | Lunettes Choix | Analyste | Tonnerre · Luminocanon · Change Éclair · Rayon Signal |
 | Paume-de-Fer | 75 | Graine Électrik | Charge Quantique | Vampi-Poing · Poing Éclair · Poing Glace · Danse Lames |
-| Élecsprint | 75 | Ceinture Pro | Intimidation | Tonnerre · Lance-Flammes · Change Éclair · Hidden Power Ice |
+| Élecsprint | 75 | Ceinture Pro | Paratonnerre | Tonnerre · Lance-Flammes · Change Éclair · Rayon Signal |
 
 ### Morgane — Trick Room
 

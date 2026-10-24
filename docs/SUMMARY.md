@@ -132,6 +132,7 @@
     - [Scope Guidelines](team_procedures/scope.md)
 
 - [Contrat Tactica]()
+    - [Audit des sets de boss — 24 octobre 2026](spec/BOSS_SET_AUDIT_2026-10-24.md)
     - [BOSSES_AI](spec/BOSSES_AI.md)
     - [CODEX_START](spec/CODEX_START.md)
     - [ENCOUNTERS](spec/ENCOUNTERS.md)

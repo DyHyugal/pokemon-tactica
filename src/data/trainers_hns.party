@@ -7255,7 +7255,7 @@ Level: 65
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - TailWind
 - Aerial Ace
-- Extreme Speed
+- Quick Attack
 - Sand Attack
 
 Pelipper
@@ -7994,7 +7994,7 @@ Level: 65
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Rock Slide
 - Metal Burst
-- Swords Dance
+- Hone Claws
 - Earthquake
 
 Steelix @ Quick Claw
@@ -8451,7 +8451,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Shelgon @ Sitrus Berry
 Level: 64
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Thunder Wave
+- Protect
 - Zen Headbutt
 - Flamethrower
 - Dragon Claw
@@ -8680,13 +8680,13 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Manectric @ Expert Belt
 Level: 75
-Ability: Intimidate
+Ability: Lightning Rod
 Nature: Timid
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Thunderbolt
 - Flamethrower
 - Volt Switch
-- Hidden Power
+- Signal Beam
 
 === TRAINER_ERIKA_HNS ===
 Name: ERIKA
@@ -9070,7 +9070,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Alakazam @ Twisted Spoon
 Level: 68
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Thunderbolt
+- Shock Wave
 - Recover
 - Psychic
 - Shadow Ball
@@ -9097,7 +9097,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Hydro Pump
 - Double Team
 - Body Slam
-- Reversal
+- Flail
 
 Arcanine @ Silk Scarf
 Level: 69
@@ -9212,7 +9212,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ancient Power
 - Sleep Powder
 - Dream Eater
-- Soft Boiled
+- Synthesis
 
 Grumpig
 Level: 67
@@ -9225,7 +9225,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Slowbro @ Quick Claw
 Level: 66
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Fire Punch
+- Drain Punch
 - Curse
 - Earthquake
 - Zen Headbutt
@@ -10089,7 +10089,7 @@ Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hammer Arm
 - Moonblast
-- Ancient Power
+- Earth Power
 - Rest
 
 Crobat @ Leftovers
@@ -10148,7 +10148,7 @@ Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hammer Arm
 - Moonblast
-- Ancient Power
+- Earth Power
 - Rest
 
 Crobat @ Leftovers
@@ -10329,7 +10329,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Victreebel
 Level: 64
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Sludge
+- Acid
 - Razor Leaf
 - Sleep Powder
 - Growth
@@ -10441,7 +10441,7 @@ Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hammer Arm
 - Moonblast
-- Ancient Power
+- Earth Power
 - Rest
 
 Crobat @ Leftovers
@@ -10500,7 +10500,7 @@ Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hammer Arm
 - Moonblast
-- Ancient Power
+- Earth Power
 - Rest
 
 Crobat @ Leftovers
@@ -10646,7 +10646,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Victreebel
 Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Sludge
+- Acid
 - Razor Leaf
 - Sleep Powder
 - Growth
@@ -10681,7 +10681,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Victreebel
 Level: 64
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Sludge
+- Acid
 - Razor Leaf
 - Sleep Powder
 - Growth
@@ -10793,7 +10793,7 @@ Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hammer Arm
 - Moonblast
-- Ancient Power
+- Earth Power
 - Rest
 
 Crobat @ Leftovers
@@ -10852,7 +10852,7 @@ Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hammer Arm
 - Moonblast
-- Ancient Power
+- Earth Power
 - Rest
 
 Crobat @ Leftovers
@@ -10985,7 +10985,7 @@ Level: 27
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 - Thunder Wave
 - Sonic Boom
-- Body Slam
+- Swift
 - Thunderbolt
 
 === TRAINER_GIOVANNI_HNS ===
@@ -11035,7 +11035,7 @@ Ursaluna
 Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Headlong Rush
-- Sandstorm
+- Bulk Up
 - Play Rough
 - Double Edge
 
@@ -11280,7 +11280,7 @@ Level: 39
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tri Attack
 - Zap Cannon
-- Flamethrower
+- Shadow Ball
 - Ice Beam
 
 Tauros
@@ -11296,7 +11296,7 @@ Level: 39
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bite
 - Strength
-- Gust
+- Twister
 - Surf
 
 Houndoom
@@ -11331,7 +11331,7 @@ Level: 39
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tri Attack
 - Zap Cannon
-- Flamethrower
+- Shadow Ball
 - Ice Beam
 
 Tauros
@@ -11347,7 +11347,7 @@ Level: 39
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bite
 - Strength
-- Gust
+- Twister
 - Surf
 
 Houndoom
@@ -14146,7 +14146,7 @@ Level: 70
 
 Noivern @ Choice Specs
 Level: 70
-EVs: 0 HP / 0 Atk / 0 Def / 255 SpA / 6 SpD / 255 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 6 SpD / 252 Spe
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Shiny: Yes
 
@@ -15322,7 +15322,7 @@ Level: 69
 Pidgeot  
 Ability: Keen Eye  
 Level: 69  
-- Extreme Speed  
+- Quick Attack
 - Fly  
 - Tailwind  
 - Sand Attack  
@@ -15439,7 +15439,7 @@ Ability: Mind's Eye
 Level: 69  
 IVs: 0 Atk  
 - Blood Moon  
-- Lunar Blessing  
+- Moonlight
 - Earth Power  
 - Calm Mind  
 
@@ -15669,7 +15669,7 @@ Ability: Ice Body
 Level: 71
 IVs: 0 Atk  
 - Teeter Dance  
-- Snowscape  
+- Hail
 - Psyshock  
 - Trick Room  
 
@@ -15733,7 +15733,7 @@ Level: 69
 - Charge Beam  
 - Boomburst  
 - Poison Jab  
-- Tailwind  
+- Agility
 
 Exeggutor-Alola @ Sitrus Berry  
 Ability: Harvest  
@@ -15815,10 +15815,10 @@ IVs: 0 Atk
 Relicanth @ Hard Stone  
 Ability: Rock Head  
 Level: 70 
-- Wave Crash  
+- Waterfall
 - Head Smash  
 - Calm Mind  
-- Thunderbolt  
+- Earthquake
 
 Golem-Alola @ Magnet  
 Ability: Galvanize  
@@ -16315,7 +16315,7 @@ IVs: 0 Atk
 Slowbro  
 Ability: Oblivious  
 Level: 77  
-- Fire Punch  
+- Drain Punch
 - Curse  
 - Earthquake  
 - Zen Headbutt  
@@ -16373,7 +16373,7 @@ IVs: 0 Atk
 - Fire Blast  
 - Ice Beam  
 - Earth Power  
-- Noble Roar  
+- Sludge Wave
 
 Venomoth @ Bright Powder  
 Ability: Shield Dust  
@@ -16441,7 +16441,7 @@ Hitmontop @ Expert Belt
 Ability: Technician  
 Level: 77 
 - Triple Kick  
-- Victory Dance  
+- Bulk Up
 - Bullet Punch  
 - Pursuit  
 
@@ -16468,7 +16468,7 @@ Umbreon @ Black Glasses
 Ability: Synchronize  
 Level: 74  
 IVs: 0 Atk  
-- Lunar Blessing  
+- Moonlight
 - Foul Play  
 - Shadow Ball  
 - Calm Mind  
@@ -17821,14 +17821,14 @@ EVs: 252 HP / 252 Atk / 4 SpD
 
 Manectric @ Expert Belt
 Level: 75
-Ability: Intimidate
+Ability: Lightning Rod
 Nature: Timid
 IVs: 31 HP / 30 Atk / 30 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 Spe / 4 HP
 - Thunderbolt
 - Flamethrower
 - Volt Switch
-- Hidden Power
+- Signal Beam
 
 === TRAINER_ERIKA_HNS ===
 Name: ERIKA
@@ -19025,7 +19025,7 @@ Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hammer Arm
 - Moonblast
-- Ancient Power
+- Earth Power
 - Rest
 
 Crobat @ Leftovers
@@ -19086,7 +19086,7 @@ Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hammer Arm
 - Moonblast
-- Ancient Power
+- Earth Power
 - Rest
 
 Crobat @ Leftovers
@@ -19275,7 +19275,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Victreebel
 Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sludge
+- Acid
 - Razor Leaf
 - Sleep Powder
 - Growth
@@ -19391,7 +19391,7 @@ Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hammer Arm
 - Moonblast
-- Ancient Power
+- Earth Power
 - Rest
 
 Crobat @ Leftovers
@@ -19452,7 +19452,7 @@ Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hammer Arm
 - Moonblast
-- Ancient Power
+- Earth Power
 - Rest
 
 Crobat @ Leftovers
@@ -19604,7 +19604,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Victreebel
 Level: 36
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sludge
+- Acid
 - Razor Leaf
 - Sleep Powder
 - Growth
@@ -19641,7 +19641,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Victreebel
 Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sludge
+- Acid
 - Razor Leaf
 - Sleep Powder
 - Growth
@@ -19757,7 +19757,7 @@ Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hammer Arm
 - Moonblast
-- Ancient Power
+- Earth Power
 - Rest
 
 Crobat @ Leftovers
@@ -19818,7 +19818,7 @@ Level: 95
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hammer Arm
 - Moonblast
-- Ancient Power
+- Earth Power
 - Rest
 
 Crobat @ Leftovers

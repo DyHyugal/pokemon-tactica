@@ -2400,17 +2400,17 @@
       "ace": false,
       "level": 75,
       "item": "Expert Belt",
-      "ability": "Intimidate",
+      "ability": "Lightning Rod",
       "nature": "Timid",
       "evs": "EV:SPE",
       "moves": [
         "Thunderbolt",
         "Flamethrower",
         "Volt Switch",
-        "Hidden Power Ice"
+        "Signal Beam"
       ],
       "role": "Fast special pivot",
-      "notes": "Non-Mega because the Mega slot belongs to Raichu."
+      "notes": "Non-Mega because the Mega slot belongs to Raichu. Legal base ability Lightning Rod; Signal Beam replaces the unattainable Hidden Power Ice with HARD IVs fixed at 31."
     },
     {
       "region": "Kanto",

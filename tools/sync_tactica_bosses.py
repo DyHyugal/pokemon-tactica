@@ -130,11 +130,9 @@ def render_mon(canonical: dict, current: dict, hard: bool) -> str:
     level = canonical["level"] if canonical["level"] is not None else int(current["Level"])
     desired_species = engine_species(canonical["species"])
     first = desired_species + (f" @ {canonical['item']}" if canonical["item"] else "")
-    moves = [
-        "Hidden Power" if move == "Hidden Power Ice" else move
-        for move in canonical["moves"]
-        if move not in {"—", "�"}
-    ]
+    if any(move.startswith("Hidden Power ") for move in canonical["moves"]):
+        raise ValueError("Typed Hidden Power requires compatible IVs; do not silently strip its type")
+    moves = [move for move in canonical["moves"] if move not in {"—", "�"}]
     lines = [
         first,
         f"Level: {level}",
