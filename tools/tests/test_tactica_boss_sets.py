@@ -59,8 +59,9 @@ class BossSetTests(unittest.TestCase):
     def test_compatible_historical_native_inherited_and_form_moves(self):
         for species, moves in [("Honchkrow", ["Mimic"]), ("Umbreon", ["Growth"]),
                                ("Nidoking", ["Lovely Kiss"]), ("Sylveon", ["Sing"]),
-                               ("Rotom Wash", ["Hydro Pump"]), ("Pikachu Starter", ["Thunderbolt"]),
-                               ("Murkrow", ["Faint Attack"])]:
+                               ("Rotom Wash", ["Hydro Pump"]), ("Pikachu Starter", ["Thunderbolt", "Surf"]),
+                               ("Murkrow", ["Faint Attack"]), ("Mimikyu", ["Swords Dance", "Drain Punch"]),
+                               ("Darmanitan Galar", ["Earthquake"])]:
             with self.subTest(species=species):
                 self.assertEqual(self.check_mon(species, moves=moves)["errors"], [])
         errors = self.check_mon("Pidgeot", moves=["Extreme Speed"])["errors"]

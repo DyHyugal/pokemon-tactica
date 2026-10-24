@@ -66,7 +66,9 @@ def runtime_move_tables() -> dict[str, set[str]]:
     preamble = ('#include "config/general.h"\n#include "gba/defines.h"\n'
                 '#include "constants/global.h"\n#include "constants/pokemon.h"\n')
     source = preamble + f'#include "src/data/pokemon/level_up_learnsets/gen_{generation}.h"\n'
-    source += '#include "src/data/pokemon/teachable_learnsets.h"\n#include "src/data/pokemon/egg_moves.h"\n'
+    # Teachable tables are generated from all_learnables.json during the ROM
+    # build. Read that authored JSON directly; the audit must work pre-build.
+    source += '#include "src/data/pokemon/egg_moves.h"\n'
     result = subprocess.run(['cpp', '-Iinclude', '-I.', '-DPOKEMON_HNS', '-DMODERN=1', '-DTESTING=0', '-P', '-'],
                             input=source, cwd=ROOT, capture_output=True, text=True, check=True).stdout
     return {name: set(re.findall(r'MOVE_\w+', body)) - {'MOVE_UNAVAILABLE'}
@@ -86,6 +88,7 @@ class Catalog:
             ('ITEM_', 'include/constants/items.h'), ('MOVE_', 'include/constants/moves.h'))}
         self.learnables = {s: {resolve(m, self.aliases) for m in moves} for s, moves in
                       json.loads((ROOT / 'src/data/pokemon/all_learnables.json').read_text()).items()}
+        self.learnable_names = {normalize(s): moves for s, moves in self.learnables.items()}
         self.native = runtime_move_tables()
         self.parents = {}
         for parent, routes in runtime_evolutions().items():
@@ -108,6 +111,11 @@ class Catalog:
             result.update(self.learnables.get(current.removeprefix('SPECIES_'), []))
             for pointer in re.findall(r'\.(?:levelUpLearnset|teachableLearnset|eggMoveLearnset)\s*=\s*(\w+)', self.blocks.get(current, '')):
                 result.update(resolve(m, self.aliases) for m in self.native.get(pointer, []))
+                shared = re.fullmatch(r's(.+)TeachableLearnset', pointer)
+                if shared:
+                    # Some forms share a table keyed by the family (Mimikyu,
+                    # Galar Darmanitan, partner Pikachu), not their species ID.
+                    result.update(self.learnable_names.get(normalize(shared[1]), []))
             result.update(self.historical.get(current, []))
             pending.extend(self.parents.get(current, []))
         return result

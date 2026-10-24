@@ -110,7 +110,7 @@ Aucun nouveau défaut de transition talent/type n'a été observé sur ces 28 co
 
 ## Méthode et limites de la légalité
 
-`tools/validate_tactica_boss_sets.py` utilise la configuration HnS active après prétraitement C, les capacités compatibles historiques `all_learnables.json`, les listes natives niveau/CT/tuteur/œuf, les pré-évolutions et les attaques propres aux formes de Motisma. Il résout les anciens alias de noms. Il vérifie aussi espèces actives, talents de base, noms d'objets/capacités, doublons, maximum quatre capacités, bornes IV/EV, pierres et talents Méga canoniques.
+`tools/validate_tactica_boss_sets.py` utilise la configuration HnS active après prétraitement C, les capacités compatibles historiques `all_learnables.json`, les listes natives niveau/œuf et les tables CT/tuteur reliées à leurs sources JSON, les pré-évolutions et les attaques propres aux formes de Motisma. Il résout les anciens alias de noms. Il vérifie aussi espèces actives, talents de base, noms d'objets/capacités, doublons, maximum quatre capacités, bornes IV/EV, pierres et talents Méga canoniques.
 
 Le contrôle des capacités est **une compatibilité Tactica**, avec ses ajouts approuvés et ses apprentissages historiques. Ce n'est pas un certificat de légalité d'un format compétitif officiel d'une génération unique : disponibilité des événements, transfert entre cartouches et combinaisons d'événements ne sont pas simulés. Les capacités de niveau futures déjà autorisées dans les sets fixes ne sont pas retirées arbitrairement.
 
@@ -125,6 +125,8 @@ Références examinées le 24 octobre 2026 :
 Le helper runtime `IsTacticaMoveLegalAtLevel` sert à adapter une forme intermédiaire à son niveau. Il ne représente pas à lui seul tous les anciens tuteurs et héritages autorisés pour un set fixe ; il est donc réservé aux tests des équipes dynamiques effectivement adaptées par le moteur.
 
 ## Validation reproductible
+
+Résultats locaux : build HnS réussi ; 19 tests Python réussis ; six groupes mGBA nouveaux réussis (56 transformations Méga, 126 cas Rocket, deux constructions de Major Bob et les variantes du rival) ; régressions existantes Family **39/39**, caps **18/18**, Ectoplasma **1/1**. Le contrôle statique et les 19 tests Python réussissent aussi depuis une extraction Git propre, avant tout build et sans en-têtes générés. La CI distante doit confirmer le même commit avant fusion.
 
 ```sh
 python3 tools/validate_tactica_boss_sets.py --report /tmp/tactica-boss-audit.json
