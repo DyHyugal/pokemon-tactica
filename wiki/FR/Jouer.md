@@ -20,6 +20,8 @@ Le téléchargement proposé correspond à la candidate **0f1ec55d**, construite
 
 Le premier parcours de validation va jusqu’à Mortimer, puis le playtest complet poursuit l’aventure à travers Johto, Kanto, la deuxième Ligue et Red. Si tu rencontres un problème, indique la version **0f1ec55d**, ta difficulté, ton réglage de cap et les actions qui permettent de le reproduire. Les ajustements et l’équilibrage suivront les retours observés en jeu.
 
+[Tableau complet des niveaux par zone et dresseur (CSV pour Excel)](https://dyhyugal.github.io/pokemon-tactica/assets/tactica-trainer-scaling.csv).
+
 ## Retrouver sa sauvegarde
 
 Lorsque tu remplaces une ROM par une nouvelle candidate, conserve une copie de ta sauvegarde et de l’ancienne version. La sauvegarde du jeu et les états instantanés de l’émulateur sont deux fichiers différents ; garde une sauvegarde effectuée depuis le menu du jeu pour reprendre ton aventure. La compatibilité entre candidates doit être confirmée dans les notes de version.

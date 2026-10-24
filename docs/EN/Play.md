@@ -4,9 +4,9 @@
 
 ## Download the game
 
-Pokémon Tactica is distributed as a complete Game Boy Advance ROM. Open the [Tactica .gba ROM](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-3c620914/pokemon-tactica.gba) directly in an emulator. You do not need a Pokémon Emerald ROM, an EmeraldPlus version or a patching tool.
+Pokémon Tactica is distributed as a complete Game Boy Advance ROM. Open the [Tactica .gba ROM](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-63dbd3d9/pokemon-tactica.gba) directly in an emulator. You do not need a Pokémon Emerald ROM, an EmeraldPlus version or a patching tool.
 
-The [Tactica download package](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-3c620914/pokemon-tactica.zip) includes the same ROM, version information and the playtest checklist. Extract the ZIP to find the .gba file. The files are also available on the [candidate release page](https://github.com/DyHyugal/pokemon-tactica/releases/tag/v1-candidate-3c620914).
+The [Tactica download package](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-63dbd3d9/pokemon-tactica.zip) includes the same ROM, version information and the playtest checklist. Extract the ZIP to find the .gba file. The files are also available on the [candidate release page](https://github.com/DyHyugal/pokemon-tactica/releases/tag/v1-candidate-63dbd3d9).
 
 ## Start your adventure
 
@@ -16,9 +16,11 @@ The V1 ROM is in English; the wiki is available in French and English. Difficult
 
 ## The current candidate
 
-The download is candidate **3c620914**, built from **integration/v1**. It fixes rival selection using the official weaknesses of the starter menu category and migrates invalid saved pairings to a legal team that is then retained. It also includes ordinary trainer levels based on area and story progress, Haxorus’s base Attack reduced to 130, and the existing battle, HM and interface fixes. The evolution wiki has been synchronized with the game. This version is intended for playtesting and has not yet been declared stable.
+The download is candidate **63dbd3d9**, built from **integration/v1**. It fixes the Lt. Surge crash (Manectric with Lightning Rod and Signal Beam) and incompatible boss/rematch sets. Battle tests verify abilities and types for 28 Mega combinations. It retains rival selection using the official weaknesses of the starter menu category and migrates invalid saved pairings to a legal team that is then retained. Level scaling now counts the opening rival victory (floor 18) and each central Kanto Gym victory (80), with no level-scaling option to enable. It also includes ordinary trainer levels based on area and story progress, Haxorus’s base Attack reduced to 130, and the existing battle, HM and interface fixes. The evolution wiki has been synchronized with the game. This version is intended for playtesting and has not yet been declared stable.
 
-The first validation playthrough goes through Morty, followed by the full adventure across Johto, Kanto, the second League and Red. When reporting an issue, include version **3c620914**, your difficulty, level cap setting and steps to reproduce it. Fixes and balance adjustments will follow actual gameplay feedback.
+The first validation playthrough goes through Morty, followed by the full adventure across Johto, Kanto, the second League and Red. When reporting an issue, include version **63dbd3d9**, your difficulty, level cap setting and steps to reproduce it. Fixes and balance adjustments will follow actual gameplay feedback.
+
+[Full trainer and area level table (CSV for Excel)](../assets/tactica-trainer-scaling.csv).
 
 ## Keep your save
 
