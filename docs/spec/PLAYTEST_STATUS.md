@@ -12,6 +12,12 @@ Le correctif du 24 octobre est distinct de la candidate `3c620914` ci-dessus, qu
 
 À observer dans la prochaine candidate publiée depuis ce correctif : commencer Major Bob en NORMAL/HARD, vérifier l'absence d'assertion avant le premier tour et conserver Méga-Raichu Y ; observer aussi Corps Maudit → Marque Ombre chez Mortimer, Acier/Roche → Acier chez Jasmine, Dragon/Vol → Dragon/Fée chez Sandra, et les talents Méga du rival. Reprendre avec Continuer depuis une sauvegarde du jeu ; aucun changement du format de sauvegarde.
 
+## Scaling global des dresseurs — correctif source du 24 octobre
+
+La candidate `3c620914` omet le premier rival dans le plancher des dresseurs ordinaires et attend les trois victoires centrales Kanto avant de relever ce plancher. Le nouveau correctif compte le premier rival (18) et chaque victoire centrale (80) sans modifier les caps joueur. Audit de 560 cartes et matrice de toutes les 474 associations placées/revanches ; détail et tableau CSV dans [l'audit global des niveaux](TRAINER_SCALING_AUDIT_2026-10-24.md).
+
+Après publication de cette source : observer Joey/Wade après le premier rival, Samuel Route 34 après le deuxième rival avant Blanche, puis un ancien dresseur après une seule victoire contre Morgane, Erika ou Jeannine. Aucun réglage « scaling des niveaux » à activer ; les options IV/EV sont distinctes. Reprendre avec Continuer depuis une sauvegarde en jeu.
+
 ## Progression du rival incluse
 
 ### Rival — progression réintégrée

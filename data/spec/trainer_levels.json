@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "source": "Owner playtest, 2026-10-23: ordinary trainers must follow their zone and Tactica story progress",
+  "source": "Owner playtests, 2026-10-23/24: ordinary trainers must follow every zone and actual completed Tactica story roster",
   "scope": "Ordinary HnS trainers, including rematches and grunts; canonical bosses and special encounters are protected",
   "zone_floor": "Highest minimum level among canonical standard encounter tables on this map; interiors without tables inherit the lowest mapped floor in their region-map section",
-  "story_floor": "Highest minimum roster level of a completed non-Rocket Gym, Rival or League milestone; Champion flags also establish their League floor",
+  "story_floor": "Highest minimum roster level of each completed non-Rocket Gym, Rival (including the opening Cherrygrove duel) or League roster; partial central Kanto Gym groups count each individual victory immediately. Champion flags establish their League floor. Player-cap group locks are separate.",
   "party_levels": "Raise the lowest authored level to max(authored minimum, zone floor, story floor); preserve offsets within max(zone ceiling, story floor), never lower an authored level, clamp at 100",
   "species_and_moves": "Resolve deterministic level evolutions at the resulting level and adapt explicit moves to that species/level; item and other conditional evolutions remain authored",
   "difficulty": "Same levels in NORMAL/HARD and with any player level-cap setting; never depend on the player's party level",

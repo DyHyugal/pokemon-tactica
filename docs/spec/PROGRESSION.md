@@ -8,6 +8,8 @@ Les dresseurs ordinaires HnS des routes, grottes, bâtiments, leurs revanches et
 
 Le plancher de zone vient du plus haut minimum des tables de rencontres standard de la carte. Un intérieur sans table hérite du plus petit plancher connu de sa section géographique. Une zone inconnue n'invente pas de niveau. Le plancher de scénario est le plus haut minimum d'un roster d'arène, Rival ou Ligue déjà vaincu. Les drapeaux de Maître établissent aussi le palier de Ligue ; les admins Rocket dynamiques ne sont pas recalculés rétroactivement dans ce plancher pour éviter un nouveau cumul de +2.
 
+Le premier duel du Rival à Ville Griotte compte dès sa victoire : le plancher des dresseurs ordinaires passe à **18**, sans changer le cap joueur ni sa progression vers Albert. À Kanto, chaque victoire individuelle contre Morgane, Erika ou Jeannine établit immédiatement le plancher **80**, même tant que le groupe de trois n'est pas terminé pour ouvrir le cap suivant. Ces victoires déjà enregistrées dans une ancienne sauvegarde sont prises en compte automatiquement.
+
 Le niveau de l'équipe du joueur, le mode NORMAL/HARD et son option de cap n'influencent pas ce calcul. Les évolutions par niveau déterministes et les capacités explicites suivent le nouveau niveau ; aucune évolution conditionnelle n'est inventée. Champions, Conseil 4, Rival, admins Rocket, Red et rencontres spéciales gardent leurs règles propres. La politique et les exclusions sont dans `data/spec/trainer_levels.json` ; zones et éligibilité sont générées par `tools/sync_tactica_trainer_levels.py`.
 
 ## Rival
