@@ -6,6 +6,12 @@ La candidate est construite depuis `integration/v1`, commit `3c62091405965922a8e
 
 Cette candidate attend la validation owner des corrections visuelles et comportementales, puis le parcours jusqu’à Mortimer et l’aventure complète. Elle n’est pas une version stable validée. Les anciennes candidates ne contiennent pas ces corrections.
 
+## Correctif de légalité des boss — source en cours d'intégration
+
+Le correctif du 24 octobre est distinct de la candidate `3c620914` ci-dessus, qui présente le plantage de Major Bob. Il corrige Élecsprint (Paratonnerre, Rayon Signal), les capacités incompatibles de rematches hérités et une répartition EV hors limites. L'audit couvre 117 IDs de boss et les six archétypes dynamiques du rival ; 28 couples Méga sont protégés par des tests réels de talents/types, avec les identités custom validées conservées.
+
+À observer dans la prochaine candidate publiée depuis ce correctif : commencer Major Bob en NORMAL/HARD, vérifier l'absence d'assertion avant le premier tour et conserver Méga-Raichu Y ; observer aussi Corps Maudit → Marque Ombre chez Mortimer, Acier/Roche → Acier chez Jasmine, Dragon/Vol → Dragon/Fée chez Sandra, et les talents Méga du rival. Reprendre avec Continuer depuis une sauvegarde du jeu ; aucun changement du format de sauvegarde.
+
 ## Progression du rival incluse
 
 ### Rival — progression réintégrée

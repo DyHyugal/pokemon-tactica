@@ -17,6 +17,7 @@ Ce registre décrit l’état fonctionnel courant. Il ne sert pas d’historique
 
 | Feature | Statut | Preuve / contrôle restant |
 |---|---|---|
+| Légalité des sets de boss / transitions Méga | `[DONE]` | Audit : 117 IDs, 167 variantes, 843 slots rédigés + six archétypes dynamiques du rival. Élecsprint de Major Bob corrigé en NORMAL/HARD ; 33 corrections héritées et Puissance Cachée incohérente corrigées. 28 couples Méga testés réellement côté boss et joueur, talents/types puis retour joueur ; contrôles statiques, tests de construction et équipes dynamiques intégrés à la CI. Audit détaillé dans [BOSS_SET_AUDIT_2026-10-24.md](BOSS_SET_AUDIT_2026-10-24.md). Observation owner de Major Bob et des transformations restante. |
 | Vitesse native x1–x4 | `[DONE]` | Tests natifs existants ; ne pas réécrire sans défaut démontré. |
 | Audio indépendant / preset | `[DONE]` | Tests audio existants ; contrôle auditif final uniquement. |
 | Shiny Rate | `[DONE]` | Menu et persistance couverts. |

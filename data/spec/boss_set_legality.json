@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "project": "Pokémon Tactica",
+  "audit_date": "2026-10-24",
+  "scope": "All HnS protected boss classes; Tactica historical/native move compatibility, not a single-generation PvP format.",
+  "historical_moves": [
+    {
+      "species": "SPECIES_EEVEE",
+      "moves": [
+        "MOVE_GROWTH",
+        "MOVE_SING"
+      ],
+      "reason": "Existing inherited event moves: Gen2 Eevee Growth (2S0), Gen5 Eevee Sing (5S2). Preserves historical boss sets; does not alter player learnsets. Gen2 events are not transferable into modern official games.",
+      "sources": [
+        "https://github.com/smogon/pokemon-showdown/blob/master/data/mods/gen2/learnsets.ts",
+        "https://github.com/smogon/pokemon-showdown/blob/master/data/learnsets.ts"
+      ]
+    },
+    {
+      "species": "SPECIES_NIDORAN_M",
+      "moves": [
+        "MOVE_LOVELY_KISS"
+      ],
+      "reason": "Existing Nidoking set inherits the Gen2 Nidoran-M event (2S0); historical Tactica compatibility only, not a modern official transfer claim.",
+      "sources": [
+        "https://github.com/smogon/pokemon-showdown/blob/master/data/mods/gen2/learnsets.ts"
+      ]
+    }
+  ],
+  "legacy_corrections": [
+    {
+      "trainer": "TRAINER_FALKNER_2_HNS",
+      "species": "Pidgeot",
+      "old_move": "Extreme Speed",
+      "new_move": "Quick Attack"
+    },
+    {
+      "trainer": "TRAINER_JASMINE_2_HNS",
+      "species": "Aggron",
+      "old_move": "Swords Dance",
+      "new_move": "Hone Claws"
+    },
+    {
+      "trainer": "TRAINER_CLAIR_2_HNS",
+      "species": "Shelgon",
+      "old_move": "Thunder Wave",
+      "new_move": "Protect"
+    },
+    {
+      "trainer": "TRAINER_BLUE_2_HNS",
+      "species": "Alakazam",
+      "old_move": "Thunderbolt",
+      "new_move": "Shock Wave"
+    },
+    {
+      "trainer": "TRAINER_BLUE_2_HNS",
+      "species": "Gyarados",
+      "old_move": "Reversal",
+      "new_move": "Flail"
+    },
+    {
+      "trainer": "TRAINER_WILL_2_HNS",
+      "species": "Exeggutor",
+      "old_move": "Soft Boiled",
+      "new_move": "Synthesis"
+    },
+    {
+      "trainer": "TRAINER_WILL_2_HNS",
+      "species": "Slowbro",
+      "old_move": "Fire Punch",
+      "new_move": "Drain Punch"
+    },
+    {
+      "trainer": "TRAINER_RIVAL_CHIKORITA_6_HNS",
+      "species": "Ursaluna Bloodmoon",
+      "old_move": "Ancient Power",
+      "new_move": "Earth Power"
+    },
+    {
+      "trainer": "TRAINER_RIVAL_CHIKORITA_7_HNS",
+      "species": "Ursaluna Bloodmoon",
+      "old_move": "Ancient Power",
+      "new_move": "Earth Power"
+    },
+    {
+      "trainer": "TRAINER_RIVAL_CYNDAQUIL_4_HNS",
+      "species": "Victreebel",
+      "old_move": "Sludge",
+      "new_move": "Acid"
+    },
+    {
+      "trainer": "TRAINER_RIVAL_CYNDAQUIL_6_HNS",
+      "species": "Ursaluna Bloodmoon",
+      "old_move": "Ancient Power",
+      "new_move": "Earth Power"
+    },
+    {
+      "trainer": "TRAINER_RIVAL_CYNDAQUIL_7_HNS",
+      "species": "Ursaluna Bloodmoon",
+      "old_move": "Ancient Power",
+      "new_move": "Earth Power"
+    },
+    {
+      "trainer": "TRAINER_RIVAL_TOTODILE_3_HNS",
+      "species": "Victreebel",
+      "old_move": "Sludge",
+      "new_move": "Acid"
+    },
+    {
+      "trainer": "TRAINER_RIVAL_TOTODILE_4_HNS",
+      "species": "Victreebel",
+      "old_move": "Sludge",
+      "new_move": "Acid"
+    },
+    {
+      "trainer": "TRAINER_RIVAL_TOTODILE_6_HNS",
+      "species": "Ursaluna Bloodmoon",
+      "old_move": "Ancient Power",
+      "new_move": "Earth Power"
+    },
+    {
+      "trainer": "TRAINER_RIVAL_TOTODILE_7_HNS",
+      "species": "Ursaluna Bloodmoon",
+      "old_move": "Ancient Power",
+      "new_move": "Earth Power"
+    },
+    {
+      "trainer": "TRAINER_EUSINE_HNS",
+      "species": "Electrode",
+      "old_move": "Body Slam",
+      "new_move": "Swift"
+    },
+    {
+      "trainer": "TRAINER_GIOVANNI_HNS",
+      "species": "Ursaluna",
+      "old_move": "Sandstorm",
+      "new_move": "Bulk Up"
+    },
+    {
+      "trainer": "TRAINER_ARCHER_4_HNS",
+      "species": "Porygon Z",
+      "old_move": "Flamethrower",
+      "new_move": "Shadow Ball"
+    },
+    {
+      "trainer": "TRAINER_ARCHER_4_HNS",
+      "species": "Gyarados",
+      "old_move": "Gust",
+      "new_move": "Twister"
+    },
+    {
+      "trainer": "TRAINER_ARCHER_5_HNS",
+      "species": "Porygon Z",
+      "old_move": "Flamethrower",
+      "new_move": "Shadow Ball"
+    },
+    {
+      "trainer": "TRAINER_ARCHER_5_HNS",
+      "species": "Gyarados",
+      "old_move": "Gust",
+      "new_move": "Twister"
+    },
+    {
+      "trainer": "TRAINER_PHANTONOMY_UNUSED_HNS",
+      "species": "Noivern",
+      "old_evs": [
+        0,
+        0,
+        0,
+        255,
+        6,
+        255
+      ],
+      "new_evs": [
+        0,
+        0,
+        0,
+        252,
+        6,
+        252
+      ]
+    },
+    {
+      "trainer": "TRAINER_FALKNER_POSTOBC_HNS",
+      "species": "Pidgeot",
+      "old_move": "Extreme Speed",
+      "new_move": "Quick Attack"
+    },
+    {
+      "trainer": "TRAINER_WHITNEY_POSTOBC_HNS",
+      "species": "Ursaluna-Bloodmoon",
+      "old_move": "Lunar Blessing",
+      "new_move": "Moonlight"
+    },
+    {
+      "trainer": "TRAINER_PRYCE_POSTOBC_HNS",
+      "species": "Mr. Rime",
+      "old_move": "Snowscape",
+      "new_move": "Hail"
+    },
+    {
+      "trainer": "TRAINER_CLAIR_POSTOBC_HNS",
+      "species": "Dudunsparce",
+      "old_move": "Tailwind",
+      "new_move": "Agility"
+    },
+    {
+      "trainer": "TRAINER_BROCK_POSTOBC_HNS",
+      "species": "Relicanth",
+      "old_move": "Wave Crash",
+      "new_move": "Waterfall"
+    },
+    {
+      "trainer": "TRAINER_BROCK_POSTOBC_HNS",
+      "species": "Relicanth",
+      "old_move": "Thunderbolt",
+      "new_move": "Earthquake"
+    },
+    {
+      "trainer": "TRAINER_WILL_POSTOBC_HNS",
+      "species": "Slowbro",
+      "old_move": "Fire Punch",
+      "new_move": "Drain Punch"
+    },
+    {
+      "trainer": "TRAINER_KOGA_POSTOBC_HNS",
+      "species": "Nidoking",
+      "old_move": "Noble Roar",
+      "new_move": "Sludge Wave"
+    },
+    {
+      "trainer": "TRAINER_BRUNO_POSTOBC_HNS",
+      "species": "Hitmontop",
+      "old_move": "Victory Dance",
+      "new_move": "Bulk Up"
+    },
+    {
+      "trainer": "TRAINER_KAREN_POSTOBC_HNS",
+      "species": "Umbreon",
+      "old_move": "Lunar Blessing",
+      "new_move": "Moonlight"
+    }
+  ]
+}

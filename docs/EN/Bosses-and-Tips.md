@@ -273,7 +273,7 @@ The rival keeps a fixed starter for each archetype. The first duel uses one Pok�
 | Electivire | 75 | Life Orb | Sheer Force | Thunder Punch · Cross Chop · Ice Punch · Rock Slide |
 | Magnezone | 75 | Choice Specs | Analytic | Thunderbolt · Flash Cannon · Volt Switch · Signal Beam |
 | Iron Hands | 75 | Electric Seed | Quark Drive | Drain Punch · Thunder Punch · Ice Punch · Swords Dance |
-| Manectric | 75 | Expert Belt | Intimidate | Thunderbolt · Flamethrower · Volt Switch · Hidden Power Ice |
+| Manectric | 75 | Expert Belt | Lightning Rod | Thunderbolt · Flamethrower · Volt Switch · Signal Beam |
 
 ### Sabrina — Trick Room
 
