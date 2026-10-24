@@ -191,6 +191,22 @@ static bool32 IsMilestoneComplete(const struct BossLevelCapMilestone *milestone)
     return milestone->requireAllTrainers;
 }
 
+// A player-cap group can require several wins before opening the next cap.
+// Ordinary trainers must still respect every individual roster already beaten.
+static u32 GetCompletedRosterFloor(const struct BossLevelCapMilestone *milestone)
+{
+    u32 level = 0;
+    if (milestone->completionFlag != 0 && FlagGet(milestone->completionFlag))
+        level = GetMilestoneLevelCap(milestone, TRUE);
+    for (u32 i = 0; i < ARRAY_COUNT(milestone->trainerIds); i++)
+    {
+        u16 trainerId = milestone->trainerIds[i];
+        if (trainerId != TRAINER_NONE && HasTrainerBeenFought(trainerId))
+            level = max(level, GetTrainerLevelCap(trainerId, TRUE));
+    }
+    return level;
+}
+
 static bool32 IsJohtoGymMilestone(const struct BossLevelCapMilestone *milestone)
 {
     return milestone->completionFlag != 0;
@@ -327,16 +343,23 @@ u32 GetTacticaStoryTrainerFloor(void)
 {
     u32 level = 0;
 #if IS_HNS
+    // Cherrygrove's opening rival is not a player-cap milestone: beating it
+    // must not skip Falkner. It is still a completed level-18 roster for
+    // ordinary trainers, independently of the chosen starter/save vintage.
+    static const u16 openingRivals[] = {
+        TRAINER_RIVAL_CHIKORITA_1_HNS, TRAINER_RIVAL_CYNDAQUIL_1_HNS, TRAINER_RIVAL_TOTODILE_1_HNS,
+    };
+    for (u32 i = 0; i < ARRAY_COUNT(openingRivals); i++)
+        if (HasTrainerBeenFought(openingRivals[i]))
+            level = max(level, GetTrainerLevelCap(openingRivals[i], TRUE));
     // Completed rosters only: the next boss cap would overlevel early routes.
     // Rocket levels are dynamic, so recomputing a past admin from today's Gym
     // would incorrectly add +2 again; their ordinary grunts use the area floor.
     for (u32 i = 0; i < ARRAY_COUNT(sJohtoBossMilestones); i++)
-        if (!IsFamilyRocketTrainer(GetMilestoneTrainerId(&sJohtoBossMilestones[i]))
-         && IsMilestoneComplete(&sJohtoBossMilestones[i]))
-            level = max(level, GetMilestoneLevelCap(&sJohtoBossMilestones[i], TRUE));
+        if (!IsFamilyRocketTrainer(GetMilestoneTrainerId(&sJohtoBossMilestones[i])))
+            level = max(level, GetCompletedRosterFloor(&sJohtoBossMilestones[i]));
     for (u32 i = 0; i < ARRAY_COUNT(sKantoBossMilestones); i++)
-        if (IsMilestoneComplete(&sKantoBossMilestones[i]))
-            level = max(level, GetMilestoneLevelCap(&sKantoBossMilestones[i], TRUE));
+        level = max(level, GetCompletedRosterFloor(&sKantoBossMilestones[i]));
     if (FlagGet(FLAG_IS_CHAMPION))
         level = max(level, GetTrainerLevelCap(TRAINER_LANCE_1_HNS, TRUE));
     if (FlagGet(FLAG_IS_KANTO_CHAMPION))

@@ -80,6 +80,7 @@ jobs:
           python3 tools/validate_tactica_balance.py
           python3 tools/validate_tactica_mega.py
           python3 tools/validate_tactica_boss_sets.py
+          python3 tools/audit_tactica_trainer_scaling.py
           python3 tools/sync_tactica_encounter_access.py --check
           python3 tools/sync_tactica_encounters.py --check
           python3 tools/sync_tactica_special_encounters.py --check
@@ -140,3 +141,4 @@ jobs:
           make check BUILD=hns TESTS=Family -j2
           make check BUILD=hns TESTS='Morty-style Gengar Mega Evolution*' -j2
           make check BUILD=hns TESTS='Tactica boss legality:' -j2
+          make check BUILD=hns TESTS='Tactica ordinary trainers:' -j2

@@ -144,6 +144,7 @@
     - [POKEMON_BALANCE](spec/POKEMON_BALANCE.md)
     - [PLAYTEST_STATUS](spec/PLAYTEST_STATUS.md)
     - [PROGRESSION](spec/PROGRESSION.md)
+    - [Audit global des niveaux des dresseurs](spec/TRAINER_SCALING_AUDIT_2026-10-24.md)
     - [ROSTERS_ROCKET_RIVAL](spec/ROSTERS_ROCKET_RIVAL.md)
     - [SHOPS](spec/SHOPS.md)
     - [SOURCE_OF_TRUTH](spec/SOURCE_OF_TRUTH.md)

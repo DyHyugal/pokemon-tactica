@@ -100,7 +100,6 @@ static void CB2_HandleStartMultiPartnerBattle(void);
 static void CB2_HandleStartMultiBattle(void);
 static void CB2_HandleStartBattle(void);
 static void TryCorrectShedinjaLanguage(struct Pokemon *mon);
-static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer);
 static void BattleMainCB1(void);
 static void CB2_EndLinkBattle(void);
 static void EndLinkBattleInSteps(void);
@@ -2263,7 +2262,7 @@ void ApplyFamilyRocketPartyLevel(struct Pokemon *party, u8 count, u16 trainerNum
 #endif
 }
 
-static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer)
+u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer)
 {
     u8 retVal;
     u16 previousTrainerId = sCreatingTrainerId;
