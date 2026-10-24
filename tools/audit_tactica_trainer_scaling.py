@@ -55,7 +55,7 @@ def fixture_text(pairs, floors, ceilings):
 def csv_report(maps, pairs, floors, ceilings, rosters):
     """UTF-8 BOM and semicolons for direct import in French Excel."""
     output = io.StringIO(newline='')
-    writer = csv.writer(output, delimiter=';')
+    writer = csv.writer(output, delimiter=';', lineterminator='\n')
     writer.writerow(['Carte', 'Section', 'Dresseur', 'Niveaux ecrits', 'Plancher zone', 'Plafond zone',
                      'Avant rival', 'Apres premier rival', 'Apres Blanche', 'Apres Ligue 2'])
     by_map = {area['id']: area for area in maps}
