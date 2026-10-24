@@ -20,6 +20,8 @@ The download is candidate **0f1ec55d**, built from **integration/v1**. It includ
 
 The first validation playthrough goes through Morty, followed by the full adventure across Johto, Kanto, the second League and Red. When reporting an issue, include version **0f1ec55d**, your difficulty, level cap setting and steps to reproduce it. Fixes and balance adjustments will follow actual gameplay feedback.
 
+[Full trainer and area level table (CSV for Excel)](https://dyhyugal.github.io/pokemon-tactica/assets/tactica-trainer-scaling.csv).
+
 ## Keep your save
 
 When switching to a new candidate, keep a copy of your save and the previous ROM. In-game saves and emulator save states are different files; keep an in-game save to resume your adventure. Compatibility between candidates must be confirmed in the release notes.

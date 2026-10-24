@@ -2,6 +2,8 @@
 
 ## Résultat et périmètre
 
+Correctif fusionné : [PR #67](https://github.com/DyHyugal/pokemon-tactica/pull/67), commit `bf84dc9a2e45288ab7f86494a0e3e497336d33d4`. [CI de PR réussie](https://github.com/DyHyugal/pokemon-tactica/actions/runs/40134655289) et [CI complète d’intégration réussie](https://github.com/DyHyugal/pokemon-tactica/actions/runs/40135636500).
+
 Point de départ : `integration/v1`, commit `d41903bad93c07946b480904298856895bff7cd1`.
 
 L'audit couvre **117 identifiants de boss, 167 variantes et 843 emplacements rédigés**, dans toutes les classes protégées par `trainer_levels.json` : Champions Johto/Kanto, rematches, Conseil 4, Maîtres, Rocket, rival historique, Red, Eusine, Giovanni, Kimono Girls, cerveaux de la Zone de Combat et rencontres spéciales. Les ensembles non utilisés sont conservés et contrôlés aussi.

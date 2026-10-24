@@ -8,7 +8,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: tactica-v1-candidate-3c620914
+  group: tactica-v1-candidate-63dbd3d9
   cancel-in-progress: false
 
 jobs:
@@ -22,9 +22,9 @@ jobs:
             const { data: run } = await github.rest.actions.getWorkflowRun({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              run_id: 40010675424,
+              run_id: 40138221574,
             });
-            if (run.head_sha !== '3c62091405965922a8e20fdbdcb9148a114a30b5'
+            if (run.head_sha !== '63dbd3d9edfbcb7646c5bf6baebbd539627d57e2'
                 || run.status !== 'completed' || run.conclusion !== 'success') {
               throw new Error('The exact candidate source must pass integration CI before publication');
             }
@@ -32,14 +32,16 @@ jobs:
       - name: Checkout validated candidate
         uses: actions/checkout@v4
         with:
-          ref: 3c62091405965922a8e20fdbdcb9148a114a30b5
+          ref: 63dbd3d9edfbcb7646c5bf6baebbd539627d57e2
 
       - name: Checkout current playtest checklist
         uses: actions/checkout@v4
         with:
           ref: ${{ github.sha }}
           path: release-notes
-          sparse-checkout: docs/spec/PLAYTEST_STATUS.md
+          sparse-checkout: |
+            docs/spec/PLAYTEST_STATUS.md
+            docs/assets/tactica-trainer-scaling.csv
           sparse-checkout-cone-mode: false
 
       - name: Install build dependencies
@@ -58,12 +60,13 @@ jobs:
           mkdir -p release
           cp pokehns.gba release/pokemon-tactica.gba
           cp release-notes/docs/spec/PLAYTEST_STATUS.md release/PLAYTEST_STATUS.md
+          cp release-notes/docs/assets/tactica-trainer-scaling.csv release/niveaux-dresseurs.csv
           python3 - <<'PY'
           import hashlib, json, pathlib, subprocess, zipfile
           root = pathlib.Path('release')
           rom = root / 'pokemon-tactica.gba'
           source = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
-          assert source == '3c62091405965922a8e20fdbdcb9148a114a30b5'
+          assert source == '63dbd3d9edfbcb7646c5bf6baebbd539627d57e2'
           assert rom.stat().st_size == 33554432
           assert f'commit `{source}`' in (root / 'PLAYTEST_STATUS.md').read_text()
           manifest = {
@@ -74,47 +77,58 @@ jobs:
               'rom_filename': rom.name,
               'build_toolchain': subprocess.check_output(['arm-none-eabi-gcc', '--version'], text=True).splitlines()[0],
               'build': 'Fresh isolated checkout; make clean; make hns -j2',
-              'validation_run': 'https://github.com/DyHyugal/pokemon-tactica/actions/runs/40010675424',
+              'validation_run': 'https://github.com/DyHyugal/pokemon-tactica/actions/runs/40138221574',
               'status': 'V1 playtest candidate; not a stable release',
           }
           (root / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
           (root / 'README.txt').write_text(
-              'Pokemon Tactica V1 - candidate 3c620914 - 23 octobre 2026\n'
+              'Pokemon Tactica V1 - candidate 63dbd3d9 - 24 octobre 2026\n'
               f'Source : {source} (integration/v1)\n\n'
               'Nom fixe de la ROM : pokemon-tactica.gba. Version et provenance dans ce README et le manifeste.\n'
               'Ouvre le fichier .gba directement dans mGBA, sans ROM de base ni patch. Le jeu est en anglais.\n'
               'Wiki : https://dyhyugal.github.io/pokemon-tactica/FR/Jouer.html\n\n'
-              'Cette version corrige les contres du rival selon la categorie du menu starter et migre les anciennes associations invalides. '
+              'Cette version corrige le plantage de Major Bob (Elecsprint : Paratonnerre, Rayon Signal) et les sets de boss incompatibles. '
+              'Le scaling des dresseurs est corrige : premier rival pris en compte (plancher 18), victoires centrales Kanto prises individuellement (80), sans option a activer. '
+              'Elle conserve les contres du rival selon la categorie du menu starter et migre les anciennes associations invalides. '
               'Elle inclut les niveaux des dresseurs ordinaires selon zone/scenario et Attaque de base 130 pour Tranchodon.\n\n'
               'POUR REPRENDRE TA PARTIE\n'
               'Conserve une copie de ta sauvegarde et de l ancienne ROM. Charge une sauvegarde faite depuis le menu du jeu, avec Continuer. '
               'Si ton emulateur associe les fichiers par leur nom, donne le meme nom de base a la nouvelle ROM et a une copie du .sav, dans son dossier de sauvegardes. '
               'Le format de sauvegarde et la progression sont conserves. Une association Glace/Eau devient Feu ; Electrik/Plante devient Sol. '
               'Un rival deja legal reste identique. Sauvegarde normalement apres chargement pour conserver la migration.\n\n'
+              'TABLEAU DES NIVEAUX\n'
+              'niveaux-dresseurs.csv peut etre ouvert dans Excel : zones, dresseurs, niveaux ecrits et niveaux attendus a quatre etapes. '
+              'Les colonnes sont des contextes de verification, pas des autorisations d acces aux cartes.\n\n'
               'A TESTER\n'
+              'Apres le premier rival, verifie Joey/Wade au moins niveau 18 ; apres le deuxieme rival avant Blanche, verifie Route 34 au moins niveau 29. '
+              'Apres une seule victoire contre Morgane/Erika/Jeannine, verifie le plancher 80 des dresseurs ordinaires. '
+              'Affronte Major Bob en NORMAL/HARD : absence de plantage, Elecsprint sans Intimidation, Mega-Raichu Y conserve. '
+              'Observe les talents et types Mega chez Mortimer, Jasmine, Sandra et le rival. '
+              'Prends un dresseur encore disponible ou une revanche si les temoins ont deja ete battus ; aucun reset de partie n est necessaire. '
               'Sur une ancienne partie concernee, observe toute l equipe du rival au prochain combat, puis confirme que son archetype reste identique apres sauvegarde et rechargement. '
               'Compare les niveaux des dresseurs de routes/grottes avec la zone et la progression. '
               'Les autres parcours utiles (difficulte, Mega, interfaces, evolutions, aventure complete) figurent dans PLAYTEST_STATUS.md.\n\n'
-              'Candidate de playtest, pas une version stable validee. Indique 3c620914, le lieu, la difficulte, le reglage de cap et les actions pour reproduire un probleme. '
+              'Candidate de playtest, pas une version stable validee. Indique 63dbd3d9, le lieu, la difficulte, le reglage de cap et les actions pour reproduire un probleme. '
               'Le manifeste donne le compilateur et le SHA-256 exact de la ROM distribuee.\n'
           )
           with zipfile.ZipFile(root / 'pokemon-tactica.zip', 'w', zipfile.ZIP_DEFLATED) as archive:
-              for name in (rom.name, 'manifest.json', 'README.txt', 'PLAYTEST_STATUS.md'):
+              for name in (rom.name, 'manifest.json', 'README.txt', 'PLAYTEST_STATUS.md', 'niveaux-dresseurs.csv'):
                   archive.write(root / name, name)
           PY
 
       - name: Publish candidate downloads
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v1-candidate-3c620914
-          target_commitish: 3c62091405965922a8e20fdbdcb9148a114a30b5
-          name: Pokémon Tactica V1 — candidate 3c620914
+          tag_name: v1-candidate-63dbd3d9
+          target_commitish: 63dbd3d9edfbcb7646c5bf6baebbd539627d57e2
+          name: Pokémon Tactica V1 — candidate 63dbd3d9
           prerelease: true
           fail_on_unmatched_files: true
           body: |
-            Candidate de playtest construite depuis integration/v1, commit 3c62091405965922a8e20fdbdcb9148a114a30b5, après validation de sa CI d’intégration.
+            Candidate de playtest construite depuis integration/v1, commit 63dbd3d9edfbcb7646c5bf6baebbd539627d57e2, après validation de sa CI d’intégration.
+            Corrige le plantage de Major Bob : Elecsprint utilise Paratonnerre et Rayon Signal, Mega-Raichu Y conserve. Audit des boss/rematches, 44 ecarts corriges ; 28 couples Mega testes en combat pour talents/types et retour des formes joueur.
             Contres officiels du rival selon la catégorie du menu starter, migration des associations invalides puis conservation définitive de l’archétype légal ; Glace/Eau devient Feu et Électrik/Plante devient Sol.
-            Niveaux des dresseurs ordinaires selon zone/scénario ; Attaque de base de Tranchodon abaissée à 130. Wiki des évolutions synchronisé.
+            Scaling des dresseurs audite sur 560 cartes : premier rival (18), victoires individuelles centrales Kanto (80), sans option de niveaux a activer. Niveaux des dresseurs ordinaires selon zone/scénario ; Attaque de base de Tranchodon abaissée à 130. Wiki des évolutions synchronisé.
             La ROM .gba fonctionne directement dans mGBA, sans ROM de base ni patch. Le ZIP contient la même ROM, son manifeste, le README et la checklist de playtest.
             Pour reprendre une partie : conserver une copie du .sav et de l’ancienne ROM, utiliser le même nom de base pour ROM/sauvegarde si nécessaire, charger Continuer puis sauvegarder normalement pour conserver la migration. Format de sauvegarde et progression conservés.
             Cette candidate n’est pas une version stable validée ; le playtest manuel reste à effectuer.

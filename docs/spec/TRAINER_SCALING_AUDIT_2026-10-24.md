@@ -2,6 +2,8 @@
 
 ## Périmètre et livrables
 
+Correctif fusionné : [PR #68](https://github.com/DyHyugal/pokemon-tactica/pull/68), commit `63dbd3d9edfbcb7646c5bf6baebbd539627d57e2`. [CI de PR réussie](https://github.com/DyHyugal/pokemon-tactica/actions/runs/40136575716). Le publieur vérifie le succès de [la CI complète de ce commit](https://github.com/DyHyugal/pokemon-tactica/actions/runs/40138221574) avant de construire la candidate.
+
 Départ : `integration/v1` au commit `bf84dc9a2e45288ab7f86494a0e3e497336d33d4`, après fusion du correctif de légalité des boss (PR #67).
 
 **560 cartes examinées**, Johto, Kanto et cartes annexes HnS compris. Les scripts et la table des revanches référencent **474 équipes ordinaires distinctes sur 99 cartes**. Les 60 autres identifiants ordinaires présents dans les données ne sont référencés par aucun de ces scripts ni par la table de revanches ; ils sont inventoriés séparément, sans leur inventer une localisation.
