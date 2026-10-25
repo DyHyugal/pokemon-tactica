@@ -37,3 +37,18 @@ Versions amont examinées : RHH/pokeemerald-expansion (`7b95be15d84a053948791ce9
 Un talent est validé sur **la forme de base envoyée**, puis sur la forme Méga après transformation. Élecsprint de Major Bob est non Méga : **Paratonnerre**, jamais Intimidation ; Rayon Signal remplace sa Puissance Cachée Glace incompatible avec les IV HARD 31. Le générateur refuse de supprimer silencieusement le type d'une Puissance Cachée.
 
 Le contrôle automatique couvre toutes les classes de boss protégées, rematches et rencontres spéciales compris, les six archétypes dynamiques du rival et les formes Rocket. Les attaques historiques et héritées sont distinguées des incompatibilités réelles ; les données custom validées restent prioritaires. Détail et limites dans [l'audit des sets](BOSS_SET_AUDIT_2026-10-24.md), références historiques et corrections héritées dans `data/spec/boss_set_legality.json`. Ne pas élargir un learnset pour rendre artificiellement valide un set erroné.
+
+## Red — défi final niveau 100
+
+Décision owner du 25 octobre 2026 : au Mont Argenté (`TRAINER_RED_HNS`) et en revanche post-OBC (`TRAINER_RED_POSTOBC_HNS`), même équipe et six niveaux 100 en NORMAL/HARD. Aucun légendaire ni fabuleux. Une seule Méga, Lucario, réservée à Red ; les soins existants (deux Guérisons) sont conservés. Les difficultés partagent espèces, niveaux, objets, talents de base, natures et capacités ; HARD ajoute les EV canoniques et les flags d’IA Tactica sans prédiction ni omniscience.
+
+| Pokémon | Objet | Talent | Nature | EV HARD | Capacités |
+|---|---|---|---|---|---|
+| Pikachu partenaire | Balle Lumière | Paratonnerre | Naïf | 252 Att / 252 Vit / 4 Att Spé | Électacle, Surf, Queue de Fer, Bluff |
+| Lucario → Méga-Lucario | Lucarite | Cœur Noble → Adaptabilité | Jovial | 252 Att / 252 Vit / 4 Déf Spé | Danse-Lames, Close Combat, Poing Météore, Pisto-Poing |
+| Majaspic | Restes | Contestation | Timide | 252 Att Spé / 252 Vit / 4 PV | Tempête Verte, Dracochoc, Regard Médusant, Clonage |
+| Hydragon | Mouchoir Choix | Prognathe | Jovial | 252 Att / 252 Vit / 4 Déf Spé | Branchicrok, Psycho-Croc, Mâchouille, Draco-Griffe |
+| Scorvol | Orbe Toxique | Soin Poison | Malin | 252 PV / 252 Déf / 4 Déf Spé | Séisme, Atterrissage, Piège de Roc, Sabotage |
+| Motisma Four | Grosses Bottes | Lévitation | Assuré | 248 PV / 168 Déf / 92 Vit | Surchauffe, Change Éclair, Feu Follet, Anti-Brume |
+
+Motisma Four reprend le retrait des pièges pour libérer Piège de Roc chez Scorvol. Sa résistance Fée complète Majaspic et Hydragon. Lucario entre dans sa forme normale avec Cœur Noble ; Adaptabilité provient uniquement de sa Méga-Évolution. Les données custom de Majaspic et Hydragon restent celles de `pokemon_balance.json`.

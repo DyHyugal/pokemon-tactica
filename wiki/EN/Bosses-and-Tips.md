@@ -364,3 +364,27 @@ The rival keeps a fixed starter for each archetype. The first duel uses one Pok�
 | Meowscarada | 100 | Choice Band | Protean | Play Rough · U-turn · Knock Off · Flower Trick |
 | Aegislash | 100 | Leftovers | Stance Change | Swords Dance · Iron Head · Shadow Sneak · King's Shield |
 | Garchomp | 100 | Life Orb | Rough Skin | Earthquake · Dragon Claw · Brick Break · Poison Jab |
+
+## Red — Mt. Silver and rematch
+
+### Red — Balanced team / level 100
+
+| Pokémon | Lv. | Item | Ability | Moves |
+|---|---:|---|---|---|
+| Partner Pikachu | 100 | Light Ball | Lightning Rod | Volt Tackle · Surf · Iron Tail · Fake Out |
+| Mega Lucario | 100 | Lucarionite | Adaptability | Swords Dance · Close Combat · Meteor Mash · Bullet Punch |
+| Serperior | 100 | Leftovers | Contrary | Leaf Storm · Dragon Pulse · Glare · Substitute |
+| Dracovish | 100 | Choice Scarf | Strong Jaw | Fishious Rend · Psychic Fangs · Crunch · Dragon Claw |
+| Gliscor | 100 | Toxic Orb | Poison Heal | Earthquake · Roost · Stealth Rock · Knock Off |
+| Rotom-Heat | 100 | Heavy-Duty Boots | Levitate | Overheat · Volt Switch · Will-O-Wisp · Defog |
+
+### Red — post-OBC rematch — Balanced team / level 100
+
+| Pokémon | Lv. | Item | Ability | Moves |
+|---|---:|---|---|---|
+| Partner Pikachu | 100 | Light Ball | Lightning Rod | Volt Tackle · Surf · Iron Tail · Fake Out |
+| Mega Lucario | 100 | Lucarionite | Adaptability | Swords Dance · Close Combat · Meteor Mash · Bullet Punch |
+| Serperior | 100 | Leftovers | Contrary | Leaf Storm · Dragon Pulse · Glare · Substitute |
+| Dracovish | 100 | Choice Scarf | Strong Jaw | Fishious Rend · Psychic Fangs · Crunch · Dragon Claw |
+| Gliscor | 100 | Toxic Orb | Poison Heal | Earthquake · Roost · Stealth Rock · Knock Off |
+| Rotom-Heat | 100 | Heavy-Duty Boots | Levitate | Overheat · Volt Switch · Will-O-Wisp · Defog |

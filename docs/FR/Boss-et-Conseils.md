@@ -364,3 +364,27 @@ Le rival conserve un starter fixe selon son archétype. Le premier duel se joue 
 | Miascarade | 100 | Bandeau Choix | Protéen | Câlinerie · Demi-Tour · Sabotage · Magie Florale |
 | Exagide | 100 | Restes | Déclic Tactique | Danse Lames · Tête de Fer · Ombre Portée · Bouclier Royal |
 | Carchacrok | 100 | Orbe Vie | Peau Dure | Séisme · Draco-Griffe · Casse-Brique · Direct Toxik |
+
+## Red — Mont Argenté et revanche
+
+### Red — Équipe équilibrée / niveau 100
+
+| Pokémon | Niv. | Objet | Talent | Capacités |
+|---|---:|---|---|---|
+| Pikachu partenaire | 100 | Balle Lumière | Paratonnerre | Électacle · Surf · Queue de Fer · Bluff |
+| Méga-Lucario | 100 | Lucarite | Adaptabilité | Danse Lames · Close Combat · Poing Météore · Pisto-Poing |
+| Majaspic | 100 | Restes | Contestation | Tempête Verte · Draco-Choc · Regard Médusant · Clonage |
+| Hydragon | 100 | Mouchoir Choix | Prognathe | Branchicrok · Psycho-Croc · Mâchouille · Draco-Griffe |
+| Scorvol | 100 | Orbe Toxique | Soin Poison | Séisme · Atterrissage · Piège de Roc · Sabotage |
+| Motisma Four | 100 | Grosses Bottes | Lévitation | Surchauffe · Change Éclair · Feu Follet · Anti-Brume |
+
+### Red — revanche post-OBC — Équipe équilibrée / niveau 100
+
+| Pokémon | Niv. | Objet | Talent | Capacités |
+|---|---:|---|---|---|
+| Pikachu partenaire | 100 | Balle Lumière | Paratonnerre | Électacle · Surf · Queue de Fer · Bluff |
+| Méga-Lucario | 100 | Lucarite | Adaptabilité | Danse Lames · Close Combat · Poing Météore · Pisto-Poing |
+| Majaspic | 100 | Restes | Contestation | Tempête Verte · Draco-Choc · Regard Médusant · Clonage |
+| Hydragon | 100 | Mouchoir Choix | Prognathe | Branchicrok · Psycho-Croc · Mâchouille · Draco-Griffe |
+| Scorvol | 100 | Orbe Toxique | Soin Poison | Séisme · Atterrissage · Piège de Roc · Sabotage |
+| Motisma Four | 100 | Grosses Bottes | Lévitation | Surchauffe · Change Éclair · Feu Follet · Anti-Brume |

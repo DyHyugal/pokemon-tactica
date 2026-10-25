@@ -40,7 +40,11 @@ TRAINERS = {
     ("Kanto", "Gym", "Auguste"): "TRAINER_BLAINE_HNS",
     ("Kanto", "Gym", "Blue"): "TRAINER_BLUE_HNS",
     ("Kanto", "Champion Rematch", "Maître"): "TRAINER_LANCE_2_HNS",
+    ("Kanto", "Final Boss", "Red"): "TRAINER_RED_HNS",
+    ("Kanto", "Final Boss Rematch", "Red"): "TRAINER_RED_POSTOBC_HNS",
 }
+
+RED_TRAINERS = {"TRAINER_RED_HNS", "TRAINER_RED_POSTOBC_HNS"}
 
 ROCKET_TRAINERS = {
     ("Johto", "Rocket Executive", "Proton"): ("TRAINER_PROTON_1_HNS", "TRAINER_PROTON_2_HNS"),
@@ -85,6 +89,7 @@ MEGA_BASE_ABILITIES = {
     "Mega Charizard Y": "Solar Power",
     "Mega Pidgeot": "Big Pecks",
     "Mega Charizard X": "Blaze",
+    "Mega Lucario": "Justified",
 }
 
 EV_SPREADS = {
@@ -193,6 +198,35 @@ def replace_rocket_phase(section: str, trainer_id: str, stage: list[dict],
     return section[:match.start()] + replacement + section[match.end():]
 
 
+def replace_red_party(section: str, trainer_id: str, canonical: list[dict], hard: bool) -> str:
+    """Own both Red encounters, including their previously missing HARD entries."""
+    ai = "Basic Trainer"
+    if hard:
+        ai += " / Try To 2HKO / Smart Switching / HP Aware / PP Stall Prevention / Assumptions / Powerful Status"
+    lines = [f"=== {trainer_id} ===", "Name: RED", "Class: Pkmn Trainer 1 Hns",
+             "Pic: Red Hns", "Gender: Male", "Music: Hg Champion",
+             "Double Battle: No", f"AI: {ai}", "Items: Full Restore / Full Restore"]
+    if hard:
+        lines.append("Difficulty: Hard")
+    # Existing fixed bosses preserve their authored IVs/EVs. Red is a new
+    # canonical team: use its explicit profile rather than inheriting stale sets.
+    ivs = "31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe"
+    party = []
+    for row in canonical:
+        current = {"Level": "100", "IVs": ivs, "EVs": row["evs"],
+                   "species": engine_species(row["species"])}
+        party.append(render_mon(row, current, hard))
+    replacement = "\n".join(lines) + "\n\n" + "\n\n".join(party) + "\n\n"
+    pattern = re.compile(rf"(?m)^=== {re.escape(trainer_id)} ===\n.*?(?=^=== |\Z)", re.S)
+    matches = list(pattern.finditer(section))
+    if len(matches) == 1:
+        match = matches[0]
+        return section[:match.start()] + replacement + section[match.end():]
+    if not matches and hard:
+        return section.rstrip() + "\n\n" + replacement
+    raise ValueError(f"Expected one {trainer_id} block, found {len(matches)}")
+
+
 def synchronize(check: bool = False) -> None:
     spec = json.loads(SPEC_PATH.read_text(encoding="utf-8"))
     progression = json.loads(ROCKET_PROGRESS_PATH.read_text(encoding="utf-8"))
@@ -209,8 +243,9 @@ def synchronize(check: bool = False) -> None:
     hard, rocket = remainder.split(ROCKET_MARKER, 1)
     for key, trainer_id in TRAINERS.items():
         canonical = groups[key]
-        normal = replace_party(normal, trainer_id, canonical, False)
-        hard = replace_party(hard, trainer_id, canonical, True)
+        replace = replace_red_party if trainer_id in RED_TRAINERS else replace_party
+        normal = replace(normal, trainer_id, canonical, False)
+        hard = replace(hard, trainer_id, canonical, True)
     for key, trainer_ids in ROCKET_TRAINERS.items():
         canonical = groups[key]
         for trainer_id in trainer_ids:

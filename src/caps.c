@@ -333,8 +333,8 @@ static u32 GetHnsLevelCap(u8 challengeLevelCap)
     if (!FlagGet(FLAG_IS_KANTO_CHAMPION))
         return GetBossProgressionLevelCap(sKantoBossMilestones, ARRAY_COUNT(sKantoBossMilestones), useLowestLevel);
 
-    // The second League already established level 100. Red's lower roster
-    // must not revoke that cap, in either player cap mode.
+    // The second League establishes level 100; retain it for Red and beyond
+    // in either player cap mode.
     return MAX_LEVEL;
 }
 #endif

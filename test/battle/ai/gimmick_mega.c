@@ -1,6 +1,28 @@
 #include "global.h"
 #include "test/battle.h"
 #include "battle_ai_util.h"
+#include "data.h"
+
+#if IS_HNS
+AI_SINGLE_BATTLE_TEST("Red Lucario chooses Mega Evolution with its production Normal and Hard AI flags")
+{
+    u32 difficulty = DIFFICULTY_NORMAL;
+    PARAMETRIZE { difficulty = DIFFICULTY_NORMAL; }
+    PARAMETRIZE { difficulty = DIFFICULTY_HARD; }
+    GIVEN {
+        AI_FLAGS(gTrainers[difficulty][TRAINER_RED_HNS].aiFlags);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_LUCARIO) { Ability(ABILITY_JUSTIFIED); Item(ITEM_LUCARIONITE); Moves(MOVE_CLOSE_COMBAT); }
+    } WHEN {
+        TURN { EXPECT_MOVE(opponent, MOVE_CLOSE_COMBAT, gimmick: GIMMICK_MEGA); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_MEGA_EVOLUTION, opponent);
+    } THEN {
+        EXPECT_EQ(opponent->species, SPECIES_LUCARIO_MEGA);
+        EXPECT_EQ(opponent->ability, ABILITY_ADAPTABILITY);
+    }
+}
+#endif
 
 AI_SINGLE_BATTLE_TEST("AI uses Mega Evolution")
 {
