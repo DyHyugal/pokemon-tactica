@@ -4,9 +4,9 @@
 
 ## Download the game
 
-Pokémon Tactica is distributed as a complete Game Boy Advance ROM. Open the [Tactica .gba ROM](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-0f1ec55d/Pokemon-Tactica-V1-candidate-0f1ec55d.gba) directly in an emulator. You do not need a Pokémon Emerald ROM, an EmeraldPlus version or a patching tool.
+Pokémon Tactica is distributed as a complete Game Boy Advance ROM. Open the [Tactica .gba ROM](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-44c11274/pokemon-tactica.gba) directly in an emulator. You do not need a Pokémon Emerald ROM, an EmeraldPlus version or a patching tool.
 
-The [Tactica download package](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-0f1ec55d/Pokemon-Tactica-V1-candidate-0f1ec55d.zip) includes the same ROM, version information and the playtest checklist. Extract the ZIP to find the .gba file. The files are also available on the [candidate release page](https://github.com/DyHyugal/pokemon-tactica/releases/tag/v1-candidate-0f1ec55d).
+The [Tactica download package](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-44c11274/pokemon-tactica.zip) includes the same ROM, version information and the playtest checklist. Extract the ZIP to find the .gba file. The files are also available on the [candidate release page](https://github.com/DyHyugal/pokemon-tactica/releases/tag/v1-candidate-44c11274).
 
 ## Start your adventure
 
@@ -16,12 +16,14 @@ The V1 ROM is in English; the wiki is available in French and English. Difficult
 
 ## The current candidate
 
-The download is candidate **0f1ec55d**, built from **integration/v1**. It includes the level cap, Team Rocket, rival profile and wild evolution corrections, terrain/weather AI, dialogue/options fixes, map travel and contextual HMs with automatic Flash, plus battle messages requiring a fresh press after rendering, including at x4 with FASTER. It is intended for playtesting and has not yet been declared stable.
+Red now uses Partner Pikachu, Mega Lucario, Serperior, Dracovish, Gliscor and Rotom-Heat, all at level 100 at Mt. Silver and in the post-OBC rematch. All six held items are distinct; Lucario enters with Justified and gains Adaptability through Mega Evolution. Gliscor sets Stealth Rock and Rotom-Heat provides Defog.
 
-The first validation playthrough goes through Morty, followed by the full adventure across Johto, Kanto, the second League and Red. When reporting an issue, include version **0f1ec55d**, your difficulty, level cap setting and steps to reproduce it. Fixes and balance adjustments will follow actual gameplay feedback.
+The download is candidate **44c11274**, built from **integration/v1**. It fixes the Lt. Surge crash (Manectric with Lightning Rod and Signal Beam) and incompatible boss/rematch sets. Battle tests verify abilities and types for 29 Mega combinations. It retains rival selection using the official weaknesses of the starter menu category and migrates invalid saved pairings to a legal team that is then retained. Level scaling now counts the opening rival victory (floor 18) and each central Kanto Gym victory (80), with no level-scaling option to enable. It also includes ordinary trainer levels based on area and story progress, Haxorus’s base Attack reduced to 130, and the existing battle, HM and interface fixes. The evolution wiki has been synchronized with the game. This version is intended for playtesting and has not yet been declared stable.
 
-[Full trainer and area level table (CSV for Excel)](https://dyhyugal.github.io/pokemon-tactica/assets/tactica-trainer-scaling.csv).
+The first validation playthrough goes through Morty, followed by the full adventure across Johto, Kanto, the second League and Red. When reporting an issue, include version **44c11274**, your difficulty, level cap setting and steps to reproduce it. Fixes and balance adjustments will follow actual gameplay feedback.
+
+[Full trainer and area level table (CSV for Excel)](../../docs/assets/tactica-trainer-scaling.csv).
 
 ## Keep your save
 
-When switching to a new candidate, keep a copy of your save and the previous ROM. In-game saves and emulator save states are different files; keep an in-game save to resume your adventure. Compatibility between candidates must be confirmed in the release notes.
+When replacing the ROM, keep a copy of your save and the previous version. Resume from an in-game save by choosing Continue. If your emulator matches files by name, give the new ROM and a copy of your .sav file the same base name, using the emulator’s save folder. The ROM keeps the name pokemon-tactica.gba, so its matching save can remain pokemon-tactica.sav across future updates. This update keeps the save format unchanged: it checks the recorded primary starter category and preserves an already legal rival. An old Ice/Water pairing becomes Fire; Electric/Grass becomes Ground. Save normally after loading to write this choice to the file; the legal archetype will remain the same for the rest of the adventure.
