@@ -3,9 +3,16 @@
 
 import json
 import re
+from functools import lru_cache
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+@lru_cache(maxsize=1)
+def native_move_catalog():
+    from validate_tactica_boss_sets import Catalog
+    return Catalog()
 
 
 def learnable_moves():
@@ -29,11 +36,20 @@ def validate_party_moves(trainer_id, party, learnables):
         lines = mon.splitlines()
         species = lines[0].split(" @ ", 1)[0]
         key = re.sub(r"[^A-Z0-9]+", "_", species.upper()).strip("_")
-        if key not in learnables:
-            fail(f"{trainer_id} uses unknown learnset species {species}")
+        pool = learnables.get(key)
+        if pool is None:
+            # Some enabled forms (partner Pikachu) share native move tables
+            # rather than owning a separate all_learnables.json entry.
+            from generate_tactica_rival import normalize
+            from validate_tactica_boss_sets import resolve
+            catalog = native_move_catalog()
+            native_key = resolve(catalog.maps['SPECIES_'].get(normalize(species), ''), catalog.aliases)
+            if native_key not in catalog.blocks:
+                fail(f"{trainer_id} uses unknown learnset species {species}")
+            pool = catalog.move_pool(native_key)
         for move in (line[2:] for line in lines if line.startswith("- ")):
             move_key = "MOVE_" + re.sub(r"[^A-Z0-9]+", "_", move.upper()).strip("_")
-            if move_key not in learnables[key] and move_key not in form_moves.get(key, set()):
+            if move_key not in pool and move_key not in form_moves.get(key, set()):
                 fail(f"{trainer_id} {species} cannot learn {move}")
 
 
@@ -46,7 +62,7 @@ def held_items(block):
 
 
 def validate_bosses():
-    from sync_tactica_bosses import MEGA_BASE_ABILITIES, engine_species
+    from sync_tactica_bosses import MEGA_BASE_ABILITIES, TRAINERS, engine_species
 
     text = (ROOT / "src/data/trainers_hns.party").read_text()
     marker = "/* ========== Family Remix FINAL hard boss parties ========== */"
@@ -58,12 +74,15 @@ def validate_bosses():
         fail("missing or duplicated FINAL Rocket marker")
     hard, _ = final_parties.split(rocket_marker, 1)
     blocks = re.findall(r"^=== ([A-Z0-9_]+) ===\n(.*?)(?=^=== |\Z)", hard, re.M | re.S)
-    if len(blocks) != 22:
-        fail(f"expected 22 fixed HARD boss teams, got {len(blocks)}")
+    expected_trainers = set(TRAINERS.values())
+    if len(blocks) != len(expected_trainers) or {trainer for trainer, _ in blocks} != expected_trainers:
+        fail("fixed HARD boss IDs must match the canonical fixed-team mapping exactly")
+    canonical = json.loads((ROOT / "data/spec/bosses.json").read_text())["teams"]
+    expected_sizes = {trainer: sum((r['region'], r['category'], r['boss']) == group for r in canonical)
+                      for group, trainer in TRAINERS.items()}
 
     required_ai = ("Basic Trainer", "Try To 2HKO", "Smart Switching", "HP Aware",
                    "PP Stall Prevention", "Assumptions")
-    mon_count = 0
     learnables = learnable_moves()
     expected_healing = {
         "TRAINER_FALKNER_1_HNS": None,
@@ -88,6 +107,8 @@ def validate_bosses():
         "TRAINER_BLAINE_HNS": "Full Restore / Full Restore",
         "TRAINER_BLUE_HNS": "Full Restore / Full Restore",
         "TRAINER_LANCE_2_HNS": "Full Restore / Full Restore",
+        "TRAINER_RED_HNS": "Full Restore / Full Restore",
+        "TRAINER_RED_POSTOBC_HNS": "Full Restore / Full Restore",
     }
     if set(expected_healing) != {trainer_id for trainer_id, _ in blocks}:
         fail("healing-item progression does not cover every fixed boss")
@@ -151,6 +172,8 @@ def validate_bosses():
             fail(f"{trainer_id} contains duplicate held items")
 
         levels = re.findall(r"^Level: (\d+)$", block, re.M)
+        if len(levels) != expected_sizes[trainer_id]:
+            fail(f"{trainer_id} party size differs from its canonical roster")
         iv_lines = re.findall(r"^IVs: (.+)$", block, re.M)
         ev_lines = re.findall(r"^EVs: (.+)$", block, re.M)
         if not (len(levels) == len(iv_lines) == len(ev_lines)):
@@ -166,10 +189,6 @@ def validate_bosses():
             values = [int(x) for x in re.findall(r"(\d+) (?:HP|Atk|Def|SpA|SpD|Spe)", line)]
             if not values or any(value > 252 for value in values) or sum(values) > 510:
                 fail(f"{trainer_id} has illegal EVs: {line}")
-        mon_count += len(levels)
-
-    if mon_count != 127:
-        fail(f"expected 127 fixed-team Pokémon, got {mon_count}")
 
     locked = (
         "Jolteon @ Focus Sash", "Kingdra @ Scope Lens", "Honchkrow @ Life Orb",

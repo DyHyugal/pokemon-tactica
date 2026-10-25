@@ -44,6 +44,7 @@ TRAINER_SPRITES = {
     "Erika": "leader_erika_hns.png", "Morgane": "leader_sabrina_hns.png",
     "Jeannine": "leader_janine_hns.png", "Auguste": "leader_blaine_hns.png",
     "Blue": "leader_blue_hns.png", "Maître": "champion_lance_hns.png",
+    "Red": "red_hns.png",
 }
 
 SPECIES_FR = {
@@ -59,6 +60,8 @@ SPECIES_FR = {
     "Mega Charizard Y": "Méga-Dracaufeu Y",
     "Mega Raichu Y": "Méga-Raichu Y",
     "Rotom-Wash": "Motisma-Lavage",
+    "Rotom-Heat": "Motisma Four",
+    "Pikachu-Starter": "Pikachu partenaire",
     "Darmanitan-Galar": "Darumacho de Galar",
 }
 
@@ -80,6 +83,8 @@ def translate(value: str | None, category: str, loc: dict, lang: str) -> str:
     if value is None:
         return "—"
     if lang == "en":
+        if category == "species" and value == "Pikachu-Starter":
+            return "Partner Pikachu"
         return "King's Shield" if category == "moves" and value == "Kings Shield" else value
     if category == "species" and value in SPECIES_FR:
         return SPECIES_FR[value]
@@ -129,10 +134,12 @@ def rival_groups() -> OrderedDict[tuple[str, str, str], list[dict]]:
 
 
 def sections(groups: OrderedDict, rivals: OrderedDict) -> list[tuple[str, list[tuple[tuple, list[dict]]]]]:
-    johto, rocket, kanto, rematch = [], [], [], []
+    johto, rocket, kanto, rematch, final = [], [], [], [], []
     for key, rows in groups.items():
         region, category, _ = key
-        if category == "Rocket Executive":
+        if category in {"Final Boss", "Final Boss Rematch"}:
+            final.append((key, rows))
+        elif category == "Rocket Executive":
             rocket.append((key, rows))
         elif region == "Johto":
             johto.append((key, rows))
@@ -142,7 +149,7 @@ def sections(groups: OrderedDict, rivals: OrderedDict) -> list[tuple[str, list[t
             kanto.append((key, rows))
     kanto_order = {name: index for index, name in enumerate(("Major Bob", "Morgane", "Erika", "Jeannine", "Ondine", "Pierre", "Auguste", "Blue"))}
     kanto.sort(key=lambda entry: kanto_order[entry[0][2]])
-    return [("johto", johto), ("rocket", rocket), ("rival", list(rivals.items())), ("kanto", kanto), ("rematch", rematch)]
+    return [("johto", johto), ("rocket", rocket), ("rival", list(rivals.items())), ("kanto", kanto), ("rematch", rematch), ("red", final)]
 
 
 def labels(lang: str) -> dict:
@@ -150,14 +157,14 @@ def labels(lang: str) -> dict:
         return {
             "title": "Boss & Conseils", "intro": "Cette page est générée depuis les équipes canoniques du jeu. Elle permet de préparer les combats sans imposer un déroulé tour par tour.",
             "johto": "Johto et première Ligue", "rocket": "Team Rocket", "rival": "Rival", "kanto": "Kanto", "rematch": "Deuxième Ligue",
-            "pokemon": "Pokémon", "level": "Niv.", "item": "Objet", "ability": "Talent", "moves": "Capacités",
+            "red": "Red — Mont Argenté et revanche", "pokemon": "Pokémon", "level": "Niv.", "item": "Objet", "ability": "Talent", "moves": "Capacités",
             "dynamic": "Dynamique", "rocket_note": "Les Exécutifs passent de 3 à 4 puis 6 Pokémon. Leur équipe et leur ace suivent la plage de l'arène vaincue la plus avancée, augmentée de 2 sans cumul entre admins ; les Méga n'apparaissent qu'au combat FINAL.",
             "rival_note": "Le rival conserve un starter fixe selon son archétype. Le premier duel se joue à un Pokémon ; comme aucun combat n'a lieu après le badge 1, l'équipe passe directement à 4 Pokémon après Hector, puis à 6 entre Blanche et Mortimer. Sa Méga n'arrive qu'après le badge 4.",
         }
     return {
         "title": "Bosses & Tips", "intro": "This page is generated from the game's canonical teams. Use it to prepare for major battles without following a turn-by-turn script.",
         "johto": "Johto and first League", "rocket": "Team Rocket", "rival": "Rival", "kanto": "Kanto", "rematch": "Second League",
-        "pokemon": "Pokémon", "level": "Lv.", "item": "Item", "ability": "Ability", "moves": "Moves",
+        "red": "Red — Mt. Silver and rematch", "pokemon": "Pokémon", "level": "Lv.", "item": "Item", "ability": "Ability", "moves": "Moves",
         "dynamic": "Dynamic", "rocket_note": "Executives grow from 3 to 4 and then 6 Pokémon. Their team and ace follow the most advanced defeated Gym range plus 2, without stacking between executives; Mega Evolution appears only in the FINAL battle.",
         "rival_note": "The rival keeps a fixed starter for each archetype. The first duel uses one Pokémon; because no battle occurs after Badge 1, the team jumps directly to four after Bugsy, then six between Whitney and Morty. Mega Evolution begins only after Badge 4.",
     }
@@ -165,6 +172,8 @@ def labels(lang: str) -> dict:
 
 def display_boss(key: tuple, lang: str) -> str:
     region, category, boss = key
+    if boss == "Red" and category == "Final Boss Rematch":
+        return "Red — revanche post-OBC" if lang == "fr" else "Red — post-OBC rematch"
     if category == "Rival":
         return ("Archétype " + ARCHETYPE_FR[boss]) if lang == "fr" else boss.title() + " archetype"
     if lang == "fr":
@@ -185,6 +194,9 @@ def row_values(row: dict, loc: dict, lang: str, dynamic: str) -> list[str]:
 
 def pokemon_sprite(species: str) -> str:
     local = {
+        "Pikachu-Starter": "../assets/red-pikachu.png",
+        "Mega Lucario": "../assets/mega-lucario.png",
+        "Rotom-Heat": "../assets/rotom-heat.png",
         "Mega Charizard X": "../assets/mega-charizard-x.png",
         "Mega Charizard Y": "../assets/mega-charizard-y.png",
         "Great Tusk": "https://play.pokemonshowdown.com/sprites/dex/greattusk.png",
@@ -225,6 +237,8 @@ def render_markdown(lang: str, groups: OrderedDict, rivals: OrderedDict, loc: di
         for key, rows in entries:
             theme = (("équipe progressive" if lang == "fr" else "progressive team")
                      if key[1] == "Rival" else rows[0].get("theme") or key[1])
+            if key[2] == "Red":
+                theme = "Équipe équilibrée / niveau 100" if lang == "fr" else "Balanced team / level 100"
             output.extend((f"### {display_boss(key, lang)} — {theme}", "", f"| {t['pokemon']} | {t['level']} | {t['item']} | {t['ability']} | {t['moves']} |", "|---|---:|---|---|---|"))
             for row in rows:
                 output.append("| " + " | ".join(row_values(row, loc, lang, t["dynamic"])) + " |")
@@ -246,6 +260,8 @@ def render_html(lang: str, groups: OrderedDict, rivals: OrderedDict, loc: dict) 
         for key, rows in entries:
             theme = (("équipe progressive" if lang == "fr" else "progressive team")
                      if key[1] == "Rival" else rows[0].get("theme") or key[1])
+            if key[2] == "Red":
+                theme = "Équipe équilibrée / niveau 100" if lang == "fr" else "Balanced team / level 100"
             boss_name = display_boss(key, lang)
             parts.append(f'<details class="boss-card"><summary><span class="trainer-head"><img class="trainer-sprite" loading="lazy" src="{trainer_sprite(key)}" alt="{html.escape(boss_name)}"><span><strong>{html.escape(boss_name)}</strong><small>{html.escape(str(theme))}</small></span></span></summary><div class="table-wrap"><table><thead><tr><th>{t["pokemon"]}</th><th>{t["level"]}</th><th>{t["item"]}</th><th>{t["ability"]}</th><th>{t["moves"]}</th></tr></thead><tbody>')
             for row in rows:

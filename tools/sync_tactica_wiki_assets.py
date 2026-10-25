@@ -49,7 +49,7 @@ TRAINER_ASSETS = (
     "leader_janine_hns.png", "leader_jasmine_hns.png", "leader_misty_hns.png",
     "leader_morty_hns.png", "leader_pryce_hns.png", "leader_sabrina_hns.png",
     "leader_surge_hns.png", "leader_whitney_hns.png", "petrel_hns.png",
-    "proton_hns.png", "silver_hns.png",
+    "proton_hns.png", "silver_hns.png", "red_hns.png",
 )
 
 
@@ -114,6 +114,14 @@ def synchronize(check: bool) -> None:
         source = ROOT / "graphics" / "pokemon" / "charizard" / form / "front.png"
         output = ASSETS / f"mega-charizard-{form[-1]}.png"
         write_or_check(output, transparent_frame(source), check)
+
+    for source_path, filename in (
+        ("pikachu/anim_front.png", "red-pikachu.png"),
+        ("lucario/mega/front.png", "mega-lucario.png"),
+        ("rotom/heat/anim_front.png", "rotom-heat.png"),
+    ):
+        source = ROOT / "graphics/pokemon" / source_path
+        write_or_check(ASSETS / filename, transparent_frame(source), check)
 
     trainer_source = ROOT / "graphics" / "trainers" / "front_pics"
     for filename in TRAINER_ASSETS:

@@ -1,6 +1,6 @@
 # Pokémon Tactica — source de vérité V1
 
-État : décisions produit courantes au 23 octobre 2026.
+État : décisions produit courantes au 25 octobre 2026.
 
 La hiérarchie normative est stricte :
 
@@ -66,6 +66,7 @@ Les dresseurs ordinaires suivent les planchers de leur zone et des jalons déjà
 - Les objets tenus sont uniques au sein d’une équipe.
 - Les formes et moves doivent être légaux au niveau du combat.
 - Les soins de boss existants sont conservés, avec au plus deux soins lorsqu’ils sont prévus.
+- Red, au Mont Argenté et en revanche post-OBC, utilise la même équipe entièrement niveau 100 : Pikachu partenaire, Méga-Lucario, Majaspic, Hydragon, Scorvol et Motisma Four. Aucun légendaire/fabuleux. Méga-Lucario est réservé à Red ; ses deux combats représentent la même identité. Motisma Four remplace Noacier et assure Anti-Brume ; Scorvol pose Piège de Roc. Sets, objets uniques et EV HARD dans `bosses.json` ; détail dans `BOSSES_AI.md`.
 
 ### Méga-Évolution
 

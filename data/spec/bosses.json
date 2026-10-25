@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "Pokémon Tactica",
-  "source": "Current owner decisions through 2026-09-27",
+  "source": "Current owner decisions through 2026-10-25, including Red level-100 team",
   "difficulty": "same roster/content NORMAL and HARD; EV field is HARD optimization",
   "dynamic_level": null,
   "rules": {
@@ -3335,6 +3335,270 @@
       ],
       "role": "Choice physical breaker",
       "notes": "Same moves, ability, nature and EV profile as the first Champion match; Life Orb preserves held-item uniqueness after Meowscarada receives the Choice Band."
+    },
+    {
+      "region": "Kanto",
+      "category": "Final Boss",
+      "boss": "Red",
+      "theme": "Ash-inspired balanced offense / level 100",
+      "slot": 1,
+      "species": "Pikachu-Starter",
+      "ace": false,
+      "level": 100,
+      "item": "Light Ball",
+      "ability": "Lightning Rod",
+      "nature": "Naive",
+      "evs": "252 Atk / 252 Spe / 4 SpA",
+      "moves": [
+        "Volt Tackle",
+        "Surf",
+        "Iron Tail",
+        "Fake Out"
+      ],
+      "role": "Lead / mixed attacker",
+      "notes": "Owner-approved 2026-10-25: same team at Mt. Silver and post-OBC; Rotom-Heat replaces Ferrothorn."
+    },
+    {
+      "region": "Kanto",
+      "category": "Final Boss",
+      "boss": "Red",
+      "theme": "Ash-inspired balanced offense / level 100",
+      "slot": 2,
+      "species": "Mega Lucario",
+      "ace": true,
+      "level": 100,
+      "item": "Lucarionite",
+      "ability": "Adaptability",
+      "nature": "Jolly",
+      "evs": "252 Atk / 252 Spe / 4 SpD",
+      "moves": [
+        "Swords Dance",
+        "Close Combat",
+        "Meteor Mash",
+        "Bullet Punch"
+      ],
+      "role": "Mega ace / physical breaker",
+      "notes": "Owner-approved 2026-10-25: same team at Mt. Silver and post-OBC; Rotom-Heat replaces Ferrothorn."
+    },
+    {
+      "region": "Kanto",
+      "category": "Final Boss",
+      "boss": "Red",
+      "theme": "Ash-inspired balanced offense / level 100",
+      "slot": 3,
+      "species": "Serperior",
+      "ace": false,
+      "level": 100,
+      "item": "Leftovers",
+      "ability": "Contrary",
+      "nature": "Timid",
+      "evs": "252 SpA / 252 Spe / 4 HP",
+      "moves": [
+        "Leaf Storm",
+        "Dragon Pulse",
+        "Glare",
+        "Substitute"
+      ],
+      "role": "Special snowball / speed control",
+      "notes": "Owner-approved 2026-10-25: same team at Mt. Silver and post-OBC; Rotom-Heat replaces Ferrothorn."
+    },
+    {
+      "region": "Kanto",
+      "category": "Final Boss",
+      "boss": "Red",
+      "theme": "Ash-inspired balanced offense / level 100",
+      "slot": 4,
+      "species": "Dracovish",
+      "ace": false,
+      "level": 100,
+      "item": "Choice Scarf",
+      "ability": "Strong Jaw",
+      "nature": "Jolly",
+      "evs": "252 Atk / 252 Spe / 4 SpD",
+      "moves": [
+        "Fishious Rend",
+        "Psychic Fangs",
+        "Crunch",
+        "Dragon Claw"
+      ],
+      "role": "Fast physical breaker",
+      "notes": "Owner-approved 2026-10-25: same team at Mt. Silver and post-OBC; Rotom-Heat replaces Ferrothorn."
+    },
+    {
+      "region": "Kanto",
+      "category": "Final Boss",
+      "boss": "Red",
+      "theme": "Ash-inspired balanced offense / level 100",
+      "slot": 5,
+      "species": "Gliscor",
+      "ace": false,
+      "level": 100,
+      "item": "Toxic Orb",
+      "ability": "Poison Heal",
+      "nature": "Impish",
+      "evs": "252 HP / 252 Def / 4 SpD",
+      "moves": [
+        "Earthquake",
+        "Roost",
+        "Stealth Rock",
+        "Knock Off"
+      ],
+      "role": "Physical pivot / Stealth Rock",
+      "notes": "Owner-approved 2026-10-25: same team at Mt. Silver and post-OBC; Rotom-Heat replaces Ferrothorn."
+    },
+    {
+      "region": "Kanto",
+      "category": "Final Boss",
+      "boss": "Red",
+      "theme": "Ash-inspired balanced offense / level 100",
+      "slot": 6,
+      "species": "Rotom-Heat",
+      "ace": false,
+      "level": 100,
+      "item": "Heavy-Duty Boots",
+      "ability": "Levitate",
+      "nature": "Bold",
+      "evs": "248 HP / 168 Def / 92 Spe",
+      "moves": [
+        "Overheat",
+        "Volt Switch",
+        "Will-O-Wisp",
+        "Defog"
+      ],
+      "role": "Defensive pivot / burns / hazard removal",
+      "notes": "Owner-approved 2026-10-25: same team at Mt. Silver and post-OBC; Rotom-Heat replaces Ferrothorn."
+    },
+    {
+      "region": "Kanto",
+      "category": "Final Boss Rematch",
+      "boss": "Red",
+      "theme": "Ash-inspired balanced offense / level 100",
+      "slot": 1,
+      "species": "Pikachu-Starter",
+      "ace": false,
+      "level": 100,
+      "item": "Light Ball",
+      "ability": "Lightning Rod",
+      "nature": "Naive",
+      "evs": "252 Atk / 252 Spe / 4 SpA",
+      "moves": [
+        "Volt Tackle",
+        "Surf",
+        "Iron Tail",
+        "Fake Out"
+      ],
+      "role": "Lead / mixed attacker",
+      "notes": "Owner-approved 2026-10-25: same team at Mt. Silver and post-OBC; Rotom-Heat replaces Ferrothorn."
+    },
+    {
+      "region": "Kanto",
+      "category": "Final Boss Rematch",
+      "boss": "Red",
+      "theme": "Ash-inspired balanced offense / level 100",
+      "slot": 2,
+      "species": "Mega Lucario",
+      "ace": true,
+      "level": 100,
+      "item": "Lucarionite",
+      "ability": "Adaptability",
+      "nature": "Jolly",
+      "evs": "252 Atk / 252 Spe / 4 SpD",
+      "moves": [
+        "Swords Dance",
+        "Close Combat",
+        "Meteor Mash",
+        "Bullet Punch"
+      ],
+      "role": "Mega ace / physical breaker",
+      "notes": "Owner-approved 2026-10-25: same team at Mt. Silver and post-OBC; Rotom-Heat replaces Ferrothorn."
+    },
+    {
+      "region": "Kanto",
+      "category": "Final Boss Rematch",
+      "boss": "Red",
+      "theme": "Ash-inspired balanced offense / level 100",
+      "slot": 3,
+      "species": "Serperior",
+      "ace": false,
+      "level": 100,
+      "item": "Leftovers",
+      "ability": "Contrary",
+      "nature": "Timid",
+      "evs": "252 SpA / 252 Spe / 4 HP",
+      "moves": [
+        "Leaf Storm",
+        "Dragon Pulse",
+        "Glare",
+        "Substitute"
+      ],
+      "role": "Special snowball / speed control",
+      "notes": "Owner-approved 2026-10-25: same team at Mt. Silver and post-OBC; Rotom-Heat replaces Ferrothorn."
+    },
+    {
+      "region": "Kanto",
+      "category": "Final Boss Rematch",
+      "boss": "Red",
+      "theme": "Ash-inspired balanced offense / level 100",
+      "slot": 4,
+      "species": "Dracovish",
+      "ace": false,
+      "level": 100,
+      "item": "Choice Scarf",
+      "ability": "Strong Jaw",
+      "nature": "Jolly",
+      "evs": "252 Atk / 252 Spe / 4 SpD",
+      "moves": [
+        "Fishious Rend",
+        "Psychic Fangs",
+        "Crunch",
+        "Dragon Claw"
+      ],
+      "role": "Fast physical breaker",
+      "notes": "Owner-approved 2026-10-25: same team at Mt. Silver and post-OBC; Rotom-Heat replaces Ferrothorn."
+    },
+    {
+      "region": "Kanto",
+      "category": "Final Boss Rematch",
+      "boss": "Red",
+      "theme": "Ash-inspired balanced offense / level 100",
+      "slot": 5,
+      "species": "Gliscor",
+      "ace": false,
+      "level": 100,
+      "item": "Toxic Orb",
+      "ability": "Poison Heal",
+      "nature": "Impish",
+      "evs": "252 HP / 252 Def / 4 SpD",
+      "moves": [
+        "Earthquake",
+        "Roost",
+        "Stealth Rock",
+        "Knock Off"
+      ],
+      "role": "Physical pivot / Stealth Rock",
+      "notes": "Owner-approved 2026-10-25: same team at Mt. Silver and post-OBC; Rotom-Heat replaces Ferrothorn."
+    },
+    {
+      "region": "Kanto",
+      "category": "Final Boss Rematch",
+      "boss": "Red",
+      "theme": "Ash-inspired balanced offense / level 100",
+      "slot": 6,
+      "species": "Rotom-Heat",
+      "ace": false,
+      "level": 100,
+      "item": "Heavy-Duty Boots",
+      "ability": "Levitate",
+      "nature": "Bold",
+      "evs": "248 HP / 168 Def / 92 Spe",
+      "moves": [
+        "Overheat",
+        "Volt Switch",
+        "Will-O-Wisp",
+        "Defog"
+      ],
+      "role": "Defensive pivot / burns / hazard removal",
+      "notes": "Owner-approved 2026-10-25: same team at Mt. Silver and post-OBC; Rotom-Heat replaces Ferrothorn."
     }
   ]
 }

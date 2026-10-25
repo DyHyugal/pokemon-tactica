@@ -6,6 +6,10 @@ La candidate est construite depuis `integration/v1`, commit `63dbd3d9edfbcb7646c
 
 Cette candidate attend la validation owner des corrections visuelles et comportementales, puis le parcours jusqu’à Mortimer et l’aventure complète. Elle n’est pas une version stable validée. Les anciennes candidates ne contiennent pas ces corrections.
 
+## Red — nouvelle équipe à publier
+
+La nouvelle équipe validée par l’owner remplace les deux entrées de Red (Mont Argenté et revanche post-OBC) : Pikachu partenaire, Méga-Lucario, Majaspic, Hydragon, Scorvol et Motisma Four, tous niveau 100. Elle est synchronisée dans les données et le wiki ; elle sera disponible dans la prochaine candidate. Les niveaux, capacités, objets, talents et natures sont identiques en NORMAL/HARD, avec EV stratégiques et IA renforcée en HARD. À observer : Lucario Cœur Noble → Adaptabilité, Majaspic Contestation, Hydragon Prognathe/Mouchoir Choix, Scorvol Piège de Roc, Motisma Four Surchauffe/Change Éclair/Feu Follet/Anti-Brume. Reprendre avec Continuer ; le format de sauvegarde et les victoires enregistrées sont conservés.
+
 ## Entretien des tests — sans nouvelle ROM
 
 Le tri des tests du 24 octobre concerne le banc de test, ses fixtures et la CI. Il ne modifie pas le gameplay ni les sauvegardes de la candidate ci-dessus. Une collision des fixtures avec 14 IDs de dresseurs a été corrigée dans la ROM de test : les anciennes validations globales ne prouvaient pas l’usage de leurs vraies équipes. Le contrôle courant utilise désormais les équipes de production complètes, avec des témoins à résultats indépendants. Limites et preuves dans [l’audit des tests](TEST_SUITE_AUDIT_2026-10-24.md).

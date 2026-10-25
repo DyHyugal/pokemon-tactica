@@ -360,6 +360,8 @@ expected_boss_ranges = {
     ("Kanto", "Gym", "Auguste"): (95, 95),
     ("Kanto", "Gym", "Blue"): (100, 100),
     ("Kanto", "Champion Rematch", "Maître"): (100, 100),
+    ("Kanto", "Final Boss", "Red"): (100, 100),
+    ("Kanto", "Final Boss Rematch", "Red"): (100, 100),
 }
 for key, expected in expected_boss_ranges.items():
     levels = [row["level"] for row in bosses[key]]
@@ -479,7 +481,10 @@ for (region, category, boss), roster in bosses.items():
         if row["species"].startswith("Mega "):
             # The owner explicitly keeps the Champion's Mega Charizard X for
             # the Kanto rematch. Treat both Champion battles as one identity.
-            identity = ("Champion", boss) if category in {"Champion", "Champion Rematch"} else (region, category, boss)
+            if category in {"Final Boss", "Final Boss Rematch"} and boss == "Red":
+                identity = ("Final Boss", boss)
+            else:
+                identity = ("Champion", boss) if category in {"Champion", "Champion Rematch"} else (region, category, boss)
             megas[row["species"]].add(identity)
 for category, rules in rival["archetype_rules"].items():
     mega = rules.get("mega_species")
