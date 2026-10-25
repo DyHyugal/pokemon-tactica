@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "tools"))
 from validate_tactica_boss_sets import Catalog, audit
 from sync_tactica_bosses import render_mon
+from validate_family_remix import validate_party_moves
 
 
 class BossSetTests(unittest.TestCase):
@@ -71,6 +72,13 @@ class BossSetTests(unittest.TestCase):
         row["moves"][-1] = "Hidden Power Ice"
         with self.assertRaisesRegex(ValueError, "Hidden Power"):
             render_mon(row, {"IVs": "31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe"}, True)
+
+    def test_partner_pikachu_native_pool_accepts_real_moves_and_rejects_spore(self):
+        # This form has no standalone JSON learnset; resolving its native
+        # tables must not turn compatibility validation into an exemption.
+        validate_party_moves("TRAINER_TEST", "Pikachu-Starter\n- Volt Tackle\n- Fake Out", {})
+        with self.assertRaisesRegex(SystemExit, "cannot learn Spore"):
+            validate_party_moves("TRAINER_TEST", "Pikachu-Starter\n- Spore", {})
 
 
 if __name__ == "__main__":
