@@ -6,7 +6,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 
-=== 1 ===
+=== TRAINER_FIXTURE_1 ===
 Name: RED
 Class: Rival
 Pic: Red
@@ -18,7 +18,7 @@ Charmander
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== 2 ===
+=== TRAINER_FIXTURE_2 ===
 Name: LEAF
 Class: Rival
 Pic: Leaf
@@ -31,7 +31,7 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 
-=== 3 ===
+=== TRAINER_FIXTURE_3 ===
 Name: Test1
 Class: Pkmn Trainer 1
 Pic: Red
@@ -63,7 +63,7 @@ Wynaut
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== 4 ===
+=== TRAINER_FIXTURE_4 ===
 Name: Test2
 Class: Pkmn Trainer 1
 Pic: Red
@@ -75,7 +75,7 @@ Difficulty: Normal
 Mewtwo
 Level: 5
 
-=== 5 ===
+=== TRAINER_FIXTURE_5 ===
 Name: Test2
 Class: Pkmn Trainer 1
 Pic: Red
@@ -87,7 +87,7 @@ Difficulty: Normal
 Mewtwo
 Level: 50
 
-=== 5 ===
+=== TRAINER_FIXTURE_5 ===
 Name: Test2
 Class: Pkmn Trainer 1
 Pic: Red
@@ -99,7 +99,7 @@ Difficulty: Easy
 Metapod
 Level: 1
 
-=== 5 ===
+=== TRAINER_FIXTURE_5 ===
 Name: Test2
 Class: Pkmn Trainer 1
 Pic: Red
@@ -111,7 +111,7 @@ Difficulty: Hard
 Arceus
 Level: 99
 
-=== 6 ===
+=== TRAINER_FIXTURE_6 ===
 Name: Test3
 Class: Pkmn Trainer 1
 Pic: Red
@@ -128,7 +128,7 @@ Eevee
 
 Mew
 
-=== 7 ===
+=== TRAINER_FIXTURE_7 ===
 Name: Test4
 Class: Pkmn Trainer 1
 Pic: Red
@@ -153,7 +153,7 @@ Tags: Ace
 Aron
 Tags: Lead
 
-=== 8 ===
+=== TRAINER_FIXTURE_8 ===
 Name: Test5
 Class: Pkmn Trainer 1
 Pic: Red
@@ -191,7 +191,7 @@ Oddish
 
 Eevee
 
-=== 9 ===
+=== TRAINER_FIXTURE_9 ===
 Name: Test6
 Class: Pkmn Trainer 1
 Pic: Red
@@ -210,7 +210,7 @@ Tags: Lead
 Eevee
 Tags: Lead
 
-=== 10 ===
+=== TRAINER_FIXTURE_10 ===
 Name: Test1
 Class: Pkmn Trainer 1
 Pic: Red
@@ -228,7 +228,7 @@ Tags: Lead
 
 Eevee
 
-=== 11 ===
+=== TRAINER_FIXTURE_11 ===
 Name: Test1
 Class: Pkmn Trainer 1
 Pic: Red
@@ -247,7 +247,7 @@ Wobbuffet
 Eevee
 Tags: Lead
 
-=== 12 ===
+=== TRAINER_FIXTURE_12 ===
 Name: Test9
 Class: Pkmn Trainer 1
 Pic: Red
@@ -260,7 +260,7 @@ Wynaut
 
 Wobbuffet
 
-=== 13 ===
+=== TRAINER_FIXTURE_13 ===
 Name: Test10
 Class: Pkmn Trainer 1
 Pic: Red
@@ -273,7 +273,7 @@ Wynaut
 
 Wobbuffet
 
-=== 14 ===
+=== TRAINER_FIXTURE_14 ===
 Name: Test11
 Class: Black Belt
 Pic: Red

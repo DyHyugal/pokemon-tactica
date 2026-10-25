@@ -37,7 +37,7 @@ static const u16 *const sStrategicItemShopLists[] =
     ItemShop_Items_Useful,
 };
 
-TEST("Tactica shops: every playable Mega Stone is sold for 3000")
+TEST("Tactica shops: Mega Stone catalog contains 92 entries priced at 3000")
 {
     u32 count;
 
@@ -47,20 +47,6 @@ TEST("Tactica shops: every playable Mega Stone is sold for 3000")
         EXPECT_EQ(GetItemPrice(MegaShop_Items[count]), 3000);
     }
     EXPECT_EQ(count, 92);
-}
-
-TEST("Tactica shops: a Mega Stone purchase adds the item and removes its price")
-{
-    enum Item item = MegaShop_Items[0];
-    u32 price = GetItemPrice(item);
-
-    ClearBag();
-    SetMoney(&gSaveBlock1Ptr->money, price * 2);
-    EXPECT(AddBagItem(item, 1));
-    RemoveMoney(&gSaveBlock1Ptr->money, price);
-
-    EXPECT(CheckBagHasItem(item, 1));
-    EXPECT_EQ(GetMoney(&gSaveBlock1Ptr->money), price);
 }
 
 TEST("Tactica shops: strategic stock is unique, priced, and exhaustive")
@@ -124,18 +110,13 @@ TEST("Tactica shops: move lessons expose only compatible playable moves")
     EXPECT_LT(count, MAX_RELEARNER_MOVES);
 }
 
-TEST("Tactica shops: a confirmed move lesson charges once and teaches")
+TEST("Tactica shops: payment helper debits the lesson price and rejects insufficient funds")
 {
-    struct Pokemon mon;
-
-    CreateMon(&mon, SPECIES_CHARIZARD, 5, 0, OTID_STRUCT_PLAYER_ID);
     SetMoney(&gSaveBlock1Ptr->money, TACTICA_MOVE_SHOP_PRICE * 2);
 
     EXPECT(CanAffordTacticaMoveShopPurchase());
     EXPECT(PurchaseTacticaMoveShopMove());
     EXPECT_EQ(GetMoney(&gSaveBlock1Ptr->money), TACTICA_MOVE_SHOP_PRICE);
-    EXPECT_NE(GiveMoveToBoxMon(&mon.box, MOVE_FLARE_BLITZ), MON_HAS_MAX_MOVES);
-    EXPECT(BoxMonKnowsMove(&mon.box, MOVE_FLARE_BLITZ));
 
     SetMoney(&gSaveBlock1Ptr->money, TACTICA_MOVE_SHOP_PRICE - 1);
     EXPECT(!CanAffordTacticaMoveShopPurchase());

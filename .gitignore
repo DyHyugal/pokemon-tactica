@@ -71,4 +71,6 @@ tools/poryscript
 porymap.user.json
 tools/mid2gbs/.venv
 
-test/battle/tactica_story_trainers.h
+
+# Native regression evidence (CI artifact, not source)
+test-results/

@@ -6,6 +6,10 @@ La candidate est construite depuis `integration/v1`, commit `63dbd3d9edfbcb7646c
 
 Cette candidate attend la validation owner des corrections visuelles et comportementales, puis le parcours jusqu’à Mortimer et l’aventure complète. Elle n’est pas une version stable validée. Les anciennes candidates ne contiennent pas ces corrections.
 
+## Entretien des tests — sans nouvelle ROM
+
+Le tri des tests du 24 octobre concerne le banc de test, ses fixtures et la CI. Il ne modifie pas le gameplay ni les sauvegardes de la candidate ci-dessus. Une collision des fixtures avec 14 IDs de dresseurs a été corrigée dans la ROM de test : les anciennes validations globales ne prouvaient pas l’usage de leurs vraies équipes. Le contrôle courant utilise désormais les équipes de production complètes, avec des témoins à résultats indépendants. Limites et preuves dans [l’audit des tests](TEST_SUITE_AUDIT_2026-10-24.md).
+
 ## Correctif de légalité des boss — inclus
 
 Le correctif du 24 octobre est inclus dans la candidate `63dbd3d9` ci-dessus. Il remplace la candidate `3c620914`, qui présentait le plantage de Major Bob. Il corrige Élecsprint (Paratonnerre, Rayon Signal), les capacités incompatibles de rematches hérités et une répartition EV hors limites. L'audit couvre 117 IDs de boss et les six archétypes dynamiques du rival ; 28 couples Méga sont protégés par des tests réels de talents/types, avec les identités custom validées conservées.

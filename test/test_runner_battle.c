@@ -14,6 +14,7 @@
 #include "party_menu.h"
 #include "random.h"
 #include "test/battle.h"
+#include "test/trainer_fixtures.h"
 #include "trainer_pools.h"
 #include "window.h"
 #include "constants/characters.h"
@@ -49,14 +50,20 @@ static inline bool32 RngSeedNotDefault(const rng_value_t *seed)
 #undef Q_4_12
 #define Q_4_12(n) (s32)((n) * 4096)
 
-#define TRAINER_RED_TEST    1
-#define TRAINER_LEAF_TEST   2
+#define TRAINER_RED_TEST    TEST_TRAINER(1)
+#define TRAINER_LEAF_TEST   TEST_TRAINER(2)
 #define PARTNER_STEVEN_TEST 1
 
-const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINERS_COUNT] =
+#if IS_HNS
+STATIC_ASSERT(TEST_TRAINER(1) >= TRAINERS_COUNT, TestFixturesOutsideProduction);
+STATIC_ASSERT(TEST_TRAINER(14) < TRAINER_TABLE_COUNT, TestFixturesWithinTable);
+STATIC_ASSERT(TEST_TRAINER(14) < MAX_TRAINERS_COUNT, TestFixturesOutsidePartnerIds);
+#endif
+
+const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINER_TABLE_COUNT] =
 {
 #if IS_HNS
-    #include "battle/tactica_story_trainers.h"
+    #include "../src/data/trainers_hns.h"
 #endif
     #include "battle/trainer_control.h"
 };

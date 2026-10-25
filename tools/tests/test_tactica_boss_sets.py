@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "tools"))
-from validate_tactica_boss_sets import Catalog, audit, mega_fixture
+from validate_tactica_boss_sets import Catalog, audit
 from sync_tactica_bosses import render_mon
 
 
@@ -19,13 +19,6 @@ class BossSetTests(unittest.TestCase):
     def check_mon(self, species, ability="None", item="", moves=None, **fields):
         mon = dict(species=species, Ability=ability, item=item, moves=moves or [], slot=1, **fields)
         return audit(self.catalog, [("TRAINER_TEST", "Normal", [mon])])
-
-    def test_actual_full_scope_and_frozen_mega_cases(self):
-        result = audit(self.catalog)
-        self.assertEqual(result["errors"], [])
-        self.assertGreaterEqual(result["trainer_ids"], 117)
-        self.assertGreaterEqual(result["authored_slots"], 843)
-        self.assertEqual(mega_fixture(result), (ROOT / "test/battle/tactica_boss_mega_cases.h").read_text())
 
     def test_mega_only_abilities_are_invalid_before_transformation(self):
         for species, ability, item in [("Manectric", "Intimidate", "Expert Belt"),

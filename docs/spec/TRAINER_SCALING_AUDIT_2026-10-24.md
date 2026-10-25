@@ -50,26 +50,20 @@ Le deuxième rival, après Hector, établit déjà le plancher 29 avant Blanche.
 
 ## Vérification moteur et CI
 
-Validation locale terminée : **14 groupes mGBA réussis**, dont les quatre groupes couvrant les 3 792 créations, le parcours complet des jalons et les deux régressions reproduites avant correction. Build HnS réussi ; **20 tests Python réussis**. Les contrôles de couverture, de données et de synchronisation passent. La CI distante doit confirmer le commit avant fusion.
+La ROM de test inclut maintenant toutes les équipes de production avec leurs vrais IDs. Les 14 équipes réservées au banc de test sont ajoutées après la table de production, sans remplacer les premiers dresseurs. L’audit des tests du même jour a révélé que l’ancien montage remplaçait ces 14 IDs : les anciennes validations de la matrice ne prouvaient donc pas l’utilisation des équipes réelles pour ces IDs. Ce défaut concernait les tests, pas le runtime distribué.
 
-Les tests passent par `CreateNPCTrainerParty`, **le même point d'entrée que le combat réel**, avec l'identifiant du dresseur et la localisation sauvegardée. Cette fonction existante est rendue accessible aux tests ; sa logique de construction n'est pas réécrite. Les anciens tests ne vérifiaient que le helper de résolution et n'avaient pas cette couverture de bout en bout.
+Le contrôle courant utilise `CreateNPCTrainerParty`, le point d’entrée réel du combat, pour les **474 associations carte/dresseur** (routes, grottes, intérieurs, sbires et revanches), avec des difficultés et contextes scénario répartis. Il vérifie des bornes ; il ne démontre pas à lui seul que la table de niveaux choisie est correcte. Un témoin indépendant ajoute **11 cas × 2 difficultés × 3 réglages de cap = 66 constructions**, avec effectifs et niveaux attendus littéraux pour Joey, Wade, Russell, Samuel, Carrie, Stephen et une revanche.
 
-Matrice : **474 associations × 2 difficultés × 4 contextes = 3 792 créations réelles d'équipes**, réparties en quatre groupes de test, couvrant les routes, grottes, intérieurs, sbires et revanches de toutes les cartes concernées. Les réglages de cap 0/1/2 sont exercés dans cette matrice. Chaque Pokémon créé doit respecter le minimum zone/scénario, ne pas descendre sous son niveau écrit et rester dans la borne haute autorisée, au plus 100.
-
-En complément : test des trois variantes du premier duel, des trois victoires centrales prises séparément, de la conservation des caps joueur, et d'un parcours des jalons Johto/Kanto/deux Ligues en NORMAL/HARD. Les tests existants de protection des boss et de non-cumul Rocket sont maintenus.
+La matrice exhaustive **474 × 2 difficultés × 4 contextes = 3 792 constructions** reste disponible sur demande, et non à chaque PR. Les contrôles statiques de couverture de toutes les cartes restent exécutés. Une association nouvelle doit être intégrée via `--write-fixture`. Les caps Johto/Kanto/deux Ligues disposent de leur propre suite ; les doublons de parcours sont retirés. La protection des boss et le non-cumul Rocket sont conservés.
 
 ```sh
 python3 tools/audit_tactica_trainer_scaling.py
-python3 tools/audit_tactica_trainer_scaling.py --report-dir /tmp/tactica-scaling
 python3 tools/sync_tactica_trainer_levels.py --check
-python3 -m unittest discover -s tools/tests -p 'test_tactica_*.py'
-make hns -j4
-make check BUILD=hns TESTS='Tactica ordinary trainers:' -j4
-make check BUILD=hns TESTS='*Level cap:' -j4
-make check BUILD=hns TESTS=Family -j4
-make check BUILD=hns TESTS='Tactica boss legality:' -j4
+python3 tools/run_tactica_tests.py --suites progression
+# Diagnostic complet uniquement si nécessaire :
+python3 tools/run_tactica_tests.py --suites progression --exhaustive
 ```
 
-La matrice est protégée par `--check` implicite dans l'auditeur. Une nouvelle association carte/dresseur doit être intégrée via `--write-fixture`. La CI des PR et la CI d'intégration exécutent le contrôle de couverture et les tests de scaling.
+La preuve de détection d’une panne volontaire et les résultats exécutés figurent dans [l’audit des tests](TEST_SUITE_AUDIT_2026-10-24.md).
 
 Le playtest manuel complet de chaque carte reste distinct de ces contrôles automatisés. Témoins owner utiles : reprendre une ancienne sauvegarde après le premier rival et voir Joey/Wade au moins niveau 18 ; comparer un dresseur Route 34 avant Blanche après le deuxième rival ; vérifier le plancher 80 après une seule victoire centrale de Kanto. Les noms de fichier ROM/sauvegarde restent fixes et le format de sauvegarde est conservé.

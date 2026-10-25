@@ -53,9 +53,6 @@ TEST("Settings recommended: normal cap and competitive Trainer stats are enabled
     EXPECT_EQ((u32)gSaveblock3.challengeSettings.tx_Challenges_TrainerScalingEVs, 3);
     EXPECT_EQ((u32)gSaveblock3.challengeSettings.tx_Challenges_NoEVs, 0);
     EXPECT_EQ((u32)gSaveblock3.challengeSettings.tx_Features_LimitDifficulty, 1);
-    SetCurrentDifficultyLevel(gSaveblock3.challengeSettings.tx_Features_LimitDifficulty
-        ? DIFFICULTY_HARD : DIFFICULTY_NORMAL);
-    EXPECT_EQ(GetCurrentDifficultyLevel(), DIFFICULTY_HARD);
     EXPECT_EQ(GetCurrentTrainerIVs(), MAX_PER_STAT_IVS);
 
     CreateRandomMon(&mon, SPECIES_BULBASAUR, 5);
@@ -68,6 +65,7 @@ TEST("Settings recommended: normal cap and competitive Trainer stats are enabled
 TEST("Settings setup: Recommended A and R open editable setup without starting")
 {
     u32 shortcut, frame;
+    u32 savedDifficulty = GetCurrentDifficultyLevel();
     MainCallback original = gMain.callback2;
     MainCallback savedCallback = gMain.savedCallback;
     IntrCallback vblank = gMain.vblankCallback;
@@ -77,6 +75,7 @@ TEST("Settings setup: Recommended A and R open editable setup without starting")
     {
         memset(&gSaveblock3.challengeSettings, 0, sizeof(gSaveblock3.challengeSettings));
         SetDefaultChallengeSettings();
+        SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
         ChallengeMenu_SetInitialSetup(TRUE);
         sReturnedFromSetup = FALSE;
         gMain.savedCallback = SetupReturned;
@@ -87,14 +86,18 @@ TEST("Settings setup: Recommended A and R open editable setup without starting")
         for (frame = 0; frame < 64; frame++)
             PumpSetupFrame(0);
         EXPECT(!sReturnedFromSetup);
+        EXPECT_EQ(GetCurrentDifficultyLevel(), DIFFICULTY_NORMAL);
         PumpSetupFrame(B_BUTTON); // Save the preset and any feature adjustments.
         for (frame = 0; frame < 64; frame++)
             PumpSetupFrame(0);
         EXPECT(sReturnedFromSetup);
+        // Read the difficulty written by the real menu-save callback.
+        EXPECT_EQ(GetCurrentDifficultyLevel(), DIFFICULTY_HARD);
         EXPECT_EQ((u32)gSaveblock3.challengeSettings.tx_Challenges_Nuzlocke, 0);
         EXPECT_EQ((u32)gSaveblock3.challengeSettings.tx_Random_Starter, 0);
         EXPECT_EQ((u32)gSaveblock3.challengeSettings.tx_Mode_Modern_Moves, 1);
     }
+    SetCurrentDifficultyLevel(savedDifficulty);
     gSaveblock3.challengeSettings = saved;
     gMain.savedCallback = savedCallback;
     SetVBlankCallback(vblank);

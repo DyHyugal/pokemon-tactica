@@ -110,4 +110,11 @@ TEST("Tactica ordinary trainers: NORMAL and HARD share levels, and late parties 
     }
     SetCurrentDifficultyLevel(savedDifficulty);
 }
+TEST("Tactica ordinary trainers: move eligibility rejects impossible moves instead of validating itself")
+{
+    gSaveBlock3Ptr->challengeSettings.tx_Mode_Modern_Moves = 1;
+    EXPECT(IsTacticaMoveLegalAtLevel(SPECIES_MAGIKARP, 5, MOVE_SPLASH));
+    EXPECT(!IsTacticaMoveLegalAtLevel(SPECIES_MAGIKARP, 5, MOVE_FLAMETHROWER));
+    EXPECT(!IsTacticaMoveLegalAtLevel(SPECIES_MAGIKARP, 5, MOVE_NONE));
+}
 #endif
