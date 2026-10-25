@@ -3,6 +3,11 @@
 #include "config_menu_layout.h"
 #include "text.h"
 #include "window.h"
+#include "pokemon.h"
+#include "config/swsh_item_menu.h"
+#include "config/bw_battle_ui.h"
+#include "constants/party_menu.h"
+#include "swsh_summary_screen.h"
 
 static u32 ConfigPixel(const u8 *tiles, u32 x, u32 y)
 {
@@ -59,4 +64,17 @@ TEST("Tactica configuration: every option and challenge tab renders choices afte
     }
     EXPECT(cases > 30);
     FreeAllWindowBuffers();
+}
+
+TEST("Tactica configuration: compiled UI flags and Mega data match production requirements")
+{
+    EXPECT(SWSH_ITEM_MENU && SWSH_PARTY_MENU && SWSH_SUMMARY_SCREEN && SWSH_SUMMARY_SHOW_IV_EV);
+    EXPECT(BW_BATTLE_UI && BW_BATTLE_UI_TEXTBOX && BW_BATTLE_UI_INPUTBOX && BW_BATTLE_UI_HEALTHBOX);
+    EXPECT(BW_BATTLE_UI_PARTY_SUMMARY && BW_BATTLE_UI_ABILITY_POP_UP && BW_BATTLE_UI_WINDOW_SPRITES);
+    EXPECT(P_MEGA_EVOLUTIONS);
+    EXPECT(!P_MODIFIED_MEGA_CRIES);
+    EXPECT_EQ(B_MOVE_DESCRIPTION_BUTTON, R_BUTTON);
+    EXPECT_NE(gSpeciesInfo[SPECIES_SLOWBRO_MEGA].baseHP, 0);
+    EXPECT_EQ((u32)gSpeciesInfo[SPECIES_SLOWBRO_MEGA].cryId, gSpeciesInfo[SPECIES_SLOWBRO].cryId);
+    EXPECT_EQ((u32)gSpeciesInfo[SPECIES_RAYQUAZA_MEGA].cryId, gSpeciesInfo[SPECIES_RAYQUAZA].cryId);
 }

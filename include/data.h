@@ -205,7 +205,13 @@ extern const union AnimCmd *const gAnims_Trainer[];
 extern const struct TrainerSprite gTrainerSprites[];
 extern const struct TrainerBacksprite gTrainerBacksprites[];
 
-extern const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINERS_COUNT];
+// The HnS test ROM keeps production IDs intact and appends isolated fixtures.
+#if TESTING && IS_HNS
+#define TRAINER_TABLE_COUNT (TRAINERS_COUNT + 14)
+#else
+#define TRAINER_TABLE_COUNT TRAINERS_COUNT
+#endif
+extern const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINER_TABLE_COUNT];
 extern const struct Trainer gBattlePartners[DIFFICULTY_COUNT][PARTNER_COUNT];
 
 extern const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT];
@@ -245,7 +251,7 @@ static inline bool32 IsSpecialTrainer(u16 trainerId)
 
 static inline u16 SanitizeTrainerId(u16 trainerId)
 {
-    assertf(trainerId < TRAINERS_COUNT, "invalid trainer: %d", trainerId)
+    assertf(trainerId < TRAINER_TABLE_COUNT, "invalid trainer: %d", trainerId)
     {
         return TRAINER_NONE;
     }

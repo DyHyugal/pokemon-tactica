@@ -7,7 +7,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "tools"))
 from sync_tactica_trainer_levels import map_floors, trainer_ids
-from audit_tactica_trainer_scaling import inventory, fixture_text
 
 
 class TrainerLevelTests(unittest.TestCase):
@@ -30,23 +29,6 @@ class TrainerLevelTests(unittest.TestCase):
         for name in ["TRAINER_FALKNER_1_HNS", "TRAINER_PROTON_1_HNS", "TRAINER_LANCE_1_HNS", "TRAINER_RED_HNS", "TRAINER_RIVAL_CHIKORITA_1_HNS", "TRAINER_SAWYER_1"]:
             self.assertNotIn(name, ids)
 
-    def test_all_map_scripts_and_rematches_have_frozen_runtime_cases(self):
-        maps, pairs, floors, ceilings, rosters, missing = inventory()
-        self.assertGreaterEqual(len(maps), 560)
-        self.assertGreaterEqual(len(pairs), 474)
-        self.assertEqual(fixture_text(pairs, floors, ceilings), (ROOT / "test/tactica_trainer_scaling_cases.h").read_text())
-        for area, trainer in pairs:
-            self.assertIn(trainer, rosters)
-            self.assertNotIn(trainer, missing)
-            self.assertLessEqual(floors.get(area, 0), ceilings.get(area, 0))
-        for pair in [("MAP_ROUTE30_HNS", "TRAINER_JOEY_HNS"),
-                     ("MAP_ROUTE30_HNS", "TRAINER_JOEY_5_HNS"),
-                     ("MAP_UNION_CAVE_1F_HNS", "TRAINER_RUSSELL_HNS"),
-                     ("MAP_ROUTE34_HNS", "TRAINER_SAMUEL_HNS")]:
-            self.assertIn(pair, pairs)
-        self.assertTrue(any(area == "MAP_ROUTE12_HNS" for area, _ in pairs))
-        protected = {"TRAINER_FALKNER_1_HNS", "TRAINER_LTSURGE_HNS", "TRAINER_RED_HNS", "TRAINER_PROTON_1_HNS"}
-        self.assertFalse({trainer for _, trainer in pairs} & protected)
 
 
 if __name__ == "__main__":

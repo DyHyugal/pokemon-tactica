@@ -52,69 +52,59 @@ TEST("Tactica ordinary trainers: each central Kanto Gym victory raises the floor
     gSaveBlock3Ptr->challengeSettings.tx_Challenges_LevelCap = 0;
 }
 
-TEST("Tactica ordinary trainers: completed floors follow the whole Johto Kanto and League journey")
+// Independent expected levels: these literals describe approved outcomes,
+// not a second call to the scaling helper or its generated table.
+TEST("Tactica ordinary trainers: real party levels match independent route cave interior and Kanto examples")
 {
-    static const struct
-    {
-        u16 trainer;
-        u16 flag;
-        bool8 rocket;
-    } journey[] = {
-        {TRAINER_RIVAL_CYNDAQUIL_1_HNS},
-        {TRAINER_FALKNER_1_HNS, FLAG_DEFEATED_VIOLET_GYM},
-        {TRAINER_PROTON_1_HNS, 0, TRUE},
-        {TRAINER_BUGSY_1_HNS, FLAG_DEFEATED_AZALEA_TOWN_GYM},
-        {TRAINER_RIVAL_CYNDAQUIL_2_HNS},
-        {TRAINER_WHITNEY_1_HNS, FLAG_DEFEATED_GOLDENROD_CITY_GYM},
-        {TRAINER_RIVAL_CYNDAQUIL_3_HNS},
-        {TRAINER_MORTY_1_HNS, FLAG_DEFEATED_ECRUTEAK_CITY_GYM},
-        {TRAINER_CHUCK_1_HNS, FLAG_DEFEATED_CIANWOOD_GYM},
-        {TRAINER_JASMINE_1_HNS, FLAG_DEFEATED_OLIVINE_CITY_GYM},
-        {TRAINER_PETREL_1_HNS, 0, TRUE},
-        {TRAINER_ARIANA_1_HNS, 0, TRUE},
-        {TRAINER_PRYCE_1_HNS, FLAG_DEFEATED_MAHOGANY_TOWN_GYM},
-        {TRAINER_PETREL_2_HNS, 0, TRUE},
-        {TRAINER_RIVAL_CYNDAQUIL_4_HNS},
-        {TRAINER_PROTON_2_HNS, 0, TRUE},
-        {TRAINER_ARIANA_2_HNS, 0, TRUE},
-        {TRAINER_ARCHER_HNS, 0, TRUE},
-        {TRAINER_CLAIR_1_HNS, FLAG_DEFEATED_BLACKTHORN_GYM},
-        {TRAINER_RIVAL_CYNDAQUIL_5_HNS},
-        {TRAINER_WILL_1_HNS}, {TRAINER_KOGA_1_HNS}, {TRAINER_BRUNO_1_HNS}, {TRAINER_KAREN_1_HNS},
-        {TRAINER_LANCE_1_HNS, FLAG_IS_CHAMPION},
-        {TRAINER_LTSURGE_HNS, FLAG_DEFEATED_VERMILION_GYM},
-        {TRAINER_SABRINA_HNS}, {TRAINER_ERIKA_HNS}, {TRAINER_JANINE_HNS},
-        {TRAINER_MISTY_HNS, FLAG_DEFEATED_CERULEAN_GYM},
-        {TRAINER_BROCK_HNS, FLAG_DEFEATED_PEWTER_GYM},
-        {TRAINER_RIVAL_CYNDAQUIL_6_HNS},
-        {TRAINER_BLAINE_HNS, FLAG_DEFEATED_CINNABAR_ISLAND_GYM},
-        {TRAINER_BLUE_HNS, FLAG_DEFEATED_VIRIDIAN_GYM},
-        {TRAINER_WILL_2_HNS}, {TRAINER_KOGA_2_HNS}, {TRAINER_BRUNO_2_HNS}, {TRAINER_KAREN_2_HNS},
-        {TRAINER_LANCE_2_HNS, FLAG_IS_KANTO_CHAMPION},
-        {TRAINER_RIVAL_CYNDAQUIL_7_HNS}, {TRAINER_RED_HNS},
+    static const struct {
+        u16 trainer, map;
+        u8 state, count, levels[PARTY_SIZE];
+    } cases[] = {
+        {TRAINER_WADE_HNS, MAP_ROUTE31_HNS, 0, 2, {7, 8}},
+        {TRAINER_RUSSELL_HNS, MAP_UNION_CAVE_1F_HNS, 0, 2, {17, 16}},
+        {TRAINER_RUSSELL_HNS, MAP_UNION_CAVE_1F_HNS, 1, 2, {19, 18}},
+        {TRAINER_JOEY_HNS, MAP_ROUTE30_HNS, 1, 1, {18}},
+        {TRAINER_WADE_HNS, MAP_ROUTE31_HNS, 1, 2, {18, 18}},
+        {TRAINER_SAMUEL_HNS, MAP_ROUTE34_HNS, 2, 3, {29, 29, 29}},
+        {TRAINER_CARRIE_HNS, MAP_GOLDENROD_CITY_GYM_HNS, 2, 1, {29}},
+        {TRAINER_STEPHEN_HNS, MAP_ROUTE12_HNS, 3, 4, {75, 75, 75, 75}},
+        {TRAINER_STEPHEN_HNS, MAP_ROUTE12_HNS, 4, 4, {80, 80, 80, 80}},
+        {TRAINER_WADE_HNS, MAP_ROUTE31_HNS, 5, 2, {100, 100}},
+        {TRAINER_JOEY_5_HNS, MAP_ROUTE30_HNS, 1, 1, {65}},
     };
-    u32 difficulty = DIFFICULTY_NORMAL;
-    PARAMETRIZE { difficulty = DIFFICULTY_NORMAL; }
-    PARAMETRIZE { difficulty = DIFFICULTY_HARD; }
+    u32 index = 0, difficulty = DIFFICULTY_NORMAL, cap = 0;
+    for (u32 i = 0; i < ARRAY_COUNT(cases); i++)
+        for (u32 d = DIFFICULTY_NORMAL; d <= DIFFICULTY_HARD; d++)
+            for (u32 c = 0; c < 3; c++)
+                PARAMETRIZE { index = i; difficulty = d; cap = c; }
     u32 savedDifficulty = GetCurrentDifficultyLevel();
+    u32 savedFlags = gBattleTypeFlags;
     InitEventData();
+    memset(&gSaveBlock3Ptr->challengeSettings, 0, sizeof(struct ChallengeSettings));
+    gSaveBlock3Ptr->challengeSettings.tx_Challenges_OneTypeChallenge = 31;
+    gSaveBlock3Ptr->challengeSettings.tx_Mode_Modern_Moves = 1;
+    gSaveBlock3Ptr->challengeSettings.tx_Challenges_LevelCap = cap;
     SetCurrentDifficultyLevel(difficulty);
-    u32 expected = 0;
-    for (u32 i = 0; i < ARRAY_COUNT(journey); i++)
+    if (cases[index].state >= 1)
+        SetTrainerFlag(TRAINER_RIVAL_CYNDAQUIL_1_HNS);
+    if (cases[index].state == 2)
+        SetTrainerFlag(TRAINER_RIVAL_CYNDAQUIL_2_HNS);
+    if (cases[index].state == 3 || cases[index].state == 4)
     {
-        SetTrainerFlag(journey[i].trainer);
-        if (journey[i].flag != 0)
-            FlagSet(journey[i].flag);
-        if (!journey[i].rocket)
-        {
-            const struct Trainer *trainer = GetTrainerStructFromId(journey[i].trainer);
-            u32 minimum = MAX_LEVEL;
-            for (u32 slot = 0; slot < trainer->partySize; slot++)
-                minimum = min(minimum, trainer->party[slot].lvl);
-            expected = max(expected, minimum);
-        }
-        EXPECT_EQ(GetTacticaStoryTrainerFloor(), expected);
+        FlagSet(FLAG_IS_CHAMPION);
+        FlagSet(FLAG_DEFEATED_VERMILION_GYM);
     }
+    if (cases[index].state == 4)
+        SetTrainerFlag(TRAINER_SABRINA_HNS);
+    if (cases[index].state == 5)
+        FlagSet(FLAG_IS_KANTO_CHAMPION);
+    gSaveBlock1Ptr->location.mapGroup = MAP_GROUP(cases[index].map);
+    gSaveBlock1Ptr->location.mapNum = MAP_NUM(cases[index].map);
+    gBattleTypeFlags = BATTLE_TYPE_TRAINER;
+    EXPECT_EQ(CreateNPCTrainerParty(gEnemyParty, cases[index].trainer, TRUE), cases[index].count);
+    for (u32 slot = 0; slot < cases[index].count; slot++)
+        EXPECT_EQ(GetMonData(&gEnemyParty[slot], MON_DATA_LEVEL), cases[index].levels[slot]);
+    gBattleTypeFlags = savedFlags;
     SetCurrentDifficultyLevel(savedDifficulty);
 }
 
@@ -128,14 +118,24 @@ static const struct ScalingCase
 #include "tactica_trainer_scaling_cases.h"
 };
 
-static void CheckMappedParties(u32 chunk)
+static void CheckMappedParties(u32 chunk, bool32 exhaustive)
 {
     u32 caseId = 0, difficulty = DIFFICULTY_NORMAL, story = 0;
     static const u8 floors[] = {0, 18, 29, MAX_LEVEL};
     for (u32 i = chunk; i < ARRAY_COUNT(sScalingCases); i += 4)
-        for (u32 d = DIFFICULTY_NORMAL; d <= DIFFICULTY_HARD; d++)
-            for (u32 stage = 0; stage < ARRAY_COUNT(floors); stage++)
-                PARAMETRIZE { caseId = i; difficulty = d; story = stage; }
+    {
+        if (exhaustive)
+        {
+            for (u32 d = DIFFICULTY_NORMAL; d <= DIFFICULTY_HARD; d++)
+                for (u32 stage = 0; stage < ARRAY_COUNT(floors); stage++)
+                    PARAMETRIZE { caseId = i; difficulty = d; story = stage; }
+        }
+        else
+        {
+            // Each placed team remains exercised; vary context across teams.
+            PARAMETRIZE { caseId = i; difficulty = DIFFICULTY_NORMAL + i % 2; story = i / 2 % ARRAY_COUNT(floors); }
+        }
+    }
     const struct ScalingCase *area = &sScalingCases[caseId];
     u32 savedDifficulty = GetCurrentDifficultyLevel();
     u32 savedBattleFlags = gBattleTypeFlags;
@@ -155,6 +155,8 @@ static void CheckMappedParties(u32 chunk)
     gSaveBlock1Ptr->location.mapNum = MAP_NUM(area->map);
     gBattleTypeFlags = BATTLE_TYPE_TRAINER;
     const struct Trainer *trainer = GetTrainerStructFromId(area->trainer);
+    EXPECT_GT(trainer->partySize, 0);
+    EXPECT_LE(trainer->partySize, PARTY_SIZE);
     EXPECT_EQ(GetTacticaStoryTrainerFloor(), floors[story]);
     EXPECT_EQ(CreateNPCTrainerParty(gEnemyParty, area->trainer, TRUE), trainer->partySize);
     for (u32 slot = 0; slot < trainer->partySize; slot++)
@@ -171,8 +173,13 @@ static void CheckMappedParties(u32 chunk)
     SetCurrentDifficultyLevel(savedDifficulty);
     gBattleTypeFlags = savedBattleFlags;
 }
-TEST("Tactica ordinary trainers: all mapped parties chunk 1/4") { CheckMappedParties(0); }
-TEST("Tactica ordinary trainers: all mapped parties chunk 2/4") { CheckMappedParties(1); }
-TEST("Tactica ordinary trainers: all mapped parties chunk 3/4") { CheckMappedParties(2); }
-TEST("Tactica ordinary trainers: all mapped parties chunk 4/4") { CheckMappedParties(3); }
+TEST("Tactica ordinary trainers: all mapped parties chunk 1/4") { CheckMappedParties(0, FALSE); }
+TEST("Tactica ordinary trainers: all mapped parties chunk 2/4") { CheckMappedParties(1, FALSE); }
+TEST("Tactica ordinary trainers: all mapped parties chunk 3/4") { CheckMappedParties(2, FALSE); }
+TEST("Tactica ordinary trainers: all mapped parties chunk 4/4") { CheckMappedParties(3, FALSE); }
+// Explicit diagnostic audit, excluded from regular CI file selection.
+TEST("Tactica exhaustive trainer audit: chunk 1/4") { CheckMappedParties(0, TRUE); }
+TEST("Tactica exhaustive trainer audit: chunk 2/4") { CheckMappedParties(1, TRUE); }
+TEST("Tactica exhaustive trainer audit: chunk 3/4") { CheckMappedParties(2, TRUE); }
+TEST("Tactica exhaustive trainer audit: chunk 4/4") { CheckMappedParties(3, TRUE); }
 #endif

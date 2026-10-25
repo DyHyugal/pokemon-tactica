@@ -191,7 +191,9 @@ Les méthodes d'évolution affichées doivent rester alignées sur `EVOLUTIONS.m
 
 Pendant le développement :
 
-- tests ciblés du domaine ;
+- tests ciblés via `python3 tools/run_tactica_tests.py --suites progression` (domaines dans le script) ;
+- un test doit appeler le chemin qu’il prétend couvrir et utiliser un résultat attendu indépendant ; ne pas lui faire exécuter lui-même l’action manquante ;
+- une suite vide, ignorée ou marquée en échec connu ne valide pas une feature ;
 - générateurs `--check` concernés ;
 - build HnS si runtime/code modifié.
 
@@ -201,6 +203,8 @@ Avant merge vers `integration/v1` :
 - synchronisations vertes ;
 - build/smoke tests appropriés ;
 - CI verte.
+
+La CI sélectionne les suites selon les fichiers touchés ; un changement runtime ou partagé non classé déclenche toutes les suites Tactica retenues. Les changements documentaires seuls ne reconstruisent pas la ROM. La matrice dresseurs exhaustive reste accessible manuellement (`--exhaustive`), tandis que les 474 associations carte/dresseur restent couvertes dans le contrôle courant. Les équipes factices ne doivent jamais remplacer les IDs de production dans la ROM de test. Voir [l’audit des tests](TEST_SUITE_AUDIT_2026-10-24.md).
 
 Le playtest owner final n'est pas requis pour merger une correction automatisée propre, mais aucun test mGBA ne doit être déclaré effectué s'il ne l'a pas été.
 

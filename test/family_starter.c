@@ -15,6 +15,7 @@
 #include "constants/opponents.h"
 #include "constants/flags.h"
 #include "constants/battle_ai.h"
+#include "constants/hold_effects.h"
 #include "test/test.h"
 #include "random.h"
 
@@ -687,6 +688,22 @@ TEST("Family starter: all six archetypes resolve legal sets in both difficulties
                 EXPECT_NE(mon.moves[move], mon.moves[previous]);
         }
         EXPECT_NE(mon.moves[0], MOVE_NONE);
+        bool32 legalAbility = mon.ability == ABILITY_NONE;
+        for (u32 a = 0; a < NUM_ABILITY_SLOTS; a++)
+            legalAbility |= gSpeciesInfo[mon.species].abilities[a] == mon.ability;
+        EXPECT(legalAbility);
+        if (GetItemHoldEffect(mon.heldItem) == HOLD_EFFECT_MEGA_STONE)
+        {
+            struct FormChangeContext ctx = {
+                .method = FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,
+                .currentSpecies = mon.species,
+                .heldItem = mon.heldItem,
+                .ability = mon.ability,
+            };
+            u32 target = GetFormChangeTargetSpecies_Internal(ctx);
+            EXPECT_NE(target, SPECIES_NONE);
+            EXPECT(gSpeciesInfo[target].isMegaEvolution);
+        }
         EXPECT_EQ(mon.ev == NULL, difficulty == DIFFICULTY_NORMAL);
         if (fight < 3)
             EXPECT_EQ(mon.heldItem, ITEM_NONE);
