@@ -1,6 +1,6 @@
 # Pokémon Tactica — source de vérité V1
 
-État : décisions produit courantes au 25 octobre 2026.
+État : décisions produit courantes au 26 octobre 2026.
 
 La hiérarchie normative est stricte :
 
@@ -114,7 +114,9 @@ Les CS de traversée se débloquent uniquement par leurs conditions scénaristiq
 
 Déblocages CS conservés : Coupe = badge 2 et quête de Coupe terminée ; Éclate-Roc = badge 1 et remise scénaristique effectuée ; Flash = automatique dès le début, sans badge ; Force = badge 3 ; Surf = badge 4 ; Vol = badge 5 ; Plongée et Siphon = badge 7 ; Cascade = badge 8. Les flags de quête ne sont pas des contrôles de possession des objets CS. Siphon utilise déjà directement sa condition de badge, sans Pokémon compatible.
 
-Vol se sélectionne depuis la Carte du menu Start, avec A sur une destination déjà visitée après le cinquième badge. Aucun Pokémon n’est requis pour ce voyage ; les restrictions de lieu et d’accompagnement scénaristique restent applicables. La carte adopte une interface sobre inspirée d’Épée/Bouclier et conserve la géographie Johto/Kanto. Les autres CS restent contextuelles. Flash applique automatiquement l’éclairage natif maximal des grottes dès le début, y compris au chargement d’une sauvegarde, sans badge. Les CS ne figurent plus dans les menus individuels des Pokémon.
+Le bouton Carte du menu Start (plein écran et compact) devient Pokématos / POKéGEAR et ouvre le véritable appareil : carte, téléphone et radio, selon leurs déblocages scénaristiques existants. Sa rubrique Carte ouvre la carte de terrain Tactica déjà adaptée (bandeaux, géographie Johto/Kanto et destinations de Vol conservés), et B revient au Pokématos ; elle ne doit pas ouvrir une ancienne interface de carte PokéNav. Le Guide continue à exporter les cartes propres depuis les assets moteur. La radio Pokéflûte doit rester sélectionnée après fermeture du Pokématos afin de réveiller Ronflex.
+
+Vol se sélectionne depuis Start → Pokématos → Carte, avec A sur une destination déjà visitée après le cinquième badge. Aucun Pokémon n’est requis pour ce voyage ; les restrictions de lieu et d’accompagnement scénaristique restent applicables. La carte adopte une interface sobre inspirée d’Épée/Bouclier et conserve la géographie Johto/Kanto. Les autres CS restent contextuelles. Flash applique automatiquement l’éclairage natif maximal des grottes dès le début, y compris au chargement d’une sauvegarde, sans badge. Les CS ne figurent plus dans les menus individuels des Pokémon.
 
 Escalade reste désactivée en V1 : aucun bloc utilisant le comportement `MB_ROCK_CLIMB` dans les 458 layouts HnS audités (`python3 tools/audit_tactica_climbing_walls.py`). La CT d’Escalade disponible Route 49 conserve son usage en combat.
 

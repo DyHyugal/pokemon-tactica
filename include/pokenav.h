@@ -312,6 +312,7 @@ enum
 };
 
 #define POKENAV_MENU_FUNC_EXIT  -1
+#define POKENAV_MENU_FUNC_FIELD_MAP -2
 
 enum
 {
@@ -548,6 +549,7 @@ void FreeRibbonsSummaryScreen2(void);
 
 // pokenav_radio.c
 void CheckRadioStation(void);
+s32 GetRadioTuningPos(void);
 #if IS_HNS
 bool32 PokenavCallback_Init_Radio(void);
 u32 GetRadioCallback(void);

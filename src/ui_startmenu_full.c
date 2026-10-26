@@ -82,6 +82,7 @@ enum WindowIds
     WINDOW_HP_BARS,
     WINDOW_TOP_BAR,
     WINDOW_BOTTOM_BAR,
+    WINDOW_POKEGEAR,
 };
 
 enum StartMenuBoxes
@@ -90,7 +91,7 @@ enum StartMenuBoxes
     START_MENU_PARTY,
     START_MENU_BAG,
     START_MENU_CARD,
-    START_MENU_MAP,
+    START_MENU_POKEGEAR,
     START_MENU_OPTIONS,
 };
 
@@ -168,6 +169,16 @@ static const struct WindowTemplate sStartMenuWindowTemplates[] =
         .height = 2,        // height (per 8 pixels)
         .paletteNum = 0,   // palette index to use for text
         .baseBlock = 1 + (9 * 15) + (30 * 2),     // tile start in VRAM
+    },
+    [WINDOW_POKEGEAR] =
+    {
+        .bg = 0,
+        .tilemapLeft = 12,
+        .tilemapTop = 13,
+        .width = 8,
+        .height = 4,
+        .paletteNum = 0,
+        .baseBlock = 1 + (9 * 15) + (30 * 2) + (30 * 2),
     },
     DUMMY_WIN_TEMPLATE
 };
@@ -1210,6 +1221,22 @@ static bool8 StartMenuFull_InitWindows(void)
     PutWindowTilemap(WINDOW_BOTTOM_BAR);
     CopyWindowToVram(WINDOW_BOTTOM_BAR, COPYWIN_FULL);
 
+    // Cover the baked Map icon/word inside its existing button, preserving
+    // the frame. A runtime label fits the same box for both player palettes.
+    if (IS_HNS)
+    {
+        const u8 colors[] = {TEXT_COLOR_TRANSPARENT, 2, 4};
+        u32 width = GetStringWidth(FONT_SMALL, gText_MenuPokenav, 0);
+        FillWindowPixelBuffer(WINDOW_POKEGEAR, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+        FillWindowPixelRect(WINDOW_POKEGEAR, 3, 3, 6, 58, 18);
+        FillWindowPixelRect(WINDOW_POKEGEAR, 1, 3, 6, 58, 2);
+        FillWindowPixelRect(WINDOW_POKEGEAR, 4, 3, 24, 58, 2);
+        AddTextPrinterParameterized3(WINDOW_POKEGEAR, FONT_SMALL,
+            (64 - width) / 2, 8, colors, TEXT_SKIP_DRAW, gText_MenuPokenav);
+        PutWindowTilemap(WINDOW_POKEGEAR);
+        CopyWindowToVram(WINDOW_POKEGEAR, COPYWIN_FULL);
+    }
+
     return TRUE;
 }
 
@@ -1307,10 +1334,7 @@ void Task_OpenPokenavStartMenu(u8 taskId)
         StartMenuFull_FreeResources();
 		PlayRainStoppingSoundEffect();
 		CleanupOverworldWindowsAndTilemaps();
-        if (IS_HNS)
-            FieldInitRegionMap(CB2_ReturnToFullScreenStartMenu);
-        else
-            SetMainCallback2(CB2_InitPokeNav);
+        SetMainCallback2(CB2_InitPokeNav);
     }
 }
 
@@ -1429,7 +1453,7 @@ static void Task_StartMenuFullMain(u8 taskId)
                     PlaySE(SE_BOO);
                 }
                 break;
-            case START_MENU_MAP:
+            case START_MENU_POKEGEAR:
                 if(FlagGet(FLAG_SYS_POKENAV_GET))
                 {
                     PlaySE(SE_SELECT);

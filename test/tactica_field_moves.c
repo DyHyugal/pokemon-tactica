@@ -218,3 +218,117 @@ TEST("Tactica traversal: map panels render destination, Fly and hints without ov
     gMapHeader.mapType = savedType;
 }
 #endif
+
+#if IS_HNS
+#include "main.h"
+#include "dma3.h"
+#include "palette.h"
+#include "constants/vars_hns.h"
+#include "pokenav.h"
+#include "ui_startmenu_full.h"
+#include "sound.h"
+#include "strings.h"
+#include "constants/songs.h"
+
+extern u32 TestTacticaPokegearMenu(void);
+extern bool8 TestTacticaCompactPokegear(void);
+
+static void PumpPokegear(u16 pressed, u16 held)
+{
+    gMain.newKeys = gMain.newAndRepeatedKeys = pressed;
+    gMain.heldKeys = held;
+    gMain.callback2();
+    ProcessDma3Requests(); // Normally serviced by VBlankIntr, outside callback2.
+    if (gMain.vblankCallback)
+        gMain.vblankCallback();
+}
+
+static void WaitPokegear(u32 frames)
+{
+    for (u32 i = 0; i < frames; i++)
+        PumpPokegear(0, 0);
+}
+
+static void PressPokegear(u16 keys)
+{
+    PumpPokegear(keys, keys);
+    WaitPokegear(100);
+}
+
+TEST("Tactica traversal: Start opens Pokegear, its modern map, telephone and working Poke Flute radio")
+{
+    MainCallback original = gMain.callback2;
+    IntrCallback vblank = gMain.vblankCallback;
+    u32 savedSection = gMapHeader.regionMapSectionId;
+    InitEventData();
+    ZeroPlayerPartyMons();
+    gMapHeader.regionMapSectionId = MAPSEC_VERMILION_CITY;
+    FlagSet(FLAG_ADDED_MATCH_CALL_TO_POKENAV);
+    FlagSet(FLAG_ENABLE_CONDITION);
+    FlagSet(FLAG_ENABLE_RADIO);
+    FlagSet(FLAG_KANTO_RADIO_GOT);
+    SetDefaultFontsPointer();
+    StartMenuFull_Init(CB2_ReturnToField);
+    WaitPokegear(100);
+    // Original cursor is Dex. The third row is the former Map button.
+    PressPokegear(DPAD_DOWN);
+    PressPokegear(DPAD_DOWN);
+    PressPokegear(A_BUTTON);
+    EXPECT_EQ(TestTacticaPokegearMenu(), 0); // Device not yet received.
+    FlagSet(FLAG_SYS_POKENAV_GET);
+    PressPokegear(A_BUTTON);
+    EXPECT_EQ(TestTacticaPokegearMenu(), POKENAV_MAIN_MENU);
+    EXPECT(GetStringWidth(FONT_SMALL, gText_MenuPokenav, 0) <= 54);
+    // A opens FieldInitRegionMap, NOT the old native PokeNav zoom map.
+    PressPokegear(A_BUTTON);
+    EXPECT_EQ(TestTacticaPokegearMenu(), 0);
+    EXPECT_EQ(GetWindowAttribute(0, WINDOW_WIDTH), 30);
+    EXPECT_EQ(GetWindowAttribute(0, WINDOW_TILEMAP_TOP), 17);
+    PressPokegear(B_BUTTON);
+    EXPECT_EQ(TestTacticaPokegearMenu(), POKENAV_MAIN_MENU);
+    PressPokegear(DPAD_DOWN); // Condition
+    PressPokegear(DPAD_DOWN); // Telephone
+    PressPokegear(A_BUTTON);
+    EXPECT_EQ(TestTacticaPokegearMenu(), POKENAV_MATCH_CALL);
+    PressPokegear(B_BUTTON);
+    EXPECT_EQ(TestTacticaPokegearMenu(), POKENAV_MAIN_MENU_CURSOR_ON_MATCH_CALL);
+    PressPokegear(DPAD_DOWN); // Radio
+    PressPokegear(A_BUTTON);
+    EXPECT_EQ(TestTacticaPokegearMenu(), POKENAV_RADIO);
+    for (u32 i = 0; i < 800 && GetRadioTuningPos() < 63; i++)
+        PumpPokegear(0, DPAD_RIGHT);
+    EXPECT_EQ(GetRadioTuningPos(), 63);
+    WaitPokegear(40);
+    for (u32 i = 0; i < 80 && GetRadioTuningPos() > 61; i++)
+        PumpPokegear(0, DPAD_LEFT);
+    WaitPokegear(40);
+    EXPECT_EQ(GetRadioTuningPos(), 61);
+    CheckRadioStation();
+    EXPECT_EQ(gSpecialVar_Result, 1);
+    PressPokegear(B_BUTTON);
+    EXPECT_EQ(TestTacticaPokegearMenu(), POKENAV_MAIN_MENU_CURSOR_ON_RADIO);
+    // Stop at the field return callback, without loading an unrelated test map.
+    PumpPokegear(B_BUTTON, B_BUTTON);
+    for (u32 i = 0; i < 100 && TestTacticaPokegearMenu() != 0; i++)
+        PumpPokegear(0, 0);
+    EXPECT_EQ(TestTacticaPokegearMenu(), 0);
+    EXPECT(gMain.callback2 == CB2_ReturnToFullScreenStartMenu);
+    EXPECT_EQ(VarGet(VAR_TEMP_RADIO_MUSIC), MUS_HG_RADIO_POKE_FLUTE);
+    CheckRadioStation(); // Same special invoked by the real Snorlax script.
+    EXPECT_EQ(gSpecialVar_Result, 1);
+    gMapHeader.regionMapSectionId = savedSection;
+    SetMainCallback2(original);
+    SetVBlankCallback(vblank);
+}
+
+TEST("Tactica traversal: compact Start dispatches to the actual Pokegear")
+{
+    MainCallback original = gMain.callback2;
+    IntrCallback vblank = gMain.vblankCallback;
+    gPaletteFade.active = FALSE;
+    EXPECT(TestTacticaCompactPokegear());
+    EXPECT(gMain.callback2 == CB2_InitPokeNav);
+    SetMainCallback2(original);
+    SetVBlankCallback(vblank);
+}
+#endif

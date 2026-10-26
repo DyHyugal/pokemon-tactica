@@ -834,10 +834,7 @@ static bool8 StartMenuPokeNavCallback(void)
         PlayRainStoppingSoundEffect();
         RemoveExtraStartMenuWindows();
         CleanupOverworldWindowsAndTilemaps();
-        if (IS_HNS)
-            FieldInitRegionMap(CB2_ReturnToFieldWithOpenMenu);
-        else
-            SetMainCallback2(CB2_InitPokeNav);  // Display PokéNav
+        SetMainCallback2(CB2_InitPokeNav);
 
         return TRUE;
     }
@@ -1702,3 +1699,10 @@ void Script_ForceSaveGame(struct ScriptContext *ctx)
     gMenuCallback = SaveCallback;
     sSaveDialogCallback = SaveSavingMessageCallback;
 }
+
+#if TESTING && IS_HNS
+bool8 TestTacticaCompactPokegear(void)
+{
+    return StartMenuPokeNavCallback();
+}
+#endif
