@@ -43,3 +43,9 @@ Déblocages CS conservés : Coupe = badge 2 et quête de Coupe terminée ; Écla
 Vol se sélectionne depuis la Carte du menu Start, avec A sur une destination déjà visitée après le cinquième badge. Aucun Pokémon n’est requis pour ce voyage ; les restrictions de lieu et d’accompagnement scénaristique restent applicables. Les bandeaux de carte adoptent une interface sobre inspirée d’Épée/Bouclier. Le dessin des routes, villes, reliefs et étendues d’eau reste celui de HnS ; sa modernisation DS/Switch est un souhait distinct, sans refonte engagée faute de remplacement prêt à intégrer vérifié. La géographie Johto/Kanto est conservée. Les autres CS restent contextuelles. Flash applique automatiquement l’éclairage natif maximal des grottes dès le début, y compris au chargement d’une sauvegarde, sans badge. Les CS ne figurent plus dans les menus individuels des Pokémon.
 
 Escalade reste désactivée en V1 : aucun bloc utilisant le comportement `MB_ROCK_CLIMB` dans les 458 layouts HnS audités (`python3 tools/audit_tactica_climbing_walls.py`). La CT d’Escalade disponible Route 49 conserve son usage en combat.
+
+## Pokématos et Ronflex
+
+Start → Pokématos (POKéGEAR dans la ROM anglaise) ouvre les fonctions natives de l’appareil, en plein écran et dans le menu compact. Carte utilise `FieldInitRegionMap`, l’écran Tactica déjà adapté et ses restrictions de Vol ; B retourne au Pokématos. Téléphone et Radio conservent leurs flags de déblocage. Aucun changement de format de sauvegarde.
+
+Pour Ronflex, se placer devant lui à Carmin sur Mer, ouvrir Radio, régler sur POKé FLUTE (deux crans avant la butée droite), quitter avec B puis lui parler avec A sans changer de carte. L’amélioration de Lavanville débloque les stations Kanto, mais ne sélectionne pas la station. Le réglage radio est temporaire.

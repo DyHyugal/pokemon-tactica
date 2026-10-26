@@ -7,6 +7,7 @@
 #include "palette.h"
 #include "pokemon_storage_system.h"
 #include "pokenav.h"
+#include "fieldmap.h"
 
 #define LOOPED_TASK_DECODE_STATE(action) (action - 5)
 
@@ -21,6 +22,7 @@ struct PokenavResources
     u16 mode;
     u16 conditionSearchId;
     bool32 hasAnyRibbons;
+    bool32 openFieldMap;
     void *substructPtrs[POKENAV_SUBSTRUCT_COUNT];
 };
 
@@ -402,6 +404,7 @@ static void InitPokenavResources(struct PokenavResources *resources)
         resources->substructPtrs[i] = NULL;
 
     resources->mode = POKENAV_MODE_NORMAL;
+    resources->openFieldMap = FALSE;
     resources->currentMenuIndex = 0;
     resources->hasAnyRibbons = AnyMonHasRibbon();
     resources->currentMenuCb1 = NULL;
@@ -477,8 +480,10 @@ static void Task_Pokenav(u8 taskId)
         tState = 3;
     case 3:
         menuId = GetCurrentMenuCB();
-        if (menuId == POKENAV_MENU_FUNC_EXIT)
+        if (menuId == (u32)POKENAV_MENU_FUNC_EXIT
+         || (IS_HNS && menuId == (u32)POKENAV_MENU_FUNC_FIELD_MAP))
         {
+            gPokenavResources->openFieldMap = menuId == (u32)POKENAV_MENU_FUNC_FIELD_MAP;
             ShutdownPokenav();
             tState = 5;
         }
@@ -511,13 +516,17 @@ static void Task_Pokenav(u8 taskId)
         if (!WaitForPokenavShutdownFade())
         {
             bool32 calledFromScript = (gPokenavResources->mode != POKENAV_MODE_NORMAL);
+            bool32 openFieldMap = gPokenavResources->openFieldMap;
 
             FreeMenuHandlerSubstruct1();
             FreePokenavResources();
-            if (calledFromScript)
+            if (openFieldMap)
+                FieldInitRegionMap(CB2_InitPokeNav);
+            else if (calledFromScript)
                 SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
             else
                 SetMainCallback2(CB2_ReturnToFullScreenStartMenu);
+            DestroyTask(taskId);
         }
         break;
     }
@@ -610,3 +619,10 @@ bool32 CanViewRibbonsMenu(void)
 {
     return gPokenavResources->hasAnyRibbons;
 }
+
+#if TESTING && IS_HNS
+u32 TestTacticaPokegearMenu(void)
+{
+    return gPokenavResources == NULL ? 0 : gPokenavResources->currentMenuIndex + POKENAV_MENU_IDS_START;
+}
+#endif

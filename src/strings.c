@@ -1027,7 +1027,7 @@ const u8 gText_MenuPokedex[] = _("POKéDEX");
 const u8 gText_MenuPokemon[] = _("POKéMON");
 const u8 gText_MenuBag[] = _("BAG");
 #if IS_HNS
-const u8 gText_MenuPokenav[] = _("MAP");
+const u8 gText_MenuPokenav[] = _("POKéGEAR");
 #else
 const u8 gText_MenuPokenav[] = _("POKéNAV");
 #endif

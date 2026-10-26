@@ -80,3 +80,8 @@ Return to **New Bark Town** for Elm's reward. Complete the mandatory **Kimono Gi
 Kanto is more open, but this route gives a clear main progression:
 
 After the first League, obtain the **S.S. Ticket** from Elm and sail from **Olivine** to Kanto. **Vermilion City** — defeat **Lt. Surge**. Reach **Saffron City** and defeat **Sabrina**. Continue to **Celadon City** and defeat **Erika**. Travel down Cycling Road to **Fuchsia City** and defeat **Janine**. Head toward **Lavender / Power Plant** and complete the **Machine Part** quest. Return to **Cerulean City**, finish the Rocket sequence, then defeat **Misty**. Obtain the Radio upgrade in **Lavender**, wake Snorlax near Vermilion and cross **Diglett's Cave**. Reach **Pewter City** and defeat **Brock**. Continue through **Route 3 → Mt. Moon** for another rival battle. Reach **Cinnabar Island / Seafoam Islands** and defeat **Blaine**. With 15 Badges, speak to **Blue** on Cinnabar, then return to **Viridian City** for the sixteenth Badge. Return to the **Indigo Plateau**: the rival challenges you before the **second League**, then the Kanto Elite Four is available.
+
+
+### Pokégear and Snorlax
+
+To wake Snorlax, stand in front of it in Vermilion City, open **START → POKéGEAR → Radio**, then tune to **POKé FLUTE**: move all the way right, then two notches left. Leave Radio and the Pokégear with **B**, then talk to Snorlax with **A**, without changing maps. The Lavender Radio upgrade unlocks this station but does not select it automatically. The Pokégear **Map** keeps the Tactica map and its Fly action; **Phone** opens your registered contacts.

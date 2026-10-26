@@ -26,6 +26,14 @@ La candidate `3c620914` omettait le premier rival dans le plancher des dresseurs
 
 À observer dans cette candidate : observer Joey/Wade après le premier rival, Samuel Route 34 après le deuxième rival avant Blanche, puis un ancien dresseur après une seule victoire contre Morgane, Erika ou Jeannine. Aucun réglage « scaling des niveaux » à activer ; les options IV/EV sont distinctes. Reprendre avec Continuer depuis une sauvegarde en jeu.
 
+## Pokématos — correction à publier
+
+Les deux raccourcis Start ouvraient directement la carte, sans accès à la radio et au téléphone. Le bouton POKéGEAR ouvre maintenant le véritable appareil. Sa carte utilise toujours `FieldInitRegionMap`, les panneaux Tactica et le Vol existants ; B revient à l’appareil. Les fonctions natives conservent leurs conditions de déblocage, sans migration de sauvegarde.
+
+Le parcours natif complet vérifie Start, le refus avant remise de l’appareil, Carte et son retour, Téléphone, Radio, le réglage Pokéflûte, la fermeture de l’appareil et le résultat du special réellement appelé par Ronflex. Le menu compact est également couvert. Les exports propres du wiki et les cartes du jeu ont été comparés pixel par pixel : Johto et Kanto correspondent ; leurs assets restent inchangés.
+
+À observer sur la prochaine candidate : libellé POKéGEAR dans le bouton, retours répétés, contacts et une destination de Vol visitée. Devant Ronflex après l’amélioration de Lavanville : START → POKéGEAR → Radio, butée droite puis deux crans à gauche jusqu’à POKé FLUTE ; B pour revenir au terrain, puis A sur Ronflex sans changer de carte. Lancer et terminer le combat reste un contrôle manuel à effectuer.
+
 ## Progression du rival incluse
 
 ### Rival — progression réintégrée
