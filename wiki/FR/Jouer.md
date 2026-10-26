@@ -4,9 +4,9 @@
 
 ## Télécharger le jeu
 
-Pokémon Tactica se télécharge sous la forme d’une ROM Game Boy Advance complète. La [ROM Tactica au format .gba](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-44c11274/pokemon-tactica.gba) peut être ouverte directement dans un émulateur : aucune ROM Pokémon Émeraude, version EmeraldPlus ou application de patch n’est nécessaire.
+Pokémon Tactica se télécharge sous la forme d’une ROM Game Boy Advance complète. La [ROM Tactica au format .gba](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-46f30976/pokemon-tactica.gba) peut être ouverte directement dans un émulateur : aucune ROM Pokémon Émeraude, version EmeraldPlus ou application de patch n’est nécessaire.
 
-Le [pack de téléchargement Tactica](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-44c11274/pokemon-tactica.zip) réunit la même ROM, les informations de version et la checklist de playtest. Après téléchargement, extrais le ZIP pour retrouver le fichier .gba. Les fichiers sont également regroupés sur la [page de cette candidate](https://github.com/DyHyugal/pokemon-tactica/releases/tag/v1-candidate-44c11274).
+Le [pack de téléchargement Tactica](https://github.com/DyHyugal/pokemon-tactica/releases/download/v1-candidate-46f30976/pokemon-tactica.zip) réunit la même ROM, les informations de version et la checklist de playtest. Après téléchargement, extrais le ZIP pour retrouver le fichier .gba. Les fichiers sont également regroupés sur la [page de cette candidate](https://github.com/DyHyugal/pokemon-tactica/releases/tag/v1-candidate-46f30976).
 
 ## Lancer l’aventure
 
@@ -16,11 +16,13 @@ La ROM de cette V1 est en anglais ; le wiki reste disponible en français et en 
 
 ## La candidate actuelle
 
+Le bouton POKéGEAR ouvre désormais le Pokématos depuis Start : Carte Tactica avec Vol, Téléphone et Radio selon leurs déblocages. Pour Ronflex, règle POKé FLUTE devant lui (butée droite puis deux crans à gauche), quitte avec B puis parle-lui avec A sans changer de carte. Les cartes propres de Johto et Kanto sont conservées ; aucune nouvelle partie nécessaire.
+
 Red utilise désormais Pikachu partenaire, Méga-Lucario, Majaspic, Hydragon, Scorvol et Motisma Four, tous niveau 100 au Mont Argenté et en revanche post-OBC. Les six objets sont distincts ; Lucario entre avec Cœur Noble puis obtient Adaptabilité après sa Méga. Scorvol pose Piège de Roc et Motisma Four assure Anti-Brume.
 
-Le téléchargement proposé correspond à la candidate **44c11274**, construite depuis la branche **integration/v1**. Elle corrige le plantage de Major Bob (Élecsprint avec Paratonnerre et Rayon Signal) et les sets incompatibles relevés chez les boss et rematches. Les talents et types de 29 couples Méga sont vérifiés par des tests de combat. Elle conserve le choix du rival selon les faiblesses officielles de la catégorie du menu starter et migre les anciennes associations invalides vers une équipe légale, conservée ensuite. Le scaling compte désormais le premier rival vaincu (plancher 18) et chaque victoire centrale de Kanto (80), sans réglage de niveaux à activer. Elle inclut aussi les niveaux des dresseurs ordinaires selon leur zone et la progression, l’Attaque de base de Tranchodon à 130 et les corrections déjà intégrées de combat, de CS et d’interface. Le wiki des évolutions a été synchronisé avec le jeu. Cette version est destinée au playtest et n’est pas encore déclarée stable.
+Le téléchargement proposé correspond à la candidate **46f30976**, construite depuis la branche **integration/v1**. Elle corrige le plantage de Major Bob (Élecsprint avec Paratonnerre et Rayon Signal) et les sets incompatibles relevés chez les boss et rematches. Les talents et types de 29 couples Méga sont vérifiés par des tests de combat. Elle conserve le choix du rival selon les faiblesses officielles de la catégorie du menu starter et migre les anciennes associations invalides vers une équipe légale, conservée ensuite. Le scaling compte désormais le premier rival vaincu (plancher 18) et chaque victoire centrale de Kanto (80), sans réglage de niveaux à activer. Elle inclut aussi les niveaux des dresseurs ordinaires selon leur zone et la progression, l’Attaque de base de Tranchodon à 130 et les corrections déjà intégrées de combat, de CS et d’interface. Le wiki des évolutions a été synchronisé avec le jeu. Cette version est destinée au playtest et n’est pas encore déclarée stable.
 
-Le premier parcours de validation va jusqu’à Mortimer, puis le playtest complet poursuit l’aventure à travers Johto, Kanto, la deuxième Ligue et Red. Si tu rencontres un problème, indique la version **44c11274**, ta difficulté, ton réglage de cap et les actions qui permettent de le reproduire. Les ajustements et l’équilibrage suivront les retours observés en jeu.
+Le premier parcours de validation va jusqu’à Mortimer, puis le playtest complet poursuit l’aventure à travers Johto, Kanto, la deuxième Ligue et Red. Si tu rencontres un problème, indique la version **46f30976**, ta difficulté, ton réglage de cap et les actions qui permettent de le reproduire. Les ajustements et l’équilibrage suivront les retours observés en jeu.
 
 [Tableau complet des niveaux par zone et dresseur (CSV pour Excel)](../../docs/assets/tactica-trainer-scaling.csv).
 
